@@ -1,6 +1,6 @@
 ---
 name: excel-workbook-editing
-description: Design, edit, debug, reconcile, and validate Excel workbooks and workbook-generation scripts. Use when work involves `.xlsx` files, formulas, sheet layouts, named ranges, lookup logic, cross-sheet references, workbook templates, carryover flows, or Excel automation and validation.
+description: Design, edit, debug, reconcile, and validate Excel workbooks and workbook-generation scripts. Use when the task involves modifying, creating, debugging, or reconciling .xlsx files, Excel formulas, sheet layouts, named ranges, lookup logic, cross-sheet references, workbook templates, carryover flows, or Excel automation and validation. Avoid for CSV/TSV-only tasks without Excel-specific concerns.
 license: MIT
 ---
 
