@@ -1,6 +1,6 @@
 ---
 name: excel-workbook-editing
-description: Design, edit, debug, reconcile, and validate Excel workbooks and workbook-generation scripts. TRIGGER when: user asks to modify, create, debug, or reconcile `.xlsx` files, or work involves Excel formulas, sheet layouts, named ranges, lookup logic, cross-sheet references, workbook templates, carryover flows, or Excel automation and validation. DO NOT TRIGGER when: task only reads CSV/TSV data without Excel-specific concerns, or deals with non-spreadsheet file formats.
+description: Design, edit, debug, reconcile, and validate Excel workbooks and workbook-generation scripts. Use when work involves `.xlsx` files, formulas, sheet layouts, named ranges, lookup logic, cross-sheet references, workbook templates, carryover flows, or Excel automation and validation.
 license: MIT
 ---
 
@@ -123,7 +123,8 @@ Primary tools:
 Example command:
 
 ```bash
-osascript ~/.claude/skills/excel-workbook-editing/scripts/excel_recalculate_and_sample.applescript \
+cd /path/to/excel-workbook-editing
+osascript scripts/excel_recalculate_and_sample.applescript \
   "/path/to/workbook.xlsx" \
   1 \
   A1 \

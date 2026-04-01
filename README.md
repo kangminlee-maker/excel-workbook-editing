@@ -1,10 +1,10 @@
 # Excel Workbook Editing Skill
 
-A [Claude Code](https://claude.ai/claude-code) skill for designing, editing, debugging, reconciling, and validating Excel workbooks.
+A [Claude Code](https://claude.ai/claude-code) and Codex skill for designing, editing, debugging, reconciling, and validating Excel workbooks.
 
 ## What this skill does
 
-When you work with `.xlsx` files in Claude Code, this skill automatically loads and guides Claude to:
+When you work with `.xlsx` files in Claude Code or Codex, this skill automatically loads and guides the agent to:
 
 - Treat Excel as a calculation engine, not just a file format
 - Preserve traceable `input -> intermediate -> output` logic
@@ -23,11 +23,22 @@ git clone https://github.com/kangminlee-maker/excel-workbook-editing.git \
 
 Restart Claude Code. The skill appears in the skill list and triggers automatically on Excel-related tasks.
 
+For Codex, clone the same repository into your Codex skills directory:
+
+```bash
+git clone https://github.com/kangminlee-maker/excel-workbook-editing.git \
+  ~/.codex/skills/excel-workbook-editing
+```
+
+Codex uses `SKILL.md` plus `agents/openai.yaml` for discovery and UI metadata.
+
 ## Contents
 
 ```
 excel-workbook-editing/
 ├── SKILL.md                          # Main skill (auto-trigger rules included)
+├── agents/
+│   └── openai.yaml                   # Codex UI metadata
 ├── references/
 │   ├── excel-workbook-principles.md  # Formula, structure, and validation defaults
 │   ├── efficient-excel-workflows.md  # Debugging heuristics and workflow patterns
@@ -45,8 +56,16 @@ excel-workbook-editing/
 
 ## Updating
 
+Claude Code:
+
 ```bash
 cd ~/.claude/skills/excel-workbook-editing && git pull
+```
+
+Codex:
+
+```bash
+cd ~/.codex/skills/excel-workbook-editing && git pull
 ```
 
 ## License

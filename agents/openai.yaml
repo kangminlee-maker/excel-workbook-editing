@@ -1,0 +1,4 @@
+interface:
+  display_name: "Excel Workbook Editing"
+  short_description: "Workbook editing, reconciliation, and formula-safe validation"
+  default_prompt: "Use $excel-workbook-editing to edit or reconcile an Excel workbook by checking source differences and logic differences before chasing output gaps, while preserving source-of-truth alignment and Excel-engine-safe formulas."
