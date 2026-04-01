@@ -12,6 +12,13 @@ When you work with `.xlsx` files in Claude Code or Codex, this skill automatical
 - Validate with the real Excel engine, not just openpyxl
 - Separate source gaps from logic bugs when debugging mismatches
 
+## Requirements
+
+- **macOS** with Microsoft Excel installed
+- [Claude Code](https://claude.ai/claude-code) CLI, desktop app, or IDE extension
+
+The bundled AppleScript automation (`scripts/excel_recalculate_and_sample.applescript`) requires macOS and Microsoft Excel. Core skill guidance (formula design, workbook structure, debugging heuristics) works on any platform, but real Excel validation features are macOS-only.
+
 ## Installation
 
 Clone this repository into your Claude Code skills directory:
