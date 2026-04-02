@@ -17,6 +17,7 @@ This reference distills reusable rules for editing Excel workbooks safely.
 - Do not add workbook-only rules to patch known input coverage gaps without making that limitation explicit.
 - When operational raw files are inconsistent or semi-manual, standardize them into a stable input sheet before connecting formulas to them.
 - Separate current-period raw inputs from prior-period carry-ins and next-period carry-outs so reviewers can see what belongs to each period.
+- When reconciliation to an approved workbook is required, keep raw values and limitation-adjusted values visibly separate instead of folding the adjustment into hidden formulas.
 
 Known input limitations should stay explicit rather than hidden inside formulas. Typical examples:
 
@@ -67,6 +68,7 @@ Practical defaults:
 - Treat whole-column formulas and diagnostics as performance-sensitive.
 - If a bridge or derived range may be empty, design the aggregate path so Excel still evaluates to explicit zero rather than blank or missing.
 - Normalize date-only comparisons explicitly when workbook inputs may contain datetime fractions.
+- Normalize operational raw dates before they reach workbook formulas when source systems emit multiple date formats.
 - When using lookups against non-unique keys, confirm whether first-hit behavior is the intended Excel meaning and keep any mirrored implementation consistent with it.
 
 ## 5. Validation Method
@@ -87,6 +89,7 @@ Operational cautions:
 
 - Do not let the user open, save, or actively manipulate the workbook during Excel automation.
 - Do not use whole-column diagnostics such as `COUNTIF(T:T)` unless there is no lighter option.
+- Treat source-binding checks as part of validation. If the wrong source folder or file variant is selected, workbook totals can look wrong even when formulas are correct.
 
 ## 6. Tool Choice Rules
 

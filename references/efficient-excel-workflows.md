@@ -50,6 +50,7 @@ Treat them differently:
 If a current-period derived workbook is not guaranteed to exist every cycle, do not make it a required input.
 Do not mix prior-period carry-ins with current-period computed rows in one opaque table if reviewers need to understand period movement.
 Keep carry-in, current-period computation, and carry-out visible as distinct surfaces whenever period rollforward is material.
+When approval or reconciliation requires explicit exceptions, separate `raw`, `known limitation`, and `adjusted` surfaces instead of burying those adjustments inside workbook logic.
 
 ## 4. Debug Totals By Decomposition
 
@@ -149,6 +150,14 @@ When some rows cannot be reconstructed from current inputs:
 
 This protects trust in the workbook. Silent patches destroy trust faster than an explicit limitation note.
 
+If a reconciliation must carry explicit exceptions, a good default is:
+
+1. keep the raw calculation visible
+2. list each limitation or override explicitly
+3. show an adjusted result derived from those two surfaces
+
+This keeps reviewers from mistaking an override for native workbook logic.
+
 ## 8. Use Excel For Truth, Code For Control
 
 Default working pattern:
@@ -222,6 +231,26 @@ Practical rule:
 4. leave the rest as explicit limitations, not hidden workbook logic
 
 If a workflow depends on human judgment, more formula tracing alone will not automate it.
+
+## Check Source Binding Before Formula Surgery
+
+Recurring workbook defects are often blamed on formulas when the real issue is input binding.
+
+Typical cases:
+
+- an `expanded` source folder exists but is empty
+- a fallback source should have been used but was skipped
+- a full-range export is loaded without period filtering
+- two file variants exist and the resolver picks the wrong one
+
+Cheap checks:
+
+1. list the concrete files selected for the run
+2. confirm the folder is not just present but populated
+3. confirm the period filter is row-based, not filename-based, when source files contain multiple months
+4. compare row counts before touching formulas
+
+Many “Excel calculation” failures are actually source-selection failures.
 
 ## 12. Declare Read Paths And Compute Paths
 

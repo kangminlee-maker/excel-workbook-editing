@@ -9,6 +9,7 @@ Treat AppleScript as a thin control layer over Excel, not as the place to build 
 - Tell the user not to open, save, rename, or navigate the target workbook while the automation is running.
 - Prefer opening workbooks in read-only mode unless the task explicitly requires saving.
 - Sample only the cells you need.
+- Do not depend on active-sheet browsing or broad workbook scans when an explicit list of target cells will do.
 - If Excel is unavailable, do not claim the workbook has been validated.
 - Prefer isolated validation sessions over long-lived Excel automation flows.
 
@@ -91,3 +92,8 @@ The safest default is still:
 3. recalculate
 4. sample a few cells
 5. close without saving unless a deliberate save is part of the task
+
+Practical rule:
+
+- if the same issue can be diagnosed by reading 5 cells instead of 500, read 5
+- if the workbook is shared or likely to be touched by a person, prefer read-only automation and manual save decisions

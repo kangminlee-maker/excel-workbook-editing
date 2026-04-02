@@ -8,9 +8,14 @@ When you work with `.xlsx` files in Claude Code or Codex, this skill automatical
 
 - Treat Excel as a calculation engine, not just a file format
 - Preserve traceable `input -> intermediate -> output` logic
+- Prefer layered recurring-workbook structure such as `carry-in -> current raw -> bridge -> output -> carry-out`
+- Standardize messy operational raw files into stable input sheets before wiring formulas
 - Use compatibility-safe formulas (`INDEX/MATCH` over `XLOOKUP`, `SUMPRODUCT` over `SUMIFS`)
+- Design empty-month and zero-row bridge cases explicitly instead of assuming every bridge has data
 - Validate with the real Excel engine, not just openpyxl
+- Use narrow recalc-and-sample validation loops instead of broad workbook scans
 - Separate source gaps from logic bugs when debugging mismatches
+- Keep known limitations explicit instead of hiding workbook-only patches in formulas
 
 ## Requirements
 
@@ -60,6 +65,7 @@ excel-workbook-editing/
 - **Code builds, Excel validates**: use `openpyxl` for deterministic edits, real Excel for recalculation
 - **Source vs. logic**: classify mismatches before chasing formula bugs
 - **Compatibility**: prefer `INDEX/MATCH + IFERROR` over `XLOOKUP` for cross-environment safety
+- **Stable bindings**: prefer defined names, text key columns, and explicit source-binding checks over column letters and fragile file assumptions
 
 ## Updating
 

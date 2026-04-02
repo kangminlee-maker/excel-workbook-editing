@@ -26,6 +26,7 @@ When editing a workbook, preserve both the intended logic and the workbook's exp
 - Prefer compatibility-safe formulas over newer functions when the target Excel environment is uncertain.
 - For recurring period workbooks, separate prior-period carry-ins, current-period raw inputs, and next-period carry-outs explicitly instead of mixing them into one surface.
 - If the workbook is meant for auditability, keep the workbook as an explanation surface for the logic rather than a thin shell around copied totals.
+- When reconciliation against an approved workbook is required, prefer an explicit `raw -> limitation -> adjusted` presentation rather than silently baking manual patches into formulas.
 
 ## Structural Patterns
 
@@ -56,6 +57,7 @@ If a bridge sheet can legitimately have zero source rows in some periods, design
 - Normalize date comparisons when time fractions may exist in Excel datetime values; a displayed date is not always a date-only value for formula purposes.
 - When matching duplicate keys, verify whether Excel is using first-hit behavior and keep any Python-side mirrors aligned to the same selection rule.
 - For aggregates fed by bridge sheets that may be empty, prefer explicit coercion patterns such as `IFERROR`, `N()`, or `0+named_range` so outputs close to numeric zero instead of blank or missing values.
+- Treat source-file selection as part of workbook correctness: a broken source resolver can look exactly like a workbook formula defect.
 
 ## Tool Selection
 
