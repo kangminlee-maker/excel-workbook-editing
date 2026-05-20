@@ -12,10 +12,43 @@ Treat AppleScript as a thin control layer over Excel, not as the place to build 
 - Do not depend on active-sheet browsing or broad workbook scans when an explicit list of target cells will do.
 - If Excel is unavailable, do not claim the workbook has been validated.
 - Prefer isolated validation sessions over long-lived Excel automation flows.
+- For unattended agent runs, prefer validating a temporary copy inside Excel's sandbox container rather than opening the project workbook path directly.
+- A sandbox-copy loop can reduce repeated file-access prompts and avoid source workbook locks, but a new machine may still require a one-time macOS Automation permission grant.
 
-## 2. Bundled Read-Only Sample
+## 2. Preferred Python Wrapper
 
-Use the bundled script when you need Excel to open a workbook, force recalculation, read a few cells, and close without saving.
+Use the bundled Python wrapper when you need Excel to open a workbook, force recalculation, read a few cells, and close without saving. It copies the workbook to Excel's sandbox container before opening it.
+
+Script:
+
+- `scripts/excel_engine_sample.py`
+
+Usage:
+
+```bash
+python3 skills/excel-workbook-editing/scripts/excel_engine_sample.py \
+  "/path/to/workbook.xlsx" \
+  1 \
+  A1 \
+  B2 \
+  C10
+```
+
+Behavior:
+
+- copies the workbook to `~/Library/Containers/com.microsoft.Excel/Data/Documents/excel_workbook_editing_validation`
+- opens the temporary copy in read-only mode
+- disables display alerts and update-link prompts
+- runs Excel `calculate full rebuild`
+- reads only the requested cells
+- closes without saving
+- deletes the temporary copy
+
+Use `--direct` only when you explicitly need Excel to open the source workbook path itself.
+
+## 3. Bundled AppleScript Sample
+
+Use the bundled AppleScript directly only when you need the lower-level control layer or the Python wrapper is not suitable.
 
 Script:
 
@@ -41,7 +74,8 @@ Arguments:
 Behavior:
 
 - opens the workbook in read-only mode
-- runs `calculate full`
+- disables display alerts and update-link prompts
+- runs `calculate full rebuild`
 - reads the requested cells
 - closes without saving
 
@@ -53,13 +87,14 @@ B2=12345
 C10=<missing>
 ```
 
-## 3. When To Use This Sample
+## 4. When To Use These Samples
 
 - verify formula results in the real Excel engine
 - compare a few key cells after regenerating a workbook in code
 - inspect a suspected broken total without touching the workbook file
+- keep workbook validation automated while still using Excel as the calculation engine
 
-## 4. When Not To Use This Sample
+## 5. When Not To Use These Samples
 
 - when another workflow is already editing the same workbook in Excel
 - when you need bulk workbook edits
@@ -68,7 +103,7 @@ C10=<missing>
 - when the user is likely to click around, save, or switch sheets during the run
 - when you need broad workbook scans rather than a narrow recalc-and-sample loop
 
-## 5. Write-Back Automation Guidance
+## 6. Write-Back Automation Guidance
 
 Do not start with AppleScript that opens a workbook for writing and saves changes in place.
 Write-back flows are more fragile because they can conflict with:

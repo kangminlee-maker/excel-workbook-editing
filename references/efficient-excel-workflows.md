@@ -158,6 +158,16 @@ If a reconciliation must carry explicit exceptions, a good default is:
 
 This keeps reviewers from mistaking an override for native workbook logic.
 
+For each known limitation or source gap, preserve practical investigation identifiers when available:
+
+- transaction ID or row key
+- payment processor ID such as `imp_uid`
+- source file or source label
+- search terms for the next source-owner lookup
+- whether the item is a missing source, manual override, accounting-policy question, or formula defect
+
+Aggregate-only limitation notes are hard to close later. Row-level identifiers make the next review session much cheaper.
+
 ## 8. Use Excel For Truth, Code For Control
 
 Default working pattern:
@@ -183,6 +193,7 @@ Use Excel for:
 - confirming behavior of Excel-native features
 
 Use AppleScript only to automate the validation loop around Excel when manual repetition becomes the bottleneck.
+When repeated file-access prompts or source workbook locks make AppleScript flaky, keep Excel as the calculation engine but open a temporary copy from Excel's sandbox container. This isolates validation from the project path while preserving real Excel recalculation.
 
 ## 9. Optimize For Resume-ability
 
@@ -210,6 +221,8 @@ Project-specific facts belong in local docs.
 Reusable patterns belong in the generic Excel skill or its references.
 
 If a lesson still includes product names, month labels, or one-off file names, it probably is not generic enough yet.
+
+Accounting or business-policy gaps need the same separation. If generated workbook logic exactly reproduces an approved workbook but the treatment may not align with an accounting standard or policy, do not mark it as a formula bug. Classify it as a norm-alignment or accounting-policy review item, keep the calculation lock separate from policy approval, and capture the accounting question for the appropriate reviewer.
 
 ## 11. Find The Real Bottleneck First
 
@@ -522,12 +535,16 @@ High-probability causes:
 - concurrent Excel interaction
 - focus-dependent automation
 - broad workbook scanning
+- repeated macOS file-access prompts when Excel opens arbitrary project paths
+- source workbook locks or unsaved state
 
 Cheapest checks:
 
 - ensure no other Excel workflow is touching the file
 - rerun in read-only mode
 - reduce the automation to recalc plus a narrow cell sample
+- open a temporary copy from Excel's sandbox container instead of the source workbook path
+- disable alerts and update-link prompts in the AppleScript control layer
 
 ## 20. Escalate Context Only When The Cheap Tests Fail
 

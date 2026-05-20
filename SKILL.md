@@ -15,7 +15,8 @@ When editing a workbook, preserve both the intended logic and the workbook's exp
 2. Separate raw inputs, parameters, intermediate calculations, derived outputs, and any prior-period carryovers.
 3. Read [references/excel-workbook-principles.md](references/excel-workbook-principles.md) for formula, structure, and validation defaults.
 4. Read [references/efficient-excel-workflows.md](references/efficient-excel-workflows.md) when the task is messy, recurring, or involves reconciliation against an approved workbook, unexplained gaps between source data and workbook results, or source-versus-logic difference analysis.
-5. Choose the lowest-risk edit surface: workbook formulas, named ranges, template layout, generator script, or validation automation.
+5. For Codex work, read [references/codex-excel-usage-guidelines.md](references/codex-excel-usage-guidelines.md) for the default tool sequence and verification expectations.
+6. Choose the lowest-risk edit surface: workbook formulas, named ranges, template layout, generator script, or validation automation.
 
 ## Editing Defaults
 
@@ -65,6 +66,7 @@ Choose tools by task type rather than by habit.
 
 - Use `openpyxl` or a workbook-generation script for deterministic structural edits such as adding sheets, writing formulas, creating named ranges, filling tables, and producing repeatable workbook outputs.
 - Use AppleScript only as a control layer for the real Excel application on macOS when you need Excel to open, recalculate, save, or expose a narrow set of computed cell values.
+- For unattended local validation, prefer the Python wrapper `scripts/excel_engine_sample.py` before calling `osascript` directly. It opens a temporary workbook copy from Excel's sandbox container, runs the real Excel engine, samples narrow cells, and removes the copy.
 - Use the Excel application when you need authoritative recalculation, visual inspection, feature behavior that only Excel can express, or confirmation that a human reviewer can actually follow the workbook.
 - Keep bulk data transformation and workbook construction out of AppleScript and Excel UI when code can do it more safely and repeatably.
 - Use the bundled AppleScript sample at `scripts/excel_recalculate_and_sample.applescript` when you need a read-only recalc-and-sample loop in real Excel on macOS.
@@ -92,6 +94,8 @@ This separates logic bugs, source gaps, workbook wiring bugs, and Excel behavior
 - Assume Excel automation is fragile while the target workbook is being edited by a user.
 - Avoid validation loops that depend on active sheet focus or manual save timing.
 - Read only the cells you need during automated checks; broad workbook scans are slow and noisy.
+- Distinguish first-run macOS Automation permission from file-access prompts. The wrapper can reduce repeated file-access prompts, but a new machine may still need a one-time Automation permission grant for the terminal or agent host to control Microsoft Excel.
+- If Excel file access prompts repeat for project paths, validate a temporary copy from Excel's sandbox container instead of opening the source workbook directly.
 - If the real Excel application is unavailable, treat formula-result validation as incomplete and say so explicitly.
 
 ## Execution Examples
@@ -125,9 +129,8 @@ Primary tools:
 Example command:
 
 ```bash
-cd /path/to/excel-workbook-editing
-osascript scripts/excel_recalculate_and_sample.applescript \
-  "/path/to/workbook.xlsx" \
+python3 /path/to/excel-workbook-editing/scripts/excel_engine_sample.py \
+  /path/to/workbook.xlsx \
   1 \
   A1 \
   B2 \
@@ -184,3 +187,4 @@ Primary tools:
 Load [references/excel-workbook-principles.md](references/excel-workbook-principles.md) when you need more detail on structure choices, formula safety, tool selection, validation discipline, or typical Excel-specific bugs.
 Load [references/efficient-excel-workflows.md](references/efficient-excel-workflows.md) when you need reusable debugging heuristics, source-gap triage rules, or recurring-workbook operating patterns.
 Load [references/applescript-examples.md](references/applescript-examples.md) when you need macOS Excel automation examples and concurrency cautions.
+Load [references/codex-excel-usage-guidelines.md](references/codex-excel-usage-guidelines.md) when Codex needs a concise operating checklist for Excel workbook tasks.

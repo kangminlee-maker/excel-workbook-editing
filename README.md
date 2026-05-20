@@ -13,6 +13,7 @@ When you work with `.xlsx` files in Claude Code or Codex, this skill automatical
 - Use compatibility-safe formulas (`INDEX/MATCH` over `XLOOKUP`, `SUMPRODUCT` over `SUMIFS`)
 - Design empty-month and zero-row bridge cases explicitly instead of assuming every bridge has data
 - Validate with the real Excel engine, not just openpyxl
+- Use the sandbox-copy Excel validation wrapper for unattended Codex runs
 - Use narrow recalc-and-sample validation loops instead of broad workbook scans
 - Separate source gaps from logic bugs when debugging mismatches
 - Keep known limitations explicit instead of hiding workbook-only patches in formulas
@@ -22,7 +23,7 @@ When you work with `.xlsx` files in Claude Code or Codex, this skill automatical
 - **macOS** with Microsoft Excel installed
 - [Claude Code](https://claude.ai/claude-code) CLI, desktop app, or IDE extension
 
-The bundled AppleScript automation (`scripts/excel_recalculate_and_sample.applescript`) requires macOS and Microsoft Excel. Core skill guidance (formula design, workbook structure, debugging heuristics) works on any platform, but real Excel validation features are macOS-only.
+The bundled Excel automation (`scripts/excel_engine_sample.py` and `scripts/excel_recalculate_and_sample.applescript`) requires macOS and Microsoft Excel. Core skill guidance (formula design, workbook structure, debugging heuristics) works on any platform, but real Excel validation features are macOS-only.
 
 ## Installation
 
@@ -44,6 +45,17 @@ git clone https://github.com/kangminlee-maker/excel-workbook-editing.git \
 
 Codex uses `SKILL.md` plus `agents/openai.yaml` for discovery and UI metadata.
 
+Or install from GitHub with Codex's skill installer:
+
+```bash
+python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo kangminlee-maker/excel-workbook-editing \
+  --path . \
+  --name excel-workbook-editing
+```
+
+Restart Codex after installing so the new skill is picked up.
+
 ## Contents
 
 ```
@@ -54,8 +66,10 @@ excel-workbook-editing/
 ├── references/
 │   ├── excel-workbook-principles.md  # Formula, structure, and validation defaults
 │   ├── efficient-excel-workflows.md  # Debugging heuristics and workflow patterns
-│   └── applescript-examples.md       # macOS Excel automation examples
+│   ├── applescript-examples.md       # macOS Excel automation examples
+│   └── codex-excel-usage-guidelines.md # Codex-specific operating checklist
 └── scripts/
+    ├── excel_engine_sample.py                    # Sandbox-copy Excel recalc wrapper
     └── excel_recalculate_and_sample.applescript  # Read-only recalc helper
 ```
 
@@ -63,6 +77,7 @@ excel-workbook-editing/
 
 - **Explainability first**: workbooks should explain the logic, not hide it behind copied totals
 - **Code builds, Excel validates**: use `openpyxl` for deterministic edits, real Excel for recalculation
+- **Prompt-safe validation**: for unattended agent runs, open a temporary copy from Excel's sandbox container and sample only the cells needed
 - **Source vs. logic**: classify mismatches before chasing formula bugs
 - **Compatibility**: prefer `INDEX/MATCH + IFERROR` over `XLOOKUP` for cross-environment safety
 - **Stable bindings**: prefer defined names, text key columns, and explicit source-binding checks over column letters and fragile file assumptions

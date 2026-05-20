@@ -126,6 +126,9 @@ Use extra caution with complex templates containing macros, pivot tables, extern
 
 Treat AppleScript as glue for Excel, not as the primary transformation layer.
 Prefer read-only recalc-and-sample loops unless you have confirmed no other Excel session is touching the workbook.
+For unattended local validation on macOS, prefer opening a temporary copy from Excel's sandbox container instead of the project path. The bundled `scripts/excel_engine_sample.py` helper does this by default: copy workbook to `~/Library/Containers/com.microsoft.Excel/Data/Documents/excel_workbook_editing_validation`, run real Excel full rebuild, sample narrow cells, then delete the copy.
+
+This sandbox-copy pattern does not replace the Excel engine. It changes only where Excel opens the workbook from, reducing repeated file-access prompts and avoiding source workbook locks.
 
 ### Use Excel directly when
 
@@ -148,6 +151,7 @@ Default rule:
 - automate Excel with AppleScript only when manual recalculation is too slow or too repetitive
 
 If the real Excel application is unavailable, do not present Python-side formula writes as validated Excel results.
+Pure-Python formula evaluators may be useful for fixture cached-value generation or cross-platform smoke checks, but they are not an authoritative substitute for Excel-engine validation when the task is to prove workbook behavior.
 
 ## 7. Known Excel-Specific Failure Patterns
 
@@ -161,6 +165,7 @@ If the real Excel application is unavailable, do not present Python-side formula
 - hidden time fractions in datetime cells breaking apparent date comparisons
 - generator-side last-write-wins joins disagreeing with Excel first-match lookups
 - sheets or helper tables that exist in the workbook but are disconnected from the live output path
+- workbook validation loops that repeatedly prompt for file access because Excel is opening project paths directly instead of a sandbox copy
 
 Typical fixes:
 
@@ -174,6 +179,7 @@ Typical fixes:
 - Strip or normalize datetime fractions before cutoff comparisons
 - Align Python-side join semantics with Excel lookup semantics when duplicate keys are possible
 - Verify not only that a sheet exists, but that downstream outputs actually read from it
+- Validate generated workbook results through real Excel, preferably via a sandbox-copy recalc-and-sample loop for unattended agent runs
 
 ## 8. Execution Playbooks
 
