@@ -1,4 +1,4 @@
 interface:
   display_name: "Excel Workbook Editing"
-  short_description: "Workbook editing, reconciliation, and formula-safe validation"
-  default_prompt: "Use $excel-workbook-editing to edit or reconcile an Excel workbook by checking source differences and logic differences before chasing output gaps, preserving source-of-truth alignment, and validating formula results with the real Excel engine."
+  short_description: "Workbook editing, reconciliation, structure inspection, and Excel-engine validation"
+  default_prompt: "Use $excel-workbook-editing to edit or reconcile an Excel workbook with the model-agnostic agent workflow: inspect workbook structure before flattening it, check source differences and logic differences before chasing output gaps, preserve source-of-truth alignment, validate formula results with the real Excel engine, and scan for formula errors."

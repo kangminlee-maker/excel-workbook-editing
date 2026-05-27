@@ -15,13 +15,22 @@ When editing a workbook, preserve both the intended logic and the workbook's exp
 2. Separate raw inputs, parameters, intermediate calculations, derived outputs, and any prior-period carryovers.
 3. Read [references/excel-workbook-principles.md](references/excel-workbook-principles.md) for formula, structure, and validation defaults.
 4. Read [references/efficient-excel-workflows.md](references/efficient-excel-workflows.md) when the task is messy, recurring, or involves reconciliation against an approved workbook, unexplained gaps between source data and workbook results, or source-versus-logic difference analysis.
-5. For Codex work, read [references/codex-excel-usage-guidelines.md](references/codex-excel-usage-guidelines.md) for the default tool sequence and verification expectations.
+5. For agentic LLM work in any runtime, read [references/agent-excel-usage-guidelines.md](references/agent-excel-usage-guidelines.md) for the default tool sequence and verification expectations.
 6. Choose the lowest-risk edit surface: workbook formulas, named ranges, template layout, generator script, or validation automation.
+
+## Task Routing
+
+- **READ**: Before editing an unfamiliar workbook, run `scripts/inspect_workbook.py` to summarize sheets, dimensions, formulas, named ranges, merged ranges, tables, validations, and hidden structure.
+- **EDIT**: Make deterministic workbook or generator changes in code, usually with `openpyxl` or the repo's workbook-generation layer.
+- **VALIDATE**: Recalculate formula results with the real Microsoft Excel engine, preferably through `scripts/excel_engine_sample.py` for unattended temporary-copy validation.
+- **SCAN**: After recalculation, run `scripts/formula_error_scan.py` to check formula and literal error cells such as `#REF!`, `#VALUE!`, `#N/A`, and `#NAME?`.
+- **RECONCILE**: For approved-workbook comparisons, use a three-surface comparison: approved or golden workbook, authoritative code or calculation script, and newly generated workbook.
 
 ## Editing Defaults
 
 - Preserve a traceable path from inputs to outputs.
 - Keep important parameters visible and centralized.
+- When modifying an existing template, study and preserve its established formatting, sheet conventions, named-range patterns, and reviewer-facing layout unless the user explicitly asks to change them.
 - Do not add a second workbook-only logic path that silently diverges from the authoritative logic.
 - Do not hide known input limitations inside ad hoc override formulas.
 - Prefer compatibility-safe formulas over newer functions when the target Excel environment is uncertain.
@@ -65,20 +74,23 @@ If a bridge sheet can legitimately have zero source rows in some periods, design
 Choose tools by task type rather than by habit.
 
 - Use `openpyxl` or a workbook-generation script for deterministic structural edits such as adding sheets, writing formulas, creating named ranges, filling tables, and producing repeatable workbook outputs.
-- Use AppleScript only as a control layer for the real Excel application on macOS when you need Excel to open, recalculate, save, or expose a narrow set of computed cell values.
-- For unattended local validation, prefer the Python wrapper `scripts/excel_engine_sample.py` before calling `osascript` directly. It opens a temporary workbook copy from Excel's sandbox container, runs the real Excel engine, samples narrow cells, and removes the copy.
+- Use `scripts/inspect_workbook.py` for structure discovery before changing a non-trivial or unfamiliar workbook.
+- Use `scripts/formula_error_scan.py` after recalculation to catch workbook-wide formula and literal error cells.
+- Use desktop Excel automation only as a control layer for the real Excel application when you need Excel to open, recalculate, save, or expose a narrow set of computed cell values.
+- For unattended local validation, prefer the Python wrapper `scripts/excel_engine_sample.py` before calling OS-specific helpers directly. It opens a temporary workbook copy, runs the real Excel engine, samples narrow cells, and removes the copy.
 - Use the Excel application when you need authoritative recalculation, visual inspection, feature behavior that only Excel can express, or confirmation that a human reviewer can actually follow the workbook.
-- Keep bulk data transformation and workbook construction out of AppleScript and Excel UI when code can do it more safely and repeatably.
-- Use the bundled AppleScript sample at `scripts/excel_recalculate_and_sample.applescript` when you need a read-only recalc-and-sample loop in real Excel on macOS.
+- Keep bulk data transformation and workbook construction out of desktop automation and Excel UI when code can do it more safely and repeatably.
+- Use the bundled desktop helpers only when you need a read-only recalc-and-sample loop in real Excel: `scripts/excel_recalculate_and_sample.applescript` on macOS, or `scripts/excel_recalculate_and_sample.ps1` on Windows.
 
 ## Validation Workflow
 
 1. Confirm the intended logic from the authoritative source.
-2. Make the workbook or script change.
-3. Recalculate with the real Excel engine before trusting results.
-4. Inspect representative rows, key aggregate cells, and likely edge cases.
-5. Compare results against the authoritative source.
-6. Fix formulas, names, sheet wiring, or automation and repeat.
+2. Inspect workbook structure before editing when the workbook is unfamiliar or template-like.
+3. Make the workbook or script change.
+4. Recalculate with the real Excel engine before trusting results.
+5. Inspect representative rows, key aggregate cells, likely edge cases, and workbook-wide formula errors.
+6. Compare results against the authoritative source.
+7. Fix formulas, names, sheet wiring, or automation and repeat.
 
 For recurring reconciliations, prefer a three-surface comparison when possible:
 
@@ -94,8 +106,8 @@ This separates logic bugs, source gaps, workbook wiring bugs, and Excel behavior
 - Assume Excel automation is fragile while the target workbook is being edited by a user.
 - Avoid validation loops that depend on active sheet focus or manual save timing.
 - Read only the cells you need during automated checks; broad workbook scans are slow and noisy.
-- Distinguish first-run macOS Automation permission from file-access prompts. The wrapper can reduce repeated file-access prompts, but a new machine may still need a one-time Automation permission grant for the terminal or agent host to control Microsoft Excel.
-- If Excel file access prompts repeat for project paths, validate a temporary copy from Excel's sandbox container instead of opening the source workbook directly.
+- Distinguish first-run desktop automation permission from file-access prompts. The wrapper can reduce repeated file-access prompts or source workbook locks, but a new machine may still need a one-time permission grant for the terminal or agent host to control Microsoft Excel.
+- If Excel file access prompts repeat for project paths, validate a temporary copy instead of opening the source workbook directly.
 - If the real Excel application is unavailable, treat formula-result validation as incomplete and say so explicitly.
 
 ## Execution Examples
@@ -123,7 +135,7 @@ Primary tools:
 Primary tools:
 
 - Excel for authoritative results
-- AppleScript for repeatable recalc-and-read loops on macOS
+- desktop Excel automation for repeatable recalc-and-read loops on macOS or Windows
 - `openpyxl` only for applying the eventual structural fix
 
 Example command:
@@ -177,7 +189,8 @@ Primary tools:
 ## Done Criteria
 
 - Excel recalculation matches the authoritative logic.
-- Critical cells do not contain unexplained `#N/A`, blank values, or stale formulas.
+- Critical cells do not contain unexplained `#N/A`, blank values, stale formulas, or other formula errors.
+- Workbook-wide formula error scan is clean or every remaining error is intentionally documented.
 - The workbook remains understandable to a human reviewer.
 - Any intentional limitations or manual steps are explicitly visible.
 - Important sheets are not just present; they are actually wired into the active calculation path and produce inspectable outputs.
@@ -186,5 +199,5 @@ Primary tools:
 
 Load [references/excel-workbook-principles.md](references/excel-workbook-principles.md) when you need more detail on structure choices, formula safety, tool selection, validation discipline, or typical Excel-specific bugs.
 Load [references/efficient-excel-workflows.md](references/efficient-excel-workflows.md) when you need reusable debugging heuristics, source-gap triage rules, or recurring-workbook operating patterns.
-Load [references/applescript-examples.md](references/applescript-examples.md) when you need macOS Excel automation examples and concurrency cautions.
-Load [references/codex-excel-usage-guidelines.md](references/codex-excel-usage-guidelines.md) when Codex needs a concise operating checklist for Excel workbook tasks.
+Load [references/desktop-excel-automation.md](references/desktop-excel-automation.md) when you need macOS AppleScript or Windows COM automation examples and concurrency cautions.
+Load [references/agent-excel-usage-guidelines.md](references/agent-excel-usage-guidelines.md) when an agent needs a concise operating checklist for Excel workbook tasks.

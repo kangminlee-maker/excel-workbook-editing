@@ -110,25 +110,27 @@ Operational cautions:
 
 Use extra caution with complex templates containing macros, pivot tables, external connections, or other Excel-native objects. Edit a copy first and verify preservation in Excel.
 
-### Use AppleScript when
+### Use desktop Excel automation when
 
-- you are on macOS and need to drive the real Excel app
+- you are on macOS or Windows and need to drive the real Excel app
 - you need a repeatable loop of open workbook, recalculate, save, and read a narrow set of cells
 - you need to validate computed results after a code-generated workbook change
 - you need automation around Excel, but the actual calculation must still happen inside Excel
 
-### Do not use AppleScript when
+Use AppleScript on macOS and PowerShell/COM Automation on Windows.
+
+### Do not use desktop Excel automation when
 
 - you need large-scale workbook construction or transformation
-- you need a cross-platform solution
+- you need server-side, headless, or non-interactive validation
 - the task can be handled deterministically in Python without opening Excel
 - the user is likely to interact with the workbook during the run
 
-Treat AppleScript as glue for Excel, not as the primary transformation layer.
+Treat desktop automation as glue for Excel, not as the primary transformation layer.
 Prefer read-only recalc-and-sample loops unless you have confirmed no other Excel session is touching the workbook.
-For unattended local validation on macOS, prefer opening a temporary copy from Excel's sandbox container instead of the project path. The bundled `scripts/excel_engine_sample.py` helper does this by default: copy workbook to `~/Library/Containers/com.microsoft.Excel/Data/Documents/excel_workbook_editing_validation`, run real Excel full rebuild, sample narrow cells, then delete the copy.
+For unattended local validation, prefer opening a temporary copy instead of the project path. The bundled `scripts/excel_engine_sample.py` helper does this by default: copy the workbook to a temporary validation location, run real Excel full rebuild, sample narrow cells, then delete the copy.
 
-This sandbox-copy pattern does not replace the Excel engine. It changes only where Excel opens the workbook from, reducing repeated file-access prompts and avoiding source workbook locks.
+This temporary-copy pattern does not replace the Excel engine. It changes only where Excel opens the workbook from, reducing repeated file-access prompts and avoiding source workbook locks.
 
 ### Use Excel directly when
 
@@ -148,7 +150,7 @@ Default rule:
 
 - build and patch in code
 - validate in Excel
-- automate Excel with AppleScript only when manual recalculation is too slow or too repetitive
+- automate Excel only when manual recalculation is too slow or too repetitive
 
 If the real Excel application is unavailable, do not present Python-side formula writes as validated Excel results.
 Pure-Python formula evaluators may be useful for fixture cached-value generation or cross-platform smoke checks, but they are not an authoritative substitute for Excel-engine validation when the task is to prove workbook behavior.
@@ -165,7 +167,7 @@ Pure-Python formula evaluators may be useful for fixture cached-value generation
 - hidden time fractions in datetime cells breaking apparent date comparisons
 - generator-side last-write-wins joins disagreeing with Excel first-match lookups
 - sheets or helper tables that exist in the workbook but are disconnected from the live output path
-- workbook validation loops that repeatedly prompt for file access because Excel is opening project paths directly instead of a sandbox copy
+- workbook validation loops that repeatedly prompt for file access because Excel is opening project paths directly instead of a temporary copy
 
 Typical fixes:
 
@@ -179,7 +181,7 @@ Typical fixes:
 - Strip or normalize datetime fractions before cutoff comparisons
 - Align Python-side join semantics with Excel lookup semantics when duplicate keys are possible
 - Verify not only that a sheet exists, but that downstream outputs actually read from it
-- Validate generated workbook results through real Excel, preferably via a sandbox-copy recalc-and-sample loop for unattended agent runs
+- Validate generated workbook results through real Excel, preferably via a temporary-copy recalc-and-sample loop for unattended agent runs
 
 ## 8. Execution Playbooks
 
@@ -194,8 +196,8 @@ Typical fixes:
 - Start from the authoritative source and the final output cell.
 - Walk backward through bridge and intermediate sheets.
 - Use Excel results as the judge of computed values.
-- Use AppleScript if you need a repeatable recalc-and-sample loop.
-- Prefer the bundled read-only AppleScript sample before attempting save or write-back automation.
+- Use desktop Excel automation if you need a repeatable recalc-and-sample loop.
+- Prefer the bundled read-only desktop helper before attempting save or write-back automation.
 
 ### Case: Build a recurring monthly or periodic workbook
 

@@ -192,8 +192,8 @@ Use Excel for:
 - layout and inspectability
 - confirming behavior of Excel-native features
 
-Use AppleScript only to automate the validation loop around Excel when manual repetition becomes the bottleneck.
-When repeated file-access prompts or source workbook locks make AppleScript flaky, keep Excel as the calculation engine but open a temporary copy from Excel's sandbox container. This isolates validation from the project path while preserving real Excel recalculation.
+Use desktop Excel automation only to automate the validation loop around Excel when manual repetition becomes the bottleneck.
+When repeated file-access prompts or source workbook locks make automation flaky, keep Excel as the calculation engine but open a temporary copy. This isolates validation from the project path while preserving real Excel recalculation.
 
 ## 9. Optimize For Resume-ability
 
@@ -528,14 +528,14 @@ Cheapest checks:
 - map each design identity to an implemented formula or check
 - confirm that key aggregates have row-level support behind them
 
-### Symptom: AppleScript or Excel automation is flaky
+### Symptom: desktop Excel automation is flaky
 
 High-probability causes:
 
 - concurrent Excel interaction
 - focus-dependent automation
 - broad workbook scanning
-- repeated macOS file-access prompts when Excel opens arbitrary project paths
+- repeated file-access prompts when Excel opens arbitrary project paths
 - source workbook locks or unsaved state
 
 Cheapest checks:
@@ -543,8 +543,8 @@ Cheapest checks:
 - ensure no other Excel workflow is touching the file
 - rerun in read-only mode
 - reduce the automation to recalc plus a narrow cell sample
-- open a temporary copy from Excel's sandbox container instead of the source workbook path
-- disable alerts and update-link prompts in the AppleScript control layer
+- open a temporary copy instead of the source workbook path
+- disable alerts and update-link prompts in the desktop automation control layer
 
 ## 20. Escalate Context Only When The Cheap Tests Fail
 
