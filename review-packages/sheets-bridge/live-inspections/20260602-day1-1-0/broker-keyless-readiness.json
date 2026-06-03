@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.2",
+  "generated_at": "2026-06-02T02:17:27.638024+00:00",
+  "broker_url": "https://run-mcp-day1-development-sheets-bridge-broker-ty6iw5bb6a-du.a.run.app",
+  "principal": "kangmin.lee@day1company.co.kr",
+  "permission_update_reported_by_user": "roles/iam.serviceAccountTokenCreator added",
+  "current_target_broker_inspect": {
+    "status": "ok",
+    "spreadsheet_id": "1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60",
+    "title": "[Day 1] 1.0 (from 20250707)",
+    "tab_count": 52,
+    "named_range_count": 0,
+    "protected_range_count": 0,
+    "policy": {
+      "allowed": true,
+      "decision_id": "phase1-pilot-google-acl-2026-06-02:kangmin.lee@day1company.co.kr:1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60:inspect.metadata",
+      "policy_version": "phase1-pilot-google-acl-2026-06-02",
+      "principal": "kangmin.lee@day1company.co.kr",
+      "reason": "allowed",
+      "spreadsheet_id": "1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60"
+    },
+    "auth": {
+      "impersonated_subject": "kangmin.lee@day1company.co.kr",
+      "principal": "kangmin.lee@day1company.co.kr"
+    },
+    "error": null,
+    "schema_validation": {
+      "status": "ok",
+      "schema": "schemas/inspection.schema.json"
+    }
+  },
+  "conclusion": {
+    "service_account_token_creator_status": "verified",
+    "current_target_status": "broker_inspect_ok",
+    "required_next_action": "Continue parser pipeline from broker-backed metadata. If the next stage needs gridData/formula/value windows through the broker, extend the broker inspect contract instead of bypassing it.",
+    "do_not_workaround": "Do not use export/import or DOM scraping for broker-backed live inspection."
+  }
+}

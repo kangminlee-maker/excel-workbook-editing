@@ -1,0 +1,3844 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-02T00:30:35.672226Z",
+  "source_artifacts": {
+    "local_semantic_candidates": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-local-semantic-candidates.json",
+    "domain_source_model": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-domain-source-model.json",
+    "data_view_projection": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-data-view-projection.json"
+  },
+  "method": {
+    "name": "deterministic_shared_ontology_alignment_review",
+    "authority": "review_only_no_shared_promotion",
+    "decision_policy": "Evaluate boundary-scoped local semantic candidates against shared ontology promotion prerequisites. In this sample, do not emit shared ontology updates unless local boundary, local source evidence, repeated workbook-family evidence, conflict checks, formula-result authority, and human approval are all satisfied."
+  },
+  "alignment_context": {
+    "local_boundary_id": "local_boundary:workbook_sample:3392b1854fec",
+    "local_boundary_status": "review_required",
+    "local_boundary_scope": "current_workbook_only_until_boundary_confirmed",
+    "local_boundary_confirmed": false,
+    "local_domain_source_count": 0,
+    "general_domain_source_count": 8,
+    "data_view_projection_count": 44,
+    "shared_ontology_target_status": "not_provided",
+    "alignment_authority": "human_review_packet_only",
+    "shared_promotion_preconditions": [
+      {
+        "name": "local_boundary_confirmed",
+        "status": "blocked",
+        "description": "A declared organization/project/team/tenant/workbook-family boundary is confirmed.",
+        "missing_action": "Confirm the local boundary that makes local terminology valid."
+      },
+      {
+        "name": "local_domain_sources_available",
+        "status": "blocked",
+        "description": "Local policy, vocabulary, or owner-approved source evidence is available.",
+        "missing_action": "Provide local policy/vocabulary evidence before treating local terms as reusable."
+      },
+      {
+        "name": "repeated_workbook_family_evidence_available",
+        "status": "blocked",
+        "description": "The same candidate meaning appears across workbook pairs or workbook families.",
+        "missing_action": "Collect repeated evidence from source/output workbook pairs or adjacent periods."
+      },
+      {
+        "name": "shared_ontology_target_available",
+        "status": "blocked",
+        "description": "An existing shared ontology target is available for duplicate/conflict checks.",
+        "missing_action": "Provide a shared ontology target or mark this review as candidate-only."
+      },
+      {
+        "name": "human_approval_recorded",
+        "status": "blocked",
+        "description": "A domain owner has approved the promotion scope and label.",
+        "missing_action": "Record human approval after reviewing blockers and conflicts."
+      }
+    ]
+  },
+  "alignment_items": [
+    {
+      "id": "alignment_item:cde999f0d9d7",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:accepted_context:semantic_concept_cumulative_revenue_surface_누적_9c6b596ecf:20780e9b5a64",
+      "label": "누적 집계 및 이월 표면",
+      "candidate_kind": "cumulative_rollforward_surface",
+      "source_kind": "accepted_semantic_context",
+      "alignment_status": "blocked_basis_definition_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "formula_result_validation_pending",
+        "gaap_ifrs_basis_mapping_required",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "dual_basis_revenue_interpretation_risk",
+        "local_vocabulary_absent_risk",
+        "formula_result_not_recalculated_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "k_gaap_vs_k_ifrs_output_definition",
+        "official_ifrs_revenue_aggregation_definition",
+        "excel_engine_recalculation_sample"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면은 K-GAAP 기준 월 매출 출력인가, K-IFRS 수익인식 계산 보조 표면인가, 또는 둘의 bridge인가?",
+        "공유 후보 판단 전에 Excel 엔진으로 대표 formula 결과를 재계산했는가?"
+      ],
+      "basis_review": {
+        "required": true,
+        "detected_terms": [
+          "수익인식",
+          "해당 매출"
+        ],
+        "reason": "K-GAAP-labeled output and K-IFRS-relevant revenue recognition surfaces must be separated before shared promotion."
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_누적_cell_region_1"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_누적_cell_region_1"
+        ],
+        "sheets": [
+          "누적"
+        ],
+        "ranges": [
+          "A1:EB20"
+        ],
+        "projection_kinds": [
+          "formula_summary_projection"
+        ],
+        "roles": [
+          "summary"
+        ],
+        "sampled_projection_count": 1,
+        "formula_cell_count": 15
+      },
+      "observed_terms": [
+        "누계",
+        "누적",
+        "누적 집계",
+        "위탁판매",
+        "이월",
+        "DATA",
+        "해당 일수",
+        "해당 매출",
+        "아임포트주문번호",
+        "결제년도",
+        "결제월",
+        "매출일자",
+        "강의결제액",
+        "교육과정명",
+        "부서",
+        "브랜드",
+        "코스 개강일",
+        "코스 개강일2",
+        "코스 종강일",
+        "수익인식방법",
+        "코스 일수",
+        "일수당 결제금액",
+        "무의미",
+        "imp_131659167335",
+        "2024-01-01",
+        "전강좌ALL패키지",
+        "퍼블리싱",
+        "유하다요",
+        "imp_509870577519",
+        "imp_829452422591",
+        "imp_370127871967",
+        "imp_092007133817",
+        "imp_956350070524",
+        "imp_378570026611",
+        "imp_826962720067"
+      ],
+      "evidence_refs": [
+        "semantic_concept:cumulative_revenue_surface_누적:9c6b596ecf",
+        "data_view:pipeline_누적_cell_region_1",
+        "gate_target_누적_cell_region_1_formula_region_coherence",
+        "gate_target_누적_cell_region_1_formula_summary_visual_alignment",
+        "group_누적_row_band_1_1",
+        "group_누적_row_band_1_2",
+        "pipeline_누적_cell_region_1",
+        "result_gate_target_누적_cell_region_1_formula_region_coherence",
+        "result_gate_target_누적_cell_region_1_formula_summary_visual_alignment",
+        "role_validation_pipeline_누적_cell_region_1"
+      ],
+      "source_artifact_refs": [
+        "llm_proposals",
+        "llm_proposal_validation",
+        "document_ontology_mapping",
+        "data_view_projection",
+        "domain_source_model",
+        "validated_document_graph",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:53371d43a7d5",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:accepted_context:semantic_concept_instructor_fee_matching_schedule_수익인식60일_강사료_a9e099e2ba:88dd509ee69c",
+      "label": "강사료 기간 대응 스케줄",
+      "candidate_kind": "expense_matching_schedule",
+      "source_kind": "accepted_semantic_context",
+      "alignment_status": "blocked_basis_definition_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "formula_result_validation_pending",
+        "gaap_ifrs_basis_mapping_required",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "dual_basis_revenue_interpretation_risk",
+        "local_vocabulary_absent_risk",
+        "formula_result_not_recalculated_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "k_gaap_vs_k_ifrs_output_definition",
+        "official_ifrs_revenue_aggregation_definition",
+        "excel_engine_recalculation_sample"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면은 K-GAAP 기준 월 매출 출력인가, K-IFRS 수익인식 계산 보조 표면인가, 또는 둘의 bridge인가?",
+        "공유 후보 판단 전에 Excel 엔진으로 대표 formula 결과를 재계산했는가?"
+      ],
+      "basis_review": {
+        "required": true,
+        "detected_terms": [
+          "수익인식",
+          "환불부채",
+          "환급부채",
+          "해당 매출"
+        ],
+        "reason": "K-GAAP-labeled output and K-IFRS-relevant revenue recognition surfaces must be separated before shared promotion."
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_수익인식60일_강사료_cell_region_1",
+          "data_view:pipeline_수익인식60일_강사료_cell_region_2",
+          "data_view:pipeline_수익인식60일_강사료_pivot_피벗_테이블2"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_수익인식60일_강사료_cell_region_1",
+          "projection:data_view:pipeline_수익인식60일_강사료_cell_region_2",
+          "projection:data_view:pipeline_수익인식60일_강사료_pivot_피벗_테이블2"
+        ],
+        "sheets": [
+          "수익인식60일_강사료"
+        ],
+        "ranges": [
+          "A1:X20",
+          "Z5:AE11",
+          "AA5:AD7"
+        ],
+        "projection_kinds": [
+          "formula_summary_projection",
+          "formula_transform_projection",
+          "pivot_view_projection"
+        ],
+        "roles": [
+          "summary",
+          "transform",
+          "report"
+        ],
+        "sampled_projection_count": 3,
+        "formula_cell_count": 108
+      },
+      "observed_terms": [
+        "수익인식60일_강사료",
+        "비용 대응",
+        "DATA",
+        "해당 일수",
+        "해당 매출",
+        "아임포트주문번호",
+        "결제년도",
+        "결제월",
+        "매출일자",
+        "강의결제액",
+        "교육과정명",
+        "부문",
+        "브랜드",
+        "환불부채",
+        "환급부채",
+        "코스 개강일",
+        "코스 개강일2",
+        "코스 종강일",
+        "수익인식방법",
+        "코스 일수",
+        "일수당 결제금액",
+        "행 레이블",
+        "합계 : 2026-03-312",
+        "합계 : 2026-04-302",
+        "합계 : 2026-02-282",
+        "총합계",
+        "어학",
+        "취미부업"
+      ],
+      "evidence_refs": [
+        "semantic_concept:instructor_fee_matching_schedule_수익인식60일_강사료:a9e099e2ba",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c10_c11",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c11_c12",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c12_c13",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c13_c14",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c14_c15",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c16_c17",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c17_c18",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c1_c2",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c20_c21",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c21_c22",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c24_c26",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c27_c28",
+        "data_view:pipeline_수익인식60일_강사료_cell_region_1",
+        "data_view:pipeline_수익인식60일_강사료_cell_region_2",
+        "data_view:pipeline_수익인식60일_강사료_pivot_피벗_테이블2",
+        "gate_target_수익인식60일_강사료_cell_region_2_boundary_confirmation",
+        "group_수익인식60일_강사료_row_band_1_27",
+        "group_수익인식60일_강사료_row_band_1_28",
+        "group_수익인식60일_강사료_row_band_1_29",
+        "group_수익인식60일_강사료_row_band_1_30",
+        "group_수익인식60일_강사료_row_band_1_31",
+        "group_수익인식60일_강사료_row_band_1_32",
+        "group_수익인식60일_강사료_row_band_1_33",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c2_c3",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c3_c4",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c4_c5",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c6_c7",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c8_c9",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c9_c10",
+        "gate_target_수익인식60일_강사료_cell_region_1_boundary_confirmation",
+        "gate_target_수익인식60일_강사료_cell_region_1_formula_region_coherence",
+        "gate_target_수익인식60일_강사료_cell_region_1_formula_summary_visual_alignment",
+        "group_수익인식60일_강사료_row_band_1_1",
+        "group_수익인식60일_강사료_row_band_1_10",
+        "group_수익인식60일_강사료_row_band_1_11",
+        "group_수익인식60일_강사료_row_band_1_12",
+        "group_수익인식60일_강사료_row_band_1_13",
+        "group_수익인식60일_강사료_row_band_1_14",
+        "group_수익인식60일_강사료_row_band_1_15",
+        "group_수익인식60일_강사료_row_band_1_16",
+        "group_수익인식60일_강사료_row_band_1_17",
+        "group_수익인식60일_강사료_row_band_1_18",
+        "group_수익인식60일_강사료_row_band_1_19",
+        "group_수익인식60일_강사료_row_band_1_2",
+        "group_수익인식60일_강사료_row_band_1_20",
+        "group_수익인식60일_강사료_row_band_1_21",
+        "group_수익인식60일_강사료_row_band_1_22",
+        "group_수익인식60일_강사료_row_band_1_23",
+        "group_수익인식60일_강사료_row_band_1_24",
+        "group_수익인식60일_강사료_row_band_1_25",
+        "group_수익인식60일_강사료_row_band_1_26",
+        "group_수익인식60일_강사료_row_band_1_3",
+        "group_수익인식60일_강사료_row_band_1_34",
+        "group_수익인식60일_강사료_row_band_1_35",
+        "group_수익인식60일_강사료_row_band_1_36",
+        "group_수익인식60일_강사료_row_band_1_4",
+        "group_수익인식60일_강사료_row_band_1_43",
+        "group_수익인식60일_강사료_row_band_1_44",
+        "group_수익인식60일_강사료_row_band_1_45",
+        "group_수익인식60일_강사료_row_band_1_49",
+        "group_수익인식60일_강사료_row_band_1_5",
+        "group_수익인식60일_강사료_row_band_1_50",
+        "group_수익인식60일_강사료_row_band_1_51",
+        "group_수익인식60일_강사료_row_band_1_52",
+        "group_수익인식60일_강사료_row_band_1_53",
+        "group_수익인식60일_강사료_row_band_1_54",
+        "group_수익인식60일_강사료_row_band_1_55",
+        "group_수익인식60일_강사료_row_band_1_56",
+        "group_수익인식60일_강사료_row_band_1_57",
+        "group_수익인식60일_강사료_row_band_1_58",
+        "group_수익인식60일_강사료_row_band_1_59",
+        "group_수익인식60일_강사료_row_band_1_6",
+        "group_수익인식60일_강사료_row_band_1_60",
+        "group_수익인식60일_강사료_row_band_1_61",
+        "group_수익인식60일_강사료_row_band_1_62",
+        "group_수익인식60일_강사료_row_band_1_63",
+        "group_수익인식60일_강사료_row_band_1_64",
+        "group_수익인식60일_강사료_row_band_1_65",
+        "group_수익인식60일_강사료_row_band_1_66",
+        "group_수익인식60일_강사료_row_band_1_67",
+        "group_수익인식60일_강사료_row_band_1_68",
+        "group_수익인식60일_강사료_row_band_1_69",
+        "group_수익인식60일_강사료_row_band_1_7",
+        "group_수익인식60일_강사료_row_band_1_70",
+        "group_수익인식60일_강사료_row_band_1_71",
+        "group_수익인식60일_강사료_row_band_1_72",
+        "group_수익인식60일_강사료_row_band_1_73",
+        "group_수익인식60일_강사료_row_band_1_74",
+        "group_수익인식60일_강사료_row_band_1_75",
+        "group_수익인식60일_강사료_row_band_1_8",
+        "group_수익인식60일_강사료_row_band_1_9",
+        "pipeline_수익인식60일_강사료_cell_region_1",
+        "result_gate_target_수익인식60일_강사료_cell_region_1_boundary_confirmation",
+        "result_gate_target_수익인식60일_강사료_cell_region_1_formula_region_coherence",
+        "result_gate_target_수익인식60일_강사료_cell_region_1_formula_summary_visual_alignment",
+        "role_validation_pipeline_수익인식60일_강사료_cell_region_1",
+        "group_수익인식60일_강사료_row_band_1_37",
+        "group_수익인식60일_강사료_row_band_1_38",
+        "group_수익인식60일_강사료_row_band_1_39",
+        "group_수익인식60일_강사료_row_band_1_40",
+        "group_수익인식60일_강사료_row_band_1_41",
+        "group_수익인식60일_강사료_row_band_1_42",
+        "group_수익인식60일_강사료_row_band_1_46",
+        "group_수익인식60일_강사료_row_band_1_47",
+        "group_수익인식60일_강사료_row_band_1_48",
+        "pipeline_수익인식60일_강사료_cell_region_2",
+        "result_gate_target_수익인식60일_강사료_cell_region_2_boundary_confirmation",
+        "role_validation_pipeline_수익인식60일_강사료_cell_region_2",
+        "gate_target_수익인식60일_강사료_pivot_피벗_테이블2_pivot_cache_visual_alignment",
+        "pipeline_수익인식60일_강사료_pivot_피벗_테이블2",
+        "rel_수익인식60일_강사료_pivot_피벗_테이블2__pivot_cache_source",
+        "result_gate_target_수익인식60일_강사료_pivot_피벗_테이블2_pivot_cache_visual_alignment",
+        "role_validation_pipeline_수익인식60일_강사료_pivot_피벗_테이블2"
+      ],
+      "source_artifact_refs": [
+        "llm_proposals",
+        "llm_proposal_validation",
+        "document_ontology_mapping",
+        "data_view_projection",
+        "domain_source_model",
+        "validated_document_graph",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:0a4ce5f20bd4",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:accepted_context:semantic_concept_payment_fee_report_결제_수수료_09dd92186d:ca48d53d7504",
+      "label": "결제/환불 및 PG 수수료 집계",
+      "candidate_kind": "payment_fee_report",
+      "source_kind": "accepted_semantic_context",
+      "alignment_status": "blocked_basis_definition_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "formula_result_validation_pending",
+        "gaap_ifrs_basis_mapping_required",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "dual_basis_revenue_interpretation_risk",
+        "local_vocabulary_absent_risk",
+        "formula_result_not_recalculated_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "k_gaap_vs_k_ifrs_output_definition",
+        "official_ifrs_revenue_aggregation_definition",
+        "excel_engine_recalculation_sample"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면은 K-GAAP 기준 월 매출 출력인가, K-IFRS 수익인식 계산 보조 표면인가, 또는 둘의 bridge인가?",
+        "공유 후보 판단 전에 Excel 엔진으로 대표 formula 결과를 재계산했는가?"
+      ],
+      "basis_review": {
+        "required": true,
+        "detected_terms": [
+          "계약부채",
+          "선수수익"
+        ],
+        "reason": "K-GAAP-labeled output and K-IFRS-relevant revenue recognition surfaces must be separated before shared promotion."
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_결제_수수료_cell_region_1",
+          "data_view:pipeline_결제_수수료_cell_region_3",
+          "data_view:pipeline_결제_수수료_cell_region_4",
+          "data_view:pipeline_결제_수수료_cell_region_5",
+          "data_view:pipeline_결제_수수료_cell_region_6",
+          "data_view:pipeline_결제_수수료_cell_region_7",
+          "data_view:pipeline_결제_수수료_cell_region_9",
+          "data_view:pipeline_결제_수수료_pivot_pivottable1",
+          "data_view:pipeline_결제_수수료_pivot_피벗_테이블1",
+          "data_view:pipeline_결제_수수료_pivot_피벗_테이블10",
+          "data_view:pipeline_결제_수수료_pivot_피벗_테이블11",
+          "data_view:pipeline_결제_수수료_pivot_피벗_테이블12",
+          "data_view:pipeline_결제_수수료_pivot_피벗_테이블13",
+          "data_view:pipeline_결제_수수료_pivot_피벗_테이블14",
+          "data_view:pipeline_결제_수수료_pivot_피벗_테이블2",
+          "data_view:pipeline_결제_수수료_pivot_피벗_테이블3",
+          "data_view:pipeline_결제_수수료_pivot_피벗_테이블4",
+          "data_view:pipeline_결제_수수료_pivot_피벗_테이블6",
+          "data_view:pipeline_결제_수수료_pivot_피벗_테이블7",
+          "data_view:pipeline_결제_수수료_pivot_피벗_테이블8",
+          "data_view:pipeline_결제_수수료_pivot_피벗_테이블9"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_결제_수수료_cell_region_1",
+          "projection:data_view:pipeline_결제_수수료_cell_region_3",
+          "projection:data_view:pipeline_결제_수수료_cell_region_4",
+          "projection:data_view:pipeline_결제_수수료_cell_region_5",
+          "projection:data_view:pipeline_결제_수수료_cell_region_6",
+          "projection:data_view:pipeline_결제_수수료_cell_region_7",
+          "projection:data_view:pipeline_결제_수수료_cell_region_9",
+          "projection:data_view:pipeline_결제_수수료_pivot_pivottable1",
+          "projection:data_view:pipeline_결제_수수료_pivot_피벗_테이블1",
+          "projection:data_view:pipeline_결제_수수료_pivot_피벗_테이블10",
+          "projection:data_view:pipeline_결제_수수료_pivot_피벗_테이블11",
+          "projection:data_view:pipeline_결제_수수료_pivot_피벗_테이블12",
+          "projection:data_view:pipeline_결제_수수료_pivot_피벗_테이블13",
+          "projection:data_view:pipeline_결제_수수료_pivot_피벗_테이블14",
+          "projection:data_view:pipeline_결제_수수료_pivot_피벗_테이블2",
+          "projection:data_view:pipeline_결제_수수료_pivot_피벗_테이블3",
+          "projection:data_view:pipeline_결제_수수료_pivot_피벗_테이블4",
+          "projection:data_view:pipeline_결제_수수료_pivot_피벗_테이블6",
+          "projection:data_view:pipeline_결제_수수료_pivot_피벗_테이블7",
+          "projection:data_view:pipeline_결제_수수료_pivot_피벗_테이블8",
+          "projection:data_view:pipeline_결제_수수료_pivot_피벗_테이블9"
+        ],
+        "sheets": [
+          "결제&수수료"
+        ],
+        "ranges": [
+          "A1:C11",
+          "A41:H64",
+          "A89:I101",
+          "A104:H112",
+          "A134:H142",
+          "A170:H180",
+          "A198:E231",
+          "A3:B10",
+          "A15:B33",
+          "A200:B203",
+          "A207:B210",
+          "A214:B217",
+          "A221:B224",
+          "A228:B231",
+          "A43:H47",
+          "A55:B64",
+          "A91:H93",
+          "A98:B101",
+          "A106:H109",
+          "A136:H139",
+          "A172:H174"
+        ],
+        "projection_kinds": [
+          "formula_summary_projection",
+          "formula_transform_projection",
+          "pivot_view_projection"
+        ],
+        "roles": [
+          "summary",
+          "transform",
+          "report"
+        ],
+        "sampled_projection_count": 21,
+        "formula_cell_count": 43
+      },
+      "observed_terms": [
+        "Sum of 결제·취소액 (A)",
+        "결제&수수료",
+        "결제/환불",
+        "결제총액",
+        "마이라이트",
+        "부스팅",
+        "상품결제",
+        "카드과세",
+        "카드면세",
+        "퍼블리싱",
+        "포도",
+        "합계 : 결제·취소액 (A)",
+        "환불",
+        "결제",
+        "행 레이블",
+        "B2B",
+        "콘텐츠",
+        "총합계",
+        "PG사",
+        "토스",
+        "합계 : 강의",
+        "합계 : 교재",
+        "합계 : 강의과세",
+        "합계 : 코칭권과세",
+        "합계 : 현물과세",
+        "합계 : 부가세",
+        "가상계좌",
+        "계좌이체",
+        "신용·체크카드",
+        "선수수익_계약부채",
+        "현금과세",
+        "네이버페이",
+        "자체브랜드",
+        "페이코",
+        "PAYCO 포인트",
+        "신용카드",
+        "면세건별",
+        "카카오페이",
+        "CARD",
+        "MONEY"
+      ],
+      "evidence_refs": [
+        "semantic_concept:payment_fee_report_결제_수수료:09dd92186d",
+        "boundary_decision_gate_split_결제_수수료_row_band_1_c1_c2",
+        "boundary_decision_gate_split_결제_수수료_row_band_1_c2_c3",
+        "boundary_decision_gate_split_결제_수수료_row_band_3_c2_c3",
+        "boundary_decision_gate_split_결제_수수료_row_band_3_c6_c7",
+        "boundary_decision_gate_split_결제_수수료_row_band_4_c2_c3",
+        "boundary_decision_gate_split_결제_수수료_row_band_4_c6_c7",
+        "boundary_decision_gate_split_결제_수수료_row_band_4_c8_c9",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5",
+        "data_view:pipeline_결제_수수료_cell_region_1",
+        "data_view:pipeline_결제_수수료_cell_region_3",
+        "data_view:pipeline_결제_수수료_cell_region_4",
+        "data_view:pipeline_결제_수수료_cell_region_5",
+        "data_view:pipeline_결제_수수료_cell_region_6",
+        "data_view:pipeline_결제_수수료_cell_region_7",
+        "data_view:pipeline_결제_수수료_cell_region_9",
+        "data_view:pipeline_결제_수수료_pivot_pivottable1",
+        "data_view:pipeline_결제_수수료_pivot_피벗_테이블1",
+        "data_view:pipeline_결제_수수료_pivot_피벗_테이블10",
+        "data_view:pipeline_결제_수수료_pivot_피벗_테이블11",
+        "data_view:pipeline_결제_수수료_pivot_피벗_테이블12",
+        "data_view:pipeline_결제_수수료_pivot_피벗_테이블13",
+        "data_view:pipeline_결제_수수료_pivot_피벗_테이블14",
+        "data_view:pipeline_결제_수수료_pivot_피벗_테이블2",
+        "data_view:pipeline_결제_수수료_pivot_피벗_테이블3",
+        "data_view:pipeline_결제_수수료_pivot_피벗_테이블4",
+        "data_view:pipeline_결제_수수료_pivot_피벗_테이블6",
+        "data_view:pipeline_결제_수수료_pivot_피벗_테이블7",
+        "data_view:pipeline_결제_수수료_pivot_피벗_테이블8",
+        "data_view:pipeline_결제_수수료_pivot_피벗_테이블9",
+        "gate_target_결제_수수료_cell_region_1_boundary_confirmation",
+        "gate_target_결제_수수료_cell_region_1_formula_summary_visual_alignment",
+        "gate_target_결제_수수료_cell_region_3_boundary_confirmation",
+        "gate_target_결제_수수료_cell_region_4_boundary_confirmation",
+        "gate_target_결제_수수료_pivot_pivottable1_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블10_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블11_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블12_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블13_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블14_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블1_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블2_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블3_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블4_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블6_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블7_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블8_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블9_pivot_cache_visual_alignment",
+        "group_결제_수수료_row_band_1_1",
+        "group_결제_수수료_row_band_1_2",
+        "group_결제_수수료_row_band_3_10",
+        "group_결제_수수료_row_band_3_11",
+        "group_결제_수수료_row_band_3_12",
+        "group_결제_수수료_row_band_3_3",
+        "group_결제_수수료_row_band_3_4",
+        "group_결제_수수료_row_band_3_5",
+        "group_결제_수수료_row_band_3_6",
+        "group_결제_수수료_row_band_4_13",
+        "group_결제_수수료_row_band_4_14",
+        "group_결제_수수료_row_band_4_15",
+        "group_결제_수수료_row_band_4_16",
+        "group_결제_수수료_row_band_4_17",
+        "group_결제_수수료_row_band_4_18",
+        "group_결제_수수료_row_band_5_19",
+        "group_결제_수수료_row_band_5_20",
+        "group_결제_수수료_row_band_5_21",
+        "group_결제_수수료_row_band_6_22",
+        "group_결제_수수료_row_band_7_23",
+        "group_결제_수수료_row_band_7_24",
+        "group_결제_수수료_row_band_7_25",
+        "group_결제_수수료_row_band_7_26",
+        "group_결제_수수료_row_band_7_27",
+        "group_결제_수수료_row_band_9_28",
+        "group_결제_수수료_row_band_9_29",
+        "group_결제_수수료_row_band_9_30",
+        "group_결제_수수료_row_band_9_31",
+        "group_결제_수수료_row_band_9_32",
+        "group_결제_수수료_row_band_9_33",
+        "pipeline_결제_수수료_cell_region_1",
+        "pipeline_결제_수수료_cell_region_5",
+        "pipeline_결제_수수료_cell_region_6",
+        "pipeline_결제_수수료_cell_region_7",
+        "pipeline_결제_수수료_cell_region_9",
+        "pipeline_결제_수수료_pivot_pivottable1",
+        "pipeline_결제_수수료_pivot_피벗_테이블1",
+        "pipeline_결제_수수료_pivot_피벗_테이블10",
+        "pipeline_결제_수수료_pivot_피벗_테이블11",
+        "pipeline_결제_수수료_pivot_피벗_테이블12",
+        "pipeline_결제_수수료_pivot_피벗_테이블13",
+        "pipeline_결제_수수료_pivot_피벗_테이블14",
+        "pipeline_결제_수수료_pivot_피벗_테이블2",
+        "pipeline_결제_수수료_pivot_피벗_테이블3",
+        "pipeline_결제_수수료_pivot_피벗_테이블4",
+        "pipeline_결제_수수료_pivot_피벗_테이블6",
+        "pipeline_결제_수수료_pivot_피벗_테이블7",
+        "pipeline_결제_수수료_pivot_피벗_테이블8",
+        "pipeline_결제_수수료_pivot_피벗_테이블9",
+        "rel_결제_수수료_pivot_pivottable1__pivot_cache_source",
+        "rel_결제_수수료_pivot_피벗_테이블10__pivot_cache_source",
+        "rel_결제_수수료_pivot_피벗_테이블11__pivot_cache_source",
+        "rel_결제_수수료_pivot_피벗_테이블12__pivot_cache_source",
+        "rel_결제_수수료_pivot_피벗_테이블13__pivot_cache_source",
+        "rel_결제_수수료_pivot_피벗_테이블14__pivot_cache_source",
+        "rel_결제_수수료_pivot_피벗_테이블1__pivot_cache_source",
+        "rel_결제_수수료_pivot_피벗_테이블2__pivot_cache_source",
+        "rel_결제_수수료_pivot_피벗_테이블3__pivot_cache_source",
+        "rel_결제_수수료_pivot_피벗_테이블4__pivot_cache_source",
+        "rel_결제_수수료_pivot_피벗_테이블6__pivot_cache_source",
+        "rel_결제_수수료_pivot_피벗_테이블7__pivot_cache_source",
+        "rel_결제_수수료_pivot_피벗_테이블8__pivot_cache_source",
+        "rel_결제_수수료_pivot_피벗_테이블9__pivot_cache_source",
+        "result_gate_target_결제_수수료_cell_region_1_boundary_confirmation",
+        "result_gate_target_결제_수수료_cell_region_1_formula_summary_visual_alignment",
+        "result_gate_target_결제_수수료_pivot_pivottable1_pivot_cache_visual_alignment",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블10_pivot_cache_visual_alignment",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블11_pivot_cache_visual_alignment",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블12_pivot_cache_visual_alignment",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블13_pivot_cache_visual_alignment",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블14_pivot_cache_visual_alignment",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블1_pivot_cache_visual_alignment",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블2_pivot_cache_visual_alignment",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블3_pivot_cache_visual_alignment",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블4_pivot_cache_visual_alignment",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블6_pivot_cache_visual_alignment",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블7_pivot_cache_visual_alignment",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블8_pivot_cache_visual_alignment",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블9_pivot_cache_visual_alignment",
+        "role_validation_pipeline_결제_수수료_cell_region_1",
+        "role_validation_pipeline_결제_수수료_cell_region_5",
+        "role_validation_pipeline_결제_수수료_cell_region_6",
+        "role_validation_pipeline_결제_수수료_cell_region_7",
+        "role_validation_pipeline_결제_수수료_cell_region_9",
+        "role_validation_pipeline_결제_수수료_pivot_pivottable1",
+        "role_validation_pipeline_결제_수수료_pivot_피벗_테이블1",
+        "role_validation_pipeline_결제_수수료_pivot_피벗_테이블10",
+        "role_validation_pipeline_결제_수수료_pivot_피벗_테이블11",
+        "role_validation_pipeline_결제_수수료_pivot_피벗_테이블12",
+        "role_validation_pipeline_결제_수수료_pivot_피벗_테이블13",
+        "role_validation_pipeline_결제_수수료_pivot_피벗_테이블14",
+        "role_validation_pipeline_결제_수수료_pivot_피벗_테이블2",
+        "role_validation_pipeline_결제_수수료_pivot_피벗_테이블3",
+        "role_validation_pipeline_결제_수수료_pivot_피벗_테이블4",
+        "role_validation_pipeline_결제_수수료_pivot_피벗_테이블6",
+        "role_validation_pipeline_결제_수수료_pivot_피벗_테이블7",
+        "role_validation_pipeline_결제_수수료_pivot_피벗_테이블8",
+        "role_validation_pipeline_결제_수수료_pivot_피벗_테이블9",
+        "group_결제_수수료_row_band_3_7",
+        "group_결제_수수료_row_band_3_8",
+        "group_결제_수수료_row_band_3_9",
+        "pipeline_결제_수수료_cell_region_3",
+        "result_gate_target_결제_수수료_cell_region_3_boundary_confirmation",
+        "role_validation_pipeline_결제_수수료_cell_region_3",
+        "pipeline_결제_수수료_cell_region_4",
+        "result_gate_target_결제_수수료_cell_region_4_boundary_confirmation",
+        "role_validation_pipeline_결제_수수료_cell_region_4"
+      ],
+      "source_artifact_refs": [
+        "llm_proposals",
+        "llm_proposal_validation",
+        "document_ontology_mapping",
+        "data_view_projection",
+        "domain_source_model",
+        "validated_document_graph",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:42a492882987",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:accepted_context:semantic_concept_payment_transaction_detail_결제상세_3360e013ef:9586ca1b49ee",
+      "label": "결제 상세 거래 원장",
+      "candidate_kind": "transaction_fact_table",
+      "source_kind": "accepted_semantic_context",
+      "alignment_status": "blocked_basis_definition_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "formula_result_validation_pending",
+        "gaap_ifrs_basis_mapping_required",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "dual_basis_revenue_interpretation_risk",
+        "local_vocabulary_absent_risk",
+        "formula_result_not_recalculated_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "k_gaap_vs_k_ifrs_output_definition",
+        "official_ifrs_revenue_aggregation_definition",
+        "excel_engine_recalculation_sample"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면은 K-GAAP 기준 월 매출 출력인가, K-IFRS 수익인식 계산 보조 표면인가, 또는 둘의 bridge인가?",
+        "공유 후보 판단 전에 Excel 엔진으로 대표 formula 결과를 재계산했는가?"
+      ],
+      "basis_review": {
+        "required": true,
+        "detected_terms": [
+          "환불부채"
+        ],
+        "reason": "K-GAAP-labeled output and K-IFRS-relevant revenue recognition surfaces must be separated before shared promotion."
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_결제상세_cell_region_1"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_결제상세_cell_region_1"
+        ],
+        "sheets": [
+          "결제상세"
+        ],
+        "ranges": [
+          "A1:AX20"
+        ],
+        "projection_kinds": [
+          "formula_summary_projection"
+        ],
+        "roles": [
+          "summary"
+        ],
+        "sampled_projection_count": 1,
+        "formula_cell_count": 26
+      },
+      "observed_terms": [
+        "TID/상품주문번호",
+        "결제상세",
+        "결제수단",
+        "교재 환불부채",
+        "유하다요 구분값",
+        "NO",
+        "PG사",
+        "부문",
+        "브랜드",
+        "상점아이디(MID)",
+        "정산액 입금일",
+        "매출일",
+        "결제/취소일",
+        "주문번호",
+        "결제상태",
+        "결제기관",
+        "구매자명",
+        "구매자 아이디",
+        "토스",
+        "퍼블리싱",
+        "유하다요",
+        "im_yuhadayo",
+        "2026-03-05",
+        "2026-02-28",
+        "imp_073604487135",
+        "신용·체크카드",
+        "완료",
+        "국민카드",
+        "Yunkyung",
+        "결제",
+        "imp_833517466576",
+        "문영민",
+        "imp_355302391690",
+        "현대카드",
+        "이수진",
+        "imp_380552097593",
+        "이대웅",
+        "imp_384831894097",
+        "가상계좌",
+        "부산"
+      ],
+      "evidence_refs": [
+        "semantic_concept:payment_transaction_detail_결제상세:3360e013ef",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5",
+        "boundary_decision_gate_split_유하다요_row_band_1_c11_c12",
+        "boundary_decision_gate_split_유하다요_row_band_1_c14_c15",
+        "boundary_decision_gate_split_유하다요_row_band_1_c15_c16",
+        "boundary_decision_gate_split_유하다요_row_band_1_c16_c17",
+        "boundary_decision_gate_split_유하다요_row_band_1_c4_c5",
+        "data_view:pipeline_결제상세_cell_region_1",
+        "gate_target_결제상세_cell_region_1_boundary_confirmation",
+        "gate_target_결제상세_cell_region_1_formula_region_coherence",
+        "gate_target_결제상세_cell_region_1_formula_summary_visual_alignment",
+        "group_결제상세_row_band_1_1",
+        "group_결제상세_row_band_1_10",
+        "group_결제상세_row_band_1_100",
+        "group_결제상세_row_band_1_101",
+        "group_결제상세_row_band_1_102",
+        "group_결제상세_row_band_1_103",
+        "group_결제상세_row_band_1_104",
+        "group_결제상세_row_band_1_105",
+        "group_결제상세_row_band_1_106",
+        "group_결제상세_row_band_1_107",
+        "group_결제상세_row_band_1_108",
+        "group_결제상세_row_band_1_109",
+        "group_결제상세_row_band_1_11",
+        "group_결제상세_row_band_1_110",
+        "group_결제상세_row_band_1_111",
+        "group_결제상세_row_band_1_112",
+        "group_결제상세_row_band_1_113",
+        "group_결제상세_row_band_1_114",
+        "group_결제상세_row_band_1_115",
+        "group_결제상세_row_band_1_116",
+        "group_결제상세_row_band_1_117",
+        "group_결제상세_row_band_1_118",
+        "group_결제상세_row_band_1_119",
+        "group_결제상세_row_band_1_12",
+        "group_결제상세_row_band_1_120",
+        "group_결제상세_row_band_1_121",
+        "group_결제상세_row_band_1_122",
+        "group_결제상세_row_band_1_123",
+        "group_결제상세_row_band_1_124",
+        "group_결제상세_row_band_1_125",
+        "group_결제상세_row_band_1_126",
+        "group_결제상세_row_band_1_127",
+        "group_결제상세_row_band_1_128",
+        "group_결제상세_row_band_1_129",
+        "group_결제상세_row_band_1_13",
+        "group_결제상세_row_band_1_130",
+        "group_결제상세_row_band_1_131",
+        "group_결제상세_row_band_1_132",
+        "group_결제상세_row_band_1_133",
+        "group_결제상세_row_band_1_134",
+        "group_결제상세_row_band_1_135",
+        "group_결제상세_row_band_1_136",
+        "group_결제상세_row_band_1_137",
+        "group_결제상세_row_band_1_138",
+        "group_결제상세_row_band_1_139",
+        "group_결제상세_row_band_1_14",
+        "group_결제상세_row_band_1_140",
+        "group_결제상세_row_band_1_141",
+        "group_결제상세_row_band_1_142",
+        "group_결제상세_row_band_1_143",
+        "group_결제상세_row_band_1_144",
+        "group_결제상세_row_band_1_145",
+        "group_결제상세_row_band_1_146",
+        "group_결제상세_row_band_1_147",
+        "group_결제상세_row_band_1_148",
+        "group_결제상세_row_band_1_149",
+        "group_결제상세_row_band_1_15",
+        "group_결제상세_row_band_1_150",
+        "group_결제상세_row_band_1_16",
+        "group_결제상세_row_band_1_17",
+        "group_결제상세_row_band_1_18",
+        "group_결제상세_row_band_1_19",
+        "group_결제상세_row_band_1_2",
+        "group_결제상세_row_band_1_20",
+        "group_결제상세_row_band_1_21",
+        "group_결제상세_row_band_1_22",
+        "group_결제상세_row_band_1_23",
+        "group_결제상세_row_band_1_24",
+        "group_결제상세_row_band_1_25",
+        "group_결제상세_row_band_1_26",
+        "group_결제상세_row_band_1_27",
+        "group_결제상세_row_band_1_28",
+        "group_결제상세_row_band_1_29",
+        "group_결제상세_row_band_1_3",
+        "group_결제상세_row_band_1_30",
+        "group_결제상세_row_band_1_31",
+        "group_결제상세_row_band_1_32",
+        "group_결제상세_row_band_1_33",
+        "group_결제상세_row_band_1_34",
+        "group_결제상세_row_band_1_35",
+        "group_결제상세_row_band_1_36",
+        "group_결제상세_row_band_1_37",
+        "group_결제상세_row_band_1_38",
+        "group_결제상세_row_band_1_39",
+        "group_결제상세_row_band_1_4",
+        "group_결제상세_row_band_1_40",
+        "group_결제상세_row_band_1_41",
+        "group_결제상세_row_band_1_42",
+        "group_결제상세_row_band_1_43",
+        "group_결제상세_row_band_1_44",
+        "group_결제상세_row_band_1_45",
+        "group_결제상세_row_band_1_46",
+        "group_결제상세_row_band_1_47",
+        "group_결제상세_row_band_1_48",
+        "group_결제상세_row_band_1_49",
+        "group_결제상세_row_band_1_5",
+        "group_결제상세_row_band_1_50",
+        "group_결제상세_row_band_1_51",
+        "group_결제상세_row_band_1_52",
+        "group_결제상세_row_band_1_53",
+        "group_결제상세_row_band_1_54",
+        "group_결제상세_row_band_1_55",
+        "group_결제상세_row_band_1_56",
+        "group_결제상세_row_band_1_57",
+        "group_결제상세_row_band_1_58",
+        "group_결제상세_row_band_1_59",
+        "group_결제상세_row_band_1_6",
+        "group_결제상세_row_band_1_60",
+        "group_결제상세_row_band_1_61",
+        "group_결제상세_row_band_1_62",
+        "group_결제상세_row_band_1_63",
+        "group_결제상세_row_band_1_64",
+        "group_결제상세_row_band_1_65",
+        "group_결제상세_row_band_1_66",
+        "group_결제상세_row_band_1_67",
+        "group_결제상세_row_band_1_68",
+        "group_결제상세_row_band_1_69",
+        "group_결제상세_row_band_1_7",
+        "group_결제상세_row_band_1_70",
+        "group_결제상세_row_band_1_71",
+        "group_결제상세_row_band_1_72",
+        "group_결제상세_row_band_1_73",
+        "group_결제상세_row_band_1_74",
+        "group_결제상세_row_band_1_75",
+        "group_결제상세_row_band_1_76",
+        "group_결제상세_row_band_1_77",
+        "group_결제상세_row_band_1_78",
+        "group_결제상세_row_band_1_79",
+        "group_결제상세_row_band_1_8",
+        "group_결제상세_row_band_1_80",
+        "group_결제상세_row_band_1_81",
+        "group_결제상세_row_band_1_82",
+        "group_결제상세_row_band_1_83",
+        "group_결제상세_row_band_1_84",
+        "group_결제상세_row_band_1_85",
+        "group_결제상세_row_band_1_86",
+        "group_결제상세_row_band_1_87",
+        "group_결제상세_row_band_1_88",
+        "group_결제상세_row_band_1_89",
+        "group_결제상세_row_band_1_9",
+        "group_결제상세_row_band_1_90",
+        "group_결제상세_row_band_1_91",
+        "group_결제상세_row_band_1_92",
+        "group_결제상세_row_band_1_93",
+        "group_결제상세_row_band_1_94",
+        "group_결제상세_row_band_1_95",
+        "group_결제상세_row_band_1_96",
+        "group_결제상세_row_band_1_97",
+        "group_결제상세_row_band_1_98",
+        "group_결제상세_row_band_1_99",
+        "pipeline_결제상세_cell_region_1",
+        "result_gate_target_결제상세_cell_region_1_boundary_confirmation",
+        "result_gate_target_결제상세_cell_region_1_formula_region_coherence",
+        "result_gate_target_결제상세_cell_region_1_formula_summary_visual_alignment",
+        "role_validation_pipeline_결제상세_cell_region_1"
+      ],
+      "source_artifact_refs": [
+        "llm_proposals",
+        "llm_proposal_validation",
+        "document_ontology_mapping",
+        "data_view_projection",
+        "domain_source_model",
+        "validated_document_graph",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:8a811dd11d24",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:accepted_context:semantic_concept_revenue_recognition_60_day_schedule_수익인식60일_1d259e27c9:a4c8a0ad674f",
+      "label": "60일 수익인식 배분 스케줄",
+      "candidate_kind": "revenue_recognition_schedule",
+      "source_kind": "accepted_semantic_context",
+      "alignment_status": "blocked_basis_definition_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "formula_result_validation_pending",
+        "gaap_ifrs_basis_mapping_required",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "dual_basis_revenue_interpretation_risk",
+        "local_vocabulary_absent_risk",
+        "formula_result_not_recalculated_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "k_gaap_vs_k_ifrs_output_definition",
+        "official_ifrs_revenue_aggregation_definition",
+        "excel_engine_recalculation_sample"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면은 K-GAAP 기준 월 매출 출력인가, K-IFRS 수익인식 계산 보조 표면인가, 또는 둘의 bridge인가?",
+        "공유 후보 판단 전에 Excel 엔진으로 대표 formula 결과를 재계산했는가?"
+      ],
+      "basis_review": {
+        "required": true,
+        "detected_terms": [
+          "수익인식",
+          "환불부채",
+          "환급부채",
+          "해당 매출"
+        ],
+        "reason": "K-GAAP-labeled output and K-IFRS-relevant revenue recognition surfaces must be separated before shared promotion."
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_수익인식60일_cell_region_1",
+          "data_view:pipeline_수익인식60일_cell_region_2"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_수익인식60일_cell_region_1",
+          "projection:data_view:pipeline_수익인식60일_cell_region_2"
+        ],
+        "sheets": [
+          "수익인식60일"
+        ],
+        "ranges": [
+          "A1:AB20",
+          "AD1:AI20"
+        ],
+        "projection_kinds": [
+          "formula_summary_projection",
+          "formula_transform_projection"
+        ],
+        "roles": [
+          "summary",
+          "transform"
+        ],
+        "sampled_projection_count": 2,
+        "formula_cell_count": 83
+      },
+      "observed_terms": [
+        "환급부채",
+        "수익인식60일",
+        "환불부채대상",
+        "DATA",
+        "해당 일수",
+        "해당 매출",
+        "자체브랜드",
+        "콘텐츠",
+        "아임포트주문번호",
+        "결제년도",
+        "결제월",
+        "매출일자",
+        "강의결제액",
+        "교육과정명",
+        "부문",
+        "브랜드",
+        "환불부채",
+        "코스 개강일",
+        "코스 개강일2",
+        "코스 종강일",
+        "수익인식방법",
+        "코스 일수",
+        "일수당 결제금액",
+        "imp_264931089033",
+        "[빅세일] 비즈니스 영어 마스터팩(BIZ,BEF)",
+        "마이라이트",
+        "뉴스프레소",
+        "2026-02-28",
+        "imp_517346054780",
+        "AI 플리 코칭권 패키지 (실물, 평생)",
+        "imp_773984400568",
+        "가벼운 일본어 챌린지 패키지",
+        "imp_960340329681",
+        "[데뷔 패키지] 온라인 한국어 튜터 데뷔 프로젝트",
+        "imp_302229781645",
+        "스페인어 드림팩 (평생소장/실물+디지털/보따리스 포함)",
+        "imp_282860967677",
+        "더빙 성우 데뷔 학습지 (평생 / 실물)",
+        "imp_028429849753",
+        "2차 얼리버드)100만 조회수 터지는 AI 수익화"
+      ],
+      "evidence_refs": [
+        "semantic_concept:revenue_recognition_60_day_schedule_수익인식60일:1d259e27c9",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c10_c11",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c11_c12",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c12_c13",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c13_c14",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c14_c15",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c16_c17",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c17_c18",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c1_c2",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c20_c21",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c21_c22",
+        "data_view:pipeline_수익인식60일_cell_region_1",
+        "data_view:pipeline_수익인식60일_cell_region_2",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c24_c25",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c25_c26",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c28_c30",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c2_c3",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c3_c4",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c4_c5",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c6_c7",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c8_c9",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c9_c10",
+        "gate_target_수익인식60일_cell_region_1_boundary_confirmation",
+        "gate_target_수익인식60일_cell_region_1_formula_region_coherence",
+        "gate_target_수익인식60일_cell_region_1_formula_summary_visual_alignment",
+        "group_수익인식60일_row_band_1_1",
+        "group_수익인식60일_row_band_1_10",
+        "group_수익인식60일_row_band_1_11",
+        "group_수익인식60일_row_band_1_12",
+        "group_수익인식60일_row_band_1_13",
+        "group_수익인식60일_row_band_1_14",
+        "group_수익인식60일_row_band_1_15",
+        "group_수익인식60일_row_band_1_18",
+        "group_수익인식60일_row_band_1_19",
+        "group_수익인식60일_row_band_1_2",
+        "group_수익인식60일_row_band_1_20",
+        "group_수익인식60일_row_band_1_21",
+        "group_수익인식60일_row_band_1_22",
+        "group_수익인식60일_row_band_1_23",
+        "group_수익인식60일_row_band_1_24",
+        "group_수익인식60일_row_band_1_25",
+        "group_수익인식60일_row_band_1_26",
+        "group_수익인식60일_row_band_1_27",
+        "group_수익인식60일_row_band_1_28",
+        "group_수익인식60일_row_band_1_29",
+        "group_수익인식60일_row_band_1_3",
+        "group_수익인식60일_row_band_1_30",
+        "group_수익인식60일_row_band_1_31",
+        "group_수익인식60일_row_band_1_32",
+        "group_수익인식60일_row_band_1_33",
+        "group_수익인식60일_row_band_1_34",
+        "group_수익인식60일_row_band_1_35",
+        "group_수익인식60일_row_band_1_36",
+        "group_수익인식60일_row_band_1_37",
+        "group_수익인식60일_row_band_1_38",
+        "group_수익인식60일_row_band_1_39",
+        "group_수익인식60일_row_band_1_4",
+        "group_수익인식60일_row_band_1_40",
+        "group_수익인식60일_row_band_1_41",
+        "group_수익인식60일_row_band_1_42",
+        "group_수익인식60일_row_band_1_43",
+        "group_수익인식60일_row_band_1_44",
+        "group_수익인식60일_row_band_1_45",
+        "group_수익인식60일_row_band_1_46",
+        "group_수익인식60일_row_band_1_47",
+        "group_수익인식60일_row_band_1_48",
+        "group_수익인식60일_row_band_1_49",
+        "group_수익인식60일_row_band_1_5",
+        "group_수익인식60일_row_band_1_50",
+        "group_수익인식60일_row_band_1_51",
+        "group_수익인식60일_row_band_1_52",
+        "group_수익인식60일_row_band_1_53",
+        "group_수익인식60일_row_band_1_54",
+        "group_수익인식60일_row_band_1_55",
+        "group_수익인식60일_row_band_1_56",
+        "group_수익인식60일_row_band_1_57",
+        "group_수익인식60일_row_band_1_58",
+        "group_수익인식60일_row_band_1_59",
+        "group_수익인식60일_row_band_1_6",
+        "group_수익인식60일_row_band_1_60",
+        "group_수익인식60일_row_band_1_61",
+        "group_수익인식60일_row_band_1_62",
+        "group_수익인식60일_row_band_1_63",
+        "group_수익인식60일_row_band_1_64",
+        "group_수익인식60일_row_band_1_65",
+        "group_수익인식60일_row_band_1_66",
+        "group_수익인식60일_row_band_1_67",
+        "group_수익인식60일_row_band_1_68",
+        "group_수익인식60일_row_band_1_69",
+        "group_수익인식60일_row_band_1_7",
+        "group_수익인식60일_row_band_1_70",
+        "group_수익인식60일_row_band_1_71",
+        "group_수익인식60일_row_band_1_72",
+        "group_수익인식60일_row_band_1_73",
+        "group_수익인식60일_row_band_1_74",
+        "group_수익인식60일_row_band_1_75",
+        "group_수익인식60일_row_band_1_76",
+        "group_수익인식60일_row_band_1_77",
+        "group_수익인식60일_row_band_1_8",
+        "group_수익인식60일_row_band_1_9",
+        "pipeline_수익인식60일_cell_region_1",
+        "result_gate_target_수익인식60일_cell_region_1_boundary_confirmation",
+        "result_gate_target_수익인식60일_cell_region_1_formula_region_coherence",
+        "result_gate_target_수익인식60일_cell_region_1_formula_summary_visual_alignment",
+        "role_validation_pipeline_수익인식60일_cell_region_1",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c31_c32",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c32_c33",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c34_c35",
+        "gate_target_수익인식60일_cell_region_2_boundary_confirmation",
+        "gate_target_수익인식60일_cell_region_2_formula_region_coherence",
+        "group_수익인식60일_row_band_1_16",
+        "group_수익인식60일_row_band_1_17",
+        "pipeline_수익인식60일_cell_region_2",
+        "result_gate_target_수익인식60일_cell_region_2_boundary_confirmation",
+        "result_gate_target_수익인식60일_cell_region_2_formula_region_coherence",
+        "role_validation_pipeline_수익인식60일_cell_region_2"
+      ],
+      "source_artifact_refs": [
+        "llm_proposals",
+        "llm_proposal_validation",
+        "document_ontology_mapping",
+        "data_view_projection",
+        "domain_source_model",
+        "validated_document_graph",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:adc11c88db02",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:unmapped_data_view:data_view_pipeline_당월산식_cell_region_1:16e2e8b280e3",
+      "label": "당월산식 summary surface A1:AZ20",
+      "candidate_kind": "unmapped_formula_summary_surface",
+      "source_kind": "unmapped_data_view_surface",
+      "alignment_status": "blocked_semantic_label_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "semantic_label_pending",
+        "formula_result_validation_pending",
+        "gaap_ifrs_basis_mapping_required",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "dual_basis_revenue_interpretation_risk",
+        "local_vocabulary_absent_risk",
+        "unmapped_semantic_surface_risk",
+        "formula_result_not_recalculated_risk",
+        "no_existing_general_domain_alignment_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "human_confirmed_semantic_label",
+        "k_gaap_vs_k_ifrs_output_definition",
+        "official_ifrs_revenue_aggregation_definition",
+        "excel_engine_recalculation_sample"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면의 업무 의미와 canonical label은 무엇인가?",
+        "이 표면은 K-GAAP 기준 월 매출 출력인가, K-IFRS 수익인식 계산 보조 표면인가, 또는 둘의 bridge인가?",
+        "공유 후보 판단 전에 Excel 엔진으로 대표 formula 결과를 재계산했는가?"
+      ],
+      "basis_review": {
+        "required": true,
+        "detected_terms": [
+          "수익인식",
+          "해당 매출"
+        ],
+        "reason": "K-GAAP-labeled output and K-IFRS-relevant revenue recognition surfaces must be separated before shared promotion."
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_당월산식_cell_region_1"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_당월산식_cell_region_1"
+        ],
+        "sheets": [
+          "당월산식"
+        ],
+        "ranges": [
+          "A1:AZ20"
+        ],
+        "projection_kinds": [
+          "formula_summary_projection"
+        ],
+        "roles": [
+          "summary"
+        ],
+        "sampled_projection_count": 1,
+        "formula_cell_count": 87
+      },
+      "observed_terms": [
+        "당월산식",
+        "DATA",
+        "해당 일수",
+        "해당 매출",
+        "365일 수정",
+        "아임포트주문번호",
+        "결제년도",
+        "결제월",
+        "매출일자",
+        "강의결제액",
+        "교육과정명",
+        "부문",
+        "브랜드",
+        "코스 개강일",
+        "코스 개강일2",
+        "코스 종강일",
+        "수익인식방법",
+        "코스 일수",
+        "일수당 결제금액",
+        "무의미",
+        "imp_073604487135",
+        "2026 NEW 전강좌 올패키지 MAX",
+        "퍼블리싱",
+        "유하다요",
+        "imp_833517466576",
+        "imp_355302391690",
+        "imp_380552097593",
+        "imp_384831894097",
+        "2026 JLPT 합격패키지",
+        "imp_917309141624"
+      ],
+      "evidence_refs": [
+        "data_view:pipeline_당월산식_cell_region_1",
+        "boundary_decision_gate_split_당월산식_row_band_1_c10_c11",
+        "boundary_decision_gate_split_당월산식_row_band_1_c11_c12",
+        "boundary_decision_gate_split_당월산식_row_band_1_c12_c13",
+        "boundary_decision_gate_split_당월산식_row_band_1_c14_c15",
+        "boundary_decision_gate_split_당월산식_row_band_1_c15_c16",
+        "boundary_decision_gate_split_당월산식_row_band_1_c1_c2",
+        "boundary_decision_gate_split_당월산식_row_band_1_c2_c3",
+        "boundary_decision_gate_split_당월산식_row_band_1_c33_c34",
+        "boundary_decision_gate_split_당월산식_row_band_1_c34_c35",
+        "boundary_decision_gate_split_당월산식_row_band_1_c3_c4",
+        "boundary_decision_gate_split_당월산식_row_band_1_c4_c5",
+        "boundary_decision_gate_split_당월산식_row_band_1_c6_c7",
+        "boundary_decision_gate_split_당월산식_row_band_1_c8_c9",
+        "boundary_decision_gate_split_당월산식_row_band_1_c9_c10",
+        "gate_target_당월산식_cell_region_1_boundary_confirmation",
+        "gate_target_당월산식_cell_region_1_formula_region_coherence",
+        "gate_target_당월산식_cell_region_1_formula_summary_visual_alignment",
+        "group_당월산식_row_band_1_1",
+        "group_당월산식_row_band_1_10",
+        "group_당월산식_row_band_1_100",
+        "group_당월산식_row_band_1_101",
+        "group_당월산식_row_band_1_102",
+        "group_당월산식_row_band_1_103",
+        "group_당월산식_row_band_1_104",
+        "group_당월산식_row_band_1_105",
+        "group_당월산식_row_band_1_106",
+        "group_당월산식_row_band_1_107",
+        "group_당월산식_row_band_1_108",
+        "group_당월산식_row_band_1_109",
+        "group_당월산식_row_band_1_11",
+        "group_당월산식_row_band_1_110",
+        "group_당월산식_row_band_1_111",
+        "group_당월산식_row_band_1_112",
+        "group_당월산식_row_band_1_113",
+        "group_당월산식_row_band_1_114",
+        "group_당월산식_row_band_1_115",
+        "group_당월산식_row_band_1_116",
+        "group_당월산식_row_band_1_117",
+        "group_당월산식_row_band_1_118",
+        "group_당월산식_row_band_1_119",
+        "group_당월산식_row_band_1_12",
+        "group_당월산식_row_band_1_120",
+        "group_당월산식_row_band_1_121",
+        "group_당월산식_row_band_1_122",
+        "group_당월산식_row_band_1_123",
+        "group_당월산식_row_band_1_124",
+        "group_당월산식_row_band_1_125",
+        "group_당월산식_row_band_1_126",
+        "group_당월산식_row_band_1_127",
+        "group_당월산식_row_band_1_128",
+        "group_당월산식_row_band_1_129",
+        "group_당월산식_row_band_1_13",
+        "group_당월산식_row_band_1_130",
+        "group_당월산식_row_band_1_131",
+        "group_당월산식_row_band_1_132",
+        "group_당월산식_row_band_1_133",
+        "group_당월산식_row_band_1_134",
+        "group_당월산식_row_band_1_135",
+        "group_당월산식_row_band_1_136",
+        "group_당월산식_row_band_1_137",
+        "group_당월산식_row_band_1_138",
+        "group_당월산식_row_band_1_139",
+        "group_당월산식_row_band_1_14",
+        "group_당월산식_row_band_1_140",
+        "group_당월산식_row_band_1_141",
+        "group_당월산식_row_band_1_142",
+        "group_당월산식_row_band_1_143",
+        "group_당월산식_row_band_1_144",
+        "group_당월산식_row_band_1_145",
+        "group_당월산식_row_band_1_146",
+        "group_당월산식_row_band_1_147",
+        "group_당월산식_row_band_1_148",
+        "group_당월산식_row_band_1_149",
+        "group_당월산식_row_band_1_15",
+        "group_당월산식_row_band_1_150",
+        "group_당월산식_row_band_1_151",
+        "group_당월산식_row_band_1_152",
+        "group_당월산식_row_band_1_153",
+        "group_당월산식_row_band_1_154",
+        "group_당월산식_row_band_1_155",
+        "group_당월산식_row_band_1_156",
+        "group_당월산식_row_band_1_157",
+        "group_당월산식_row_band_1_158",
+        "group_당월산식_row_band_1_159",
+        "group_당월산식_row_band_1_16",
+        "group_당월산식_row_band_1_160",
+        "group_당월산식_row_band_1_161",
+        "group_당월산식_row_band_1_162",
+        "group_당월산식_row_band_1_163",
+        "group_당월산식_row_band_1_164",
+        "group_당월산식_row_band_1_165",
+        "group_당월산식_row_band_1_166",
+        "group_당월산식_row_band_1_167",
+        "group_당월산식_row_band_1_168",
+        "group_당월산식_row_band_1_169",
+        "group_당월산식_row_band_1_17",
+        "group_당월산식_row_band_1_170",
+        "group_당월산식_row_band_1_171",
+        "group_당월산식_row_band_1_172",
+        "group_당월산식_row_band_1_173",
+        "group_당월산식_row_band_1_174",
+        "group_당월산식_row_band_1_175",
+        "group_당월산식_row_band_1_176",
+        "group_당월산식_row_band_1_177",
+        "group_당월산식_row_band_1_178",
+        "group_당월산식_row_band_1_179",
+        "group_당월산식_row_band_1_18",
+        "group_당월산식_row_band_1_180",
+        "group_당월산식_row_band_1_181",
+        "group_당월산식_row_band_1_182",
+        "group_당월산식_row_band_1_183",
+        "group_당월산식_row_band_1_184",
+        "group_당월산식_row_band_1_185",
+        "group_당월산식_row_band_1_186",
+        "group_당월산식_row_band_1_187",
+        "group_당월산식_row_band_1_188",
+        "group_당월산식_row_band_1_189",
+        "group_당월산식_row_band_1_19",
+        "group_당월산식_row_band_1_190",
+        "group_당월산식_row_band_1_191",
+        "group_당월산식_row_band_1_192",
+        "group_당월산식_row_band_1_193",
+        "group_당월산식_row_band_1_194",
+        "group_당월산식_row_band_1_195",
+        "group_당월산식_row_band_1_196",
+        "group_당월산식_row_band_1_197",
+        "group_당월산식_row_band_1_198",
+        "group_당월산식_row_band_1_199",
+        "group_당월산식_row_band_1_2",
+        "group_당월산식_row_band_1_20",
+        "group_당월산식_row_band_1_200",
+        "group_당월산식_row_band_1_201",
+        "group_당월산식_row_band_1_202",
+        "group_당월산식_row_band_1_203",
+        "group_당월산식_row_band_1_204",
+        "group_당월산식_row_band_1_205",
+        "group_당월산식_row_band_1_206",
+        "group_당월산식_row_band_1_207",
+        "group_당월산식_row_band_1_208",
+        "group_당월산식_row_band_1_209",
+        "group_당월산식_row_band_1_21",
+        "group_당월산식_row_band_1_210",
+        "group_당월산식_row_band_1_211",
+        "group_당월산식_row_band_1_212",
+        "group_당월산식_row_band_1_213",
+        "group_당월산식_row_band_1_214",
+        "group_당월산식_row_band_1_215",
+        "group_당월산식_row_band_1_216",
+        "group_당월산식_row_band_1_217",
+        "group_당월산식_row_band_1_218",
+        "group_당월산식_row_band_1_219",
+        "group_당월산식_row_band_1_22",
+        "group_당월산식_row_band_1_220",
+        "group_당월산식_row_band_1_221",
+        "group_당월산식_row_band_1_222",
+        "group_당월산식_row_band_1_223",
+        "group_당월산식_row_band_1_224",
+        "group_당월산식_row_band_1_225",
+        "group_당월산식_row_band_1_226",
+        "group_당월산식_row_band_1_227",
+        "group_당월산식_row_band_1_228",
+        "group_당월산식_row_band_1_229",
+        "group_당월산식_row_band_1_23",
+        "group_당월산식_row_band_1_230",
+        "group_당월산식_row_band_1_231",
+        "group_당월산식_row_band_1_232",
+        "group_당월산식_row_band_1_233",
+        "group_당월산식_row_band_1_234",
+        "group_당월산식_row_band_1_235",
+        "group_당월산식_row_band_1_236",
+        "group_당월산식_row_band_1_237",
+        "group_당월산식_row_band_1_238",
+        "group_당월산식_row_band_1_239",
+        "group_당월산식_row_band_1_24",
+        "group_당월산식_row_band_1_240",
+        "group_당월산식_row_band_1_241",
+        "group_당월산식_row_band_1_242",
+        "group_당월산식_row_band_1_243",
+        "group_당월산식_row_band_1_244",
+        "group_당월산식_row_band_1_245",
+        "group_당월산식_row_band_1_246",
+        "group_당월산식_row_band_1_247",
+        "group_당월산식_row_band_1_248",
+        "group_당월산식_row_band_1_249",
+        "group_당월산식_row_band_1_25",
+        "group_당월산식_row_band_1_250",
+        "group_당월산식_row_band_1_251",
+        "group_당월산식_row_band_1_252",
+        "group_당월산식_row_band_1_253",
+        "group_당월산식_row_band_1_254",
+        "group_당월산식_row_band_1_255",
+        "group_당월산식_row_band_1_256",
+        "group_당월산식_row_band_1_257",
+        "group_당월산식_row_band_1_258",
+        "group_당월산식_row_band_1_259",
+        "group_당월산식_row_band_1_26",
+        "group_당월산식_row_band_1_260",
+        "group_당월산식_row_band_1_261",
+        "group_당월산식_row_band_1_262",
+        "group_당월산식_row_band_1_263",
+        "group_당월산식_row_band_1_264",
+        "group_당월산식_row_band_1_265",
+        "group_당월산식_row_band_1_266",
+        "group_당월산식_row_band_1_267",
+        "group_당월산식_row_band_1_268",
+        "group_당월산식_row_band_1_269",
+        "group_당월산식_row_band_1_27",
+        "group_당월산식_row_band_1_270",
+        "group_당월산식_row_band_1_271",
+        "group_당월산식_row_band_1_272",
+        "group_당월산식_row_band_1_273",
+        "group_당월산식_row_band_1_274",
+        "group_당월산식_row_band_1_275",
+        "group_당월산식_row_band_1_276",
+        "group_당월산식_row_band_1_277",
+        "group_당월산식_row_band_1_278",
+        "group_당월산식_row_band_1_279",
+        "group_당월산식_row_band_1_28",
+        "group_당월산식_row_band_1_280",
+        "group_당월산식_row_band_1_281",
+        "group_당월산식_row_band_1_282",
+        "group_당월산식_row_band_1_283",
+        "group_당월산식_row_band_1_284",
+        "group_당월산식_row_band_1_285",
+        "group_당월산식_row_band_1_286",
+        "group_당월산식_row_band_1_287",
+        "group_당월산식_row_band_1_288",
+        "group_당월산식_row_band_1_289",
+        "group_당월산식_row_band_1_29",
+        "group_당월산식_row_band_1_290",
+        "group_당월산식_row_band_1_291",
+        "group_당월산식_row_band_1_292",
+        "group_당월산식_row_band_1_293",
+        "group_당월산식_row_band_1_294",
+        "group_당월산식_row_band_1_295",
+        "group_당월산식_row_band_1_296",
+        "group_당월산식_row_band_1_297",
+        "group_당월산식_row_band_1_298",
+        "group_당월산식_row_band_1_299",
+        "group_당월산식_row_band_1_3",
+        "group_당월산식_row_band_1_30",
+        "group_당월산식_row_band_1_300",
+        "group_당월산식_row_band_1_301",
+        "group_당월산식_row_band_1_302",
+        "group_당월산식_row_band_1_303",
+        "group_당월산식_row_band_1_304",
+        "group_당월산식_row_band_1_305",
+        "group_당월산식_row_band_1_306",
+        "group_당월산식_row_band_1_307",
+        "group_당월산식_row_band_1_308",
+        "group_당월산식_row_band_1_309",
+        "group_당월산식_row_band_1_31",
+        "group_당월산식_row_band_1_310",
+        "group_당월산식_row_band_1_311",
+        "group_당월산식_row_band_1_312",
+        "group_당월산식_row_band_1_313",
+        "group_당월산식_row_band_1_314",
+        "group_당월산식_row_band_1_315",
+        "group_당월산식_row_band_1_316",
+        "group_당월산식_row_band_1_32",
+        "group_당월산식_row_band_1_33",
+        "group_당월산식_row_band_1_34",
+        "group_당월산식_row_band_1_35",
+        "group_당월산식_row_band_1_36",
+        "group_당월산식_row_band_1_37",
+        "group_당월산식_row_band_1_38",
+        "group_당월산식_row_band_1_39",
+        "group_당월산식_row_band_1_4",
+        "group_당월산식_row_band_1_40",
+        "group_당월산식_row_band_1_41",
+        "group_당월산식_row_band_1_42",
+        "group_당월산식_row_band_1_43",
+        "group_당월산식_row_band_1_44",
+        "group_당월산식_row_band_1_45",
+        "group_당월산식_row_band_1_46",
+        "group_당월산식_row_band_1_47",
+        "group_당월산식_row_band_1_48",
+        "group_당월산식_row_band_1_49",
+        "group_당월산식_row_band_1_5",
+        "group_당월산식_row_band_1_50",
+        "group_당월산식_row_band_1_51",
+        "group_당월산식_row_band_1_52",
+        "group_당월산식_row_band_1_53",
+        "group_당월산식_row_band_1_54",
+        "group_당월산식_row_band_1_55",
+        "group_당월산식_row_band_1_56",
+        "group_당월산식_row_band_1_57",
+        "group_당월산식_row_band_1_58",
+        "group_당월산식_row_band_1_59",
+        "group_당월산식_row_band_1_6",
+        "group_당월산식_row_band_1_60",
+        "group_당월산식_row_band_1_61",
+        "group_당월산식_row_band_1_62",
+        "group_당월산식_row_band_1_63",
+        "group_당월산식_row_band_1_64",
+        "group_당월산식_row_band_1_65",
+        "group_당월산식_row_band_1_66",
+        "group_당월산식_row_band_1_67",
+        "group_당월산식_row_band_1_68",
+        "group_당월산식_row_band_1_69",
+        "group_당월산식_row_band_1_7",
+        "group_당월산식_row_band_1_70",
+        "group_당월산식_row_band_1_71",
+        "group_당월산식_row_band_1_72",
+        "group_당월산식_row_band_1_73",
+        "group_당월산식_row_band_1_74",
+        "group_당월산식_row_band_1_75",
+        "group_당월산식_row_band_1_76",
+        "group_당월산식_row_band_1_77",
+        "group_당월산식_row_band_1_78",
+        "group_당월산식_row_band_1_79",
+        "group_당월산식_row_band_1_8",
+        "group_당월산식_row_band_1_80",
+        "group_당월산식_row_band_1_81",
+        "group_당월산식_row_band_1_82",
+        "group_당월산식_row_band_1_83",
+        "group_당월산식_row_band_1_84",
+        "group_당월산식_row_band_1_85",
+        "group_당월산식_row_band_1_86",
+        "group_당월산식_row_band_1_87",
+        "group_당월산식_row_band_1_88",
+        "group_당월산식_row_band_1_89",
+        "group_당월산식_row_band_1_9",
+        "group_당월산식_row_band_1_90",
+        "group_당월산식_row_band_1_91",
+        "group_당월산식_row_band_1_92",
+        "group_당월산식_row_band_1_93",
+        "group_당월산식_row_band_1_94",
+        "group_당월산식_row_band_1_95",
+        "group_당월산식_row_band_1_96",
+        "group_당월산식_row_band_1_97",
+        "group_당월산식_row_band_1_98",
+        "group_당월산식_row_band_1_99",
+        "pipeline_당월산식_cell_region_1",
+        "result_gate_target_당월산식_cell_region_1_boundary_confirmation",
+        "result_gate_target_당월산식_cell_region_1_formula_region_coherence",
+        "result_gate_target_당월산식_cell_region_1_formula_summary_visual_alignment",
+        "role_validation_pipeline_당월산식_cell_region_1"
+      ],
+      "source_artifact_refs": [
+        "table_io_pipelines",
+        "pipeline_role_validation",
+        "validated_document_graph",
+        "readonly_sample",
+        "data_view_projection",
+        "domain_source_model",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:fdba5a7c9077",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:unmapped_data_view:data_view_pipeline_매출_cell_region_1:8d54830a33a1",
+      "label": "매출 summary surface A1:L58",
+      "candidate_kind": "unmapped_formula_summary_surface",
+      "source_kind": "unmapped_data_view_surface",
+      "alignment_status": "blocked_semantic_label_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "semantic_label_pending",
+        "formula_result_validation_pending",
+        "gaap_ifrs_basis_mapping_required",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "dual_basis_revenue_interpretation_risk",
+        "local_vocabulary_absent_risk",
+        "unmapped_semantic_surface_risk",
+        "formula_result_not_recalculated_risk",
+        "no_existing_general_domain_alignment_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "human_confirmed_semantic_label",
+        "k_gaap_vs_k_ifrs_output_definition",
+        "official_ifrs_revenue_aggregation_definition",
+        "excel_engine_recalculation_sample"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면의 업무 의미와 canonical label은 무엇인가?",
+        "이 표면은 K-GAAP 기준 월 매출 출력인가, K-IFRS 수익인식 계산 보조 표면인가, 또는 둘의 bridge인가?",
+        "공유 후보 판단 전에 Excel 엔진으로 대표 formula 결과를 재계산했는가?"
+      ],
+      "basis_review": {
+        "required": true,
+        "detected_terms": [
+          "KGAAP"
+        ],
+        "reason": "K-GAAP-labeled output and K-IFRS-relevant revenue recognition surfaces must be separated before shared promotion."
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_매출_cell_region_1"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_매출_cell_region_1"
+        ],
+        "sheets": [
+          "매출"
+        ],
+        "ranges": [
+          "A1:L58"
+        ],
+        "projection_kinds": [
+          "formula_summary_projection"
+        ],
+        "roles": [
+          "summary"
+        ],
+        "sampled_projection_count": 1,
+        "formula_cell_count": 54
+      },
+      "observed_terms": [
+        "매출",
+        "*2월 KGAAP기준 매출",
+        "행 레이블",
+        "Sum of 2026-02-282",
+        "교재매출",
+        "현물",
+        "합계",
+        "부서",
+        "강의매출",
+        "B2B",
+        "B2B2C",
+        "CP사",
+        "자체브랜드",
+        "뉴스프레소",
+        "뉴프공홈",
+        "샤이니",
+        "리스픽",
+        "유하다요",
+        "마이라이트JP",
+        "기타매출",
+        "부스팅",
+        "복지몰",
+        "콘텐츠",
+        "포도"
+      ],
+      "evidence_refs": [
+        "data_view:pipeline_매출_cell_region_1",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5",
+        "boundary_decision_gate_split_매출_row_band_1_c10_c11",
+        "boundary_decision_gate_split_매출_row_band_1_c1_c2",
+        "boundary_decision_gate_split_매출_row_band_1_c2_c3",
+        "boundary_decision_gate_split_매출_row_band_1_c4_c5",
+        "boundary_decision_gate_split_매출_row_band_1_c7_c8",
+        "boundary_decision_gate_split_매출_row_band_1_c8_c9",
+        "boundary_decision_gate_split_매출_row_band_1_c9_c10",
+        "gate_target_매출_cell_region_1_boundary_confirmation",
+        "gate_target_매출_cell_region_1_formula_region_coherence",
+        "gate_target_매출_cell_region_1_formula_summary_visual_alignment",
+        "group_매출_row_band_1_1",
+        "group_매출_row_band_1_10",
+        "group_매출_row_band_1_11",
+        "group_매출_row_band_1_12",
+        "group_매출_row_band_1_13",
+        "group_매출_row_band_1_14",
+        "group_매출_row_band_1_15",
+        "group_매출_row_band_1_16",
+        "group_매출_row_band_1_17",
+        "group_매출_row_band_1_18",
+        "group_매출_row_band_1_19",
+        "group_매출_row_band_1_2",
+        "group_매출_row_band_1_20",
+        "group_매출_row_band_1_21",
+        "group_매출_row_band_1_22",
+        "group_매출_row_band_1_23",
+        "group_매출_row_band_1_24",
+        "group_매출_row_band_1_25",
+        "group_매출_row_band_1_26",
+        "group_매출_row_band_1_27",
+        "group_매출_row_band_1_28",
+        "group_매출_row_band_1_29",
+        "group_매출_row_band_1_3",
+        "group_매출_row_band_1_30",
+        "group_매출_row_band_1_31",
+        "group_매출_row_band_1_32",
+        "group_매출_row_band_1_33",
+        "group_매출_row_band_1_34",
+        "group_매출_row_band_1_35",
+        "group_매출_row_band_1_36",
+        "group_매출_row_band_1_37",
+        "group_매출_row_band_1_38",
+        "group_매출_row_band_1_39",
+        "group_매출_row_band_1_4",
+        "group_매출_row_band_1_40",
+        "group_매출_row_band_1_41",
+        "group_매출_row_band_1_42",
+        "group_매출_row_band_1_43",
+        "group_매출_row_band_1_44",
+        "group_매출_row_band_1_45",
+        "group_매출_row_band_1_46",
+        "group_매출_row_band_1_47",
+        "group_매출_row_band_1_48",
+        "group_매출_row_band_1_49",
+        "group_매출_row_band_1_5",
+        "group_매출_row_band_1_50",
+        "group_매출_row_band_1_51",
+        "group_매출_row_band_1_52",
+        "group_매출_row_band_1_53",
+        "group_매출_row_band_1_54",
+        "group_매출_row_band_1_55",
+        "group_매출_row_band_1_56",
+        "group_매출_row_band_1_57",
+        "group_매출_row_band_1_58",
+        "group_매출_row_band_1_59",
+        "group_매출_row_band_1_6",
+        "group_매출_row_band_1_7",
+        "group_매출_row_band_1_8",
+        "group_매출_row_band_1_9",
+        "pipeline_매출_cell_region_1",
+        "result_gate_target_매출_cell_region_1_boundary_confirmation",
+        "result_gate_target_매출_cell_region_1_formula_region_coherence",
+        "result_gate_target_매출_cell_region_1_formula_summary_visual_alignment",
+        "role_validation_pipeline_매출_cell_region_1"
+      ],
+      "source_artifact_refs": [
+        "table_io_pipelines",
+        "pipeline_role_validation",
+        "validated_document_graph",
+        "readonly_sample",
+        "data_view_projection",
+        "domain_source_model",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:5108f4e1830d",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:unmapped_data_view:data_view_pipeline_매출_cell_region_3:319e384dd0e9",
+      "label": "매출 transform surface A86:P98",
+      "candidate_kind": "unmapped_formula_transform_surface",
+      "source_kind": "unmapped_data_view_surface",
+      "alignment_status": "blocked_semantic_label_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "semantic_label_pending",
+        "formula_result_validation_pending",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "local_vocabulary_absent_risk",
+        "unmapped_semantic_surface_risk",
+        "formula_result_not_recalculated_risk",
+        "no_existing_general_domain_alignment_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "human_confirmed_semantic_label",
+        "excel_engine_recalculation_sample"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면의 업무 의미와 canonical label은 무엇인가?",
+        "공유 후보 판단 전에 Excel 엔진으로 대표 formula 결과를 재계산했는가?"
+      ],
+      "basis_review": {
+        "required": false,
+        "detected_terms": [],
+        "reason": null
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_매출_cell_region_3"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_매출_cell_region_3"
+        ],
+        "sheets": [
+          "매출"
+        ],
+        "ranges": [
+          "A86:P98"
+        ],
+        "projection_kinds": [
+          "formula_transform_projection"
+        ],
+        "roles": [
+          "transform"
+        ],
+        "sampled_projection_count": 1,
+        "formula_cell_count": 9
+      },
+      "observed_terms": [
+        "매출",
+        "합계",
+        "행 레이블",
+        "Sum of 2026-03-312",
+        "Sum of 2026-04-302",
+        "Sum of 2026-05-312",
+        "Sum of 2026-06-302",
+        "Sum of 2026-07-312",
+        "Sum of 2026-08-312",
+        "Sum of 2026-09-302",
+        "Sum of 2026-10-312",
+        "Sum of 2026-11-302",
+        "Sum of 2026-12-312",
+        "Sum of 2027-01-312",
+        "Sum of 2027-02-282",
+        "Sum of 2027-03-312",
+        "Sum of 2027-04-302",
+        "B2B",
+        "마이라이트",
+        "부스팅",
+        "자체브랜드",
+        "콘텐츠",
+        "퍼블리싱",
+        "포도",
+        "총합계"
+      ],
+      "evidence_refs": [
+        "data_view:pipeline_매출_cell_region_3",
+        "group_매출_row_band_3_65",
+        "group_매출_row_band_3_66",
+        "group_매출_row_band_3_67",
+        "pipeline_매출_cell_region_3",
+        "role_validation_pipeline_매출_cell_region_3"
+      ],
+      "source_artifact_refs": [
+        "table_io_pipelines",
+        "pipeline_role_validation",
+        "validated_document_graph",
+        "readonly_sample",
+        "data_view_projection",
+        "domain_source_model",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:2447c5f3115e",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:unmapped_data_view:data_view_pipeline_매출_pivot_pivottable1:03fa5477902b",
+      "label": "매출 report surface A3:B26",
+      "candidate_kind": "unmapped_pivot_report_surface",
+      "source_kind": "unmapped_data_view_surface",
+      "alignment_status": "blocked_semantic_label_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "semantic_label_pending",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "local_vocabulary_absent_risk",
+        "unmapped_semantic_surface_risk",
+        "no_existing_general_domain_alignment_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "human_confirmed_semantic_label"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면의 업무 의미와 canonical label은 무엇인가?"
+      ],
+      "basis_review": {
+        "required": false,
+        "detected_terms": [],
+        "reason": null
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_매출_pivot_pivottable1"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_매출_pivot_pivottable1"
+        ],
+        "sheets": [
+          "매출"
+        ],
+        "ranges": [
+          "A3:B26"
+        ],
+        "projection_kinds": [
+          "pivot_view_projection"
+        ],
+        "roles": [
+          "report"
+        ],
+        "sampled_projection_count": 1,
+        "formula_cell_count": 0
+      },
+      "observed_terms": [
+        "매출",
+        "행 레이블",
+        "Sum of 2026-02-282",
+        "B2B",
+        "B2B2C",
+        "CP사",
+        "뉴스프레소",
+        "뉴프공홈",
+        "리스픽",
+        "마이라이트JP",
+        "복지몰",
+        "부스팅",
+        "샤이니",
+        "스피킹ML"
+      ],
+      "evidence_refs": [
+        "data_view:pipeline_매출_pivot_pivottable1",
+        "gate_target_매출_pivot_pivottable1_pivot_cache_visual_alignment",
+        "pipeline_매출_pivot_pivottable1",
+        "rel_매출_pivot_pivottable1__pivot_cache_source",
+        "result_gate_target_매출_pivot_pivottable1_pivot_cache_visual_alignment",
+        "role_validation_pipeline_매출_pivot_pivottable1"
+      ],
+      "source_artifact_refs": [
+        "table_io_pipelines",
+        "pipeline_role_validation",
+        "validated_document_graph",
+        "readonly_sample",
+        "data_view_projection",
+        "domain_source_model",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:ee990639ee89",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:unmapped_data_view:data_view_pipeline_매출_pivot_pivottable2:f17ab0fb19f1",
+      "label": "매출 report surface A33:B40",
+      "candidate_kind": "unmapped_pivot_report_surface",
+      "source_kind": "unmapped_data_view_surface",
+      "alignment_status": "blocked_semantic_label_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "semantic_label_pending",
+        "gaap_ifrs_basis_mapping_required",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "dual_basis_revenue_interpretation_risk",
+        "local_vocabulary_absent_risk",
+        "unmapped_semantic_surface_risk",
+        "no_existing_general_domain_alignment_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "human_confirmed_semantic_label",
+        "k_gaap_vs_k_ifrs_output_definition",
+        "official_ifrs_revenue_aggregation_definition"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면의 업무 의미와 canonical label은 무엇인가?",
+        "이 표면은 K-GAAP 기준 월 매출 출력인가, K-IFRS 수익인식 계산 보조 표면인가, 또는 둘의 bridge인가?"
+      ],
+      "basis_review": {
+        "required": true,
+        "detected_terms": [
+          "이연",
+          "미공개"
+        ],
+        "reason": "K-GAAP-labeled output and K-IFRS-relevant revenue recognition surfaces must be separated before shared promotion."
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_매출_pivot_pivottable2"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_매출_pivot_pivottable2"
+        ],
+        "sheets": [
+          "매출"
+        ],
+        "ranges": [
+          "A33:B40"
+        ],
+        "projection_kinds": [
+          "pivot_view_projection"
+        ],
+        "roles": [
+          "report"
+        ],
+        "sampled_projection_count": 1,
+        "formula_cell_count": 0
+      },
+      "observed_terms": [
+        "매출",
+        "행 레이블",
+        "Sum of 교재합계(미공개 이연제외)",
+        "뉴스프레소",
+        "리스픽",
+        "유하다요",
+        "자체브랜드",
+        "콘텐츠",
+        "포도",
+        "총합계"
+      ],
+      "evidence_refs": [
+        "data_view:pipeline_매출_pivot_pivottable2",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5",
+        "gate_target_매출_pivot_pivottable2_pivot_cache_visual_alignment",
+        "pipeline_매출_pivot_pivottable2",
+        "rel_매출_pivot_pivottable2__pivot_cache_source",
+        "result_gate_target_매출_pivot_pivottable2_pivot_cache_visual_alignment",
+        "role_validation_pipeline_매출_pivot_pivottable2"
+      ],
+      "source_artifact_refs": [
+        "table_io_pipelines",
+        "pipeline_role_validation",
+        "validated_document_graph",
+        "readonly_sample",
+        "data_view_projection",
+        "domain_source_model",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:4c7bd0dea40b",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:unmapped_data_view:data_view_pipeline_매출_pivot_pivottable3:06bdaa072b3e",
+      "label": "매출 report surface D31:E43",
+      "candidate_kind": "unmapped_pivot_report_surface",
+      "source_kind": "unmapped_data_view_surface",
+      "alignment_status": "blocked_semantic_label_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "semantic_label_pending",
+        "gaap_ifrs_basis_mapping_required",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "dual_basis_revenue_interpretation_risk",
+        "local_vocabulary_absent_risk",
+        "unmapped_semantic_surface_risk",
+        "no_existing_general_domain_alignment_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "human_confirmed_semantic_label",
+        "k_gaap_vs_k_ifrs_output_definition",
+        "official_ifrs_revenue_aggregation_definition"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면의 업무 의미와 canonical label은 무엇인가?",
+        "이 표면은 K-GAAP 기준 월 매출 출력인가, K-IFRS 수익인식 계산 보조 표면인가, 또는 둘의 bridge인가?"
+      ],
+      "basis_review": {
+        "required": true,
+        "detected_terms": [
+          "이연",
+          "현물이연"
+        ],
+        "reason": "K-GAAP-labeled output and K-IFRS-relevant revenue recognition surfaces must be separated before shared promotion."
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_매출_pivot_pivottable3"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_매출_pivot_pivottable3"
+        ],
+        "sheets": [
+          "매출"
+        ],
+        "ranges": [
+          "D31:E43"
+        ],
+        "projection_kinds": [
+          "pivot_view_projection"
+        ],
+        "roles": [
+          "report"
+        ],
+        "sampled_projection_count": 1,
+        "formula_cell_count": 0
+      },
+      "observed_terms": [
+        "매출",
+        "행 레이블",
+        "Sum of 현물이연",
+        "CP사",
+        "뉴스프레소",
+        "리스픽",
+        "복지몰",
+        "부스팅",
+        "샤이니",
+        "유하다요",
+        "자체브랜드",
+        "직접계약",
+        "콘텐츠",
+        "포도"
+      ],
+      "evidence_refs": [
+        "data_view:pipeline_매출_pivot_pivottable3",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5",
+        "gate_target_매출_pivot_pivottable3_pivot_cache_visual_alignment",
+        "pipeline_매출_pivot_pivottable3",
+        "rel_매출_pivot_pivottable3__pivot_cache_source",
+        "result_gate_target_매출_pivot_pivottable3_pivot_cache_visual_alignment",
+        "role_validation_pipeline_매출_pivot_pivottable3"
+      ],
+      "source_artifact_refs": [
+        "table_io_pipelines",
+        "pipeline_role_validation",
+        "validated_document_graph",
+        "readonly_sample",
+        "data_view_projection",
+        "domain_source_model",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:40715ea3a794",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:unmapped_data_view:data_view_pipeline_매출_pivot_pivottable4:94b3d541c5dc",
+      "label": "매출 report surface G33:H36",
+      "candidate_kind": "unmapped_pivot_report_surface",
+      "source_kind": "unmapped_data_view_surface",
+      "alignment_status": "blocked_semantic_label_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "semantic_label_pending",
+        "gaap_ifrs_basis_mapping_required",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "dual_basis_revenue_interpretation_risk",
+        "local_vocabulary_absent_risk",
+        "unmapped_semantic_surface_risk",
+        "no_existing_general_domain_alignment_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "human_confirmed_semantic_label",
+        "k_gaap_vs_k_ifrs_output_definition",
+        "official_ifrs_revenue_aggregation_definition"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면의 업무 의미와 canonical label은 무엇인가?",
+        "이 표면은 K-GAAP 기준 월 매출 출력인가, K-IFRS 수익인식 계산 보조 표면인가, 또는 둘의 bridge인가?"
+      ],
+      "basis_review": {
+        "required": true,
+        "detected_terms": [
+          "이연",
+          "현물이연"
+        ],
+        "reason": "K-GAAP-labeled output and K-IFRS-relevant revenue recognition surfaces must be separated before shared promotion."
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_매출_pivot_pivottable4"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_매출_pivot_pivottable4"
+        ],
+        "sheets": [
+          "매출"
+        ],
+        "ranges": [
+          "G33:H36"
+        ],
+        "projection_kinds": [
+          "pivot_view_projection"
+        ],
+        "roles": [
+          "report"
+        ],
+        "sampled_projection_count": 1,
+        "formula_cell_count": 0
+      },
+      "observed_terms": [
+        "매출",
+        "행 레이블",
+        "Sum of 현물이연",
+        "자체브랜드",
+        "콘텐츠",
+        "총합계"
+      ],
+      "evidence_refs": [
+        "data_view:pipeline_매출_pivot_pivottable4",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5",
+        "gate_target_매출_pivot_pivottable4_pivot_cache_visual_alignment",
+        "pipeline_매출_pivot_pivottable4",
+        "rel_매출_pivot_pivottable4__pivot_cache_source",
+        "result_gate_target_매출_pivot_pivottable4_pivot_cache_visual_alignment",
+        "role_validation_pipeline_매출_pivot_pivottable4"
+      ],
+      "source_artifact_refs": [
+        "table_io_pipelines",
+        "pipeline_role_validation",
+        "validated_document_graph",
+        "readonly_sample",
+        "data_view_projection",
+        "domain_source_model",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:8e0345f7f9ce",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:unmapped_data_view:data_view_pipeline_매출_pivot_pivottable5:62ba7ee37cd6",
+      "label": "매출 report surface J33:K35",
+      "candidate_kind": "unmapped_pivot_report_surface",
+      "source_kind": "unmapped_data_view_surface",
+      "alignment_status": "blocked_semantic_label_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "semantic_label_pending",
+        "gaap_ifrs_basis_mapping_required",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "dual_basis_revenue_interpretation_risk",
+        "local_vocabulary_absent_risk",
+        "unmapped_semantic_surface_risk",
+        "no_existing_general_domain_alignment_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "human_confirmed_semantic_label",
+        "k_gaap_vs_k_ifrs_output_definition",
+        "official_ifrs_revenue_aggregation_definition"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면의 업무 의미와 canonical label은 무엇인가?",
+        "이 표면은 K-GAAP 기준 월 매출 출력인가, K-IFRS 수익인식 계산 보조 표면인가, 또는 둘의 bridge인가?"
+      ],
+      "basis_review": {
+        "required": true,
+        "detected_terms": [
+          "이연",
+          "현물이연"
+        ],
+        "reason": "K-GAAP-labeled output and K-IFRS-relevant revenue recognition surfaces must be separated before shared promotion."
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_매출_pivot_pivottable5"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_매출_pivot_pivottable5"
+        ],
+        "sheets": [
+          "매출"
+        ],
+        "ranges": [
+          "J33:K35"
+        ],
+        "projection_kinds": [
+          "pivot_view_projection"
+        ],
+        "roles": [
+          "report"
+        ],
+        "sampled_projection_count": 1,
+        "formula_cell_count": 0
+      },
+      "observed_terms": [
+        "매출",
+        "행 레이블",
+        "Sum of 현물이연",
+        "콘텐츠",
+        "총합계"
+      ],
+      "evidence_refs": [
+        "data_view:pipeline_매출_pivot_pivottable5",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5",
+        "gate_target_매출_pivot_pivottable5_pivot_cache_visual_alignment",
+        "pipeline_매출_pivot_pivottable5",
+        "rel_매출_pivot_pivottable5__pivot_cache_source",
+        "result_gate_target_매출_pivot_pivottable5_pivot_cache_visual_alignment",
+        "role_validation_pipeline_매출_pivot_pivottable5"
+      ],
+      "source_artifact_refs": [
+        "table_io_pipelines",
+        "pipeline_role_validation",
+        "validated_document_graph",
+        "readonly_sample",
+        "data_view_projection",
+        "domain_source_model",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:203195c3a82c",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:unmapped_data_view:data_view_pipeline_매출_pivot_pivottable6:feb4bcf983ed",
+      "label": "매출 report surface A48:D53",
+      "candidate_kind": "unmapped_pivot_report_surface",
+      "source_kind": "unmapped_data_view_surface",
+      "alignment_status": "blocked_semantic_label_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "semantic_label_pending",
+        "gaap_ifrs_basis_mapping_required",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "dual_basis_revenue_interpretation_risk",
+        "local_vocabulary_absent_risk",
+        "unmapped_semantic_surface_risk",
+        "no_existing_general_domain_alignment_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "human_confirmed_semantic_label",
+        "k_gaap_vs_k_ifrs_output_definition",
+        "official_ifrs_revenue_aggregation_definition"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면의 업무 의미와 canonical label은 무엇인가?",
+        "이 표면은 K-GAAP 기준 월 매출 출력인가, K-IFRS 수익인식 계산 보조 표면인가, 또는 둘의 bridge인가?"
+      ],
+      "basis_review": {
+        "required": true,
+        "detected_terms": [
+          "환불부채"
+        ],
+        "reason": "K-GAAP-labeled output and K-IFRS-relevant revenue recognition surfaces must be separated before shared promotion."
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_매출_pivot_pivottable6"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_매출_pivot_pivottable6"
+        ],
+        "sheets": [
+          "매출"
+        ],
+        "ranges": [
+          "A48:D53"
+        ],
+        "projection_kinds": [
+          "pivot_view_projection"
+        ],
+        "roles": [
+          "report"
+        ],
+        "sampled_projection_count": 1,
+        "formula_cell_count": 0
+      },
+      "observed_terms": [
+        "매출",
+        "Row Labels",
+        "Sum of 2026-03-312",
+        "Sum of 2026-04-302",
+        "Sum of 환불부채2",
+        "뉴스프레소",
+        "샤이니",
+        "자체브랜드",
+        "콘텐츠",
+        "Grand Total"
+      ],
+      "evidence_refs": [
+        "data_view:pipeline_매출_pivot_pivottable6",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c10_c11",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c11_c12",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c12_c13",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c13_c14",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c14_c15",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c16_c17",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c17_c18",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c1_c2",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c20_c21",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c21_c22",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c24_c25",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c25_c26",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c28_c30",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c2_c3",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c3_c4",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c4_c5",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c6_c7",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c8_c9",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c9_c10",
+        "gate_target_매출_pivot_pivottable6_pivot_cache_visual_alignment",
+        "pipeline_매출_pivot_pivottable6",
+        "rel_매출_pivot_pivottable6__pivot_cache_source",
+        "result_gate_target_매출_pivot_pivottable6_pivot_cache_visual_alignment",
+        "role_validation_pipeline_매출_pivot_pivottable6"
+      ],
+      "source_artifact_refs": [
+        "table_io_pipelines",
+        "pipeline_role_validation",
+        "validated_document_graph",
+        "readonly_sample",
+        "data_view_projection",
+        "domain_source_model",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:8d055d69ddd7",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:unmapped_data_view:data_view_pipeline_매출_pivot_pivottable7:713806d10a08",
+      "label": "매출 report surface G50:H58",
+      "candidate_kind": "unmapped_pivot_report_surface",
+      "source_kind": "unmapped_data_view_surface",
+      "alignment_status": "blocked_semantic_label_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "semantic_label_pending",
+        "gaap_ifrs_basis_mapping_required",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "dual_basis_revenue_interpretation_risk",
+        "local_vocabulary_absent_risk",
+        "unmapped_semantic_surface_risk",
+        "no_existing_general_domain_alignment_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "human_confirmed_semantic_label",
+        "k_gaap_vs_k_ifrs_output_definition",
+        "official_ifrs_revenue_aggregation_definition"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면의 업무 의미와 canonical label은 무엇인가?",
+        "이 표면은 K-GAAP 기준 월 매출 출력인가, K-IFRS 수익인식 계산 보조 표면인가, 또는 둘의 bridge인가?"
+      ],
+      "basis_review": {
+        "required": true,
+        "detected_terms": [
+          "이연",
+          "미공개"
+        ],
+        "reason": "K-GAAP-labeled output and K-IFRS-relevant revenue recognition surfaces must be separated before shared promotion."
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_매출_pivot_pivottable7"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_매출_pivot_pivottable7"
+        ],
+        "sheets": [
+          "매출"
+        ],
+        "ranges": [
+          "G50:H58"
+        ],
+        "projection_kinds": [
+          "pivot_view_projection"
+        ],
+        "roles": [
+          "report"
+        ],
+        "sampled_projection_count": 1,
+        "formula_cell_count": 0
+      },
+      "observed_terms": [
+        "매출",
+        "행 레이블",
+        "Sum of 교재합계(미공개 이연제외)",
+        "뉴스프레소",
+        "리스픽",
+        "부스팅",
+        "유하다요",
+        "자체브랜드",
+        "콘텐츠",
+        "포도",
+        "총합계"
+      ],
+      "evidence_refs": [
+        "data_view:pipeline_매출_pivot_pivottable7",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5",
+        "gate_target_매출_pivot_pivottable7_pivot_cache_visual_alignment",
+        "pipeline_매출_pivot_pivottable7",
+        "rel_매출_pivot_pivottable7__pivot_cache_source",
+        "result_gate_target_매출_pivot_pivottable7_pivot_cache_visual_alignment",
+        "role_validation_pipeline_매출_pivot_pivottable7"
+      ],
+      "source_artifact_refs": [
+        "table_io_pipelines",
+        "pipeline_role_validation",
+        "validated_document_graph",
+        "readonly_sample",
+        "data_view_projection",
+        "domain_source_model",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:b6ade2c3b654",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:unmapped_data_view:data_view_pipeline_매출_pivot_pivottable8:ed4dd01f84fa",
+      "label": "매출 report surface A71:D73",
+      "candidate_kind": "unmapped_pivot_report_surface",
+      "source_kind": "unmapped_data_view_surface",
+      "alignment_status": "blocked_semantic_label_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "semantic_label_pending",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "local_vocabulary_absent_risk",
+        "unmapped_semantic_surface_risk",
+        "no_existing_general_domain_alignment_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "human_confirmed_semantic_label"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면의 업무 의미와 canonical label은 무엇인가?"
+      ],
+      "basis_review": {
+        "required": false,
+        "detected_terms": [],
+        "reason": null
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_매출_pivot_pivottable8"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_매출_pivot_pivottable8"
+        ],
+        "sheets": [
+          "매출"
+        ],
+        "ranges": [
+          "A71:D73"
+        ],
+        "projection_kinds": [
+          "pivot_view_projection"
+        ],
+        "roles": [
+          "report"
+        ],
+        "sampled_projection_count": 1,
+        "formula_cell_count": 0
+      },
+      "observed_terms": [
+        "매출",
+        "행 레이블",
+        "Sum of 결제·취소액 (A)",
+        "Sum of 강의",
+        "Sum of 교재",
+        "유하다요",
+        "총합계"
+      ],
+      "evidence_refs": [
+        "data_view:pipeline_매출_pivot_pivottable8",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5",
+        "gate_target_매출_pivot_pivottable8_pivot_cache_visual_alignment",
+        "pipeline_매출_pivot_pivottable8",
+        "rel_매출_pivot_pivottable8__pivot_cache_source",
+        "result_gate_target_매출_pivot_pivottable8_pivot_cache_visual_alignment",
+        "role_validation_pipeline_매출_pivot_pivottable8"
+      ],
+      "source_artifact_refs": [
+        "table_io_pipelines",
+        "pipeline_role_validation",
+        "validated_document_graph",
+        "readonly_sample",
+        "data_view_projection",
+        "domain_source_model",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:39af1b2c549a",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:unmapped_data_view:data_view_pipeline_매출_pivot_pivottable9:927d42005ddd",
+      "label": "매출 report surface B88:P96",
+      "candidate_kind": "unmapped_pivot_report_surface",
+      "source_kind": "unmapped_data_view_surface",
+      "alignment_status": "blocked_semantic_label_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "semantic_label_pending",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "local_vocabulary_absent_risk",
+        "unmapped_semantic_surface_risk",
+        "no_existing_general_domain_alignment_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "human_confirmed_semantic_label"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면의 업무 의미와 canonical label은 무엇인가?"
+      ],
+      "basis_review": {
+        "required": false,
+        "detected_terms": [],
+        "reason": null
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_매출_pivot_pivottable9"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_매출_pivot_pivottable9"
+        ],
+        "sheets": [
+          "매출"
+        ],
+        "ranges": [
+          "B88:P96"
+        ],
+        "projection_kinds": [
+          "pivot_view_projection"
+        ],
+        "roles": [
+          "report"
+        ],
+        "sampled_projection_count": 1,
+        "formula_cell_count": 0
+      },
+      "observed_terms": [
+        "매출",
+        "행 레이블",
+        "Sum of 2026-03-312",
+        "Sum of 2026-04-302",
+        "Sum of 2026-05-312",
+        "Sum of 2026-06-302",
+        "Sum of 2026-07-312",
+        "Sum of 2026-08-312",
+        "Sum of 2026-09-302",
+        "Sum of 2026-10-312",
+        "Sum of 2026-11-302",
+        "Sum of 2026-12-312",
+        "Sum of 2027-01-312",
+        "Sum of 2027-02-282",
+        "Sum of 2027-03-312",
+        "Sum of 2027-04-302",
+        "B2B",
+        "마이라이트",
+        "부스팅",
+        "자체브랜드",
+        "콘텐츠",
+        "퍼블리싱",
+        "포도",
+        "총합계"
+      ],
+      "evidence_refs": [
+        "data_view:pipeline_매출_pivot_pivottable9",
+        "gate_target_매출_pivot_pivottable9_pivot_cache_visual_alignment",
+        "pipeline_매출_pivot_pivottable9",
+        "rel_매출_pivot_pivottable9__pivot_cache_source",
+        "result_gate_target_매출_pivot_pivottable9_pivot_cache_visual_alignment",
+        "role_validation_pipeline_매출_pivot_pivottable9"
+      ],
+      "source_artifact_refs": [
+        "table_io_pipelines",
+        "pipeline_role_validation",
+        "validated_document_graph",
+        "readonly_sample",
+        "data_view_projection",
+        "domain_source_model",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:c633510c9c79",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:unmapped_data_view:data_view_pipeline_얼리버드_cell_region_1:14c1e6755170",
+      "label": "얼리버드 summary surface A1:D20",
+      "candidate_kind": "unmapped_formula_summary_surface",
+      "source_kind": "unmapped_data_view_surface",
+      "alignment_status": "blocked_semantic_label_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "semantic_label_pending",
+        "formula_result_validation_pending",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "local_vocabulary_absent_risk",
+        "unmapped_semantic_surface_risk",
+        "formula_result_not_recalculated_risk",
+        "no_existing_general_domain_alignment_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "human_confirmed_semantic_label",
+        "excel_engine_recalculation_sample"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면의 업무 의미와 canonical label은 무엇인가?",
+        "공유 후보 판단 전에 Excel 엔진으로 대표 formula 결과를 재계산했는가?"
+      ],
+      "basis_review": {
+        "required": false,
+        "detected_terms": [],
+        "reason": null
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_얼리버드_cell_region_1"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_얼리버드_cell_region_1"
+        ],
+        "sheets": [
+          "얼리버드"
+        ],
+        "ranges": [
+          "A1:D20"
+        ],
+        "projection_kinds": [
+          "formula_summary_projection"
+        ],
+        "roles": [
+          "summary"
+        ],
+        "sampled_projection_count": 1,
+        "formula_cell_count": 11
+      },
+      "observed_terms": [
+        "얼리버드",
+        "imp_uid",
+        "개강일",
+        "중복값",
+        "imp_003589740273",
+        "imp_011194078290",
+        "imp_013629163759",
+        "imp_026027789467",
+        "imp_026066936148",
+        "imp_029157267241",
+        "imp_035212697058",
+        "imp_035919951876",
+        "imp_065686398631",
+        "imp_074756607921",
+        "imp_076695666786"
+      ],
+      "evidence_refs": [
+        "data_view:pipeline_얼리버드_cell_region_1",
+        "boundary_decision_gate_split_얼리버드_row_band_1_c1_c2",
+        "boundary_decision_gate_split_얼리버드_row_band_1_c2_c3",
+        "gate_target_얼리버드_cell_region_1_boundary_confirmation",
+        "gate_target_얼리버드_cell_region_1_formula_region_coherence",
+        "gate_target_얼리버드_cell_region_1_formula_summary_visual_alignment",
+        "group_얼리버드_row_band_1_1",
+        "pipeline_얼리버드_cell_region_1",
+        "result_gate_target_얼리버드_cell_region_1_boundary_confirmation",
+        "result_gate_target_얼리버드_cell_region_1_formula_region_coherence",
+        "result_gate_target_얼리버드_cell_region_1_formula_summary_visual_alignment",
+        "role_validation_pipeline_얼리버드_cell_region_1"
+      ],
+      "source_artifact_refs": [
+        "table_io_pipelines",
+        "pipeline_role_validation",
+        "validated_document_graph",
+        "readonly_sample",
+        "data_view_projection",
+        "domain_source_model",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:114dcb9993b6",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:unmapped_data_view:data_view_pipeline_유하다요_cell_region_1:3b87f7d76b76",
+      "label": "유하다요 transform surface A1:R20",
+      "candidate_kind": "unmapped_formula_transform_surface",
+      "source_kind": "unmapped_data_view_surface",
+      "alignment_status": "blocked_semantic_label_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "semantic_label_pending",
+        "formula_result_validation_pending",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "local_vocabulary_absent_risk",
+        "unmapped_semantic_surface_risk",
+        "formula_result_not_recalculated_risk",
+        "no_existing_general_domain_alignment_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "human_confirmed_semantic_label",
+        "excel_engine_recalculation_sample"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면의 업무 의미와 canonical label은 무엇인가?",
+        "공유 후보 판단 전에 Excel 엔진으로 대표 formula 결과를 재계산했는가?"
+      ],
+      "basis_review": {
+        "required": false,
+        "detected_terms": [],
+        "reason": null
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_유하다요_cell_region_1"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_유하다요_cell_region_1"
+        ],
+        "sheets": [
+          "유하다요"
+        ],
+        "ranges": [
+          "A1:R20"
+        ],
+        "projection_kinds": [
+          "formula_transform_projection"
+        ],
+        "roles": [
+          "transform"
+        ],
+        "sampled_projection_count": 1,
+        "formula_cell_count": 28
+      },
+      "observed_terms": [
+        "유하다요",
+        "NO",
+        "PG사",
+        "부문",
+        "브랜드",
+        "상점아이디(MID)",
+        "정산액 입금일",
+        "매출일",
+        "결제/취소일",
+        "주문번호",
+        "구매상품",
+        "결제·취소액 (A)",
+        "면세",
+        "강의",
+        "교재",
+        "수강일",
+        "개강일",
+        "토스",
+        "퍼블리싱",
+        "im_yuhadayo",
+        "2026-03-05",
+        "2026-02-28",
+        "imp_073604487135",
+        "2026 NEW 전강좌 올패키지 MAX",
+        "imp_833517466576",
+        "imp_355302391690",
+        "imp_380552097593",
+        "imp_384831894097",
+        "2026 JLPT 합격패키지",
+        "imp_917309141624"
+      ],
+      "evidence_refs": [
+        "data_view:pipeline_유하다요_cell_region_1",
+        "boundary_decision_gate_split_유하다요_row_band_1_c11_c12",
+        "boundary_decision_gate_split_유하다요_row_band_1_c14_c15",
+        "boundary_decision_gate_split_유하다요_row_band_1_c15_c16",
+        "boundary_decision_gate_split_유하다요_row_band_1_c16_c17",
+        "boundary_decision_gate_split_유하다요_row_band_1_c4_c5",
+        "gate_target_유하다요_cell_region_1_boundary_confirmation",
+        "gate_target_유하다요_cell_region_1_formula_region_coherence",
+        "group_유하다요_row_band_1_1",
+        "group_유하다요_row_band_1_2",
+        "group_유하다요_row_band_1_3",
+        "group_유하다요_row_band_1_4",
+        "group_유하다요_row_band_1_5",
+        "pipeline_유하다요_cell_region_1",
+        "result_gate_target_유하다요_cell_region_1_boundary_confirmation",
+        "result_gate_target_유하다요_cell_region_1_formula_region_coherence",
+        "role_validation_pipeline_유하다요_cell_region_1"
+      ],
+      "source_artifact_refs": [
+        "table_io_pipelines",
+        "pipeline_role_validation",
+        "validated_document_graph",
+        "readonly_sample",
+        "data_view_projection",
+        "domain_source_model",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:aecd038aa903",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:unmapped_data_view:data_view_pipeline_유하다요_강사료_cell_region_1:f02bbddd6927",
+      "label": "유하다요_강사료 summary surface A1:AH20",
+      "candidate_kind": "unmapped_formula_summary_surface",
+      "source_kind": "unmapped_data_view_surface",
+      "alignment_status": "blocked_semantic_label_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "semantic_label_pending",
+        "formula_result_validation_pending",
+        "gaap_ifrs_basis_mapping_required",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "dual_basis_revenue_interpretation_risk",
+        "local_vocabulary_absent_risk",
+        "unmapped_semantic_surface_risk",
+        "formula_result_not_recalculated_risk",
+        "no_existing_general_domain_alignment_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "human_confirmed_semantic_label",
+        "k_gaap_vs_k_ifrs_output_definition",
+        "official_ifrs_revenue_aggregation_definition",
+        "excel_engine_recalculation_sample"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면의 업무 의미와 canonical label은 무엇인가?",
+        "이 표면은 K-GAAP 기준 월 매출 출력인가, K-IFRS 수익인식 계산 보조 표면인가, 또는 둘의 bridge인가?",
+        "공유 후보 판단 전에 Excel 엔진으로 대표 formula 결과를 재계산했는가?"
+      ],
+      "basis_review": {
+        "required": true,
+        "detected_terms": [
+          "수익인식"
+        ],
+        "reason": "K-GAAP-labeled output and K-IFRS-relevant revenue recognition surfaces must be separated before shared promotion."
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_유하다요_강사료_cell_region_1"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_유하다요_강사료_cell_region_1"
+        ],
+        "sheets": [
+          "유하다요_강사료"
+        ],
+        "ranges": [
+          "A1:AH20"
+        ],
+        "projection_kinds": [
+          "formula_summary_projection"
+        ],
+        "roles": [
+          "summary"
+        ],
+        "sampled_projection_count": 1,
+        "formula_cell_count": 62
+      },
+      "observed_terms": [
+        "유하다요_강사료",
+        "강의결제액",
+        "교재결제액",
+        "매출액",
+        "강사료",
+        "365일 수정",
+        "아임포트주문번호",
+        "결제년도",
+        "결제월",
+        "매출일자",
+        "교육과정명",
+        "부문",
+        "브랜드",
+        "코스 개강일",
+        "코스 개강일2",
+        "코스 종강일",
+        "수익인식방법",
+        "코스 일수",
+        "일수당 결제금액",
+        "무의미",
+        "imp_073604487135",
+        "2026 NEW 전강좌 올패키지 MAX",
+        "퍼블리싱",
+        "유하다요",
+        "imp_833517466576",
+        "imp_355302391690",
+        "imp_380552097593",
+        "imp_384831894097",
+        "2026 JLPT 합격패키지"
+      ],
+      "evidence_refs": [
+        "data_view:pipeline_유하다요_강사료_cell_region_1",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c10_c11",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c11_c12",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c12_c13",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c14_c15",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c15_c16",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c16_c17",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c1_c2",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c3_c4",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c4_c5",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c6_c7",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c8_c9",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c9_c10",
+        "gate_target_유하다요_강사료_cell_region_1_boundary_confirmation",
+        "gate_target_유하다요_강사료_cell_region_1_formula_region_coherence",
+        "gate_target_유하다요_강사료_cell_region_1_formula_summary_visual_alignment",
+        "group_유하다요_강사료_row_band_1_1",
+        "group_유하다요_강사료_row_band_1_10",
+        "group_유하다요_강사료_row_band_1_11",
+        "group_유하다요_강사료_row_band_1_12",
+        "group_유하다요_강사료_row_band_1_13",
+        "group_유하다요_강사료_row_band_1_14",
+        "group_유하다요_강사료_row_band_1_15",
+        "group_유하다요_강사료_row_band_1_16",
+        "group_유하다요_강사료_row_band_1_17",
+        "group_유하다요_강사료_row_band_1_18",
+        "group_유하다요_강사료_row_band_1_19",
+        "group_유하다요_강사료_row_band_1_2",
+        "group_유하다요_강사료_row_band_1_20",
+        "group_유하다요_강사료_row_band_1_21",
+        "group_유하다요_강사료_row_band_1_22",
+        "group_유하다요_강사료_row_band_1_23",
+        "group_유하다요_강사료_row_band_1_24",
+        "group_유하다요_강사료_row_band_1_25",
+        "group_유하다요_강사료_row_band_1_26",
+        "group_유하다요_강사료_row_band_1_27",
+        "group_유하다요_강사료_row_band_1_28",
+        "group_유하다요_강사료_row_band_1_29",
+        "group_유하다요_강사료_row_band_1_3",
+        "group_유하다요_강사료_row_band_1_30",
+        "group_유하다요_강사료_row_band_1_31",
+        "group_유하다요_강사료_row_band_1_32",
+        "group_유하다요_강사료_row_band_1_33",
+        "group_유하다요_강사료_row_band_1_34",
+        "group_유하다요_강사료_row_band_1_35",
+        "group_유하다요_강사료_row_band_1_36",
+        "group_유하다요_강사료_row_band_1_37",
+        "group_유하다요_강사료_row_band_1_4",
+        "group_유하다요_강사료_row_band_1_5",
+        "group_유하다요_강사료_row_band_1_6",
+        "group_유하다요_강사료_row_band_1_7",
+        "group_유하다요_강사료_row_band_1_8",
+        "group_유하다요_강사료_row_band_1_9",
+        "pipeline_유하다요_강사료_cell_region_1",
+        "result_gate_target_유하다요_강사료_cell_region_1_boundary_confirmation",
+        "result_gate_target_유하다요_강사료_cell_region_1_formula_region_coherence",
+        "result_gate_target_유하다요_강사료_cell_region_1_formula_summary_visual_alignment",
+        "role_validation_pipeline_유하다요_강사료_cell_region_1"
+      ],
+      "source_artifact_refs": [
+        "table_io_pipelines",
+        "pipeline_role_validation",
+        "validated_document_graph",
+        "readonly_sample",
+        "data_view_projection",
+        "domain_source_model",
+        "local_semantic_candidates"
+      ]
+    },
+    {
+      "id": "alignment_item:ca687c6be96a",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_semantic_candidate:unmapped_data_view:data_view_pipeline_정가표_cell_region_1:f5b1373890b6",
+      "label": "정가표 summary surface A1:S20",
+      "candidate_kind": "unmapped_formula_summary_surface",
+      "source_kind": "unmapped_data_view_surface",
+      "alignment_status": "blocked_semantic_label_pending",
+      "promotion_decision": "not_promoted",
+      "proposed_shared_concept_id": null,
+      "existing_shared_concept_refs": [],
+      "blockers": [
+        "local_domain_boundary_not_confirmed",
+        "no_local_domain_sources_available",
+        "semantic_label_pending",
+        "formula_result_validation_pending",
+        "repeated_workbook_family_evidence_missing",
+        "shared_ontology_target_not_provided",
+        "human_approval_required"
+      ],
+      "conflict_risks": [
+        "local_vocabulary_absent_risk",
+        "unmapped_semantic_surface_risk",
+        "formula_result_not_recalculated_risk",
+        "no_existing_general_domain_alignment_risk"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary",
+        "local_policy_or_vocabulary_source",
+        "workbook_family_or_pair_repetition_evidence",
+        "shared_ontology_duplicate_and_conflict_check",
+        "human_approval_record",
+        "human_confirmed_semantic_label",
+        "excel_engine_recalculation_sample"
+      ],
+      "human_review_questions": [
+        "이 후보의 의미가 현재 워크북에만 유효한가, 아니면 반복되는 워크북 family에서도 동일하게 쓰이는가?",
+        "이 후보명을 승인할 local policy, glossary, 또는 업무 담당자 근거가 있는가?",
+        "이 표면의 업무 의미와 canonical label은 무엇인가?",
+        "공유 후보 판단 전에 Excel 엔진으로 대표 formula 결과를 재계산했는가?"
+      ],
+      "basis_review": {
+        "required": false,
+        "detected_terms": [],
+        "reason": null
+      },
+      "data_view_refs": {
+        "data_view_ids": [
+          "data_view:pipeline_정가표_cell_region_1"
+        ],
+        "projection_ids": [
+          "projection:data_view:pipeline_정가표_cell_region_1"
+        ],
+        "sheets": [
+          "정가표"
+        ],
+        "ranges": [
+          "A1:S20"
+        ],
+        "projection_kinds": [
+          "formula_summary_projection"
+        ],
+        "roles": [
+          "summary"
+        ],
+        "sampled_projection_count": 1,
+        "formula_cell_count": 143
+      },
+      "observed_terms": [
+        "정가표",
+        "사이트",
+        "imp_uid",
+        "거래ID",
+        "COURSE",
+        "GOODS",
+        "DIGITAL_BOOK",
+        "교재",
+        "합계",
+        "강의비율",
+        "교재비율",
+        "도정제",
+        "COACHING",
+        "가벼운학습지",
+        "imp_410417043427",
+        "imp_517346054780",
+        "imp_773984400568",
+        "imp_190809611650",
+        "imp_407345407185",
+        "imp_960340329681",
+        "imp_302229781645",
+        "imp_431020871458",
+        "imp_862995354362",
+        "imp_282860967677",
+        "imp_659871820609"
+      ],
+      "evidence_refs": [
+        "data_view:pipeline_정가표_cell_region_1",
+        "boundary_decision_gate_split_정가표_row_band_1_c11_c12",
+        "boundary_decision_gate_split_정가표_row_band_1_c17_c18",
+        "boundary_decision_gate_split_정가표_row_band_1_c19_c22",
+        "boundary_decision_gate_split_정가표_row_band_1_c3_c4",
+        "boundary_decision_gate_split_정가표_row_band_1_c7_c8",
+        "gate_target_정가표_cell_region_1_boundary_confirmation",
+        "gate_target_정가표_cell_region_1_formula_region_coherence",
+        "gate_target_정가표_cell_region_1_formula_summary_visual_alignment",
+        "group_정가표_row_band_1_1",
+        "group_정가표_row_band_1_10",
+        "group_정가표_row_band_1_100",
+        "group_정가표_row_band_1_101",
+        "group_정가표_row_band_1_102",
+        "group_정가표_row_band_1_103",
+        "group_정가표_row_band_1_104",
+        "group_정가표_row_band_1_105",
+        "group_정가표_row_band_1_106",
+        "group_정가표_row_band_1_107",
+        "group_정가표_row_band_1_108",
+        "group_정가표_row_band_1_109",
+        "group_정가표_row_band_1_11",
+        "group_정가표_row_band_1_110",
+        "group_정가표_row_band_1_111",
+        "group_정가표_row_band_1_112",
+        "group_정가표_row_band_1_113",
+        "group_정가표_row_band_1_114",
+        "group_정가표_row_band_1_115",
+        "group_정가표_row_band_1_116",
+        "group_정가표_row_band_1_117",
+        "group_정가표_row_band_1_118",
+        "group_정가표_row_band_1_119",
+        "group_정가표_row_band_1_12",
+        "group_정가표_row_band_1_120",
+        "group_정가표_row_band_1_121",
+        "group_정가표_row_band_1_122",
+        "group_정가표_row_band_1_123",
+        "group_정가표_row_band_1_124",
+        "group_정가표_row_band_1_125",
+        "group_정가표_row_band_1_126",
+        "group_정가표_row_band_1_127",
+        "group_정가표_row_band_1_128",
+        "group_정가표_row_band_1_129",
+        "group_정가표_row_band_1_13",
+        "group_정가표_row_band_1_130",
+        "group_정가표_row_band_1_131",
+        "group_정가표_row_band_1_132",
+        "group_정가표_row_band_1_133",
+        "group_정가표_row_band_1_134",
+        "group_정가표_row_band_1_135",
+        "group_정가표_row_band_1_136",
+        "group_정가표_row_band_1_137",
+        "group_정가표_row_band_1_138",
+        "group_정가표_row_band_1_139",
+        "group_정가표_row_band_1_14",
+        "group_정가표_row_band_1_140",
+        "group_정가표_row_band_1_141",
+        "group_정가표_row_band_1_15",
+        "group_정가표_row_band_1_16",
+        "group_정가표_row_band_1_17",
+        "group_정가표_row_band_1_18",
+        "group_정가표_row_band_1_19",
+        "group_정가표_row_band_1_2",
+        "group_정가표_row_band_1_20",
+        "group_정가표_row_band_1_21",
+        "group_정가표_row_band_1_22",
+        "group_정가표_row_band_1_23",
+        "group_정가표_row_band_1_24",
+        "group_정가표_row_band_1_25",
+        "group_정가표_row_band_1_26",
+        "group_정가표_row_band_1_27",
+        "group_정가표_row_band_1_28",
+        "group_정가표_row_band_1_29",
+        "group_정가표_row_band_1_3",
+        "group_정가표_row_band_1_30",
+        "group_정가표_row_band_1_31",
+        "group_정가표_row_band_1_32",
+        "group_정가표_row_band_1_33",
+        "group_정가표_row_band_1_34",
+        "group_정가표_row_band_1_35",
+        "group_정가표_row_band_1_36",
+        "group_정가표_row_band_1_37",
+        "group_정가표_row_band_1_38",
+        "group_정가표_row_band_1_39",
+        "group_정가표_row_band_1_4",
+        "group_정가표_row_band_1_40",
+        "group_정가표_row_band_1_41",
+        "group_정가표_row_band_1_42",
+        "group_정가표_row_band_1_43",
+        "group_정가표_row_band_1_44",
+        "group_정가표_row_band_1_45",
+        "group_정가표_row_band_1_46",
+        "group_정가표_row_band_1_47",
+        "group_정가표_row_band_1_48",
+        "group_정가표_row_band_1_49",
+        "group_정가표_row_band_1_5",
+        "group_정가표_row_band_1_50",
+        "group_정가표_row_band_1_51",
+        "group_정가표_row_band_1_52",
+        "group_정가표_row_band_1_53",
+        "group_정가표_row_band_1_54",
+        "group_정가표_row_band_1_55",
+        "group_정가표_row_band_1_56",
+        "group_정가표_row_band_1_57",
+        "group_정가표_row_band_1_58",
+        "group_정가표_row_band_1_59",
+        "group_정가표_row_band_1_6",
+        "group_정가표_row_band_1_60",
+        "group_정가표_row_band_1_61",
+        "group_정가표_row_band_1_62",
+        "group_정가표_row_band_1_63",
+        "group_정가표_row_band_1_64",
+        "group_정가표_row_band_1_65",
+        "group_정가표_row_band_1_66",
+        "group_정가표_row_band_1_67",
+        "group_정가표_row_band_1_68",
+        "group_정가표_row_band_1_69",
+        "group_정가표_row_band_1_7",
+        "group_정가표_row_band_1_70",
+        "group_정가표_row_band_1_71",
+        "group_정가표_row_band_1_72",
+        "group_정가표_row_band_1_73",
+        "group_정가표_row_band_1_74",
+        "group_정가표_row_band_1_75",
+        "group_정가표_row_band_1_76",
+        "group_정가표_row_band_1_77",
+        "group_정가표_row_band_1_78",
+        "group_정가표_row_band_1_79",
+        "group_정가표_row_band_1_8",
+        "group_정가표_row_band_1_80",
+        "group_정가표_row_band_1_81",
+        "group_정가표_row_band_1_82",
+        "group_정가표_row_band_1_83",
+        "group_정가표_row_band_1_84",
+        "group_정가표_row_band_1_85",
+        "group_정가표_row_band_1_86",
+        "group_정가표_row_band_1_87",
+        "group_정가표_row_band_1_88",
+        "group_정가표_row_band_1_89",
+        "group_정가표_row_band_1_9",
+        "group_정가표_row_band_1_90",
+        "group_정가표_row_band_1_91",
+        "group_정가표_row_band_1_92",
+        "group_정가표_row_band_1_93",
+        "group_정가표_row_band_1_94",
+        "group_정가표_row_band_1_95",
+        "group_정가표_row_band_1_96",
+        "group_정가표_row_band_1_97",
+        "group_정가표_row_band_1_98",
+        "group_정가표_row_band_1_99",
+        "pipeline_정가표_cell_region_1",
+        "result_gate_target_정가표_cell_region_1_boundary_confirmation",
+        "result_gate_target_정가표_cell_region_1_formula_region_coherence",
+        "result_gate_target_정가표_cell_region_1_formula_summary_visual_alignment",
+        "role_validation_pipeline_정가표_cell_region_1"
+      ],
+      "source_artifact_refs": [
+        "table_io_pipelines",
+        "pipeline_role_validation",
+        "validated_document_graph",
+        "readonly_sample",
+        "data_view_projection",
+        "domain_source_model",
+        "local_semantic_candidates"
+      ]
+    }
+  ],
+  "shared_ontology_updates": [],
+  "review_questions": [
+    {
+      "id": "review_question:local_boundary",
+      "priority": "high",
+      "topic": "local_domain_boundary",
+      "question": "이 워크북의 local domain boundary는 어느 organization/project/team/tenant/workbook-family까지인가?",
+      "blocks": [
+        "shared_ontology_promotion"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary"
+      ]
+    },
+    {
+      "id": "review_question:local_sources",
+      "priority": "high",
+      "topic": "local_domain_sources",
+      "question": "local terminology와 처리 규칙을 승인할 policy, glossary, 또는 담당자 확인 자료가 있는가?",
+      "blocks": [
+        "local_semantic_truth_acceptance",
+        "shared_ontology_promotion"
+      ],
+      "required_evidence": [
+        "local_policy_or_vocabulary_source"
+      ]
+    },
+    {
+      "id": "review_question:semantic_labels",
+      "priority": "high",
+      "topic": "semantic_label_assignment",
+      "question": "accepted data view 중 의미 label이 없는 16개 표면의 canonical label은 무엇인가?",
+      "blocks": [
+        "candidate_alignment",
+        "shared_ontology_promotion"
+      ],
+      "required_evidence": [
+        "human_confirmed_semantic_label"
+      ]
+    },
+    {
+      "id": "review_question:gaap_ifrs_basis",
+      "priority": "high",
+      "topic": "gaap_ifrs_basis_separation",
+      "question": "K-GAAP 출력명과 K-IFRS 수익인식 관련 표면이 섞일 수 있는 14개 후보를 어떻게 분리하거나 연결할 것인가?",
+      "blocks": [
+        "revenue_concept_promotion",
+        "official_ifrs_output_claim"
+      ],
+      "required_evidence": [
+        "k_gaap_vs_k_ifrs_output_definition",
+        "official_ifrs_revenue_aggregation_definition"
+      ]
+    },
+    {
+      "id": "review_question:formula_authority",
+      "priority": "high",
+      "topic": "formula_result_authority",
+      "question": "formula text만 확인된 12개 후보에 대해 Excel 엔진 재계산 샘플을 어디까지 수행할 것인가?",
+      "blocks": [
+        "numeric_revenue_claim",
+        "formula_based_shared_promotion"
+      ],
+      "required_evidence": [
+        "excel_engine_recalculation_sample"
+      ]
+    },
+    {
+      "id": "review_question:workbook_family_repetition",
+      "priority": "medium",
+      "topic": "shared_promotion_evidence",
+      "question": "같은 의미가 다른 월, 원본/output workbook pair, 또는 동일 workbook family에서 반복되는가?",
+      "blocks": [
+        "shared_ontology_promotion"
+      ],
+      "required_evidence": [
+        "workbook_family_or_pair_repetition_evidence"
+      ]
+    }
+  ],
+  "summary": {
+    "alignment_item_count": 21,
+    "promoted_count": 0,
+    "blocked_alignment_count": 21,
+    "local_boundary_blocked_count": 21,
+    "local_source_blocked_count": 21,
+    "semantic_label_pending_count": 16,
+    "basis_review_required_count": 14,
+    "formula_result_validation_required_count": 12,
+    "review_question_count": 6,
+    "shared_ontology_update_count": 0,
+    "alignment_status_counts": {
+      "blocked_basis_definition_pending": 5,
+      "blocked_semantic_label_pending": 16
+    },
+    "blocker_counts": {
+      "local_domain_boundary_not_confirmed": 21,
+      "no_local_domain_sources_available": 21,
+      "formula_result_validation_pending": 12,
+      "gaap_ifrs_basis_mapping_required": 14,
+      "repeated_workbook_family_evidence_missing": 21,
+      "shared_ontology_target_not_provided": 21,
+      "human_approval_required": 21,
+      "semantic_label_pending": 16
+    },
+    "conflict_risk_counts": {
+      "dual_basis_revenue_interpretation_risk": 14,
+      "local_vocabulary_absent_risk": 21,
+      "formula_result_not_recalculated_risk": 12,
+      "unmapped_semantic_surface_risk": 16,
+      "no_existing_general_domain_alignment_risk": 16
+    },
+    "alignment_status": "review_only_no_shared_promotion"
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "Prepared 21 shared ontology alignment review items."
+    },
+    {
+      "level": "warning",
+      "message": "No candidate is promotable because the local domain boundary is not confirmed."
+    },
+    {
+      "level": "warning",
+      "message": "No candidate is promotable because no local policy or vocabulary source is available."
+    },
+    {
+      "level": "warning",
+      "message": "14 candidates require K-GAAP versus K-IFRS basis separation before revenue-related promotion."
+    }
+  ]
+}

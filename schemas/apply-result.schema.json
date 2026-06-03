@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/sheets-bridge/apply-result.schema.json",
+  "title": "Chrome Sheets Bridge Apply Result",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "apply_id",
+    "plan_id",
+    "spreadsheet_id",
+    "created_at",
+    "status",
+    "approval_evidence",
+    "before_state_ref",
+    "changed_ranges",
+    "write_batches",
+    "readback",
+    "retry_count",
+    "rollback"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "apply_id": { "type": "string", "minLength": 1 },
+    "plan_id": { "type": "string", "minLength": 1 },
+    "spreadsheet_id": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "completed_with_unverified_readback",
+        "completed_artifact_write_failed",
+        "cancelled",
+        "stopped_precondition_mismatch",
+        "stopped_protected_range",
+        "stopped_before_state_failed",
+        "stopped_timeout_or_quota"
+      ]
+    },
+    "approval_evidence": { "$ref": "#/$defs/approval_evidence" },
+    "before_state_ref": { "type": ["string", "null"] },
+    "changed_ranges": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/range_ref" }
+    },
+    "write_batches": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/write_batch" }
+    },
+    "readback": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/readback_result" }
+    },
+    "retry_count": { "type": "integer", "minimum": 0 },
+    "rollback": { "$ref": "#/$defs/rollback_result" },
+    "error": {
+      "type": ["object", "null"],
+      "required": ["code", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "code": { "type": "string", "minLength": 1 },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    }
+  },
+  "$defs": {
+    "approval_evidence": {
+      "type": "object",
+      "required": [
+        "plan_id",
+        "spreadsheet_id",
+        "operation_ids",
+        "affected_ranges",
+        "risk_level",
+        "approved_at",
+        "confirmation_text"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "plan_id": { "type": "string", "minLength": 1 },
+        "spreadsheet_id": { "type": "string", "minLength": 1 },
+        "operation_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "affected_ranges": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/range_ref" }
+        },
+        "risk_level": { "type": "string", "enum": ["low", "medium", "high"] },
+        "approved_at": { "type": "string", "format": "date-time" },
+        "confirmation_text": { "type": "string", "minLength": 1 }
+      }
+    },
+    "range_ref": {
+      "type": "object",
+      "required": ["sheet_id", "range"],
+      "additionalProperties": false,
+      "properties": {
+        "sheet_id": { "type": "integer" },
+        "range": { "type": "string", "minLength": 1 }
+      }
+    },
+    "write_batch": {
+      "type": "object",
+      "required": ["batch_id", "operation_ids", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "batch_id": { "type": "string", "minLength": 1 },
+        "operation_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "status": {
+          "type": "string",
+          "enum": ["completed", "skipped", "failed"]
+        }
+      }
+    },
+    "readback_result": {
+      "type": "object",
+      "required": ["readback_id", "range", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "readback_id": { "type": "string", "minLength": 1 },
+        "range": { "$ref": "#/$defs/range_ref" },
+        "status": {
+          "type": "string",
+          "enum": ["verified", "unverified", "failed"]
+        },
+        "observed": {}
+      }
+    },
+    "rollback_result": {
+      "type": "object",
+      "required": ["instructions_ref", "limitations", "inverse_plan_status", "inverse_plan_ref"],
+      "additionalProperties": false,
+      "properties": {
+        "instructions_ref": { "type": ["string", "null"] },
+        "limitations": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "inverse_plan_status": {
+          "type": "string",
+          "enum": ["generated", "not_feasible", "unsupported"]
+        },
+        "inverse_plan_ref": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

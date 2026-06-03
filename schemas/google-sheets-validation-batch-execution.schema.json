@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-validation-batch-execution.schema.json",
+  "title": "Google Sheets Validation Batch Execution",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "execution_plan",
+    "broker_responses",
+    "window_summaries",
+    "evidence_updates",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "execution_plan": { "$ref": "#/$defs/execution_plan" },
+    "broker_responses": { "type": "array", "items": { "$ref": "#/$defs/broker_response" } },
+    "window_summaries": { "type": "array", "items": { "$ref": "#/$defs/window_summary" } },
+    "evidence_updates": { "type": "array", "items": { "$ref": "#/$defs/evidence_update" } },
+    "summary": { "$ref": "#/$defs/counts" },
+    "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["spreadsheet_id", "title", "source_artifacts"],
+      "additionalProperties": false,
+      "properties": {
+        "spreadsheet_id": { "type": "string", "minLength": 1 },
+        "title": { "type": "string" },
+        "source_artifacts": {
+          "type": "object",
+          "required": ["live_cross_validation_plan"],
+          "additionalProperties": false,
+          "properties": {
+            "live_cross_validation_plan": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "source_document",
+        "broker_backed_read",
+        "read_scope",
+        "source_spreadsheet_reads_performed",
+        "credential_boundary",
+        "formula_result_authority"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_document": { "const": "live_google_sheet" },
+        "broker_backed_read": { "type": "boolean" },
+        "read_scope": { "const": "current_workbook_planned_broker_batches_only" },
+        "source_spreadsheet_reads_performed": { "const": false },
+        "credential_boundary": { "type": "string", "minLength": 1 },
+        "formula_result_authority": { "const": "not_established" }
+      }
+    },
+    "execution_plan": {
+      "type": "object",
+      "required": ["source_plan_status", "planned_request_count", "planned_requests", "blocked_source_reads"],
+      "additionalProperties": false,
+      "properties": {
+        "source_plan_status": { "type": "string" },
+        "planned_request_count": { "type": "integer", "minimum": 0 },
+        "planned_requests": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+        "blocked_source_reads": { "type": "array", "items": { "type": "object", "additionalProperties": true } }
+      }
+    },
+    "broker_response": {
+      "type": "object",
+      "required": ["operation", "source_batch_id", "requested_ranges", "read_candidate_ids", "ok", "payload"],
+      "additionalProperties": false,
+      "properties": {
+        "operation": { "type": "string", "minLength": 1 },
+        "source_batch_id": { "type": ["string", "null"] },
+        "requested_ranges": { "type": "array", "items": { "type": "string" } },
+        "read_candidate_ids": { "type": "array", "items": { "type": "string" } },
+        "ok": { "type": "boolean" },
+        "payload": { "type": "object", "additionalProperties": true }
+      }
+    },
+    "window_summary": {
+      "type": "object",
+      "required": [
+        "operation",
+        "range",
+        "row_count",
+        "column_count",
+        "non_empty_cell_count",
+        "formula_cell_count",
+        "error_display_count",
+        "url_cell_samples",
+        "text_preview"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "operation": { "type": "string" },
+        "range": { "type": "string" },
+        "row_count": { "type": "integer", "minimum": 0 },
+        "column_count": { "type": "integer", "minimum": 0 },
+        "non_empty_cell_count": { "type": "integer", "minimum": 0 },
+        "formula_cell_count": { "type": "integer", "minimum": 0 },
+        "error_display_count": { "type": "integer", "minimum": 0 },
+        "url_cell_samples": { "type": "array", "items": { "type": "string" } },
+        "text_preview": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "evidence_update": {
+      "type": "object",
+      "required": ["id", "type", "range", "operation", "status", "effect"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "minLength": 1 },
+        "range": { "type": "string", "minLength": 1 },
+        "operation": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "minLength": 1 },
+        "effect": { "type": "string", "minLength": 1 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] }
+    }
+  }
+}

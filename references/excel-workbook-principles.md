@@ -1,229 +1,115 @@
 # Excel Workbook Principles
 
-This reference distills reusable rules for editing Excel workbooks safely.
+Read `references/spreadsheet-principles.md` first. This file covers `.xlsx` files, workbook generators, Excel formula behavior, reconciliation, and Microsoft Excel validation.
 
 ## 1. Workbook Purpose
 
-- A workbook is not just a final-number report.
-- For complex logic, it should let users follow `input -> intermediate calculation -> output`.
-- The workbook should explain the authoritative logic with formulas, not quietly replace it.
+- A workbook is both a calculation surface and a review surface.
+- Complex logic should remain inspectable as `input -> config -> bridge/calc -> output`.
+- Known source limitations should stay visible rather than hidden in formula patches.
+- Do not replace an explainable workbook with copied totals unless the user explicitly requests a static report.
 
-## 2. Structural Rules
+## 2. Read
 
-- Build the workbook around raw inputs.
-- Keep parameters visible and centralized.
-- Use intermediate sheets when transformations are too opaque to audit in a single formula chain.
-- Keep prior-period artifacts visible when carryover logic depends on them.
-- Do not add workbook-only rules to patch known input coverage gaps without making that limitation explicit.
-- When operational raw files are inconsistent or semi-manual, standardize them into a stable input sheet before connecting formulas to them.
-- Separate current-period raw inputs from prior-period carry-ins and next-period carry-outs so reviewers can see what belongs to each period.
-- When reconciliation to an approved workbook is required, keep raw values and limitation-adjusted values visibly separate instead of folding the adjustment into hidden formulas.
+Use the cheapest read path that preserves the evidence needed.
 
-Known input limitations should stay explicit rather than hidden inside formulas. Typical examples:
+- Fast ZIP/XML manifest: use before expensive full workbook loading on large files.
+- `openpyxl` `read_only=True`: use for large row/value/formula-text sampling.
+- Targeted XML parsing: use for styles, shared formulas, drawing anchors, media, table parts, and oversized sheets.
+- `openpyxl` normal mode: use for template-sized structural inspection or deterministic edits.
+- Excel render capture: use when visual layout is an authority.
 
-- transactions that only exist in a prior derived workbook
-- manual override rows that are not reconstructable from current raw inputs
+Before editing unfamiliar workbooks, inspect sheets, dimensions, hidden sheets, formulas, named ranges, merged ranges, tables, validations, conditional formatting, charts, images, external links, and pivot/cache objects.
 
-Treat those as coverage limitations, not as Excel logic bugs.
+## 3. Create
 
-## 3. Recommended Layering
+- Build around raw inputs, visible parameters, intermediate calculations, and outputs.
+- Use explicit input/config/bridge/output/limitations layers for complex workbooks.
+- Keep prior-period carry-ins, current-period raw inputs, and carry-outs separated when rollforward behavior matters.
+- Use deterministic generator code for repeatable workbook construction.
 
-For complex workbooks, use a layered structure such as:
+## 4. Update
 
-- input
-- config
-- intermediate calculation
-- bridge
-- output
-- known limitations
+- Prefer generator or workbook-structure patches over manual one-off repairs when the artifact will recur.
+- Preserve sheet names, named ranges, formulas, validations, formatting, hidden structure, print/review layout, and Excel-native objects unless explicitly changing them.
+- Use `openpyxl` for deterministic structural writes such as formulas, names, formats, validations, tables, and seed data.
+- Use a safe copy first for complex templates with macros, pivot tables, external connections, or native objects.
 
-Key implications:
+## 5. Delete
 
-- Keep a bridge sheet when important outputs are not just a direct sum of an upstream schedule.
-- Keep prior-period detail separate so carryover behavior stays inspectable.
-- Preserve readable breakdowns for any output that depends on multiple drivers.
+- Do not delete sheets, helper columns, named ranges, validations, pivot caches, media, or hidden structures before confirming they are not wired into formulas or review workflows.
+- Prefer marking limitations or deprecating unused surfaces over removing ambiguous workbook structures.
+- Treat source-file selection and source-binding as part of workbook correctness.
 
-## 4. Formula Design Defaults
+## 6. Formula Defaults
 
-- Use defined names for all important ranges and parameter cells.
-- Use defined names for single values too, including config dates and opening balances.
-- Avoid hard references that drift after row or column insertions.
+- Use defined names for important ranges, lookup domains, config cells, and single values.
+- Prefer compatibility-safe formulas such as `INDEX/MATCH + IFERROR` when the target Excel version is uncertain.
+- Normalize join IDs with explicit text key columns such as `transaction_id_key`.
+- Store comparison dates as real Excel dates, not strings.
+- Avoid performance-heavy whole-column diagnostics unless necessary.
+- If a bridge may be empty, design downstream aggregates to return explicit zero rather than blank or missing values.
+- Confirm first-hit versus last-hit lookup behavior when keys are not unique.
+- Treat formula text as logic, not as calculated truth.
 
-Examples of the right kind of named anchors:
+## 7. Reconciliation And Debugging
 
-- `transaction_id`
-- `transaction_id_key`
-- `calc_amount`
-- `prior_detail_key`
-- `cfg_target_end_date`
-- `adjustment_set`
+Classify mismatches before changing formulas:
 
-Practical defaults:
+- source gap
+- workbook wiring bug
+- formula logic bug
+- Excel behavior difference
+- manual override
+- accounting or policy question
 
-- Prefer `INDEX/MATCH + IFERROR` over `XLOOKUP`.
-- Prefer `SUMPRODUCT` over `SUMIFS` when named ranges are involved.
-- Create text key columns such as `transaction_id_key` for joins and lookups.
-- Keep human-readable ID columns separate from formula-safe key columns.
-- Store comparison dates as real Excel date cells, not strings.
-- Treat whole-column formulas and diagnostics as performance-sensitive.
-- If a bridge or derived range may be empty, design the aggregate path so Excel still evaluates to explicit zero rather than blank or missing.
-- Normalize date-only comparisons explicitly when workbook inputs may contain datetime fractions.
-- Normalize operational raw dates before they reach workbook formulas when source systems emit multiple date formats.
-- When using lookups against non-unique keys, confirm whether first-hit behavior is the intended Excel meaning and keep any mirrored implementation consistent with it.
+Debug totals by decomposing them into source rows, bridge rows, exclusions, adjustments, and output formulas. Keep raw values and limitation-adjusted values visibly separate.
 
-## 5. Validation Method
+For recurring workbooks, make repeated manual fixes into code or explicit input surfaces.
 
-- `openpyxl` is useful for writing formulas but not for proving Excel results.
-- Validate with the actual Excel engine.
+## 8. Excel Engine Validation
 
-Recommended loop:
+`openpyxl` can write formulas but does not prove calculated results. Use the real Microsoft Excel engine when formula outputs matter.
+
+Preferred local wrapper:
+
+```bash
+python3 scripts/excel_engine_sample.py /path/to/workbook.xlsx 1 A1 B2 C10
+```
+
+Validation loop:
 
 1. Generate or edit the workbook.
-2. Open it in Excel.
-3. Recalculate the workbook.
-4. Read only a small set of representative rows and key aggregate cells.
-5. Fix formulas, names, or sheet wiring.
-6. Repeat.
+2. Open a temporary copy in Excel when possible.
+3. Run full recalculation.
+4. Read only representative cells and key aggregates.
+5. Run a formula error scan.
+6. Compare against the authoritative logic.
 
-Operational cautions:
+Automation cautions:
 
-- Do not let the user open, save, or actively manipulate the workbook during Excel automation.
-- Do not use whole-column diagnostics such as `COUNTIF(T:T)` unless there is no lighter option.
-- Treat source-binding checks as part of validation. If the wrong source folder or file variant is selected, workbook totals can look wrong even when formulas are correct.
+- Do not rely on desktop automation in headless/server contexts.
+- Avoid broad workbook scans through Excel automation.
+- Ask the user not to edit the workbook while automation is running.
+- If Excel is unavailable, report formula-result validation as incomplete.
 
-## 6. Tool Choice Rules
+## 9. Failure Patterns
 
-### Use `openpyxl` when
+Watch for:
 
-- you need repeatable workbook generation
-- you need bulk structural edits across sheets or columns
-- you need to write formulas, named ranges, formatting, validations, or static seed data
-- you need deterministic edits that belong in version-controlled code
-- you need to patch the workbook generator rather than manually repair a single file
-
-### Do not rely on `openpyxl` when
-
-- you need the authoritative calculated value of formulas
-- you need to confirm that Excel recalculates the workbook correctly
-- you need visual review of how a human will experience the workbook
-- the workbook depends on Excel-native behavior that is safer to verify in the real app
-
-Use extra caution with complex templates containing macros, pivot tables, external connections, or other Excel-native objects. Edit a copy first and verify preservation in Excel.
-
-### Use desktop Excel automation when
-
-- you are on macOS or Windows and need to drive the real Excel app
-- you need a repeatable loop of open workbook, recalculate, save, and read a narrow set of cells
-- you need to validate computed results after a code-generated workbook change
-- you need automation around Excel, but the actual calculation must still happen inside Excel
-
-Use AppleScript on macOS and PowerShell/COM Automation on Windows.
-
-### Do not use desktop Excel automation when
-
-- you need large-scale workbook construction or transformation
-- you need server-side, headless, or non-interactive validation
-- the task can be handled deterministically in Python without opening Excel
-- the user is likely to interact with the workbook during the run
-
-Treat desktop automation as glue for Excel, not as the primary transformation layer.
-Prefer read-only recalc-and-sample loops unless you have confirmed no other Excel session is touching the workbook.
-For unattended local validation, prefer opening a temporary copy instead of the project path. The bundled `scripts/excel_engine_sample.py` helper does this by default: copy the workbook to a temporary validation location, run real Excel full rebuild, sample narrow cells, then delete the copy.
-
-This temporary-copy pattern does not replace the Excel engine. It changes only where Excel opens the workbook from, reducing repeated file-access prompts and avoiding source workbook locks.
-
-### Use Excel directly when
-
-- you need authoritative recalculation
-- you need to inspect charts, filters, conditional formatting, layout, or audit readability
-- you need to verify that manual reviewers can follow the workbook
-- you are diagnosing formula results that differ from what Python-side tooling suggests
-
-### Avoid using Excel as the primary editing surface when
-
-- the task is repetitive and should be encoded in a generator script
-- the workbook must be regenerated reliably over time
-- you need bulk edits across many sheets or periods
-- the task is primarily data transformation rather than Excel-native review
-
-Default rule:
-
-- build and patch in code
-- validate in Excel
-- automate Excel only when manual recalculation is too slow or too repetitive
-
-If the real Excel application is unavailable, do not present Python-side formula writes as validated Excel results.
-Pure-Python formula evaluators may be useful for fixture cached-value generation or cross-platform smoke checks, but they are not an authoritative substitute for Excel-engine validation when the task is to prove workbook behavior.
-
-## 7. Known Excel-Specific Failure Patterns
-
-- `XLOOKUP` instability or unexpected `#N/A`
-- hard-coded config cell references drifting after sheet edits
-- `SUMIFS` on named ranges returning zero unexpectedly
-- numeric-versus-text ID mismatches breaking joins
-- dates stored as text
-- copied formulas pointing to the wrong sheet or period
-- empty bridge sheets yielding blanks, `<missing>`, or non-numeric aggregate behavior
-- hidden time fractions in datetime cells breaking apparent date comparisons
-- generator-side last-write-wins joins disagreeing with Excel first-match lookups
-- sheets or helper tables that exist in the workbook but are disconnected from the live output path
-- workbook validation loops that repeatedly prompt for file access because Excel is opening project paths directly instead of a temporary copy
-
-Typical fixes:
-
-- Replace `XLOOKUP` with `INDEX/MATCH + IFERROR`
-- Replace fixed config references with named parameters
-- Replace named-range `SUMIFS` with `SUMPRODUCT`
-- Normalize IDs through explicit text key columns
-- Convert comparison fields into real Excel date cells
-- Re-audit copied formulas after structural edits
-- Add explicit zero-row bridge handling with sentinel rows or coercion formulas
-- Strip or normalize datetime fractions before cutoff comparisons
-- Align Python-side join semantics with Excel lookup semantics when duplicate keys are possible
-- Verify not only that a sheet exists, but that downstream outputs actually read from it
-- Validate generated workbook results through real Excel, preferably via a temporary-copy recalc-and-sample loop for unattended agent runs
-
-## 8. Execution Playbooks
-
-### Case: Add or rename sheets, columns, formulas, or named ranges
-
-- Start in code or `openpyxl`.
-- Keep the sheet structure explicit.
-- Recalculate in Excel after the change.
-
-### Case: Investigate a wrong total
-
-- Start from the authoritative source and the final output cell.
-- Walk backward through bridge and intermediate sheets.
-- Use Excel results as the judge of computed values.
-- Use desktop Excel automation if you need a repeatable recalc-and-sample loop.
-- Prefer the bundled read-only desktop helper before attempting save or write-back automation.
-
-### Case: Build a recurring monthly or periodic workbook
-
-- Put workbook construction in code.
-- Keep Excel usage focused on validation and human review.
-- Avoid manual-only fixes that will have to be repeated next period.
-
-### Case: Repair a workbook that a reviewer cannot follow
-
-- Open it in Excel first.
-- Identify where the logic becomes opaque.
-- Introduce visible config, intermediate, or bridge sheets in code.
-
-## 9. Cross-Check Sources
-
-When a workbook change affects business meaning, compare against:
-
-- the project source-of-truth specification
-- the upstream generator or calculation scripts
-- approved prior-period workbooks or workpapers
-- any documented accounting, reporting, or reconciliation policy
-
-The workbook is done only when Excel recalculation still agrees with those sources.
+- hard-coded references drifting after row or column insertions
+- formulas pointing to the wrong sheet or period
+- numeric-versus-text key mismatches
+- dates stored as text or containing time fractions
+- empty bridges causing blanks instead of zeroes
+- stale formulas or cached values
+- external links or source resolver drift
+- hidden sheets or names still wired into outputs
 
 ## 10. Done Criteria
 
-- Excel recalculation matches source-of-truth outputs.
-- Critical cells do not contain unexplained `#N/A` or blanks.
-- The workbook still explains the calculation from input to output.
+- Workbook structure and formulas are inspectable.
+- Critical formulas recalculate correctly in Excel when formula results matter.
+- Formula errors are absent or intentionally documented.
+- Important sheets are actually wired into the active calculation path.
+- Known limitations, manual steps, and unverified risks are explicit.

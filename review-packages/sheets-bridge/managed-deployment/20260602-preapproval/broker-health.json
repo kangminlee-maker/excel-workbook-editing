@@ -1,0 +1,16 @@
+{
+  "captured_at": "2026-06-02T08:16:39+0900",
+  "request": {
+    "method": "GET",
+    "url": "https://run-mcp-day1-development-sheets-bridge-broker-ty6iw5bb6a-du.a.run.app/v1/health"
+  },
+  "http_status": 200,
+  "response_headers": {
+    "content-type": "application/json; charset=utf-8",
+    "date": "Mon, 01 Jun 2026 23:16:41 GMT"
+  },
+  "body": {
+    "ok": true,
+    "service": "cloud-run-sheets-broker"
+  }
+}

@@ -1,0 +1,1727 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-02T07:05:26.045041Z",
+  "source": {
+    "spreadsheet_id": "1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60",
+    "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60/edit?ouid=112662517307801676490",
+    "title": "[Day 1] 1.0 (from 20250707)",
+    "source_artifacts": {
+      "live_validated_document_graph": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/live-validated-document-graph.json",
+      "live_evidence_package": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/live-evidence-package.json",
+      "top_left_sample": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/top-left-sample.json"
+    }
+  },
+  "authority": {
+    "source_document": "live_google_sheet",
+    "projection_status": "read_model_projection_only",
+    "formula_result_authority": "not_established",
+    "semantic_review_resolution": "not_performed",
+    "shared_ontology_updates": 0
+  },
+  "method": {
+    "name": "connected_sheets_data_view_projection",
+    "authority": "validated_graph_projection_not_formula_recalculation",
+    "decision_policy": "Project accepted graph nodes into reviewer-facing data views. Preserve formula text and sampled displays as evidence only; do not recalculate formulas, resolve carry-forward queues, or promote semantic ontology updates."
+  },
+  "data_view_projections": [
+    {
+      "id": "projection_node_accepted_evidence_body",
+      "type": "data_view_projection",
+      "projection_kind": "document_summary_projection",
+      "source_node_id": "node_accepted_evidence_body",
+      "pipeline_id": null,
+      "label": "Accepted deterministic evidence",
+      "role": "accepted_evidence_body",
+      "sheet": null,
+      "range": null,
+      "input_refs": [],
+      "output_refs": [],
+      "transform_summary": {},
+      "preview": {
+        "status": "metadata_only",
+        "rows": [],
+        "sampled_row_count": 0,
+        "sampled_formula_cell_count": 0
+      },
+      "formula_policy": {
+        "formula_text_is_evidence_only": true,
+        "formula_result_authority": "not_established",
+        "recalculation_not_performed": true
+      },
+      "warnings": [],
+      "evidence_refs": [
+        "accepted_evidence"
+      ]
+    },
+    {
+      "id": "projection_node_pipeline_pipeline_24_0102_same_sheet_range_24_0102",
+      "type": "data_view_projection",
+      "projection_kind": "calculation_pipeline_projection",
+      "source_node_id": "node_pipeline_pipeline_24_0102_same_sheet_range_24_0102",
+      "pipeline_id": "pipeline_24_0102_same_sheet_range_24_0102",
+      "label": "24_0102 formula surface",
+      "role": "calculation",
+      "sheet": "24_0102",
+      "range": "B8:T67",
+      "input_refs": [
+        {
+          "id": "block_24_0102_001",
+          "kind": "table_candidate",
+          "role": "input",
+          "sheet": "24_0102",
+          "range": "A1:M16",
+          "label": "(2023. 12.26~ 2024. 01.01)",
+          "authority": "block_candidate"
+        }
+      ],
+      "output_refs": [
+        {
+          "id": "block_24_0102_formula_surface",
+          "kind": "formula_region_candidate",
+          "role": "output",
+          "sheet": "24_0102",
+          "range": "B8:T67",
+          "label": "24_0102 formula surface",
+          "authority": "block_candidate"
+        }
+      ],
+      "transform_summary": {
+        "kind": "formula_dependency_edge",
+        "formula_count": 178,
+        "signature_group_count": 8,
+        "repeated_formula_family": true
+      },
+      "preview": {
+        "status": "sampled_from_top_left_window",
+        "rows": [
+          {
+            "row": 8,
+            "cells": [
+              {
+                "column": 2,
+                "display": "119",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "50",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "169",
+                "formula": null
+              },
+              {
+                "column": 5,
+                "display": "9",
+                "formula": null
+              },
+              {
+                "column": 6,
+                "display": "2",
+                "formula": null
+              },
+              {
+                "column": 7,
+                "display": "2",
+                "formula": null
+              },
+              {
+                "column": 8,
+                "display": "11",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "126",
+                "formula": null
+              },
+              {
+                "column": 10,
+                "display": "41",
+                "formula": null
+              },
+              {
+                "column": 11,
+                "display": "167",
+                "formula": null
+              },
+              {
+                "column": 12,
+                "display": "7",
+                "formula": "=I8-B8"
+              },
+              {
+                "column": 13,
+                "display": "-9",
+                "formula": "=J8-C8"
+              }
+            ]
+          },
+          {
+            "row": 9,
+            "cells": [
+              {
+                "column": 2,
+                "display": "29",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "7",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "36",
+                "formula": null
+              },
+              {
+                "column": 8,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "29",
+                "formula": null
+              },
+              {
+                "column": 10,
+                "display": "6",
+                "formula": null
+              },
+              {
+                "column": 11,
+                "display": "35",
+                "formula": null
+              },
+              {
+                "column": 12,
+                "display": "0",
+                "formula": "=I9-B9"
+              },
+              {
+                "column": 13,
+                "display": "-1",
+                "formula": "=J9-C9"
+              }
+            ]
+          },
+          {
+            "row": 10,
+            "cells": [
+              {
+                "column": 2,
+                "display": "83",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "9",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "92",
+                "formula": null
+              },
+              {
+                "column": 7,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "82",
+                "formula": null
+              },
+              {
+                "column": 10,
+                "display": "9",
+                "formula": null
+              },
+              {
+                "column": 11,
+                "display": "91",
+                "formula": null
+              },
+              {
+                "column": 12,
+                "display": "-1",
+                "formula": "=I10-B10"
+              },
+              {
+                "column": 13,
+                "display": "0",
+                "formula": "=J10-C10"
+              }
+            ]
+          },
+          {
+            "row": 11,
+            "cells": [
+              {
+                "column": 2,
+                "display": "50",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "23",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "73",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "50",
+                "formula": null
+              },
+              {
+                "column": 10,
+                "display": "23",
+                "formula": null
+              },
+              {
+                "column": 11,
+                "display": "73",
+                "formula": null
+              },
+              {
+                "column": 12,
+                "display": "0",
+                "formula": "=I11-B11"
+              },
+              {
+                "column": 13,
+                "display": "0",
+                "formula": "=J11-C11"
+              }
+            ]
+          },
+          {
+            "row": 12,
+            "cells": [
+              {
+                "column": 2,
+                "display": "54",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "2",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "56",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "54",
+                "formula": null
+              },
+              {
+                "column": 10,
+                "display": "2",
+                "formula": null
+              },
+              {
+                "column": 11,
+                "display": "56",
+                "formula": null
+              },
+              {
+                "column": 12,
+                "display": "0",
+                "formula": "=I12-B12"
+              },
+              {
+                "column": 13,
+                "display": "0",
+                "formula": "=J12-C12"
+              }
+            ]
+          },
+          {
+            "row": 13,
+            "cells": [
+              {
+                "column": 2,
+                "display": "14",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "15",
+                "formula": null
+              },
+              {
+                "column": 5,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "15",
+                "formula": null
+              },
+              {
+                "column": 10,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 11,
+                "display": "16",
+                "formula": null
+              },
+              {
+                "column": 12,
+                "display": "1",
+                "formula": "=I13-B13"
+              },
+              {
+                "column": 13,
+                "display": "0",
+                "formula": "=J13-C13"
+              }
+            ]
+          },
+          {
+            "row": 14,
+            "cells": [
+              {
+                "column": 2,
+                "display": "9",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "4",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "13",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "9",
+                "formula": "=E14-G14+B14"
+              },
+              {
+                "column": 10,
+                "display": "4",
+                "formula": "=C14+F14-H14"
+              },
+              {
+                "column": 11,
+                "display": "13",
+                "formula": "=I14+J14"
+              },
+              {
+                "column": 12,
+                "display": "0",
+                "formula": "=I14-B14"
+              },
+              {
+                "column": 13,
+                "display": "0",
+                "formula": "=J14-C14"
+              }
+            ]
+          },
+          {
+            "row": 15,
+            "cells": [
+              {
+                "column": 2,
+                "display": "9",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "0",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "9",
+                "formula": "=B15+C15"
+              },
+              {
+                "column": 5,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "10",
+                "formula": "=E15-G15+B15"
+              },
+              {
+                "column": 10,
+                "display": "0",
+                "formula": "=C15+F15-H15"
+              },
+              {
+                "column": 11,
+                "display": "10",
+                "formula": "=I15+J15"
+              },
+              {
+                "column": 12,
+                "display": "1",
+                "formula": "=I15-B15"
+              },
+              {
+                "column": 13,
+                "display": "0",
+                "formula": "=J15-C15"
+              }
+            ]
+          }
+        ],
+        "sampled_row_count": 8,
+        "sampled_formula_cell_count": 23,
+        "source_sample_range": "A1:Z80"
+      },
+      "formula_policy": {
+        "formula_text_is_evidence_only": true,
+        "formula_result_authority": "not_established",
+        "recalculation_not_performed": true
+      },
+      "warnings": [
+        "formula_text_only_not_recalculated_result",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "same_sheet_dataflow"
+      ],
+      "evidence_refs": [
+        "pipeline_24_0102_same_sheet_range_24_0102",
+        "edge_24_0102_same_sheet_range_24_0102",
+        "signature_79311c1c31de",
+        "signature_8890fec40256",
+        "signature_9a6c85b55d8b",
+        "signature_3f8102fe8e94",
+        "signature_6a2dda7466ed",
+        "signature_163c9e68d151",
+        "signature_fc5efa07f925",
+        "signature_2d484c593b8c"
+      ]
+    },
+    {
+      "id": "projection_node_pipeline_pipeline_24_0108_same_sheet_range_24_0108",
+      "type": "data_view_projection",
+      "projection_kind": "calculation_pipeline_projection",
+      "source_node_id": "node_pipeline_pipeline_24_0108_same_sheet_range_24_0108",
+      "pipeline_id": "pipeline_24_0108_same_sheet_range_24_0108",
+      "label": "24_0108 formula surface",
+      "role": "calculation",
+      "sheet": "24_0108",
+      "range": "B8:M56",
+      "input_refs": [
+        {
+          "id": "block_24_0108_006",
+          "kind": "table_candidate",
+          "role": "input",
+          "sheet": "24_0108",
+          "range": "A45:D49",
+          "label": "1월 목표",
+          "authority": "block_candidate"
+        }
+      ],
+      "output_refs": [
+        {
+          "id": "block_24_0108_formula_surface",
+          "kind": "formula_region_candidate",
+          "role": "output",
+          "sheet": "24_0108",
+          "range": "B8:M56",
+          "label": "24_0108 formula surface",
+          "authority": "block_candidate"
+        }
+      ],
+      "transform_summary": {
+        "kind": "formula_dependency_edge",
+        "formula_count": 122,
+        "signature_group_count": 8,
+        "repeated_formula_family": true
+      },
+      "preview": {
+        "status": "sampled_from_top_left_window",
+        "rows": [
+          {
+            "row": 8,
+            "cells": [
+              {
+                "column": 2,
+                "display": "126",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "41",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "167",
+                "formula": null
+              },
+              {
+                "column": 5,
+                "display": "4",
+                "formula": null
+              },
+              {
+                "column": 6,
+                "display": "6",
+                "formula": null
+              },
+              {
+                "column": 8,
+                "display": "7",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "130",
+                "formula": null
+              },
+              {
+                "column": 10,
+                "display": "40",
+                "formula": null
+              },
+              {
+                "column": 11,
+                "display": "170",
+                "formula": null
+              },
+              {
+                "column": 12,
+                "display": "4",
+                "formula": "=I8-B8"
+              },
+              {
+                "column": 13,
+                "display": "-1",
+                "formula": "=J8-C8"
+              }
+            ]
+          },
+          {
+            "row": 9,
+            "cells": [
+              {
+                "column": 2,
+                "display": "29",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "6",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "35",
+                "formula": null
+              },
+              {
+                "column": 5,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 8,
+                "display": "3",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "30",
+                "formula": null
+              },
+              {
+                "column": 10,
+                "display": "3",
+                "formula": null
+              },
+              {
+                "column": 11,
+                "display": "33",
+                "formula": null
+              },
+              {
+                "column": 12,
+                "display": "1",
+                "formula": "=I9-B9"
+              },
+              {
+                "column": 13,
+                "display": "-3",
+                "formula": "=J9-C9"
+              }
+            ]
+          },
+          {
+            "row": 10,
+            "cells": [
+              {
+                "column": 2,
+                "display": "82",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "9",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "91",
+                "formula": null
+              },
+              {
+                "column": 5,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 6,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 7,
+                "display": "2",
+                "formula": null
+              },
+              {
+                "column": 8,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "81",
+                "formula": null
+              },
+              {
+                "column": 10,
+                "display": "9",
+                "formula": null
+              },
+              {
+                "column": 11,
+                "display": "90",
+                "formula": null
+              },
+              {
+                "column": 12,
+                "display": "-1",
+                "formula": "=I10-B10"
+              },
+              {
+                "column": 13,
+                "display": "0",
+                "formula": "=J10-C10"
+              }
+            ]
+          },
+          {
+            "row": 11,
+            "cells": [
+              {
+                "column": 2,
+                "display": "51",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "21",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "72",
+                "formula": null
+              },
+              {
+                "column": 5,
+                "display": "7",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "58",
+                "formula": null
+              },
+              {
+                "column": 10,
+                "display": "21",
+                "formula": null
+              },
+              {
+                "column": 11,
+                "display": "79",
+                "formula": null
+              },
+              {
+                "column": 12,
+                "display": "7",
+                "formula": "=I11-B11"
+              },
+              {
+                "column": 13,
+                "display": "0",
+                "formula": "=J11-C11"
+              }
+            ]
+          },
+          {
+            "row": 12,
+            "cells": [
+              {
+                "column": 2,
+                "display": "54",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "2",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "56",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "54",
+                "formula": null
+              },
+              {
+                "column": 10,
+                "display": "2",
+                "formula": null
+              },
+              {
+                "column": 11,
+                "display": "56",
+                "formula": null
+              },
+              {
+                "column": 12,
+                "display": "0",
+                "formula": "=I12-B12"
+              },
+              {
+                "column": 13,
+                "display": "0",
+                "formula": "=J12-C12"
+              }
+            ]
+          },
+          {
+            "row": 13,
+            "cells": [
+              {
+                "column": 2,
+                "display": "15",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "16",
+                "formula": null
+              },
+              {
+                "column": 5,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 6,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "16",
+                "formula": null
+              },
+              {
+                "column": 10,
+                "display": "2",
+                "formula": null
+              },
+              {
+                "column": 11,
+                "display": "18",
+                "formula": null
+              },
+              {
+                "column": 12,
+                "display": "1",
+                "formula": "=I13-B13"
+              },
+              {
+                "column": 13,
+                "display": "1",
+                "formula": "=J13-C13"
+              }
+            ]
+          },
+          {
+            "row": 14,
+            "cells": [
+              {
+                "column": 2,
+                "display": "9",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "4",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "13",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "9",
+                "formula": "=E14-G14+B14"
+              },
+              {
+                "column": 10,
+                "display": "4",
+                "formula": "=C14+F14-H14"
+              },
+              {
+                "column": 11,
+                "display": "13",
+                "formula": "=I14+J14"
+              },
+              {
+                "column": 12,
+                "display": "0",
+                "formula": "=I14-B14"
+              },
+              {
+                "column": 13,
+                "display": "0",
+                "formula": "=J14-C14"
+              }
+            ]
+          },
+          {
+            "row": 15,
+            "cells": [
+              {
+                "column": 2,
+                "display": "9",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "0",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "9",
+                "formula": "=B15+C15"
+              },
+              {
+                "column": 5,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "10",
+                "formula": "=E15-G15+B15"
+              },
+              {
+                "column": 10,
+                "display": "0",
+                "formula": "=C15+F15-H15"
+              },
+              {
+                "column": 11,
+                "display": "10",
+                "formula": "=I15+J15"
+              },
+              {
+                "column": 12,
+                "display": "1",
+                "formula": "=I15-B15"
+              },
+              {
+                "column": 13,
+                "display": "0",
+                "formula": "=J15-C15"
+              }
+            ]
+          }
+        ],
+        "sampled_row_count": 8,
+        "sampled_formula_cell_count": 23,
+        "source_sample_range": "A1:Z80"
+      },
+      "formula_policy": {
+        "formula_text_is_evidence_only": true,
+        "formula_result_authority": "not_established",
+        "recalculation_not_performed": true
+      },
+      "warnings": [
+        "formula_text_only_not_recalculated_result",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "same_sheet_dataflow"
+      ],
+      "evidence_refs": [
+        "pipeline_24_0108_same_sheet_range_24_0108",
+        "edge_24_0108_same_sheet_range_24_0108",
+        "signature_79311c1c31de",
+        "signature_8890fec40256",
+        "signature_9a6c85b55d8b",
+        "signature_3f8102fe8e94",
+        "signature_6a2dda7466ed",
+        "signature_163c9e68d151",
+        "signature_fc5efa07f925",
+        "signature_2d484c593b8c"
+      ]
+    },
+    {
+      "id": "projection_node_pipeline_pipeline_24_0115_same_sheet_range_24_0115",
+      "type": "data_view_projection",
+      "projection_kind": "calculation_pipeline_projection",
+      "source_node_id": "node_pipeline_pipeline_24_0115_same_sheet_range_24_0115",
+      "pipeline_id": "pipeline_24_0115_same_sheet_range_24_0115",
+      "label": "24_0115 formula surface",
+      "role": "calculation",
+      "sheet": "24_0115",
+      "range": "B8:M57",
+      "input_refs": [
+        {
+          "id": "block_24_0115_006",
+          "kind": "table_candidate",
+          "role": "input",
+          "sheet": "24_0115",
+          "range": "A45:I50",
+          "label": "상반기 목표 매출/손익",
+          "authority": "block_candidate"
+        }
+      ],
+      "output_refs": [
+        {
+          "id": "block_24_0115_formula_surface",
+          "kind": "formula_region_candidate",
+          "role": "output",
+          "sheet": "24_0115",
+          "range": "B8:M57",
+          "label": "24_0115 formula surface",
+          "authority": "block_candidate"
+        }
+      ],
+      "transform_summary": {
+        "kind": "formula_dependency_edge",
+        "formula_count": 116,
+        "signature_group_count": 8,
+        "repeated_formula_family": true
+      },
+      "preview": {
+        "status": "sampled_from_top_left_window",
+        "rows": [
+          {
+            "row": 8,
+            "cells": [
+              {
+                "column": 2,
+                "display": "130",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "40",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "170",
+                "formula": null
+              },
+              {
+                "column": 6,
+                "display": "2",
+                "formula": null
+              },
+              {
+                "column": 8,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "130",
+                "formula": null
+              },
+              {
+                "column": 10,
+                "display": "41",
+                "formula": null
+              },
+              {
+                "column": 11,
+                "display": "171",
+                "formula": null
+              },
+              {
+                "column": 12,
+                "display": "0",
+                "formula": "=I8-B8"
+              },
+              {
+                "column": 13,
+                "display": "1",
+                "formula": "=J8-C8"
+              }
+            ]
+          },
+          {
+            "row": 9,
+            "cells": [
+              {
+                "column": 2,
+                "display": "30",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "3",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "33",
+                "formula": null
+              },
+              {
+                "column": 6,
+                "display": "2",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "30",
+                "formula": null
+              },
+              {
+                "column": 10,
+                "display": "5",
+                "formula": null
+              },
+              {
+                "column": 11,
+                "display": "35",
+                "formula": null
+              },
+              {
+                "column": 12,
+                "display": "0",
+                "formula": "=I9-B9"
+              },
+              {
+                "column": 13,
+                "display": "2",
+                "formula": "=J9-C9"
+              }
+            ]
+          },
+          {
+            "row": 10,
+            "cells": [
+              {
+                "column": 2,
+                "display": "81",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "9",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "90",
+                "formula": null
+              },
+              {
+                "column": 5,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 7,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "81",
+                "formula": null
+              },
+              {
+                "column": 10,
+                "display": "9",
+                "formula": null
+              },
+              {
+                "column": 11,
+                "display": "90",
+                "formula": null
+              },
+              {
+                "column": 12,
+                "display": "0",
+                "formula": "=I10-B10"
+              },
+              {
+                "column": 13,
+                "display": "0",
+                "formula": "=J10-C10"
+              }
+            ]
+          },
+          {
+            "row": 11,
+            "cells": [
+              {
+                "column": 2,
+                "display": "58",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "21",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "79",
+                "formula": null
+              },
+              {
+                "column": 5,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 6,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 7,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "58",
+                "formula": null
+              },
+              {
+                "column": 10,
+                "display": "22",
+                "formula": null
+              },
+              {
+                "column": 11,
+                "display": "80",
+                "formula": null
+              },
+              {
+                "column": 12,
+                "display": "0",
+                "formula": "=I11-B11"
+              },
+              {
+                "column": 13,
+                "display": "1",
+                "formula": "=J11-C11"
+              }
+            ]
+          },
+          {
+            "row": 12,
+            "cells": [
+              {
+                "column": 2,
+                "display": "54",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "2",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "56",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "54",
+                "formula": null
+              },
+              {
+                "column": 10,
+                "display": "2",
+                "formula": null
+              },
+              {
+                "column": 11,
+                "display": "56",
+                "formula": null
+              },
+              {
+                "column": 12,
+                "display": "0",
+                "formula": "=I12-B12"
+              },
+              {
+                "column": 13,
+                "display": "0",
+                "formula": "=J12-C12"
+              }
+            ]
+          },
+          {
+            "row": 13,
+            "cells": [
+              {
+                "column": 2,
+                "display": "16",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "2",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "18",
+                "formula": null
+              },
+              {
+                "column": 5,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "17",
+                "formula": null
+              },
+              {
+                "column": 10,
+                "display": "2",
+                "formula": null
+              },
+              {
+                "column": 11,
+                "display": "19",
+                "formula": null
+              },
+              {
+                "column": 12,
+                "display": "1",
+                "formula": "=I13-B13"
+              },
+              {
+                "column": 13,
+                "display": "0",
+                "formula": "=J13-C13"
+              }
+            ]
+          },
+          {
+            "row": 14,
+            "cells": [
+              {
+                "column": 2,
+                "display": "9",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "4",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "13",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "9",
+                "formula": "=E14-G14+B14"
+              },
+              {
+                "column": 10,
+                "display": "4",
+                "formula": "=C14+F14-H14"
+              },
+              {
+                "column": 11,
+                "display": "13",
+                "formula": "=I14+J14"
+              },
+              {
+                "column": 12,
+                "display": "0",
+                "formula": "=I14-B14"
+              },
+              {
+                "column": 13,
+                "display": "0",
+                "formula": "=J14-C14"
+              }
+            ]
+          },
+          {
+            "row": 15,
+            "cells": [
+              {
+                "column": 2,
+                "display": "9",
+                "formula": null
+              },
+              {
+                "column": 3,
+                "display": "0",
+                "formula": null
+              },
+              {
+                "column": 4,
+                "display": "9",
+                "formula": "=B15+C15"
+              },
+              {
+                "column": 5,
+                "display": "1",
+                "formula": null
+              },
+              {
+                "column": 9,
+                "display": "10",
+                "formula": "=E15-G15+B15"
+              },
+              {
+                "column": 10,
+                "display": "0",
+                "formula": "=C15+F15-H15"
+              },
+              {
+                "column": 11,
+                "display": "10",
+                "formula": "=I15+J15"
+              },
+              {
+                "column": 12,
+                "display": "1",
+                "formula": "=I15-B15"
+              },
+              {
+                "column": 13,
+                "display": "0",
+                "formula": "=J15-C15"
+              }
+            ]
+          }
+        ],
+        "sampled_row_count": 8,
+        "sampled_formula_cell_count": 23,
+        "source_sample_range": "A1:Z80"
+      },
+      "formula_policy": {
+        "formula_text_is_evidence_only": true,
+        "formula_result_authority": "not_established",
+        "recalculation_not_performed": true
+      },
+      "warnings": [
+        "formula_text_only_not_recalculated_result",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "same_sheet_dataflow"
+      ],
+      "evidence_refs": [
+        "pipeline_24_0115_same_sheet_range_24_0115",
+        "edge_24_0115_same_sheet_range_24_0115",
+        "signature_79311c1c31de",
+        "signature_8890fec40256",
+        "signature_9a6c85b55d8b",
+        "signature_3f8102fe8e94",
+        "signature_6a2dda7466ed",
+        "signature_163c9e68d151",
+        "signature_fc5efa07f925",
+        "signature_2d484c593b8c"
+      ]
+    },
+    {
+      "id": "projection_node_workbook",
+      "type": "data_view_projection",
+      "projection_kind": "document_summary_projection",
+      "source_node_id": "node_workbook",
+      "pipeline_id": null,
+      "label": "[Day 1] 1.0 (from 20250707)",
+      "role": "workbook_document",
+      "sheet": null,
+      "range": null,
+      "input_refs": [],
+      "output_refs": [],
+      "transform_summary": {},
+      "preview": {
+        "status": "metadata_only",
+        "rows": [],
+        "sampled_row_count": 0,
+        "sampled_formula_cell_count": 0
+      },
+      "formula_policy": {
+        "formula_text_is_evidence_only": true,
+        "formula_result_authority": "not_established",
+        "recalculation_not_performed": true
+      },
+      "warnings": [],
+      "evidence_refs": [
+        "live-evidence-package.json"
+      ]
+    }
+  ],
+  "carry_forward": {
+    "document_review_queue": [
+      {
+        "id": "review_external_dep_fc_data_A5",
+        "status": "blocked_until_source_acl_and_broker_allowlist",
+        "target_node_id": null,
+        "reason": "external_source_authority_blocker",
+        "evidence_refs": [
+          "external_dep_fc_data_A5",
+          "sampled_region_fc_data_inspect_values_window_001"
+        ]
+      },
+      {
+        "id": "review_external_importrange_source_authority",
+        "status": "requires_human_or_broker_policy_action",
+        "target_node_id": null,
+        "reason": "permission_or_authority_blocker",
+        "evidence_refs": [
+          "external_dep_fc_data_A5"
+        ]
+      },
+      {
+        "id": "review_formula_error_surfaces",
+        "status": "requires_formula_result_review",
+        "target_node_id": null,
+        "reason": "formula_result_authority_gap",
+        "evidence_refs": [
+          "action_error_sampled_region_fc_data_inspect_values_window_002",
+          "action_error_sampled_region_fc_data_inspect_values_window_009",
+          "action_error_sampled_region_fc_data_inspect_values_window_010"
+        ]
+      },
+      {
+        "id": "review_remaining_bounded_read_queue",
+        "status": "pending_bounded_sampling",
+        "target_node_id": null,
+        "reason": "coverage_gap",
+        "evidence_refs": [
+          "read_26_0518_next_window",
+          "read_26_0511_next_window",
+          "read_26_0504_next_window",
+          "read_26_0427_next_window",
+          "read_26_0420_next_window",
+          "read_26_0413_next_window",
+          "read_26_0406_next_window",
+          "read_26_0330_next_window",
+          "read_26_0323_next_window",
+          "read_26_0316_next_window",
+          "read_26_0309_next_window",
+          "read_26_0302_next_window"
+        ]
+      },
+      {
+        "id": "review_blocked_gate_results",
+        "status": "blocked",
+        "target_node_id": null,
+        "reason": "blocked_deterministic_gates",
+        "evidence_refs": [
+          "result_gate_target_external_source_external_dep_fc_data_a5_external_source_authority",
+          "result_gate_target_pipeline_pipeline_25_0707_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0714_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0721_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0728_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0804_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0811_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0818_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0825_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0901_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0908_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0915_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0922_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0929_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1013_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1020_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1027_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1103_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1110_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_fc_data_external_importrange_external_importrange_formula_error_reconciliation"
+        ]
+      }
+    ],
+    "semantic_validation_review_queue": [
+      {
+        "id": "review_proposal_period_tab_calculation_surface",
+        "target_id": "proposal_period_tab_calculation_surface",
+        "target_type": "semantic_concept_proposal",
+        "severity": "high",
+        "status": "blocked",
+        "blocking_gates": [
+          "source_authority_gate",
+          "formula_result_authority_gate"
+        ],
+        "required_action": "Resolve listed gate blockers before promotion or graph assembly."
+      },
+      {
+        "id": "review_proposal_source_authority_blocker_context",
+        "target_id": "proposal_source_authority_blocker_context",
+        "target_type": "semantic_concept_proposal",
+        "severity": "high",
+        "status": "blocked",
+        "blocking_gates": [
+          "source_authority_gate",
+          "formula_result_authority_gate"
+        ],
+        "required_action": "Resolve listed gate blockers before promotion or graph assembly."
+      },
+      {
+        "id": "review_shared_ontology_promotion",
+        "target_id": "shared_ontology_promotion",
+        "target_type": "promotion_gate",
+        "severity": "high",
+        "status": "blocked",
+        "blocking_gates": [
+          "source_authority_gate",
+          "human_review_gate"
+        ],
+        "required_action": "Resolve listed gate blockers before promotion or graph assembly."
+      }
+    ],
+    "action_contract_summary": {
+      "action_contract_count": 5,
+      "open_contract_count": 5,
+      "high_priority_contract_count": 4,
+      "medium_priority_contract_count": 1,
+      "sheet_owner_contract_count": 2,
+      "parser_operator_contract_count": 2,
+      "semantic_concept_count": 0,
+      "contract_status": "action_contract_layer_only"
+    },
+    "promotion_gate_results": [
+      {
+        "id": "validation_shared_ontology_promotion",
+        "target_id": "shared_ontology_promotion",
+        "target_type": "promotion_gate",
+        "label": "Shared ontology promotion",
+        "final_status": "blocked",
+        "gate_results": [
+          {
+            "gate": "local_boundary_gate",
+            "status": "accepted",
+            "reason": "Local boundary is confirmed.",
+            "evidence_refs": []
+          },
+          {
+            "gate": "source_authority_gate",
+            "status": "blocked",
+            "reason": "Source or formula-result authorities remain unavailable.",
+            "evidence_refs": [
+              "follow_up_nested_importrange_lineage",
+              "unavailable_formula_result_authority_for_report_pipelines"
+            ]
+          },
+          {
+            "gate": "human_review_gate",
+            "status": "blocked",
+            "reason": "Human approval for shared ontology promotion is not recorded.",
+            "evidence_refs": []
+          }
+        ],
+        "blocking_gates": [
+          "source_authority_gate",
+          "human_review_gate"
+        ],
+        "warning_gates": [],
+        "evidence_refs": [],
+        "domain_source_refs": []
+      }
+    ]
+  },
+  "summary": {
+    "data_view_projection_count": 5,
+    "calculation_pipeline_projection_count": 3,
+    "document_summary_projection_count": 2,
+    "sampled_projection_count": 3,
+    "metadata_only_projection_count": 2,
+    "not_sampled_projection_count": 0,
+    "formula_warning_projection_count": 3,
+    "carry_forward_document_review_count": 5,
+    "carry_forward_semantic_review_count": 3,
+    "shared_ontology_update_count": 0,
+    "projection_status": "projected_with_carry_forward_warnings"
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "Data view projection is a read model over accepted graph nodes only."
+    },
+    {
+      "level": "warning",
+      "message": "Formula text appears in projections, but formula-result authority is not established."
+    },
+    {
+      "level": "warning",
+      "message": "Semantic validation review items remain unresolved and were not promoted."
+    }
+  ]
+}

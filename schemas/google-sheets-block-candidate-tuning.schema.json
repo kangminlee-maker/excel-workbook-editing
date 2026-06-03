@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-block-candidate-tuning.schema.json",
+  "title": "Google Sheets Block / Region Candidate Tuning",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "sampled_regions",
+    "tuning_actions",
+    "remaining_read_queue",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "sampled_regions": { "type": "array", "items": { "$ref": "#/$defs/sampled_region" } },
+    "tuning_actions": { "type": "array", "items": { "$ref": "#/$defs/tuning_action" } },
+    "remaining_read_queue": { "type": "array", "items": { "$ref": "#/$defs/read_queue_item" } },
+    "summary": { "$ref": "#/$defs/counts" },
+    "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["spreadsheet_id", "title", "source_artifacts"],
+      "additionalProperties": false,
+      "properties": {
+        "spreadsheet_id": { "type": "string", "minLength": 1 },
+        "title": { "type": "string" },
+        "source_artifacts": {
+          "type": "object",
+          "required": ["live_block_candidates", "bounded_window_sample"],
+          "additionalProperties": false,
+          "properties": {
+            "live_block_candidates": { "type": "string", "minLength": 1 },
+            "bounded_window_sample": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": ["source_document", "input_authority", "tuning_status", "formula_result_authority"],
+      "additionalProperties": false,
+      "properties": {
+        "source_document": { "const": "live_google_sheet" },
+        "input_authority": { "const": "candidate_artifact_plus_broker_bounded_sample" },
+        "tuning_status": { "const": "tuning_packet_not_accepted_graph_claim" },
+        "formula_result_authority": { "const": "not_established" }
+      }
+    },
+    "sampled_region": {
+      "type": "object",
+      "required": [
+        "id",
+        "operation",
+        "sheet",
+        "range",
+        "subtype",
+        "bounds",
+        "metrics",
+        "preview",
+        "evidence",
+        "tuning_effect"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "operation": { "type": "string", "minLength": 1 },
+        "sheet": { "type": "string" },
+        "range": { "type": "string" },
+        "subtype": { "type": "string" },
+        "bounds": { "$ref": "#/$defs/bounds" },
+        "metrics": { "$ref": "#/$defs/counts" },
+        "preview": { "type": "array", "items": { "type": "string" } },
+        "evidence": { "type": "array", "items": { "type": "string" } },
+        "tuning_effect": { "type": "string" }
+      }
+    },
+    "tuning_action": {
+      "type": "object",
+      "required": ["id", "type", "sheet", "target_range", "effect", "evidence_refs", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "minLength": 1 },
+        "sheet": { "type": "string" },
+        "target_range": { "type": "string" },
+        "effect": { "type": "string" },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } },
+        "status": { "type": "string" }
+      }
+    },
+    "read_queue_item": {
+      "type": "object",
+      "required": ["id", "sheet", "operation", "range", "reason", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "sheet": { "type": "string" },
+        "operation": { "type": "string" },
+        "range": { "type": "string" },
+        "reason": { "type": "string" },
+        "status": { "type": "string" }
+      }
+    },
+    "bounds": {
+      "type": "object",
+      "required": ["start_row", "end_row", "start_column", "end_column", "a1_range"],
+      "additionalProperties": false,
+      "properties": {
+        "start_row": { "type": "integer", "minimum": 1 },
+        "end_row": { "type": "integer", "minimum": 1 },
+        "start_column": { "type": "integer", "minimum": 1 },
+        "end_column": { "type": "integer", "minimum": 1 },
+        "a1_range": { "type": "string", "minLength": 1 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] }
+    }
+  }
+}

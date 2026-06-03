@@ -1,0 +1,292 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/workbook-cross-validation-plan.schema.json",
+  "title": "Workbook Cross-Validation Plan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_artifacts",
+    "capture_targets",
+    "recommended_first_batch_target_ids",
+    "gate_checks",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source_artifacts": { "$ref": "#/$defs/source_artifacts" },
+    "capture_targets": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/capture_target" }
+    },
+    "recommended_first_batch_target_ids": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "gate_checks": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/gate_check" }
+    },
+    "summary": { "$ref": "#/$defs/summary" },
+    "parser_observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/observation" }
+    }
+  },
+  "$defs": {
+    "source_artifacts": {
+      "type": "object",
+      "required": ["block_candidates", "table_io_pipelines"],
+      "additionalProperties": false,
+      "properties": {
+        "block_candidates": { "type": "string", "minLength": 1 },
+        "table_io_pipelines": { "type": "string", "minLength": 1 }
+      }
+    },
+    "capture_target": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "target_type",
+        "status",
+        "priority",
+        "score",
+        "sheet",
+        "range",
+        "bounds",
+        "capture_window",
+        "target_ref",
+        "related_pipeline_ids",
+        "related_block_ids",
+        "related_region_ids",
+        "related_boundary_gate_ids",
+        "reasons",
+        "gate_checks",
+        "review_questions",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "visual_formula_validation_target" },
+        "target_type": {
+          "type": "string",
+          "enum": ["pipeline_output", "boundary_review", "image_hierarchy"]
+        },
+        "status": { "const": "candidate" },
+        "priority": { "type": "string", "enum": ["high", "medium", "low"] },
+        "score": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "sheet": { "type": ["string", "null"] },
+        "range": { "type": ["string", "null"] },
+        "bounds": {
+          "anyOf": [
+            { "$ref": "#/$defs/dimension_bounds" },
+            { "type": "null" }
+          ]
+        },
+        "capture_window": { "$ref": "#/$defs/capture_window" },
+        "target_ref": { "$ref": "#/$defs/target_ref" },
+        "related_pipeline_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "related_block_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "related_region_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "related_boundary_gate_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "reasons": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "gate_checks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/gate_check" }
+        },
+        "review_questions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "capture_window": {
+      "type": "object",
+      "required": ["sheet", "range", "bounds", "authority", "coordinate_systems"],
+      "additionalProperties": false,
+      "properties": {
+        "sheet": { "type": ["string", "null"] },
+        "range": { "type": ["string", "null"] },
+        "bounds": {
+          "anyOf": [
+            { "$ref": "#/$defs/dimension_bounds" },
+            { "type": "null" }
+          ]
+        },
+        "authority": { "const": "excel_render_capture" },
+        "coordinate_systems": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["cell_range", "grid_coordinate", "capture_bbox"]
+          }
+        }
+      }
+    },
+    "target_ref": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "workbook",
+        "sheet",
+        "range",
+        "block_id",
+        "region_id",
+        "bounds",
+        "label"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "cell_region",
+            "row_band",
+            "pivot_table",
+            "image_block",
+            "boundary_region",
+            "workbook_range",
+            "external_workbook_range",
+            "pivot_cache_source_range",
+            "unresolved_block",
+            "unknown"
+          ]
+        },
+        "workbook": { "type": ["string", "null"] },
+        "sheet": { "type": ["string", "null"] },
+        "range": { "type": ["string", "null"] },
+        "block_id": { "type": ["string", "null"] },
+        "region_id": { "type": ["string", "null"] },
+        "bounds": {
+          "anyOf": [
+            { "$ref": "#/$defs/dimension_bounds" },
+            { "type": "null" }
+          ]
+        },
+        "label": { "type": ["string", "null"] }
+      }
+    },
+    "gate_check": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "target_id",
+        "gate_type",
+        "status",
+        "deterministic_inputs",
+        "pass_conditions",
+        "failure_signals"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "visual_formula_gate_check" },
+        "target_id": { "type": "string", "minLength": 1 },
+        "gate_type": {
+          "type": "string",
+          "enum": [
+            "boundary_confirmation",
+            "formula_region_coherence",
+            "formula_summary_visual_alignment",
+            "image_table_hierarchy_confirmation",
+            "pipeline_input_output_alignment",
+            "pivot_cache_visual_alignment",
+            "unresolved_input_region_resolution"
+          ]
+        },
+        "status": { "const": "pending_capture" },
+        "deterministic_inputs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "pass_conditions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "failure_signals": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "dimension_bounds": {
+      "type": "object",
+      "required": ["min_row", "min_column", "max_row", "max_column"],
+      "additionalProperties": false,
+      "properties": {
+        "min_row": { "type": "integer", "minimum": 1 },
+        "min_column": { "type": "integer", "minimum": 1 },
+        "max_row": { "type": "integer", "minimum": 1 },
+        "max_column": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "capture_target_count",
+        "high_priority_count",
+        "medium_priority_count",
+        "low_priority_count",
+        "sheet_count",
+        "pipeline_target_count",
+        "pivot_report_target_count",
+        "unresolved_input_target_count",
+        "boundary_target_count",
+        "image_hierarchy_target_count",
+        "gate_check_count",
+        "recommended_first_batch_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "capture_target_count": { "type": "integer", "minimum": 0 },
+        "high_priority_count": { "type": "integer", "minimum": 0 },
+        "medium_priority_count": { "type": "integer", "minimum": 0 },
+        "low_priority_count": { "type": "integer", "minimum": 0 },
+        "sheet_count": { "type": "integer", "minimum": 0 },
+        "pipeline_target_count": { "type": "integer", "minimum": 0 },
+        "pivot_report_target_count": { "type": "integer", "minimum": 0 },
+        "unresolved_input_target_count": { "type": "integer", "minimum": 0 },
+        "boundary_target_count": { "type": "integer", "minimum": 0 },
+        "image_hierarchy_target_count": { "type": "integer", "minimum": 0 },
+        "gate_check_count": { "type": "integer", "minimum": 0 },
+        "recommended_first_batch_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}

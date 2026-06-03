@@ -1,0 +1,452 @@
+{
+  "schema_version": "1.0",
+  "snapshot_id": "gsheet-snapshot-02bd5e6a-0a96-498f-bef2-23831ed403cf",
+  "captured_at": "2026-06-02T01:50:28.368519+00:00",
+  "spreadsheet_id": "1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60",
+  "title": "[Day 1] 1.0 (from 20250707)",
+  "locale": "ko_KR",
+  "time_zone": "Asia/Seoul",
+  "tabs": [
+    {
+      "sheet_id": 1578292062,
+      "title": "26_0601",
+      "index": 0,
+      "row_count": 1880,
+      "column_count": 121,
+      "hidden": false
+    },
+    {
+      "sheet_id": 530035613,
+      "title": "26_0525",
+      "index": 1,
+      "row_count": 1828,
+      "column_count": 121,
+      "hidden": false
+    },
+    {
+      "sheet_id": 539550221,
+      "title": "26_0518",
+      "index": 2,
+      "row_count": 1908,
+      "column_count": 121,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1757205497,
+      "title": "26_0511",
+      "index": 3,
+      "row_count": 1922,
+      "column_count": 121,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1849044614,
+      "title": "26_0504",
+      "index": 4,
+      "row_count": 1924,
+      "column_count": 121,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1154473110,
+      "title": "26_0427",
+      "index": 5,
+      "row_count": 1933,
+      "column_count": 121,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1173950671,
+      "title": "26_0420",
+      "index": 6,
+      "row_count": 1850,
+      "column_count": 121,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1245550121,
+      "title": "26_0413",
+      "index": 7,
+      "row_count": 1897,
+      "column_count": 117,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1671855623,
+      "title": "26_0406",
+      "index": 8,
+      "row_count": 1830,
+      "column_count": 109,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1071187464,
+      "title": "26_0330",
+      "index": 9,
+      "row_count": 2388,
+      "column_count": 109,
+      "hidden": false
+    },
+    {
+      "sheet_id": 250232552,
+      "title": "26_0323",
+      "index": 10,
+      "row_count": 1782,
+      "column_count": 109,
+      "hidden": false
+    },
+    {
+      "sheet_id": 717540500,
+      "title": "26_0316",
+      "index": 11,
+      "row_count": 1741,
+      "column_count": 109,
+      "hidden": false
+    },
+    {
+      "sheet_id": 430526231,
+      "title": "26_0309",
+      "index": 12,
+      "row_count": 1725,
+      "column_count": 109,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1018665240,
+      "title": "26_0302",
+      "index": 13,
+      "row_count": 1752,
+      "column_count": 109,
+      "hidden": false
+    },
+    {
+      "sheet_id": 225930268,
+      "title": "26_0223",
+      "index": 14,
+      "row_count": 1757,
+      "column_count": 109,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1619413586,
+      "title": "26_0209",
+      "index": 15,
+      "row_count": 1698,
+      "column_count": 109,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1688201687,
+      "title": "26_0202",
+      "index": 16,
+      "row_count": 1671,
+      "column_count": 109,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1226311511,
+      "title": "26_0126",
+      "index": 17,
+      "row_count": 1648,
+      "column_count": 109,
+      "hidden": false
+    },
+    {
+      "sheet_id": 448942413,
+      "title": "26_0119",
+      "index": 18,
+      "row_count": 1575,
+      "column_count": 109,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1829121463,
+      "title": "26_0112",
+      "index": 19,
+      "row_count": 1530,
+      "column_count": 98,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1867676123,
+      "title": "26_0105",
+      "index": 20,
+      "row_count": 1634,
+      "column_count": 98,
+      "hidden": false
+    },
+    {
+      "sheet_id": 113274799,
+      "title": "25_1229",
+      "index": 21,
+      "row_count": 1572,
+      "column_count": 97,
+      "hidden": false
+    },
+    {
+      "sheet_id": 20443937,
+      "title": "25_1222",
+      "index": 22,
+      "row_count": 1568,
+      "column_count": 97,
+      "hidden": false
+    },
+    {
+      "sheet_id": 744808555,
+      "title": "25_1215",
+      "index": 23,
+      "row_count": 1608,
+      "column_count": 97,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1403555480,
+      "title": "25_1208",
+      "index": 24,
+      "row_count": 1573,
+      "column_count": 97,
+      "hidden": false
+    },
+    {
+      "sheet_id": 444869363,
+      "title": "25_1201",
+      "index": 25,
+      "row_count": 1648,
+      "column_count": 97,
+      "hidden": false
+    },
+    {
+      "sheet_id": 2132063407,
+      "title": "25_1124",
+      "index": 26,
+      "row_count": 1724,
+      "column_count": 97,
+      "hidden": false
+    },
+    {
+      "sheet_id": 965122562,
+      "title": "25_1117",
+      "index": 27,
+      "row_count": 1723,
+      "column_count": 97,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1973005229,
+      "title": "25_1110",
+      "index": 28,
+      "row_count": 1794,
+      "column_count": 97,
+      "hidden": false
+    },
+    {
+      "sheet_id": 2099364752,
+      "title": "25_1103",
+      "index": 29,
+      "row_count": 1747,
+      "column_count": 97,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1273368263,
+      "title": "25_1027",
+      "index": 30,
+      "row_count": 1715,
+      "column_count": 97,
+      "hidden": false
+    },
+    {
+      "sheet_id": 428974390,
+      "title": "시트7",
+      "index": 31,
+      "row_count": 1000,
+      "column_count": 26,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1911972014,
+      "title": "25_1020",
+      "index": 32,
+      "row_count": 1791,
+      "column_count": 97,
+      "hidden": false
+    },
+    {
+      "sheet_id": 683593032,
+      "title": "25_1013",
+      "index": 33,
+      "row_count": 1683,
+      "column_count": 97,
+      "hidden": false
+    },
+    {
+      "sheet_id": 2145375198,
+      "title": "25_0929",
+      "index": 34,
+      "row_count": 1772,
+      "column_count": 97,
+      "hidden": false
+    },
+    {
+      "sheet_id": 2066147692,
+      "title": "25_0922",
+      "index": 35,
+      "row_count": 1737,
+      "column_count": 96,
+      "hidden": false
+    },
+    {
+      "sheet_id": 893627754,
+      "title": "25_0915",
+      "index": 36,
+      "row_count": 1659,
+      "column_count": 96,
+      "hidden": false
+    },
+    {
+      "sheet_id": 928446920,
+      "title": "25_0908",
+      "index": 37,
+      "row_count": 1639,
+      "column_count": 96,
+      "hidden": false
+    },
+    {
+      "sheet_id": 925764263,
+      "title": "25_0901",
+      "index": 38,
+      "row_count": 1725,
+      "column_count": 96,
+      "hidden": false
+    },
+    {
+      "sheet_id": 2024192173,
+      "title": "25_0825",
+      "index": 39,
+      "row_count": 1705,
+      "column_count": 96,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1509205922,
+      "title": "25_0818",
+      "index": 40,
+      "row_count": 1679,
+      "column_count": 96,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1416266805,
+      "title": "25_0811",
+      "index": 41,
+      "row_count": 1650,
+      "column_count": 95,
+      "hidden": false
+    },
+    {
+      "sheet_id": 19418921,
+      "title": "25_0804",
+      "index": 42,
+      "row_count": 1742,
+      "column_count": 95,
+      "hidden": false
+    },
+    {
+      "sheet_id": 268342326,
+      "title": "25_0728",
+      "index": 43,
+      "row_count": 1815,
+      "column_count": 95,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1459546999,
+      "title": "25_0721",
+      "index": 44,
+      "row_count": 1807,
+      "column_count": 95,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1291936361,
+      "title": "25_0714",
+      "index": 45,
+      "row_count": 1827,
+      "column_count": 95,
+      "hidden": false
+    },
+    {
+      "sheet_id": 99575932,
+      "title": "25_0707",
+      "index": 46,
+      "row_count": 1874,
+      "column_count": 95,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1221520043,
+      "title": "FC_DATA",
+      "index": 47,
+      "row_count": 676,
+      "column_count": 32,
+      "hidden": false
+    },
+    {
+      "sheet_id": 1382065813,
+      "title": "25_06이전",
+      "index": 48,
+      "row_count": 1,
+      "column_count": 1,
+      "hidden": false
+    },
+    {
+      "sheet_id": 15899635,
+      "title": "24_0115",
+      "index": 49,
+      "row_count": 2007,
+      "column_count": 48,
+      "hidden": true
+    },
+    {
+      "sheet_id": 1920129007,
+      "title": "24_0108",
+      "index": 50,
+      "row_count": 1850,
+      "column_count": 48,
+      "hidden": true
+    },
+    {
+      "sheet_id": 711558189,
+      "title": "24_0102",
+      "index": 51,
+      "row_count": 1890,
+      "column_count": 48,
+      "hidden": true
+    }
+  ],
+  "named_ranges": [],
+  "protected_ranges": [],
+  "data_validations": [],
+  "formula_samples": [],
+  "cell_states": [],
+  "telemetry": {
+    "request_count": 1,
+    "retry_count": 0,
+    "elapsed_ms": 3857,
+    "timeout_budget": {
+      "read_seconds": 60,
+      "write_seconds": 60,
+      "poll_seconds": 120
+    }
+  },
+  "artifacts": [
+    {
+      "kind": "broker_policy",
+      "path": "access-preflight.json"
+    },
+    {
+      "kind": "broker_auth",
+      "path": "access-preflight.json"
+    }
+  ]
+}

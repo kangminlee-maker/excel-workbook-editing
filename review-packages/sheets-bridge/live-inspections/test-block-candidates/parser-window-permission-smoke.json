@@ -1,0 +1,1 @@
+{"smoke_results": [{"operation": "inspect.grid_window", "result": "passed"}, {"operation": "inspect.values_window", "result": "passed"}, {"operation": "inspect.formula_window", "result": "passed"}]}

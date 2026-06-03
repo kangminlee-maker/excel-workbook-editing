@@ -1,0 +1,600 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/workbook-evidence.schema.json",
+  "title": "Workbook Evidence Package",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "evidence_layers",
+    "workbook",
+    "sheets",
+    "coordinate_maps",
+    "summary",
+    "limits",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "package_kind": {
+      "type": "string",
+      "enum": ["direct_workbook_observation", "artifact_assembled_workbook_understanding"]
+    },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "source_artifacts": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "artifact_inventory": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/artifact_inventory_item" }
+    },
+    "evidence_layers": { "$ref": "#/$defs/evidence_layers" },
+    "workbook": { "$ref": "#/$defs/workbook" },
+    "sheets": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/sheet" }
+    },
+    "coordinate_maps": { "$ref": "#/$defs/coordinate_maps" },
+    "decision_indexes": { "$ref": "#/$defs/decision_indexes" },
+    "domain_knowledge_refs": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/domain_knowledge_ref" }
+    },
+    "lineage_refs": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/lineage_ref" }
+    },
+    "review_queue": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/review_item" }
+    },
+    "summary": { "$ref": "#/$defs/summary" },
+    "limits": { "$ref": "#/$defs/limits" },
+    "parser_observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/observation" }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["path", "file_name", "size_bytes", "sha256"],
+      "additionalProperties": false,
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "file_name": { "type": "string", "minLength": 1 },
+        "size_bytes": { "type": "integer", "minimum": 0 },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "artifact_inventory_item": {
+      "type": "object",
+      "required": ["id", "path", "schema_version", "generated_at", "summary"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "path": { "type": "string", "minLength": 1 },
+        "schema_version": { "type": ["string", "null"] },
+        "generated_at": { "type": ["string", "null"] },
+        "summary": { "type": "object", "additionalProperties": true }
+      }
+    },
+    "evidence_layers": {
+      "type": "object",
+      "required": ["workbook_structure", "formula_dataflow", "rendered_visual"],
+      "additionalProperties": false,
+      "properties": {
+        "workbook_structure": { "$ref": "#/$defs/layer_status" },
+        "formula_dataflow": { "$ref": "#/$defs/layer_status" },
+        "rendered_visual": { "$ref": "#/$defs/layer_status" },
+        "view_state": { "$ref": "#/$defs/layer_status" },
+        "boundary_decisions": { "$ref": "#/$defs/layer_status" },
+        "pipeline_roles": { "$ref": "#/$defs/layer_status" },
+        "domain_knowledge": { "$ref": "#/$defs/layer_status" }
+      }
+    },
+    "layer_status": {
+      "type": "object",
+      "required": ["status", "detail"],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["available", "partial", "not_captured", "unavailable"]
+        },
+        "detail": { "type": "string" }
+      }
+    },
+    "workbook": {
+      "type": "object",
+      "required": [
+        "active_sheet",
+        "sheet_count",
+        "named_ranges",
+        "external_link_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "active_sheet": { "type": ["string", "null"] },
+        "sheet_count": { "type": "integer", "minimum": 0 },
+        "named_ranges": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/named_range" }
+        },
+        "external_link_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "named_range": {
+      "type": "object",
+      "required": ["name", "attr_text", "hidden", "destinations"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "attr_text": { "type": ["string", "number", "boolean", "null"] },
+        "hidden": { "type": "boolean" },
+        "destinations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/range_destination" }
+        }
+      }
+    },
+    "range_destination": {
+      "type": "object",
+      "required": ["sheet", "range"],
+      "additionalProperties": false,
+      "properties": {
+        "sheet": { "type": "string" },
+        "range": { "type": "string" }
+      }
+    },
+    "sheet": {
+      "type": "object",
+      "required": [
+        "name",
+        "index",
+        "sheet_state",
+        "dimensions",
+        "grid_bounds",
+        "max_row",
+        "max_column",
+        "freeze_panes",
+        "auto_filter_ref",
+        "print_area",
+        "default_row_height",
+        "default_column_width",
+        "row_dimensions",
+        "column_dimensions",
+        "merged_ranges",
+        "tables",
+        "cells",
+        "cell_observation_summary",
+        "formula_observations",
+        "objects",
+        "visual_feature_seeds",
+        "parser_observations"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "index": { "type": "integer", "minimum": 0 },
+        "sheet_state": { "type": "string" },
+        "dimensions": { "type": "string" },
+        "grid_bounds": { "$ref": "#/$defs/bounds" },
+        "max_row": { "type": "integer", "minimum": 0 },
+        "max_column": { "type": "integer", "minimum": 0 },
+        "freeze_panes": { "type": ["string", "null"] },
+        "auto_filter_ref": { "type": ["string", "null"] },
+        "print_area": {
+          "type": ["string", "number", "boolean", "array", "null"],
+          "items": { "type": ["string", "number", "boolean", "null"] }
+        },
+        "default_row_height": { "type": ["number", "integer", "string", "null"] },
+        "default_column_width": { "type": ["number", "integer", "string", "null"] },
+        "row_dimensions": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/row_dimension" }
+        },
+        "column_dimensions": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/column_dimension" }
+        },
+        "merged_ranges": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/range_payload" }
+        },
+        "tables": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/table" }
+        },
+        "cells": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/cell" }
+        },
+        "cell_observation_summary": { "$ref": "#/$defs/cell_observation_summary" },
+        "formula_observations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/formula_observation" }
+        },
+        "objects": { "$ref": "#/$defs/objects" },
+        "visual_feature_seeds": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/visual_feature_seed" }
+        },
+        "parser_observations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/observation" }
+        }
+      }
+    },
+    "bounds": {
+      "type": "object",
+      "required": ["min_row", "min_column", "max_row", "max_column"],
+      "additionalProperties": false,
+      "properties": {
+        "min_row": { "type": "integer", "minimum": 1 },
+        "min_column": { "type": "integer", "minimum": 1 },
+        "max_row": { "type": "integer", "minimum": 1 },
+        "max_column": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "row_dimension": {
+      "type": "object",
+      "required": ["row", "height", "hidden", "outline_level"],
+      "additionalProperties": false,
+      "properties": {
+        "row": { "type": "integer", "minimum": 1 },
+        "height": { "type": ["number", "integer", "string", "null"] },
+        "hidden": { "type": "boolean" },
+        "outline_level": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "column_dimension": {
+      "type": "object",
+      "required": ["column", "width", "hidden", "outline_level"],
+      "additionalProperties": false,
+      "properties": {
+        "column": { "type": "string", "minLength": 1 },
+        "width": { "type": ["number", "integer", "string", "null"] },
+        "hidden": { "type": "boolean" },
+        "outline_level": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "range_payload": {
+      "type": "object",
+      "required": ["range", "bounds"],
+      "additionalProperties": false,
+      "properties": {
+        "range": { "type": "string", "minLength": 1 },
+        "bounds": { "$ref": "#/$defs/bounds" }
+      }
+    },
+    "table": {
+      "type": "object",
+      "required": ["name", "range"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "range": { "type": "string" }
+      }
+    },
+    "cell": {
+      "type": "object",
+      "required": [
+        "cell",
+        "row",
+        "column",
+        "value_type",
+        "value_preview",
+        "formula",
+        "number_format",
+        "style",
+        "alignment",
+        "border_sides"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "cell": { "type": "string", "minLength": 1 },
+        "row": { "type": "integer", "minimum": 1 },
+        "column": { "type": "integer", "minimum": 1 },
+        "value_type": {
+          "type": "string",
+          "enum": ["blank", "boolean", "datetime", "formula", "number", "string"]
+        },
+        "value_preview": { "type": ["string", "null"] },
+        "formula": { "type": ["string", "null"] },
+        "number_format": { "type": "string" },
+        "style": { "$ref": "#/$defs/style" },
+        "alignment": { "$ref": "#/$defs/alignment" },
+        "border_sides": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["left", "right", "top", "bottom"]
+          }
+        }
+      }
+    },
+    "style": {
+      "type": "object",
+      "required": ["has_style", "bold", "italic", "font_size", "fill_type", "fill_color"],
+      "additionalProperties": false,
+      "properties": {
+        "has_style": { "type": "boolean" },
+        "bold": { "type": "boolean" },
+        "italic": { "type": "boolean" },
+        "font_size": { "type": ["number", "integer", "string", "null"] },
+        "fill_type": { "type": ["string", "null"] },
+        "fill_color": { "type": ["string", "null"] }
+      }
+    },
+    "alignment": {
+      "type": "object",
+      "required": ["horizontal", "vertical", "wrap_text"],
+      "additionalProperties": false,
+      "properties": {
+        "horizontal": { "type": ["string", "null"] },
+        "vertical": { "type": ["string", "null"] },
+        "wrap_text": { "type": "boolean" }
+      }
+    },
+    "cell_observation_summary": {
+      "type": "object",
+      "required": [
+        "non_empty_cell_count",
+        "formula_cell_count",
+        "styled_cell_count",
+        "observed_cell_count",
+        "omitted_cell_count",
+        "truncated"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "non_empty_cell_count": { "type": "integer", "minimum": 0 },
+        "formula_cell_count": { "type": "integer", "minimum": 0 },
+        "styled_cell_count": { "type": "integer", "minimum": 0 },
+        "observed_cell_count": { "type": "integer", "minimum": 0 },
+        "omitted_cell_count": { "type": "integer", "minimum": 0 },
+        "truncated": { "type": "boolean" }
+      }
+    },
+    "formula_observation": {
+      "type": "object",
+      "required": ["cell", "formula", "value_preview", "number_format"],
+      "additionalProperties": false,
+      "properties": {
+        "cell": { "type": "string", "minLength": 1 },
+        "formula": { "type": "string" },
+        "value_preview": { "type": ["string", "null"] },
+        "number_format": { "type": "string" }
+      }
+    },
+    "objects": {
+      "type": "object",
+      "required": ["images", "charts"],
+      "additionalProperties": false,
+      "properties": {
+        "images": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/object_observation" }
+        },
+        "charts": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/object_observation" }
+        }
+      }
+    },
+    "object_observation": {
+      "type": "object",
+      "required": ["id", "type", "anchor"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "enum": ["image", "chart"] },
+        "anchor": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": ["kind"],
+          "properties": {
+            "kind": { "type": "string" }
+          }
+        }
+      }
+    },
+    "visual_feature_seed": {
+      "type": "object",
+      "required": ["type", "source", "reason"],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["merged_range", "declared_table", "image_anchor", "chart_anchor"]
+        },
+        "source": { "type": "string" },
+        "reason": { "type": "string" }
+      }
+    },
+    "coordinate_maps": {
+      "type": "object",
+      "required": ["status", "detail", "sheets"],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["grid_only", "normalized_captures_available"]
+        },
+        "detail": { "type": "string" },
+        "sheets": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sheet_coordinate_seed" }
+        },
+        "capture_mappings": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/capture_mapping" }
+        }
+      }
+    },
+    "sheet_coordinate_seed": {
+      "type": "object",
+      "required": ["sheet", "status", "dimensions", "grid_bounds"],
+      "additionalProperties": false,
+      "properties": {
+        "sheet": { "type": "string" },
+        "status": { "const": "grid_only" },
+        "dimensions": { "type": "string" },
+        "grid_bounds": { "$ref": "#/$defs/bounds" }
+      }
+    },
+    "capture_mapping": {
+      "type": "object",
+      "required": [
+        "id",
+        "status",
+        "sheet",
+        "cell_range",
+        "capture_id",
+        "target_id",
+        "quality_status",
+        "view_state_classification"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": ["string", "null"] },
+        "status": { "type": ["string", "null"] },
+        "sheet": { "type": ["string", "null"] },
+        "cell_range": { "type": ["string", "null"] },
+        "capture_id": { "type": ["string", "null"] },
+        "target_id": { "type": ["string", "null"] },
+        "quality_status": { "type": ["string", "null"] },
+        "view_state_classification": { "type": ["string", "null"] }
+      }
+    },
+    "decision_indexes": {
+      "type": "object",
+      "required": [
+        "accepted_gate_result_ids",
+        "rejected_gate_result_ids",
+        "review_required_gate_result_ids",
+        "accepted_boundary_decision_ids",
+        "rejected_boundary_decision_ids",
+        "review_required_boundary_decision_ids",
+        "accepted_pipeline_role_validation_ids",
+        "rejected_pipeline_role_validation_ids",
+        "review_required_pipeline_role_validation_ids"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "accepted_gate_result_ids": { "$ref": "#/$defs/string_array" },
+        "rejected_gate_result_ids": { "$ref": "#/$defs/string_array" },
+        "review_required_gate_result_ids": { "$ref": "#/$defs/string_array" },
+        "accepted_boundary_decision_ids": { "$ref": "#/$defs/string_array" },
+        "rejected_boundary_decision_ids": { "$ref": "#/$defs/string_array" },
+        "review_required_boundary_decision_ids": { "$ref": "#/$defs/string_array" },
+        "accepted_pipeline_role_validation_ids": { "$ref": "#/$defs/string_array" },
+        "rejected_pipeline_role_validation_ids": { "$ref": "#/$defs/string_array" },
+        "review_required_pipeline_role_validation_ids": { "$ref": "#/$defs/string_array" }
+      }
+    },
+    "string_array": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "domain_knowledge_ref": {
+      "type": "object",
+      "required": ["id", "layer", "path", "scope", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "layer": { "type": "string", "enum": ["general_domain", "local_domain"] },
+        "path": { "type": "string", "minLength": 1 },
+        "scope": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "enum": ["available", "missing"] }
+      }
+    },
+    "lineage_ref": {
+      "type": "object",
+      "required": ["from", "to", "relation"],
+      "additionalProperties": false,
+      "properties": {
+        "from": { "type": "string", "minLength": 1 },
+        "to": { "type": "string", "minLength": 1 },
+        "relation": { "type": "string", "minLength": 1 }
+      }
+    },
+    "review_item": {
+      "type": "object",
+      "required": ["id", "kind", "status", "reason", "sheet", "range", "evidence_refs"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "kind": { "type": "string", "minLength": 1 },
+        "status": { "type": ["string", "null"] },
+        "reason": { "type": ["string", "null"] },
+        "sheet": { "type": ["string", "null"] },
+        "range": { "type": ["string", "null"] },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "sheet_count",
+        "hidden_sheet_count",
+        "non_empty_cell_count",
+        "formula_cell_count",
+        "styled_cell_count",
+        "merged_range_count",
+        "table_count",
+        "image_count",
+        "chart_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "sheet_count": { "type": "integer", "minimum": 0 },
+        "hidden_sheet_count": { "type": "integer", "minimum": 0 },
+        "non_empty_cell_count": { "type": "integer", "minimum": 0 },
+        "formula_cell_count": { "type": "integer", "minimum": 0 },
+        "styled_cell_count": { "type": "integer", "minimum": 0 },
+        "merged_range_count": { "type": "integer", "minimum": 0 },
+        "table_count": { "type": "integer", "minimum": 0 },
+        "image_count": { "type": "integer", "minimum": 0 },
+        "chart_count": { "type": "integer", "minimum": 0 },
+        "artifact_count": { "type": "integer", "minimum": 0 },
+        "capture_result_count": { "type": "integer", "minimum": 0 },
+        "visual_feature_result_count": { "type": "integer", "minimum": 0 },
+        "accepted_gate_count": { "type": "integer", "minimum": 0 },
+        "review_required_gate_count": { "type": "integer", "minimum": 0 },
+        "accepted_boundary_count": { "type": "integer", "minimum": 0 },
+        "review_required_boundary_count": { "type": "integer", "minimum": 0 },
+        "accepted_pipeline_role_count": { "type": "integer", "minimum": 0 },
+        "review_required_pipeline_role_count": { "type": "integer", "minimum": 0 },
+        "review_queue_count": { "type": "integer", "minimum": 0 },
+        "domain_knowledge_ref_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "required": ["max_cell_observations_per_sheet", "preview_chars"],
+      "additionalProperties": false,
+      "properties": {
+        "max_cell_observations_per_sheet": { "type": "integer", "minimum": 1 },
+        "preview_chars": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}

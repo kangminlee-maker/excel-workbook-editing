@@ -1,0 +1,1366 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-01T07:20:54.092658Z",
+  "source_artifacts": {
+    "render_capture_files": [
+      "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-render-captures.json",
+      "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-recapture-candidate-captures.json"
+    ],
+    "capture_quality_files": [
+      "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-capture-quality.json",
+      "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-recapture-candidate-quality.json"
+    ],
+    "view_state_profile": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-view-state-profile.json"
+  },
+  "method": {
+    "name": "deterministic_capture_range_coordinate_normalization",
+    "authority": "range_to_capture_bbox_mapping_not_visual_feature_truth",
+    "visible_state_policy": "Normalize only the captured visible-state range. Hidden or filtered rows remain structural data evidence, not visual absence."
+  },
+  "coordinate_mappings": [
+    {
+      "id": "coord_quality_capture_target_결제_수수료_cell_region_1",
+      "type": "coordinate_mapping",
+      "status": "normalized_visible_range",
+      "capture_id": "capture_target_결제_수수료_cell_region_1",
+      "target_id": "target_결제_수수료_cell_region_1",
+      "sheet": "결제&수수료",
+      "cell_range": "A1:D13",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 13,
+        "max_column": 4
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 341,
+        "height": 222
+      },
+      "pixel_scale": {
+        "row_count": 13,
+        "column_count": 4,
+        "pixels_per_row_estimate": 17.076923,
+        "pixels_per_column_estimate": 85.25,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "usable",
+      "view_state_classification": "no_material_view_state_signal",
+      "view_state_authority_decision": "continue_with_visible_render_authority",
+      "render_capture_file": "mbp-2026-02-render-captures.json",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "normalization_notes": "Capture range is normalized as a visible-state bbox estimate.",
+      "evidence_refs": [
+        "quality_capture_target_결제_수수료_cell_region_1",
+        "capture_target_결제_수수료_cell_region_1",
+        "view_state_quality_capture_target_결제_수수료_cell_region_1"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_target_결제상세_cell_region_1",
+      "type": "coordinate_mapping",
+      "status": "review_required",
+      "capture_id": "capture_target_결제상세_cell_region_1",
+      "target_id": "target_결제상세_cell_region_1",
+      "sheet": "결제상세",
+      "cell_range": "A1:AY22",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 51
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 3478,
+        "height": 375
+      },
+      "pixel_scale": {
+        "row_count": 22,
+        "column_count": 51,
+        "pixels_per_row_estimate": 17.045455,
+        "pixels_per_column_estimate": 68.196078,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "review_required",
+      "view_state_classification": "no_material_view_state_signal",
+      "view_state_authority_decision": "continue_with_visible_render_authority",
+      "render_capture_file": "mbp-2026-02-render-captures.json",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "normalization_notes": "Capture has a bbox but quality checks require review before downstream visual gates trust it.",
+      "evidence_refs": [
+        "quality_capture_target_결제상세_cell_region_1",
+        "capture_target_결제상세_cell_region_1",
+        "view_state_quality_capture_target_결제상세_cell_region_1"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_target_당월산식_cell_region_1",
+      "type": "coordinate_mapping",
+      "status": "blocked_by_view_state",
+      "capture_id": "capture_target_당월산식_cell_region_1",
+      "target_id": "target_당월산식_cell_region_1",
+      "sheet": "당월산식",
+      "cell_range": "A1:BA22",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 53
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 2311,
+        "height": 69
+      },
+      "pixel_scale": {
+        "row_count": 22,
+        "column_count": 53,
+        "pixels_per_row_estimate": 3.136364,
+        "pixels_per_column_estimate": 43.603774,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "recapture_required",
+      "view_state_classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "view_state_authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "render_capture_file": "mbp-2026-02-render-captures.json",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "normalization_notes": "Visible-state capture is dominated by hidden or filtered rows; preserve structural data separately and use only diagnostic reveal captures if needed.",
+      "evidence_refs": [
+        "quality_capture_target_당월산식_cell_region_1",
+        "capture_target_당월산식_cell_region_1",
+        "view_state_quality_capture_target_당월산식_cell_region_1"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_target_리스픽_cell_region_2",
+      "type": "coordinate_mapping",
+      "status": "normalized_visible_range",
+      "capture_id": "capture_target_리스픽_cell_region_2",
+      "target_id": "target_리스픽_cell_region_2",
+      "sheet": "리스픽",
+      "cell_range": "A2:N15",
+      "range_bounds": {
+        "min_row": 2,
+        "min_column": 1,
+        "max_row": 15,
+        "max_column": 14
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 873,
+        "height": 239
+      },
+      "pixel_scale": {
+        "row_count": 14,
+        "column_count": 14,
+        "pixels_per_row_estimate": 17.071429,
+        "pixels_per_column_estimate": 62.357143,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "usable",
+      "view_state_classification": "no_material_view_state_signal",
+      "view_state_authority_decision": "continue_with_visible_render_authority",
+      "render_capture_file": "mbp-2026-02-render-captures.json",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "normalization_notes": "Capture range is normalized as a visible-state bbox estimate.",
+      "evidence_refs": [
+        "quality_capture_target_리스픽_cell_region_2",
+        "capture_target_리스픽_cell_region_2",
+        "view_state_quality_capture_target_리스픽_cell_region_2"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_target_매출_cell_region_1",
+      "type": "coordinate_mapping",
+      "status": "normalized_visible_range",
+      "capture_id": "capture_target_매출_cell_region_1",
+      "target_id": "target_매출_cell_region_1",
+      "sheet": "매출",
+      "cell_range": "A1:M60",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 60,
+        "max_column": 13
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1278,
+        "height": 1023
+      },
+      "pixel_scale": {
+        "row_count": 60,
+        "column_count": 13,
+        "pixels_per_row_estimate": 17.05,
+        "pixels_per_column_estimate": 98.307692,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "usable",
+      "view_state_classification": "no_material_view_state_signal",
+      "view_state_authority_decision": "continue_with_visible_render_authority",
+      "render_capture_file": "mbp-2026-02-render-captures.json",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "normalization_notes": "Capture range is normalized as a visible-state bbox estimate.",
+      "evidence_refs": [
+        "quality_capture_target_매출_cell_region_1",
+        "capture_target_매출_cell_region_1",
+        "view_state_quality_capture_target_매출_cell_region_1"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_target_수익인식60일_cell_region_1",
+      "type": "coordinate_mapping",
+      "status": "normalized_with_view_state_warning",
+      "capture_id": "capture_target_수익인식60일_cell_region_1",
+      "target_id": "target_수익인식60일_cell_region_1",
+      "sheet": "수익인식60일",
+      "cell_range": "A1:AC22",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 29
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1858,
+        "height": 358
+      },
+      "pixel_scale": {
+        "row_count": 22,
+        "column_count": 29,
+        "pixels_per_row_estimate": 16.272727,
+        "pixels_per_column_estimate": 64.068966,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "usable",
+      "view_state_classification": "filtered_rows_affect_capture_window",
+      "view_state_authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "render_capture_file": "mbp-2026-02-render-captures.json",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "normalization_notes": "Capture is usable but view-state affects part of the mapped range.",
+      "evidence_refs": [
+        "quality_capture_target_수익인식60일_cell_region_1",
+        "capture_target_수익인식60일_cell_region_1",
+        "view_state_quality_capture_target_수익인식60일_cell_region_1"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_target_수익인식60일_강사료_cell_region_1",
+      "type": "coordinate_mapping",
+      "status": "normalized_visible_range",
+      "capture_id": "capture_target_수익인식60일_강사료_cell_region_1",
+      "target_id": "target_수익인식60일_강사료_cell_region_1",
+      "sheet": "수익인식60일_강사료",
+      "cell_range": "A1:Y22",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 25
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1651,
+        "height": 375
+      },
+      "pixel_scale": {
+        "row_count": 22,
+        "column_count": 25,
+        "pixels_per_row_estimate": 17.045455,
+        "pixels_per_column_estimate": 66.04,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "usable",
+      "view_state_classification": "no_material_view_state_signal",
+      "view_state_authority_decision": "continue_with_visible_render_authority",
+      "render_capture_file": "mbp-2026-02-render-captures.json",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "normalization_notes": "Capture range is normalized as a visible-state bbox estimate.",
+      "evidence_refs": [
+        "quality_capture_target_수익인식60일_강사료_cell_region_1",
+        "capture_target_수익인식60일_강사료_cell_region_1",
+        "view_state_quality_capture_target_수익인식60일_강사료_cell_region_1"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_target_얼리버드_cell_region_1",
+      "type": "coordinate_mapping",
+      "status": "normalized_visible_range",
+      "capture_id": "capture_target_얼리버드_cell_region_1",
+      "target_id": "target_얼리버드_cell_region_1",
+      "sheet": "얼리버드",
+      "cell_range": "A1:E22",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 5
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 315,
+        "height": 375
+      },
+      "pixel_scale": {
+        "row_count": 22,
+        "column_count": 5,
+        "pixels_per_row_estimate": 17.045455,
+        "pixels_per_column_estimate": 63.0,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "usable",
+      "view_state_classification": "no_material_view_state_signal",
+      "view_state_authority_decision": "continue_with_visible_render_authority",
+      "render_capture_file": "mbp-2026-02-render-captures.json",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "normalization_notes": "Capture range is normalized as a visible-state bbox estimate.",
+      "evidence_refs": [
+        "quality_capture_target_얼리버드_cell_region_1",
+        "capture_target_얼리버드_cell_region_1",
+        "view_state_quality_capture_target_얼리버드_cell_region_1"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_target_유하다요_cell_region_1",
+      "type": "coordinate_mapping",
+      "status": "normalized_visible_range",
+      "capture_id": "capture_target_유하다요_cell_region_1",
+      "target_id": "target_유하다요_cell_region_1",
+      "sheet": "유하다요",
+      "cell_range": "A1:S22",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 19
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1416,
+        "height": 353
+      },
+      "pixel_scale": {
+        "row_count": 22,
+        "column_count": 19,
+        "pixels_per_row_estimate": 16.045455,
+        "pixels_per_column_estimate": 74.526316,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "usable",
+      "view_state_classification": "no_material_view_state_signal",
+      "view_state_authority_decision": "continue_with_visible_render_authority",
+      "render_capture_file": "mbp-2026-02-render-captures.json",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "normalization_notes": "Capture range is normalized as a visible-state bbox estimate.",
+      "evidence_refs": [
+        "quality_capture_target_유하다요_cell_region_1",
+        "capture_target_유하다요_cell_region_1",
+        "view_state_quality_capture_target_유하다요_cell_region_1"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_target_유하다요_강사료_cell_region_1",
+      "type": "coordinate_mapping",
+      "status": "review_required",
+      "capture_id": "capture_target_유하다요_강사료_cell_region_1",
+      "target_id": "target_유하다요_강사료_cell_region_1",
+      "sheet": "유하다요_강사료",
+      "cell_range": "A1:AI22",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 35
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1900,
+        "height": 375
+      },
+      "pixel_scale": {
+        "row_count": 22,
+        "column_count": 35,
+        "pixels_per_row_estimate": 17.045455,
+        "pixels_per_column_estimate": 54.285714,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "review_required",
+      "view_state_classification": "no_material_view_state_signal",
+      "view_state_authority_decision": "continue_with_visible_render_authority",
+      "render_capture_file": "mbp-2026-02-render-captures.json",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "normalization_notes": "Capture has a bbox but quality checks require review before downstream visual gates trust it.",
+      "evidence_refs": [
+        "quality_capture_target_유하다요_강사료_cell_region_1",
+        "capture_target_유하다요_강사료_cell_region_1",
+        "view_state_quality_capture_target_유하다요_강사료_cell_region_1"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_target_정가표_cell_region_1",
+      "type": "coordinate_mapping",
+      "status": "normalized_visible_range",
+      "capture_id": "capture_target_정가표_cell_region_1",
+      "target_id": "target_정가표_cell_region_1",
+      "sheet": "정가표",
+      "cell_range": "A1:T22",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 20
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1123,
+        "height": 375
+      },
+      "pixel_scale": {
+        "row_count": 22,
+        "column_count": 20,
+        "pixels_per_row_estimate": 17.045455,
+        "pixels_per_column_estimate": 56.15,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "usable",
+      "view_state_classification": "no_material_view_state_signal",
+      "view_state_authority_decision": "continue_with_visible_render_authority",
+      "render_capture_file": "mbp-2026-02-render-captures.json",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "normalization_notes": "Capture range is normalized as a visible-state bbox estimate.",
+      "evidence_refs": [
+        "quality_capture_target_정가표_cell_region_1",
+        "capture_target_정가표_cell_region_1",
+        "view_state_quality_capture_target_정가표_cell_region_1"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_target_포도_cell_region_1",
+      "type": "coordinate_mapping",
+      "status": "blocked_by_view_state",
+      "capture_id": "capture_target_포도_cell_region_1",
+      "target_id": "target_포도_cell_region_1",
+      "sheet": "포도",
+      "cell_range": "A1:R22",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 18
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1082,
+        "height": 19
+      },
+      "pixel_scale": {
+        "row_count": 22,
+        "column_count": 18,
+        "pixels_per_row_estimate": 0.863636,
+        "pixels_per_column_estimate": 60.111111,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "recapture_required",
+      "view_state_classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "view_state_authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "render_capture_file": "mbp-2026-02-render-captures.json",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "normalization_notes": "Visible-state capture is dominated by hidden or filtered rows; preserve structural data separately and use only diagnostic reveal captures if needed.",
+      "evidence_refs": [
+        "quality_capture_target_포도_cell_region_1",
+        "capture_target_포도_cell_region_1",
+        "view_state_quality_capture_target_포도_cell_region_1"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "type": "coordinate_mapping",
+      "status": "normalized_visible_range",
+      "capture_id": "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "sheet": "결제상세",
+      "cell_range": "A1:R22",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 18
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1040,
+        "height": 375
+      },
+      "pixel_scale": {
+        "row_count": 22,
+        "column_count": 18,
+        "pixels_per_row_estimate": 17.045455,
+        "pixels_per_column_estimate": 57.777778,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "usable",
+      "view_state_classification": "no_material_view_state_signal",
+      "view_state_authority_decision": "continue_with_visible_render_authority",
+      "render_capture_file": "mbp-2026-02-recapture-candidate-captures.json",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "normalization_notes": "Capture range is normalized as a visible-state bbox estimate.",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+        "view_state_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "type": "coordinate_mapping",
+      "status": "normalized_visible_range",
+      "capture_id": "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "sheet": "결제상세",
+      "cell_range": "S1:AJ22",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 19,
+        "max_row": 22,
+        "max_column": 36
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1568,
+        "height": 375
+      },
+      "pixel_scale": {
+        "row_count": 22,
+        "column_count": 18,
+        "pixels_per_row_estimate": 17.045455,
+        "pixels_per_column_estimate": 87.111111,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "usable",
+      "view_state_classification": "no_material_view_state_signal",
+      "view_state_authority_decision": "continue_with_visible_render_authority",
+      "render_capture_file": "mbp-2026-02-recapture-candidate-captures.json",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "normalization_notes": "Capture range is normalized as a visible-state bbox estimate.",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+        "view_state_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "type": "coordinate_mapping",
+      "status": "normalized_visible_range",
+      "capture_id": "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "sheet": "결제상세",
+      "cell_range": "AK1:AY22",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 37,
+        "max_row": 22,
+        "max_column": 51
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 872,
+        "height": 375
+      },
+      "pixel_scale": {
+        "row_count": 22,
+        "column_count": 15,
+        "pixels_per_row_estimate": 17.045455,
+        "pixels_per_column_estimate": 58.133333,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "usable",
+      "view_state_classification": "no_material_view_state_signal",
+      "view_state_authority_decision": "continue_with_visible_render_authority",
+      "render_capture_file": "mbp-2026-02-recapture-candidate-captures.json",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "normalization_notes": "Capture range is normalized as a visible-state bbox estimate.",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+        "view_state_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "type": "coordinate_mapping",
+      "status": "blocked_by_view_state",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "sheet": "당월산식",
+      "cell_range": "A1:BA22",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 53
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 2311,
+        "height": 69
+      },
+      "pixel_scale": {
+        "row_count": 22,
+        "column_count": 53,
+        "pixels_per_row_estimate": 3.136364,
+        "pixels_per_column_estimate": 43.603774,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "recapture_required",
+      "view_state_classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "view_state_authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "render_capture_file": "mbp-2026-02-recapture-candidate-captures.json",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "normalization_notes": "Visible-state capture is dominated by hidden or filtered rows; preserve structural data separately and use only diagnostic reveal captures if needed.",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+        "capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+        "view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "type": "coordinate_mapping",
+      "status": "blocked_by_view_state",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "sheet": "당월산식",
+      "cell_range": "A21:R100",
+      "range_bounds": {
+        "min_row": 21,
+        "min_column": 1,
+        "max_row": 100,
+        "max_column": 18
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1052,
+        "height": 1
+      },
+      "pixel_scale": {
+        "row_count": 80,
+        "column_count": 18,
+        "pixels_per_row_estimate": 0.0125,
+        "pixels_per_column_estimate": 58.444444,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "recapture_required",
+      "view_state_classification": "all_rows_hidden_or_zero_height",
+      "view_state_authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "render_capture_file": "mbp-2026-02-recapture-candidate-captures.json",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "normalization_notes": "Visible-state capture is dominated by hidden or filtered rows; preserve structural data separately and use only diagnostic reveal captures if needed.",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+        "view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "type": "coordinate_mapping",
+      "status": "blocked_by_view_state",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "sheet": "당월산식",
+      "cell_range": "S21:AJ100",
+      "range_bounds": {
+        "min_row": 21,
+        "min_column": 19,
+        "max_row": 100,
+        "max_column": 36
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 183,
+        "height": 1
+      },
+      "pixel_scale": {
+        "row_count": 80,
+        "column_count": 18,
+        "pixels_per_row_estimate": 0.0125,
+        "pixels_per_column_estimate": 10.166667,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "recapture_required",
+      "view_state_classification": "all_rows_hidden_or_zero_height",
+      "view_state_authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "render_capture_file": "mbp-2026-02-recapture-candidate-captures.json",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "normalization_notes": "Visible-state capture is dominated by hidden or filtered rows; preserve structural data separately and use only diagnostic reveal captures if needed.",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+        "view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "type": "coordinate_mapping",
+      "status": "blocked_by_view_state",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "sheet": "당월산식",
+      "cell_range": "AK21:BA100",
+      "range_bounds": {
+        "min_row": 21,
+        "min_column": 37,
+        "max_row": 100,
+        "max_column": 53
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1078,
+        "height": 1
+      },
+      "pixel_scale": {
+        "row_count": 80,
+        "column_count": 17,
+        "pixels_per_row_estimate": 0.0125,
+        "pixels_per_column_estimate": 63.411765,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "recapture_required",
+      "view_state_classification": "all_rows_hidden_or_zero_height",
+      "view_state_authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "render_capture_file": "mbp-2026-02-recapture-candidate-captures.json",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "normalization_notes": "Visible-state capture is dominated by hidden or filtered rows; preserve structural data separately and use only diagnostic reveal captures if needed.",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+        "view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "type": "coordinate_mapping",
+      "status": "normalized_visible_range",
+      "capture_id": "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "target_id": "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "sheet": "유하다요_강사료",
+      "cell_range": "A1:R22",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 18
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 999,
+        "height": 375
+      },
+      "pixel_scale": {
+        "row_count": 22,
+        "column_count": 18,
+        "pixels_per_row_estimate": 17.045455,
+        "pixels_per_column_estimate": 55.5,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "usable",
+      "view_state_classification": "no_material_view_state_signal",
+      "view_state_authority_decision": "continue_with_visible_render_authority",
+      "render_capture_file": "mbp-2026-02-recapture-candidate-captures.json",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "normalization_notes": "Capture range is normalized as a visible-state bbox estimate.",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+        "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+        "view_state_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "type": "coordinate_mapping",
+      "status": "normalized_visible_range",
+      "capture_id": "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "target_id": "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "sheet": "유하다요_강사료",
+      "cell_range": "S1:AI22",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 19,
+        "max_row": 22,
+        "max_column": 35
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 902,
+        "height": 375
+      },
+      "pixel_scale": {
+        "row_count": 22,
+        "column_count": 17,
+        "pixels_per_row_estimate": 17.045455,
+        "pixels_per_column_estimate": 53.058824,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "usable",
+      "view_state_classification": "no_material_view_state_signal",
+      "view_state_authority_decision": "continue_with_visible_render_authority",
+      "render_capture_file": "mbp-2026-02-recapture-candidate-captures.json",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "normalization_notes": "Capture range is normalized as a visible-state bbox estimate.",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+        "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+        "view_state_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "type": "coordinate_mapping",
+      "status": "blocked_by_view_state",
+      "capture_id": "capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "sheet": "포도",
+      "cell_range": "A1:R22",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 18
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1082,
+        "height": 19
+      },
+      "pixel_scale": {
+        "row_count": 22,
+        "column_count": 18,
+        "pixels_per_row_estimate": 0.863636,
+        "pixels_per_column_estimate": 60.111111,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "recapture_required",
+      "view_state_classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "view_state_authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "render_capture_file": "mbp-2026-02-recapture-candidate-captures.json",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "normalization_notes": "Visible-state capture is dominated by hidden or filtered rows; preserve structural data separately and use only diagnostic reveal captures if needed.",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+        "capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+        "view_state_quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "type": "coordinate_mapping",
+      "status": "blocked_by_view_state",
+      "capture_id": "capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "sheet": "포도",
+      "cell_range": "A1:R80",
+      "range_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 80,
+        "max_column": 18
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1082,
+        "height": 91
+      },
+      "pixel_scale": {
+        "row_count": 80,
+        "column_count": 18,
+        "pixels_per_row_estimate": 1.1375,
+        "pixels_per_column_estimate": 60.111111,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "recapture_required",
+      "view_state_classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "view_state_authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "render_capture_file": "mbp-2026-02-recapture-candidate-captures.json",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "normalization_notes": "Visible-state capture is dominated by hidden or filtered rows; preserve structural data separately and use only diagnostic reveal captures if needed.",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+        "capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+        "view_state_quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01"
+      ]
+    },
+    {
+      "id": "coord_quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "type": "coordinate_mapping",
+      "status": "blocked_by_view_state",
+      "capture_id": "capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "sheet": "포도",
+      "cell_range": "A21:R100",
+      "range_bounds": {
+        "min_row": 21,
+        "min_column": 1,
+        "max_row": 100,
+        "max_column": 18
+      },
+      "capture_bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1082,
+        "height": 73
+      },
+      "pixel_scale": {
+        "row_count": 80,
+        "column_count": 18,
+        "pixels_per_row_estimate": 0.9125,
+        "pixels_per_column_estimate": 60.111111,
+        "axis_model": "uniform_range_estimate"
+      },
+      "quality_status": "recapture_required",
+      "view_state_classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "view_state_authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "render_capture_file": "mbp-2026-02-recapture-candidate-captures.json",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "normalization_notes": "Visible-state capture is dominated by hidden or filtered rows; preserve structural data separately and use only diagnostic reveal captures if needed.",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+        "capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+        "view_state_quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01"
+      ]
+    }
+  ],
+  "gate_results": [
+    {
+      "id": "gate_coord_quality_capture_target_결제_수수료_cell_region_1",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_target_결제_수수료_cell_region_1",
+      "capture_id": "capture_target_결제_수수료_cell_region_1",
+      "target_id": "target_결제_수수료_cell_region_1",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "passed",
+      "normalization_status": "normalized_visible_range",
+      "evidence_refs": [
+        "quality_capture_target_결제_수수료_cell_region_1",
+        "capture_target_결제_수수료_cell_region_1",
+        "view_state_quality_capture_target_결제_수수료_cell_region_1"
+      ],
+      "notes": "Capture range is normalized as a visible-state bbox estimate."
+    },
+    {
+      "id": "gate_coord_quality_capture_target_결제상세_cell_region_1",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_target_결제상세_cell_region_1",
+      "capture_id": "capture_target_결제상세_cell_region_1",
+      "target_id": "target_결제상세_cell_region_1",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "review_required",
+      "normalization_status": "review_required",
+      "evidence_refs": [
+        "quality_capture_target_결제상세_cell_region_1",
+        "capture_target_결제상세_cell_region_1",
+        "view_state_quality_capture_target_결제상세_cell_region_1"
+      ],
+      "notes": "Capture has a bbox but quality checks require review before downstream visual gates trust it."
+    },
+    {
+      "id": "gate_coord_quality_capture_target_당월산식_cell_region_1",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_target_당월산식_cell_region_1",
+      "capture_id": "capture_target_당월산식_cell_region_1",
+      "target_id": "target_당월산식_cell_region_1",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "blocked",
+      "normalization_status": "blocked_by_view_state",
+      "evidence_refs": [
+        "quality_capture_target_당월산식_cell_region_1",
+        "capture_target_당월산식_cell_region_1",
+        "view_state_quality_capture_target_당월산식_cell_region_1"
+      ],
+      "notes": "Visible-state capture is dominated by hidden or filtered rows; preserve structural data separately and use only diagnostic reveal captures if needed."
+    },
+    {
+      "id": "gate_coord_quality_capture_target_리스픽_cell_region_2",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_target_리스픽_cell_region_2",
+      "capture_id": "capture_target_리스픽_cell_region_2",
+      "target_id": "target_리스픽_cell_region_2",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "passed",
+      "normalization_status": "normalized_visible_range",
+      "evidence_refs": [
+        "quality_capture_target_리스픽_cell_region_2",
+        "capture_target_리스픽_cell_region_2",
+        "view_state_quality_capture_target_리스픽_cell_region_2"
+      ],
+      "notes": "Capture range is normalized as a visible-state bbox estimate."
+    },
+    {
+      "id": "gate_coord_quality_capture_target_매출_cell_region_1",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_target_매출_cell_region_1",
+      "capture_id": "capture_target_매출_cell_region_1",
+      "target_id": "target_매출_cell_region_1",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "passed",
+      "normalization_status": "normalized_visible_range",
+      "evidence_refs": [
+        "quality_capture_target_매출_cell_region_1",
+        "capture_target_매출_cell_region_1",
+        "view_state_quality_capture_target_매출_cell_region_1"
+      ],
+      "notes": "Capture range is normalized as a visible-state bbox estimate."
+    },
+    {
+      "id": "gate_coord_quality_capture_target_수익인식60일_cell_region_1",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_target_수익인식60일_cell_region_1",
+      "capture_id": "capture_target_수익인식60일_cell_region_1",
+      "target_id": "target_수익인식60일_cell_region_1",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "review_required",
+      "normalization_status": "normalized_with_view_state_warning",
+      "evidence_refs": [
+        "quality_capture_target_수익인식60일_cell_region_1",
+        "capture_target_수익인식60일_cell_region_1",
+        "view_state_quality_capture_target_수익인식60일_cell_region_1"
+      ],
+      "notes": "Capture is usable but view-state affects part of the mapped range."
+    },
+    {
+      "id": "gate_coord_quality_capture_target_수익인식60일_강사료_cell_region_1",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_target_수익인식60일_강사료_cell_region_1",
+      "capture_id": "capture_target_수익인식60일_강사료_cell_region_1",
+      "target_id": "target_수익인식60일_강사료_cell_region_1",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "passed",
+      "normalization_status": "normalized_visible_range",
+      "evidence_refs": [
+        "quality_capture_target_수익인식60일_강사료_cell_region_1",
+        "capture_target_수익인식60일_강사료_cell_region_1",
+        "view_state_quality_capture_target_수익인식60일_강사료_cell_region_1"
+      ],
+      "notes": "Capture range is normalized as a visible-state bbox estimate."
+    },
+    {
+      "id": "gate_coord_quality_capture_target_얼리버드_cell_region_1",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_target_얼리버드_cell_region_1",
+      "capture_id": "capture_target_얼리버드_cell_region_1",
+      "target_id": "target_얼리버드_cell_region_1",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "passed",
+      "normalization_status": "normalized_visible_range",
+      "evidence_refs": [
+        "quality_capture_target_얼리버드_cell_region_1",
+        "capture_target_얼리버드_cell_region_1",
+        "view_state_quality_capture_target_얼리버드_cell_region_1"
+      ],
+      "notes": "Capture range is normalized as a visible-state bbox estimate."
+    },
+    {
+      "id": "gate_coord_quality_capture_target_유하다요_cell_region_1",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_target_유하다요_cell_region_1",
+      "capture_id": "capture_target_유하다요_cell_region_1",
+      "target_id": "target_유하다요_cell_region_1",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "passed",
+      "normalization_status": "normalized_visible_range",
+      "evidence_refs": [
+        "quality_capture_target_유하다요_cell_region_1",
+        "capture_target_유하다요_cell_region_1",
+        "view_state_quality_capture_target_유하다요_cell_region_1"
+      ],
+      "notes": "Capture range is normalized as a visible-state bbox estimate."
+    },
+    {
+      "id": "gate_coord_quality_capture_target_유하다요_강사료_cell_region_1",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_target_유하다요_강사료_cell_region_1",
+      "capture_id": "capture_target_유하다요_강사료_cell_region_1",
+      "target_id": "target_유하다요_강사료_cell_region_1",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "review_required",
+      "normalization_status": "review_required",
+      "evidence_refs": [
+        "quality_capture_target_유하다요_강사료_cell_region_1",
+        "capture_target_유하다요_강사료_cell_region_1",
+        "view_state_quality_capture_target_유하다요_강사료_cell_region_1"
+      ],
+      "notes": "Capture has a bbox but quality checks require review before downstream visual gates trust it."
+    },
+    {
+      "id": "gate_coord_quality_capture_target_정가표_cell_region_1",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_target_정가표_cell_region_1",
+      "capture_id": "capture_target_정가표_cell_region_1",
+      "target_id": "target_정가표_cell_region_1",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "passed",
+      "normalization_status": "normalized_visible_range",
+      "evidence_refs": [
+        "quality_capture_target_정가표_cell_region_1",
+        "capture_target_정가표_cell_region_1",
+        "view_state_quality_capture_target_정가표_cell_region_1"
+      ],
+      "notes": "Capture range is normalized as a visible-state bbox estimate."
+    },
+    {
+      "id": "gate_coord_quality_capture_target_포도_cell_region_1",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_target_포도_cell_region_1",
+      "capture_id": "capture_target_포도_cell_region_1",
+      "target_id": "target_포도_cell_region_1",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "blocked",
+      "normalization_status": "blocked_by_view_state",
+      "evidence_refs": [
+        "quality_capture_target_포도_cell_region_1",
+        "capture_target_포도_cell_region_1",
+        "view_state_quality_capture_target_포도_cell_region_1"
+      ],
+      "notes": "Visible-state capture is dominated by hidden or filtered rows; preserve structural data separately and use only diagnostic reveal captures if needed."
+    },
+    {
+      "id": "gate_coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "capture_id": "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "passed",
+      "normalization_status": "normalized_visible_range",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+        "view_state_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01"
+      ],
+      "notes": "Capture range is normalized as a visible-state bbox estimate."
+    },
+    {
+      "id": "gate_coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "capture_id": "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "passed",
+      "normalization_status": "normalized_visible_range",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+        "view_state_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02"
+      ],
+      "notes": "Capture range is normalized as a visible-state bbox estimate."
+    },
+    {
+      "id": "gate_coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "capture_id": "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "passed",
+      "normalization_status": "normalized_visible_range",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+        "view_state_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03"
+      ],
+      "notes": "Capture range is normalized as a visible-state bbox estimate."
+    },
+    {
+      "id": "gate_coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "blocked",
+      "normalization_status": "blocked_by_view_state",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+        "capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+        "view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01"
+      ],
+      "notes": "Visible-state capture is dominated by hidden or filtered rows; preserve structural data separately and use only diagnostic reveal captures if needed."
+    },
+    {
+      "id": "gate_coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "blocked",
+      "normalization_status": "blocked_by_view_state",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+        "view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01"
+      ],
+      "notes": "Visible-state capture is dominated by hidden or filtered rows; preserve structural data separately and use only diagnostic reveal captures if needed."
+    },
+    {
+      "id": "gate_coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "blocked",
+      "normalization_status": "blocked_by_view_state",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+        "view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02"
+      ],
+      "notes": "Visible-state capture is dominated by hidden or filtered rows; preserve structural data separately and use only diagnostic reveal captures if needed."
+    },
+    {
+      "id": "gate_coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "blocked",
+      "normalization_status": "blocked_by_view_state",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+        "view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03"
+      ],
+      "notes": "Visible-state capture is dominated by hidden or filtered rows; preserve structural data separately and use only diagnostic reveal captures if needed."
+    },
+    {
+      "id": "gate_coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "capture_id": "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "target_id": "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "passed",
+      "normalization_status": "normalized_visible_range",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+        "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+        "view_state_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01"
+      ],
+      "notes": "Capture range is normalized as a visible-state bbox estimate."
+    },
+    {
+      "id": "gate_coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "capture_id": "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "target_id": "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "passed",
+      "normalization_status": "normalized_visible_range",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+        "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+        "view_state_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02"
+      ],
+      "notes": "Capture range is normalized as a visible-state bbox estimate."
+    },
+    {
+      "id": "gate_coord_quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "capture_id": "capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "blocked",
+      "normalization_status": "blocked_by_view_state",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+        "capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+        "view_state_quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01"
+      ],
+      "notes": "Visible-state capture is dominated by hidden or filtered rows; preserve structural data separately and use only diagnostic reveal captures if needed."
+    },
+    {
+      "id": "gate_coord_quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "capture_id": "capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "blocked",
+      "normalization_status": "blocked_by_view_state",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+        "capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+        "view_state_quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01"
+      ],
+      "notes": "Visible-state capture is dominated by hidden or filtered rows; preserve structural data separately and use only diagnostic reveal captures if needed."
+    },
+    {
+      "id": "gate_coord_quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "type": "coordinate_normalization_gate_result",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "capture_id": "capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "gate_type": "range_capture_bbox_mapping",
+      "status": "blocked",
+      "normalization_status": "blocked_by_view_state",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+        "capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+        "view_state_quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01"
+      ],
+      "notes": "Visible-state capture is dominated by hidden or filtered rows; preserve structural data separately and use only diagnostic reveal captures if needed."
+    }
+  ],
+  "summary": {
+    "mapping_count": 24,
+    "normalized_visible_range_count": 12,
+    "normalized_with_view_state_warning_count": 1,
+    "review_required_count": 2,
+    "blocked_by_view_state_count": 9,
+    "unusable_capture_count": 0,
+    "not_available_count": 0,
+    "passed_gate_count": 12,
+    "review_gate_count": 3,
+    "blocked_gate_count": 9
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "Coordinate normalization maps capture-range bboxes back to workbook cell ranges. It does not detect internal visual features."
+    },
+    {
+      "level": "warning",
+      "message": "9 mappings are blocked by hidden/filter view-state and should not be treated as visual absence."
+    }
+  ]
+}

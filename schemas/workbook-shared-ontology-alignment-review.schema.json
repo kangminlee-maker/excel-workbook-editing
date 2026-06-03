@@ -1,0 +1,389 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/workbook-shared-ontology-alignment-review.schema.json",
+  "title": "Workbook Shared Ontology Alignment Review",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_artifacts",
+    "method",
+    "alignment_context",
+    "alignment_items",
+    "shared_ontology_updates",
+    "review_questions",
+    "summary",
+    "parser_observations"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "source_artifacts": {
+      "type": "object",
+      "required": [
+        "local_semantic_candidates",
+        "domain_source_model",
+        "data_view_projection"
+      ],
+      "properties": {
+        "local_semantic_candidates": {
+          "type": "string"
+        },
+        "domain_source_model": {
+          "type": "string"
+        },
+        "data_view_projection": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy"],
+      "properties": {
+        "name": {
+          "const": "deterministic_shared_ontology_alignment_review"
+        },
+        "authority": {
+          "const": "review_only_no_shared_promotion"
+        },
+        "decision_policy": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "alignment_context": {
+      "type": "object",
+      "required": [
+        "local_boundary_confirmed",
+        "local_domain_source_count",
+        "shared_ontology_target_status",
+        "alignment_authority",
+        "shared_promotion_preconditions"
+      ],
+      "properties": {
+        "local_boundary_id": {
+          "type": ["string", "null"]
+        },
+        "local_boundary_status": {
+          "type": ["string", "null"]
+        },
+        "local_boundary_scope": {
+          "type": ["string", "null"]
+        },
+        "local_boundary_confirmed": {
+          "type": "boolean"
+        },
+        "local_domain_source_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "general_domain_source_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "data_view_projection_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "shared_ontology_target_status": {
+          "type": "string"
+        },
+        "alignment_authority": {
+          "const": "human_review_packet_only"
+        },
+        "shared_promotion_preconditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/precondition"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "alignment_items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/alignmentItem"
+      }
+    },
+    "shared_ontology_updates": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "review_questions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reviewQuestion"
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "alignment_item_count",
+        "promoted_count",
+        "blocked_alignment_count",
+        "local_boundary_blocked_count",
+        "local_source_blocked_count",
+        "semantic_label_pending_count",
+        "basis_review_required_count",
+        "formula_result_validation_required_count",
+        "review_question_count",
+        "shared_ontology_update_count",
+        "alignment_status"
+      ],
+      "properties": {
+        "alignment_item_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "promoted_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blocked_alignment_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "local_boundary_blocked_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "local_source_blocked_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "semantic_label_pending_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "basis_review_required_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "formula_result_validation_required_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "review_question_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "shared_ontology_update_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "alignment_status": {
+          "const": "review_only_no_shared_promotion"
+        }
+      },
+      "additionalProperties": true
+    },
+    "parser_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    }
+  },
+  "$defs": {
+    "precondition": {
+      "type": "object",
+      "required": ["name", "status", "description"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "status": {
+          "enum": ["satisfied", "blocked"]
+        },
+        "description": {
+          "type": "string"
+        },
+        "missing_action": {
+          "type": ["string", "null"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "alignmentItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "candidate_id",
+        "label",
+        "candidate_kind",
+        "source_kind",
+        "alignment_status",
+        "promotion_decision",
+        "proposed_shared_concept_id",
+        "existing_shared_concept_refs",
+        "blockers",
+        "conflict_risks",
+        "required_evidence",
+        "human_review_questions",
+        "basis_review",
+        "data_view_refs",
+        "observed_terms",
+        "evidence_refs",
+        "source_artifact_refs"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "const": "shared_ontology_alignment_item"
+        },
+        "candidate_id": {
+          "type": ["string", "null"]
+        },
+        "label": {
+          "type": ["string", "number", "null"]
+        },
+        "candidate_kind": {
+          "type": ["string", "null"]
+        },
+        "source_kind": {
+          "type": ["string", "null"]
+        },
+        "alignment_status": {
+          "enum": [
+            "blocked_local_boundary_pending",
+            "blocked_basis_definition_pending",
+            "blocked_semantic_label_pending"
+          ]
+        },
+        "promotion_decision": {
+          "const": "not_promoted"
+        },
+        "proposed_shared_concept_id": {
+          "type": "null"
+        },
+        "existing_shared_concept_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "blockers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "conflict_risks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "human_review_questions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "basis_review": {
+          "type": "object",
+          "required": ["required", "detected_terms"],
+          "properties": {
+            "required": {
+              "type": "boolean"
+            },
+            "detected_terms": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "reason": {
+              "type": ["string", "null"]
+            }
+          },
+          "additionalProperties": true
+        },
+        "data_view_refs": {
+          "type": "object"
+        },
+        "observed_terms": {
+          "type": "array"
+        },
+        "evidence_refs": {
+          "type": "array"
+        },
+        "source_artifact_refs": {
+          "type": "array"
+        }
+      },
+      "additionalProperties": true
+    },
+    "reviewQuestion": {
+      "type": "object",
+      "required": [
+        "id",
+        "priority",
+        "topic",
+        "question",
+        "blocks",
+        "required_evidence"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "priority": {
+          "enum": ["high", "medium", "low"]
+        },
+        "topic": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "properties": {
+        "level": {
+          "enum": ["info", "warning", "error"]
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

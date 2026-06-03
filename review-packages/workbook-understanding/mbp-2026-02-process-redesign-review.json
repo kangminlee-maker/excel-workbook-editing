@@ -1,0 +1,1861 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-02T00:49:41.883632Z",
+  "source_materials": {
+    "process_ledger": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/process-ledger.jsonl",
+    "tasklist": "/Users/kangmin/Documents/excel-workbook-editing/docs/document-shaped-excel-understanding-tasklist.md",
+    "design_doc": "/Users/kangmin/Documents/excel-workbook-editing/docs/document-shaped-excel-understanding-design.md",
+    "agents": "/Users/kangmin/Documents/excel-workbook-editing/AGENTS.md",
+    "implementation_map": "/Users/kangmin/Documents/excel-workbook-editing/IMPLEMENTATION_MAP.html",
+    "artifact_dir": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding",
+    "session_log_source": "process_ledger_jsonl",
+    "artifact_inventory": [
+      {
+        "path": "index.html",
+        "size_bytes": 1624720,
+        "kind": "html"
+      },
+      {
+        "path": "mbp-2026-02-action-contracts.json",
+        "size_bytes": 460528,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "action_contract_count": 219,
+          "ready_count": 44,
+          "open_count": 171,
+          "blocked_count": 4,
+          "high_priority_count": 12,
+          "medium_priority_count": 53,
+          "low_priority_count": 154,
+          "data_view_contract_count": 45,
+          "review_item_contract_count": 174,
+          "excel_capture_owner_count": 55,
+          "human_review_owner_count": 118,
+          "deterministic_parser_owner_count": 2,
+          "downstream_parser_owner_count": 44,
+          "resolve_input_region_ownership_count": 2,
+          "acquire_render_capture_count": 49,
+          "recapture_or_tile_range_count": 6,
+          "reconcile_view_state_authority_count": 4,
+          "corroborate_boundary_evidence_count": 110
+        },
+        "method_name": "deterministic_action_contract_layer"
+      },
+      {
+        "path": "mbp-2026-02-block-candidates.json",
+        "size_bytes": 7059783,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "sheet_count": 14,
+          "block_count": 54,
+          "image_block_count": 5,
+          "row_band_count": 25,
+          "pivot_table_block_count": 24,
+          "cell_region_count": 31,
+          "cell_region_split_candidate_count": 116,
+          "touching_header_split_candidate_count": 0,
+          "style_boundary_split_candidate_count": 110,
+          "boundary_gate_result_count": 117,
+          "strong_boundary_candidate_count": 6,
+          "weak_boundary_signal_count": 23,
+          "merged_title_boundary_count": 1,
+          "relation_group_count": 904,
+          "formula_relation_count": 2258,
+          "relation_count": 2317
+        },
+        "method_name": null
+      },
+      {
+        "path": "mbp-2026-02-boundary-decisions.json",
+        "size_bytes": 267049,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "boundary_decision_count": 117,
+          "accepted_count": 6,
+          "rejected_count": 0,
+          "review_required_count": 111,
+          "split_boundary_count": 116,
+          "title_or_section_boundary_count": 1,
+          "accepted_split_boundary_count": 6,
+          "style_only_review_count": 110,
+          "missing_capture_review_count": 17,
+          "view_state_review_count": 39
+        },
+        "method_name": "deterministic_boundary_acceptance"
+      },
+      {
+        "path": "mbp-2026-02-capture-quality.json",
+        "size_bytes": 44647,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "capture_count": 12,
+          "evaluated_count": 12,
+          "usable_count": 8,
+          "review_required_count": 2,
+          "recapture_required_count": 2,
+          "capture_failed_count": 0,
+          "too_thin_count": 2,
+          "low_row_pixels_count": 2,
+          "extreme_aspect_count": 2,
+          "low_visible_content_count": 0,
+          "tiling_recommended_count": 3,
+          "expanded_window_recommended_count": 1
+        },
+        "method_name": "deterministic_png_capture_quality"
+      },
+      {
+        "path": "mbp-2026-02-coordinate-normalization.json",
+        "size_bytes": 63824,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "mapping_count": 24,
+          "normalized_visible_range_count": 12,
+          "normalized_with_view_state_warning_count": 1,
+          "review_required_count": 2,
+          "blocked_by_view_state_count": 9,
+          "unusable_capture_count": 0,
+          "not_available_count": 0,
+          "passed_gate_count": 12,
+          "review_gate_count": 3,
+          "blocked_gate_count": 9
+        },
+        "method_name": "deterministic_capture_range_coordinate_normalization"
+      },
+      {
+        "path": "mbp-2026-02-cross-validation-plan.json",
+        "size_bytes": 359234,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "capture_target_count": 63,
+          "high_priority_count": 40,
+          "medium_priority_count": 13,
+          "low_priority_count": 10,
+          "sheet_count": 14,
+          "pipeline_target_count": 45,
+          "pivot_report_target_count": 24,
+          "unresolved_input_target_count": 1,
+          "boundary_target_count": 21,
+          "image_hierarchy_target_count": 11,
+          "gate_check_count": 79,
+          "recommended_first_batch_count": 12
+        },
+        "method_name": null
+      },
+      {
+        "path": "mbp-2026-02-data-view-projection.json",
+        "size_bytes": 1103397,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "data_view_projection_count": 44,
+          "pivot_view_projection_count": 24,
+          "formula_summary_projection_count": 10,
+          "formula_transform_projection_count": 10,
+          "sampled_projection_count": 44,
+          "partial_projection_count": 0,
+          "not_sampled_projection_count": 0,
+          "document_object_projection_count": 58,
+          "image_ref_projection_count": 5,
+          "pivot_object_projection_count": 24,
+          "row_band_projection_count": 18,
+          "carry_forward_document_review_count": 174,
+          "carry_forward_proposal_review_count": 166,
+          "projection_status": "projected_with_carry_forward_warnings"
+        },
+        "method_name": "deterministic_data_view_projection"
+      },
+      {
+        "path": "mbp-2026-02-document-ontology-mapping.json",
+        "size_bytes": 22936005,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "node_count": 3459,
+          "relation_count": 3653,
+          "data_view_count": 45,
+          "review_queue_count": 174,
+          "sheet_node_count": 14,
+          "block_node_count": 54,
+          "cell_region_node_count": 31,
+          "pipeline_node_count": 45,
+          "transform_step_node_count": 928,
+          "visual_evidence_node_count": 24,
+          "range_ref_node_count": 2245,
+          "accepted_node_count": 1073,
+          "review_required_node_count": 134,
+          "candidate_node_count": 2252,
+          "accepted_data_view_count": 44,
+          "review_required_data_view_count": 1,
+          "contains_relation_count": 99,
+          "derived_from_relation_count": 49
+        },
+        "method_name": "deterministic_document_ontology_mapping"
+      },
+      {
+        "path": "mbp-2026-02-domain-source-model.json",
+        "size_bytes": 15818,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "general_domain_source_count": 8,
+          "available_general_domain_source_count": 8,
+          "local_domain_source_count": 0,
+          "available_local_domain_source_count": 0,
+          "local_domain_boundary_count": 1,
+          "confirmed_local_domain_boundary_count": 0,
+          "review_required_local_domain_boundary_count": 1,
+          "semantic_blocking_factor_count": 3
+        },
+        "method_name": "deterministic_domain_source_model"
+      },
+      {
+        "path": "mbp-2026-02-evidence-package.json",
+        "size_bytes": 7803880,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "sheet_count": 14,
+          "hidden_sheet_count": 0,
+          "non_empty_cell_count": 7869,
+          "formula_cell_count": 2122,
+          "styled_cell_count": 0,
+          "merged_range_count": 2,
+          "table_count": 0,
+          "image_count": 5,
+          "chart_count": 0,
+          "artifact_count": 19,
+          "capture_result_count": 12,
+          "visual_feature_result_count": 24,
+          "accepted_gate_count": 17,
+          "review_required_gate_count": 62,
+          "accepted_boundary_count": 6,
+          "review_required_boundary_count": 111,
+          "accepted_pipeline_role_count": 44,
+          "review_required_pipeline_role_count": 1,
+          "review_queue_count": 174,
+          "domain_knowledge_ref_count": 8
+        },
+        "method_name": null
+      },
+      {
+        "path": "mbp-2026-02-formula-patterns.json",
+        "size_bytes": 5365139,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "sheet_count": 14,
+          "window_count": 14,
+          "formula_count": 21138,
+          "signature_group_count": 6204,
+          "repeated_signature_group_count": 136
+        },
+        "method_name": null
+      },
+      {
+        "path": "mbp-2026-02-gate-execution.json",
+        "size_bytes": 193284,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "gate_result_count": 79,
+          "accepted_count": 17,
+          "rejected_count": 0,
+          "review_required_count": 62,
+          "capture_required_count": 49,
+          "view_state_blocked_count": 4,
+          "quality_review_required_count": 6,
+          "object_hierarchy_review_count": 0
+        },
+        "method_name": "deterministic_cross_validation_gate_execution"
+      },
+      {
+        "path": "mbp-2026-02-llm-proposal-validation.json",
+        "size_bytes": 973916,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "proposal_result_count": 205,
+          "accepted_count": 39,
+          "warning_count": 0,
+          "requires_human_review_count": 83,
+          "quarantined_count": 83,
+          "rejected_count": 0,
+          "semantic_concept_result_count": 10,
+          "hierarchy_result_count": 11,
+          "semantic_relation_result_count": 7,
+          "alias_result_count": 175,
+          "ambiguity_note_result_count": 2,
+          "validation_status": "validated_with_open_review_items"
+        },
+        "method_name": "deterministic_llm_proposal_validation"
+      },
+      {
+        "path": "mbp-2026-02-llm-proposals.json",
+        "size_bytes": 407950,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "semantic_concept_proposal_count": 10,
+          "hierarchy_proposal_count": 11,
+          "semantic_relation_proposal_count": 7,
+          "alias_proposal_count": 175,
+          "ambiguity_note_count": 2,
+          "local_domain_sensitive_proposal_count": 4,
+          "proposal_status": "proposal_only_pending_deterministic_validation"
+        },
+        "method_name": "bounded_llm_proposal_generation"
+      },
+      {
+        "path": "mbp-2026-02-local-semantic-candidates.json",
+        "size_bytes": 204597,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "local_semantic_candidate_count": 21,
+          "accepted_context_candidate_count": 5,
+          "unmapped_data_view_candidate_count": 16,
+          "boundary_pending_candidate_count": 5,
+          "needs_semantic_interpretation_count": 16,
+          "shared_promotion_allowed_candidate_count": 0,
+          "candidate_relation_count": 49,
+          "covered_data_view_count": 44,
+          "review_queue_count": 25,
+          "local_boundary_confirmed": false,
+          "local_domain_source_count": 0,
+          "candidate_status": "generated_boundary_scoped_candidates_with_promotion_blockers"
+        },
+        "method_name": "deterministic_local_semantic_candidate_generation"
+      },
+      {
+        "path": "mbp-2026-02-pipeline-role-validation.json",
+        "size_bytes": 187663,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "role_validation_count": 45,
+          "accepted_count": 44,
+          "rejected_count": 0,
+          "review_required_count": 1,
+          "report_role_accepted_count": 24,
+          "summary_role_accepted_count": 10,
+          "transform_role_accepted_count": 10,
+          "bridge_role_accepted_count": 0,
+          "unresolved_input_review_count": 1,
+          "external_dependency_review_count": 0,
+          "linked_gate_review_count": 34
+        },
+        "method_name": "deterministic_pipeline_role_validation"
+      },
+      {
+        "path": "mbp-2026-02-process-redesign-review.json",
+        "size_bytes": 67332,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "ledger_entry_count": 34,
+          "tasklist_stage_count": 31,
+          "artifact_count": 58,
+          "json_artifact_count": 30,
+          "stage_review_count": 31,
+          "high_priority_stage_review_count": 22,
+          "recommended_pipeline_stage_count": 24,
+          "redesign_decision_count": 6,
+          "open_evidence_gap_count": 7,
+          "recommendation_counts": {
+            "keep": 6,
+            "keep_reordered_early": 1,
+            "merge_as_region_candidate_generation": 2,
+            "keep_before_boundary_decisions": 1,
+            "move_to_review_package_layer": 1,
+            "turn_into_visual_evidence_loop": 6,
+            "keep_as_decision_layer": 3,
+            "keep_as_authority_and_action_layers": 3,
+            "keep_with_proposal_boundary": 3,
+            "keep_as_projection_and_review_layers": 4,
+            "keep_continuous": 1
+          },
+          "review_status": "process_redesign_review_completed"
+        },
+        "method_name": "deterministic_process_redesign_review"
+      },
+      {
+        "path": "mbp-2026-02-readonly-sample.json",
+        "size_bytes": 2319536,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "sheet_count": 14,
+          "window_count": 17,
+          "sampled_row_count": 543,
+          "non_empty_cell_count": 7869,
+          "formula_cell_count": 2122
+        },
+        "method_name": null
+      },
+      {
+        "path": "mbp-2026-02-recapture-candidate-captures.json",
+        "size_bytes": 48543,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "selected_target_count": 12,
+          "captured_count": 12,
+          "failed_count": 0,
+          "png_count": 12,
+          "gate_result_count": 12,
+          "captured_pending_review_gate_count": 12,
+          "capture_failed_gate_count": 0
+        },
+        "method_name": null
+      },
+      {
+        "path": "mbp-2026-02-recapture-candidate-plan.json",
+        "size_bytes": 45202,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "source_capture_count": 4,
+          "candidate_target_count": 12,
+          "high_priority_count": 7,
+          "medium_priority_count": 5,
+          "same_window_control_count": 2,
+          "expanded_row_context_count": 1,
+          "visible_row_context_count": 1,
+          "visible_row_context_tile_count": 3,
+          "column_tile_count": 5,
+          "sheet_count": 4,
+          "gate_check_count": 12,
+          "recommended_first_batch_count": 12
+        },
+        "method_name": "recapture_candidate_generation"
+      },
+      {
+        "path": "mbp-2026-02-recapture-candidate-quality.json",
+        "size_bytes": 47281,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "capture_count": 12,
+          "evaluated_count": 12,
+          "usable_count": 5,
+          "review_required_count": 0,
+          "recapture_required_count": 7,
+          "capture_failed_count": 0,
+          "too_thin_count": 7,
+          "low_row_pixels_count": 7,
+          "extreme_aspect_count": 6,
+          "low_visible_content_count": 3,
+          "tiling_recommended_count": 1,
+          "expanded_window_recommended_count": 4
+        },
+        "method_name": "deterministic_png_capture_quality"
+      },
+      {
+        "path": "mbp-2026-02-render-captures.json",
+        "size_bytes": 67630,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "selected_target_count": 12,
+          "captured_count": 12,
+          "failed_count": 0,
+          "png_count": 12,
+          "gate_result_count": 30,
+          "captured_pending_review_gate_count": 30,
+          "capture_failed_gate_count": 0
+        },
+        "method_name": null
+      },
+      {
+        "path": "mbp-2026-02-revenue-manifest.json",
+        "size_bytes": 160582,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "sheet_count": 14,
+          "scanned_sheet_count": 13,
+          "skipped_large_sheet_count": 1,
+          "visible_sheet_count": 14,
+          "formula_elements_in_scanned_sheets": 286574,
+          "cell_elements_in_scanned_sheets": 680827,
+          "merged_ranges_in_scanned_sheets": 2,
+          "package_media_count": 5,
+          "package_external_link_count": 1,
+          "package_pivot_cache_record_count": 6,
+          "pivot_table_count": 24,
+          "pivot_cache_count": 6
+        },
+        "method_name": null
+      },
+      {
+        "path": "mbp-2026-02-shared-ontology-alignment-review.json",
+        "size_bytes": 163302,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "alignment_item_count": 21,
+          "promoted_count": 0,
+          "blocked_alignment_count": 21,
+          "local_boundary_blocked_count": 21,
+          "local_source_blocked_count": 21,
+          "semantic_label_pending_count": 16,
+          "basis_review_required_count": 14,
+          "formula_result_validation_required_count": 12,
+          "review_question_count": 6,
+          "shared_ontology_update_count": 0,
+          "alignment_status_counts": {
+            "blocked_basis_definition_pending": 5,
+            "blocked_semantic_label_pending": 16
+          },
+          "blocker_counts": {
+            "local_domain_boundary_not_confirmed": 21,
+            "no_local_domain_sources_available": 21,
+            "formula_result_validation_pending": 12,
+            "gaap_ifrs_basis_mapping_required": 14,
+            "repeated_workbook_family_evidence_missing": 21,
+            "shared_ontology_target_not_provided": 21,
+            "human_approval_required": 21,
+            "semantic_label_pending": 16
+          },
+          "conflict_risk_counts": {
+            "dual_basis_revenue_interpretation_risk": 14,
+            "local_vocabulary_absent_risk": 21,
+            "formula_result_not_recalculated_risk": 12,
+            "unmapped_semantic_surface_risk": 16,
+            "no_existing_general_domain_alignment_risk": 16
+          },
+          "alignment_status": "review_only_no_shared_promotion"
+        },
+        "method_name": "deterministic_shared_ontology_alignment_review"
+      },
+      {
+        "path": "mbp-2026-02-structural-style-profile.json",
+        "size_bytes": 2200592,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "sheet_count": 14,
+          "scanned_sheet_count": 13,
+          "skipped_large_xml_sheet_count": 1,
+          "merge_range_count": 2,
+          "sampled_style_cell_count": 6768,
+          "style_boundary_count": 147,
+          "hidden_row_count": 36,
+          "hidden_column_dimension_count": 1
+        },
+        "method_name": null
+      },
+      {
+        "path": "mbp-2026-02-table-io-pipelines.json",
+        "size_bytes": 651365,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "pipeline_count": 45,
+          "formula_pipeline_count": 21,
+          "pivot_pipeline_count": 24,
+          "external_dependency_pipeline_count": 0,
+          "unresolved_input_pipeline_count": 1,
+          "summary_role_count": 10,
+          "bridge_role_count": 0,
+          "report_role_count": 24
+        },
+        "method_name": null
+      },
+      {
+        "path": "mbp-2026-02-validated-document-graph.json",
+        "size_bytes": 19901982,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "graph_node_count": 1078,
+          "document_node_count": 1073,
+          "semantic_node_count": 5,
+          "graph_relation_count": 1197,
+          "document_relation_count": 1191,
+          "semantic_relation_count": 6,
+          "accepted_data_view_count": 44,
+          "semantic_alias_count": 28,
+          "document_review_queue_count": 174,
+          "proposal_review_queue_count": 166,
+          "filtered_document_relation_count": 1,
+          "open_action_contract_count": 171,
+          "blocked_action_contract_count": 4,
+          "accepted_proposal_result_count": 39,
+          "graph_status": "assembled_with_carry_forward_review_queue"
+        },
+        "method_name": "deterministic_validated_document_graph_assembly"
+      },
+      {
+        "path": "mbp-2026-02-view-state-preflight.json",
+        "size_bytes": 46134,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "sheet_count": 14,
+          "scanned_sheet_count": 13,
+          "sheet_with_filter_mode_count": 3,
+          "sheet_with_hidden_rows_count": 3,
+          "hidden_row_count": 6506,
+          "hidden_column_count": 18,
+          "capture_window_analysis_count": 0,
+          "view_state_explained_count": 0,
+          "view_state_affects_count": 0,
+          "unexplained_by_view_state_count": 0,
+          "non_authoritative_unhide_diagnostic_count": 0
+        },
+        "method_name": "deterministic_workbook_view_state_profile"
+      },
+      {
+        "path": "mbp-2026-02-view-state-profile.json",
+        "size_bytes": 143004,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "sheet_count": 12,
+          "scanned_sheet_count": 12,
+          "sheet_with_filter_mode_count": 3,
+          "sheet_with_hidden_rows_count": 3,
+          "hidden_row_count": 6506,
+          "hidden_column_count": 18,
+          "capture_window_analysis_count": 24,
+          "view_state_explained_count": 9,
+          "view_state_affects_count": 1,
+          "unexplained_by_view_state_count": 0,
+          "non_authoritative_unhide_diagnostic_count": 9
+        },
+        "method_name": "deterministic_workbook_view_state_profile"
+      },
+      {
+        "path": "mbp-2026-02-visual-features.json",
+        "size_bytes": 154066,
+        "kind": "json",
+        "json_status": "valid",
+        "summary": {
+          "feature_result_count": 24,
+          "detected_count": 12,
+          "detected_with_view_state_warning_count": 1,
+          "no_visible_content_detected_count": 0,
+          "skipped_quality_review_count": 2,
+          "skipped_view_state_blocked_count": 9,
+          "skipped_unusable_count": 0,
+          "not_available_count": 0,
+          "grid_like_result_count": 13,
+          "passed_gate_count": 12,
+          "review_gate_count": 3,
+          "blocked_gate_count": 9
+        },
+        "method_name": "deterministic_capture_visual_feature_detection"
+      },
+      {
+        "path": "process-ledger.jsonl",
+        "size_bytes": 76185,
+        "kind": "jsonl",
+        "line_count": 34
+      },
+      {
+        "path": "recapture-candidates/capture-targets.tsv",
+        "size_bytes": 2864,
+        "kind": "tsv"
+      },
+      {
+        "path": "recapture-candidates/captures/capture_001_be06d2a5d0.png",
+        "size_bytes": 127306,
+        "kind": "png"
+      },
+      {
+        "path": "recapture-candidates/captures/capture_002_25dad63e7a.png",
+        "size_bytes": 81148,
+        "kind": "png"
+      },
+      {
+        "path": "recapture-candidates/captures/capture_003_f75855ae83.png",
+        "size_bytes": 69146,
+        "kind": "png"
+      },
+      {
+        "path": "recapture-candidates/captures/capture_004_7ee126545e.png",
+        "size_bytes": 20763,
+        "kind": "png"
+      },
+      {
+        "path": "recapture-candidates/captures/capture_005_4c1035ab25.png",
+        "size_bytes": 192,
+        "kind": "png"
+      },
+      {
+        "path": "recapture-candidates/captures/capture_006_33a3867a7b.png",
+        "size_bytes": 167,
+        "kind": "png"
+      },
+      {
+        "path": "recapture-candidates/captures/capture_007_cf0646c2df.png",
+        "size_bytes": 192,
+        "kind": "png"
+      },
+      {
+        "path": "recapture-candidates/captures/capture_008_472c22f6f1.png",
+        "size_bytes": 103395,
+        "kind": "png"
+      },
+      {
+        "path": "recapture-candidates/captures/capture_009_4b225c7f12.png",
+        "size_bytes": 39516,
+        "kind": "png"
+      },
+      {
+        "path": "recapture-candidates/captures/capture_010_21e4a8d588.png",
+        "size_bytes": 9658,
+        "kind": "png"
+      },
+      {
+        "path": "recapture-candidates/captures/capture_011_0129a6f7b9.png",
+        "size_bytes": 33186,
+        "kind": "png"
+      },
+      {
+        "path": "recapture-candidates/captures/capture_012_211fe53139.png",
+        "size_bytes": 23135,
+        "kind": "png"
+      },
+      {
+        "path": "render-captures/capture-targets.tsv",
+        "size_bytes": 2352,
+        "kind": "tsv"
+      },
+      {
+        "path": "render-captures/captures/capture_001_57389d2f28.png",
+        "size_bytes": 15921,
+        "kind": "png"
+      },
+      {
+        "path": "render-captures/captures/capture_002_cd6f96738d.png",
+        "size_bytes": 255814,
+        "kind": "png"
+      },
+      {
+        "path": "render-captures/captures/capture_003_8c8cc45aab.png",
+        "size_bytes": 20763,
+        "kind": "png"
+      },
+      {
+        "path": "render-captures/captures/capture_004_a280430449.png",
+        "size_bytes": 39733,
+        "kind": "png"
+      },
+      {
+        "path": "render-captures/captures/capture_005_dea19809c1.png",
+        "size_bytes": 157578,
+        "kind": "png"
+      },
+      {
+        "path": "render-captures/captures/capture_006_12955465b8.png",
+        "size_bytes": 148087,
+        "kind": "png"
+      },
+      {
+        "path": "render-captures/captures/capture_007_f763d98820.png",
+        "size_bytes": 95476,
+        "kind": "png"
+      },
+      {
+        "path": "render-captures/captures/capture_008_db60fadebf.png",
+        "size_bytes": 32737,
+        "kind": "png"
+      },
+      {
+        "path": "render-captures/captures/capture_009_7723c8ac59.png",
+        "size_bytes": 160851,
+        "kind": "png"
+      },
+      {
+        "path": "render-captures/captures/capture_010_e0feda6b15.png",
+        "size_bytes": 137525,
+        "kind": "png"
+      },
+      {
+        "path": "render-captures/captures/capture_011_dc1b0b305f.png",
+        "size_bytes": 101046,
+        "kind": "png"
+      },
+      {
+        "path": "render-captures/captures/capture_012_459378b2ad.png",
+        "size_bytes": 9658,
+        "kind": "png"
+      }
+    ],
+    "document_inventory": [
+      {
+        "path": "/Users/kangmin/Documents/excel-workbook-editing/docs/document-shaped-excel-understanding-tasklist.md",
+        "size_bytes": 13400,
+        "line_count": 94
+      },
+      {
+        "path": "/Users/kangmin/Documents/excel-workbook-editing/docs/document-shaped-excel-understanding-design.md",
+        "size_bytes": 68125,
+        "line_count": 1359
+      },
+      {
+        "path": "/Users/kangmin/Documents/excel-workbook-editing/AGENTS.md",
+        "size_bytes": 9463,
+        "line_count": 183
+      },
+      {
+        "path": "/Users/kangmin/Documents/excel-workbook-editing/IMPLEMENTATION_MAP.html",
+        "size_bytes": 17339,
+        "line_count": 330
+      }
+    ]
+  },
+  "method": {
+    "name": "deterministic_process_redesign_review",
+    "authority": "process_recommendation_not_parser_truth",
+    "decision_policy": "Use process ledger entries, tasklist stages, generated artifacts, final summaries, and active design documents to recommend which stages should be kept, merged, reordered, turned into loops, or held as review-only gates."
+  },
+  "final_assessment": {
+    "status": "structural_understanding_ready_but_semantic_promotion_blocked",
+    "what_is_ready": [
+      "Workbook structure, visual evidence, formula/pivot dataflow, table I/O pipelines, document ontology mapping, actionable review items, validated graph, data views, local semantic candidates, and shared alignment blockers are represented as traceable artifacts.",
+      "44 data views are projected for review.",
+      "44 pipeline roles are accepted."
+    ],
+    "what_is_not_ready": [
+      "Official K-IFRS revenue output is not authoritative until output basis, aggregation rule, and Excel-engine formula results are confirmed.",
+      "Shared ontology promotion is blocked because local boundary, local source, repeated workbook-family evidence, shared target checks, and human approval are missing."
+    ],
+    "recommended_default_next_step": "Use the redesigned pipeline on a second workbook or source/output pair while collecting local-domain and formula-result authority evidence."
+  },
+  "stage_reviews": [
+    {
+      "id": "stage_review:00",
+      "current_stage_number": 0,
+      "current_stage": "Fast ZIP/XML manifest",
+      "current_status": "Done",
+      "recommendation": "keep",
+      "priority": "medium",
+      "proposed_group": "core_pipeline",
+      "rationale": [
+        "The stage produced reusable evidence for downstream parser decisions."
+      ],
+      "recommended_changes": [
+        "Keep the stage with current authority boundaries."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:01",
+      "current_stage_number": 1,
+      "current_stage": "Workbook view-state preflight",
+      "current_status": "Done",
+      "recommendation": "keep_reordered_early",
+      "priority": "high",
+      "proposed_group": "input_preflight",
+      "rationale": [
+        "Hidden rows, filters, outline state, and view offsets affected later capture behavior.",
+        "The process already corrected this by adding early view-state preflight."
+      ],
+      "recommended_changes": [
+        "Keep this immediately after fast manifest and before sampling/capture planning.",
+        "Do not reveal hidden content by default; preserve source-visible authority."
+      ],
+      "completion_guard": [
+        "Hidden/filter/outline/pane state is inventoried before capture planning.",
+        "Source-visible authority is preserved."
+      ]
+    },
+    {
+      "id": "stage_review:02",
+      "current_stage_number": 2,
+      "current_stage": "Read-only targeted row sampling",
+      "current_status": "Done",
+      "recommendation": "keep",
+      "priority": "medium",
+      "proposed_group": "core_pipeline",
+      "rationale": [
+        "The stage produced reusable evidence for downstream parser decisions."
+      ],
+      "recommended_changes": [
+        "Keep the stage with current authority boundaries."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:03",
+      "current_stage_number": 3,
+      "current_stage": "Pivot / formula / external reference profiling and formula/dataflow graph extraction",
+      "current_status": "Done",
+      "recommendation": "keep",
+      "priority": "medium",
+      "proposed_group": "core_pipeline",
+      "rationale": [
+        "The stage produced reusable evidence for downstream parser decisions."
+      ],
+      "recommended_changes": [
+        "Keep the stage with current authority boundaries."
+      ],
+      "completion_guard": [
+        "Formula references, external workbook references, pivot cache sources, and repeated formula signatures are indexed."
+      ]
+    },
+    {
+      "id": "stage_review:04",
+      "current_stage_number": 4,
+      "current_stage": "Initial document block candidate generation",
+      "current_status": "Done",
+      "recommendation": "merge_as_region_candidate_generation",
+      "priority": "medium",
+      "proposed_group": "region_candidate_model",
+      "rationale": [
+        "Row-band seeds were useful but insufficient because row and column boundaries can both split tables.",
+        "2D cell regions are the durable object; row bands should remain only early seeds."
+      ],
+      "recommended_changes": [
+        "Merge initial block candidates and 2D segmentation into one region-candidate stage with substeps.",
+        "Retain row-band evidence as a seed property, not the final unit."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:05",
+      "current_stage_number": 5,
+      "current_stage": "2D cell region segmentation",
+      "current_status": "Done",
+      "recommendation": "merge_as_region_candidate_generation",
+      "priority": "medium",
+      "proposed_group": "region_candidate_model",
+      "rationale": [
+        "Row-band seeds were useful but insufficient because row and column boundaries can both split tables.",
+        "2D cell regions are the durable object; row bands should remain only early seeds."
+      ],
+      "recommended_changes": [
+        "Merge initial block candidates and 2D segmentation into one region-candidate stage with substeps.",
+        "Retain row-band evidence as a seed property, not the final unit."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:06",
+      "current_stage_number": 6,
+      "current_stage": "Structural style profile",
+      "current_status": "Done",
+      "recommendation": "keep_before_boundary_decisions",
+      "priority": "high",
+      "proposed_group": "region_candidate_model",
+      "rationale": [
+        "Style and merged-cell evidence materially improves split/merge boundary ranking."
+      ],
+      "recommended_changes": [
+        "Run structural style profiling before final split/merge boundary gates."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:07",
+      "current_stage_number": 7,
+      "current_stage": "Adjacent split / merge boundary gate ranking",
+      "current_status": "Done",
+      "recommendation": "keep",
+      "priority": "medium",
+      "proposed_group": "core_pipeline",
+      "rationale": [
+        "The stage produced reusable evidence for downstream parser decisions."
+      ],
+      "recommended_changes": [
+        "Keep the stage with current authority boundaries."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:08",
+      "current_stage_number": 8,
+      "current_stage": "Table I/O pipeline extraction",
+      "current_status": "Done",
+      "recommendation": "keep",
+      "priority": "medium",
+      "proposed_group": "core_pipeline",
+      "rationale": [
+        "The stage produced reusable evidence for downstream parser decisions."
+      ],
+      "recommended_changes": [
+        "Keep the stage with current authority boundaries."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:09",
+      "current_stage_number": 9,
+      "current_stage": "Pipeline graph review visualization",
+      "current_status": "Done",
+      "recommendation": "move_to_review_package_layer",
+      "priority": "low",
+      "proposed_group": "human_review_surface",
+      "rationale": [
+        "Mermaid pipeline visualization is valuable for review but does not create parser truth."
+      ],
+      "recommended_changes": [
+        "Keep as a generated review surface attached to pipeline extraction rather than a core parser stage."
+      ],
+      "completion_guard": [
+        "Visualization is present but cannot become parser truth."
+      ]
+    },
+    {
+      "id": "stage_review:10",
+      "current_stage_number": 10,
+      "current_stage": "Cross-validation target planning",
+      "current_status": "Done",
+      "recommendation": "keep",
+      "priority": "medium",
+      "proposed_group": "core_pipeline",
+      "rationale": [
+        "The stage produced reusable evidence for downstream parser decisions."
+      ],
+      "recommended_changes": [
+        "Keep the stage with current authority boundaries."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:11",
+      "current_stage_number": 11,
+      "current_stage": "First-batch Excel render capture",
+      "current_status": "Done",
+      "recommendation": "turn_into_visual_evidence_loop",
+      "priority": "high",
+      "proposed_group": "visual_evidence_loop",
+      "rationale": [
+        "Capture, quality checks, recapture, view-state reconciliation, coordinate normalization, and visual features form an iterative evidence loop.",
+        "Recapture experiments improved some wide-range captures but did not resolve hidden/filter authority cases."
+      ],
+      "recommended_changes": [
+        "Represent as a loop with explicit exit criteria instead of a strictly linear chain.",
+        "Keep reveal/clear-filter variants diagnostic and non-authoritative."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:12",
+      "current_stage_number": 12,
+      "current_stage": "Capture quality checks",
+      "current_status": "Done",
+      "recommendation": "turn_into_visual_evidence_loop",
+      "priority": "high",
+      "proposed_group": "visual_evidence_loop",
+      "rationale": [
+        "Capture, quality checks, recapture, view-state reconciliation, coordinate normalization, and visual features form an iterative evidence loop.",
+        "Recapture experiments improved some wide-range captures but did not resolve hidden/filter authority cases."
+      ],
+      "recommended_changes": [
+        "Represent as a loop with explicit exit criteria instead of a strictly linear chain.",
+        "Keep reveal/clear-filter variants diagnostic and non-authoritative."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:13",
+      "current_stage_number": 13,
+      "current_stage": "Recapture candidate experiment / tiling",
+      "current_status": "Done",
+      "recommendation": "turn_into_visual_evidence_loop",
+      "priority": "high",
+      "proposed_group": "visual_evidence_loop",
+      "rationale": [
+        "Capture, quality checks, recapture, view-state reconciliation, coordinate normalization, and visual features form an iterative evidence loop.",
+        "Recapture experiments improved some wide-range captures but did not resolve hidden/filter authority cases."
+      ],
+      "recommended_changes": [
+        "Represent as a loop with explicit exit criteria instead of a strictly linear chain.",
+        "Keep reveal/clear-filter variants diagnostic and non-authoritative."
+      ],
+      "completion_guard": [
+        "Recapture candidates are accepted only after capture quality comparison."
+      ]
+    },
+    {
+      "id": "stage_review:14",
+      "current_stage_number": 14,
+      "current_stage": "View-state / capture reconciliation",
+      "current_status": "Done",
+      "recommendation": "turn_into_visual_evidence_loop",
+      "priority": "high",
+      "proposed_group": "visual_evidence_loop",
+      "rationale": [
+        "Capture, quality checks, recapture, view-state reconciliation, coordinate normalization, and visual features form an iterative evidence loop.",
+        "Recapture experiments improved some wide-range captures but did not resolve hidden/filter authority cases."
+      ],
+      "recommended_changes": [
+        "Represent as a loop with explicit exit criteria instead of a strictly linear chain.",
+        "Keep reveal/clear-filter variants diagnostic and non-authoritative."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:15",
+      "current_stage_number": 15,
+      "current_stage": "Coordinate normalization",
+      "current_status": "Done",
+      "recommendation": "turn_into_visual_evidence_loop",
+      "priority": "high",
+      "proposed_group": "visual_evidence_loop",
+      "rationale": [
+        "Capture, quality checks, recapture, view-state reconciliation, coordinate normalization, and visual features form an iterative evidence loop.",
+        "Recapture experiments improved some wide-range captures but did not resolve hidden/filter authority cases."
+      ],
+      "recommended_changes": [
+        "Represent as a loop with explicit exit criteria instead of a strictly linear chain.",
+        "Keep reveal/clear-filter variants diagnostic and non-authoritative."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:16",
+      "current_stage_number": 16,
+      "current_stage": "Visual feature detection",
+      "current_status": "Done",
+      "recommendation": "turn_into_visual_evidence_loop",
+      "priority": "high",
+      "proposed_group": "visual_evidence_loop",
+      "rationale": [
+        "Capture, quality checks, recapture, view-state reconciliation, coordinate normalization, and visual features form an iterative evidence loop.",
+        "Recapture experiments improved some wide-range captures but did not resolve hidden/filter authority cases."
+      ],
+      "recommended_changes": [
+        "Represent as a loop with explicit exit criteria instead of a strictly linear chain.",
+        "Keep reveal/clear-filter variants diagnostic and non-authoritative."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:17",
+      "current_stage_number": 17,
+      "current_stage": "Visual/data/formula cross-validation gate execution",
+      "current_status": "Done",
+      "recommendation": "keep_as_decision_layer",
+      "priority": "high",
+      "proposed_group": "deterministic_decision_layer",
+      "rationale": [
+        "Gate, boundary, and role decisions must remain separate from raw evidence extraction."
+      ],
+      "recommended_changes": [
+        "Keep accepted/review/rejected statuses distinct from final graph claims.",
+        "Let formula and pivot authority support role labels even when visual evidence remains partial."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:18",
+      "current_stage_number": 18,
+      "current_stage": "Boundary acceptance / rejection",
+      "current_status": "Done",
+      "recommendation": "keep_as_decision_layer",
+      "priority": "high",
+      "proposed_group": "deterministic_decision_layer",
+      "rationale": [
+        "Gate, boundary, and role decisions must remain separate from raw evidence extraction."
+      ],
+      "recommended_changes": [
+        "Keep accepted/review/rejected statuses distinct from final graph claims.",
+        "Let formula and pivot authority support role labels even when visual evidence remains partial."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:19",
+      "current_stage_number": 19,
+      "current_stage": "Pipeline role validation",
+      "current_status": "Done",
+      "recommendation": "keep_as_decision_layer",
+      "priority": "high",
+      "proposed_group": "deterministic_decision_layer",
+      "rationale": [
+        "Gate, boundary, and role decisions must remain separate from raw evidence extraction."
+      ],
+      "recommended_changes": [
+        "Keep accepted/review/rejected statuses distinct from final graph claims.",
+        "Let formula and pivot authority support role labels even when visual evidence remains partial."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:20",
+      "current_stage_number": 20,
+      "current_stage": "Workbook evidence package assembly",
+      "current_status": "Done",
+      "recommendation": "keep_as_authority_and_action_layers",
+      "priority": "high",
+      "proposed_group": "evidence_and_action_layer",
+      "rationale": [
+        "Evidence package, document ontology mapping, and action contracts made open review items traceable and actionable."
+      ],
+      "recommended_changes": [
+        "Keep document-structure ontology utilization separate from semantic ontology generation.",
+        "Keep action contracts as the handoff surface for unresolved claims."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:21",
+      "current_stage_number": 21,
+      "current_stage": "Document ontology mapping",
+      "current_status": "Done",
+      "recommendation": "keep_as_authority_and_action_layers",
+      "priority": "high",
+      "proposed_group": "evidence_and_action_layer",
+      "rationale": [
+        "Evidence package, document ontology mapping, and action contracts made open review items traceable and actionable."
+      ],
+      "recommended_changes": [
+        "Keep document-structure ontology utilization separate from semantic ontology generation.",
+        "Keep action contracts as the handoff surface for unresolved claims."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:22",
+      "current_stage_number": 22,
+      "current_stage": "Action contract layer",
+      "current_status": "Done",
+      "recommendation": "keep_as_authority_and_action_layers",
+      "priority": "high",
+      "proposed_group": "evidence_and_action_layer",
+      "rationale": [
+        "Evidence package, document ontology mapping, and action contracts made open review items traceable and actionable."
+      ],
+      "recommended_changes": [
+        "Keep document-structure ontology utilization separate from semantic ontology generation.",
+        "Keep action contracts as the handoff surface for unresolved claims."
+      ],
+      "completion_guard": [
+        "Each action has owner, required evidence, gate, and completion effect."
+      ]
+    },
+    {
+      "id": "stage_review:23",
+      "current_stage_number": 23,
+      "current_stage": "Domain knowledge source model",
+      "current_status": "Done",
+      "recommendation": "keep_with_proposal_boundary",
+      "priority": "high",
+      "proposed_group": "semantic_proposal_layer",
+      "rationale": [
+        "General-domain sources helped LLM proposal grounding, while deterministic validation quarantined local-boundary-sensitive claims."
+      ],
+      "recommended_changes": [
+        "Keep LLM output proposal-only.",
+        "Require deterministic source, domain, conflict, formula/pivot topology, and local-boundary gates before graph membership."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:24",
+      "current_stage_number": 24,
+      "current_stage": "LLM proposal generation",
+      "current_status": "Done",
+      "recommendation": "keep_with_proposal_boundary",
+      "priority": "high",
+      "proposed_group": "semantic_proposal_layer",
+      "rationale": [
+        "General-domain sources helped LLM proposal grounding, while deterministic validation quarantined local-boundary-sensitive claims."
+      ],
+      "recommended_changes": [
+        "Keep LLM output proposal-only.",
+        "Require deterministic source, domain, conflict, formula/pivot topology, and local-boundary gates before graph membership."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:25",
+      "current_stage_number": 25,
+      "current_stage": "Deterministic validation of LLM proposals",
+      "current_status": "Done",
+      "recommendation": "keep_with_proposal_boundary",
+      "priority": "high",
+      "proposed_group": "semantic_proposal_layer",
+      "rationale": [
+        "General-domain sources helped LLM proposal grounding, while deterministic validation quarantined local-boundary-sensitive claims."
+      ],
+      "recommended_changes": [
+        "Keep LLM output proposal-only.",
+        "Require deterministic source, domain, conflict, formula/pivot topology, and local-boundary gates before graph membership."
+      ],
+      "completion_guard": [
+        "LLM proposals have deterministic outcomes and rejected/quarantined queues."
+      ]
+    },
+    {
+      "id": "stage_review:26",
+      "current_stage_number": 26,
+      "current_stage": "Validated document graph assembly",
+      "current_status": "Done",
+      "recommendation": "keep_as_projection_and_review_layers",
+      "priority": "high",
+      "proposed_group": "graph_projection_and_semantic_review",
+      "rationale": [
+        "Validated graph, data views, local candidates, and shared alignment separated accepted structure from semantic review queues."
+      ],
+      "recommended_changes": [
+        "Do not promote local candidates to shared ontology until boundary/source/repetition/conflict/formula/human gates pass.",
+        "Add explicit K-GAAP/K-IFRS basis review for revenue candidates."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:27",
+      "current_stage_number": 27,
+      "current_stage": "Data view projection",
+      "current_status": "Done",
+      "recommendation": "keep_as_projection_and_review_layers",
+      "priority": "high",
+      "proposed_group": "graph_projection_and_semantic_review",
+      "rationale": [
+        "Validated graph, data views, local candidates, and shared alignment separated accepted structure from semantic review queues."
+      ],
+      "recommended_changes": [
+        "Do not promote local candidates to shared ontology until boundary/source/repetition/conflict/formula/human gates pass.",
+        "Add explicit K-GAAP/K-IFRS basis review for revenue candidates."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:28",
+      "current_stage_number": 28,
+      "current_stage": "Local semantic ontology candidate generation",
+      "current_status": "Done",
+      "recommendation": "keep_as_projection_and_review_layers",
+      "priority": "high",
+      "proposed_group": "graph_projection_and_semantic_review",
+      "rationale": [
+        "Validated graph, data views, local candidates, and shared alignment separated accepted structure from semantic review queues."
+      ],
+      "recommended_changes": [
+        "Do not promote local candidates to shared ontology until boundary/source/repetition/conflict/formula/human gates pass.",
+        "Add explicit K-GAAP/K-IFRS basis review for revenue candidates."
+      ],
+      "completion_guard": [
+        "Output artifact exists and is schema-validated when a schema exists."
+      ]
+    },
+    {
+      "id": "stage_review:29",
+      "current_stage_number": 29,
+      "current_stage": "Shared ontology alignment / human review",
+      "current_status": "Done",
+      "recommendation": "keep_as_projection_and_review_layers",
+      "priority": "high",
+      "proposed_group": "graph_projection_and_semantic_review",
+      "rationale": [
+        "Validated graph, data views, local candidates, and shared alignment separated accepted structure from semantic review queues."
+      ],
+      "recommended_changes": [
+        "Do not promote local candidates to shared ontology until boundary/source/repetition/conflict/formula/human gates pass.",
+        "Add explicit K-GAAP/K-IFRS basis review for revenue candidates."
+      ],
+      "completion_guard": [
+        "Shared ontology updates remain zero while promotion blockers remain."
+      ]
+    },
+    {
+      "id": "stage_review:30",
+      "current_stage_number": 30,
+      "current_stage": "Process redesign review",
+      "current_status": "Continuous",
+      "recommendation": "keep_continuous",
+      "priority": "high",
+      "proposed_group": "process_governance",
+      "rationale": [
+        "The ledger exposed ordering mistakes, useful loops, and visual-review failures."
+      ],
+      "recommended_changes": [
+        "Run after each sample workbook and before locking the next process version."
+      ],
+      "completion_guard": [
+        "Review recommendations are written to artifact, docs, viewer, and ledger."
+      ]
+    }
+  ],
+  "recommended_pipeline": [
+    {
+      "position": 0,
+      "stage": "Fast ZIP/XML Manifest",
+      "source_current_stage_numbers": [
+        0
+      ],
+      "change_type": "keep",
+      "why": "Large-file and package risk preflight."
+    },
+    {
+      "position": 1,
+      "stage": "Workbook View-State Preflight",
+      "source_current_stage_numbers": [
+        1
+      ],
+      "change_type": "keep_reordered_early",
+      "why": "Human-visible state must be known before sampling/capture interpretation."
+    },
+    {
+      "position": 2,
+      "stage": "Read-Only Targeted Sampling",
+      "source_current_stage_numbers": [
+        2
+      ],
+      "change_type": "keep",
+      "why": "Values and formula text preview without mutating source workbook."
+    },
+    {
+      "position": 3,
+      "stage": "Pivot / Formula / External Reference Profiling",
+      "source_current_stage_numbers": [
+        3
+      ],
+      "change_type": "keep",
+      "why": "Dataflow, pivot cache, external link, and formula pattern authority."
+    },
+    {
+      "position": 4,
+      "stage": "Structural Style Profile",
+      "source_current_stage_numbers": [
+        6
+      ],
+      "change_type": "move_earlier",
+      "why": "Style/merge/dimension evidence before region boundary decisions."
+    },
+    {
+      "position": 5,
+      "stage": "Region Candidate Generation",
+      "source_current_stage_numbers": [
+        4,
+        5
+      ],
+      "change_type": "merge",
+      "why": "Combine row-band seeds and 2D region segmentation into one candidate model."
+    },
+    {
+      "position": 6,
+      "stage": "Split / Merge Boundary Ranking",
+      "source_current_stage_numbers": [
+        7
+      ],
+      "change_type": "keep",
+      "why": "Conservative candidate ranking before acceptance."
+    },
+    {
+      "position": 7,
+      "stage": "Table I/O Pipeline Extraction",
+      "source_current_stage_numbers": [
+        8
+      ],
+      "change_type": "keep",
+      "why": "Table-level input/output pipeline projection over formula and pivot authority."
+    },
+    {
+      "position": 8,
+      "stage": "Cross-Validation Target Planning",
+      "source_current_stage_numbers": [
+        10
+      ],
+      "change_type": "keep",
+      "why": "Plan visual/formula/pipeline gates before capture."
+    },
+    {
+      "position": 9,
+      "stage": "Visual Evidence Acquisition Loop",
+      "source_current_stage_numbers": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "change_type": "loop",
+      "why": "Capture, quality, recapture, view-state reconciliation, normalization, and visual features."
+    },
+    {
+      "position": 10,
+      "stage": "Visual / Data / Formula Gate Execution",
+      "source_current_stage_numbers": [
+        17
+      ],
+      "change_type": "keep",
+      "why": "Evidence statuses, not final graph claims."
+    },
+    {
+      "position": 11,
+      "stage": "Boundary And Pipeline Role Decisions",
+      "source_current_stage_numbers": [
+        18,
+        19
+      ],
+      "change_type": "merge_decision_layer",
+      "why": "Decision layer over gates, boundary candidates, formula, and pivot authority."
+    },
+    {
+      "position": 12,
+      "stage": "Workbook Evidence Package Assembly",
+      "source_current_stage_numbers": [
+        20
+      ],
+      "change_type": "keep",
+      "why": "Single parser input authority."
+    },
+    {
+      "position": 13,
+      "stage": "Document Ontology Mapping",
+      "source_current_stage_numbers": [
+        21
+      ],
+      "change_type": "keep",
+      "why": "Document-structure ontology utilization."
+    },
+    {
+      "position": 14,
+      "stage": "Action Contract Layer",
+      "source_current_stage_numbers": [
+        22
+      ],
+      "change_type": "keep",
+      "why": "Actionable ontology handoff for unresolved claims."
+    },
+    {
+      "position": 15,
+      "stage": "Domain Knowledge Source Model",
+      "source_current_stage_numbers": [
+        23
+      ],
+      "change_type": "keep",
+      "why": "Separate general-domain and local-domain evidence."
+    },
+    {
+      "position": 16,
+      "stage": "LLM Proposal Generation",
+      "source_current_stage_numbers": [
+        24
+      ],
+      "change_type": "keep_proposal_only",
+      "why": "Interpretation only; no acceptance."
+    },
+    {
+      "position": 17,
+      "stage": "Deterministic Proposal Validation",
+      "source_current_stage_numbers": [
+        25
+      ],
+      "change_type": "keep_gate",
+      "why": "Gate LLM claims before graph membership."
+    },
+    {
+      "position": 18,
+      "stage": "Validated Document Graph",
+      "source_current_stage_numbers": [
+        26
+      ],
+      "change_type": "keep",
+      "why": "Accepted graph plus carry-forward queues."
+    },
+    {
+      "position": 19,
+      "stage": "Data View Projection",
+      "source_current_stage_numbers": [
+        27
+      ],
+      "change_type": "keep",
+      "why": "Reviewer-friendly read model over accepted graph."
+    },
+    {
+      "position": 20,
+      "stage": "Local Semantic Candidates",
+      "source_current_stage_numbers": [
+        28
+      ],
+      "change_type": "keep_review_candidate",
+      "why": "Boundary-scoped candidates only."
+    },
+    {
+      "position": 21,
+      "stage": "Shared Ontology Alignment / Human Review",
+      "source_current_stage_numbers": [
+        29
+      ],
+      "change_type": "keep_review_only",
+      "why": "Promotion blocked until evidence gates pass."
+    },
+    {
+      "position": 22,
+      "stage": "Review Package / Viewer Layout Gate",
+      "source_current_stage_numbers": [
+        9
+      ],
+      "change_type": "supporting_gate",
+      "why": "Generated review surfaces need layout QA."
+    },
+    {
+      "position": 23,
+      "stage": "Process Redesign Review",
+      "source_current_stage_numbers": [
+        30
+      ],
+      "change_type": "continuous",
+      "why": "Use ledger to redesign pipeline after each sample."
+    }
+  ],
+  "redesign_decisions": [
+    {
+      "id": "decision:view_state_preflight_first",
+      "decision": "Move and keep view-state preflight at the beginning.",
+      "status": "accepted_for_next_iteration",
+      "evidence": [
+        "Hidden/filter state explained capture behavior.",
+        "view_state_blocked_or_warning_count=0"
+      ],
+      "effect": "Capture planning and visual absence claims must know visible-state authority first."
+    },
+    {
+      "id": "decision:region_candidates_are_2d",
+      "decision": "Treat row bands as seeds and 2D cell regions as the durable boundary object.",
+      "status": "accepted_for_next_iteration",
+      "evidence": [
+        "The user identified that column boundaries and adjacent-but-separate regions can both exist."
+      ],
+      "effect": "Merge row-band and 2D segmentation implementation as one candidate model."
+    },
+    {
+      "id": "decision:visual_capture_is_loop",
+      "decision": "Model render capture, quality, recapture, view-state reconciliation, coordinate normalization, and visual feature detection as one loop.",
+      "status": "accepted_for_next_iteration",
+      "evidence": [
+        "Recapture improved wide-range cases but not hidden/filter cases.",
+        "Visual feature detection depends on quality and view-state authority."
+      ],
+      "effect": "A capture target exits the loop only when it is usable, blocked by source-visible view-state, or explicitly carried as review-required."
+    },
+    {
+      "id": "decision:shared_ontology_review_only",
+      "decision": "Keep shared ontology alignment review-only until promotion prerequisites pass.",
+      "status": "accepted_for_next_iteration",
+      "evidence": [
+        "shared_promoted_count=0",
+        "shared_blocked_count=21"
+      ],
+      "effect": "No shared ontology write path should run for this sample yet."
+    },
+    {
+      "id": "decision:formula_results_need_excel_engine",
+      "decision": "Add an explicit Excel-engine recalculation gate before numeric formula-result claims.",
+      "status": "accepted_for_next_iteration",
+      "evidence": [
+        "formula_result_validation_required_count=12"
+      ],
+      "effect": "Formula text remains evidence only until recalculated through Microsoft Excel or an approved equivalent authority."
+    },
+    {
+      "id": "decision:viewer_layout_gate",
+      "decision": "Add a lightweight viewer layout gate for dense review sections.",
+      "status": "accepted_for_next_iteration",
+      "evidence": [
+        "Stage 27 shared alignment section required a layout repair after user review."
+      ],
+      "effect": "Generated HTML review surfaces must be checked for overflow and overlap."
+    }
+  ],
+  "open_evidence_gaps": [
+    {
+      "id": "gap:local_boundary",
+      "priority": "high",
+      "gap": "Local domain boundary is not confirmed.",
+      "blocks": [
+        "local_semantic_truth_acceptance",
+        "shared_ontology_promotion"
+      ],
+      "required_evidence": [
+        "confirmed_organization_or_project_boundary"
+      ]
+    },
+    {
+      "id": "gap:local_sources",
+      "priority": "high",
+      "gap": "No local policy, glossary, or owner-approved vocabulary source is available.",
+      "blocks": [
+        "local_candidate_acceptance",
+        "shared_ontology_promotion"
+      ],
+      "required_evidence": [
+        "local_policy_or_vocabulary_source"
+      ]
+    },
+    {
+      "id": "gap:semantic_labels",
+      "priority": "high",
+      "gap": "16 accepted data-view surfaces need semantic labels.",
+      "blocks": [
+        "candidate_alignment",
+        "shared_ontology_promotion"
+      ],
+      "required_evidence": [
+        "human_confirmed_semantic_label"
+      ]
+    },
+    {
+      "id": "gap:gaap_ifrs_basis",
+      "priority": "high",
+      "gap": "14 candidates need K-GAAP/K-IFRS basis separation.",
+      "blocks": [
+        "official_ifrs_revenue_claim",
+        "revenue_concept_promotion"
+      ],
+      "required_evidence": [
+        "k_gaap_vs_k_ifrs_output_definition",
+        "official_ifrs_revenue_aggregation_definition"
+      ]
+    },
+    {
+      "id": "gap:formula_result_authority",
+      "priority": "high",
+      "gap": "12 candidates need Excel-engine formula-result validation.",
+      "blocks": [
+        "numeric_revenue_claim",
+        "formula_based_shared_promotion"
+      ],
+      "required_evidence": [
+        "excel_engine_recalculation_sample"
+      ]
+    },
+    {
+      "id": "gap:workbook_family_repetition",
+      "priority": "medium",
+      "gap": "No repeated workbook-pair or workbook-family evidence has been supplied.",
+      "blocks": [
+        "shared_ontology_promotion"
+      ],
+      "required_evidence": [
+        "workbook_family_or_pair_repetition_evidence"
+      ]
+    },
+    {
+      "id": "gap:remaining_visual_review",
+      "priority": "medium",
+      "gap": "62 gate results remain review-required.",
+      "blocks": [
+        "full_automation_claim"
+      ],
+      "required_evidence": [
+        "additional_capture_or_human_review"
+      ]
+    }
+  ],
+  "next_iteration_plan": [
+    {
+      "step": 1,
+      "name": "Apply redesigned ordering to the next workbook or workbook pair.",
+      "done_when": "The pipeline starts with manifest, view-state preflight, sampling, formula/pivot profiling, and style profiling before region segmentation."
+    },
+    {
+      "step": 2,
+      "name": "Collect local-domain evidence.",
+      "done_when": "A boundary and local vocabulary/policy source are attached before semantic acceptance."
+    },
+    {
+      "step": 3,
+      "name": "Run Excel-engine formula-result validation on selected revenue outputs.",
+      "done_when": "Numeric formula claims have recalculated Excel evidence or remain explicitly blocked."
+    },
+    {
+      "step": 4,
+      "name": "Define K-GAAP/K-IFRS output basis.",
+      "done_when": "Revenue surfaces are classified as K-GAAP output, K-IFRS support, or bridge with human-approved aggregation rules."
+    },
+    {
+      "step": 5,
+      "name": "Add viewer layout QA to new dense sections.",
+      "done_when": "Generated HTML sections pass desktop and mobile overflow checks."
+    }
+  ],
+  "summary": {
+    "ledger_entry_count": 34,
+    "tasklist_stage_count": 31,
+    "artifact_count": 58,
+    "json_artifact_count": 30,
+    "stage_review_count": 31,
+    "high_priority_stage_review_count": 22,
+    "recommended_pipeline_stage_count": 24,
+    "redesign_decision_count": 6,
+    "open_evidence_gap_count": 7,
+    "recommendation_counts": {
+      "keep": 6,
+      "keep_reordered_early": 1,
+      "merge_as_region_candidate_generation": 2,
+      "keep_before_boundary_decisions": 1,
+      "move_to_review_package_layer": 1,
+      "turn_into_visual_evidence_loop": 6,
+      "keep_as_decision_layer": 3,
+      "keep_as_authority_and_action_layers": 3,
+      "keep_with_proposal_boundary": 3,
+      "keep_as_projection_and_review_layers": 4,
+      "keep_continuous": 1
+    },
+    "review_status": "process_redesign_review_completed"
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "Reviewed 34 process ledger entries and 58 generated artifacts."
+    },
+    {
+      "level": "warning",
+      "message": "5 high-priority evidence gaps remain before semantic promotion or official numeric claims."
+    },
+    {
+      "level": "warning",
+      "message": "Process recommendations are not parser truth; they must be applied and tested on the next workbook iteration."
+    }
+  ]
+}

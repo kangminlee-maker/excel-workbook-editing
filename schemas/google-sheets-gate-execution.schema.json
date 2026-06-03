@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-gate-execution.schema.json",
+  "title": "Google Sheets Gate Execution",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "gate_results",
+    "target_results",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "gate_results": { "type": "array", "items": { "$ref": "#/$defs/gate_result" } },
+    "target_results": { "type": "array", "items": { "$ref": "#/$defs/target_result" } },
+    "summary": { "$ref": "#/$defs/counts" },
+    "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["spreadsheet_id", "spreadsheet_url", "title", "source_artifacts"],
+      "additionalProperties": false,
+      "properties": {
+        "spreadsheet_id": { "type": "string", "minLength": 1 },
+        "spreadsheet_url": { "type": ["string", "null"] },
+        "title": { "type": "string" },
+        "source_artifacts": {
+          "type": "object",
+          "required": [
+            "live_cross_validation_plan",
+            "live_validation_batch_execution",
+            "live_table_io_pipelines",
+            "live_block_candidate_tuning"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "live_cross_validation_plan": { "type": "string", "minLength": 1 },
+            "live_validation_batch_execution": { "type": "string", "minLength": 1 },
+            "live_table_io_pipelines": { "type": "string", "minLength": 1 },
+            "live_block_candidate_tuning": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "source_document",
+        "gate_execution_status",
+        "formula_result_authority",
+        "source_spreadsheet_read_authority",
+        "accepted_gate_is_not_graph_promotion"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_document": { "const": "live_google_sheet" },
+        "gate_execution_status": { "const": "deterministic_evidence_only" },
+        "formula_result_authority": { "const": "not_established" },
+        "source_spreadsheet_read_authority": { "const": "blocked_until_source_acl_and_broker_allowlist" },
+        "accepted_gate_is_not_graph_promotion": { "const": true }
+      }
+    },
+    "gate_result": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "gate_id",
+        "target_id",
+        "gate_type",
+        "status",
+        "rationale",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "deterministic_gate_result" },
+        "gate_id": { "type": "string", "minLength": 1 },
+        "target_id": { "type": "string", "minLength": 1 },
+        "gate_type": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "enum": ["accepted", "review_required", "blocked"] },
+        "rationale": { "type": "string", "minLength": 1 },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "target_result": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "target_id",
+        "target_type",
+        "status",
+        "gate_result_ids",
+        "authority_blockers"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "deterministic_target_result" },
+        "target_id": { "type": "string", "minLength": 1 },
+        "target_type": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "enum": ["accepted", "review_required", "blocked"] },
+        "gate_result_ids": { "type": "array", "items": { "type": "string" } },
+        "authority_blockers": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] }
+    }
+  }
+}

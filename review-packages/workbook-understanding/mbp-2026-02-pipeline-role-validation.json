@@ -1,0 +1,4082 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-01T08:20:02.834588Z",
+  "source_artifacts": {
+    "table_io_pipelines": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-table-io-pipelines.json",
+    "gate_execution": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-gate-execution.json",
+    "boundary_decisions": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-boundary-decisions.json"
+  },
+  "method": {
+    "name": "deterministic_pipeline_role_validation",
+    "authority": "pipeline_role_decision_not_final_document_graph",
+    "decision_policy": "Validate roles from formula signatures, pivot cache definitions, input/output refs, accepted boundary constraints, and gate contradictions. Missing visual capture is a review annotation unless it invalidates the role evidence."
+  },
+  "role_validations": [
+    {
+      "id": "role_validation_pipeline_결제_수수료_pivot_pivottable1",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_pivot_pivottable1",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "결제_수수료_pivot_pivottable1",
+        "kind": "pivot_table",
+        "sheet": "결제&수수료",
+        "range": "A3:B10",
+        "block_id": "결제_수수료_pivot_pivottable1",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_결제_수수료_pivot_pivottable1_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_결제_수수료_pivot_pivottable1_pivot_cache_visual_alignment",
+          "target_id": "target_결제_수수료_pivot_pivottable1",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_pivot_pivottable1",
+        "rel_결제_수수료_pivot_pivottable1__pivot_cache_source",
+        "result_gate_target_결제_수수료_pivot_pivottable1_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_pivottable1_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_pivot_피벗_테이블1",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_pivot_피벗_테이블1",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "결제_수수료_pivot_피벗_테이블1",
+        "kind": "pivot_table",
+        "sheet": "결제&수수료",
+        "range": "A15:B33",
+        "block_id": "결제_수수료_pivot_피벗_테이블1",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_결제_수수료_pivot_피벗_테이블1_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_결제_수수료_pivot_피벗_테이블1_pivot_cache_visual_alignment",
+          "target_id": "target_결제_수수료_pivot_피벗_테이블1",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_pivot_피벗_테이블1",
+        "rel_결제_수수료_pivot_피벗_테이블1__pivot_cache_source",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블1_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블1_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_pivot_피벗_테이블10",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_pivot_피벗_테이블10",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "결제_수수료_pivot_피벗_테이블10",
+        "kind": "pivot_table",
+        "sheet": "결제&수수료",
+        "range": "A200:B203",
+        "block_id": "결제_수수료_pivot_피벗_테이블10",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_결제_수수료_pivot_피벗_테이블10_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_결제_수수료_pivot_피벗_테이블10_pivot_cache_visual_alignment",
+          "target_id": "target_결제_수수료_pivot_피벗_테이블10",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_pivot_피벗_테이블10",
+        "rel_결제_수수료_pivot_피벗_테이블10__pivot_cache_source",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블10_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블10_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_pivot_피벗_테이블11",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_pivot_피벗_테이블11",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "결제_수수료_pivot_피벗_테이블11",
+        "kind": "pivot_table",
+        "sheet": "결제&수수료",
+        "range": "A207:B210",
+        "block_id": "결제_수수료_pivot_피벗_테이블11",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_결제_수수료_pivot_피벗_테이블11_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_결제_수수료_pivot_피벗_테이블11_pivot_cache_visual_alignment",
+          "target_id": "target_결제_수수료_pivot_피벗_테이블11",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_pivot_피벗_테이블11",
+        "rel_결제_수수료_pivot_피벗_테이블11__pivot_cache_source",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블11_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블11_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_pivot_피벗_테이블12",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_pivot_피벗_테이블12",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "결제_수수료_pivot_피벗_테이블12",
+        "kind": "pivot_table",
+        "sheet": "결제&수수료",
+        "range": "A214:B217",
+        "block_id": "결제_수수료_pivot_피벗_테이블12",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_결제_수수료_pivot_피벗_테이블12_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_결제_수수료_pivot_피벗_테이블12_pivot_cache_visual_alignment",
+          "target_id": "target_결제_수수료_pivot_피벗_테이블12",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_pivot_피벗_테이블12",
+        "rel_결제_수수료_pivot_피벗_테이블12__pivot_cache_source",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블12_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블12_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_pivot_피벗_테이블13",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_pivot_피벗_테이블13",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "결제_수수료_pivot_피벗_테이블13",
+        "kind": "pivot_table",
+        "sheet": "결제&수수료",
+        "range": "A221:B224",
+        "block_id": "결제_수수료_pivot_피벗_테이블13",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_결제_수수료_pivot_피벗_테이블13_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_결제_수수료_pivot_피벗_테이블13_pivot_cache_visual_alignment",
+          "target_id": "target_결제_수수료_pivot_피벗_테이블13",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_pivot_피벗_테이블13",
+        "rel_결제_수수료_pivot_피벗_테이블13__pivot_cache_source",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블13_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블13_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_pivot_피벗_테이블14",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_pivot_피벗_테이블14",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "결제_수수료_pivot_피벗_테이블14",
+        "kind": "pivot_table",
+        "sheet": "결제&수수료",
+        "range": "A228:B231",
+        "block_id": "결제_수수료_pivot_피벗_테이블14",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_결제_수수료_pivot_피벗_테이블14_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_결제_수수료_pivot_피벗_테이블14_pivot_cache_visual_alignment",
+          "target_id": "target_결제_수수료_pivot_피벗_테이블14",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_pivot_피벗_테이블14",
+        "rel_결제_수수료_pivot_피벗_테이블14__pivot_cache_source",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블14_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블14_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_pivot_피벗_테이블2",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_pivot_피벗_테이블2",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "결제_수수료_pivot_피벗_테이블2",
+        "kind": "pivot_table",
+        "sheet": "결제&수수료",
+        "range": "A43:H47",
+        "block_id": "결제_수수료_pivot_피벗_테이블2",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_결제_수수료_pivot_피벗_테이블2_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_결제_수수료_pivot_피벗_테이블2_pivot_cache_visual_alignment",
+          "target_id": "target_결제_수수료_pivot_피벗_테이블2",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_pivot_피벗_테이블2",
+        "rel_결제_수수료_pivot_피벗_테이블2__pivot_cache_source",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블2_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블2_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_pivot_피벗_테이블3",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_pivot_피벗_테이블3",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "결제_수수료_pivot_피벗_테이블3",
+        "kind": "pivot_table",
+        "sheet": "결제&수수료",
+        "range": "A55:B64",
+        "block_id": "결제_수수료_pivot_피벗_테이블3",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_결제_수수료_pivot_피벗_테이블3_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_결제_수수료_pivot_피벗_테이블3_pivot_cache_visual_alignment",
+          "target_id": "target_결제_수수료_pivot_피벗_테이블3",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_pivot_피벗_테이블3",
+        "rel_결제_수수료_pivot_피벗_테이블3__pivot_cache_source",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블3_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블3_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_pivot_피벗_테이블4",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_pivot_피벗_테이블4",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "결제_수수료_pivot_피벗_테이블4",
+        "kind": "pivot_table",
+        "sheet": "결제&수수료",
+        "range": "A91:H93",
+        "block_id": "결제_수수료_pivot_피벗_테이블4",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_결제_수수료_pivot_피벗_테이블4_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_결제_수수료_pivot_피벗_테이블4_pivot_cache_visual_alignment",
+          "target_id": "target_결제_수수료_pivot_피벗_테이블4",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_pivot_피벗_테이블4",
+        "rel_결제_수수료_pivot_피벗_테이블4__pivot_cache_source",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블4_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블4_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_pivot_피벗_테이블6",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_pivot_피벗_테이블6",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "결제_수수료_pivot_피벗_테이블6",
+        "kind": "pivot_table",
+        "sheet": "결제&수수료",
+        "range": "A98:B101",
+        "block_id": "결제_수수료_pivot_피벗_테이블6",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_결제_수수료_pivot_피벗_테이블6_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_결제_수수료_pivot_피벗_테이블6_pivot_cache_visual_alignment",
+          "target_id": "target_결제_수수료_pivot_피벗_테이블6",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_pivot_피벗_테이블6",
+        "rel_결제_수수료_pivot_피벗_테이블6__pivot_cache_source",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블6_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블6_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_pivot_피벗_테이블7",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_pivot_피벗_테이블7",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "결제_수수료_pivot_피벗_테이블7",
+        "kind": "pivot_table",
+        "sheet": "결제&수수료",
+        "range": "A106:H109",
+        "block_id": "결제_수수료_pivot_피벗_테이블7",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_결제_수수료_pivot_피벗_테이블7_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_결제_수수료_pivot_피벗_테이블7_pivot_cache_visual_alignment",
+          "target_id": "target_결제_수수료_pivot_피벗_테이블7",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_pivot_피벗_테이블7",
+        "rel_결제_수수료_pivot_피벗_테이블7__pivot_cache_source",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블7_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블7_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_pivot_피벗_테이블8",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_pivot_피벗_테이블8",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "결제_수수료_pivot_피벗_테이블8",
+        "kind": "pivot_table",
+        "sheet": "결제&수수료",
+        "range": "A136:H139",
+        "block_id": "결제_수수료_pivot_피벗_테이블8",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_결제_수수료_pivot_피벗_테이블8_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_결제_수수료_pivot_피벗_테이블8_pivot_cache_visual_alignment",
+          "target_id": "target_결제_수수료_pivot_피벗_테이블8",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_pivot_피벗_테이블8",
+        "rel_결제_수수료_pivot_피벗_테이블8__pivot_cache_source",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블8_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블8_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_pivot_피벗_테이블9",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_pivot_피벗_테이블9",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "결제_수수료_pivot_피벗_테이블9",
+        "kind": "pivot_table",
+        "sheet": "결제&수수료",
+        "range": "A172:H174",
+        "block_id": "결제_수수료_pivot_피벗_테이블9",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_결제_수수료_pivot_피벗_테이블9_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_결제_수수료_pivot_피벗_테이블9_pivot_cache_visual_alignment",
+          "target_id": "target_결제_수수료_pivot_피벗_테이블9",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_pivot_피벗_테이블9",
+        "rel_결제_수수료_pivot_피벗_테이블9__pivot_cache_source",
+        "result_gate_target_결제_수수료_pivot_피벗_테이블9_pivot_cache_visual_alignment",
+        "gate_target_결제_수수료_pivot_피벗_테이블9_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_매출_pivot_pivottable1",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_매출_pivot_pivottable1",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "매출_pivot_pivottable1",
+        "kind": "pivot_table",
+        "sheet": "매출",
+        "range": "A3:B26",
+        "block_id": "매출_pivot_pivottable1",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_매출_pivot_pivottable1_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_매출_pivot_pivottable1_pivot_cache_visual_alignment",
+          "target_id": "target_매출_pivot_pivottable1",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_매출_pivot_pivottable1",
+        "rel_매출_pivot_pivottable1__pivot_cache_source",
+        "result_gate_target_매출_pivot_pivottable1_pivot_cache_visual_alignment",
+        "gate_target_매출_pivot_pivottable1_pivot_cache_visual_alignment"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_매출_pivot_pivottable2",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_매출_pivot_pivottable2",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "매출_pivot_pivottable2",
+        "kind": "pivot_table",
+        "sheet": "매출",
+        "range": "A33:B40",
+        "block_id": "매출_pivot_pivottable2",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_매출_pivot_pivottable2_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_매출_pivot_pivottable2_pivot_cache_visual_alignment",
+          "target_id": "target_매출_pivot_pivottable2",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_매출_pivot_pivottable2",
+        "rel_매출_pivot_pivottable2__pivot_cache_source",
+        "result_gate_target_매출_pivot_pivottable2_pivot_cache_visual_alignment",
+        "gate_target_매출_pivot_pivottable2_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_매출_pivot_pivottable3",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_매출_pivot_pivottable3",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "매출_pivot_pivottable3",
+        "kind": "pivot_table",
+        "sheet": "매출",
+        "range": "D31:E43",
+        "block_id": "매출_pivot_pivottable3",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_매출_pivot_pivottable3_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_매출_pivot_pivottable3_pivot_cache_visual_alignment",
+          "target_id": "target_매출_pivot_pivottable3",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_매출_pivot_pivottable3",
+        "rel_매출_pivot_pivottable3__pivot_cache_source",
+        "result_gate_target_매출_pivot_pivottable3_pivot_cache_visual_alignment",
+        "gate_target_매출_pivot_pivottable3_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_매출_pivot_pivottable4",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_매출_pivot_pivottable4",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "매출_pivot_pivottable4",
+        "kind": "pivot_table",
+        "sheet": "매출",
+        "range": "G33:H36",
+        "block_id": "매출_pivot_pivottable4",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_매출_pivot_pivottable4_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_매출_pivot_pivottable4_pivot_cache_visual_alignment",
+          "target_id": "target_매출_pivot_pivottable4",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_매출_pivot_pivottable4",
+        "rel_매출_pivot_pivottable4__pivot_cache_source",
+        "result_gate_target_매출_pivot_pivottable4_pivot_cache_visual_alignment",
+        "gate_target_매출_pivot_pivottable4_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_매출_pivot_pivottable5",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_매출_pivot_pivottable5",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "매출_pivot_pivottable5",
+        "kind": "pivot_table",
+        "sheet": "매출",
+        "range": "J33:K35",
+        "block_id": "매출_pivot_pivottable5",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_매출_pivot_pivottable5_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_매출_pivot_pivottable5_pivot_cache_visual_alignment",
+          "target_id": "target_매출_pivot_pivottable5",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_매출_pivot_pivottable5",
+        "rel_매출_pivot_pivottable5__pivot_cache_source",
+        "result_gate_target_매출_pivot_pivottable5_pivot_cache_visual_alignment",
+        "gate_target_매출_pivot_pivottable5_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_매출_pivot_pivottable6",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_매출_pivot_pivottable6",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "매출_pivot_pivottable6",
+        "kind": "pivot_table",
+        "sheet": "매출",
+        "range": "A48:D53",
+        "block_id": "매출_pivot_pivottable6",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "accepted_boundary_constraint",
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_매출_pivot_pivottable6_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_매출_pivot_pivottable6_pivot_cache_visual_alignment",
+          "target_id": "target_매출_pivot_pivottable6",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c28_c30"
+        ],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c10_c11",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c11_c12",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c12_c13",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c13_c14",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c14_c15",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c16_c17",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c17_c18",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c1_c2",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c20_c21",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c21_c22",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c24_c25",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c25_c26",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c2_c3",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c3_c4",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c4_c5",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c6_c7",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c8_c9",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c9_c10"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_매출_pivot_pivottable6",
+        "rel_매출_pivot_pivottable6__pivot_cache_source",
+        "result_gate_target_매출_pivot_pivottable6_pivot_cache_visual_alignment",
+        "gate_target_매출_pivot_pivottable6_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c28_c30",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c10_c11",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c11_c12",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c12_c13",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c13_c14",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c14_c15",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c16_c17",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c17_c18",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c1_c2",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c20_c21",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c21_c22",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c24_c25",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c25_c26",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c2_c3",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c3_c4",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c4_c5",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c6_c7",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c8_c9",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c9_c10"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_매출_pivot_pivottable7",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_매출_pivot_pivottable7",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "매출_pivot_pivottable7",
+        "kind": "pivot_table",
+        "sheet": "매출",
+        "range": "G50:H58",
+        "block_id": "매출_pivot_pivottable7",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_매출_pivot_pivottable7_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_매출_pivot_pivottable7_pivot_cache_visual_alignment",
+          "target_id": "target_매출_pivot_pivottable7",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_매출_pivot_pivottable7",
+        "rel_매출_pivot_pivottable7__pivot_cache_source",
+        "result_gate_target_매출_pivot_pivottable7_pivot_cache_visual_alignment",
+        "gate_target_매출_pivot_pivottable7_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_매출_pivot_pivottable8",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_매출_pivot_pivottable8",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "매출_pivot_pivottable8",
+        "kind": "pivot_table",
+        "sheet": "매출",
+        "range": "A71:D73",
+        "block_id": "매출_pivot_pivottable8",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_매출_pivot_pivottable8_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_매출_pivot_pivottable8_pivot_cache_visual_alignment",
+          "target_id": "target_매출_pivot_pivottable8",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_매출_pivot_pivottable8",
+        "rel_매출_pivot_pivottable8__pivot_cache_source",
+        "result_gate_target_매출_pivot_pivottable8_pivot_cache_visual_alignment",
+        "gate_target_매출_pivot_pivottable8_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_매출_pivot_pivottable9",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_매출_pivot_pivottable9",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "매출_pivot_pivottable9",
+        "kind": "pivot_table",
+        "sheet": "매출",
+        "range": "B88:P96",
+        "block_id": "매출_pivot_pivottable9",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_매출_pivot_pivottable9_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_매출_pivot_pivottable9_pivot_cache_visual_alignment",
+          "target_id": "target_매출_pivot_pivottable9",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_매출_pivot_pivottable9",
+        "rel_매출_pivot_pivottable9__pivot_cache_source",
+        "result_gate_target_매출_pivot_pivottable9_pivot_cache_visual_alignment",
+        "gate_target_매출_pivot_pivottable9_pivot_cache_visual_alignment"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_수익인식60일_강사료_pivot_피벗_테이블2",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_수익인식60일_강사료_pivot_피벗_테이블2",
+      "status": "accepted",
+      "reason": "pivot_cache_report_role_supported",
+      "confidence": 0.84,
+      "asserted_role": "report",
+      "validated_role": "report",
+      "output_ref": {
+        "id": "수익인식60일_강사료_pivot_피벗_테이블2",
+        "kind": "pivot_table",
+        "sheet": "수익인식60일_강사료",
+        "range": "AA5:AD7",
+        "block_id": "수익인식60일_강사료_pivot_피벗_테이블2",
+        "region_id": null
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "accepted_boundary_constraint",
+        "input:cell_region",
+        "output:pivot_table",
+        "pivot_cache_transform",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "pivot_cache_dependency",
+        "same_sheet_dataflow"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_수익인식60일_강사료_pivot_피벗_테이블2_pivot_cache_visual_alignment",
+          "gate_check_id": "gate_target_수익인식60일_강사료_pivot_피벗_테이블2_pivot_cache_visual_alignment",
+          "target_id": "target_수익인식60일_강사료_pivot_피벗_테이블2",
+          "gate_type": "pivot_cache_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c24_c26"
+        ],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c10_c11",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c11_c12",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c12_c13",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c13_c14",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c14_c15",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c16_c17",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c17_c18",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c1_c2",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c20_c21",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c21_c22",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c2_c3",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c3_c4",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c4_c5",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c6_c7",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c8_c9",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c9_c10"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_수익인식60일_강사료_pivot_피벗_테이블2",
+        "rel_수익인식60일_강사료_pivot_피벗_테이블2__pivot_cache_source",
+        "result_gate_target_수익인식60일_강사료_pivot_피벗_테이블2_pivot_cache_visual_alignment",
+        "gate_target_수익인식60일_강사료_pivot_피벗_테이블2_pivot_cache_visual_alignment",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c24_c26",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c10_c11",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c11_c12",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c12_c13",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c13_c14",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c14_c15",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c16_c17",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c17_c18",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c1_c2",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c20_c21",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c21_c22",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c2_c3",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c3_c4",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c4_c5",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c6_c7",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c8_c9",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c9_c10"
+      ],
+      "notes": "report role accepted: pivot_cache_report_role_supported. Linked gates: pivot_cache_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_cell_region_1",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_cell_region_1",
+      "status": "accepted",
+      "reason": "summary_formula_role_supported",
+      "confidence": 0.83,
+      "asserted_role": "summary",
+      "validated_role": "summary",
+      "output_ref": {
+        "id": "결제_수수료_cell_region_1",
+        "kind": "cell_region",
+        "sheet": "결제&수수료",
+        "range": "A1:C11",
+        "block_id": "결제_수수료_row_band_1",
+        "region_id": "결제_수수료_cell_region_1"
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 2,
+      "role_evidence": [
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region",
+        "review_required_boundary_constraint",
+        "sumifs_formula"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_결제_수수료_cell_region_1_boundary_confirmation",
+          "gate_check_id": "gate_target_결제_수수료_cell_region_1_boundary_confirmation",
+          "target_id": "target_결제_수수료_cell_region_1",
+          "gate_type": "boundary_confirmation",
+          "status": "accepted",
+          "reason": "deterministic_visual_evidence_available",
+          "confidence": 0.82
+        },
+        {
+          "id": "result_gate_target_결제_수수료_cell_region_1_formula_summary_visual_alignment",
+          "gate_check_id": "gate_target_결제_수수료_cell_region_1_formula_summary_visual_alignment",
+          "target_id": "target_결제_수수료_cell_region_1",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "accepted",
+          "reason": "deterministic_visual_evidence_available",
+          "confidence": 0.82
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제_수수료_row_band_1_c1_c2",
+          "boundary_decision_gate_split_결제_수수료_row_band_1_c2_c3"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_cell_region_1",
+        "group_결제_수수료_row_band_1_1",
+        "group_결제_수수료_row_band_1_2",
+        "result_gate_target_결제_수수료_cell_region_1_boundary_confirmation",
+        "result_gate_target_결제_수수료_cell_region_1_formula_summary_visual_alignment",
+        "gate_target_결제_수수료_cell_region_1_boundary_confirmation",
+        "gate_target_결제_수수료_cell_region_1_formula_summary_visual_alignment",
+        "boundary_decision_gate_split_결제_수수료_row_band_1_c1_c2",
+        "boundary_decision_gate_split_결제_수수료_row_band_1_c2_c3"
+      ],
+      "notes": "summary role accepted: summary_formula_role_supported. Linked gates: boundary_confirmation:accepted:deterministic_visual_evidence_available=1, formula_summary_visual_alignment:accepted:deterministic_visual_evidence_available=1"
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_cell_region_3",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_cell_region_3",
+      "status": "accepted",
+      "reason": "formula_transform_role_supported",
+      "confidence": 0.7,
+      "asserted_role": "transform",
+      "validated_role": "transform",
+      "output_ref": {
+        "id": "결제_수수료_cell_region_3",
+        "kind": "cell_region",
+        "sheet": "결제&수수료",
+        "range": "A41:H64",
+        "block_id": "결제_수수료_row_band_3",
+        "region_id": "결제_수수료_cell_region_3"
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 10,
+      "role_evidence": [
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_결제_수수료_cell_region_3_boundary_confirmation",
+          "gate_check_id": "gate_target_결제_수수료_cell_region_3_boundary_confirmation",
+          "target_id": "target_결제_수수료_cell_region_3",
+          "gate_type": "boundary_confirmation",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제_수수료_row_band_3_c2_c3",
+          "boundary_decision_gate_split_결제_수수료_row_band_3_c6_c7"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_cell_region_3",
+        "group_결제_수수료_row_band_3_10",
+        "group_결제_수수료_row_band_3_11",
+        "group_결제_수수료_row_band_3_12",
+        "group_결제_수수료_row_band_3_3",
+        "group_결제_수수료_row_band_3_4",
+        "group_결제_수수료_row_band_3_5",
+        "group_결제_수수료_row_band_3_6",
+        "group_결제_수수료_row_band_3_7",
+        "group_결제_수수료_row_band_3_8",
+        "group_결제_수수료_row_band_3_9",
+        "result_gate_target_결제_수수료_cell_region_3_boundary_confirmation",
+        "gate_target_결제_수수료_cell_region_3_boundary_confirmation",
+        "boundary_decision_gate_split_결제_수수료_row_band_3_c2_c3",
+        "boundary_decision_gate_split_결제_수수료_row_band_3_c6_c7"
+      ],
+      "notes": "transform role accepted: formula_transform_role_supported. Linked gates: boundary_confirmation:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_cell_region_4",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_cell_region_4",
+      "status": "accepted",
+      "reason": "formula_transform_role_supported",
+      "confidence": 0.7,
+      "asserted_role": "transform",
+      "validated_role": "transform",
+      "output_ref": {
+        "id": "결제_수수료_cell_region_4",
+        "kind": "cell_region",
+        "sheet": "결제&수수료",
+        "range": "A89:I101",
+        "block_id": "결제_수수료_row_band_4",
+        "region_id": "결제_수수료_cell_region_4"
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 6,
+      "role_evidence": [
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_결제_수수료_cell_region_4_boundary_confirmation",
+          "gate_check_id": "gate_target_결제_수수료_cell_region_4_boundary_confirmation",
+          "target_id": "target_결제_수수료_cell_region_4",
+          "gate_type": "boundary_confirmation",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제_수수료_row_band_4_c2_c3",
+          "boundary_decision_gate_split_결제_수수료_row_band_4_c6_c7",
+          "boundary_decision_gate_split_결제_수수료_row_band_4_c8_c9"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_cell_region_4",
+        "group_결제_수수료_row_band_4_13",
+        "group_결제_수수료_row_band_4_14",
+        "group_결제_수수료_row_band_4_15",
+        "group_결제_수수료_row_band_4_16",
+        "group_결제_수수료_row_band_4_17",
+        "group_결제_수수료_row_band_4_18",
+        "result_gate_target_결제_수수료_cell_region_4_boundary_confirmation",
+        "gate_target_결제_수수료_cell_region_4_boundary_confirmation",
+        "boundary_decision_gate_split_결제_수수료_row_band_4_c2_c3",
+        "boundary_decision_gate_split_결제_수수료_row_band_4_c6_c7",
+        "boundary_decision_gate_split_결제_수수료_row_band_4_c8_c9"
+      ],
+      "notes": "transform role accepted: formula_transform_role_supported. Linked gates: boundary_confirmation:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_cell_region_5",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_cell_region_5",
+      "status": "accepted",
+      "reason": "formula_transform_role_supported",
+      "confidence": 0.72,
+      "asserted_role": "transform",
+      "validated_role": "transform",
+      "output_ref": {
+        "id": "결제_수수료_cell_region_5",
+        "kind": "cell_region",
+        "sheet": "결제&수수료",
+        "range": "A104:H112",
+        "block_id": "결제_수수료_row_band_5",
+        "region_id": "결제_수수료_cell_region_5"
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 3,
+      "role_evidence": [
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow"
+      ],
+      "blockers": [],
+      "linked_gate_results": [],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_cell_region_5",
+        "group_결제_수수료_row_band_5_19",
+        "group_결제_수수료_row_band_5_20",
+        "group_결제_수수료_row_band_5_21"
+      ],
+      "notes": "transform role accepted: formula_transform_role_supported. No linked gate result."
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_cell_region_6",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_cell_region_6",
+      "status": "accepted",
+      "reason": "formula_transform_role_supported",
+      "confidence": 0.72,
+      "asserted_role": "transform",
+      "validated_role": "transform",
+      "output_ref": {
+        "id": "결제_수수료_cell_region_6",
+        "kind": "cell_region",
+        "sheet": "결제&수수료",
+        "range": "A134:H142",
+        "block_id": "결제_수수료_row_band_6",
+        "region_id": "결제_수수료_cell_region_6"
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow"
+      ],
+      "blockers": [],
+      "linked_gate_results": [],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_cell_region_6",
+        "group_결제_수수료_row_band_6_22"
+      ],
+      "notes": "transform role accepted: formula_transform_role_supported. No linked gate result."
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_cell_region_7",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_cell_region_7",
+      "status": "accepted",
+      "reason": "formula_transform_role_supported",
+      "confidence": 0.72,
+      "asserted_role": "transform",
+      "validated_role": "transform",
+      "output_ref": {
+        "id": "결제_수수료_cell_region_7",
+        "kind": "cell_region",
+        "sheet": "결제&수수료",
+        "range": "A170:H180",
+        "block_id": "결제_수수료_row_band_7",
+        "region_id": "결제_수수료_cell_region_7"
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 5,
+      "role_evidence": [
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow"
+      ],
+      "blockers": [],
+      "linked_gate_results": [],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_cell_region_7",
+        "group_결제_수수료_row_band_7_23",
+        "group_결제_수수료_row_band_7_24",
+        "group_결제_수수료_row_band_7_25",
+        "group_결제_수수료_row_band_7_26",
+        "group_결제_수수료_row_band_7_27"
+      ],
+      "notes": "transform role accepted: formula_transform_role_supported. No linked gate result."
+    },
+    {
+      "id": "role_validation_pipeline_결제_수수료_cell_region_9",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제_수수료_cell_region_9",
+      "status": "accepted",
+      "reason": "formula_transform_role_supported",
+      "confidence": 0.72,
+      "asserted_role": "transform",
+      "validated_role": "transform",
+      "output_ref": {
+        "id": "결제_수수료_cell_region_9",
+        "kind": "cell_region",
+        "sheet": "결제&수수료",
+        "range": "A198:E231",
+        "block_id": "결제_수수료_row_band_9",
+        "region_id": "결제_수수료_cell_region_9"
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 6,
+      "role_evidence": [
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow"
+      ],
+      "blockers": [],
+      "linked_gate_results": [],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제_수수료_cell_region_9",
+        "group_결제_수수료_row_band_9_28",
+        "group_결제_수수료_row_band_9_29",
+        "group_결제_수수료_row_band_9_30",
+        "group_결제_수수료_row_band_9_31",
+        "group_결제_수수료_row_band_9_32",
+        "group_결제_수수료_row_band_9_33"
+      ],
+      "notes": "transform role accepted: formula_transform_role_supported. No linked gate result."
+    },
+    {
+      "id": "role_validation_pipeline_결제상세_cell_region_1",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_결제상세_cell_region_1",
+      "status": "accepted",
+      "reason": "summary_formula_role_supported",
+      "confidence": 0.78,
+      "asserted_role": "summary",
+      "validated_role": "summary",
+      "output_ref": {
+        "id": "결제상세_cell_region_1",
+        "kind": "cell_region",
+        "sheet": "결제상세",
+        "range": "A1:AX20",
+        "block_id": "결제상세_row_band_1",
+        "region_id": "결제상세_cell_region_1"
+      },
+      "input_ref_count": 2,
+      "transform_ref_count": 150,
+      "role_evidence": [
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region",
+        "repeated_formula_family",
+        "review_required_boundary_constraint",
+        "subtotal_formula"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow",
+        "repeated_formula_family"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_결제상세_cell_region_1_boundary_confirmation",
+          "gate_check_id": "gate_target_결제상세_cell_region_1_boundary_confirmation",
+          "target_id": "target_결제상세_cell_region_1",
+          "gate_type": "boundary_confirmation",
+          "status": "review_required",
+          "reason": "capture_quality_review_required",
+          "confidence": 0.45
+        },
+        {
+          "id": "result_gate_target_결제상세_cell_region_1_formula_region_coherence",
+          "gate_check_id": "gate_target_결제상세_cell_region_1_formula_region_coherence",
+          "target_id": "target_결제상세_cell_region_1",
+          "gate_type": "formula_region_coherence",
+          "status": "review_required",
+          "reason": "capture_quality_review_required",
+          "confidence": 0.45
+        },
+        {
+          "id": "result_gate_target_결제상세_cell_region_1_formula_summary_visual_alignment",
+          "gate_check_id": "gate_target_결제상세_cell_region_1_formula_summary_visual_alignment",
+          "target_id": "target_결제상세_cell_region_1",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_quality_review_required",
+          "confidence": 0.45
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5",
+          "boundary_decision_gate_split_유하다요_row_band_1_c11_c12",
+          "boundary_decision_gate_split_유하다요_row_band_1_c14_c15",
+          "boundary_decision_gate_split_유하다요_row_band_1_c15_c16",
+          "boundary_decision_gate_split_유하다요_row_band_1_c16_c17",
+          "boundary_decision_gate_split_유하다요_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_결제상세_cell_region_1",
+        "group_결제상세_row_band_1_1",
+        "group_결제상세_row_band_1_10",
+        "group_결제상세_row_band_1_100",
+        "group_결제상세_row_band_1_101",
+        "group_결제상세_row_band_1_102",
+        "group_결제상세_row_band_1_103",
+        "group_결제상세_row_band_1_104",
+        "group_결제상세_row_band_1_105",
+        "group_결제상세_row_band_1_106",
+        "group_결제상세_row_band_1_107",
+        "group_결제상세_row_band_1_108",
+        "group_결제상세_row_band_1_109",
+        "group_결제상세_row_band_1_11",
+        "group_결제상세_row_band_1_110",
+        "group_결제상세_row_band_1_111",
+        "group_결제상세_row_band_1_112",
+        "group_결제상세_row_band_1_113",
+        "group_결제상세_row_band_1_114",
+        "group_결제상세_row_band_1_115",
+        "group_결제상세_row_band_1_116",
+        "group_결제상세_row_band_1_117",
+        "group_결제상세_row_band_1_118",
+        "group_결제상세_row_band_1_119",
+        "group_결제상세_row_band_1_12",
+        "group_결제상세_row_band_1_120",
+        "group_결제상세_row_band_1_121",
+        "group_결제상세_row_band_1_122",
+        "group_결제상세_row_band_1_123",
+        "group_결제상세_row_band_1_124",
+        "group_결제상세_row_band_1_125",
+        "group_결제상세_row_band_1_126",
+        "group_결제상세_row_band_1_127",
+        "group_결제상세_row_band_1_128",
+        "group_결제상세_row_band_1_129",
+        "group_결제상세_row_band_1_13",
+        "group_결제상세_row_band_1_130",
+        "group_결제상세_row_band_1_131",
+        "group_결제상세_row_band_1_132",
+        "group_결제상세_row_band_1_133",
+        "group_결제상세_row_band_1_134",
+        "group_결제상세_row_band_1_135",
+        "group_결제상세_row_band_1_136",
+        "group_결제상세_row_band_1_137",
+        "group_결제상세_row_band_1_138",
+        "group_결제상세_row_band_1_139",
+        "group_결제상세_row_band_1_14",
+        "group_결제상세_row_band_1_140",
+        "group_결제상세_row_band_1_141",
+        "group_결제상세_row_band_1_142",
+        "group_결제상세_row_band_1_143",
+        "group_결제상세_row_band_1_144",
+        "group_결제상세_row_band_1_145",
+        "group_결제상세_row_band_1_146",
+        "group_결제상세_row_band_1_147",
+        "group_결제상세_row_band_1_148",
+        "group_결제상세_row_band_1_149",
+        "group_결제상세_row_band_1_15",
+        "group_결제상세_row_band_1_150",
+        "group_결제상세_row_band_1_16",
+        "group_결제상세_row_band_1_17",
+        "group_결제상세_row_band_1_18",
+        "group_결제상세_row_band_1_19",
+        "group_결제상세_row_band_1_2",
+        "group_결제상세_row_band_1_20",
+        "group_결제상세_row_band_1_21",
+        "group_결제상세_row_band_1_22",
+        "group_결제상세_row_band_1_23",
+        "group_결제상세_row_band_1_24",
+        "group_결제상세_row_band_1_25",
+        "group_결제상세_row_band_1_26",
+        "group_결제상세_row_band_1_27",
+        "group_결제상세_row_band_1_28",
+        "group_결제상세_row_band_1_29",
+        "group_결제상세_row_band_1_3",
+        "group_결제상세_row_band_1_30",
+        "group_결제상세_row_band_1_31",
+        "group_결제상세_row_band_1_32",
+        "group_결제상세_row_band_1_33",
+        "group_결제상세_row_band_1_34",
+        "group_결제상세_row_band_1_35",
+        "group_결제상세_row_band_1_36",
+        "group_결제상세_row_band_1_37",
+        "group_결제상세_row_band_1_38",
+        "group_결제상세_row_band_1_39",
+        "group_결제상세_row_band_1_4",
+        "group_결제상세_row_band_1_40",
+        "group_결제상세_row_band_1_41",
+        "group_결제상세_row_band_1_42",
+        "group_결제상세_row_band_1_43",
+        "group_결제상세_row_band_1_44",
+        "group_결제상세_row_band_1_45",
+        "group_결제상세_row_band_1_46",
+        "group_결제상세_row_band_1_47",
+        "group_결제상세_row_band_1_48",
+        "group_결제상세_row_band_1_49",
+        "group_결제상세_row_band_1_5",
+        "group_결제상세_row_band_1_50",
+        "group_결제상세_row_band_1_51",
+        "group_결제상세_row_band_1_52",
+        "group_결제상세_row_band_1_53",
+        "group_결제상세_row_band_1_54",
+        "group_결제상세_row_band_1_55",
+        "group_결제상세_row_band_1_56",
+        "group_결제상세_row_band_1_57",
+        "group_결제상세_row_band_1_58",
+        "group_결제상세_row_band_1_59",
+        "group_결제상세_row_band_1_6",
+        "group_결제상세_row_band_1_60",
+        "group_결제상세_row_band_1_61",
+        "group_결제상세_row_band_1_62",
+        "group_결제상세_row_band_1_63",
+        "group_결제상세_row_band_1_64",
+        "group_결제상세_row_band_1_65",
+        "group_결제상세_row_band_1_66",
+        "group_결제상세_row_band_1_67",
+        "group_결제상세_row_band_1_68",
+        "group_결제상세_row_band_1_69",
+        "group_결제상세_row_band_1_7",
+        "group_결제상세_row_band_1_70",
+        "group_결제상세_row_band_1_71",
+        "group_결제상세_row_band_1_72",
+        "group_결제상세_row_band_1_73",
+        "group_결제상세_row_band_1_74",
+        "group_결제상세_row_band_1_75",
+        "group_결제상세_row_band_1_76",
+        "group_결제상세_row_band_1_77",
+        "group_결제상세_row_band_1_78",
+        "group_결제상세_row_band_1_79",
+        "group_결제상세_row_band_1_8",
+        "group_결제상세_row_band_1_80",
+        "group_결제상세_row_band_1_81",
+        "group_결제상세_row_band_1_82",
+        "group_결제상세_row_band_1_83",
+        "group_결제상세_row_band_1_84",
+        "group_결제상세_row_band_1_85",
+        "group_결제상세_row_band_1_86",
+        "group_결제상세_row_band_1_87",
+        "group_결제상세_row_band_1_88",
+        "group_결제상세_row_band_1_89",
+        "group_결제상세_row_band_1_9",
+        "group_결제상세_row_band_1_90",
+        "group_결제상세_row_band_1_91",
+        "group_결제상세_row_band_1_92",
+        "group_결제상세_row_band_1_93",
+        "group_결제상세_row_band_1_94",
+        "group_결제상세_row_band_1_95",
+        "group_결제상세_row_band_1_96",
+        "group_결제상세_row_band_1_97",
+        "group_결제상세_row_band_1_98",
+        "group_결제상세_row_band_1_99",
+        "result_gate_target_결제상세_cell_region_1_boundary_confirmation",
+        "result_gate_target_결제상세_cell_region_1_formula_region_coherence",
+        "result_gate_target_결제상세_cell_region_1_formula_summary_visual_alignment",
+        "gate_target_결제상세_cell_region_1_boundary_confirmation",
+        "gate_target_결제상세_cell_region_1_formula_region_coherence",
+        "gate_target_결제상세_cell_region_1_formula_summary_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5",
+        "boundary_decision_gate_split_유하다요_row_band_1_c11_c12",
+        "boundary_decision_gate_split_유하다요_row_band_1_c14_c15",
+        "boundary_decision_gate_split_유하다요_row_band_1_c15_c16",
+        "boundary_decision_gate_split_유하다요_row_band_1_c16_c17",
+        "boundary_decision_gate_split_유하다요_row_band_1_c4_c5"
+      ],
+      "notes": "summary role accepted: summary_formula_role_supported. Linked gates: boundary_confirmation:review_required:capture_quality_review_required=1, formula_region_coherence:review_required:capture_quality_review_required=1, formula_summary_visual_alignment:review_required:capture_quality_review_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_누적_cell_region_1",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_누적_cell_region_1",
+      "status": "accepted",
+      "reason": "summary_formula_role_supported",
+      "confidence": 0.78,
+      "asserted_role": "summary",
+      "validated_role": "summary",
+      "output_ref": {
+        "id": "누적_cell_region_1",
+        "kind": "cell_region",
+        "sheet": "누적",
+        "range": "A1:EB20",
+        "block_id": "누적_row_band_1",
+        "region_id": "누적_cell_region_1"
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 2,
+      "role_evidence": [
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region",
+        "repeated_formula_family",
+        "subtotal_formula"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow",
+        "repeated_formula_family"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_누적_cell_region_1_formula_region_coherence",
+          "gate_check_id": "gate_target_누적_cell_region_1_formula_region_coherence",
+          "target_id": "target_누적_cell_region_1",
+          "gate_type": "formula_region_coherence",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        },
+        {
+          "id": "result_gate_target_누적_cell_region_1_formula_summary_visual_alignment",
+          "gate_check_id": "gate_target_누적_cell_region_1_formula_summary_visual_alignment",
+          "target_id": "target_누적_cell_region_1",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_누적_cell_region_1",
+        "group_누적_row_band_1_1",
+        "group_누적_row_band_1_2",
+        "result_gate_target_누적_cell_region_1_formula_region_coherence",
+        "result_gate_target_누적_cell_region_1_formula_summary_visual_alignment",
+        "gate_target_누적_cell_region_1_formula_region_coherence",
+        "gate_target_누적_cell_region_1_formula_summary_visual_alignment"
+      ],
+      "notes": "summary role accepted: summary_formula_role_supported. Linked gates: formula_region_coherence:review_required:capture_required=1, formula_summary_visual_alignment:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_당월산식_cell_region_1",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_당월산식_cell_region_1",
+      "status": "accepted",
+      "reason": "summary_formula_role_supported",
+      "confidence": 0.78,
+      "asserted_role": "summary",
+      "validated_role": "summary",
+      "output_ref": {
+        "id": "당월산식_cell_region_1",
+        "kind": "cell_region",
+        "sheet": "당월산식",
+        "range": "A1:AZ20",
+        "block_id": "당월산식_row_band_1",
+        "region_id": "당월산식_cell_region_1"
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 316,
+      "role_evidence": [
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region",
+        "repeated_formula_family",
+        "review_required_boundary_constraint",
+        "subtotal_formula"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow",
+        "repeated_formula_family"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_당월산식_cell_region_1_boundary_confirmation",
+          "gate_check_id": "gate_target_당월산식_cell_region_1_boundary_confirmation",
+          "target_id": "target_당월산식_cell_region_1",
+          "gate_type": "boundary_confirmation",
+          "status": "review_required",
+          "reason": "view_state_blocked",
+          "confidence": 0.45
+        },
+        {
+          "id": "result_gate_target_당월산식_cell_region_1_formula_region_coherence",
+          "gate_check_id": "gate_target_당월산식_cell_region_1_formula_region_coherence",
+          "target_id": "target_당월산식_cell_region_1",
+          "gate_type": "formula_region_coherence",
+          "status": "review_required",
+          "reason": "view_state_blocked",
+          "confidence": 0.45
+        },
+        {
+          "id": "result_gate_target_당월산식_cell_region_1_formula_summary_visual_alignment",
+          "gate_check_id": "gate_target_당월산식_cell_region_1_formula_summary_visual_alignment",
+          "target_id": "target_당월산식_cell_region_1",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "review_required",
+          "reason": "view_state_blocked",
+          "confidence": 0.45
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_당월산식_row_band_1_c10_c11",
+          "boundary_decision_gate_split_당월산식_row_band_1_c11_c12",
+          "boundary_decision_gate_split_당월산식_row_band_1_c12_c13",
+          "boundary_decision_gate_split_당월산식_row_band_1_c14_c15",
+          "boundary_decision_gate_split_당월산식_row_band_1_c15_c16",
+          "boundary_decision_gate_split_당월산식_row_band_1_c1_c2",
+          "boundary_decision_gate_split_당월산식_row_band_1_c2_c3",
+          "boundary_decision_gate_split_당월산식_row_band_1_c33_c34",
+          "boundary_decision_gate_split_당월산식_row_band_1_c34_c35",
+          "boundary_decision_gate_split_당월산식_row_band_1_c3_c4",
+          "boundary_decision_gate_split_당월산식_row_band_1_c4_c5",
+          "boundary_decision_gate_split_당월산식_row_band_1_c6_c7",
+          "boundary_decision_gate_split_당월산식_row_band_1_c8_c9",
+          "boundary_decision_gate_split_당월산식_row_band_1_c9_c10"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_당월산식_cell_region_1",
+        "group_당월산식_row_band_1_1",
+        "group_당월산식_row_band_1_10",
+        "group_당월산식_row_band_1_100",
+        "group_당월산식_row_band_1_101",
+        "group_당월산식_row_band_1_102",
+        "group_당월산식_row_band_1_103",
+        "group_당월산식_row_band_1_104",
+        "group_당월산식_row_band_1_105",
+        "group_당월산식_row_band_1_106",
+        "group_당월산식_row_band_1_107",
+        "group_당월산식_row_band_1_108",
+        "group_당월산식_row_band_1_109",
+        "group_당월산식_row_band_1_11",
+        "group_당월산식_row_band_1_110",
+        "group_당월산식_row_band_1_111",
+        "group_당월산식_row_band_1_112",
+        "group_당월산식_row_band_1_113",
+        "group_당월산식_row_band_1_114",
+        "group_당월산식_row_band_1_115",
+        "group_당월산식_row_band_1_116",
+        "group_당월산식_row_band_1_117",
+        "group_당월산식_row_band_1_118",
+        "group_당월산식_row_band_1_119",
+        "group_당월산식_row_band_1_12",
+        "group_당월산식_row_band_1_120",
+        "group_당월산식_row_band_1_121",
+        "group_당월산식_row_band_1_122",
+        "group_당월산식_row_band_1_123",
+        "group_당월산식_row_band_1_124",
+        "group_당월산식_row_band_1_125",
+        "group_당월산식_row_band_1_126",
+        "group_당월산식_row_band_1_127",
+        "group_당월산식_row_band_1_128",
+        "group_당월산식_row_band_1_129",
+        "group_당월산식_row_band_1_13",
+        "group_당월산식_row_band_1_130",
+        "group_당월산식_row_band_1_131",
+        "group_당월산식_row_band_1_132",
+        "group_당월산식_row_band_1_133",
+        "group_당월산식_row_band_1_134",
+        "group_당월산식_row_band_1_135",
+        "group_당월산식_row_band_1_136",
+        "group_당월산식_row_band_1_137",
+        "group_당월산식_row_band_1_138",
+        "group_당월산식_row_band_1_139",
+        "group_당월산식_row_band_1_14",
+        "group_당월산식_row_band_1_140",
+        "group_당월산식_row_band_1_141",
+        "group_당월산식_row_band_1_142",
+        "group_당월산식_row_band_1_143",
+        "group_당월산식_row_band_1_144",
+        "group_당월산식_row_band_1_145",
+        "group_당월산식_row_band_1_146",
+        "group_당월산식_row_band_1_147",
+        "group_당월산식_row_band_1_148",
+        "group_당월산식_row_band_1_149",
+        "group_당월산식_row_band_1_15",
+        "group_당월산식_row_band_1_150",
+        "group_당월산식_row_band_1_151",
+        "group_당월산식_row_band_1_152",
+        "group_당월산식_row_band_1_153",
+        "group_당월산식_row_band_1_154",
+        "group_당월산식_row_band_1_155",
+        "group_당월산식_row_band_1_156",
+        "group_당월산식_row_band_1_157",
+        "group_당월산식_row_band_1_158",
+        "group_당월산식_row_band_1_159",
+        "group_당월산식_row_band_1_16",
+        "group_당월산식_row_band_1_160",
+        "group_당월산식_row_band_1_161",
+        "group_당월산식_row_band_1_162",
+        "group_당월산식_row_band_1_163",
+        "group_당월산식_row_band_1_164",
+        "group_당월산식_row_band_1_165",
+        "group_당월산식_row_band_1_166",
+        "group_당월산식_row_band_1_167",
+        "group_당월산식_row_band_1_168",
+        "group_당월산식_row_band_1_169",
+        "group_당월산식_row_band_1_17",
+        "group_당월산식_row_band_1_170",
+        "group_당월산식_row_band_1_171",
+        "group_당월산식_row_band_1_172",
+        "group_당월산식_row_band_1_173",
+        "group_당월산식_row_band_1_174",
+        "group_당월산식_row_band_1_175",
+        "group_당월산식_row_band_1_176",
+        "group_당월산식_row_band_1_177",
+        "group_당월산식_row_band_1_178",
+        "group_당월산식_row_band_1_179",
+        "group_당월산식_row_band_1_18",
+        "group_당월산식_row_band_1_180",
+        "group_당월산식_row_band_1_181",
+        "group_당월산식_row_band_1_182",
+        "group_당월산식_row_band_1_183",
+        "group_당월산식_row_band_1_184",
+        "group_당월산식_row_band_1_185",
+        "group_당월산식_row_band_1_186",
+        "group_당월산식_row_band_1_187",
+        "group_당월산식_row_band_1_188",
+        "group_당월산식_row_band_1_189",
+        "group_당월산식_row_band_1_19",
+        "group_당월산식_row_band_1_190",
+        "group_당월산식_row_band_1_191",
+        "group_당월산식_row_band_1_192",
+        "group_당월산식_row_band_1_193",
+        "group_당월산식_row_band_1_194",
+        "group_당월산식_row_band_1_195",
+        "group_당월산식_row_band_1_196",
+        "group_당월산식_row_band_1_197",
+        "group_당월산식_row_band_1_198",
+        "group_당월산식_row_band_1_199",
+        "group_당월산식_row_band_1_2",
+        "group_당월산식_row_band_1_20",
+        "group_당월산식_row_band_1_200",
+        "group_당월산식_row_band_1_201",
+        "group_당월산식_row_band_1_202",
+        "group_당월산식_row_band_1_203",
+        "group_당월산식_row_band_1_204",
+        "group_당월산식_row_band_1_205",
+        "group_당월산식_row_band_1_206",
+        "group_당월산식_row_band_1_207",
+        "group_당월산식_row_band_1_208",
+        "group_당월산식_row_band_1_209",
+        "group_당월산식_row_band_1_21",
+        "group_당월산식_row_band_1_210",
+        "group_당월산식_row_band_1_211",
+        "group_당월산식_row_band_1_212",
+        "group_당월산식_row_band_1_213",
+        "group_당월산식_row_band_1_214",
+        "group_당월산식_row_band_1_215",
+        "group_당월산식_row_band_1_216",
+        "group_당월산식_row_band_1_217",
+        "group_당월산식_row_band_1_218",
+        "group_당월산식_row_band_1_219",
+        "group_당월산식_row_band_1_22",
+        "group_당월산식_row_band_1_220",
+        "group_당월산식_row_band_1_221",
+        "group_당월산식_row_band_1_222",
+        "group_당월산식_row_band_1_223",
+        "group_당월산식_row_band_1_224",
+        "group_당월산식_row_band_1_225",
+        "group_당월산식_row_band_1_226",
+        "group_당월산식_row_band_1_227",
+        "group_당월산식_row_band_1_228",
+        "group_당월산식_row_band_1_229",
+        "group_당월산식_row_band_1_23",
+        "group_당월산식_row_band_1_230",
+        "group_당월산식_row_band_1_231",
+        "group_당월산식_row_band_1_232",
+        "group_당월산식_row_band_1_233",
+        "group_당월산식_row_band_1_234",
+        "group_당월산식_row_band_1_235",
+        "group_당월산식_row_band_1_236",
+        "group_당월산식_row_band_1_237",
+        "group_당월산식_row_band_1_238",
+        "group_당월산식_row_band_1_239",
+        "group_당월산식_row_band_1_24",
+        "group_당월산식_row_band_1_240",
+        "group_당월산식_row_band_1_241",
+        "group_당월산식_row_band_1_242",
+        "group_당월산식_row_band_1_243",
+        "group_당월산식_row_band_1_244",
+        "group_당월산식_row_band_1_245",
+        "group_당월산식_row_band_1_246",
+        "group_당월산식_row_band_1_247",
+        "group_당월산식_row_band_1_248",
+        "group_당월산식_row_band_1_249",
+        "group_당월산식_row_band_1_25",
+        "group_당월산식_row_band_1_250",
+        "group_당월산식_row_band_1_251",
+        "group_당월산식_row_band_1_252",
+        "group_당월산식_row_band_1_253",
+        "group_당월산식_row_band_1_254",
+        "group_당월산식_row_band_1_255",
+        "group_당월산식_row_band_1_256",
+        "group_당월산식_row_band_1_257",
+        "group_당월산식_row_band_1_258",
+        "group_당월산식_row_band_1_259",
+        "group_당월산식_row_band_1_26",
+        "group_당월산식_row_band_1_260",
+        "group_당월산식_row_band_1_261",
+        "group_당월산식_row_band_1_262",
+        "group_당월산식_row_band_1_263",
+        "group_당월산식_row_band_1_264",
+        "group_당월산식_row_band_1_265",
+        "group_당월산식_row_band_1_266",
+        "group_당월산식_row_band_1_267",
+        "group_당월산식_row_band_1_268",
+        "group_당월산식_row_band_1_269",
+        "group_당월산식_row_band_1_27",
+        "group_당월산식_row_band_1_270",
+        "group_당월산식_row_band_1_271",
+        "group_당월산식_row_band_1_272",
+        "group_당월산식_row_band_1_273",
+        "group_당월산식_row_band_1_274",
+        "group_당월산식_row_band_1_275",
+        "group_당월산식_row_band_1_276",
+        "group_당월산식_row_band_1_277",
+        "group_당월산식_row_band_1_278",
+        "group_당월산식_row_band_1_279",
+        "group_당월산식_row_band_1_28",
+        "group_당월산식_row_band_1_280",
+        "group_당월산식_row_band_1_281",
+        "group_당월산식_row_band_1_282",
+        "group_당월산식_row_band_1_283",
+        "group_당월산식_row_band_1_284",
+        "group_당월산식_row_band_1_285",
+        "group_당월산식_row_band_1_286",
+        "group_당월산식_row_band_1_287",
+        "group_당월산식_row_band_1_288",
+        "group_당월산식_row_band_1_289",
+        "group_당월산식_row_band_1_29",
+        "group_당월산식_row_band_1_290",
+        "group_당월산식_row_band_1_291",
+        "group_당월산식_row_band_1_292",
+        "group_당월산식_row_band_1_293",
+        "group_당월산식_row_band_1_294",
+        "group_당월산식_row_band_1_295",
+        "group_당월산식_row_band_1_296",
+        "group_당월산식_row_band_1_297",
+        "group_당월산식_row_band_1_298",
+        "group_당월산식_row_band_1_299",
+        "group_당월산식_row_band_1_3",
+        "group_당월산식_row_band_1_30",
+        "group_당월산식_row_band_1_300",
+        "group_당월산식_row_band_1_301",
+        "group_당월산식_row_band_1_302",
+        "group_당월산식_row_band_1_303",
+        "group_당월산식_row_band_1_304",
+        "group_당월산식_row_band_1_305",
+        "group_당월산식_row_band_1_306",
+        "group_당월산식_row_band_1_307",
+        "group_당월산식_row_band_1_308",
+        "group_당월산식_row_band_1_309",
+        "group_당월산식_row_band_1_31",
+        "group_당월산식_row_band_1_310",
+        "group_당월산식_row_band_1_311",
+        "group_당월산식_row_band_1_312",
+        "group_당월산식_row_band_1_313",
+        "group_당월산식_row_band_1_314",
+        "group_당월산식_row_band_1_315",
+        "group_당월산식_row_band_1_316",
+        "group_당월산식_row_band_1_32",
+        "group_당월산식_row_band_1_33",
+        "group_당월산식_row_band_1_34",
+        "group_당월산식_row_band_1_35",
+        "group_당월산식_row_band_1_36",
+        "group_당월산식_row_band_1_37",
+        "group_당월산식_row_band_1_38",
+        "group_당월산식_row_band_1_39",
+        "group_당월산식_row_band_1_4",
+        "group_당월산식_row_band_1_40",
+        "group_당월산식_row_band_1_41",
+        "group_당월산식_row_band_1_42",
+        "group_당월산식_row_band_1_43",
+        "group_당월산식_row_band_1_44",
+        "group_당월산식_row_band_1_45",
+        "group_당월산식_row_band_1_46",
+        "group_당월산식_row_band_1_47",
+        "group_당월산식_row_band_1_48",
+        "group_당월산식_row_band_1_49",
+        "group_당월산식_row_band_1_5",
+        "group_당월산식_row_band_1_50",
+        "group_당월산식_row_band_1_51",
+        "group_당월산식_row_band_1_52",
+        "group_당월산식_row_band_1_53",
+        "group_당월산식_row_band_1_54",
+        "group_당월산식_row_band_1_55",
+        "group_당월산식_row_band_1_56",
+        "group_당월산식_row_band_1_57",
+        "group_당월산식_row_band_1_58",
+        "group_당월산식_row_band_1_59",
+        "group_당월산식_row_band_1_6",
+        "group_당월산식_row_band_1_60",
+        "group_당월산식_row_band_1_61",
+        "group_당월산식_row_band_1_62",
+        "group_당월산식_row_band_1_63",
+        "group_당월산식_row_band_1_64",
+        "group_당월산식_row_band_1_65",
+        "group_당월산식_row_band_1_66",
+        "group_당월산식_row_band_1_67",
+        "group_당월산식_row_band_1_68",
+        "group_당월산식_row_band_1_69",
+        "group_당월산식_row_band_1_7",
+        "group_당월산식_row_band_1_70",
+        "group_당월산식_row_band_1_71",
+        "group_당월산식_row_band_1_72",
+        "group_당월산식_row_band_1_73",
+        "group_당월산식_row_band_1_74",
+        "group_당월산식_row_band_1_75",
+        "group_당월산식_row_band_1_76",
+        "group_당월산식_row_band_1_77",
+        "group_당월산식_row_band_1_78",
+        "group_당월산식_row_band_1_79",
+        "group_당월산식_row_band_1_8",
+        "group_당월산식_row_band_1_80",
+        "group_당월산식_row_band_1_81",
+        "group_당월산식_row_band_1_82",
+        "group_당월산식_row_band_1_83",
+        "group_당월산식_row_band_1_84",
+        "group_당월산식_row_band_1_85",
+        "group_당월산식_row_band_1_86",
+        "group_당월산식_row_band_1_87",
+        "group_당월산식_row_band_1_88",
+        "group_당월산식_row_band_1_89",
+        "group_당월산식_row_band_1_9",
+        "group_당월산식_row_band_1_90",
+        "group_당월산식_row_band_1_91",
+        "group_당월산식_row_band_1_92",
+        "group_당월산식_row_band_1_93",
+        "group_당월산식_row_band_1_94",
+        "group_당월산식_row_band_1_95",
+        "group_당월산식_row_band_1_96",
+        "group_당월산식_row_band_1_97",
+        "group_당월산식_row_band_1_98",
+        "group_당월산식_row_band_1_99",
+        "result_gate_target_당월산식_cell_region_1_boundary_confirmation",
+        "result_gate_target_당월산식_cell_region_1_formula_region_coherence",
+        "result_gate_target_당월산식_cell_region_1_formula_summary_visual_alignment",
+        "gate_target_당월산식_cell_region_1_boundary_confirmation",
+        "gate_target_당월산식_cell_region_1_formula_region_coherence",
+        "gate_target_당월산식_cell_region_1_formula_summary_visual_alignment",
+        "boundary_decision_gate_split_당월산식_row_band_1_c10_c11",
+        "boundary_decision_gate_split_당월산식_row_band_1_c11_c12",
+        "boundary_decision_gate_split_당월산식_row_band_1_c12_c13",
+        "boundary_decision_gate_split_당월산식_row_band_1_c14_c15",
+        "boundary_decision_gate_split_당월산식_row_band_1_c15_c16",
+        "boundary_decision_gate_split_당월산식_row_band_1_c1_c2",
+        "boundary_decision_gate_split_당월산식_row_band_1_c2_c3",
+        "boundary_decision_gate_split_당월산식_row_band_1_c33_c34",
+        "boundary_decision_gate_split_당월산식_row_band_1_c34_c35",
+        "boundary_decision_gate_split_당월산식_row_band_1_c3_c4",
+        "boundary_decision_gate_split_당월산식_row_band_1_c4_c5",
+        "boundary_decision_gate_split_당월산식_row_band_1_c6_c7",
+        "boundary_decision_gate_split_당월산식_row_band_1_c8_c9",
+        "boundary_decision_gate_split_당월산식_row_band_1_c9_c10"
+      ],
+      "notes": "summary role accepted: summary_formula_role_supported. Linked gates: boundary_confirmation:review_required:view_state_blocked=1, formula_region_coherence:review_required:view_state_blocked=1, formula_summary_visual_alignment:review_required:view_state_blocked=1"
+    },
+    {
+      "id": "role_validation_pipeline_매출_cell_region_1",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_매출_cell_region_1",
+      "status": "accepted",
+      "reason": "summary_formula_role_supported",
+      "confidence": 0.83,
+      "asserted_role": "summary",
+      "validated_role": "summary",
+      "output_ref": {
+        "id": "매출_cell_region_1",
+        "kind": "cell_region",
+        "sheet": "매출",
+        "range": "A1:L58",
+        "block_id": "매출_row_band_1",
+        "region_id": "매출_cell_region_1"
+      },
+      "input_ref_count": 3,
+      "transform_ref_count": 59,
+      "role_evidence": [
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region",
+        "repeated_formula_family",
+        "review_required_boundary_constraint",
+        "sumifs_formula"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow",
+        "repeated_formula_family"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_매출_cell_region_1_boundary_confirmation",
+          "gate_check_id": "gate_target_매출_cell_region_1_boundary_confirmation",
+          "target_id": "target_매출_cell_region_1",
+          "gate_type": "boundary_confirmation",
+          "status": "accepted",
+          "reason": "deterministic_visual_evidence_available",
+          "confidence": 0.82
+        },
+        {
+          "id": "result_gate_target_매출_cell_region_1_formula_region_coherence",
+          "gate_check_id": "gate_target_매출_cell_region_1_formula_region_coherence",
+          "target_id": "target_매출_cell_region_1",
+          "gate_type": "formula_region_coherence",
+          "status": "accepted",
+          "reason": "deterministic_visual_evidence_available",
+          "confidence": 0.82
+        },
+        {
+          "id": "result_gate_target_매출_cell_region_1_formula_summary_visual_alignment",
+          "gate_check_id": "gate_target_매출_cell_region_1_formula_summary_visual_alignment",
+          "target_id": "target_매출_cell_region_1",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "accepted",
+          "reason": "deterministic_visual_evidence_available",
+          "confidence": 0.82
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+          "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+          "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+          "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+          "boundary_decision_gate_split_결제상세_row_band_1_c4_c5",
+          "boundary_decision_gate_split_매출_row_band_1_c10_c11",
+          "boundary_decision_gate_split_매출_row_band_1_c1_c2",
+          "boundary_decision_gate_split_매출_row_band_1_c2_c3",
+          "boundary_decision_gate_split_매출_row_band_1_c4_c5",
+          "boundary_decision_gate_split_매출_row_band_1_c7_c8",
+          "boundary_decision_gate_split_매출_row_band_1_c8_c9",
+          "boundary_decision_gate_split_매출_row_band_1_c9_c10"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_매출_cell_region_1",
+        "group_매출_row_band_1_1",
+        "group_매출_row_band_1_10",
+        "group_매출_row_band_1_11",
+        "group_매출_row_band_1_12",
+        "group_매출_row_band_1_13",
+        "group_매출_row_band_1_14",
+        "group_매출_row_band_1_15",
+        "group_매출_row_band_1_16",
+        "group_매출_row_band_1_17",
+        "group_매출_row_band_1_18",
+        "group_매출_row_band_1_19",
+        "group_매출_row_band_1_2",
+        "group_매출_row_band_1_20",
+        "group_매출_row_band_1_21",
+        "group_매출_row_band_1_22",
+        "group_매출_row_band_1_23",
+        "group_매출_row_band_1_24",
+        "group_매출_row_band_1_25",
+        "group_매출_row_band_1_26",
+        "group_매출_row_band_1_27",
+        "group_매출_row_band_1_28",
+        "group_매출_row_band_1_29",
+        "group_매출_row_band_1_3",
+        "group_매출_row_band_1_30",
+        "group_매출_row_band_1_31",
+        "group_매출_row_band_1_32",
+        "group_매출_row_band_1_33",
+        "group_매출_row_band_1_34",
+        "group_매출_row_band_1_35",
+        "group_매출_row_band_1_36",
+        "group_매출_row_band_1_37",
+        "group_매출_row_band_1_38",
+        "group_매출_row_band_1_39",
+        "group_매출_row_band_1_4",
+        "group_매출_row_band_1_40",
+        "group_매출_row_band_1_41",
+        "group_매출_row_band_1_42",
+        "group_매출_row_band_1_43",
+        "group_매출_row_band_1_44",
+        "group_매출_row_band_1_45",
+        "group_매출_row_band_1_46",
+        "group_매출_row_band_1_47",
+        "group_매출_row_band_1_48",
+        "group_매출_row_band_1_49",
+        "group_매출_row_band_1_5",
+        "group_매출_row_band_1_50",
+        "group_매출_row_band_1_51",
+        "group_매출_row_band_1_52",
+        "group_매출_row_band_1_53",
+        "group_매출_row_band_1_54",
+        "group_매출_row_band_1_55",
+        "group_매출_row_band_1_56",
+        "group_매출_row_band_1_57",
+        "group_매출_row_band_1_58",
+        "group_매출_row_band_1_59",
+        "group_매출_row_band_1_6",
+        "group_매출_row_band_1_7",
+        "group_매출_row_band_1_8",
+        "group_매출_row_band_1_9",
+        "result_gate_target_매출_cell_region_1_boundary_confirmation",
+        "result_gate_target_매출_cell_region_1_formula_region_coherence",
+        "result_gate_target_매출_cell_region_1_formula_summary_visual_alignment",
+        "gate_target_매출_cell_region_1_boundary_confirmation",
+        "gate_target_매출_cell_region_1_formula_region_coherence",
+        "gate_target_매출_cell_region_1_formula_summary_visual_alignment",
+        "boundary_decision_gate_split_결제상세_row_band_1_c25_c26",
+        "boundary_decision_gate_split_결제상세_row_band_1_c38_c39",
+        "boundary_decision_gate_split_결제상세_row_band_1_c41_c42",
+        "boundary_decision_gate_split_결제상세_row_band_1_c47_c48",
+        "boundary_decision_gate_split_결제상세_row_band_1_c4_c5",
+        "boundary_decision_gate_split_매출_row_band_1_c10_c11",
+        "boundary_decision_gate_split_매출_row_band_1_c1_c2",
+        "boundary_decision_gate_split_매출_row_band_1_c2_c3",
+        "boundary_decision_gate_split_매출_row_band_1_c4_c5",
+        "boundary_decision_gate_split_매출_row_band_1_c7_c8",
+        "boundary_decision_gate_split_매출_row_band_1_c8_c9",
+        "boundary_decision_gate_split_매출_row_band_1_c9_c10"
+      ],
+      "notes": "summary role accepted: summary_formula_role_supported. Linked gates: boundary_confirmation:accepted:deterministic_visual_evidence_available=1, formula_region_coherence:accepted:deterministic_visual_evidence_available=1, formula_summary_visual_alignment:accepted:deterministic_visual_evidence_available=1"
+    },
+    {
+      "id": "role_validation_pipeline_매출_cell_region_3",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_매출_cell_region_3",
+      "status": "accepted",
+      "reason": "formula_transform_role_supported",
+      "confidence": 0.72,
+      "asserted_role": "transform",
+      "validated_role": "transform",
+      "output_ref": {
+        "id": "매출_cell_region_3",
+        "kind": "cell_region",
+        "sheet": "매출",
+        "range": "A86:P98",
+        "block_id": "매출_row_band_3",
+        "region_id": "매출_cell_region_3"
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 3,
+      "role_evidence": [
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow"
+      ],
+      "blockers": [],
+      "linked_gate_results": [],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_매출_cell_region_3",
+        "group_매출_row_band_3_65",
+        "group_매출_row_band_3_66",
+        "group_매출_row_band_3_67"
+      ],
+      "notes": "transform role accepted: formula_transform_role_supported. No linked gate result."
+    },
+    {
+      "id": "role_validation_pipeline_수익인식60일_cell_region_1",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_수익인식60일_cell_region_1",
+      "status": "accepted",
+      "reason": "summary_formula_role_supported",
+      "confidence": 0.78,
+      "asserted_role": "summary",
+      "validated_role": "summary",
+      "output_ref": {
+        "id": "수익인식60일_cell_region_1",
+        "kind": "cell_region",
+        "sheet": "수익인식60일",
+        "range": "A1:AB20",
+        "block_id": "수익인식60일_row_band_1",
+        "region_id": "수익인식60일_cell_region_1"
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 75,
+      "role_evidence": [
+        "accepted_boundary_constraint",
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region",
+        "repeated_formula_family",
+        "review_required_boundary_constraint",
+        "subtotal_formula"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow",
+        "repeated_formula_family"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_수익인식60일_cell_region_1_boundary_confirmation",
+          "gate_check_id": "gate_target_수익인식60일_cell_region_1_boundary_confirmation",
+          "target_id": "target_수익인식60일_cell_region_1",
+          "gate_type": "boundary_confirmation",
+          "status": "review_required",
+          "reason": "view_state_warning",
+          "confidence": 0.62
+        },
+        {
+          "id": "result_gate_target_수익인식60일_cell_region_1_formula_region_coherence",
+          "gate_check_id": "gate_target_수익인식60일_cell_region_1_formula_region_coherence",
+          "target_id": "target_수익인식60일_cell_region_1",
+          "gate_type": "formula_region_coherence",
+          "status": "review_required",
+          "reason": "view_state_warning",
+          "confidence": 0.62
+        },
+        {
+          "id": "result_gate_target_수익인식60일_cell_region_1_formula_summary_visual_alignment",
+          "gate_check_id": "gate_target_수익인식60일_cell_region_1_formula_summary_visual_alignment",
+          "target_id": "target_수익인식60일_cell_region_1",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "review_required",
+          "reason": "view_state_warning",
+          "confidence": 0.62
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c28_c30"
+        ],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c10_c11",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c11_c12",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c12_c13",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c13_c14",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c14_c15",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c16_c17",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c17_c18",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c1_c2",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c20_c21",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c21_c22",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c24_c25",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c25_c26",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c2_c3",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c3_c4",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c4_c5",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c6_c7",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c8_c9",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c9_c10"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_수익인식60일_cell_region_1",
+        "group_수익인식60일_row_band_1_1",
+        "group_수익인식60일_row_band_1_10",
+        "group_수익인식60일_row_band_1_11",
+        "group_수익인식60일_row_band_1_12",
+        "group_수익인식60일_row_band_1_13",
+        "group_수익인식60일_row_band_1_14",
+        "group_수익인식60일_row_band_1_15",
+        "group_수익인식60일_row_band_1_18",
+        "group_수익인식60일_row_band_1_19",
+        "group_수익인식60일_row_band_1_2",
+        "group_수익인식60일_row_band_1_20",
+        "group_수익인식60일_row_band_1_21",
+        "group_수익인식60일_row_band_1_22",
+        "group_수익인식60일_row_band_1_23",
+        "group_수익인식60일_row_band_1_24",
+        "group_수익인식60일_row_band_1_25",
+        "group_수익인식60일_row_band_1_26",
+        "group_수익인식60일_row_band_1_27",
+        "group_수익인식60일_row_band_1_28",
+        "group_수익인식60일_row_band_1_29",
+        "group_수익인식60일_row_band_1_3",
+        "group_수익인식60일_row_band_1_30",
+        "group_수익인식60일_row_band_1_31",
+        "group_수익인식60일_row_band_1_32",
+        "group_수익인식60일_row_band_1_33",
+        "group_수익인식60일_row_band_1_34",
+        "group_수익인식60일_row_band_1_35",
+        "group_수익인식60일_row_band_1_36",
+        "group_수익인식60일_row_band_1_37",
+        "group_수익인식60일_row_band_1_38",
+        "group_수익인식60일_row_band_1_39",
+        "group_수익인식60일_row_band_1_4",
+        "group_수익인식60일_row_band_1_40",
+        "group_수익인식60일_row_band_1_41",
+        "group_수익인식60일_row_band_1_42",
+        "group_수익인식60일_row_band_1_43",
+        "group_수익인식60일_row_band_1_44",
+        "group_수익인식60일_row_band_1_45",
+        "group_수익인식60일_row_band_1_46",
+        "group_수익인식60일_row_band_1_47",
+        "group_수익인식60일_row_band_1_48",
+        "group_수익인식60일_row_band_1_49",
+        "group_수익인식60일_row_band_1_5",
+        "group_수익인식60일_row_band_1_50",
+        "group_수익인식60일_row_band_1_51",
+        "group_수익인식60일_row_band_1_52",
+        "group_수익인식60일_row_band_1_53",
+        "group_수익인식60일_row_band_1_54",
+        "group_수익인식60일_row_band_1_55",
+        "group_수익인식60일_row_band_1_56",
+        "group_수익인식60일_row_band_1_57",
+        "group_수익인식60일_row_band_1_58",
+        "group_수익인식60일_row_band_1_59",
+        "group_수익인식60일_row_band_1_6",
+        "group_수익인식60일_row_band_1_60",
+        "group_수익인식60일_row_band_1_61",
+        "group_수익인식60일_row_band_1_62",
+        "group_수익인식60일_row_band_1_63",
+        "group_수익인식60일_row_band_1_64",
+        "group_수익인식60일_row_band_1_65",
+        "group_수익인식60일_row_band_1_66",
+        "group_수익인식60일_row_band_1_67",
+        "group_수익인식60일_row_band_1_68",
+        "group_수익인식60일_row_band_1_69",
+        "group_수익인식60일_row_band_1_7",
+        "group_수익인식60일_row_band_1_70",
+        "group_수익인식60일_row_band_1_71",
+        "group_수익인식60일_row_band_1_72",
+        "group_수익인식60일_row_band_1_73",
+        "group_수익인식60일_row_band_1_74",
+        "group_수익인식60일_row_band_1_75",
+        "group_수익인식60일_row_band_1_76",
+        "group_수익인식60일_row_band_1_77",
+        "group_수익인식60일_row_band_1_8",
+        "group_수익인식60일_row_band_1_9",
+        "result_gate_target_수익인식60일_cell_region_1_boundary_confirmation",
+        "result_gate_target_수익인식60일_cell_region_1_formula_region_coherence",
+        "result_gate_target_수익인식60일_cell_region_1_formula_summary_visual_alignment",
+        "gate_target_수익인식60일_cell_region_1_boundary_confirmation",
+        "gate_target_수익인식60일_cell_region_1_formula_region_coherence",
+        "gate_target_수익인식60일_cell_region_1_formula_summary_visual_alignment",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c28_c30",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c10_c11",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c11_c12",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c12_c13",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c13_c14",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c14_c15",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c16_c17",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c17_c18",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c1_c2",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c20_c21",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c21_c22",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c24_c25",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c25_c26",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c2_c3",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c3_c4",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c4_c5",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c6_c7",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c8_c9",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c9_c10"
+      ],
+      "notes": "summary role accepted: summary_formula_role_supported. Linked gates: boundary_confirmation:review_required:view_state_warning=1, formula_region_coherence:review_required:view_state_warning=1, formula_summary_visual_alignment:review_required:view_state_warning=1"
+    },
+    {
+      "id": "role_validation_pipeline_수익인식60일_cell_region_2",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_수익인식60일_cell_region_2",
+      "status": "accepted",
+      "reason": "formula_transform_role_supported",
+      "confidence": 0.7,
+      "asserted_role": "transform",
+      "validated_role": "transform",
+      "output_ref": {
+        "id": "수익인식60일_cell_region_2",
+        "kind": "cell_region",
+        "sheet": "수익인식60일",
+        "range": "AD1:AI20",
+        "block_id": "수익인식60일_row_band_1",
+        "region_id": "수익인식60일_cell_region_2"
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 2,
+      "role_evidence": [
+        "accepted_boundary_constraint",
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region",
+        "repeated_formula_family",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow",
+        "repeated_formula_family"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_수익인식60일_cell_region_2_boundary_confirmation",
+          "gate_check_id": "gate_target_수익인식60일_cell_region_2_boundary_confirmation",
+          "target_id": "target_수익인식60일_cell_region_2",
+          "gate_type": "boundary_confirmation",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        },
+        {
+          "id": "result_gate_target_수익인식60일_cell_region_2_formula_region_coherence",
+          "gate_check_id": "gate_target_수익인식60일_cell_region_2_formula_region_coherence",
+          "target_id": "target_수익인식60일_cell_region_2",
+          "gate_type": "formula_region_coherence",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c28_c30"
+        ],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c10_c11",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c11_c12",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c12_c13",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c13_c14",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c14_c15",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c16_c17",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c17_c18",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c1_c2",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c20_c21",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c21_c22",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c24_c25",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c25_c26",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c2_c3",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c31_c32",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c32_c33",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c34_c35",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c3_c4",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c4_c5",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c6_c7",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c8_c9",
+          "boundary_decision_gate_split_수익인식60일_row_band_1_c9_c10"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_수익인식60일_cell_region_2",
+        "group_수익인식60일_row_band_1_16",
+        "group_수익인식60일_row_band_1_17",
+        "result_gate_target_수익인식60일_cell_region_2_boundary_confirmation",
+        "result_gate_target_수익인식60일_cell_region_2_formula_region_coherence",
+        "gate_target_수익인식60일_cell_region_2_boundary_confirmation",
+        "gate_target_수익인식60일_cell_region_2_formula_region_coherence",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c28_c30",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c10_c11",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c11_c12",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c12_c13",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c13_c14",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c14_c15",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c16_c17",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c17_c18",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c1_c2",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c20_c21",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c21_c22",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c24_c25",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c25_c26",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c2_c3",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c31_c32",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c32_c33",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c34_c35",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c3_c4",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c4_c5",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c6_c7",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c8_c9",
+        "boundary_decision_gate_split_수익인식60일_row_band_1_c9_c10"
+      ],
+      "notes": "transform role accepted: formula_transform_role_supported. Linked gates: boundary_confirmation:review_required:capture_required=1, formula_region_coherence:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_수익인식60일_강사료_cell_region_1",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_수익인식60일_강사료_cell_region_1",
+      "status": "accepted",
+      "reason": "summary_formula_role_supported",
+      "confidence": 0.83,
+      "asserted_role": "summary",
+      "validated_role": "summary",
+      "output_ref": {
+        "id": "수익인식60일_강사료_cell_region_1",
+        "kind": "cell_region",
+        "sheet": "수익인식60일_강사료",
+        "range": "A1:X20",
+        "block_id": "수익인식60일_강사료_row_band_1",
+        "region_id": "수익인식60일_강사료_cell_region_1"
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 59,
+      "role_evidence": [
+        "accepted_boundary_constraint",
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region",
+        "repeated_formula_family",
+        "review_required_boundary_constraint",
+        "subtotal_formula"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow",
+        "repeated_formula_family"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_수익인식60일_강사료_cell_region_1_boundary_confirmation",
+          "gate_check_id": "gate_target_수익인식60일_강사료_cell_region_1_boundary_confirmation",
+          "target_id": "target_수익인식60일_강사료_cell_region_1",
+          "gate_type": "boundary_confirmation",
+          "status": "accepted",
+          "reason": "deterministic_visual_evidence_available",
+          "confidence": 0.82
+        },
+        {
+          "id": "result_gate_target_수익인식60일_강사료_cell_region_1_formula_region_coherence",
+          "gate_check_id": "gate_target_수익인식60일_강사료_cell_region_1_formula_region_coherence",
+          "target_id": "target_수익인식60일_강사료_cell_region_1",
+          "gate_type": "formula_region_coherence",
+          "status": "accepted",
+          "reason": "deterministic_visual_evidence_available",
+          "confidence": 0.82
+        },
+        {
+          "id": "result_gate_target_수익인식60일_강사료_cell_region_1_formula_summary_visual_alignment",
+          "gate_check_id": "gate_target_수익인식60일_강사료_cell_region_1_formula_summary_visual_alignment",
+          "target_id": "target_수익인식60일_강사료_cell_region_1",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "accepted",
+          "reason": "deterministic_visual_evidence_available",
+          "confidence": 0.82
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c24_c26"
+        ],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c10_c11",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c11_c12",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c12_c13",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c13_c14",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c14_c15",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c16_c17",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c17_c18",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c1_c2",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c20_c21",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c21_c22",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c2_c3",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c3_c4",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c4_c5",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c6_c7",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c8_c9",
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c9_c10"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_수익인식60일_강사료_cell_region_1",
+        "group_수익인식60일_강사료_row_band_1_1",
+        "group_수익인식60일_강사료_row_band_1_10",
+        "group_수익인식60일_강사료_row_band_1_11",
+        "group_수익인식60일_강사료_row_band_1_12",
+        "group_수익인식60일_강사료_row_band_1_13",
+        "group_수익인식60일_강사료_row_band_1_14",
+        "group_수익인식60일_강사료_row_band_1_15",
+        "group_수익인식60일_강사료_row_band_1_16",
+        "group_수익인식60일_강사료_row_band_1_17",
+        "group_수익인식60일_강사료_row_band_1_18",
+        "group_수익인식60일_강사료_row_band_1_19",
+        "group_수익인식60일_강사료_row_band_1_2",
+        "group_수익인식60일_강사료_row_band_1_20",
+        "group_수익인식60일_강사료_row_band_1_21",
+        "group_수익인식60일_강사료_row_band_1_22",
+        "group_수익인식60일_강사료_row_band_1_23",
+        "group_수익인식60일_강사료_row_band_1_24",
+        "group_수익인식60일_강사료_row_band_1_25",
+        "group_수익인식60일_강사료_row_band_1_26",
+        "group_수익인식60일_강사료_row_band_1_3",
+        "group_수익인식60일_강사료_row_band_1_34",
+        "group_수익인식60일_강사료_row_band_1_35",
+        "group_수익인식60일_강사료_row_band_1_36",
+        "group_수익인식60일_강사료_row_band_1_4",
+        "group_수익인식60일_강사료_row_band_1_43",
+        "group_수익인식60일_강사료_row_band_1_44",
+        "group_수익인식60일_강사료_row_band_1_45",
+        "group_수익인식60일_강사료_row_band_1_49",
+        "group_수익인식60일_강사료_row_band_1_5",
+        "group_수익인식60일_강사료_row_band_1_50",
+        "group_수익인식60일_강사료_row_band_1_51",
+        "group_수익인식60일_강사료_row_band_1_52",
+        "group_수익인식60일_강사료_row_band_1_53",
+        "group_수익인식60일_강사료_row_band_1_54",
+        "group_수익인식60일_강사료_row_band_1_55",
+        "group_수익인식60일_강사료_row_band_1_56",
+        "group_수익인식60일_강사료_row_band_1_57",
+        "group_수익인식60일_강사료_row_band_1_58",
+        "group_수익인식60일_강사료_row_band_1_59",
+        "group_수익인식60일_강사료_row_band_1_6",
+        "group_수익인식60일_강사료_row_band_1_60",
+        "group_수익인식60일_강사료_row_band_1_61",
+        "group_수익인식60일_강사료_row_band_1_62",
+        "group_수익인식60일_강사료_row_band_1_63",
+        "group_수익인식60일_강사료_row_band_1_64",
+        "group_수익인식60일_강사료_row_band_1_65",
+        "group_수익인식60일_강사료_row_band_1_66",
+        "group_수익인식60일_강사료_row_band_1_67",
+        "group_수익인식60일_강사료_row_band_1_68",
+        "group_수익인식60일_강사료_row_band_1_69",
+        "group_수익인식60일_강사료_row_band_1_7",
+        "group_수익인식60일_강사료_row_band_1_70",
+        "group_수익인식60일_강사료_row_band_1_71",
+        "group_수익인식60일_강사료_row_band_1_72",
+        "group_수익인식60일_강사료_row_band_1_73",
+        "group_수익인식60일_강사료_row_band_1_74",
+        "group_수익인식60일_강사료_row_band_1_75",
+        "group_수익인식60일_강사료_row_band_1_8",
+        "group_수익인식60일_강사료_row_band_1_9",
+        "result_gate_target_수익인식60일_강사료_cell_region_1_boundary_confirmation",
+        "result_gate_target_수익인식60일_강사료_cell_region_1_formula_region_coherence",
+        "result_gate_target_수익인식60일_강사료_cell_region_1_formula_summary_visual_alignment",
+        "gate_target_수익인식60일_강사료_cell_region_1_boundary_confirmation",
+        "gate_target_수익인식60일_강사료_cell_region_1_formula_region_coherence",
+        "gate_target_수익인식60일_강사료_cell_region_1_formula_summary_visual_alignment",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c24_c26",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c10_c11",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c11_c12",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c12_c13",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c13_c14",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c14_c15",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c16_c17",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c17_c18",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c1_c2",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c20_c21",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c21_c22",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c2_c3",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c3_c4",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c4_c5",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c6_c7",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c8_c9",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c9_c10"
+      ],
+      "notes": "summary role accepted: summary_formula_role_supported. Linked gates: boundary_confirmation:accepted:deterministic_visual_evidence_available=1, formula_region_coherence:accepted:deterministic_visual_evidence_available=1, formula_summary_visual_alignment:accepted:deterministic_visual_evidence_available=1"
+    },
+    {
+      "id": "role_validation_pipeline_수익인식60일_강사료_cell_region_2",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_수익인식60일_강사료_cell_region_2",
+      "status": "accepted",
+      "reason": "formula_transform_role_supported",
+      "confidence": 0.7,
+      "asserted_role": "transform",
+      "validated_role": "transform",
+      "output_ref": {
+        "id": "수익인식60일_강사료_cell_region_2",
+        "kind": "cell_region",
+        "sheet": "수익인식60일_강사료",
+        "range": "Z5:AE11",
+        "block_id": "수익인식60일_강사료_row_band_1",
+        "region_id": "수익인식60일_강사료_cell_region_2"
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 16,
+      "role_evidence": [
+        "accepted_boundary_constraint",
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_수익인식60일_강사료_cell_region_2_boundary_confirmation",
+          "gate_check_id": "gate_target_수익인식60일_강사료_cell_region_2_boundary_confirmation",
+          "target_id": "target_수익인식60일_강사료_cell_region_2",
+          "gate_type": "boundary_confirmation",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c24_c26"
+        ],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c27_c28"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_수익인식60일_강사료_cell_region_2",
+        "group_수익인식60일_강사료_row_band_1_27",
+        "group_수익인식60일_강사료_row_band_1_28",
+        "group_수익인식60일_강사료_row_band_1_29",
+        "group_수익인식60일_강사료_row_band_1_30",
+        "group_수익인식60일_강사료_row_band_1_31",
+        "group_수익인식60일_강사료_row_band_1_32",
+        "group_수익인식60일_강사료_row_band_1_33",
+        "group_수익인식60일_강사료_row_band_1_37",
+        "group_수익인식60일_강사료_row_band_1_38",
+        "group_수익인식60일_강사료_row_band_1_39",
+        "group_수익인식60일_강사료_row_band_1_40",
+        "group_수익인식60일_강사료_row_band_1_41",
+        "group_수익인식60일_강사료_row_band_1_42",
+        "group_수익인식60일_강사료_row_band_1_46",
+        "group_수익인식60일_강사료_row_band_1_47",
+        "group_수익인식60일_강사료_row_band_1_48",
+        "result_gate_target_수익인식60일_강사료_cell_region_2_boundary_confirmation",
+        "gate_target_수익인식60일_강사료_cell_region_2_boundary_confirmation",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c24_c26",
+        "boundary_decision_gate_split_수익인식60일_강사료_row_band_1_c27_c28"
+      ],
+      "notes": "transform role accepted: formula_transform_role_supported. Linked gates: boundary_confirmation:review_required:capture_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_얼리버드_cell_region_1",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_얼리버드_cell_region_1",
+      "status": "accepted",
+      "reason": "summary_formula_role_supported",
+      "confidence": 0.83,
+      "asserted_role": "summary",
+      "validated_role": "summary",
+      "output_ref": {
+        "id": "얼리버드_cell_region_1",
+        "kind": "cell_region",
+        "sheet": "얼리버드",
+        "range": "A1:D20",
+        "block_id": "얼리버드_row_band_1",
+        "region_id": "얼리버드_cell_region_1"
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 1,
+      "role_evidence": [
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region",
+        "repeated_formula_family",
+        "review_required_boundary_constraint",
+        "sumifs_formula"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow",
+        "repeated_formula_family"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_얼리버드_cell_region_1_boundary_confirmation",
+          "gate_check_id": "gate_target_얼리버드_cell_region_1_boundary_confirmation",
+          "target_id": "target_얼리버드_cell_region_1",
+          "gate_type": "boundary_confirmation",
+          "status": "accepted",
+          "reason": "deterministic_visual_evidence_available",
+          "confidence": 0.82
+        },
+        {
+          "id": "result_gate_target_얼리버드_cell_region_1_formula_region_coherence",
+          "gate_check_id": "gate_target_얼리버드_cell_region_1_formula_region_coherence",
+          "target_id": "target_얼리버드_cell_region_1",
+          "gate_type": "formula_region_coherence",
+          "status": "accepted",
+          "reason": "deterministic_visual_evidence_available",
+          "confidence": 0.82
+        },
+        {
+          "id": "result_gate_target_얼리버드_cell_region_1_formula_summary_visual_alignment",
+          "gate_check_id": "gate_target_얼리버드_cell_region_1_formula_summary_visual_alignment",
+          "target_id": "target_얼리버드_cell_region_1",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "accepted",
+          "reason": "deterministic_visual_evidence_available",
+          "confidence": 0.82
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_얼리버드_row_band_1_c1_c2",
+          "boundary_decision_gate_split_얼리버드_row_band_1_c2_c3"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_얼리버드_cell_region_1",
+        "group_얼리버드_row_band_1_1",
+        "result_gate_target_얼리버드_cell_region_1_boundary_confirmation",
+        "result_gate_target_얼리버드_cell_region_1_formula_region_coherence",
+        "result_gate_target_얼리버드_cell_region_1_formula_summary_visual_alignment",
+        "gate_target_얼리버드_cell_region_1_boundary_confirmation",
+        "gate_target_얼리버드_cell_region_1_formula_region_coherence",
+        "gate_target_얼리버드_cell_region_1_formula_summary_visual_alignment",
+        "boundary_decision_gate_split_얼리버드_row_band_1_c1_c2",
+        "boundary_decision_gate_split_얼리버드_row_band_1_c2_c3"
+      ],
+      "notes": "summary role accepted: summary_formula_role_supported. Linked gates: boundary_confirmation:accepted:deterministic_visual_evidence_available=1, formula_region_coherence:accepted:deterministic_visual_evidence_available=1, formula_summary_visual_alignment:accepted:deterministic_visual_evidence_available=1"
+    },
+    {
+      "id": "role_validation_pipeline_유하다요_cell_region_1",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_유하다요_cell_region_1",
+      "status": "accepted",
+      "reason": "formula_transform_role_supported",
+      "confidence": 0.75,
+      "asserted_role": "transform",
+      "validated_role": "transform",
+      "output_ref": {
+        "id": "유하다요_cell_region_1",
+        "kind": "cell_region",
+        "sheet": "유하다요",
+        "range": "A1:R20",
+        "block_id": "유하다요_row_band_1",
+        "region_id": "유하다요_cell_region_1"
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 5,
+      "role_evidence": [
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region",
+        "repeated_formula_family",
+        "review_required_boundary_constraint"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow",
+        "repeated_formula_family"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_유하다요_cell_region_1_boundary_confirmation",
+          "gate_check_id": "gate_target_유하다요_cell_region_1_boundary_confirmation",
+          "target_id": "target_유하다요_cell_region_1",
+          "gate_type": "boundary_confirmation",
+          "status": "accepted",
+          "reason": "deterministic_visual_evidence_available",
+          "confidence": 0.82
+        },
+        {
+          "id": "result_gate_target_유하다요_cell_region_1_formula_region_coherence",
+          "gate_check_id": "gate_target_유하다요_cell_region_1_formula_region_coherence",
+          "target_id": "target_유하다요_cell_region_1",
+          "gate_type": "formula_region_coherence",
+          "status": "accepted",
+          "reason": "deterministic_visual_evidence_available",
+          "confidence": 0.82
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_유하다요_row_band_1_c11_c12",
+          "boundary_decision_gate_split_유하다요_row_band_1_c14_c15",
+          "boundary_decision_gate_split_유하다요_row_band_1_c15_c16",
+          "boundary_decision_gate_split_유하다요_row_band_1_c16_c17",
+          "boundary_decision_gate_split_유하다요_row_band_1_c4_c5"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_유하다요_cell_region_1",
+        "group_유하다요_row_band_1_1",
+        "group_유하다요_row_band_1_2",
+        "group_유하다요_row_band_1_3",
+        "group_유하다요_row_band_1_4",
+        "group_유하다요_row_band_1_5",
+        "result_gate_target_유하다요_cell_region_1_boundary_confirmation",
+        "result_gate_target_유하다요_cell_region_1_formula_region_coherence",
+        "gate_target_유하다요_cell_region_1_boundary_confirmation",
+        "gate_target_유하다요_cell_region_1_formula_region_coherence",
+        "boundary_decision_gate_split_유하다요_row_band_1_c11_c12",
+        "boundary_decision_gate_split_유하다요_row_band_1_c14_c15",
+        "boundary_decision_gate_split_유하다요_row_band_1_c15_c16",
+        "boundary_decision_gate_split_유하다요_row_band_1_c16_c17",
+        "boundary_decision_gate_split_유하다요_row_band_1_c4_c5"
+      ],
+      "notes": "transform role accepted: formula_transform_role_supported. Linked gates: boundary_confirmation:accepted:deterministic_visual_evidence_available=1, formula_region_coherence:accepted:deterministic_visual_evidence_available=1"
+    },
+    {
+      "id": "role_validation_pipeline_유하다요_강사료_cell_region_1",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_유하다요_강사료_cell_region_1",
+      "status": "accepted",
+      "reason": "summary_formula_role_supported",
+      "confidence": 0.78,
+      "asserted_role": "summary",
+      "validated_role": "summary",
+      "output_ref": {
+        "id": "유하다요_강사료_cell_region_1",
+        "kind": "cell_region",
+        "sheet": "유하다요_강사료",
+        "range": "A1:AH20",
+        "block_id": "유하다요_강사료_row_band_1",
+        "region_id": "유하다요_강사료_cell_region_1"
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 37,
+      "role_evidence": [
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region",
+        "repeated_formula_family",
+        "review_required_boundary_constraint",
+        "subtotal_formula"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow",
+        "repeated_formula_family"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_유하다요_강사료_cell_region_1_boundary_confirmation",
+          "gate_check_id": "gate_target_유하다요_강사료_cell_region_1_boundary_confirmation",
+          "target_id": "target_유하다요_강사료_cell_region_1",
+          "gate_type": "boundary_confirmation",
+          "status": "review_required",
+          "reason": "capture_quality_review_required",
+          "confidence": 0.45
+        },
+        {
+          "id": "result_gate_target_유하다요_강사료_cell_region_1_formula_region_coherence",
+          "gate_check_id": "gate_target_유하다요_강사료_cell_region_1_formula_region_coherence",
+          "target_id": "target_유하다요_강사료_cell_region_1",
+          "gate_type": "formula_region_coherence",
+          "status": "review_required",
+          "reason": "capture_quality_review_required",
+          "confidence": 0.45
+        },
+        {
+          "id": "result_gate_target_유하다요_강사료_cell_region_1_formula_summary_visual_alignment",
+          "gate_check_id": "gate_target_유하다요_강사료_cell_region_1_formula_summary_visual_alignment",
+          "target_id": "target_유하다요_강사료_cell_region_1",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "review_required",
+          "reason": "capture_quality_review_required",
+          "confidence": 0.45
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_유하다요_강사료_row_band_1_c10_c11",
+          "boundary_decision_gate_split_유하다요_강사료_row_band_1_c11_c12",
+          "boundary_decision_gate_split_유하다요_강사료_row_band_1_c12_c13",
+          "boundary_decision_gate_split_유하다요_강사료_row_band_1_c14_c15",
+          "boundary_decision_gate_split_유하다요_강사료_row_band_1_c15_c16",
+          "boundary_decision_gate_split_유하다요_강사료_row_band_1_c16_c17",
+          "boundary_decision_gate_split_유하다요_강사료_row_band_1_c1_c2",
+          "boundary_decision_gate_split_유하다요_강사료_row_band_1_c3_c4",
+          "boundary_decision_gate_split_유하다요_강사료_row_band_1_c4_c5",
+          "boundary_decision_gate_split_유하다요_강사료_row_band_1_c6_c7",
+          "boundary_decision_gate_split_유하다요_강사료_row_band_1_c8_c9",
+          "boundary_decision_gate_split_유하다요_강사료_row_band_1_c9_c10"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_유하다요_강사료_cell_region_1",
+        "group_유하다요_강사료_row_band_1_1",
+        "group_유하다요_강사료_row_band_1_10",
+        "group_유하다요_강사료_row_band_1_11",
+        "group_유하다요_강사료_row_band_1_12",
+        "group_유하다요_강사료_row_band_1_13",
+        "group_유하다요_강사료_row_band_1_14",
+        "group_유하다요_강사료_row_band_1_15",
+        "group_유하다요_강사료_row_band_1_16",
+        "group_유하다요_강사료_row_band_1_17",
+        "group_유하다요_강사료_row_band_1_18",
+        "group_유하다요_강사료_row_band_1_19",
+        "group_유하다요_강사료_row_band_1_2",
+        "group_유하다요_강사료_row_band_1_20",
+        "group_유하다요_강사료_row_band_1_21",
+        "group_유하다요_강사료_row_band_1_22",
+        "group_유하다요_강사료_row_band_1_23",
+        "group_유하다요_강사료_row_band_1_24",
+        "group_유하다요_강사료_row_band_1_25",
+        "group_유하다요_강사료_row_band_1_26",
+        "group_유하다요_강사료_row_band_1_27",
+        "group_유하다요_강사료_row_band_1_28",
+        "group_유하다요_강사료_row_band_1_29",
+        "group_유하다요_강사료_row_band_1_3",
+        "group_유하다요_강사료_row_band_1_30",
+        "group_유하다요_강사료_row_band_1_31",
+        "group_유하다요_강사료_row_band_1_32",
+        "group_유하다요_강사료_row_band_1_33",
+        "group_유하다요_강사료_row_band_1_34",
+        "group_유하다요_강사료_row_band_1_35",
+        "group_유하다요_강사료_row_band_1_36",
+        "group_유하다요_강사료_row_band_1_37",
+        "group_유하다요_강사료_row_band_1_4",
+        "group_유하다요_강사료_row_band_1_5",
+        "group_유하다요_강사료_row_band_1_6",
+        "group_유하다요_강사료_row_band_1_7",
+        "group_유하다요_강사료_row_band_1_8",
+        "group_유하다요_강사료_row_band_1_9",
+        "result_gate_target_유하다요_강사료_cell_region_1_boundary_confirmation",
+        "result_gate_target_유하다요_강사료_cell_region_1_formula_region_coherence",
+        "result_gate_target_유하다요_강사료_cell_region_1_formula_summary_visual_alignment",
+        "gate_target_유하다요_강사료_cell_region_1_boundary_confirmation",
+        "gate_target_유하다요_강사료_cell_region_1_formula_region_coherence",
+        "gate_target_유하다요_강사료_cell_region_1_formula_summary_visual_alignment",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c10_c11",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c11_c12",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c12_c13",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c14_c15",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c15_c16",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c16_c17",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c1_c2",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c3_c4",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c4_c5",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c6_c7",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c8_c9",
+        "boundary_decision_gate_split_유하다요_강사료_row_band_1_c9_c10"
+      ],
+      "notes": "summary role accepted: summary_formula_role_supported. Linked gates: boundary_confirmation:review_required:capture_quality_review_required=1, formula_region_coherence:review_required:capture_quality_review_required=1, formula_summary_visual_alignment:review_required:capture_quality_review_required=1"
+    },
+    {
+      "id": "role_validation_pipeline_정가표_cell_region_1",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_정가표_cell_region_1",
+      "status": "accepted",
+      "reason": "summary_formula_role_supported",
+      "confidence": 0.83,
+      "asserted_role": "summary",
+      "validated_role": "summary",
+      "output_ref": {
+        "id": "정가표_cell_region_1",
+        "kind": "cell_region",
+        "sheet": "정가표",
+        "range": "A1:S20",
+        "block_id": "정가표_row_band_1",
+        "region_id": "정가표_cell_region_1"
+      },
+      "input_ref_count": 1,
+      "transform_ref_count": 141,
+      "role_evidence": [
+        "accepted_boundary_constraint",
+        "formula_signature_group",
+        "input:cell_region",
+        "output:cell_region",
+        "repeated_formula_family",
+        "review_required_boundary_constraint",
+        "sumifs_formula"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow",
+        "repeated_formula_family"
+      ],
+      "blockers": [],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_정가표_cell_region_1_boundary_confirmation",
+          "gate_check_id": "gate_target_정가표_cell_region_1_boundary_confirmation",
+          "target_id": "target_정가표_cell_region_1",
+          "gate_type": "boundary_confirmation",
+          "status": "accepted",
+          "reason": "deterministic_visual_evidence_available",
+          "confidence": 0.82
+        },
+        {
+          "id": "result_gate_target_정가표_cell_region_1_formula_region_coherence",
+          "gate_check_id": "gate_target_정가표_cell_region_1_formula_region_coherence",
+          "target_id": "target_정가표_cell_region_1",
+          "gate_type": "formula_region_coherence",
+          "status": "accepted",
+          "reason": "deterministic_visual_evidence_available",
+          "confidence": 0.82
+        },
+        {
+          "id": "result_gate_target_정가표_cell_region_1_formula_summary_visual_alignment",
+          "gate_check_id": "gate_target_정가표_cell_region_1_formula_summary_visual_alignment",
+          "target_id": "target_정가표_cell_region_1",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "accepted",
+          "reason": "deterministic_visual_evidence_available",
+          "confidence": 0.82
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [
+          "boundary_decision_gate_split_정가표_row_band_1_c19_c22"
+        ],
+        "review_required_boundary_ids": [
+          "boundary_decision_gate_split_정가표_row_band_1_c11_c12",
+          "boundary_decision_gate_split_정가표_row_band_1_c17_c18",
+          "boundary_decision_gate_split_정가표_row_band_1_c3_c4",
+          "boundary_decision_gate_split_정가표_row_band_1_c7_c8"
+        ],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_정가표_cell_region_1",
+        "group_정가표_row_band_1_1",
+        "group_정가표_row_band_1_10",
+        "group_정가표_row_band_1_100",
+        "group_정가표_row_band_1_101",
+        "group_정가표_row_band_1_102",
+        "group_정가표_row_band_1_103",
+        "group_정가표_row_band_1_104",
+        "group_정가표_row_band_1_105",
+        "group_정가표_row_band_1_106",
+        "group_정가표_row_band_1_107",
+        "group_정가표_row_band_1_108",
+        "group_정가표_row_band_1_109",
+        "group_정가표_row_band_1_11",
+        "group_정가표_row_band_1_110",
+        "group_정가표_row_band_1_111",
+        "group_정가표_row_band_1_112",
+        "group_정가표_row_band_1_113",
+        "group_정가표_row_band_1_114",
+        "group_정가표_row_band_1_115",
+        "group_정가표_row_band_1_116",
+        "group_정가표_row_band_1_117",
+        "group_정가표_row_band_1_118",
+        "group_정가표_row_band_1_119",
+        "group_정가표_row_band_1_12",
+        "group_정가표_row_band_1_120",
+        "group_정가표_row_band_1_121",
+        "group_정가표_row_band_1_122",
+        "group_정가표_row_band_1_123",
+        "group_정가표_row_band_1_124",
+        "group_정가표_row_band_1_125",
+        "group_정가표_row_band_1_126",
+        "group_정가표_row_band_1_127",
+        "group_정가표_row_band_1_128",
+        "group_정가표_row_band_1_129",
+        "group_정가표_row_band_1_13",
+        "group_정가표_row_band_1_130",
+        "group_정가표_row_band_1_131",
+        "group_정가표_row_band_1_132",
+        "group_정가표_row_band_1_133",
+        "group_정가표_row_band_1_134",
+        "group_정가표_row_band_1_135",
+        "group_정가표_row_band_1_136",
+        "group_정가표_row_band_1_137",
+        "group_정가표_row_band_1_138",
+        "group_정가표_row_band_1_139",
+        "group_정가표_row_band_1_14",
+        "group_정가표_row_band_1_140",
+        "group_정가표_row_band_1_141",
+        "group_정가표_row_band_1_15",
+        "group_정가표_row_band_1_16",
+        "group_정가표_row_band_1_17",
+        "group_정가표_row_band_1_18",
+        "group_정가표_row_band_1_19",
+        "group_정가표_row_band_1_2",
+        "group_정가표_row_band_1_20",
+        "group_정가표_row_band_1_21",
+        "group_정가표_row_band_1_22",
+        "group_정가표_row_band_1_23",
+        "group_정가표_row_band_1_24",
+        "group_정가표_row_band_1_25",
+        "group_정가표_row_band_1_26",
+        "group_정가표_row_band_1_27",
+        "group_정가표_row_band_1_28",
+        "group_정가표_row_band_1_29",
+        "group_정가표_row_band_1_3",
+        "group_정가표_row_band_1_30",
+        "group_정가표_row_band_1_31",
+        "group_정가표_row_band_1_32",
+        "group_정가표_row_band_1_33",
+        "group_정가표_row_band_1_34",
+        "group_정가표_row_band_1_35",
+        "group_정가표_row_band_1_36",
+        "group_정가표_row_band_1_37",
+        "group_정가표_row_band_1_38",
+        "group_정가표_row_band_1_39",
+        "group_정가표_row_band_1_4",
+        "group_정가표_row_band_1_40",
+        "group_정가표_row_band_1_41",
+        "group_정가표_row_band_1_42",
+        "group_정가표_row_band_1_43",
+        "group_정가표_row_band_1_44",
+        "group_정가표_row_band_1_45",
+        "group_정가표_row_band_1_46",
+        "group_정가표_row_band_1_47",
+        "group_정가표_row_band_1_48",
+        "group_정가표_row_band_1_49",
+        "group_정가표_row_band_1_5",
+        "group_정가표_row_band_1_50",
+        "group_정가표_row_band_1_51",
+        "group_정가표_row_band_1_52",
+        "group_정가표_row_band_1_53",
+        "group_정가표_row_band_1_54",
+        "group_정가표_row_band_1_55",
+        "group_정가표_row_band_1_56",
+        "group_정가표_row_band_1_57",
+        "group_정가표_row_band_1_58",
+        "group_정가표_row_band_1_59",
+        "group_정가표_row_band_1_6",
+        "group_정가표_row_band_1_60",
+        "group_정가표_row_band_1_61",
+        "group_정가표_row_band_1_62",
+        "group_정가표_row_band_1_63",
+        "group_정가표_row_band_1_64",
+        "group_정가표_row_band_1_65",
+        "group_정가표_row_band_1_66",
+        "group_정가표_row_band_1_67",
+        "group_정가표_row_band_1_68",
+        "group_정가표_row_band_1_69",
+        "group_정가표_row_band_1_7",
+        "group_정가표_row_band_1_70",
+        "group_정가표_row_band_1_71",
+        "group_정가표_row_band_1_72",
+        "group_정가표_row_band_1_73",
+        "group_정가표_row_band_1_74",
+        "group_정가표_row_band_1_75",
+        "group_정가표_row_band_1_76",
+        "group_정가표_row_band_1_77",
+        "group_정가표_row_band_1_78",
+        "group_정가표_row_band_1_79",
+        "group_정가표_row_band_1_8",
+        "group_정가표_row_band_1_80",
+        "group_정가표_row_band_1_81",
+        "group_정가표_row_band_1_82",
+        "group_정가표_row_band_1_83",
+        "group_정가표_row_band_1_84",
+        "group_정가표_row_band_1_85",
+        "group_정가표_row_band_1_86",
+        "group_정가표_row_band_1_87",
+        "group_정가표_row_band_1_88",
+        "group_정가표_row_band_1_89",
+        "group_정가표_row_band_1_9",
+        "group_정가표_row_band_1_90",
+        "group_정가표_row_band_1_91",
+        "group_정가표_row_band_1_92",
+        "group_정가표_row_band_1_93",
+        "group_정가표_row_band_1_94",
+        "group_정가표_row_band_1_95",
+        "group_정가표_row_band_1_96",
+        "group_정가표_row_band_1_97",
+        "group_정가표_row_band_1_98",
+        "group_정가표_row_band_1_99",
+        "result_gate_target_정가표_cell_region_1_boundary_confirmation",
+        "result_gate_target_정가표_cell_region_1_formula_region_coherence",
+        "result_gate_target_정가표_cell_region_1_formula_summary_visual_alignment",
+        "gate_target_정가표_cell_region_1_boundary_confirmation",
+        "gate_target_정가표_cell_region_1_formula_region_coherence",
+        "gate_target_정가표_cell_region_1_formula_summary_visual_alignment",
+        "boundary_decision_gate_split_정가표_row_band_1_c19_c22",
+        "boundary_decision_gate_split_정가표_row_band_1_c11_c12",
+        "boundary_decision_gate_split_정가표_row_band_1_c17_c18",
+        "boundary_decision_gate_split_정가표_row_band_1_c3_c4",
+        "boundary_decision_gate_split_정가표_row_band_1_c7_c8"
+      ],
+      "notes": "summary role accepted: summary_formula_role_supported. Linked gates: boundary_confirmation:accepted:deterministic_visual_evidence_available=1, formula_region_coherence:accepted:deterministic_visual_evidence_available=1, formula_summary_visual_alignment:accepted:deterministic_visual_evidence_available=1"
+    },
+    {
+      "id": "role_validation_pipeline_매출_cell_region_2",
+      "type": "pipeline_role_validation",
+      "pipeline_id": "pipeline_매출_cell_region_2",
+      "status": "review_required",
+      "reason": "unresolved_input_region",
+      "confidence": 0.52,
+      "asserted_role": "transform",
+      "validated_role": "transform",
+      "output_ref": {
+        "id": "매출_cell_region_2",
+        "kind": "cell_region",
+        "sheet": "매출",
+        "range": "A69:F73",
+        "block_id": "매출_row_band_2",
+        "region_id": "매출_cell_region_2"
+      },
+      "input_ref_count": 2,
+      "transform_ref_count": 5,
+      "role_evidence": [
+        "formula_signature_group",
+        "input:cell_region",
+        "input:workbook_range",
+        "output:cell_region"
+      ],
+      "review_flags": [
+        "same_sheet_dataflow",
+        "unresolved_input_region"
+      ],
+      "blockers": [
+        "unresolved_input_region"
+      ],
+      "linked_gate_results": [
+        {
+          "id": "result_gate_target_매출_cell_region_2_pipeline_input_output_alignment",
+          "gate_check_id": "gate_target_매출_cell_region_2_pipeline_input_output_alignment",
+          "target_id": "target_매출_cell_region_2",
+          "gate_type": "pipeline_input_output_alignment",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        },
+        {
+          "id": "result_gate_target_매출_cell_region_2_unresolved_input_region_resolution",
+          "gate_check_id": "gate_target_매출_cell_region_2_unresolved_input_region_resolution",
+          "target_id": "target_매출_cell_region_2",
+          "gate_type": "unresolved_input_region_resolution",
+          "status": "review_required",
+          "reason": "capture_required",
+          "confidence": 0.25
+        }
+      ],
+      "boundary_constraints": {
+        "accepted_boundary_ids": [],
+        "review_required_boundary_ids": [],
+        "rejected_boundary_ids": []
+      },
+      "evidence_refs": [
+        "pipeline_매출_cell_region_2",
+        "group_매출_row_band_2_60",
+        "group_매출_row_band_2_61",
+        "group_매출_row_band_2_62",
+        "group_매출_row_band_2_63",
+        "group_매출_row_band_2_64",
+        "result_gate_target_매출_cell_region_2_pipeline_input_output_alignment",
+        "result_gate_target_매출_cell_region_2_unresolved_input_region_resolution",
+        "gate_target_매출_cell_region_2_pipeline_input_output_alignment",
+        "gate_target_매출_cell_region_2_unresolved_input_region_resolution"
+      ],
+      "notes": "transform role requires review: unresolved_input_region; blockers=unresolved_input_region."
+    }
+  ],
+  "summary": {
+    "role_validation_count": 45,
+    "accepted_count": 44,
+    "rejected_count": 0,
+    "review_required_count": 1,
+    "report_role_accepted_count": 24,
+    "summary_role_accepted_count": 10,
+    "transform_role_accepted_count": 10,
+    "bridge_role_accepted_count": 0,
+    "unresolved_input_review_count": 1,
+    "external_dependency_review_count": 0,
+    "linked_gate_review_count": 34
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "Pipeline role validation accepts or retains review status for role labels only; it does not assemble the final document graph."
+    },
+    {
+      "level": "warning",
+      "message": "1 pipeline roles still require review because an input region, external dependency, passive role, or role evidence is unresolved."
+    }
+  ]
+}

@@ -1,0 +1,4390 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-01T07:18:58.922530Z",
+  "source_artifacts": {
+    "manifest": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-revenue-manifest.json",
+    "capture_quality_files": [
+      "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-capture-quality.json",
+      "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-recapture-candidate-quality.json"
+    ]
+  },
+  "source": {
+    "path": "/Users/kangmin/cowork/day1_revenue_ontology/input/reference/mbp_2026년 02월_결제 및 수익인식F_260309.xlsx",
+    "file_name": "mbp_2026년 02월_결제 및 수익인식F_260309.xlsx",
+    "size_bytes": 105867506,
+    "sha256": "3392b1854fec1c8e634ceff36bd3d40e17f4dfc47bd47989ff08ebd7ae36f8f3"
+  },
+  "limits": {
+    "max_sheet_xml_bytes": 100000000
+  },
+  "method": {
+    "name": "deterministic_workbook_view_state_profile",
+    "authority": "workbook_xml_view_state_evidence_not_semantic_truth",
+    "decision_boundary": "Preserve the original visible state; treat hidden/revealed variants as diagnostic projections, not replacements for the source workbook view."
+  },
+  "sheets": [
+    {
+      "name": "매출",
+      "entry": "xl/worksheets/sheet1.xml",
+      "sheet_state": "visible",
+      "dimension": "A1:P4161",
+      "dimension_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 4161,
+        "max_column": 16
+      },
+      "detail_status": "scanned",
+      "entry_size_bytes": 272086,
+      "sheet_pr": {},
+      "outline_pr": {},
+      "sheet_format_pr": {
+        "defaultRowHeight": "16.5"
+      },
+      "sheet_views": [
+        {
+          "workbookViewId": "0"
+        }
+      ],
+      "panes": [],
+      "selections": [
+        {
+          "activeCell": "A90",
+          "sqref": "A90:A95"
+        }
+      ],
+      "auto_filters": [],
+      "sort_states": [],
+      "hidden_row_spans": [],
+      "zero_height_row_spans": [],
+      "outline_row_spans": [],
+      "collapsed_row_spans": [],
+      "hidden_column_spans": [],
+      "zero_width_column_spans": [],
+      "outline_column_spans": [],
+      "collapsed_column_spans": [],
+      "summary": {
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "hidden_column_count": 0,
+        "outline_column_count": 0,
+        "auto_filter_count": 0,
+        "frozen_pane_count": 0
+      },
+      "parser_observations": []
+    },
+    {
+      "name": "결제&수수료",
+      "entry": "xl/worksheets/sheet2.xml",
+      "sheet_state": "visible",
+      "dimension": "A1:R231",
+      "dimension_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 231,
+        "max_column": 18
+      },
+      "detail_status": "scanned",
+      "entry_size_bytes": 25638,
+      "sheet_pr": {},
+      "outline_pr": {},
+      "sheet_format_pr": {
+        "defaultRowHeight": "16.5"
+      },
+      "sheet_views": [
+        {
+          "workbookViewId": "0"
+        }
+      ],
+      "panes": [],
+      "selections": [
+        {
+          "activeCell": "B5",
+          "sqref": "B5:B9"
+        }
+      ],
+      "auto_filters": [],
+      "sort_states": [],
+      "hidden_row_spans": [],
+      "zero_height_row_spans": [],
+      "outline_row_spans": [],
+      "collapsed_row_spans": [],
+      "hidden_column_spans": [],
+      "zero_width_column_spans": [],
+      "outline_column_spans": [],
+      "collapsed_column_spans": [],
+      "summary": {
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "hidden_column_count": 0,
+        "outline_column_count": 0,
+        "auto_filter_count": 0,
+        "frozen_pane_count": 0
+      },
+      "parser_observations": []
+    },
+    {
+      "name": "결제상세",
+      "entry": "xl/worksheets/sheet3.xml",
+      "sheet_state": "visible",
+      "dimension": "A1:AX4879",
+      "dimension_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 4879,
+        "max_column": 50
+      },
+      "detail_status": "scanned",
+      "entry_size_bytes": 8746405,
+      "sheet_pr": {},
+      "outline_pr": {},
+      "sheet_format_pr": {
+        "defaultRowHeight": "16.5",
+        "outlineLevelCol": "1"
+      },
+      "sheet_views": [
+        {
+          "topLeftCell": "AD1",
+          "workbookViewId": "0"
+        }
+      ],
+      "panes": [
+        {
+          "ySplit": "2",
+          "topLeftCell": "A4857",
+          "activePane": "bottomLeft",
+          "state": "frozen"
+        }
+      ],
+      "selections": [
+        {
+          "pane": "bottomLeft",
+          "activeCell": "A2",
+          "sqref": "A2:XFD2"
+        }
+      ],
+      "auto_filters": [
+        {
+          "ref": "A2:AX2",
+          "{http://schemas.microsoft.com/office/spreadsheetml/2014/revision}uid": "{00000000-0001-0000-0200-000000000000}",
+          "bounds": {
+            "min_row": 2,
+            "min_column": 1,
+            "max_row": 2,
+            "max_column": 50
+          }
+        }
+      ],
+      "sort_states": [],
+      "hidden_row_spans": [],
+      "zero_height_row_spans": [],
+      "outline_row_spans": [],
+      "collapsed_row_spans": [],
+      "hidden_column_spans": [],
+      "zero_width_column_spans": [],
+      "outline_column_spans": [
+        {
+          "start_column": 15,
+          "end_column": 22,
+          "start_column_letter": "O",
+          "end_column_letter": "V",
+          "column_count": 8,
+          "hidden": false,
+          "zero_width": false,
+          "collapsed": false,
+          "outline_level": 1,
+          "width": 9.0
+        },
+        {
+          "start_column": 27,
+          "end_column": 28,
+          "start_column_letter": "AA",
+          "end_column_letter": "AB",
+          "column_count": 2,
+          "hidden": false,
+          "zero_width": false,
+          "collapsed": false,
+          "outline_level": 1,
+          "width": 12.875
+        },
+        {
+          "start_column": 29,
+          "end_column": 29,
+          "start_column_letter": "AC",
+          "end_column_letter": "AC",
+          "column_count": 1,
+          "hidden": false,
+          "zero_width": false,
+          "collapsed": false,
+          "outline_level": 1,
+          "width": 11.5
+        },
+        {
+          "start_column": 30,
+          "end_column": 30,
+          "start_column_letter": "AD",
+          "end_column_letter": "AD",
+          "column_count": 1,
+          "hidden": false,
+          "zero_width": false,
+          "collapsed": false,
+          "outline_level": 1,
+          "width": 13.25
+        },
+        {
+          "start_column": 31,
+          "end_column": 31,
+          "start_column_letter": "AE",
+          "end_column_letter": "AE",
+          "column_count": 1,
+          "hidden": false,
+          "zero_width": false,
+          "collapsed": false,
+          "outline_level": 1,
+          "width": 17.875
+        },
+        {
+          "start_column": 32,
+          "end_column": 32,
+          "start_column_letter": "AF",
+          "end_column_letter": "AF",
+          "column_count": 1,
+          "hidden": false,
+          "zero_width": false,
+          "collapsed": false,
+          "outline_level": 1,
+          "width": 13.25
+        },
+        {
+          "start_column": 33,
+          "end_column": 33,
+          "start_column_letter": "AG",
+          "end_column_letter": "AG",
+          "column_count": 1,
+          "hidden": false,
+          "zero_width": false,
+          "collapsed": false,
+          "outline_level": 1,
+          "width": 15.0
+        },
+        {
+          "start_column": 34,
+          "end_column": 34,
+          "start_column_letter": "AH",
+          "end_column_letter": "AH",
+          "column_count": 1,
+          "hidden": false,
+          "zero_width": false,
+          "collapsed": false,
+          "outline_level": 1,
+          "width": 11.625
+        },
+        {
+          "start_column": 35,
+          "end_column": 35,
+          "start_column_letter": "AI",
+          "end_column_letter": "AI",
+          "column_count": 1,
+          "hidden": false,
+          "zero_width": false,
+          "collapsed": false,
+          "outline_level": 1,
+          "width": 9.0
+        },
+        {
+          "start_column": 36,
+          "end_column": 37,
+          "start_column_letter": "AJ",
+          "end_column_letter": "AK",
+          "column_count": 2,
+          "hidden": false,
+          "zero_width": false,
+          "collapsed": false,
+          "outline_level": 1,
+          "width": 12.125
+        },
+        {
+          "start_column": 38,
+          "end_column": 38,
+          "start_column_letter": "AL",
+          "end_column_letter": "AL",
+          "column_count": 1,
+          "hidden": false,
+          "zero_width": false,
+          "collapsed": false,
+          "outline_level": 1,
+          "width": 11.375
+        },
+        {
+          "start_column": 39,
+          "end_column": 41,
+          "start_column_letter": "AM",
+          "end_column_letter": "AO",
+          "column_count": 3,
+          "hidden": false,
+          "zero_width": false,
+          "collapsed": false,
+          "outline_level": 1,
+          "width": 9.0
+        },
+        {
+          "start_column": 42,
+          "end_column": 42,
+          "start_column_letter": "AP",
+          "end_column_letter": "AP",
+          "column_count": 1,
+          "hidden": false,
+          "zero_width": false,
+          "collapsed": false,
+          "outline_level": 1,
+          "width": 9.0
+        },
+        {
+          "start_column": 43,
+          "end_column": 43,
+          "start_column_letter": "AQ",
+          "end_column_letter": "AQ",
+          "column_count": 1,
+          "hidden": false,
+          "zero_width": false,
+          "collapsed": false,
+          "outline_level": 1,
+          "width": 13.25
+        },
+        {
+          "start_column": 44,
+          "end_column": 45,
+          "start_column_letter": "AR",
+          "end_column_letter": "AS",
+          "column_count": 2,
+          "hidden": false,
+          "zero_width": false,
+          "collapsed": false,
+          "outline_level": 1,
+          "width": 9.0
+        }
+      ],
+      "collapsed_column_spans": [],
+      "summary": {
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "hidden_column_count": 0,
+        "outline_column_count": 27,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1
+      },
+      "parser_observations": []
+    },
+    {
+      "name": "수익인식60일",
+      "entry": "xl/worksheets/sheet4.xml",
+      "sheet_state": "visible",
+      "dimension": "A1:AI1846",
+      "dimension_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 1846,
+        "max_column": 35
+      },
+      "detail_status": "scanned",
+      "entry_size_bytes": 3825119,
+      "sheet_pr": {
+        "filterMode": "1"
+      },
+      "outline_pr": {},
+      "sheet_format_pr": {
+        "defaultRowHeight": "16.5"
+      },
+      "sheet_views": [
+        {
+          "workbookViewId": "0"
+        }
+      ],
+      "panes": [
+        {
+          "ySplit": "4",
+          "topLeftCell": "A1835",
+          "activePane": "bottomLeft",
+          "state": "frozen"
+        }
+      ],
+      "selections": [
+        {
+          "pane": "bottomLeft",
+          "activeCell": "F1861",
+          "sqref": "F1861"
+        }
+      ],
+      "auto_filters": [
+        {
+          "ref": "A4:AI1846",
+          "{http://schemas.microsoft.com/office/spreadsheetml/2014/revision}uid": "{00000000-0009-0000-0000-000003000000}",
+          "bounds": {
+            "min_row": 4,
+            "min_column": 1,
+            "max_row": 1846,
+            "max_column": 35
+          }
+        }
+      ],
+      "sort_states": [],
+      "hidden_row_spans": [
+        {
+          "start_row": 5,
+          "end_row": 5,
+          "row_count": 1,
+          "hidden_count": 1,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 71,
+          "end_row": 71,
+          "row_count": 1,
+          "hidden_count": 1,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 202,
+          "end_row": 202,
+          "row_count": 1,
+          "hidden_count": 1,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 288,
+          "end_row": 293,
+          "row_count": 6,
+          "hidden_count": 6,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 399,
+          "end_row": 399,
+          "row_count": 1,
+          "hidden_count": 1,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 451,
+          "end_row": 451,
+          "row_count": 1,
+          "hidden_count": 1,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 571,
+          "end_row": 571,
+          "row_count": 1,
+          "hidden_count": 1,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 613,
+          "end_row": 613,
+          "row_count": 1,
+          "hidden_count": 1,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 693,
+          "end_row": 693,
+          "row_count": 1,
+          "hidden_count": 1,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 722,
+          "end_row": 723,
+          "row_count": 2,
+          "hidden_count": 2,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 762,
+          "end_row": 765,
+          "row_count": 4,
+          "hidden_count": 4,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 809,
+          "end_row": 809,
+          "row_count": 1,
+          "hidden_count": 1,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 834,
+          "end_row": 836,
+          "row_count": 3,
+          "hidden_count": 3,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 888,
+          "end_row": 888,
+          "row_count": 1,
+          "hidden_count": 1,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 923,
+          "end_row": 924,
+          "row_count": 2,
+          "hidden_count": 2,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 966,
+          "end_row": 967,
+          "row_count": 2,
+          "hidden_count": 2,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 998,
+          "end_row": 998,
+          "row_count": 1,
+          "hidden_count": 1,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 1047,
+          "end_row": 1047,
+          "row_count": 1,
+          "hidden_count": 1,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 1090,
+          "end_row": 1090,
+          "row_count": 1,
+          "hidden_count": 1,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 1130,
+          "end_row": 1131,
+          "row_count": 2,
+          "hidden_count": 2,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 1188,
+          "end_row": 1189,
+          "row_count": 2,
+          "hidden_count": 2,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 1262,
+          "end_row": 1262,
+          "row_count": 1,
+          "hidden_count": 1,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        }
+      ],
+      "zero_height_row_spans": [],
+      "outline_row_spans": [],
+      "collapsed_row_spans": [],
+      "hidden_column_spans": [],
+      "zero_width_column_spans": [],
+      "outline_column_spans": [],
+      "collapsed_column_spans": [],
+      "summary": {
+        "hidden_row_count": 37,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "hidden_column_count": 0,
+        "outline_column_count": 0,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1
+      },
+      "parser_observations": [
+        {
+          "level": "info",
+          "message": "Sheet has filterMode=1 and autoFilter metadata; hidden rows may represent current filtered view state."
+        },
+        {
+          "level": "info",
+          "message": "Sheet contains hidden row spans that affect visible Excel render captures."
+        }
+      ]
+    },
+    {
+      "name": "수익인식60일_강사료",
+      "entry": "xl/worksheets/sheet5.xml",
+      "sheet_state": "visible",
+      "dimension": "A1:AH35",
+      "dimension_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 35,
+        "max_column": 34
+      },
+      "detail_status": "scanned",
+      "entry_size_bytes": 56324,
+      "sheet_pr": {},
+      "outline_pr": {},
+      "sheet_format_pr": {
+        "defaultRowHeight": "16.5"
+      },
+      "sheet_views": [
+        {
+          "topLeftCell": "R1",
+          "workbookViewId": "0"
+        }
+      ],
+      "panes": [
+        {
+          "ySplit": "4",
+          "topLeftCell": "A5",
+          "activePane": "bottomLeft",
+          "state": "frozen"
+        }
+      ],
+      "selections": [
+        {
+          "pane": "bottomLeft",
+          "activeCell": "AC26",
+          "sqref": "AC26"
+        }
+      ],
+      "auto_filters": [
+        {
+          "ref": "A4:X4",
+          "{http://schemas.microsoft.com/office/spreadsheetml/2014/revision}uid": "{CA079181-1F21-4961-9F66-0578FF9565E5}",
+          "bounds": {
+            "min_row": 4,
+            "min_column": 1,
+            "max_row": 4,
+            "max_column": 24
+          }
+        }
+      ],
+      "sort_states": [],
+      "hidden_row_spans": [],
+      "zero_height_row_spans": [],
+      "outline_row_spans": [],
+      "collapsed_row_spans": [],
+      "hidden_column_spans": [],
+      "zero_width_column_spans": [],
+      "outline_column_spans": [],
+      "collapsed_column_spans": [],
+      "summary": {
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "hidden_column_count": 0,
+        "outline_column_count": 0,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1
+      },
+      "parser_observations": []
+    },
+    {
+      "name": "당월산식",
+      "entry": "xl/worksheets/sheet6.xml",
+      "sheet_state": "visible",
+      "dimension": "A1:AZ4620",
+      "dimension_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 4620,
+        "max_column": 52
+      },
+      "detail_status": "scanned",
+      "entry_size_bytes": 32093233,
+      "sheet_pr": {
+        "filterMode": "1"
+      },
+      "outline_pr": {},
+      "sheet_format_pr": {
+        "defaultRowHeight": "16.5"
+      },
+      "sheet_views": [
+        {
+          "tabSelected": "1",
+          "workbookViewId": "0"
+        }
+      ],
+      "panes": [
+        {
+          "ySplit": "4",
+          "topLeftCell": "A2992",
+          "activePane": "bottomLeft",
+          "state": "frozen"
+        }
+      ],
+      "selections": [
+        {
+          "activeCell": "A3",
+          "sqref": "A3:X2169"
+        },
+        {
+          "pane": "bottomLeft",
+          "activeCell": "AJ2992",
+          "sqref": "AJ2992:AJ4556"
+        }
+      ],
+      "auto_filters": [
+        {
+          "ref": "A4:AZ4620",
+          "{http://schemas.microsoft.com/office/spreadsheetml/2014/revision}uid": "{00000000-0009-0000-0000-000004000000}",
+          "bounds": {
+            "min_row": 4,
+            "min_column": 1,
+            "max_row": 4620,
+            "max_column": 52
+          }
+        }
+      ],
+      "sort_states": [],
+      "hidden_row_spans": [
+        {
+          "start_row": 5,
+          "end_row": 2991,
+          "row_count": 2987,
+          "hidden_count": 2987,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 3011,
+          "end_row": 4552,
+          "row_count": 1542,
+          "hidden_count": 1542,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 4557,
+          "end_row": 4571,
+          "row_count": 15,
+          "hidden_count": 15,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": null,
+          "max_height": null
+        },
+        {
+          "start_row": 4573,
+          "end_row": 4620,
+          "row_count": 48,
+          "hidden_count": 48,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        }
+      ],
+      "zero_height_row_spans": [],
+      "outline_row_spans": [],
+      "collapsed_row_spans": [],
+      "hidden_column_spans": [
+        {
+          "start_column": 16,
+          "end_column": 33,
+          "start_column_letter": "P",
+          "end_column_letter": "AG",
+          "column_count": 18,
+          "hidden": true,
+          "zero_width": false,
+          "collapsed": false,
+          "outline_level": 0,
+          "width": 10.75
+        }
+      ],
+      "zero_width_column_spans": [],
+      "outline_column_spans": [],
+      "collapsed_column_spans": [],
+      "summary": {
+        "hidden_row_count": 4592,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "hidden_column_count": 18,
+        "outline_column_count": 0,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1
+      },
+      "parser_observations": [
+        {
+          "level": "info",
+          "message": "Sheet has filterMode=1 and autoFilter metadata; hidden rows may represent current filtered view state."
+        },
+        {
+          "level": "info",
+          "message": "Sheet contains hidden row spans that affect visible Excel render captures."
+        },
+        {
+          "level": "info",
+          "message": "Sheet contains hidden column spans that affect visible Excel render captures."
+        }
+      ]
+    },
+    {
+      "name": "유하다요_강사료",
+      "entry": "xl/worksheets/sheet7.xml",
+      "sheet_state": "visible",
+      "dimension": "A1:AH452",
+      "dimension_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 452,
+        "max_column": 34
+      },
+      "detail_status": "scanned",
+      "entry_size_bytes": 628151,
+      "sheet_pr": {},
+      "outline_pr": {},
+      "sheet_format_pr": {
+        "defaultRowHeight": "16.5"
+      },
+      "sheet_views": [
+        {
+          "topLeftCell": "H1",
+          "workbookViewId": "0"
+        }
+      ],
+      "panes": [],
+      "selections": [
+        {
+          "activeCell": "R5",
+          "sqref": "R5:AE5"
+        }
+      ],
+      "auto_filters": [],
+      "sort_states": [],
+      "hidden_row_spans": [],
+      "zero_height_row_spans": [],
+      "outline_row_spans": [],
+      "collapsed_row_spans": [],
+      "hidden_column_spans": [],
+      "zero_width_column_spans": [],
+      "outline_column_spans": [],
+      "collapsed_column_spans": [],
+      "summary": {
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "hidden_column_count": 0,
+        "outline_column_count": 0,
+        "auto_filter_count": 0,
+        "frozen_pane_count": 0
+      },
+      "parser_observations": []
+    },
+    {
+      "name": "유하다요",
+      "entry": "xl/worksheets/sheet9.xml",
+      "sheet_state": "visible",
+      "dimension": "A1:R479",
+      "dimension_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 479,
+        "max_column": 18
+      },
+      "detail_status": "scanned",
+      "entry_size_bytes": 420135,
+      "sheet_pr": {},
+      "outline_pr": {},
+      "sheet_format_pr": {
+        "defaultColWidth": "12.625",
+        "defaultRowHeight": "15",
+        "customHeight": "1"
+      },
+      "sheet_views": [
+        {
+          "workbookViewId": "0"
+        }
+      ],
+      "panes": [
+        {
+          "ySplit": "1",
+          "topLeftCell": "A446",
+          "activePane": "bottomLeft",
+          "state": "frozen"
+        }
+      ],
+      "selections": [
+        {
+          "activeCell": "D1",
+          "sqref": "D1"
+        },
+        {
+          "pane": "bottomLeft",
+          "activeCell": "K8",
+          "sqref": "K8"
+        }
+      ],
+      "auto_filters": [
+        {
+          "ref": "A1:R1",
+          "{http://schemas.microsoft.com/office/spreadsheetml/2014/revision}uid": "{00000000-0009-0000-0000-000007000000}",
+          "bounds": {
+            "min_row": 1,
+            "min_column": 1,
+            "max_row": 1,
+            "max_column": 18
+          }
+        }
+      ],
+      "sort_states": [],
+      "hidden_row_spans": [],
+      "zero_height_row_spans": [],
+      "outline_row_spans": [],
+      "collapsed_row_spans": [],
+      "hidden_column_spans": [],
+      "zero_width_column_spans": [],
+      "outline_column_spans": [],
+      "collapsed_column_spans": [],
+      "summary": {
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "hidden_column_count": 0,
+        "outline_column_count": 0,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1
+      },
+      "parser_observations": []
+    },
+    {
+      "name": "리스픽",
+      "entry": "xl/worksheets/sheet10.xml",
+      "sheet_state": "visible",
+      "dimension": "A1:M13",
+      "dimension_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 13,
+        "max_column": 13
+      },
+      "detail_status": "scanned",
+      "entry_size_bytes": 6613,
+      "sheet_pr": {},
+      "outline_pr": {},
+      "sheet_format_pr": {
+        "defaultRowHeight": "16.5"
+      },
+      "sheet_views": [
+        {
+          "workbookViewId": "0"
+        }
+      ],
+      "panes": [],
+      "selections": [
+        {
+          "activeCell": "J10",
+          "sqref": "J10"
+        }
+      ],
+      "auto_filters": [],
+      "sort_states": [],
+      "hidden_row_spans": [],
+      "zero_height_row_spans": [],
+      "outline_row_spans": [],
+      "collapsed_row_spans": [],
+      "hidden_column_spans": [],
+      "zero_width_column_spans": [],
+      "outline_column_spans": [],
+      "collapsed_column_spans": [],
+      "summary": {
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "hidden_column_count": 0,
+        "outline_column_count": 0,
+        "auto_filter_count": 0,
+        "frozen_pane_count": 0
+      },
+      "parser_observations": []
+    },
+    {
+      "name": "포도",
+      "entry": "xl/worksheets/sheet11.xml",
+      "sheet_state": "visible",
+      "dimension": "A1:U2146",
+      "dimension_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 2146,
+        "max_column": 21
+      },
+      "detail_status": "scanned",
+      "entry_size_bytes": 1438657,
+      "sheet_pr": {
+        "filterMode": "1"
+      },
+      "outline_pr": {},
+      "sheet_format_pr": {
+        "defaultRowHeight": "16.5"
+      },
+      "sheet_views": [
+        {
+          "workbookViewId": "0"
+        }
+      ],
+      "panes": [
+        {
+          "ySplit": "1",
+          "topLeftCell": "A2122",
+          "activePane": "bottomLeft",
+          "state": "frozen"
+        }
+      ],
+      "selections": [
+        {
+          "pane": "bottomLeft",
+          "activeCell": "C2158",
+          "sqref": "C2158"
+        }
+      ],
+      "auto_filters": [
+        {
+          "ref": "A1:U1902",
+          "{http://schemas.microsoft.com/office/spreadsheetml/2014/revision}uid": "{00000000-0009-0000-0000-000009000000}",
+          "bounds": {
+            "min_row": 1,
+            "min_column": 1,
+            "max_row": 1902,
+            "max_column": 21
+          }
+        }
+      ],
+      "sort_states": [],
+      "hidden_row_spans": [
+        {
+          "start_row": 2,
+          "end_row": 49,
+          "row_count": 48,
+          "hidden_count": 48,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 51,
+          "end_row": 56,
+          "row_count": 6,
+          "hidden_count": 6,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 58,
+          "end_row": 59,
+          "row_count": 2,
+          "hidden_count": 2,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 61,
+          "end_row": 62,
+          "row_count": 2,
+          "hidden_count": 2,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 64,
+          "end_row": 125,
+          "row_count": 62,
+          "hidden_count": 62,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 127,
+          "end_row": 263,
+          "row_count": 137,
+          "hidden_count": 137,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 265,
+          "end_row": 405,
+          "row_count": 141,
+          "hidden_count": 141,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 407,
+          "end_row": 499,
+          "row_count": 93,
+          "hidden_count": 93,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 501,
+          "end_row": 518,
+          "row_count": 18,
+          "hidden_count": 18,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 520,
+          "end_row": 538,
+          "row_count": 19,
+          "hidden_count": 19,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 540,
+          "end_row": 608,
+          "row_count": 69,
+          "hidden_count": 69,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 610,
+          "end_row": 805,
+          "row_count": 196,
+          "hidden_count": 196,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 807,
+          "end_row": 965,
+          "row_count": 159,
+          "hidden_count": 159,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 967,
+          "end_row": 984,
+          "row_count": 18,
+          "hidden_count": 18,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 986,
+          "end_row": 1525,
+          "row_count": 540,
+          "hidden_count": 540,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 1527,
+          "end_row": 1547,
+          "row_count": 21,
+          "hidden_count": 21,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 1549,
+          "end_row": 1589,
+          "row_count": 41,
+          "hidden_count": 41,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 1591,
+          "end_row": 1593,
+          "row_count": 3,
+          "hidden_count": 3,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 1595,
+          "end_row": 1609,
+          "row_count": 15,
+          "hidden_count": 15,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 1611,
+          "end_row": 1677,
+          "row_count": 67,
+          "hidden_count": 67,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 1679,
+          "end_row": 1680,
+          "row_count": 2,
+          "hidden_count": 2,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 1682,
+          "end_row": 1686,
+          "row_count": 5,
+          "hidden_count": 5,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 1689,
+          "end_row": 1710,
+          "row_count": 22,
+          "hidden_count": 22,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        },
+        {
+          "start_row": 1712,
+          "end_row": 1902,
+          "row_count": 191,
+          "hidden_count": 191,
+          "zero_height_count": 0,
+          "collapsed_count": 0,
+          "max_outline_level": 0,
+          "min_height": 17.25,
+          "max_height": 17.25
+        }
+      ],
+      "zero_height_row_spans": [],
+      "outline_row_spans": [],
+      "collapsed_row_spans": [],
+      "hidden_column_spans": [],
+      "zero_width_column_spans": [],
+      "outline_column_spans": [],
+      "collapsed_column_spans": [],
+      "summary": {
+        "hidden_row_count": 1877,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "hidden_column_count": 0,
+        "outline_column_count": 0,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1
+      },
+      "parser_observations": [
+        {
+          "level": "info",
+          "message": "Sheet has filterMode=1 and autoFilter metadata; hidden rows may represent current filtered view state."
+        },
+        {
+          "level": "info",
+          "message": "Sheet contains hidden row spans that affect visible Excel render captures."
+        }
+      ]
+    },
+    {
+      "name": "얼리버드",
+      "entry": "xl/worksheets/sheet12.xml",
+      "sheet_state": "visible",
+      "dimension": "A1:D243",
+      "dimension_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 243,
+        "max_column": 4
+      },
+      "detail_status": "scanned",
+      "entry_size_bytes": 43763,
+      "sheet_pr": {},
+      "outline_pr": {},
+      "sheet_format_pr": {
+        "defaultRowHeight": "16.5"
+      },
+      "sheet_views": [
+        {
+          "workbookViewId": "0"
+        }
+      ],
+      "panes": [
+        {
+          "ySplit": "1",
+          "topLeftCell": "A2",
+          "activePane": "bottomLeft",
+          "state": "frozen"
+        }
+      ],
+      "selections": [
+        {
+          "pane": "bottomLeft",
+          "activeCell": "C2",
+          "sqref": "C2"
+        }
+      ],
+      "auto_filters": [
+        {
+          "ref": "A1:D1",
+          "{http://schemas.microsoft.com/office/spreadsheetml/2014/revision}uid": "{00000000-0009-0000-0000-00000A000000}",
+          "bounds": {
+            "min_row": 1,
+            "min_column": 1,
+            "max_row": 1,
+            "max_column": 4
+          }
+        }
+      ],
+      "sort_states": [],
+      "hidden_row_spans": [],
+      "zero_height_row_spans": [],
+      "outline_row_spans": [],
+      "collapsed_row_spans": [],
+      "hidden_column_spans": [],
+      "zero_width_column_spans": [],
+      "outline_column_spans": [],
+      "collapsed_column_spans": [],
+      "summary": {
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "hidden_column_count": 0,
+        "outline_column_count": 0,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1
+      },
+      "parser_observations": []
+    },
+    {
+      "name": "정가표",
+      "entry": "xl/worksheets/sheet14.xml",
+      "sheet_state": "visible",
+      "dimension": "A1:BA11950",
+      "dimension_bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 11950,
+        "max_column": 53
+      },
+      "detail_status": "scanned",
+      "entry_size_bytes": 5090931,
+      "sheet_pr": {},
+      "outline_pr": {},
+      "sheet_format_pr": {
+        "defaultRowHeight": "16.5"
+      },
+      "sheet_views": [
+        {
+          "topLeftCell": "AB1",
+          "workbookViewId": "0"
+        }
+      ],
+      "panes": [
+        {
+          "ySplit": "1",
+          "topLeftCell": "A2",
+          "activePane": "bottomLeft",
+          "state": "frozen"
+        }
+      ],
+      "selections": [
+        {
+          "pane": "bottomLeft",
+          "activeCell": "AT1",
+          "sqref": "AT1"
+        }
+      ],
+      "auto_filters": [
+        {
+          "ref": "A1:BA2030",
+          "{http://schemas.microsoft.com/office/spreadsheetml/2014/revision}uid": "{00000000-0009-0000-0000-00000C000000}",
+          "bounds": {
+            "min_row": 1,
+            "min_column": 1,
+            "max_row": 2030,
+            "max_column": 53
+          }
+        }
+      ],
+      "sort_states": [],
+      "hidden_row_spans": [],
+      "zero_height_row_spans": [],
+      "outline_row_spans": [],
+      "collapsed_row_spans": [],
+      "hidden_column_spans": [],
+      "zero_width_column_spans": [],
+      "outline_column_spans": [],
+      "collapsed_column_spans": [],
+      "summary": {
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "hidden_column_count": 0,
+        "outline_column_count": 0,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1
+      },
+      "parser_observations": []
+    }
+  ],
+  "capture_window_analyses": [
+    {
+      "id": "view_state_quality_capture_target_결제_수수료_cell_region_1",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "quality_result_id": "quality_capture_target_결제_수수료_cell_region_1",
+      "capture_id": "capture_target_결제_수수료_cell_region_1",
+      "target_id": "target_결제_수수료_cell_region_1",
+      "quality_status": "usable",
+      "sheet": "결제&수수료",
+      "range": "A1:D13",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 13,
+        "max_column": 4
+      },
+      "row_state_summary": {
+        "row_count": 13,
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 13,
+        "hidden_row_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 4,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 4,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [],
+      "sheet_view_signals": {
+        "filter_mode": false,
+        "auto_filter_count": 0,
+        "frozen_pane_count": 0,
+        "sheet_view_top_left_cells": []
+      },
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_결제_수수료_cell_region_1",
+        "capture_target_결제_수수료_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_target_결제상세_cell_region_1",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "quality_result_id": "quality_capture_target_결제상세_cell_region_1",
+      "capture_id": "capture_target_결제상세_cell_region_1",
+      "target_id": "target_결제상세_cell_region_1",
+      "quality_status": "review_required",
+      "sheet": "결제상세",
+      "range": "A1:AY22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 51
+      },
+      "row_state_summary": {
+        "row_count": 22,
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 22,
+        "hidden_row_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 51,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 27,
+        "collapsed_column_count": 0,
+        "visible_column_count": 51,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [
+          {
+            "start_column": 15,
+            "end_column": 22,
+            "start_column_letter": "O",
+            "end_column_letter": "V",
+            "column_count": 8,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 9.0
+          },
+          {
+            "start_column": 27,
+            "end_column": 28,
+            "start_column_letter": "AA",
+            "end_column_letter": "AB",
+            "column_count": 2,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 12.875
+          },
+          {
+            "start_column": 29,
+            "end_column": 29,
+            "start_column_letter": "AC",
+            "end_column_letter": "AC",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 11.5
+          },
+          {
+            "start_column": 30,
+            "end_column": 30,
+            "start_column_letter": "AD",
+            "end_column_letter": "AD",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 13.25
+          },
+          {
+            "start_column": 31,
+            "end_column": 31,
+            "start_column_letter": "AE",
+            "end_column_letter": "AE",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 17.875
+          },
+          {
+            "start_column": 32,
+            "end_column": 32,
+            "start_column_letter": "AF",
+            "end_column_letter": "AF",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 13.25
+          },
+          {
+            "start_column": 33,
+            "end_column": 33,
+            "start_column_letter": "AG",
+            "end_column_letter": "AG",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 15.0
+          },
+          {
+            "start_column": 34,
+            "end_column": 34,
+            "start_column_letter": "AH",
+            "end_column_letter": "AH",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 11.625
+          },
+          {
+            "start_column": 35,
+            "end_column": 35,
+            "start_column_letter": "AI",
+            "end_column_letter": "AI",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 9.0
+          },
+          {
+            "start_column": 36,
+            "end_column": 37,
+            "start_column_letter": "AJ",
+            "end_column_letter": "AK",
+            "column_count": 2,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 12.125
+          },
+          {
+            "start_column": 38,
+            "end_column": 38,
+            "start_column_letter": "AL",
+            "end_column_letter": "AL",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 11.375
+          },
+          {
+            "start_column": 39,
+            "end_column": 41,
+            "start_column_letter": "AM",
+            "end_column_letter": "AO",
+            "column_count": 3,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 9.0
+          },
+          {
+            "start_column": 42,
+            "end_column": 42,
+            "start_column_letter": "AP",
+            "end_column_letter": "AP",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 9.0
+          },
+          {
+            "start_column": 43,
+            "end_column": 43,
+            "start_column_letter": "AQ",
+            "end_column_letter": "AQ",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 13.25
+          },
+          {
+            "start_column": 44,
+            "end_column": 45,
+            "start_column_letter": "AR",
+            "end_column_letter": "AS",
+            "column_count": 2,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 9.0
+          }
+        ],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [
+        {
+          "ref": "A2:AX2",
+          "bounds": {
+            "min_row": 2,
+            "min_column": 1,
+            "max_row": 2,
+            "max_column": 50
+          },
+          "intersection": {
+            "min_row": 2,
+            "min_column": 1,
+            "max_row": 2,
+            "max_column": 50
+          }
+        }
+      ],
+      "sheet_view_signals": {
+        "filter_mode": false,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1,
+        "sheet_view_top_left_cells": [
+          "AD1",
+          "A4857"
+        ]
+      },
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_결제상세_cell_region_1",
+        "capture_target_결제상세_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_target_당월산식_cell_region_1",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "quality_result_id": "quality_capture_target_당월산식_cell_region_1",
+      "capture_id": "capture_target_당월산식_cell_region_1",
+      "target_id": "target_당월산식_cell_region_1",
+      "quality_status": "recapture_required",
+      "sheet": "당월산식",
+      "range": "A1:BA22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 53
+      },
+      "row_state_summary": {
+        "row_count": 22,
+        "hidden_row_count": 18,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 4,
+        "hidden_row_ratio": 0.818182,
+        "hidden_spans": [
+          {
+            "start_row": 5,
+            "end_row": 22,
+            "row_count": 18,
+            "hidden_count": 2987,
+            "zero_height_count": 0,
+            "collapsed_count": 0,
+            "max_outline_level": 0,
+            "min_height": null,
+            "max_height": null
+          }
+        ],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 53,
+        "hidden_column_count": 18,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 35,
+        "hidden_column_ratio": 0.339623,
+        "hidden_spans": [
+          {
+            "start_column": 16,
+            "end_column": 33,
+            "start_column_letter": "P",
+            "end_column_letter": "AG",
+            "column_count": 18,
+            "hidden": true,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 0,
+            "width": 10.75
+          }
+        ],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [
+        {
+          "ref": "A4:AZ4620",
+          "bounds": {
+            "min_row": 4,
+            "min_column": 1,
+            "max_row": 4620,
+            "max_column": 52
+          },
+          "intersection": {
+            "min_row": 4,
+            "min_column": 1,
+            "max_row": 22,
+            "max_column": 52
+          }
+        }
+      ],
+      "sheet_view_signals": {
+        "filter_mode": true,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1,
+        "sheet_view_top_left_cells": [
+          "A2992"
+        ]
+      },
+      "classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "add_non_authoritative_unhide_or_clear_filter_diagnostic_before_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_당월산식_cell_region_1",
+        "capture_target_당월산식_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_target_리스픽_cell_region_2",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "quality_result_id": "quality_capture_target_리스픽_cell_region_2",
+      "capture_id": "capture_target_리스픽_cell_region_2",
+      "target_id": "target_리스픽_cell_region_2",
+      "quality_status": "usable",
+      "sheet": "리스픽",
+      "range": "A2:N15",
+      "bounds": {
+        "min_row": 2,
+        "min_column": 1,
+        "max_row": 15,
+        "max_column": 14
+      },
+      "row_state_summary": {
+        "row_count": 14,
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 14,
+        "hidden_row_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 14,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 14,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [],
+      "sheet_view_signals": {
+        "filter_mode": false,
+        "auto_filter_count": 0,
+        "frozen_pane_count": 0,
+        "sheet_view_top_left_cells": []
+      },
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_리스픽_cell_region_2",
+        "capture_target_리스픽_cell_region_2",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_target_매출_cell_region_1",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "quality_result_id": "quality_capture_target_매출_cell_region_1",
+      "capture_id": "capture_target_매출_cell_region_1",
+      "target_id": "target_매출_cell_region_1",
+      "quality_status": "usable",
+      "sheet": "매출",
+      "range": "A1:M60",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 60,
+        "max_column": 13
+      },
+      "row_state_summary": {
+        "row_count": 60,
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 60,
+        "hidden_row_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 13,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 13,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [],
+      "sheet_view_signals": {
+        "filter_mode": false,
+        "auto_filter_count": 0,
+        "frozen_pane_count": 0,
+        "sheet_view_top_left_cells": []
+      },
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_매출_cell_region_1",
+        "capture_target_매출_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_target_수익인식60일_cell_region_1",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "quality_result_id": "quality_capture_target_수익인식60일_cell_region_1",
+      "capture_id": "capture_target_수익인식60일_cell_region_1",
+      "target_id": "target_수익인식60일_cell_region_1",
+      "quality_status": "usable",
+      "sheet": "수익인식60일",
+      "range": "A1:AC22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 29
+      },
+      "row_state_summary": {
+        "row_count": 22,
+        "hidden_row_count": 1,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 21,
+        "hidden_row_ratio": 0.045455,
+        "hidden_spans": [
+          {
+            "start_row": 5,
+            "end_row": 5,
+            "row_count": 1,
+            "hidden_count": 1,
+            "zero_height_count": 0,
+            "collapsed_count": 0,
+            "max_outline_level": 0,
+            "min_height": null,
+            "max_height": null
+          }
+        ],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 29,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 29,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [
+        {
+          "ref": "A4:AI1846",
+          "bounds": {
+            "min_row": 4,
+            "min_column": 1,
+            "max_row": 1846,
+            "max_column": 35
+          },
+          "intersection": {
+            "min_row": 4,
+            "min_column": 1,
+            "max_row": 22,
+            "max_column": 29
+          }
+        }
+      ],
+      "sheet_view_signals": {
+        "filter_mode": true,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1,
+        "sheet_view_top_left_cells": [
+          "A1835"
+        ]
+      },
+      "classification": "filtered_rows_affect_capture_window",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "record_visible_state_and_keep_hidden_rows_available_for_structural_extraction",
+      "evidence_refs": [
+        "quality_capture_target_수익인식60일_cell_region_1",
+        "capture_target_수익인식60일_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_target_수익인식60일_강사료_cell_region_1",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "quality_result_id": "quality_capture_target_수익인식60일_강사료_cell_region_1",
+      "capture_id": "capture_target_수익인식60일_강사료_cell_region_1",
+      "target_id": "target_수익인식60일_강사료_cell_region_1",
+      "quality_status": "usable",
+      "sheet": "수익인식60일_강사료",
+      "range": "A1:Y22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 25
+      },
+      "row_state_summary": {
+        "row_count": 22,
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 22,
+        "hidden_row_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 25,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 25,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [
+        {
+          "ref": "A4:X4",
+          "bounds": {
+            "min_row": 4,
+            "min_column": 1,
+            "max_row": 4,
+            "max_column": 24
+          },
+          "intersection": {
+            "min_row": 4,
+            "min_column": 1,
+            "max_row": 4,
+            "max_column": 24
+          }
+        }
+      ],
+      "sheet_view_signals": {
+        "filter_mode": false,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1,
+        "sheet_view_top_left_cells": [
+          "R1",
+          "A5"
+        ]
+      },
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_수익인식60일_강사료_cell_region_1",
+        "capture_target_수익인식60일_강사료_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_target_얼리버드_cell_region_1",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "quality_result_id": "quality_capture_target_얼리버드_cell_region_1",
+      "capture_id": "capture_target_얼리버드_cell_region_1",
+      "target_id": "target_얼리버드_cell_region_1",
+      "quality_status": "usable",
+      "sheet": "얼리버드",
+      "range": "A1:E22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 5
+      },
+      "row_state_summary": {
+        "row_count": 22,
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 22,
+        "hidden_row_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 5,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 5,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [
+        {
+          "ref": "A1:D1",
+          "bounds": {
+            "min_row": 1,
+            "min_column": 1,
+            "max_row": 1,
+            "max_column": 4
+          },
+          "intersection": {
+            "min_row": 1,
+            "min_column": 1,
+            "max_row": 1,
+            "max_column": 4
+          }
+        }
+      ],
+      "sheet_view_signals": {
+        "filter_mode": false,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1,
+        "sheet_view_top_left_cells": [
+          "A2"
+        ]
+      },
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_얼리버드_cell_region_1",
+        "capture_target_얼리버드_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_target_유하다요_cell_region_1",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "quality_result_id": "quality_capture_target_유하다요_cell_region_1",
+      "capture_id": "capture_target_유하다요_cell_region_1",
+      "target_id": "target_유하다요_cell_region_1",
+      "quality_status": "usable",
+      "sheet": "유하다요",
+      "range": "A1:S22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 19
+      },
+      "row_state_summary": {
+        "row_count": 22,
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 22,
+        "hidden_row_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 19,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 19,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [
+        {
+          "ref": "A1:R1",
+          "bounds": {
+            "min_row": 1,
+            "min_column": 1,
+            "max_row": 1,
+            "max_column": 18
+          },
+          "intersection": {
+            "min_row": 1,
+            "min_column": 1,
+            "max_row": 1,
+            "max_column": 18
+          }
+        }
+      ],
+      "sheet_view_signals": {
+        "filter_mode": false,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1,
+        "sheet_view_top_left_cells": [
+          "A446"
+        ]
+      },
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_유하다요_cell_region_1",
+        "capture_target_유하다요_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_target_유하다요_강사료_cell_region_1",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "quality_result_id": "quality_capture_target_유하다요_강사료_cell_region_1",
+      "capture_id": "capture_target_유하다요_강사료_cell_region_1",
+      "target_id": "target_유하다요_강사료_cell_region_1",
+      "quality_status": "review_required",
+      "sheet": "유하다요_강사료",
+      "range": "A1:AI22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 35
+      },
+      "row_state_summary": {
+        "row_count": 22,
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 22,
+        "hidden_row_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 35,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 35,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [],
+      "sheet_view_signals": {
+        "filter_mode": false,
+        "auto_filter_count": 0,
+        "frozen_pane_count": 0,
+        "sheet_view_top_left_cells": [
+          "H1"
+        ]
+      },
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_유하다요_강사료_cell_region_1",
+        "capture_target_유하다요_강사료_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_target_정가표_cell_region_1",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "quality_result_id": "quality_capture_target_정가표_cell_region_1",
+      "capture_id": "capture_target_정가표_cell_region_1",
+      "target_id": "target_정가표_cell_region_1",
+      "quality_status": "usable",
+      "sheet": "정가표",
+      "range": "A1:T22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 20
+      },
+      "row_state_summary": {
+        "row_count": 22,
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 22,
+        "hidden_row_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 20,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 20,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [
+        {
+          "ref": "A1:BA2030",
+          "bounds": {
+            "min_row": 1,
+            "min_column": 1,
+            "max_row": 2030,
+            "max_column": 53
+          },
+          "intersection": {
+            "min_row": 1,
+            "min_column": 1,
+            "max_row": 22,
+            "max_column": 20
+          }
+        }
+      ],
+      "sheet_view_signals": {
+        "filter_mode": false,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1,
+        "sheet_view_top_left_cells": [
+          "AB1",
+          "A2"
+        ]
+      },
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_정가표_cell_region_1",
+        "capture_target_정가표_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_target_포도_cell_region_1",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-capture-quality.json",
+      "quality_result_id": "quality_capture_target_포도_cell_region_1",
+      "capture_id": "capture_target_포도_cell_region_1",
+      "target_id": "target_포도_cell_region_1",
+      "quality_status": "recapture_required",
+      "sheet": "포도",
+      "range": "A1:R22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 18
+      },
+      "row_state_summary": {
+        "row_count": 22,
+        "hidden_row_count": 21,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 1,
+        "hidden_row_ratio": 0.954545,
+        "hidden_spans": [
+          {
+            "start_row": 2,
+            "end_row": 22,
+            "row_count": 21,
+            "hidden_count": 48,
+            "zero_height_count": 0,
+            "collapsed_count": 0,
+            "max_outline_level": 0,
+            "min_height": 17.25,
+            "max_height": 17.25
+          }
+        ],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 18,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 18,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [
+        {
+          "ref": "A1:U1902",
+          "bounds": {
+            "min_row": 1,
+            "min_column": 1,
+            "max_row": 1902,
+            "max_column": 21
+          },
+          "intersection": {
+            "min_row": 1,
+            "min_column": 1,
+            "max_row": 22,
+            "max_column": 18
+          }
+        }
+      ],
+      "sheet_view_signals": {
+        "filter_mode": true,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1,
+        "sheet_view_top_left_cells": [
+          "A2122"
+        ]
+      },
+      "classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "add_non_authoritative_unhide_or_clear_filter_diagnostic_before_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_포도_cell_region_1",
+        "capture_target_포도_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "quality_result_id": "quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "capture_id": "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "quality_status": "usable",
+      "sheet": "결제상세",
+      "range": "A1:R22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 18
+      },
+      "row_state_summary": {
+        "row_count": 22,
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 22,
+        "hidden_row_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 18,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 4,
+        "collapsed_column_count": 0,
+        "visible_column_count": 18,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [
+          {
+            "start_column": 15,
+            "end_column": 18,
+            "start_column_letter": "O",
+            "end_column_letter": "R",
+            "column_count": 4,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 9.0
+          }
+        ],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [
+        {
+          "ref": "A2:AX2",
+          "bounds": {
+            "min_row": 2,
+            "min_column": 1,
+            "max_row": 2,
+            "max_column": 50
+          },
+          "intersection": {
+            "min_row": 2,
+            "min_column": 1,
+            "max_row": 2,
+            "max_column": 18
+          }
+        }
+      ],
+      "sheet_view_signals": {
+        "filter_mode": false,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1,
+        "sheet_view_top_left_cells": [
+          "AD1",
+          "A4857"
+        ]
+      },
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "quality_result_id": "quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "capture_id": "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "quality_status": "usable",
+      "sheet": "결제상세",
+      "range": "S1:AJ22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 19,
+        "max_row": 22,
+        "max_column": 36
+      },
+      "row_state_summary": {
+        "row_count": 22,
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 22,
+        "hidden_row_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 18,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 14,
+        "collapsed_column_count": 0,
+        "visible_column_count": 18,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [
+          {
+            "start_column": 19,
+            "end_column": 22,
+            "start_column_letter": "S",
+            "end_column_letter": "V",
+            "column_count": 4,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 9.0
+          },
+          {
+            "start_column": 27,
+            "end_column": 28,
+            "start_column_letter": "AA",
+            "end_column_letter": "AB",
+            "column_count": 2,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 12.875
+          },
+          {
+            "start_column": 29,
+            "end_column": 29,
+            "start_column_letter": "AC",
+            "end_column_letter": "AC",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 11.5
+          },
+          {
+            "start_column": 30,
+            "end_column": 30,
+            "start_column_letter": "AD",
+            "end_column_letter": "AD",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 13.25
+          },
+          {
+            "start_column": 31,
+            "end_column": 31,
+            "start_column_letter": "AE",
+            "end_column_letter": "AE",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 17.875
+          },
+          {
+            "start_column": 32,
+            "end_column": 32,
+            "start_column_letter": "AF",
+            "end_column_letter": "AF",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 13.25
+          },
+          {
+            "start_column": 33,
+            "end_column": 33,
+            "start_column_letter": "AG",
+            "end_column_letter": "AG",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 15.0
+          },
+          {
+            "start_column": 34,
+            "end_column": 34,
+            "start_column_letter": "AH",
+            "end_column_letter": "AH",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 11.625
+          },
+          {
+            "start_column": 35,
+            "end_column": 35,
+            "start_column_letter": "AI",
+            "end_column_letter": "AI",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 9.0
+          },
+          {
+            "start_column": 36,
+            "end_column": 36,
+            "start_column_letter": "AJ",
+            "end_column_letter": "AJ",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 12.125
+          }
+        ],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [
+        {
+          "ref": "A2:AX2",
+          "bounds": {
+            "min_row": 2,
+            "min_column": 1,
+            "max_row": 2,
+            "max_column": 50
+          },
+          "intersection": {
+            "min_row": 2,
+            "min_column": 19,
+            "max_row": 2,
+            "max_column": 36
+          }
+        }
+      ],
+      "sheet_view_signals": {
+        "filter_mode": false,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1,
+        "sheet_view_top_left_cells": [
+          "AD1",
+          "A4857"
+        ]
+      },
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "quality_result_id": "quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "capture_id": "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "quality_status": "usable",
+      "sheet": "결제상세",
+      "range": "AK1:AY22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 37,
+        "max_row": 22,
+        "max_column": 51
+      },
+      "row_state_summary": {
+        "row_count": 22,
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 22,
+        "hidden_row_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 15,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 9,
+        "collapsed_column_count": 0,
+        "visible_column_count": 15,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [
+          {
+            "start_column": 37,
+            "end_column": 37,
+            "start_column_letter": "AK",
+            "end_column_letter": "AK",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 12.125
+          },
+          {
+            "start_column": 38,
+            "end_column": 38,
+            "start_column_letter": "AL",
+            "end_column_letter": "AL",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 11.375
+          },
+          {
+            "start_column": 39,
+            "end_column": 41,
+            "start_column_letter": "AM",
+            "end_column_letter": "AO",
+            "column_count": 3,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 9.0
+          },
+          {
+            "start_column": 42,
+            "end_column": 42,
+            "start_column_letter": "AP",
+            "end_column_letter": "AP",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 9.0
+          },
+          {
+            "start_column": 43,
+            "end_column": 43,
+            "start_column_letter": "AQ",
+            "end_column_letter": "AQ",
+            "column_count": 1,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 13.25
+          },
+          {
+            "start_column": 44,
+            "end_column": 45,
+            "start_column_letter": "AR",
+            "end_column_letter": "AS",
+            "column_count": 2,
+            "hidden": false,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 1,
+            "width": 9.0
+          }
+        ],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [
+        {
+          "ref": "A2:AX2",
+          "bounds": {
+            "min_row": 2,
+            "min_column": 1,
+            "max_row": 2,
+            "max_column": 50
+          },
+          "intersection": {
+            "min_row": 2,
+            "min_column": 37,
+            "max_row": 2,
+            "max_column": 50
+          }
+        }
+      ],
+      "sheet_view_signals": {
+        "filter_mode": false,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1,
+        "sheet_view_top_left_cells": [
+          "AD1",
+          "A4857"
+        ]
+      },
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "quality_result_id": "quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "quality_status": "recapture_required",
+      "sheet": "당월산식",
+      "range": "A1:BA22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 53
+      },
+      "row_state_summary": {
+        "row_count": 22,
+        "hidden_row_count": 18,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 4,
+        "hidden_row_ratio": 0.818182,
+        "hidden_spans": [
+          {
+            "start_row": 5,
+            "end_row": 22,
+            "row_count": 18,
+            "hidden_count": 2987,
+            "zero_height_count": 0,
+            "collapsed_count": 0,
+            "max_outline_level": 0,
+            "min_height": null,
+            "max_height": null
+          }
+        ],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 53,
+        "hidden_column_count": 18,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 35,
+        "hidden_column_ratio": 0.339623,
+        "hidden_spans": [
+          {
+            "start_column": 16,
+            "end_column": 33,
+            "start_column_letter": "P",
+            "end_column_letter": "AG",
+            "column_count": 18,
+            "hidden": true,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 0,
+            "width": 10.75
+          }
+        ],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [
+        {
+          "ref": "A4:AZ4620",
+          "bounds": {
+            "min_row": 4,
+            "min_column": 1,
+            "max_row": 4620,
+            "max_column": 52
+          },
+          "intersection": {
+            "min_row": 4,
+            "min_column": 1,
+            "max_row": 22,
+            "max_column": 52
+          }
+        }
+      ],
+      "sheet_view_signals": {
+        "filter_mode": true,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1,
+        "sheet_view_top_left_cells": [
+          "A2992"
+        ]
+      },
+      "classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "add_non_authoritative_unhide_or_clear_filter_diagnostic_before_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+        "capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "quality_result_id": "quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "quality_status": "recapture_required",
+      "sheet": "당월산식",
+      "range": "A21:R100",
+      "bounds": {
+        "min_row": 21,
+        "min_column": 1,
+        "max_row": 100,
+        "max_column": 18
+      },
+      "row_state_summary": {
+        "row_count": 80,
+        "hidden_row_count": 80,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 0,
+        "hidden_row_ratio": 1.0,
+        "hidden_spans": [
+          {
+            "start_row": 21,
+            "end_row": 100,
+            "row_count": 80,
+            "hidden_count": 2987,
+            "zero_height_count": 0,
+            "collapsed_count": 0,
+            "max_outline_level": 0,
+            "min_height": null,
+            "max_height": null
+          }
+        ],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 18,
+        "hidden_column_count": 3,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 15,
+        "hidden_column_ratio": 0.166667,
+        "hidden_spans": [
+          {
+            "start_column": 16,
+            "end_column": 18,
+            "start_column_letter": "P",
+            "end_column_letter": "R",
+            "column_count": 3,
+            "hidden": true,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 0,
+            "width": 10.75
+          }
+        ],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [
+        {
+          "ref": "A4:AZ4620",
+          "bounds": {
+            "min_row": 4,
+            "min_column": 1,
+            "max_row": 4620,
+            "max_column": 52
+          },
+          "intersection": {
+            "min_row": 21,
+            "min_column": 1,
+            "max_row": 100,
+            "max_column": 18
+          }
+        }
+      ],
+      "sheet_view_signals": {
+        "filter_mode": true,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1,
+        "sheet_view_top_left_cells": [
+          "A2992"
+        ]
+      },
+      "classification": "all_rows_hidden_or_zero_height",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "add_non_authoritative_unhide_or_clear_filter_diagnostic_before_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "quality_result_id": "quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "quality_status": "recapture_required",
+      "sheet": "당월산식",
+      "range": "S21:AJ100",
+      "bounds": {
+        "min_row": 21,
+        "min_column": 19,
+        "max_row": 100,
+        "max_column": 36
+      },
+      "row_state_summary": {
+        "row_count": 80,
+        "hidden_row_count": 80,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 0,
+        "hidden_row_ratio": 1.0,
+        "hidden_spans": [
+          {
+            "start_row": 21,
+            "end_row": 100,
+            "row_count": 80,
+            "hidden_count": 2987,
+            "zero_height_count": 0,
+            "collapsed_count": 0,
+            "max_outline_level": 0,
+            "min_height": null,
+            "max_height": null
+          }
+        ],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 18,
+        "hidden_column_count": 15,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 3,
+        "hidden_column_ratio": 0.833333,
+        "hidden_spans": [
+          {
+            "start_column": 19,
+            "end_column": 33,
+            "start_column_letter": "S",
+            "end_column_letter": "AG",
+            "column_count": 15,
+            "hidden": true,
+            "zero_width": false,
+            "collapsed": false,
+            "outline_level": 0,
+            "width": 10.75
+          }
+        ],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [
+        {
+          "ref": "A4:AZ4620",
+          "bounds": {
+            "min_row": 4,
+            "min_column": 1,
+            "max_row": 4620,
+            "max_column": 52
+          },
+          "intersection": {
+            "min_row": 21,
+            "min_column": 19,
+            "max_row": 100,
+            "max_column": 36
+          }
+        }
+      ],
+      "sheet_view_signals": {
+        "filter_mode": true,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1,
+        "sheet_view_top_left_cells": [
+          "A2992"
+        ]
+      },
+      "classification": "all_rows_hidden_or_zero_height",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "add_non_authoritative_unhide_or_clear_filter_diagnostic_before_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "quality_result_id": "quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "quality_status": "recapture_required",
+      "sheet": "당월산식",
+      "range": "AK21:BA100",
+      "bounds": {
+        "min_row": 21,
+        "min_column": 37,
+        "max_row": 100,
+        "max_column": 53
+      },
+      "row_state_summary": {
+        "row_count": 80,
+        "hidden_row_count": 80,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 0,
+        "hidden_row_ratio": 1.0,
+        "hidden_spans": [
+          {
+            "start_row": 21,
+            "end_row": 100,
+            "row_count": 80,
+            "hidden_count": 2987,
+            "zero_height_count": 0,
+            "collapsed_count": 0,
+            "max_outline_level": 0,
+            "min_height": null,
+            "max_height": null
+          }
+        ],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 17,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 17,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [
+        {
+          "ref": "A4:AZ4620",
+          "bounds": {
+            "min_row": 4,
+            "min_column": 1,
+            "max_row": 4620,
+            "max_column": 52
+          },
+          "intersection": {
+            "min_row": 21,
+            "min_column": 37,
+            "max_row": 100,
+            "max_column": 52
+          }
+        }
+      ],
+      "sheet_view_signals": {
+        "filter_mode": true,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1,
+        "sheet_view_top_left_cells": [
+          "A2992"
+        ]
+      },
+      "classification": "all_rows_hidden_or_zero_height",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "add_non_authoritative_unhide_or_clear_filter_diagnostic_before_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "quality_result_id": "quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "capture_id": "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "target_id": "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "quality_status": "usable",
+      "sheet": "유하다요_강사료",
+      "range": "A1:R22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 18
+      },
+      "row_state_summary": {
+        "row_count": 22,
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 22,
+        "hidden_row_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 18,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 18,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [],
+      "sheet_view_signals": {
+        "filter_mode": false,
+        "auto_filter_count": 0,
+        "frozen_pane_count": 0,
+        "sheet_view_top_left_cells": [
+          "H1"
+        ]
+      },
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+        "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "quality_result_id": "quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "capture_id": "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "target_id": "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "quality_status": "usable",
+      "sheet": "유하다요_강사료",
+      "range": "S1:AI22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 19,
+        "max_row": 22,
+        "max_column": 35
+      },
+      "row_state_summary": {
+        "row_count": 22,
+        "hidden_row_count": 0,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 22,
+        "hidden_row_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 17,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 17,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [],
+      "sheet_view_signals": {
+        "filter_mode": false,
+        "auto_filter_count": 0,
+        "frozen_pane_count": 0,
+        "sheet_view_top_left_cells": [
+          "H1"
+        ]
+      },
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+        "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "quality_result_id": "quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "capture_id": "capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "quality_status": "recapture_required",
+      "sheet": "포도",
+      "range": "A1:R22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 18
+      },
+      "row_state_summary": {
+        "row_count": 22,
+        "hidden_row_count": 21,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 1,
+        "hidden_row_ratio": 0.954545,
+        "hidden_spans": [
+          {
+            "start_row": 2,
+            "end_row": 22,
+            "row_count": 21,
+            "hidden_count": 48,
+            "zero_height_count": 0,
+            "collapsed_count": 0,
+            "max_outline_level": 0,
+            "min_height": 17.25,
+            "max_height": 17.25
+          }
+        ],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 18,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 18,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [
+        {
+          "ref": "A1:U1902",
+          "bounds": {
+            "min_row": 1,
+            "min_column": 1,
+            "max_row": 1902,
+            "max_column": 21
+          },
+          "intersection": {
+            "min_row": 1,
+            "min_column": 1,
+            "max_row": 22,
+            "max_column": 18
+          }
+        }
+      ],
+      "sheet_view_signals": {
+        "filter_mode": true,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1,
+        "sheet_view_top_left_cells": [
+          "A2122"
+        ]
+      },
+      "classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "add_non_authoritative_unhide_or_clear_filter_diagnostic_before_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+        "capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "quality_result_id": "quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "capture_id": "capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "quality_status": "recapture_required",
+      "sheet": "포도",
+      "range": "A1:R80",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 80,
+        "max_column": 18
+      },
+      "row_state_summary": {
+        "row_count": 80,
+        "hidden_row_count": 75,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 5,
+        "hidden_row_ratio": 0.9375,
+        "hidden_spans": [
+          {
+            "start_row": 2,
+            "end_row": 49,
+            "row_count": 48,
+            "hidden_count": 48,
+            "zero_height_count": 0,
+            "collapsed_count": 0,
+            "max_outline_level": 0,
+            "min_height": 17.25,
+            "max_height": 17.25
+          },
+          {
+            "start_row": 51,
+            "end_row": 56,
+            "row_count": 6,
+            "hidden_count": 6,
+            "zero_height_count": 0,
+            "collapsed_count": 0,
+            "max_outline_level": 0,
+            "min_height": 17.25,
+            "max_height": 17.25
+          },
+          {
+            "start_row": 58,
+            "end_row": 59,
+            "row_count": 2,
+            "hidden_count": 2,
+            "zero_height_count": 0,
+            "collapsed_count": 0,
+            "max_outline_level": 0,
+            "min_height": 17.25,
+            "max_height": 17.25
+          },
+          {
+            "start_row": 61,
+            "end_row": 62,
+            "row_count": 2,
+            "hidden_count": 2,
+            "zero_height_count": 0,
+            "collapsed_count": 0,
+            "max_outline_level": 0,
+            "min_height": 17.25,
+            "max_height": 17.25
+          },
+          {
+            "start_row": 64,
+            "end_row": 80,
+            "row_count": 17,
+            "hidden_count": 62,
+            "zero_height_count": 0,
+            "collapsed_count": 0,
+            "max_outline_level": 0,
+            "min_height": 17.25,
+            "max_height": 17.25
+          }
+        ],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 18,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 18,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [
+        {
+          "ref": "A1:U1902",
+          "bounds": {
+            "min_row": 1,
+            "min_column": 1,
+            "max_row": 1902,
+            "max_column": 21
+          },
+          "intersection": {
+            "min_row": 1,
+            "min_column": 1,
+            "max_row": 80,
+            "max_column": 18
+          }
+        }
+      ],
+      "sheet_view_signals": {
+        "filter_mode": true,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1,
+        "sheet_view_top_left_cells": [
+          "A2122"
+        ]
+      },
+      "classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "add_non_authoritative_unhide_or_clear_filter_diagnostic_before_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+        "capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "view_state_quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "type": "view_state_capture_window_analysis",
+      "capture_quality_file": "mbp-2026-02-recapture-candidate-quality.json",
+      "quality_result_id": "quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "capture_id": "capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "quality_status": "recapture_required",
+      "sheet": "포도",
+      "range": "A21:R100",
+      "bounds": {
+        "min_row": 21,
+        "min_column": 1,
+        "max_row": 100,
+        "max_column": 18
+      },
+      "row_state_summary": {
+        "row_count": 80,
+        "hidden_row_count": 76,
+        "zero_height_row_count": 0,
+        "outline_row_count": 0,
+        "collapsed_row_count": 0,
+        "visible_row_count": 4,
+        "hidden_row_ratio": 0.95,
+        "hidden_spans": [
+          {
+            "start_row": 21,
+            "end_row": 49,
+            "row_count": 29,
+            "hidden_count": 48,
+            "zero_height_count": 0,
+            "collapsed_count": 0,
+            "max_outline_level": 0,
+            "min_height": 17.25,
+            "max_height": 17.25
+          },
+          {
+            "start_row": 51,
+            "end_row": 56,
+            "row_count": 6,
+            "hidden_count": 6,
+            "zero_height_count": 0,
+            "collapsed_count": 0,
+            "max_outline_level": 0,
+            "min_height": 17.25,
+            "max_height": 17.25
+          },
+          {
+            "start_row": 58,
+            "end_row": 59,
+            "row_count": 2,
+            "hidden_count": 2,
+            "zero_height_count": 0,
+            "collapsed_count": 0,
+            "max_outline_level": 0,
+            "min_height": 17.25,
+            "max_height": 17.25
+          },
+          {
+            "start_row": 61,
+            "end_row": 62,
+            "row_count": 2,
+            "hidden_count": 2,
+            "zero_height_count": 0,
+            "collapsed_count": 0,
+            "max_outline_level": 0,
+            "min_height": 17.25,
+            "max_height": 17.25
+          },
+          {
+            "start_row": 64,
+            "end_row": 100,
+            "row_count": 37,
+            "hidden_count": 62,
+            "zero_height_count": 0,
+            "collapsed_count": 0,
+            "max_outline_level": 0,
+            "min_height": 17.25,
+            "max_height": 17.25
+          }
+        ],
+        "zero_height_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "column_state_summary": {
+        "column_count": 18,
+        "hidden_column_count": 0,
+        "zero_width_column_count": 0,
+        "outline_column_count": 0,
+        "collapsed_column_count": 0,
+        "visible_column_count": 18,
+        "hidden_column_ratio": 0.0,
+        "hidden_spans": [],
+        "zero_width_spans": [],
+        "outline_spans": [],
+        "collapsed_spans": []
+      },
+      "filter_overlap": [
+        {
+          "ref": "A1:U1902",
+          "bounds": {
+            "min_row": 1,
+            "min_column": 1,
+            "max_row": 1902,
+            "max_column": 21
+          },
+          "intersection": {
+            "min_row": 21,
+            "min_column": 1,
+            "max_row": 100,
+            "max_column": 18
+          }
+        }
+      ],
+      "sheet_view_signals": {
+        "filter_mode": true,
+        "auto_filter_count": 1,
+        "frozen_pane_count": 1,
+        "sheet_view_top_left_cells": [
+          "A2122"
+        ]
+      },
+      "classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "add_non_authoritative_unhide_or_clear_filter_diagnostic_before_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+        "capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    }
+  ],
+  "gate_results": [
+    {
+      "id": "gate_view_state_quality_capture_target_결제_수수료_cell_region_1",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_target_결제_수수료_cell_region_1",
+      "target_id": "target_결제_수수료_cell_region_1",
+      "gate_type": "capture_view_state_explanation",
+      "status": "no_material_view_state",
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_결제_수수료_cell_region_1",
+        "capture_target_결제_수수료_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_target_결제상세_cell_region_1",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_target_결제상세_cell_region_1",
+      "target_id": "target_결제상세_cell_region_1",
+      "gate_type": "capture_view_state_explanation",
+      "status": "no_material_view_state",
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_결제상세_cell_region_1",
+        "capture_target_결제상세_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_target_당월산식_cell_region_1",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_target_당월산식_cell_region_1",
+      "target_id": "target_당월산식_cell_region_1",
+      "gate_type": "capture_view_state_explanation",
+      "status": "explained_by_view_state",
+      "classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "add_non_authoritative_unhide_or_clear_filter_diagnostic_before_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_당월산식_cell_region_1",
+        "capture_target_당월산식_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_target_리스픽_cell_region_2",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_target_리스픽_cell_region_2",
+      "target_id": "target_리스픽_cell_region_2",
+      "gate_type": "capture_view_state_explanation",
+      "status": "no_material_view_state",
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_리스픽_cell_region_2",
+        "capture_target_리스픽_cell_region_2",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_target_매출_cell_region_1",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_target_매출_cell_region_1",
+      "target_id": "target_매출_cell_region_1",
+      "gate_type": "capture_view_state_explanation",
+      "status": "no_material_view_state",
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_매출_cell_region_1",
+        "capture_target_매출_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_target_수익인식60일_cell_region_1",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_target_수익인식60일_cell_region_1",
+      "target_id": "target_수익인식60일_cell_region_1",
+      "gate_type": "capture_view_state_explanation",
+      "status": "view_state_affects_window",
+      "classification": "filtered_rows_affect_capture_window",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "record_visible_state_and_keep_hidden_rows_available_for_structural_extraction",
+      "evidence_refs": [
+        "quality_capture_target_수익인식60일_cell_region_1",
+        "capture_target_수익인식60일_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_target_수익인식60일_강사료_cell_region_1",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_target_수익인식60일_강사료_cell_region_1",
+      "target_id": "target_수익인식60일_강사료_cell_region_1",
+      "gate_type": "capture_view_state_explanation",
+      "status": "no_material_view_state",
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_수익인식60일_강사료_cell_region_1",
+        "capture_target_수익인식60일_강사료_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_target_얼리버드_cell_region_1",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_target_얼리버드_cell_region_1",
+      "target_id": "target_얼리버드_cell_region_1",
+      "gate_type": "capture_view_state_explanation",
+      "status": "no_material_view_state",
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_얼리버드_cell_region_1",
+        "capture_target_얼리버드_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_target_유하다요_cell_region_1",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_target_유하다요_cell_region_1",
+      "target_id": "target_유하다요_cell_region_1",
+      "gate_type": "capture_view_state_explanation",
+      "status": "no_material_view_state",
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_유하다요_cell_region_1",
+        "capture_target_유하다요_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_target_유하다요_강사료_cell_region_1",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_target_유하다요_강사료_cell_region_1",
+      "target_id": "target_유하다요_강사료_cell_region_1",
+      "gate_type": "capture_view_state_explanation",
+      "status": "no_material_view_state",
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_유하다요_강사료_cell_region_1",
+        "capture_target_유하다요_강사료_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_target_정가표_cell_region_1",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_target_정가표_cell_region_1",
+      "target_id": "target_정가표_cell_region_1",
+      "gate_type": "capture_view_state_explanation",
+      "status": "no_material_view_state",
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_정가표_cell_region_1",
+        "capture_target_정가표_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_target_포도_cell_region_1",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_target_포도_cell_region_1",
+      "target_id": "target_포도_cell_region_1",
+      "gate_type": "capture_view_state_explanation",
+      "status": "explained_by_view_state",
+      "classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "add_non_authoritative_unhide_or_clear_filter_diagnostic_before_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_target_포도_cell_region_1",
+        "capture_target_포도_cell_region_1",
+        "mbp-2026-02-capture-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "gate_type": "capture_view_state_explanation",
+      "status": "no_material_view_state",
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "gate_type": "capture_view_state_explanation",
+      "status": "no_material_view_state",
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "gate_type": "capture_view_state_explanation",
+      "status": "no_material_view_state",
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "gate_type": "capture_view_state_explanation",
+      "status": "explained_by_view_state",
+      "classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "add_non_authoritative_unhide_or_clear_filter_diagnostic_before_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+        "capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "gate_type": "capture_view_state_explanation",
+      "status": "explained_by_view_state",
+      "classification": "all_rows_hidden_or_zero_height",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "add_non_authoritative_unhide_or_clear_filter_diagnostic_before_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "gate_type": "capture_view_state_explanation",
+      "status": "explained_by_view_state",
+      "classification": "all_rows_hidden_or_zero_height",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "add_non_authoritative_unhide_or_clear_filter_diagnostic_before_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "gate_type": "capture_view_state_explanation",
+      "status": "explained_by_view_state",
+      "classification": "all_rows_hidden_or_zero_height",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "add_non_authoritative_unhide_or_clear_filter_diagnostic_before_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "target_id": "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "gate_type": "capture_view_state_explanation",
+      "status": "no_material_view_state",
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+        "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "target_id": "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "gate_type": "capture_view_state_explanation",
+      "status": "no_material_view_state",
+      "classification": "no_material_view_state_signal",
+      "authority_decision": "continue_with_visible_render_authority",
+      "recommended_next_action": "eligible_for_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+        "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "gate_type": "capture_view_state_explanation",
+      "status": "explained_by_view_state",
+      "classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "add_non_authoritative_unhide_or_clear_filter_diagnostic_before_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+        "capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "gate_type": "capture_view_state_explanation",
+      "status": "explained_by_view_state",
+      "classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "add_non_authoritative_unhide_or_clear_filter_diagnostic_before_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+        "capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    },
+    {
+      "id": "gate_view_state_quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "type": "view_state_gate_result",
+      "analysis_id": "view_state_quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "gate_type": "capture_view_state_explanation",
+      "status": "explained_by_view_state",
+      "classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "authority_decision": "separate_visible_render_authority_from_structural_data_authority",
+      "recommended_next_action": "add_non_authoritative_unhide_or_clear_filter_diagnostic_before_coordinate_normalization",
+      "evidence_refs": [
+        "quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+        "capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+        "mbp-2026-02-recapture-candidate-quality.json"
+      ]
+    }
+  ],
+  "summary": {
+    "sheet_count": 12,
+    "scanned_sheet_count": 12,
+    "sheet_with_filter_mode_count": 3,
+    "sheet_with_hidden_rows_count": 3,
+    "hidden_row_count": 6506,
+    "hidden_column_count": 18,
+    "capture_window_analysis_count": 24,
+    "view_state_explained_count": 9,
+    "view_state_affects_count": 1,
+    "unexplained_by_view_state_count": 0,
+    "non_authoritative_unhide_diagnostic_count": 9
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "View-state profile is deterministic workbook XML evidence. It explains render behavior but is not semantic truth."
+    },
+    {
+      "level": "warning",
+      "message": "9 capture windows need a non-authoritative unhide or clear-filter diagnostic before coordinate normalization."
+    }
+  ]
+}

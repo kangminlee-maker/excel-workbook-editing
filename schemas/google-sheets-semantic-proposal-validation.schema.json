@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-semantic-proposal-validation.schema.json",
+  "title": "Google Sheets Semantic Proposal Validation",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "method",
+    "validation_context",
+    "proposal_results",
+    "promotion_gate_results",
+    "review_queue",
+    "summary",
+    "gate_summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "method": { "$ref": "#/$defs/method" },
+    "validation_context": { "$ref": "#/$defs/context" },
+    "proposal_results": { "type": "array", "items": { "$ref": "#/$defs/result" } },
+    "promotion_gate_results": { "type": "array", "items": { "$ref": "#/$defs/result" } },
+    "review_queue": { "type": "array", "items": { "$ref": "#/$defs/review_item" } },
+    "summary": { "$ref": "#/$defs/counts" },
+    "gate_summary": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["spreadsheet_id", "spreadsheet_url", "title", "source_artifacts"],
+      "additionalProperties": false,
+      "properties": {
+        "spreadsheet_id": { "type": "string", "minLength": 1 },
+        "spreadsheet_url": { "type": ["string", "null"] },
+        "title": { "type": "string" },
+        "source_artifacts": {
+          "type": "object",
+          "required": [
+            "live_semantic_proposals",
+            "live_domain_source_model",
+            "live_evidence_package",
+            "live_document_ontology_mapping"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "live_semantic_proposals": { "type": "string", "minLength": 1 },
+            "live_domain_source_model": { "type": "string", "minLength": 1 },
+            "live_evidence_package": { "type": "string", "minLength": 1 },
+            "live_document_ontology_mapping": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "source_document",
+        "validation_status",
+        "graph_assembly",
+        "accepted_semantic_concepts",
+        "shared_ontology_updates",
+        "formula_result_authority"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_document": { "const": "live_google_sheet" },
+        "validation_status": { "const": "deterministic_validation_only" },
+        "graph_assembly": { "const": "not_performed" },
+        "accepted_semantic_concepts": { "const": 0 },
+        "shared_ontology_updates": { "const": 0 },
+        "formula_result_authority": { "const": "not_established" }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "const": "connected_sheets_semantic_proposal_validation" },
+        "authority": { "const": "proposal_gate_outcome_not_final_graph_assembly" },
+        "decision_policy": { "type": "string", "minLength": 1 }
+      }
+    },
+    "context": {
+      "type": "object",
+      "required": [
+        "proposal_summary",
+        "semantic_readiness",
+        "known_evidence_ref_count",
+        "known_domain_source_count",
+        "known_concept_proposal_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "proposal_summary": { "type": "object" },
+        "semantic_readiness": { "type": "object" },
+        "known_evidence_ref_count": { "type": "integer", "minimum": 0 },
+        "known_domain_source_count": { "type": "integer", "minimum": 0 },
+        "known_concept_proposal_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "result": {
+      "type": "object",
+      "required": [
+        "id",
+        "target_id",
+        "target_type",
+        "label",
+        "final_status",
+        "gate_results",
+        "blocking_gates",
+        "warning_gates",
+        "evidence_refs",
+        "domain_source_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "target_id": { "type": "string", "minLength": 1 },
+        "target_type": { "type": "string", "minLength": 1 },
+        "label": { "type": ["string", "null"] },
+        "final_status": { "$ref": "#/$defs/status" },
+        "gate_results": { "type": "array", "items": { "$ref": "#/$defs/gate" } },
+        "blocking_gates": { "type": "array", "items": { "type": "string" } },
+        "warning_gates": { "type": "array", "items": { "type": "string" } },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } },
+        "domain_source_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "required": ["gate", "status", "reason", "evidence_refs"],
+      "additionalProperties": false,
+      "properties": {
+        "gate": { "type": "string", "minLength": 1 },
+        "status": { "$ref": "#/$defs/status" },
+        "reason": { "type": "string", "minLength": 1 },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "review_item": {
+      "type": "object",
+      "required": [
+        "id",
+        "target_id",
+        "target_type",
+        "severity",
+        "status",
+        "blocking_gates",
+        "required_action"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "target_id": { "type": "string", "minLength": 1 },
+        "target_type": { "type": "string", "minLength": 1 },
+        "severity": { "type": "string", "enum": ["low", "medium", "high"] },
+        "status": { "$ref": "#/$defs/status" },
+        "blocking_gates": { "type": "array", "items": { "type": "string" } },
+        "required_action": { "type": "string", "minLength": 1 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["accepted", "warning", "requires_human_review", "blocked", "rejected"]
+    }
+  }
+}

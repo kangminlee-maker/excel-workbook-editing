@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-evidence-package.schema.json",
+  "title": "Google Sheets Evidence Package",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "workbook_facts",
+    "accepted_evidence",
+    "blocked_evidence",
+    "review_queue",
+    "lineage_refs",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "workbook_facts": { "$ref": "#/$defs/counts" },
+    "accepted_evidence": { "$ref": "#/$defs/accepted_evidence" },
+    "blocked_evidence": { "$ref": "#/$defs/blocked_evidence" },
+    "review_queue": { "type": "array", "items": { "$ref": "#/$defs/review_item" } },
+    "lineage_refs": { "type": "array", "items": { "type": "string" } },
+    "summary": { "$ref": "#/$defs/counts" },
+    "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["spreadsheet_id", "spreadsheet_url", "title", "source_artifacts"],
+      "additionalProperties": false,
+      "properties": {
+        "spreadsheet_id": { "type": "string", "minLength": 1 },
+        "spreadsheet_url": { "type": ["string", "null"] },
+        "title": { "type": "string" },
+        "source_artifacts": {
+          "type": "object",
+          "required": [
+            "live_manifest",
+            "live_block_candidates",
+            "live_table_io_pipelines",
+            "live_cross_validation_plan",
+            "live_validation_batch_execution",
+            "live_gate_execution"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "live_manifest": { "type": "string", "minLength": 1 },
+            "live_block_candidates": { "type": "string", "minLength": 1 },
+            "live_table_io_pipelines": { "type": "string", "minLength": 1 },
+            "live_cross_validation_plan": { "type": "string", "minLength": 1 },
+            "live_validation_batch_execution": { "type": "string", "minLength": 1 },
+            "live_gate_execution": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "source_document",
+        "package_status",
+        "formula_result_authority",
+        "source_spreadsheet_read_authority",
+        "graph_promotion_status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_document": { "const": "live_google_sheet" },
+        "package_status": { "const": "connected_sheets_evidence_package_candidate" },
+        "formula_result_authority": { "const": "not_established" },
+        "source_spreadsheet_read_authority": { "const": "blocked_until_source_acl_and_broker_allowlist" },
+        "graph_promotion_status": { "const": "not_promoted" }
+      }
+    },
+    "accepted_evidence": {
+      "type": "object",
+      "required": ["gate_results", "target_results", "pipelines", "validation_evidence_updates"],
+      "additionalProperties": false,
+      "properties": {
+        "gate_results": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+        "target_results": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+        "pipelines": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+        "validation_evidence_updates": { "type": "array", "items": { "type": "object", "additionalProperties": true } }
+      }
+    },
+    "blocked_evidence": {
+      "type": "object",
+      "required": ["gate_results", "target_results"],
+      "additionalProperties": false,
+      "properties": {
+        "gate_results": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+        "target_results": { "type": "array", "items": { "type": "object", "additionalProperties": true } }
+      }
+    },
+    "review_item": {
+      "type": "object",
+      "required": ["id", "type", "severity", "message", "evidence_refs", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "minLength": 1 },
+        "severity": { "type": "string", "enum": ["low", "medium", "high"] },
+        "message": { "type": "string", "minLength": 1 },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } },
+        "status": { "type": "string", "minLength": 1 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] }
+    }
+  }
+}

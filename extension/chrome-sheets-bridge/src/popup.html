@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sheets Bridge</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <h1>Sheets Bridge</h1>
+        <p id="sheet-id" class="muted">No sheet detected</p>
+      </header>
+      <button id="inspect" type="button" disabled>Inspect</button>
+      <button id="record-package" type="button" disabled>Record Package</button>
+      <p id="status" class="status" role="status">Open a Google Sheet tab.</p>
+      <section id="result" class="result" hidden></section>
+      <section id="package-result" class="result" hidden></section>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-02T06:58:04.342255Z",
+  "source": {
+    "spreadsheet_id": "1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60",
+    "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60/edit?ouid=112662517307801676490",
+    "title": "[Day 1] 1.0 (from 20250707)",
+    "source_artifacts": {
+      "live_action_contracts": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/live-action-contracts.json",
+      "live_evidence_package": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/live-evidence-package.json"
+    }
+  },
+  "authority": {
+    "source_document": "live_google_sheet",
+    "model_status": "domain_source_model_only",
+    "semantic_proposal_generation": "not_performed",
+    "general_domain_authority": "not_selected",
+    "local_domain_authority": "boundary_confirmed"
+  },
+  "general_domain_sources": [],
+  "local_domain_boundary": {
+    "layer": "local_domain",
+    "boundary_label": "전사레벨 현황 보고 문서",
+    "boundary_status": "confirmed",
+    "available_local_evidence": [
+      "user-confirmed local boundary",
+      "user-confirmed reporting basis",
+      "accepted calculation pipeline labels",
+      "workbook facts",
+      "review queue items"
+    ],
+    "missing_local_evidence": [
+      "boundary-scoped glossary or policy document",
+      "reviewed metric-equivalence decisions for repeated labels"
+    ],
+    "reporting_basis": "cash basis; 결제액 기반 운영 현황 보고이며 K-IFRS/K-GAAP 매출 산출물이 아님",
+    "promotion_policy": "local_candidates_only_until_repeated_evidence_metric_gates_and_human_review_are_confirmed"
+  },
+  "unavailable_sources": [
+    {
+      "id": "follow_up_nested_importrange_lineage",
+      "type": "source_lineage",
+      "status": "review_required",
+      "reason": "direct FC_DATA source is readable, but nested IMPORTRANGE lineage remains follow-up if full raw lineage is needed",
+      "related_contract_ids": []
+    },
+    {
+      "id": "unavailable_formula_result_authority_for_report_pipelines",
+      "type": "formula_result",
+      "status": "blocked",
+      "reason": "20 pipeline outputs remain blocked by formula-result/error authority",
+      "related_contract_ids": [
+        "contract_review_formula_error_surfaces"
+      ]
+    }
+  ],
+  "semantic_readiness": {
+    "general_domain_available": false,
+    "local_boundary_confirmed": true,
+    "unavailable_source_count": 2,
+    "semantic_proposal_scope": "cash_basis_operational_reporting_local_candidates",
+    "shared_ontology_promotion_status": "blocked",
+    "blocked_reason": "shared promotion requires repeated evidence, metric-equivalence gates, source lineage checks, and human approval"
+  },
+  "summary": {
+    "general_domain_source_count": 0,
+    "available_general_domain_source_count": 0,
+    "unavailable_source_count": 2,
+    "local_boundary_confirmed": true,
+    "semantic_proposal_generation": "not_performed",
+    "shared_ontology_promotion_status": "blocked"
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "Domain source model separates general-domain references from local-boundary evidence before semantic proposals."
+    },
+    {
+      "level": "warning",
+      "message": "2 source authorities are unavailable for semantic promotion."
+    }
+  ]
+}

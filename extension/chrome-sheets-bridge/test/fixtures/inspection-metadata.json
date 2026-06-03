@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "snapshot_id": "snapshot-1",
+  "captured_at": "2026-05-27T00:00:00.000Z",
+  "spreadsheet_id": "spreadsheet-1",
+  "title": "Ops Sheet",
+  "locale": "en_US",
+  "time_zone": "Asia/Seoul",
+  "tabs": [
+    {
+      "sheet_id": 10,
+      "title": "Input",
+      "index": 0,
+      "row_count": 100,
+      "column_count": 20,
+      "hidden": false
+    }
+  ],
+  "named_ranges": [
+    {
+      "name": "Inputs",
+      "range": {
+        "sheet_id": 10,
+        "range": "A1:B10"
+      }
+    }
+  ],
+  "protected_ranges": [
+    {
+      "protected_range_id": 3,
+      "range": {
+        "sheet_id": 10,
+        "range": "A1:B1"
+      },
+      "warning_only": true
+    }
+  ],
+  "data_validations": [],
+  "formula_samples": [],
+  "cell_states": [],
+  "telemetry": {
+    "request_count": 1,
+    "retry_count": 0,
+    "elapsed_ms": 42,
+    "timeout_budget": {
+      "read_seconds": 60,
+      "write_seconds": 60,
+      "poll_seconds": 120
+    }
+  },
+  "artifacts": []
+}

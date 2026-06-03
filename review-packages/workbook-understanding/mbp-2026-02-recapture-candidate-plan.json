@@ -1,0 +1,1214 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-01T04:43:54.608872Z",
+  "source_artifacts": {
+    "render_captures": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-render-captures.json",
+    "capture_quality": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-capture-quality.json"
+  },
+  "method": {
+    "name": "recapture_candidate_generation",
+    "max_columns_per_tile": 18,
+    "visible_context_rows": 80,
+    "expanded_context_rows": 80,
+    "authority": "candidate_generation_not_final_selection"
+  },
+  "candidate_groups": [
+    {
+      "source_capture_id": "capture_target_결제상세_cell_region_1",
+      "source_quality_result_id": "quality_capture_target_결제상세_cell_region_1",
+      "source_quality_status": "review_required",
+      "sheet": "결제상세",
+      "source_range": "A1:AY22",
+      "recommendations": [
+        "recapture_with_tiling"
+      ],
+      "candidate_target_ids": [
+        "candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+        "candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+        "candidate_capture_target_결제상세_cell_region_1_column_tile_03"
+      ]
+    },
+    {
+      "source_capture_id": "capture_target_당월산식_cell_region_1",
+      "source_quality_result_id": "quality_capture_target_당월산식_cell_region_1",
+      "source_quality_status": "recapture_required",
+      "sheet": "당월산식",
+      "source_range": "A1:BA22",
+      "recommendations": [
+        "recapture_with_tiling",
+        "recapture_with_visible_row_context"
+      ],
+      "candidate_target_ids": [
+        "candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+        "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+        "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+        "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03"
+      ]
+    },
+    {
+      "source_capture_id": "capture_target_유하다요_강사료_cell_region_1",
+      "source_quality_result_id": "quality_capture_target_유하다요_강사료_cell_region_1",
+      "source_quality_status": "review_required",
+      "sheet": "유하다요_강사료",
+      "source_range": "A1:AI22",
+      "recommendations": [
+        "recapture_with_tiling"
+      ],
+      "candidate_target_ids": [
+        "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+        "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02"
+      ]
+    },
+    {
+      "source_capture_id": "capture_target_포도_cell_region_1",
+      "source_quality_result_id": "quality_capture_target_포도_cell_region_1",
+      "source_quality_status": "recapture_required",
+      "sheet": "포도",
+      "source_range": "A1:R22",
+      "recommendations": [
+        "recapture_with_expanded_window_or_zoom",
+        "recapture_with_visible_row_context"
+      ],
+      "candidate_target_ids": [
+        "candidate_capture_target_포도_cell_region_1_same_window_control_01",
+        "candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+        "candidate_capture_target_포도_cell_region_1_visible_row_context_01"
+      ]
+    }
+  ],
+  "capture_targets": [
+    {
+      "id": "candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "type": "visual_formula_validation_target",
+      "target_type": "recapture_candidate",
+      "status": "candidate",
+      "priority": "medium",
+      "score": 70,
+      "sheet": "결제상세",
+      "range": "A1:R22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 18
+      },
+      "capture_window": {
+        "sheet": "결제상세",
+        "range": "A1:R22",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 22,
+          "max_column": 18
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "결제상세_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "결제상세",
+        "range": "A1:AX20",
+        "block_id": "결제상세_row_band_1",
+        "region_id": "결제상세_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 50
+        },
+        "label": "=SUBTOTAL(9,Z2:Z5000)"
+      },
+      "source_capture_id": "capture_target_결제상세_cell_region_1",
+      "source_quality_result_id": "quality_capture_target_결제상세_cell_region_1",
+      "source_quality_status": "review_required",
+      "candidate_strategy": "column_tile",
+      "candidate_rationale": "Tile a wide range into narrower column windows for visual review.",
+      "tile_index": 1,
+      "tile_count": 3,
+      "related_pipeline_ids": [],
+      "related_block_ids": [],
+      "related_region_ids": [],
+      "related_boundary_gate_ids": [],
+      "reasons": [
+        "review_required",
+        "recapture_with_tiling"
+      ],
+      "gate_checks": [
+        {
+          "id": "gate_candidate_capture_target_결제상세_cell_region_1_column_tile_01_candidate_capture_quality",
+          "type": "visual_formula_gate_check",
+          "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+          "gate_type": "recapture_candidate_quality_confirmation",
+          "status": "pending_capture",
+          "deterministic_inputs": [
+            "capture_target_결제상세_cell_region_1",
+            "quality_capture_target_결제상세_cell_region_1"
+          ],
+          "pass_conditions": [
+            "Candidate capture quality improves over the source capture.",
+            "Candidate range still covers the visual evidence needed for the source gate or a clearly documented tile of it."
+          ],
+          "failure_signals": [
+            "Candidate capture remains too thin, clipped, blank, or unreadable.",
+            "Candidate range no longer represents the source gate's intended workbook evidence."
+          ]
+        }
+      ],
+      "review_questions": [
+        "이 candidate capture가 원래 capture보다 downstream visual gate에 더 적합한가요?"
+      ],
+      "evidence_refs": [
+        "capture_target_결제상세_cell_region_1",
+        "quality_capture_target_결제상세_cell_region_1"
+      ]
+    },
+    {
+      "id": "candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "type": "visual_formula_validation_target",
+      "target_type": "recapture_candidate",
+      "status": "candidate",
+      "priority": "medium",
+      "score": 70,
+      "sheet": "결제상세",
+      "range": "S1:AJ22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 19,
+        "max_row": 22,
+        "max_column": 36
+      },
+      "capture_window": {
+        "sheet": "결제상세",
+        "range": "S1:AJ22",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 19,
+          "max_row": 22,
+          "max_column": 36
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "결제상세_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "결제상세",
+        "range": "A1:AX20",
+        "block_id": "결제상세_row_band_1",
+        "region_id": "결제상세_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 50
+        },
+        "label": "=SUBTOTAL(9,Z2:Z5000)"
+      },
+      "source_capture_id": "capture_target_결제상세_cell_region_1",
+      "source_quality_result_id": "quality_capture_target_결제상세_cell_region_1",
+      "source_quality_status": "review_required",
+      "candidate_strategy": "column_tile",
+      "candidate_rationale": "Tile a wide range into narrower column windows for visual review.",
+      "tile_index": 2,
+      "tile_count": 3,
+      "related_pipeline_ids": [],
+      "related_block_ids": [],
+      "related_region_ids": [],
+      "related_boundary_gate_ids": [],
+      "reasons": [
+        "review_required",
+        "recapture_with_tiling"
+      ],
+      "gate_checks": [
+        {
+          "id": "gate_candidate_capture_target_결제상세_cell_region_1_column_tile_02_candidate_capture_quality",
+          "type": "visual_formula_gate_check",
+          "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+          "gate_type": "recapture_candidate_quality_confirmation",
+          "status": "pending_capture",
+          "deterministic_inputs": [
+            "capture_target_결제상세_cell_region_1",
+            "quality_capture_target_결제상세_cell_region_1"
+          ],
+          "pass_conditions": [
+            "Candidate capture quality improves over the source capture.",
+            "Candidate range still covers the visual evidence needed for the source gate or a clearly documented tile of it."
+          ],
+          "failure_signals": [
+            "Candidate capture remains too thin, clipped, blank, or unreadable.",
+            "Candidate range no longer represents the source gate's intended workbook evidence."
+          ]
+        }
+      ],
+      "review_questions": [
+        "이 candidate capture가 원래 capture보다 downstream visual gate에 더 적합한가요?"
+      ],
+      "evidence_refs": [
+        "capture_target_결제상세_cell_region_1",
+        "quality_capture_target_결제상세_cell_region_1"
+      ]
+    },
+    {
+      "id": "candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "type": "visual_formula_validation_target",
+      "target_type": "recapture_candidate",
+      "status": "candidate",
+      "priority": "medium",
+      "score": 70,
+      "sheet": "결제상세",
+      "range": "AK1:AY22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 37,
+        "max_row": 22,
+        "max_column": 51
+      },
+      "capture_window": {
+        "sheet": "결제상세",
+        "range": "AK1:AY22",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 37,
+          "max_row": 22,
+          "max_column": 51
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "결제상세_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "결제상세",
+        "range": "A1:AX20",
+        "block_id": "결제상세_row_band_1",
+        "region_id": "결제상세_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 50
+        },
+        "label": "=SUBTOTAL(9,Z2:Z5000)"
+      },
+      "source_capture_id": "capture_target_결제상세_cell_region_1",
+      "source_quality_result_id": "quality_capture_target_결제상세_cell_region_1",
+      "source_quality_status": "review_required",
+      "candidate_strategy": "column_tile",
+      "candidate_rationale": "Tile a wide range into narrower column windows for visual review.",
+      "tile_index": 3,
+      "tile_count": 3,
+      "related_pipeline_ids": [],
+      "related_block_ids": [],
+      "related_region_ids": [],
+      "related_boundary_gate_ids": [],
+      "reasons": [
+        "review_required",
+        "recapture_with_tiling"
+      ],
+      "gate_checks": [
+        {
+          "id": "gate_candidate_capture_target_결제상세_cell_region_1_column_tile_03_candidate_capture_quality",
+          "type": "visual_formula_gate_check",
+          "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+          "gate_type": "recapture_candidate_quality_confirmation",
+          "status": "pending_capture",
+          "deterministic_inputs": [
+            "capture_target_결제상세_cell_region_1",
+            "quality_capture_target_결제상세_cell_region_1"
+          ],
+          "pass_conditions": [
+            "Candidate capture quality improves over the source capture.",
+            "Candidate range still covers the visual evidence needed for the source gate or a clearly documented tile of it."
+          ],
+          "failure_signals": [
+            "Candidate capture remains too thin, clipped, blank, or unreadable.",
+            "Candidate range no longer represents the source gate's intended workbook evidence."
+          ]
+        }
+      ],
+      "review_questions": [
+        "이 candidate capture가 원래 capture보다 downstream visual gate에 더 적합한가요?"
+      ],
+      "evidence_refs": [
+        "capture_target_결제상세_cell_region_1",
+        "quality_capture_target_결제상세_cell_region_1"
+      ]
+    },
+    {
+      "id": "candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "type": "visual_formula_validation_target",
+      "target_type": "recapture_candidate",
+      "status": "candidate",
+      "priority": "high",
+      "score": 95,
+      "sheet": "당월산식",
+      "range": "A1:BA22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 53
+      },
+      "capture_window": {
+        "sheet": "당월산식",
+        "range": "A1:BA22",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 22,
+          "max_column": 53
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "당월산식_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "당월산식",
+        "range": "A1:AZ20",
+        "block_id": "당월산식_row_band_1",
+        "region_id": "당월산식_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 52
+        },
+        "label": "=SUBTOTAL(9,E5:E4620)"
+      },
+      "source_capture_id": "capture_target_당월산식_cell_region_1",
+      "source_quality_result_id": "quality_capture_target_당월산식_cell_region_1",
+      "source_quality_status": "recapture_required",
+      "candidate_strategy": "same_window_control",
+      "candidate_rationale": "Control candidate: recapture the original window to distinguish transient Excel capture problems from range-selection problems.",
+      "tile_index": 1,
+      "tile_count": 1,
+      "related_pipeline_ids": [],
+      "related_block_ids": [],
+      "related_region_ids": [],
+      "related_boundary_gate_ids": [],
+      "reasons": [
+        "recapture_required",
+        "recapture_with_tiling",
+        "recapture_with_visible_row_context"
+      ],
+      "gate_checks": [
+        {
+          "id": "gate_candidate_capture_target_당월산식_cell_region_1_same_window_control_01_candidate_capture_quality",
+          "type": "visual_formula_gate_check",
+          "target_id": "candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+          "gate_type": "recapture_candidate_quality_confirmation",
+          "status": "pending_capture",
+          "deterministic_inputs": [
+            "capture_target_당월산식_cell_region_1",
+            "quality_capture_target_당월산식_cell_region_1"
+          ],
+          "pass_conditions": [
+            "Candidate capture quality improves over the source capture.",
+            "Candidate range still covers the visual evidence needed for the source gate or a clearly documented tile of it."
+          ],
+          "failure_signals": [
+            "Candidate capture remains too thin, clipped, blank, or unreadable.",
+            "Candidate range no longer represents the source gate's intended workbook evidence."
+          ]
+        }
+      ],
+      "review_questions": [
+        "이 candidate capture가 원래 capture보다 downstream visual gate에 더 적합한가요?"
+      ],
+      "evidence_refs": [
+        "capture_target_당월산식_cell_region_1",
+        "quality_capture_target_당월산식_cell_region_1"
+      ]
+    },
+    {
+      "id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "type": "visual_formula_validation_target",
+      "target_type": "recapture_candidate",
+      "status": "candidate",
+      "priority": "high",
+      "score": 95,
+      "sheet": "당월산식",
+      "range": "A21:R100",
+      "bounds": {
+        "min_row": 21,
+        "min_column": 1,
+        "max_row": 100,
+        "max_column": 18
+      },
+      "capture_window": {
+        "sheet": "당월산식",
+        "range": "A21:R100",
+        "bounds": {
+          "min_row": 21,
+          "min_column": 1,
+          "max_row": 100,
+          "max_column": 18
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "당월산식_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "당월산식",
+        "range": "A1:AZ20",
+        "block_id": "당월산식_row_band_1",
+        "region_id": "당월산식_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 52
+        },
+        "label": "=SUBTOTAL(9,E5:E4620)"
+      },
+      "source_capture_id": "capture_target_당월산식_cell_region_1",
+      "source_quality_result_id": "quality_capture_target_당월산식_cell_region_1",
+      "source_quality_status": "recapture_required",
+      "candidate_strategy": "visible_row_context_tile",
+      "candidate_rationale": "Shift to likely visible data rows and tile columns so the candidate tests row visibility and width separately.",
+      "tile_index": 1,
+      "tile_count": 3,
+      "related_pipeline_ids": [],
+      "related_block_ids": [],
+      "related_region_ids": [],
+      "related_boundary_gate_ids": [],
+      "reasons": [
+        "recapture_required",
+        "recapture_with_tiling",
+        "recapture_with_visible_row_context"
+      ],
+      "gate_checks": [
+        {
+          "id": "gate_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01_candidate_capture_quality",
+          "type": "visual_formula_gate_check",
+          "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+          "gate_type": "recapture_candidate_quality_confirmation",
+          "status": "pending_capture",
+          "deterministic_inputs": [
+            "capture_target_당월산식_cell_region_1",
+            "quality_capture_target_당월산식_cell_region_1"
+          ],
+          "pass_conditions": [
+            "Candidate capture quality improves over the source capture.",
+            "Candidate range still covers the visual evidence needed for the source gate or a clearly documented tile of it."
+          ],
+          "failure_signals": [
+            "Candidate capture remains too thin, clipped, blank, or unreadable.",
+            "Candidate range no longer represents the source gate's intended workbook evidence."
+          ]
+        }
+      ],
+      "review_questions": [
+        "이 candidate capture가 원래 capture보다 downstream visual gate에 더 적합한가요?"
+      ],
+      "evidence_refs": [
+        "capture_target_당월산식_cell_region_1",
+        "quality_capture_target_당월산식_cell_region_1"
+      ]
+    },
+    {
+      "id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "type": "visual_formula_validation_target",
+      "target_type": "recapture_candidate",
+      "status": "candidate",
+      "priority": "high",
+      "score": 95,
+      "sheet": "당월산식",
+      "range": "S21:AJ100",
+      "bounds": {
+        "min_row": 21,
+        "min_column": 19,
+        "max_row": 100,
+        "max_column": 36
+      },
+      "capture_window": {
+        "sheet": "당월산식",
+        "range": "S21:AJ100",
+        "bounds": {
+          "min_row": 21,
+          "min_column": 19,
+          "max_row": 100,
+          "max_column": 36
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "당월산식_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "당월산식",
+        "range": "A1:AZ20",
+        "block_id": "당월산식_row_band_1",
+        "region_id": "당월산식_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 52
+        },
+        "label": "=SUBTOTAL(9,E5:E4620)"
+      },
+      "source_capture_id": "capture_target_당월산식_cell_region_1",
+      "source_quality_result_id": "quality_capture_target_당월산식_cell_region_1",
+      "source_quality_status": "recapture_required",
+      "candidate_strategy": "visible_row_context_tile",
+      "candidate_rationale": "Shift to likely visible data rows and tile columns so the candidate tests row visibility and width separately.",
+      "tile_index": 2,
+      "tile_count": 3,
+      "related_pipeline_ids": [],
+      "related_block_ids": [],
+      "related_region_ids": [],
+      "related_boundary_gate_ids": [],
+      "reasons": [
+        "recapture_required",
+        "recapture_with_tiling",
+        "recapture_with_visible_row_context"
+      ],
+      "gate_checks": [
+        {
+          "id": "gate_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02_candidate_capture_quality",
+          "type": "visual_formula_gate_check",
+          "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+          "gate_type": "recapture_candidate_quality_confirmation",
+          "status": "pending_capture",
+          "deterministic_inputs": [
+            "capture_target_당월산식_cell_region_1",
+            "quality_capture_target_당월산식_cell_region_1"
+          ],
+          "pass_conditions": [
+            "Candidate capture quality improves over the source capture.",
+            "Candidate range still covers the visual evidence needed for the source gate or a clearly documented tile of it."
+          ],
+          "failure_signals": [
+            "Candidate capture remains too thin, clipped, blank, or unreadable.",
+            "Candidate range no longer represents the source gate's intended workbook evidence."
+          ]
+        }
+      ],
+      "review_questions": [
+        "이 candidate capture가 원래 capture보다 downstream visual gate에 더 적합한가요?"
+      ],
+      "evidence_refs": [
+        "capture_target_당월산식_cell_region_1",
+        "quality_capture_target_당월산식_cell_region_1"
+      ]
+    },
+    {
+      "id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "type": "visual_formula_validation_target",
+      "target_type": "recapture_candidate",
+      "status": "candidate",
+      "priority": "high",
+      "score": 95,
+      "sheet": "당월산식",
+      "range": "AK21:BA100",
+      "bounds": {
+        "min_row": 21,
+        "min_column": 37,
+        "max_row": 100,
+        "max_column": 53
+      },
+      "capture_window": {
+        "sheet": "당월산식",
+        "range": "AK21:BA100",
+        "bounds": {
+          "min_row": 21,
+          "min_column": 37,
+          "max_row": 100,
+          "max_column": 53
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "당월산식_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "당월산식",
+        "range": "A1:AZ20",
+        "block_id": "당월산식_row_band_1",
+        "region_id": "당월산식_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 52
+        },
+        "label": "=SUBTOTAL(9,E5:E4620)"
+      },
+      "source_capture_id": "capture_target_당월산식_cell_region_1",
+      "source_quality_result_id": "quality_capture_target_당월산식_cell_region_1",
+      "source_quality_status": "recapture_required",
+      "candidate_strategy": "visible_row_context_tile",
+      "candidate_rationale": "Shift to likely visible data rows and tile columns so the candidate tests row visibility and width separately.",
+      "tile_index": 3,
+      "tile_count": 3,
+      "related_pipeline_ids": [],
+      "related_block_ids": [],
+      "related_region_ids": [],
+      "related_boundary_gate_ids": [],
+      "reasons": [
+        "recapture_required",
+        "recapture_with_tiling",
+        "recapture_with_visible_row_context"
+      ],
+      "gate_checks": [
+        {
+          "id": "gate_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03_candidate_capture_quality",
+          "type": "visual_formula_gate_check",
+          "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+          "gate_type": "recapture_candidate_quality_confirmation",
+          "status": "pending_capture",
+          "deterministic_inputs": [
+            "capture_target_당월산식_cell_region_1",
+            "quality_capture_target_당월산식_cell_region_1"
+          ],
+          "pass_conditions": [
+            "Candidate capture quality improves over the source capture.",
+            "Candidate range still covers the visual evidence needed for the source gate or a clearly documented tile of it."
+          ],
+          "failure_signals": [
+            "Candidate capture remains too thin, clipped, blank, or unreadable.",
+            "Candidate range no longer represents the source gate's intended workbook evidence."
+          ]
+        }
+      ],
+      "review_questions": [
+        "이 candidate capture가 원래 capture보다 downstream visual gate에 더 적합한가요?"
+      ],
+      "evidence_refs": [
+        "capture_target_당월산식_cell_region_1",
+        "quality_capture_target_당월산식_cell_region_1"
+      ]
+    },
+    {
+      "id": "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "type": "visual_formula_validation_target",
+      "target_type": "recapture_candidate",
+      "status": "candidate",
+      "priority": "medium",
+      "score": 70,
+      "sheet": "유하다요_강사료",
+      "range": "A1:R22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 18
+      },
+      "capture_window": {
+        "sheet": "유하다요_강사료",
+        "range": "A1:R22",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 22,
+          "max_column": 18
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "유하다요_강사료_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "유하다요_강사료",
+        "range": "A1:AH20",
+        "block_id": "유하다요_강사료_row_band_1",
+        "region_id": "유하다요_강사료_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 34
+        },
+        "label": "강의결제액"
+      },
+      "source_capture_id": "capture_target_유하다요_강사료_cell_region_1",
+      "source_quality_result_id": "quality_capture_target_유하다요_강사료_cell_region_1",
+      "source_quality_status": "review_required",
+      "candidate_strategy": "column_tile",
+      "candidate_rationale": "Tile a wide range into narrower column windows for visual review.",
+      "tile_index": 1,
+      "tile_count": 2,
+      "related_pipeline_ids": [],
+      "related_block_ids": [],
+      "related_region_ids": [],
+      "related_boundary_gate_ids": [],
+      "reasons": [
+        "review_required",
+        "recapture_with_tiling"
+      ],
+      "gate_checks": [
+        {
+          "id": "gate_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01_candidate_capture_quality",
+          "type": "visual_formula_gate_check",
+          "target_id": "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+          "gate_type": "recapture_candidate_quality_confirmation",
+          "status": "pending_capture",
+          "deterministic_inputs": [
+            "capture_target_유하다요_강사료_cell_region_1",
+            "quality_capture_target_유하다요_강사료_cell_region_1"
+          ],
+          "pass_conditions": [
+            "Candidate capture quality improves over the source capture.",
+            "Candidate range still covers the visual evidence needed for the source gate or a clearly documented tile of it."
+          ],
+          "failure_signals": [
+            "Candidate capture remains too thin, clipped, blank, or unreadable.",
+            "Candidate range no longer represents the source gate's intended workbook evidence."
+          ]
+        }
+      ],
+      "review_questions": [
+        "이 candidate capture가 원래 capture보다 downstream visual gate에 더 적합한가요?"
+      ],
+      "evidence_refs": [
+        "capture_target_유하다요_강사료_cell_region_1",
+        "quality_capture_target_유하다요_강사료_cell_region_1"
+      ]
+    },
+    {
+      "id": "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "type": "visual_formula_validation_target",
+      "target_type": "recapture_candidate",
+      "status": "candidate",
+      "priority": "medium",
+      "score": 70,
+      "sheet": "유하다요_강사료",
+      "range": "S1:AI22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 19,
+        "max_row": 22,
+        "max_column": 35
+      },
+      "capture_window": {
+        "sheet": "유하다요_강사료",
+        "range": "S1:AI22",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 19,
+          "max_row": 22,
+          "max_column": 35
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "유하다요_강사료_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "유하다요_강사료",
+        "range": "A1:AH20",
+        "block_id": "유하다요_강사료_row_band_1",
+        "region_id": "유하다요_강사료_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 34
+        },
+        "label": "강의결제액"
+      },
+      "source_capture_id": "capture_target_유하다요_강사료_cell_region_1",
+      "source_quality_result_id": "quality_capture_target_유하다요_강사료_cell_region_1",
+      "source_quality_status": "review_required",
+      "candidate_strategy": "column_tile",
+      "candidate_rationale": "Tile a wide range into narrower column windows for visual review.",
+      "tile_index": 2,
+      "tile_count": 2,
+      "related_pipeline_ids": [],
+      "related_block_ids": [],
+      "related_region_ids": [],
+      "related_boundary_gate_ids": [],
+      "reasons": [
+        "review_required",
+        "recapture_with_tiling"
+      ],
+      "gate_checks": [
+        {
+          "id": "gate_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02_candidate_capture_quality",
+          "type": "visual_formula_gate_check",
+          "target_id": "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+          "gate_type": "recapture_candidate_quality_confirmation",
+          "status": "pending_capture",
+          "deterministic_inputs": [
+            "capture_target_유하다요_강사료_cell_region_1",
+            "quality_capture_target_유하다요_강사료_cell_region_1"
+          ],
+          "pass_conditions": [
+            "Candidate capture quality improves over the source capture.",
+            "Candidate range still covers the visual evidence needed for the source gate or a clearly documented tile of it."
+          ],
+          "failure_signals": [
+            "Candidate capture remains too thin, clipped, blank, or unreadable.",
+            "Candidate range no longer represents the source gate's intended workbook evidence."
+          ]
+        }
+      ],
+      "review_questions": [
+        "이 candidate capture가 원래 capture보다 downstream visual gate에 더 적합한가요?"
+      ],
+      "evidence_refs": [
+        "capture_target_유하다요_강사료_cell_region_1",
+        "quality_capture_target_유하다요_강사료_cell_region_1"
+      ]
+    },
+    {
+      "id": "candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "type": "visual_formula_validation_target",
+      "target_type": "recapture_candidate",
+      "status": "candidate",
+      "priority": "high",
+      "score": 95,
+      "sheet": "포도",
+      "range": "A1:R22",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 18
+      },
+      "capture_window": {
+        "sheet": "포도",
+        "range": "A1:R22",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 22,
+          "max_column": 18
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "포도_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "포도",
+        "range": "A1:Q20",
+        "block_id": "포도_row_band_1",
+        "region_id": "포도_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 17
+        },
+        "label": "수강권고유번호"
+      },
+      "source_capture_id": "capture_target_포도_cell_region_1",
+      "source_quality_result_id": "quality_capture_target_포도_cell_region_1",
+      "source_quality_status": "recapture_required",
+      "candidate_strategy": "same_window_control",
+      "candidate_rationale": "Control candidate: recapture the original window to distinguish transient Excel capture problems from range-selection problems.",
+      "tile_index": 1,
+      "tile_count": 1,
+      "related_pipeline_ids": [],
+      "related_block_ids": [],
+      "related_region_ids": [],
+      "related_boundary_gate_ids": [],
+      "reasons": [
+        "recapture_required",
+        "recapture_with_expanded_window_or_zoom",
+        "recapture_with_visible_row_context"
+      ],
+      "gate_checks": [
+        {
+          "id": "gate_candidate_capture_target_포도_cell_region_1_same_window_control_01_candidate_capture_quality",
+          "type": "visual_formula_gate_check",
+          "target_id": "candidate_capture_target_포도_cell_region_1_same_window_control_01",
+          "gate_type": "recapture_candidate_quality_confirmation",
+          "status": "pending_capture",
+          "deterministic_inputs": [
+            "capture_target_포도_cell_region_1",
+            "quality_capture_target_포도_cell_region_1"
+          ],
+          "pass_conditions": [
+            "Candidate capture quality improves over the source capture.",
+            "Candidate range still covers the visual evidence needed for the source gate or a clearly documented tile of it."
+          ],
+          "failure_signals": [
+            "Candidate capture remains too thin, clipped, blank, or unreadable.",
+            "Candidate range no longer represents the source gate's intended workbook evidence."
+          ]
+        }
+      ],
+      "review_questions": [
+        "이 candidate capture가 원래 capture보다 downstream visual gate에 더 적합한가요?"
+      ],
+      "evidence_refs": [
+        "capture_target_포도_cell_region_1",
+        "quality_capture_target_포도_cell_region_1"
+      ]
+    },
+    {
+      "id": "candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "type": "visual_formula_validation_target",
+      "target_type": "recapture_candidate",
+      "status": "candidate",
+      "priority": "high",
+      "score": 95,
+      "sheet": "포도",
+      "range": "A1:R80",
+      "bounds": {
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 80,
+        "max_column": 18
+      },
+      "capture_window": {
+        "sheet": "포도",
+        "range": "A1:R80",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 80,
+          "max_column": 18
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "포도_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "포도",
+        "range": "A1:Q20",
+        "block_id": "포도_row_band_1",
+        "region_id": "포도_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 17
+        },
+        "label": "수강권고유번호"
+      },
+      "source_capture_id": "capture_target_포도_cell_region_1",
+      "source_quality_result_id": "quality_capture_target_포도_cell_region_1",
+      "source_quality_status": "recapture_required",
+      "candidate_strategy": "expanded_row_context",
+      "candidate_rationale": "Expand rows downward from the original window to test whether more visible row context fixes a too-thin capture.",
+      "tile_index": 1,
+      "tile_count": 1,
+      "related_pipeline_ids": [],
+      "related_block_ids": [],
+      "related_region_ids": [],
+      "related_boundary_gate_ids": [],
+      "reasons": [
+        "recapture_required",
+        "recapture_with_expanded_window_or_zoom",
+        "recapture_with_visible_row_context"
+      ],
+      "gate_checks": [
+        {
+          "id": "gate_candidate_capture_target_포도_cell_region_1_expanded_row_context_01_candidate_capture_quality",
+          "type": "visual_formula_gate_check",
+          "target_id": "candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+          "gate_type": "recapture_candidate_quality_confirmation",
+          "status": "pending_capture",
+          "deterministic_inputs": [
+            "capture_target_포도_cell_region_1",
+            "quality_capture_target_포도_cell_region_1"
+          ],
+          "pass_conditions": [
+            "Candidate capture quality improves over the source capture.",
+            "Candidate range still covers the visual evidence needed for the source gate or a clearly documented tile of it."
+          ],
+          "failure_signals": [
+            "Candidate capture remains too thin, clipped, blank, or unreadable.",
+            "Candidate range no longer represents the source gate's intended workbook evidence."
+          ]
+        }
+      ],
+      "review_questions": [
+        "이 candidate capture가 원래 capture보다 downstream visual gate에 더 적합한가요?"
+      ],
+      "evidence_refs": [
+        "capture_target_포도_cell_region_1",
+        "quality_capture_target_포도_cell_region_1"
+      ]
+    },
+    {
+      "id": "candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "type": "visual_formula_validation_target",
+      "target_type": "recapture_candidate",
+      "status": "candidate",
+      "priority": "high",
+      "score": 95,
+      "sheet": "포도",
+      "range": "A21:R100",
+      "bounds": {
+        "min_row": 21,
+        "min_column": 1,
+        "max_row": 100,
+        "max_column": 18
+      },
+      "capture_window": {
+        "sheet": "포도",
+        "range": "A21:R100",
+        "bounds": {
+          "min_row": 21,
+          "min_column": 1,
+          "max_row": 100,
+          "max_column": 18
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "포도_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "포도",
+        "range": "A1:Q20",
+        "block_id": "포도_row_band_1",
+        "region_id": "포도_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 17
+        },
+        "label": "수강권고유번호"
+      },
+      "source_capture_id": "capture_target_포도_cell_region_1",
+      "source_quality_result_id": "quality_capture_target_포도_cell_region_1",
+      "source_quality_status": "recapture_required",
+      "candidate_strategy": "visible_row_context",
+      "candidate_rationale": "Shift to likely visible data rows below the hidden or collapsed header band.",
+      "tile_index": 1,
+      "tile_count": 1,
+      "related_pipeline_ids": [],
+      "related_block_ids": [],
+      "related_region_ids": [],
+      "related_boundary_gate_ids": [],
+      "reasons": [
+        "recapture_required",
+        "recapture_with_expanded_window_or_zoom",
+        "recapture_with_visible_row_context"
+      ],
+      "gate_checks": [
+        {
+          "id": "gate_candidate_capture_target_포도_cell_region_1_visible_row_context_01_candidate_capture_quality",
+          "type": "visual_formula_gate_check",
+          "target_id": "candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+          "gate_type": "recapture_candidate_quality_confirmation",
+          "status": "pending_capture",
+          "deterministic_inputs": [
+            "capture_target_포도_cell_region_1",
+            "quality_capture_target_포도_cell_region_1"
+          ],
+          "pass_conditions": [
+            "Candidate capture quality improves over the source capture.",
+            "Candidate range still covers the visual evidence needed for the source gate or a clearly documented tile of it."
+          ],
+          "failure_signals": [
+            "Candidate capture remains too thin, clipped, blank, or unreadable.",
+            "Candidate range no longer represents the source gate's intended workbook evidence."
+          ]
+        }
+      ],
+      "review_questions": [
+        "이 candidate capture가 원래 capture보다 downstream visual gate에 더 적합한가요?"
+      ],
+      "evidence_refs": [
+        "capture_target_포도_cell_region_1",
+        "quality_capture_target_포도_cell_region_1"
+      ]
+    }
+  ],
+  "recommended_first_batch_target_ids": [
+    "candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+    "candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+    "candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+    "candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+    "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+    "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+    "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+    "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+    "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+    "candidate_capture_target_포도_cell_region_1_same_window_control_01",
+    "candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+    "candidate_capture_target_포도_cell_region_1_visible_row_context_01"
+  ],
+  "summary": {
+    "source_capture_count": 4,
+    "candidate_target_count": 12,
+    "high_priority_count": 7,
+    "medium_priority_count": 5,
+    "same_window_control_count": 2,
+    "expanded_row_context_count": 1,
+    "visible_row_context_count": 1,
+    "visible_row_context_tile_count": 3,
+    "column_tile_count": 5,
+    "sheet_count": 4,
+    "gate_check_count": 12,
+    "recommended_first_batch_count": 12
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "Recapture candidates are alternatives for experiment and review. They are not accepted final recapture plans."
+    }
+  ]
+}

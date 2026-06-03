@@ -1,0 +1,448 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/workbook-local-semantic-candidates.schema.json",
+  "title": "Workbook Local Semantic Candidates",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_artifacts",
+    "method",
+    "local_boundary",
+    "semantic_readiness",
+    "local_semantic_candidates",
+    "candidate_relations",
+    "review_queue",
+    "summary",
+    "parser_observations"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "source_artifacts": {
+      "type": "object",
+      "required": [
+        "data_view_projection",
+        "domain_source_model",
+        "validated_document_graph"
+      ],
+      "properties": {
+        "data_view_projection": {
+          "type": "string"
+        },
+        "domain_source_model": {
+          "type": "string"
+        },
+        "validated_document_graph": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy"],
+      "properties": {
+        "name": {
+          "const": "deterministic_local_semantic_candidate_generation"
+        },
+        "authority": {
+          "const": "candidate_projection_not_shared_ontology_promotion"
+        },
+        "decision_policy": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "local_boundary": {
+      "type": ["object", "null"]
+    },
+    "semantic_readiness": {
+      "type": "object"
+    },
+    "local_semantic_candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/localSemanticCandidate"
+      }
+    },
+    "candidate_relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/candidateRelation"
+      }
+    },
+    "review_queue": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "local_semantic_candidate_count",
+        "accepted_context_candidate_count",
+        "unmapped_data_view_candidate_count",
+        "boundary_pending_candidate_count",
+        "needs_semantic_interpretation_count",
+        "shared_promotion_allowed_candidate_count",
+        "candidate_relation_count",
+        "covered_data_view_count",
+        "review_queue_count",
+        "local_boundary_confirmed",
+        "local_domain_source_count",
+        "candidate_status"
+      ],
+      "properties": {
+        "local_semantic_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "accepted_context_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unmapped_data_view_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "boundary_pending_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "needs_semantic_interpretation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "shared_promotion_allowed_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "candidate_relation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "covered_data_view_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "review_queue_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "local_boundary_confirmed": {
+          "type": "boolean"
+        },
+        "local_domain_source_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "candidate_status": {
+          "const": "generated_boundary_scoped_candidates_with_promotion_blockers"
+        }
+      },
+      "additionalProperties": true
+    },
+    "parser_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    }
+  },
+  "$defs": {
+    "localSemanticCandidate": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "label",
+        "candidate_kind",
+        "source_kind",
+        "status",
+        "promotion_status",
+        "applicability_scope",
+        "confidence",
+        "requires_human_review",
+        "local_boundary_id",
+        "general_domain_alignment",
+        "local_domain_evidence",
+        "data_view_refs",
+        "observed_terms",
+        "required_actions",
+        "warnings",
+        "evidence_refs",
+        "source_artifact_refs"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "const": "local_semantic_candidate"
+        },
+        "label": {
+          "type": ["string", "number", "null"]
+        },
+        "candidate_kind": {
+          "type": ["string", "null"]
+        },
+        "source_kind": {
+          "enum": ["accepted_semantic_context", "unmapped_data_view_surface"]
+        },
+        "status": {
+          "enum": [
+            "local_candidate",
+            "local_candidate_boundary_pending",
+            "needs_semantic_interpretation"
+          ]
+        },
+        "promotion_status": {
+          "enum": [
+            "local_candidate_not_yet_shared",
+            "not_promotable_shared_ontology_boundary_pending",
+            "not_promotable_semantic_label_pending"
+          ]
+        },
+        "applicability_scope": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "requires_human_review": {
+          "type": "boolean"
+        },
+        "local_boundary_id": {
+          "type": ["string", "null"]
+        },
+        "general_domain_alignment": {
+          "$ref": "#/$defs/generalDomainAlignment"
+        },
+        "local_domain_evidence": {
+          "$ref": "#/$defs/localDomainEvidence"
+        },
+        "data_view_refs": {
+          "$ref": "#/$defs/dataViewRefs"
+        },
+        "observed_terms": {
+          "type": "array",
+          "items": {
+            "type": ["string", "number", "null"]
+          }
+        },
+        "required_actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "generalDomainAlignment": {
+      "type": "object",
+      "required": [
+        "status",
+        "accepted_semantic_concept_ids",
+        "accepted_semantic_labels",
+        "domain_source_refs"
+      ],
+      "properties": {
+        "status": {
+          "enum": ["aligned", "unmapped_pending_semantic_interpretation"]
+        },
+        "accepted_semantic_concept_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "accepted_semantic_labels": {
+          "type": "array",
+          "items": {
+            "type": ["string", "number", "null"]
+          }
+        },
+        "domain_source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "localDomainEvidence": {
+      "type": "object",
+      "required": [
+        "local_domain_source_ids",
+        "local_domain_boundary_ids",
+        "local_domain_source_status"
+      ],
+      "properties": {
+        "local_domain_source_ids": {
+          "type": "array",
+          "items": {
+            "type": ["string", "null"]
+          }
+        },
+        "local_domain_boundary_ids": {
+          "type": "array",
+          "items": {
+            "type": ["string", "null"]
+          }
+        },
+        "local_domain_source_status": {
+          "enum": ["available", "missing"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "dataViewRefs": {
+      "type": "object",
+      "required": [
+        "data_view_ids",
+        "projection_ids",
+        "sheets",
+        "ranges",
+        "projection_kinds",
+        "roles",
+        "sampled_projection_count",
+        "formula_cell_count"
+      ],
+      "properties": {
+        "data_view_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "projection_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sheets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ranges": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "projection_kinds": {
+          "type": "array",
+          "items": {
+            "type": ["string", "null"]
+          }
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": ["string", "null"]
+          }
+        },
+        "sampled_projection_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "formula_cell_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "candidateRelation": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "from",
+        "to",
+        "status",
+        "evidence_refs",
+        "source_artifact_refs"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "local_candidate_describes_data_view",
+            "local_candidate_refines_accepted_semantic_context"
+          ]
+        },
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "status": {
+          "const": "candidate"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "properties": {
+        "level": {
+          "enum": ["info", "warning", "error"]
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

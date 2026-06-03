@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-shared-ontology-alignment-review.schema.json",
+  "title": "Google Sheets Shared Ontology Alignment Review",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "method",
+    "alignment_items",
+    "review_questions",
+    "shared_ontology_updates",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "method": { "$ref": "#/$defs/method" },
+    "alignment_items": { "type": "array", "items": { "$ref": "#/$defs/alignment_item" } },
+    "review_questions": { "type": "array", "items": { "$ref": "#/$defs/review_question" } },
+    "shared_ontology_updates": { "type": "array", "maxItems": 0 },
+    "summary": { "$ref": "#/$defs/counts" },
+    "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["spreadsheet_id", "spreadsheet_url", "title", "source_artifacts"],
+      "additionalProperties": false,
+      "properties": {
+        "spreadsheet_id": { "type": "string", "minLength": 1 },
+        "spreadsheet_url": { "type": ["string", "null"] },
+        "title": { "type": "string" },
+        "source_artifacts": {
+          "type": "object",
+          "required": [
+            "live_local_semantic_candidates",
+            "live_data_view_projection",
+            "live_domain_source_model"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "live_local_semantic_candidates": { "type": "string", "minLength": 1 },
+            "live_data_view_projection": { "type": "string", "minLength": 1 },
+            "live_domain_source_model": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "source_document",
+        "review_status",
+        "shared_ontology_updates",
+        "formula_result_authority",
+        "local_boundary_confirmed"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_document": { "const": "live_google_sheet" },
+        "review_status": { "const": "review_only_no_shared_promotion" },
+        "shared_ontology_updates": { "const": 0 },
+        "formula_result_authority": { "const": "not_established" },
+        "local_boundary_confirmed": { "type": "boolean" }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "const": "connected_sheets_shared_ontology_alignment_review" },
+        "authority": { "const": "human_review_packet_no_ontology_write" },
+        "decision_policy": { "type": "string", "minLength": 1 }
+      }
+    },
+    "alignment_item": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "candidate_id",
+        "candidate_label",
+        "status",
+        "recommended_action",
+        "preconditions",
+        "blocking_preconditions",
+        "shared_update",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "shared_ontology_alignment_item" },
+        "candidate_id": { "type": "string", "minLength": 1 },
+        "candidate_label": { "type": ["string", "number", "null"] },
+        "status": { "const": "blocked" },
+        "recommended_action": { "const": "no_shared_update" },
+        "preconditions": { "type": "array", "items": { "$ref": "#/$defs/precondition" } },
+        "blocking_preconditions": { "type": "array", "items": { "type": "string" } },
+        "shared_update": { "type": "null" },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "precondition": {
+      "type": "object",
+      "required": ["id", "status", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "enum": ["passed", "blocked"] },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "review_question": {
+      "type": "object",
+      "required": ["id", "priority", "question", "required_for"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "priority": { "type": "string", "enum": ["low", "medium", "high"] },
+        "question": { "type": "string", "minLength": 1 },
+        "required_for": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] }
+    }
+  }
+}

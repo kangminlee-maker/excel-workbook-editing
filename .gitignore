@@ -2,3 +2,5 @@
 __pycache__/
 *.pyc
 evals/
+.onto/
+review-packages/sheets-bridge/native-host/

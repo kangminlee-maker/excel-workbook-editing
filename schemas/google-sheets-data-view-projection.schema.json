@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-data-view-projection.schema.json",
+  "title": "Google Sheets Data View Projection",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "method",
+    "data_view_projections",
+    "carry_forward",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "method": { "$ref": "#/$defs/method" },
+    "data_view_projections": { "type": "array", "items": { "$ref": "#/$defs/projection" } },
+    "carry_forward": { "type": "object" },
+    "summary": { "$ref": "#/$defs/counts" },
+    "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["spreadsheet_id", "spreadsheet_url", "title", "source_artifacts"],
+      "additionalProperties": false,
+      "properties": {
+        "spreadsheet_id": { "type": "string", "minLength": 1 },
+        "spreadsheet_url": { "type": ["string", "null"] },
+        "title": { "type": "string" },
+        "source_artifacts": {
+          "type": "object",
+          "required": ["live_validated_document_graph", "live_evidence_package", "top_left_sample"],
+          "additionalProperties": false,
+          "properties": {
+            "live_validated_document_graph": { "type": "string", "minLength": 1 },
+            "live_evidence_package": { "type": "string", "minLength": 1 },
+            "top_left_sample": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "source_document",
+        "projection_status",
+        "formula_result_authority",
+        "semantic_review_resolution",
+        "shared_ontology_updates"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_document": { "const": "live_google_sheet" },
+        "projection_status": { "const": "read_model_projection_only" },
+        "formula_result_authority": { "const": "not_established" },
+        "semantic_review_resolution": { "const": "not_performed" },
+        "shared_ontology_updates": { "const": 0 }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "const": "connected_sheets_data_view_projection" },
+        "authority": { "const": "validated_graph_projection_not_formula_recalculation" },
+        "decision_policy": { "type": "string", "minLength": 1 }
+      }
+    },
+    "projection": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "projection_kind",
+        "source_node_id",
+        "pipeline_id",
+        "label",
+        "role",
+        "sheet",
+        "range",
+        "input_refs",
+        "output_refs",
+        "transform_summary",
+        "preview",
+        "formula_policy",
+        "warnings",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "data_view_projection" },
+        "projection_kind": {
+          "type": "string",
+          "enum": ["calculation_pipeline_projection", "document_summary_projection"]
+        },
+        "source_node_id": { "type": "string", "minLength": 1 },
+        "pipeline_id": { "type": ["string", "null"] },
+        "label": { "type": ["string", "number", "null"] },
+        "role": { "type": ["string", "null"] },
+        "sheet": { "type": ["string", "null"] },
+        "range": { "type": ["string", "null"] },
+        "input_refs": { "type": "array", "items": { "$ref": "#/$defs/ref" } },
+        "output_refs": { "type": "array", "items": { "$ref": "#/$defs/ref" } },
+        "transform_summary": { "type": "object" },
+        "preview": { "$ref": "#/$defs/preview" },
+        "formula_policy": { "$ref": "#/$defs/formula_policy" },
+        "warnings": { "type": "array", "items": { "type": "string" } },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "ref": {
+      "type": "object",
+      "required": ["id", "kind", "role", "sheet", "range", "label", "authority"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": ["string", "null"] },
+        "kind": { "type": ["string", "null"] },
+        "role": { "type": ["string", "null"] },
+        "sheet": { "type": ["string", "null"] },
+        "range": { "type": ["string", "null"] },
+        "label": { "type": ["string", "number", "null"] },
+        "authority": { "type": ["string", "null"] }
+      }
+    },
+    "preview": {
+      "type": "object",
+      "required": ["status", "rows", "sampled_row_count", "sampled_formula_cell_count"],
+      "additionalProperties": true,
+      "properties": {
+        "status": { "type": "string" },
+        "rows": { "type": "array", "items": { "type": "object" } },
+        "sampled_row_count": { "type": "integer", "minimum": 0 },
+        "sampled_formula_cell_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "formula_policy": {
+      "type": "object",
+      "required": ["formula_text_is_evidence_only", "formula_result_authority", "recalculation_not_performed"],
+      "additionalProperties": false,
+      "properties": {
+        "formula_text_is_evidence_only": { "const": true },
+        "formula_result_authority": { "const": "not_established" },
+        "recalculation_not_performed": { "const": true }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] }
+    }
+  }
+}

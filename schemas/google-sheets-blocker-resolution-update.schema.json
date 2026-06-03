@@ -1,0 +1,260 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-blocker-resolution-update.schema.json",
+  "title": "Google Sheets Blocker Resolution Update",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "method",
+    "user_inputs",
+    "source_smoke",
+    "lineage_observations",
+    "blocker_status",
+    "next_actions",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "method": { "$ref": "#/$defs/method" },
+    "user_inputs": { "$ref": "#/$defs/user_inputs" },
+    "source_smoke": { "$ref": "#/$defs/source_smoke" },
+    "lineage_observations": { "$ref": "#/$defs/lineage_observations" },
+    "blocker_status": { "type": "array", "items": { "$ref": "#/$defs/blocker_status" } },
+    "next_actions": { "type": "array", "items": { "$ref": "#/$defs/next_action" } },
+    "summary": { "$ref": "#/$defs/counts" },
+    "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": [
+        "live_inspection_dir",
+        "source_spreadsheet_id",
+        "source_spreadsheet_url",
+        "source_title",
+        "source_artifacts"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "live_inspection_dir": { "type": "string", "minLength": 1 },
+        "source_spreadsheet_id": { "type": "string", "minLength": 1 },
+        "source_spreadsheet_url": { "type": "string", "minLength": 1 },
+        "source_title": { "type": "string" },
+        "source_artifacts": {
+          "type": "object",
+          "required": ["metadata", "values_window", "formula_window"],
+          "additionalProperties": false,
+          "properties": {
+            "metadata": { "type": "string", "minLength": 1 },
+            "values_window": { "type": "string", "minLength": 1 },
+            "formula_window": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": ["update_status", "parser_truth", "shared_ontology_updates"],
+      "additionalProperties": false,
+      "properties": {
+        "update_status": { "const": "blocker_resolution_recorded" },
+        "parser_truth": { "const": "no_new_parser_claims_until_rerun" },
+        "shared_ontology_updates": { "const": 0 }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "const": "connected_sheets_blocker_resolution_update" },
+        "authority": { "const": "user_feedback_plus_broker_smoke_evidence" },
+        "decision_policy": { "type": "string", "minLength": 1 }
+      }
+    },
+    "user_inputs": {
+      "type": "object",
+      "required": [
+        "fc_data_source_url",
+        "formula_result_authority",
+        "local_boundary",
+        "repeated_workbook_family",
+        "reporting_basis"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "fc_data_source_url": { "type": "string", "minLength": 1 },
+        "formula_result_authority": { "type": "string", "minLength": 1 },
+        "local_boundary": { "type": "string", "minLength": 1 },
+        "repeated_workbook_family": { "type": "string", "minLength": 1 },
+        "reporting_basis": { "type": "string", "minLength": 1 }
+      }
+    },
+    "source_smoke": {
+      "type": "object",
+      "required": ["metadata", "values_window", "formula_window"],
+      "additionalProperties": false,
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "required": ["ok", "title", "tab_count", "hidden_tab_count", "fc_data", "policy"],
+          "additionalProperties": false,
+          "properties": {
+            "ok": { "type": "boolean" },
+            "title": { "type": "string" },
+            "tab_count": { "type": "integer" },
+            "hidden_tab_count": { "type": "integer" },
+            "fc_data": { "type": "object" },
+            "policy": { "type": "object" }
+          }
+        },
+        "values_window": { "$ref": "#/$defs/window_smoke" },
+        "formula_window": { "$ref": "#/$defs/window_smoke" }
+      }
+    },
+    "window_smoke": {
+      "type": "object",
+      "required": [
+        "ok",
+        "operation",
+        "requested_ranges",
+        "window_count",
+        "row_count",
+        "column_count_max",
+        "policy"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "ok": { "type": "boolean" },
+        "operation": { "type": ["string", "null"] },
+        "requested_ranges": { "type": "array", "items": { "type": "string" } },
+        "window_count": { "type": "integer" },
+        "row_count": { "type": "integer" },
+        "column_count_max": { "type": "integer" },
+        "policy": { "type": "object" }
+      }
+    },
+    "lineage_observations": {
+      "type": "object",
+      "required": [
+        "nested_importrange_dependencies",
+        "displayed_error_samples",
+        "version_group_candidates",
+        "version_breakpoint_candidates"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "nested_importrange_dependencies": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nested_import" }
+        },
+        "displayed_error_samples": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/error_sample" }
+        },
+        "version_group_candidates": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/version_group" }
+        },
+        "version_breakpoint_candidates": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/version_breakpoint" }
+        }
+      }
+    },
+    "nested_import": {
+      "type": "object",
+      "required": ["cell", "formula", "source_argument", "import_range", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "cell": { "type": "string", "minLength": 1 },
+        "formula": { "type": "string", "minLength": 1 },
+        "source_argument": { "type": "string" },
+        "import_range": { "type": "string" },
+        "status": { "type": "string", "minLength": 1 }
+      }
+    },
+    "error_sample": {
+      "type": "object",
+      "required": ["cell", "displayed_value"],
+      "additionalProperties": false,
+      "properties": {
+        "cell": { "type": "string", "minLength": 1 },
+        "displayed_value": { "type": "string", "minLength": 1 }
+      }
+    },
+    "version_group": {
+      "type": "object",
+      "required": ["id", "newest_tab", "oldest_tab", "column_count"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "newest_tab": { "type": "string", "minLength": 1 },
+        "oldest_tab": { "type": "string", "minLength": 1 },
+        "column_count": { "type": ["integer", "null"] }
+      }
+    },
+    "version_breakpoint": {
+      "type": "object",
+      "required": [
+        "id",
+        "newer_tab",
+        "older_tab",
+        "newer_column_count",
+        "older_column_count",
+        "reason"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "newer_tab": { "type": "string", "minLength": 1 },
+        "older_tab": { "type": "string", "minLength": 1 },
+        "newer_column_count": { "type": ["integer", "null"] },
+        "older_column_count": { "type": ["integer", "null"] },
+        "reason": { "type": "string", "minLength": 1 }
+      }
+    },
+    "blocker_status": {
+      "type": "object",
+      "required": ["id", "status", "meaning", "evidence_refs"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "minLength": 1 },
+        "meaning": { "type": "string", "minLength": 1 },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "next_action": {
+      "type": "object",
+      "required": ["id", "action", "done_when"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "action": { "type": "string", "minLength": 1 },
+        "done_when": { "type": "string", "minLength": 1 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] }
+    }
+  }
+}

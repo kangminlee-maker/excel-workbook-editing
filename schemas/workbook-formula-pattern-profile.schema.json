@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/workbook-formula-pattern-profile.schema.json",
+  "title": "Workbook Formula Pattern Profile",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "limits",
+    "sheets",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "limits": { "$ref": "#/$defs/limits" },
+    "sheets": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/sheet" }
+    },
+    "summary": { "$ref": "#/$defs/summary" },
+    "parser_observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/observation" }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["path", "file_name", "size_bytes", "sha256"],
+      "additionalProperties": false,
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "file_name": { "type": "string", "minLength": 1 },
+        "size_bytes": { "type": "integer", "minimum": 0 },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "required": ["default_max_rows", "max_columns", "sample_limit"],
+      "additionalProperties": false,
+      "properties": {
+        "default_max_rows": { "type": "integer", "minimum": 1 },
+        "max_columns": { "type": "integer", "minimum": 1 },
+        "sample_limit": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "sheet": {
+      "type": "object",
+      "required": ["name", "entry", "windows", "summary", "parser_observations"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "entry": { "type": "string" },
+        "windows": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/window" }
+        },
+        "summary": { "$ref": "#/$defs/sheet_summary" },
+        "parser_observations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/observation" }
+        }
+      }
+    },
+    "window": {
+      "type": "object",
+      "required": [
+        "start_row",
+        "end_row",
+        "max_columns",
+        "formula_count",
+        "signature_group_count",
+        "repeated_signature_group_count",
+        "structure_hint",
+        "formula_samples",
+        "signature_groups"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "start_row": { "type": "integer", "minimum": 1 },
+        "end_row": { "type": "integer", "minimum": 1 },
+        "max_columns": { "type": "integer", "minimum": 1 },
+        "formula_count": { "type": "integer", "minimum": 0 },
+        "signature_group_count": { "type": "integer", "minimum": 0 },
+        "repeated_signature_group_count": { "type": "integer", "minimum": 0 },
+        "structure_hint": {
+          "type": "string",
+          "enum": [
+            "value_only_window",
+            "summary_formula_band",
+            "repeated_formula_region_candidate",
+            "mixed_formula_region"
+          ]
+        },
+        "formula_samples": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/formula" }
+        },
+        "signature_groups": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/signature_group" }
+        }
+      }
+    },
+    "formula": {
+      "type": "object",
+      "required": ["cell", "row", "column", "formula", "attributes", "signature"],
+      "additionalProperties": false,
+      "properties": {
+        "cell": { "type": "string" },
+        "row": { "type": "integer", "minimum": 1 },
+        "column": { "type": "integer", "minimum": 1 },
+        "formula": { "type": "string" },
+        "attributes": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
+        },
+        "signature": { "type": "string" }
+      }
+    },
+    "signature_group": {
+      "type": "object",
+      "required": [
+        "signature",
+        "formula_count",
+        "row_min",
+        "row_max",
+        "column_min",
+        "column_max",
+        "sample_cells",
+        "formula_examples"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "signature": { "type": "string" },
+        "formula_count": { "type": "integer", "minimum": 0 },
+        "row_min": { "type": "integer", "minimum": 1 },
+        "row_max": { "type": "integer", "minimum": 1 },
+        "column_min": { "type": "integer", "minimum": 1 },
+        "column_max": { "type": "integer", "minimum": 1 },
+        "sample_cells": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "formula_examples": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "sheet_summary": {
+      "type": "object",
+      "required": [
+        "window_count",
+        "formula_count",
+        "signature_group_count",
+        "repeated_signature_group_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "window_count": { "type": "integer", "minimum": 0 },
+        "formula_count": { "type": "integer", "minimum": 0 },
+        "signature_group_count": { "type": "integer", "minimum": 0 },
+        "repeated_signature_group_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "sheet_count",
+        "window_count",
+        "formula_count",
+        "signature_group_count",
+        "repeated_signature_group_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "sheet_count": { "type": "integer", "minimum": 0 },
+        "window_count": { "type": "integer", "minimum": 0 },
+        "formula_count": { "type": "integer", "minimum": 0 },
+        "signature_group_count": { "type": "integer", "minimum": 0 },
+        "repeated_signature_group_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}

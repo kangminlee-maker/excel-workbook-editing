@@ -1,0 +1,301 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/workbook-domain-source-model.schema.json",
+  "title": "Workbook Domain Source Model",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_artifacts",
+    "method",
+    "domain_layers",
+    "governance_rules",
+    "semantic_readiness",
+    "review_queue",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source_artifacts": { "$ref": "#/$defs/source_artifacts" },
+    "method": { "$ref": "#/$defs/method" },
+    "domain_layers": { "$ref": "#/$defs/domain_layers" },
+    "governance_rules": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/governance_rule" }
+    },
+    "semantic_readiness": { "$ref": "#/$defs/semantic_readiness" },
+    "review_queue": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/review_item" }
+    },
+    "summary": { "$ref": "#/$defs/summary" },
+    "parser_observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/observation" }
+    }
+  },
+  "$defs": {
+    "source_artifacts": {
+      "type": "object",
+      "required": [
+        "evidence_package",
+        "document_ontology_mapping",
+        "action_contracts",
+        "general_domain_root",
+        "local_domain_root"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "evidence_package": { "type": "string", "minLength": 1 },
+        "document_ontology_mapping": { "type": "string", "minLength": 1 },
+        "action_contracts": { "type": "string", "minLength": 1 },
+        "general_domain_root": { "type": ["string", "null"] },
+        "local_domain_root": { "type": ["string", "null"] }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "const": "deterministic_domain_source_model" },
+        "authority": { "const": "domain_source_inventory_not_semantic_claim_generation" },
+        "decision_policy": { "type": "string", "minLength": 1 }
+      }
+    },
+    "domain_layers": {
+      "type": "object",
+      "required": [
+        "general_domain_sources",
+        "local_domain_sources",
+        "local_domain_boundaries"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "general_domain_sources": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/domain_source" }
+        },
+        "local_domain_sources": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/domain_source" }
+        },
+        "local_domain_boundaries": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/local_boundary" }
+        }
+      }
+    },
+    "domain_source": {
+      "type": "object",
+      "required": [
+        "id",
+        "layer",
+        "document_role",
+        "path",
+        "file_name",
+        "status",
+        "scope",
+        "applicability",
+        "size_bytes",
+        "sha256",
+        "heading_samples",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "layer": { "type": "string", "enum": ["general_domain", "local_domain"] },
+        "domain_id": { "type": "string" },
+        "boundary_id": { "type": "string" },
+        "document_role": { "type": "string", "minLength": 1 },
+        "path": { "type": "string" },
+        "file_name": { "type": "string" },
+        "status": { "type": "string", "enum": ["available", "missing"] },
+        "scope": { "type": "string" },
+        "applicability": { "type": "string" },
+        "size_bytes": { "type": ["integer", "null"], "minimum": 0 },
+        "sha256": { "type": ["string", "null"] },
+        "heading_samples": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      },
+      "oneOf": [
+        { "required": ["domain_id"] },
+        { "required": ["boundary_id"] }
+      ]
+    },
+    "local_boundary": {
+      "type": "object",
+      "required": [
+        "id",
+        "layer",
+        "boundary_kind",
+        "label",
+        "status",
+        "scope",
+        "source_anchor",
+        "local_source_ids",
+        "required_confirmation",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "layer": { "const": "local_domain" },
+        "boundary_kind": { "type": "string" },
+        "label": { "type": ["string", "null"] },
+        "status": { "type": "string", "enum": ["available", "review_required"] },
+        "scope": { "type": "string" },
+        "source_anchor": {
+          "type": "object",
+          "required": ["workbook_path", "workbook_sha256", "workbook_file_name"],
+          "additionalProperties": false,
+          "properties": {
+            "workbook_path": { "type": ["string", "null"] },
+            "workbook_sha256": { "type": ["string", "null"] },
+            "workbook_file_name": { "type": ["string", "null"] }
+          }
+        },
+        "local_source_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "required_confirmation": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "governance_rule": {
+      "type": "object",
+      "required": ["id", "rule", "applies_to"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "rule": { "type": "string", "minLength": 1 },
+        "applies_to": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "semantic_readiness": {
+      "type": "object",
+      "required": [
+        "status",
+        "general_domain_ready",
+        "local_boundary_confirmed",
+        "local_domain_source_count",
+        "semantic_proposal_mode",
+        "shared_ontology_promotion_allowed",
+        "shared_ontology_promotion_condition",
+        "structural_action_summary",
+        "blocking_factors"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "blocked_missing_general_domain",
+            "proposal_only_local_boundary_pending",
+            "proposal_only_structural_actions_pending",
+            "ready_for_semantic_proposals"
+          ]
+        },
+        "general_domain_ready": { "type": "boolean" },
+        "local_boundary_confirmed": { "type": "boolean" },
+        "local_domain_source_count": { "type": "integer", "minimum": 0 },
+        "semantic_proposal_mode": { "type": "string" },
+        "shared_ontology_promotion_allowed": { "const": false },
+        "shared_ontology_promotion_condition": { "type": "string" },
+        "structural_action_summary": {
+          "type": "object",
+          "required": ["open_count", "blocked_count", "high_priority_count", "ready_count"],
+          "additionalProperties": false,
+          "properties": {
+            "open_count": { "type": "integer", "minimum": 0 },
+            "blocked_count": { "type": "integer", "minimum": 0 },
+            "high_priority_count": { "type": "integer", "minimum": 0 },
+            "ready_count": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "blocking_factors": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "review_item": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "priority",
+        "reason",
+        "target_id",
+        "required_action",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "kind": { "type": "string" },
+        "priority": { "type": "string", "enum": ["high", "medium", "low"] },
+        "reason": { "type": "string" },
+        "target_id": { "type": "string" },
+        "required_action": { "type": "string" },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "general_domain_source_count",
+        "available_general_domain_source_count",
+        "local_domain_source_count",
+        "available_local_domain_source_count",
+        "local_domain_boundary_count",
+        "confirmed_local_domain_boundary_count",
+        "review_required_local_domain_boundary_count",
+        "semantic_blocking_factor_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "general_domain_source_count": { "type": "integer", "minimum": 0 },
+        "available_general_domain_source_count": { "type": "integer", "minimum": 0 },
+        "local_domain_source_count": { "type": "integer", "minimum": 0 },
+        "available_local_domain_source_count": { "type": "integer", "minimum": 0 },
+        "local_domain_boundary_count": { "type": "integer", "minimum": 0 },
+        "confirmed_local_domain_boundary_count": { "type": "integer", "minimum": 0 },
+        "review_required_local_domain_boundary_count": { "type": "integer", "minimum": 0 },
+        "semantic_blocking_factor_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}

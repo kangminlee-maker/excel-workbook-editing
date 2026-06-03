@@ -1,0 +1,1623 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-01T02:32:20.222050Z",
+  "source_artifacts": {
+    "cross_validation_plan": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-cross-validation-plan.json"
+  },
+  "source_workbook": {
+    "path": "/Users/kangmin/cowork/day1_revenue_ontology/input/reference/mbp_2026년 02월_결제 및 수익인식F_260309.xlsx",
+    "file_name": "mbp_2026년 02월_결제 및 수익인식F_260309.xlsx",
+    "size_bytes": 105867506,
+    "sha256": "3392b1854fec1c8e634ceff36bd3d40e17f4dfc47bd47989ff08ebd7ae36f8f3"
+  },
+  "method": {
+    "engine": "Microsoft Excel",
+    "capture_method": "range_copy_picture_png",
+    "helper": "/Users/kangmin/Documents/excel-workbook-editing/scripts/excel_copy_ranges_png.applescript",
+    "sandbox_copy": true,
+    "png_export_settings": {
+      "appearance": "screen",
+      "format": "picture"
+    }
+  },
+  "selected_target_ids": [
+    "target_결제_수수료_cell_region_1",
+    "target_결제상세_cell_region_1",
+    "target_당월산식_cell_region_1",
+    "target_리스픽_cell_region_2",
+    "target_매출_cell_region_1",
+    "target_수익인식60일_cell_region_1",
+    "target_수익인식60일_강사료_cell_region_1",
+    "target_얼리버드_cell_region_1",
+    "target_유하다요_cell_region_1",
+    "target_유하다요_강사료_cell_region_1",
+    "target_정가표_cell_region_1",
+    "target_포도_cell_region_1"
+  ],
+  "captures": [
+    {
+      "id": "capture_target_결제_수수료_cell_region_1",
+      "type": "render_capture",
+      "status": "captured",
+      "target_id": "target_결제_수수료_cell_region_1",
+      "sheet": "결제&수수료",
+      "requested_range": "A1:C11",
+      "capture_window": {
+        "sheet": "결제&수수료",
+        "range": "A1:D13",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 13,
+          "max_column": 4
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "결제_수수료_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "결제&수수료",
+        "range": "A1:C11",
+        "block_id": "결제_수수료_row_band_1",
+        "region_id": "결제_수수료_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 11,
+          "max_column": 3
+        },
+        "label": "결제/환불"
+      },
+      "output": {
+        "pdf_path": null,
+        "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_001_57389d2f28.png",
+        "pdf_size_bytes": null,
+        "png_size_bytes": 15921,
+        "png_width": 341,
+        "png_height": 222
+      },
+      "coordinate_map": {
+        "status": "range_image_only",
+        "cell_range": "A1:D13",
+        "capture_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 341,
+          "height": 222
+        }
+      },
+      "gate_results": [
+        {
+          "id": "result_gate_target_결제_수수료_cell_region_1_boundary_confirmation",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_결제_수수료_cell_region_1",
+          "target_id": "target_결제_수수료_cell_region_1",
+          "gate_check_id": "gate_target_결제_수수료_cell_region_1_boundary_confirmation",
+          "gate_type": "boundary_confirmation",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_결제_수수료_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        },
+        {
+          "id": "result_gate_target_결제_수수료_cell_region_1_formula_summary_visual_alignment",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_결제_수수료_cell_region_1",
+          "target_id": "target_결제_수수료_cell_region_1",
+          "gate_check_id": "gate_target_결제_수수료_cell_region_1_formula_summary_visual_alignment",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_결제_수수료_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        }
+      ],
+      "parser_observations": [
+        {
+          "level": "info",
+          "message": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_001_57389d2f28.png"
+        }
+      ]
+    },
+    {
+      "id": "capture_target_결제상세_cell_region_1",
+      "type": "render_capture",
+      "status": "captured",
+      "target_id": "target_결제상세_cell_region_1",
+      "sheet": "결제상세",
+      "requested_range": "A1:AX20",
+      "capture_window": {
+        "sheet": "결제상세",
+        "range": "A1:AY22",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 22,
+          "max_column": 51
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "결제상세_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "결제상세",
+        "range": "A1:AX20",
+        "block_id": "결제상세_row_band_1",
+        "region_id": "결제상세_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 50
+        },
+        "label": "=SUBTOTAL(9,Z2:Z5000)"
+      },
+      "output": {
+        "pdf_path": null,
+        "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_002_cd6f96738d.png",
+        "pdf_size_bytes": null,
+        "png_size_bytes": 255814,
+        "png_width": 3478,
+        "png_height": 375
+      },
+      "coordinate_map": {
+        "status": "range_image_only",
+        "cell_range": "A1:AY22",
+        "capture_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 3478,
+          "height": 375
+        }
+      },
+      "gate_results": [
+        {
+          "id": "result_gate_target_결제상세_cell_region_1_boundary_confirmation",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_결제상세_cell_region_1",
+          "target_id": "target_결제상세_cell_region_1",
+          "gate_check_id": "gate_target_결제상세_cell_region_1_boundary_confirmation",
+          "gate_type": "boundary_confirmation",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_결제상세_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        },
+        {
+          "id": "result_gate_target_결제상세_cell_region_1_formula_region_coherence",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_결제상세_cell_region_1",
+          "target_id": "target_결제상세_cell_region_1",
+          "gate_check_id": "gate_target_결제상세_cell_region_1_formula_region_coherence",
+          "gate_type": "formula_region_coherence",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_결제상세_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        },
+        {
+          "id": "result_gate_target_결제상세_cell_region_1_formula_summary_visual_alignment",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_결제상세_cell_region_1",
+          "target_id": "target_결제상세_cell_region_1",
+          "gate_check_id": "gate_target_결제상세_cell_region_1_formula_summary_visual_alignment",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_결제상세_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        }
+      ],
+      "parser_observations": [
+        {
+          "level": "info",
+          "message": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_002_cd6f96738d.png"
+        }
+      ]
+    },
+    {
+      "id": "capture_target_당월산식_cell_region_1",
+      "type": "render_capture",
+      "status": "captured",
+      "target_id": "target_당월산식_cell_region_1",
+      "sheet": "당월산식",
+      "requested_range": "A1:AZ20",
+      "capture_window": {
+        "sheet": "당월산식",
+        "range": "A1:BA22",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 22,
+          "max_column": 53
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "당월산식_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "당월산식",
+        "range": "A1:AZ20",
+        "block_id": "당월산식_row_band_1",
+        "region_id": "당월산식_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 52
+        },
+        "label": "=SUBTOTAL(9,E5:E4620)"
+      },
+      "output": {
+        "pdf_path": null,
+        "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_003_8c8cc45aab.png",
+        "pdf_size_bytes": null,
+        "png_size_bytes": 20763,
+        "png_width": 2311,
+        "png_height": 69
+      },
+      "coordinate_map": {
+        "status": "range_image_only",
+        "cell_range": "A1:BA22",
+        "capture_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 2311,
+          "height": 69
+        }
+      },
+      "gate_results": [
+        {
+          "id": "result_gate_target_당월산식_cell_region_1_boundary_confirmation",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_당월산식_cell_region_1",
+          "target_id": "target_당월산식_cell_region_1",
+          "gate_check_id": "gate_target_당월산식_cell_region_1_boundary_confirmation",
+          "gate_type": "boundary_confirmation",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_당월산식_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        },
+        {
+          "id": "result_gate_target_당월산식_cell_region_1_formula_region_coherence",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_당월산식_cell_region_1",
+          "target_id": "target_당월산식_cell_region_1",
+          "gate_check_id": "gate_target_당월산식_cell_region_1_formula_region_coherence",
+          "gate_type": "formula_region_coherence",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_당월산식_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        },
+        {
+          "id": "result_gate_target_당월산식_cell_region_1_formula_summary_visual_alignment",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_당월산식_cell_region_1",
+          "target_id": "target_당월산식_cell_region_1",
+          "gate_check_id": "gate_target_당월산식_cell_region_1_formula_summary_visual_alignment",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_당월산식_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        }
+      ],
+      "parser_observations": [
+        {
+          "level": "info",
+          "message": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_003_8c8cc45aab.png"
+        }
+      ]
+    },
+    {
+      "id": "capture_target_리스픽_cell_region_2",
+      "type": "render_capture",
+      "status": "captured",
+      "target_id": "target_리스픽_cell_region_2",
+      "sheet": "리스픽",
+      "requested_range": "A4:M13",
+      "capture_window": {
+        "sheet": "리스픽",
+        "range": "A2:N15",
+        "bounds": {
+          "min_row": 2,
+          "min_column": 1,
+          "max_row": 15,
+          "max_column": 14
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "리스픽_cell_region_2",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "리스픽",
+        "range": "A4:M13",
+        "block_id": "리스픽_row_band_2",
+        "region_id": "리스픽_cell_region_2",
+        "bounds": {
+          "min_row": 4,
+          "min_column": 1,
+          "max_row": 13,
+          "max_column": 13
+        },
+        "label": "No."
+      },
+      "output": {
+        "pdf_path": null,
+        "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_004_a280430449.png",
+        "pdf_size_bytes": null,
+        "png_size_bytes": 39733,
+        "png_width": 873,
+        "png_height": 239
+      },
+      "coordinate_map": {
+        "status": "range_image_only",
+        "cell_range": "A2:N15",
+        "capture_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 873,
+          "height": 239
+        }
+      },
+      "gate_results": [
+        {
+          "id": "result_gate_target_리스픽_cell_region_2_boundary_confirmation",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_리스픽_cell_region_2",
+          "target_id": "target_리스픽_cell_region_2",
+          "gate_check_id": "gate_target_리스픽_cell_region_2_boundary_confirmation",
+          "gate_type": "boundary_confirmation",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_리스픽_cell_region_2"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        }
+      ],
+      "parser_observations": [
+        {
+          "level": "info",
+          "message": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_004_a280430449.png"
+        }
+      ]
+    },
+    {
+      "id": "capture_target_매출_cell_region_1",
+      "type": "render_capture",
+      "status": "captured",
+      "target_id": "target_매출_cell_region_1",
+      "sheet": "매출",
+      "requested_range": "A1:L58",
+      "capture_window": {
+        "sheet": "매출",
+        "range": "A1:M60",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 60,
+          "max_column": 13
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "매출_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "매출",
+        "range": "A1:L58",
+        "block_id": "매출_row_band_1",
+        "region_id": "매출_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 58,
+          "max_column": 12
+        },
+        "label": "*2월 KGAAP기준 매출"
+      },
+      "output": {
+        "pdf_path": null,
+        "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_005_dea19809c1.png",
+        "pdf_size_bytes": null,
+        "png_size_bytes": 157578,
+        "png_width": 1278,
+        "png_height": 1023
+      },
+      "coordinate_map": {
+        "status": "range_image_only",
+        "cell_range": "A1:M60",
+        "capture_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1278,
+          "height": 1023
+        }
+      },
+      "gate_results": [
+        {
+          "id": "result_gate_target_매출_cell_region_1_boundary_confirmation",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_매출_cell_region_1",
+          "target_id": "target_매출_cell_region_1",
+          "gate_check_id": "gate_target_매출_cell_region_1_boundary_confirmation",
+          "gate_type": "boundary_confirmation",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_매출_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        },
+        {
+          "id": "result_gate_target_매출_cell_region_1_formula_region_coherence",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_매출_cell_region_1",
+          "target_id": "target_매출_cell_region_1",
+          "gate_check_id": "gate_target_매출_cell_region_1_formula_region_coherence",
+          "gate_type": "formula_region_coherence",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_매출_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        },
+        {
+          "id": "result_gate_target_매출_cell_region_1_formula_summary_visual_alignment",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_매출_cell_region_1",
+          "target_id": "target_매출_cell_region_1",
+          "gate_check_id": "gate_target_매출_cell_region_1_formula_summary_visual_alignment",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_매출_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        }
+      ],
+      "parser_observations": [
+        {
+          "level": "info",
+          "message": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_005_dea19809c1.png"
+        }
+      ]
+    },
+    {
+      "id": "capture_target_수익인식60일_cell_region_1",
+      "type": "render_capture",
+      "status": "captured",
+      "target_id": "target_수익인식60일_cell_region_1",
+      "sheet": "수익인식60일",
+      "requested_range": "A1:AB20",
+      "capture_window": {
+        "sheet": "수익인식60일",
+        "range": "A1:AC22",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 22,
+          "max_column": 29
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "수익인식60일_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "수익인식60일",
+        "range": "A1:AB20",
+        "block_id": "수익인식60일_row_band_1",
+        "region_id": "수익인식60일_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 28
+        },
+        "label": "=SUBTOTAL(9,E5:E1846)"
+      },
+      "output": {
+        "pdf_path": null,
+        "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_006_12955465b8.png",
+        "pdf_size_bytes": null,
+        "png_size_bytes": 148087,
+        "png_width": 1858,
+        "png_height": 358
+      },
+      "coordinate_map": {
+        "status": "range_image_only",
+        "cell_range": "A1:AC22",
+        "capture_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1858,
+          "height": 358
+        }
+      },
+      "gate_results": [
+        {
+          "id": "result_gate_target_수익인식60일_cell_region_1_boundary_confirmation",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_수익인식60일_cell_region_1",
+          "target_id": "target_수익인식60일_cell_region_1",
+          "gate_check_id": "gate_target_수익인식60일_cell_region_1_boundary_confirmation",
+          "gate_type": "boundary_confirmation",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_수익인식60일_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        },
+        {
+          "id": "result_gate_target_수익인식60일_cell_region_1_formula_region_coherence",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_수익인식60일_cell_region_1",
+          "target_id": "target_수익인식60일_cell_region_1",
+          "gate_check_id": "gate_target_수익인식60일_cell_region_1_formula_region_coherence",
+          "gate_type": "formula_region_coherence",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_수익인식60일_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        },
+        {
+          "id": "result_gate_target_수익인식60일_cell_region_1_formula_summary_visual_alignment",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_수익인식60일_cell_region_1",
+          "target_id": "target_수익인식60일_cell_region_1",
+          "gate_check_id": "gate_target_수익인식60일_cell_region_1_formula_summary_visual_alignment",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_수익인식60일_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        }
+      ],
+      "parser_observations": [
+        {
+          "level": "info",
+          "message": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_006_12955465b8.png"
+        }
+      ]
+    },
+    {
+      "id": "capture_target_수익인식60일_강사료_cell_region_1",
+      "type": "render_capture",
+      "status": "captured",
+      "target_id": "target_수익인식60일_강사료_cell_region_1",
+      "sheet": "수익인식60일_강사료",
+      "requested_range": "A1:X20",
+      "capture_window": {
+        "sheet": "수익인식60일_강사료",
+        "range": "A1:Y22",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 22,
+          "max_column": 25
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "수익인식60일_강사료_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "수익인식60일_강사료",
+        "range": "A1:X20",
+        "block_id": "수익인식60일_강사료_row_band_1",
+        "region_id": "수익인식60일_강사료_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 24
+        },
+        "label": "=SUBTOTAL(9,E5:E35)"
+      },
+      "output": {
+        "pdf_path": null,
+        "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_007_f763d98820.png",
+        "pdf_size_bytes": null,
+        "png_size_bytes": 95476,
+        "png_width": 1651,
+        "png_height": 375
+      },
+      "coordinate_map": {
+        "status": "range_image_only",
+        "cell_range": "A1:Y22",
+        "capture_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1651,
+          "height": 375
+        }
+      },
+      "gate_results": [
+        {
+          "id": "result_gate_target_수익인식60일_강사료_cell_region_1_boundary_confirmation",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_수익인식60일_강사료_cell_region_1",
+          "target_id": "target_수익인식60일_강사료_cell_region_1",
+          "gate_check_id": "gate_target_수익인식60일_강사료_cell_region_1_boundary_confirmation",
+          "gate_type": "boundary_confirmation",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_수익인식60일_강사료_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        },
+        {
+          "id": "result_gate_target_수익인식60일_강사료_cell_region_1_formula_region_coherence",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_수익인식60일_강사료_cell_region_1",
+          "target_id": "target_수익인식60일_강사료_cell_region_1",
+          "gate_check_id": "gate_target_수익인식60일_강사료_cell_region_1_formula_region_coherence",
+          "gate_type": "formula_region_coherence",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_수익인식60일_강사료_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        },
+        {
+          "id": "result_gate_target_수익인식60일_강사료_cell_region_1_formula_summary_visual_alignment",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_수익인식60일_강사료_cell_region_1",
+          "target_id": "target_수익인식60일_강사료_cell_region_1",
+          "gate_check_id": "gate_target_수익인식60일_강사료_cell_region_1_formula_summary_visual_alignment",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_수익인식60일_강사료_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        }
+      ],
+      "parser_observations": [
+        {
+          "level": "info",
+          "message": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_007_f763d98820.png"
+        }
+      ]
+    },
+    {
+      "id": "capture_target_얼리버드_cell_region_1",
+      "type": "render_capture",
+      "status": "captured",
+      "target_id": "target_얼리버드_cell_region_1",
+      "sheet": "얼리버드",
+      "requested_range": "A1:D20",
+      "capture_window": {
+        "sheet": "얼리버드",
+        "range": "A1:E22",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 22,
+          "max_column": 5
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "얼리버드_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "얼리버드",
+        "range": "A1:D20",
+        "block_id": "얼리버드_row_band_1",
+        "region_id": "얼리버드_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 4
+        },
+        "label": "imp_uid"
+      },
+      "output": {
+        "pdf_path": null,
+        "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_008_db60fadebf.png",
+        "pdf_size_bytes": null,
+        "png_size_bytes": 32737,
+        "png_width": 315,
+        "png_height": 375
+      },
+      "coordinate_map": {
+        "status": "range_image_only",
+        "cell_range": "A1:E22",
+        "capture_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 315,
+          "height": 375
+        }
+      },
+      "gate_results": [
+        {
+          "id": "result_gate_target_얼리버드_cell_region_1_boundary_confirmation",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_얼리버드_cell_region_1",
+          "target_id": "target_얼리버드_cell_region_1",
+          "gate_check_id": "gate_target_얼리버드_cell_region_1_boundary_confirmation",
+          "gate_type": "boundary_confirmation",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_얼리버드_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        },
+        {
+          "id": "result_gate_target_얼리버드_cell_region_1_formula_region_coherence",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_얼리버드_cell_region_1",
+          "target_id": "target_얼리버드_cell_region_1",
+          "gate_check_id": "gate_target_얼리버드_cell_region_1_formula_region_coherence",
+          "gate_type": "formula_region_coherence",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_얼리버드_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        },
+        {
+          "id": "result_gate_target_얼리버드_cell_region_1_formula_summary_visual_alignment",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_얼리버드_cell_region_1",
+          "target_id": "target_얼리버드_cell_region_1",
+          "gate_check_id": "gate_target_얼리버드_cell_region_1_formula_summary_visual_alignment",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_얼리버드_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        }
+      ],
+      "parser_observations": [
+        {
+          "level": "info",
+          "message": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_008_db60fadebf.png"
+        }
+      ]
+    },
+    {
+      "id": "capture_target_유하다요_cell_region_1",
+      "type": "render_capture",
+      "status": "captured",
+      "target_id": "target_유하다요_cell_region_1",
+      "sheet": "유하다요",
+      "requested_range": "A1:R20",
+      "capture_window": {
+        "sheet": "유하다요",
+        "range": "A1:S22",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 22,
+          "max_column": 19
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "유하다요_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "유하다요",
+        "range": "A1:R20",
+        "block_id": "유하다요_row_band_1",
+        "region_id": "유하다요_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 18
+        },
+        "label": "NO"
+      },
+      "output": {
+        "pdf_path": null,
+        "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_009_7723c8ac59.png",
+        "pdf_size_bytes": null,
+        "png_size_bytes": 160851,
+        "png_width": 1416,
+        "png_height": 353
+      },
+      "coordinate_map": {
+        "status": "range_image_only",
+        "cell_range": "A1:S22",
+        "capture_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1416,
+          "height": 353
+        }
+      },
+      "gate_results": [
+        {
+          "id": "result_gate_target_유하다요_cell_region_1_boundary_confirmation",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_유하다요_cell_region_1",
+          "target_id": "target_유하다요_cell_region_1",
+          "gate_check_id": "gate_target_유하다요_cell_region_1_boundary_confirmation",
+          "gate_type": "boundary_confirmation",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_유하다요_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        },
+        {
+          "id": "result_gate_target_유하다요_cell_region_1_formula_region_coherence",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_유하다요_cell_region_1",
+          "target_id": "target_유하다요_cell_region_1",
+          "gate_check_id": "gate_target_유하다요_cell_region_1_formula_region_coherence",
+          "gate_type": "formula_region_coherence",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_유하다요_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        }
+      ],
+      "parser_observations": [
+        {
+          "level": "info",
+          "message": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_009_7723c8ac59.png"
+        }
+      ]
+    },
+    {
+      "id": "capture_target_유하다요_강사료_cell_region_1",
+      "type": "render_capture",
+      "status": "captured",
+      "target_id": "target_유하다요_강사료_cell_region_1",
+      "sheet": "유하다요_강사료",
+      "requested_range": "A1:AH20",
+      "capture_window": {
+        "sheet": "유하다요_강사료",
+        "range": "A1:AI22",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 22,
+          "max_column": 35
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "유하다요_강사료_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "유하다요_강사료",
+        "range": "A1:AH20",
+        "block_id": "유하다요_강사료_row_band_1",
+        "region_id": "유하다요_강사료_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 34
+        },
+        "label": "강의결제액"
+      },
+      "output": {
+        "pdf_path": null,
+        "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_010_e0feda6b15.png",
+        "pdf_size_bytes": null,
+        "png_size_bytes": 137525,
+        "png_width": 1900,
+        "png_height": 375
+      },
+      "coordinate_map": {
+        "status": "range_image_only",
+        "cell_range": "A1:AI22",
+        "capture_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1900,
+          "height": 375
+        }
+      },
+      "gate_results": [
+        {
+          "id": "result_gate_target_유하다요_강사료_cell_region_1_boundary_confirmation",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_유하다요_강사료_cell_region_1",
+          "target_id": "target_유하다요_강사료_cell_region_1",
+          "gate_check_id": "gate_target_유하다요_강사료_cell_region_1_boundary_confirmation",
+          "gate_type": "boundary_confirmation",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_유하다요_강사료_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        },
+        {
+          "id": "result_gate_target_유하다요_강사료_cell_region_1_formula_region_coherence",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_유하다요_강사료_cell_region_1",
+          "target_id": "target_유하다요_강사료_cell_region_1",
+          "gate_check_id": "gate_target_유하다요_강사료_cell_region_1_formula_region_coherence",
+          "gate_type": "formula_region_coherence",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_유하다요_강사료_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        },
+        {
+          "id": "result_gate_target_유하다요_강사료_cell_region_1_formula_summary_visual_alignment",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_유하다요_강사료_cell_region_1",
+          "target_id": "target_유하다요_강사료_cell_region_1",
+          "gate_check_id": "gate_target_유하다요_강사료_cell_region_1_formula_summary_visual_alignment",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_유하다요_강사료_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        }
+      ],
+      "parser_observations": [
+        {
+          "level": "info",
+          "message": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_010_e0feda6b15.png"
+        }
+      ]
+    },
+    {
+      "id": "capture_target_정가표_cell_region_1",
+      "type": "render_capture",
+      "status": "captured",
+      "target_id": "target_정가표_cell_region_1",
+      "sheet": "정가표",
+      "requested_range": "A1:S20",
+      "capture_window": {
+        "sheet": "정가표",
+        "range": "A1:T22",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 22,
+          "max_column": 20
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "정가표_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "정가표",
+        "range": "A1:S20",
+        "block_id": "정가표_row_band_1",
+        "region_id": "정가표_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 19
+        },
+        "label": "사이트"
+      },
+      "output": {
+        "pdf_path": null,
+        "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_011_dc1b0b305f.png",
+        "pdf_size_bytes": null,
+        "png_size_bytes": 101046,
+        "png_width": 1123,
+        "png_height": 375
+      },
+      "coordinate_map": {
+        "status": "range_image_only",
+        "cell_range": "A1:T22",
+        "capture_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1123,
+          "height": 375
+        }
+      },
+      "gate_results": [
+        {
+          "id": "result_gate_target_정가표_cell_region_1_boundary_confirmation",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_정가표_cell_region_1",
+          "target_id": "target_정가표_cell_region_1",
+          "gate_check_id": "gate_target_정가표_cell_region_1_boundary_confirmation",
+          "gate_type": "boundary_confirmation",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_정가표_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        },
+        {
+          "id": "result_gate_target_정가표_cell_region_1_formula_region_coherence",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_정가표_cell_region_1",
+          "target_id": "target_정가표_cell_region_1",
+          "gate_check_id": "gate_target_정가표_cell_region_1_formula_region_coherence",
+          "gate_type": "formula_region_coherence",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_정가표_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        },
+        {
+          "id": "result_gate_target_정가표_cell_region_1_formula_summary_visual_alignment",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_정가표_cell_region_1",
+          "target_id": "target_정가표_cell_region_1",
+          "gate_check_id": "gate_target_정가표_cell_region_1_formula_summary_visual_alignment",
+          "gate_type": "formula_summary_visual_alignment",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_정가표_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        }
+      ],
+      "parser_observations": [
+        {
+          "level": "info",
+          "message": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_011_dc1b0b305f.png"
+        }
+      ]
+    },
+    {
+      "id": "capture_target_포도_cell_region_1",
+      "type": "render_capture",
+      "status": "captured",
+      "target_id": "target_포도_cell_region_1",
+      "sheet": "포도",
+      "requested_range": "A1:Q20",
+      "capture_window": {
+        "sheet": "포도",
+        "range": "A1:R22",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 22,
+          "max_column": 18
+        },
+        "authority": "excel_render_capture",
+        "coordinate_systems": [
+          "cell_range",
+          "grid_coordinate",
+          "capture_bbox"
+        ]
+      },
+      "target_ref": {
+        "id": "포도_cell_region_1",
+        "kind": "cell_region",
+        "workbook": null,
+        "sheet": "포도",
+        "range": "A1:Q20",
+        "block_id": "포도_row_band_1",
+        "region_id": "포도_cell_region_1",
+        "bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 20,
+          "max_column": 17
+        },
+        "label": "수강권고유번호"
+      },
+      "output": {
+        "pdf_path": null,
+        "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_012_459378b2ad.png",
+        "pdf_size_bytes": null,
+        "png_size_bytes": 9658,
+        "png_width": 1082,
+        "png_height": 19
+      },
+      "coordinate_map": {
+        "status": "range_image_only",
+        "cell_range": "A1:R22",
+        "capture_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1082,
+          "height": 19
+        }
+      },
+      "gate_results": [
+        {
+          "id": "result_gate_target_포도_cell_region_1_boundary_confirmation",
+          "type": "visual_formula_gate_result",
+          "capture_id": "capture_target_포도_cell_region_1",
+          "target_id": "target_포도_cell_region_1",
+          "gate_check_id": "gate_target_포도_cell_region_1_boundary_confirmation",
+          "gate_type": "boundary_confirmation",
+          "status": "captured_pending_review",
+          "evidence_refs": [
+            "capture_target_포도_cell_region_1"
+          ],
+          "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+        }
+      ],
+      "parser_observations": [
+        {
+          "level": "info",
+          "message": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_012_459378b2ad.png"
+        }
+      ]
+    }
+  ],
+  "gate_results": [
+    {
+      "id": "result_gate_target_결제_수수료_cell_region_1_boundary_confirmation",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_결제_수수료_cell_region_1",
+      "target_id": "target_결제_수수료_cell_region_1",
+      "gate_check_id": "gate_target_결제_수수료_cell_region_1_boundary_confirmation",
+      "gate_type": "boundary_confirmation",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_결제_수수료_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_결제_수수료_cell_region_1_formula_summary_visual_alignment",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_결제_수수료_cell_region_1",
+      "target_id": "target_결제_수수료_cell_region_1",
+      "gate_check_id": "gate_target_결제_수수료_cell_region_1_formula_summary_visual_alignment",
+      "gate_type": "formula_summary_visual_alignment",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_결제_수수료_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_결제상세_cell_region_1_boundary_confirmation",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_결제상세_cell_region_1",
+      "target_id": "target_결제상세_cell_region_1",
+      "gate_check_id": "gate_target_결제상세_cell_region_1_boundary_confirmation",
+      "gate_type": "boundary_confirmation",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_결제상세_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_결제상세_cell_region_1_formula_region_coherence",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_결제상세_cell_region_1",
+      "target_id": "target_결제상세_cell_region_1",
+      "gate_check_id": "gate_target_결제상세_cell_region_1_formula_region_coherence",
+      "gate_type": "formula_region_coherence",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_결제상세_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_결제상세_cell_region_1_formula_summary_visual_alignment",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_결제상세_cell_region_1",
+      "target_id": "target_결제상세_cell_region_1",
+      "gate_check_id": "gate_target_결제상세_cell_region_1_formula_summary_visual_alignment",
+      "gate_type": "formula_summary_visual_alignment",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_결제상세_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_당월산식_cell_region_1_boundary_confirmation",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_당월산식_cell_region_1",
+      "target_id": "target_당월산식_cell_region_1",
+      "gate_check_id": "gate_target_당월산식_cell_region_1_boundary_confirmation",
+      "gate_type": "boundary_confirmation",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_당월산식_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_당월산식_cell_region_1_formula_region_coherence",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_당월산식_cell_region_1",
+      "target_id": "target_당월산식_cell_region_1",
+      "gate_check_id": "gate_target_당월산식_cell_region_1_formula_region_coherence",
+      "gate_type": "formula_region_coherence",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_당월산식_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_당월산식_cell_region_1_formula_summary_visual_alignment",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_당월산식_cell_region_1",
+      "target_id": "target_당월산식_cell_region_1",
+      "gate_check_id": "gate_target_당월산식_cell_region_1_formula_summary_visual_alignment",
+      "gate_type": "formula_summary_visual_alignment",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_당월산식_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_리스픽_cell_region_2_boundary_confirmation",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_리스픽_cell_region_2",
+      "target_id": "target_리스픽_cell_region_2",
+      "gate_check_id": "gate_target_리스픽_cell_region_2_boundary_confirmation",
+      "gate_type": "boundary_confirmation",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_리스픽_cell_region_2"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_매출_cell_region_1_boundary_confirmation",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_매출_cell_region_1",
+      "target_id": "target_매출_cell_region_1",
+      "gate_check_id": "gate_target_매출_cell_region_1_boundary_confirmation",
+      "gate_type": "boundary_confirmation",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_매출_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_매출_cell_region_1_formula_region_coherence",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_매출_cell_region_1",
+      "target_id": "target_매출_cell_region_1",
+      "gate_check_id": "gate_target_매출_cell_region_1_formula_region_coherence",
+      "gate_type": "formula_region_coherence",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_매출_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_매출_cell_region_1_formula_summary_visual_alignment",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_매출_cell_region_1",
+      "target_id": "target_매출_cell_region_1",
+      "gate_check_id": "gate_target_매출_cell_region_1_formula_summary_visual_alignment",
+      "gate_type": "formula_summary_visual_alignment",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_매출_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_수익인식60일_cell_region_1_boundary_confirmation",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_수익인식60일_cell_region_1",
+      "target_id": "target_수익인식60일_cell_region_1",
+      "gate_check_id": "gate_target_수익인식60일_cell_region_1_boundary_confirmation",
+      "gate_type": "boundary_confirmation",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_수익인식60일_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_수익인식60일_cell_region_1_formula_region_coherence",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_수익인식60일_cell_region_1",
+      "target_id": "target_수익인식60일_cell_region_1",
+      "gate_check_id": "gate_target_수익인식60일_cell_region_1_formula_region_coherence",
+      "gate_type": "formula_region_coherence",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_수익인식60일_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_수익인식60일_cell_region_1_formula_summary_visual_alignment",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_수익인식60일_cell_region_1",
+      "target_id": "target_수익인식60일_cell_region_1",
+      "gate_check_id": "gate_target_수익인식60일_cell_region_1_formula_summary_visual_alignment",
+      "gate_type": "formula_summary_visual_alignment",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_수익인식60일_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_수익인식60일_강사료_cell_region_1_boundary_confirmation",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_수익인식60일_강사료_cell_region_1",
+      "target_id": "target_수익인식60일_강사료_cell_region_1",
+      "gate_check_id": "gate_target_수익인식60일_강사료_cell_region_1_boundary_confirmation",
+      "gate_type": "boundary_confirmation",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_수익인식60일_강사료_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_수익인식60일_강사료_cell_region_1_formula_region_coherence",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_수익인식60일_강사료_cell_region_1",
+      "target_id": "target_수익인식60일_강사료_cell_region_1",
+      "gate_check_id": "gate_target_수익인식60일_강사료_cell_region_1_formula_region_coherence",
+      "gate_type": "formula_region_coherence",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_수익인식60일_강사료_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_수익인식60일_강사료_cell_region_1_formula_summary_visual_alignment",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_수익인식60일_강사료_cell_region_1",
+      "target_id": "target_수익인식60일_강사료_cell_region_1",
+      "gate_check_id": "gate_target_수익인식60일_강사료_cell_region_1_formula_summary_visual_alignment",
+      "gate_type": "formula_summary_visual_alignment",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_수익인식60일_강사료_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_얼리버드_cell_region_1_boundary_confirmation",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_얼리버드_cell_region_1",
+      "target_id": "target_얼리버드_cell_region_1",
+      "gate_check_id": "gate_target_얼리버드_cell_region_1_boundary_confirmation",
+      "gate_type": "boundary_confirmation",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_얼리버드_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_얼리버드_cell_region_1_formula_region_coherence",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_얼리버드_cell_region_1",
+      "target_id": "target_얼리버드_cell_region_1",
+      "gate_check_id": "gate_target_얼리버드_cell_region_1_formula_region_coherence",
+      "gate_type": "formula_region_coherence",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_얼리버드_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_얼리버드_cell_region_1_formula_summary_visual_alignment",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_얼리버드_cell_region_1",
+      "target_id": "target_얼리버드_cell_region_1",
+      "gate_check_id": "gate_target_얼리버드_cell_region_1_formula_summary_visual_alignment",
+      "gate_type": "formula_summary_visual_alignment",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_얼리버드_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_유하다요_cell_region_1_boundary_confirmation",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_유하다요_cell_region_1",
+      "target_id": "target_유하다요_cell_region_1",
+      "gate_check_id": "gate_target_유하다요_cell_region_1_boundary_confirmation",
+      "gate_type": "boundary_confirmation",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_유하다요_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_유하다요_cell_region_1_formula_region_coherence",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_유하다요_cell_region_1",
+      "target_id": "target_유하다요_cell_region_1",
+      "gate_check_id": "gate_target_유하다요_cell_region_1_formula_region_coherence",
+      "gate_type": "formula_region_coherence",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_유하다요_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_유하다요_강사료_cell_region_1_boundary_confirmation",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_유하다요_강사료_cell_region_1",
+      "target_id": "target_유하다요_강사료_cell_region_1",
+      "gate_check_id": "gate_target_유하다요_강사료_cell_region_1_boundary_confirmation",
+      "gate_type": "boundary_confirmation",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_유하다요_강사료_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_유하다요_강사료_cell_region_1_formula_region_coherence",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_유하다요_강사료_cell_region_1",
+      "target_id": "target_유하다요_강사료_cell_region_1",
+      "gate_check_id": "gate_target_유하다요_강사료_cell_region_1_formula_region_coherence",
+      "gate_type": "formula_region_coherence",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_유하다요_강사료_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_유하다요_강사료_cell_region_1_formula_summary_visual_alignment",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_유하다요_강사료_cell_region_1",
+      "target_id": "target_유하다요_강사료_cell_region_1",
+      "gate_check_id": "gate_target_유하다요_강사료_cell_region_1_formula_summary_visual_alignment",
+      "gate_type": "formula_summary_visual_alignment",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_유하다요_강사료_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_정가표_cell_region_1_boundary_confirmation",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_정가표_cell_region_1",
+      "target_id": "target_정가표_cell_region_1",
+      "gate_check_id": "gate_target_정가표_cell_region_1_boundary_confirmation",
+      "gate_type": "boundary_confirmation",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_정가표_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_정가표_cell_region_1_formula_region_coherence",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_정가표_cell_region_1",
+      "target_id": "target_정가표_cell_region_1",
+      "gate_check_id": "gate_target_정가표_cell_region_1_formula_region_coherence",
+      "gate_type": "formula_region_coherence",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_정가표_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_정가표_cell_region_1_formula_summary_visual_alignment",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_정가표_cell_region_1",
+      "target_id": "target_정가표_cell_region_1",
+      "gate_check_id": "gate_target_정가표_cell_region_1_formula_summary_visual_alignment",
+      "gate_type": "formula_summary_visual_alignment",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_정가표_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    },
+    {
+      "id": "result_gate_target_포도_cell_region_1_boundary_confirmation",
+      "type": "visual_formula_gate_result",
+      "capture_id": "capture_target_포도_cell_region_1",
+      "target_id": "target_포도_cell_region_1",
+      "gate_check_id": "gate_target_포도_cell_region_1_boundary_confirmation",
+      "gate_type": "boundary_confirmation",
+      "status": "captured_pending_review",
+      "evidence_refs": [
+        "capture_target_포도_cell_region_1"
+      ],
+      "notes": "Excel range PNG capture exists; visual semantic pass/fail still requires bbox normalization or reviewer confirmation."
+    }
+  ],
+  "summary": {
+    "selected_target_count": 12,
+    "captured_count": 12,
+    "failed_count": 0,
+    "png_count": 12,
+    "gate_result_count": 30,
+    "captured_pending_review_gate_count": 30,
+    "capture_failed_gate_count": 0
+  },
+  "parser_observations": []
+}

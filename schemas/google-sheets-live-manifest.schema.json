@@ -1,0 +1,237 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-live-manifest.schema.json",
+  "title": "Google Sheets Live Manifest/Profile",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "limits",
+    "live_fetch",
+    "workbook",
+    "formula_profile",
+    "view_state_profile",
+    "parser_observations",
+    "permission_gaps",
+    "summary"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "limits": { "$ref": "#/$defs/limits" },
+    "live_fetch": { "type": "object" },
+    "workbook": { "$ref": "#/$defs/workbook" },
+    "formula_profile": { "$ref": "#/$defs/formula_profile" },
+    "view_state_profile": { "$ref": "#/$defs/counts" },
+    "parser_observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/observation" }
+    },
+    "permission_gaps": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/permission_gap" }
+    },
+    "summary": { "$ref": "#/$defs/counts" }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": [
+        "spreadsheet_id",
+        "spreadsheet_url",
+        "title",
+        "locale",
+        "time_zone",
+        "source_artifacts"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "spreadsheet_id": { "type": "string", "minLength": 1 },
+        "spreadsheet_url": { "type": ["string", "null"] },
+        "title": { "type": "string" },
+        "locale": { "type": "string" },
+        "time_zone": { "type": "string" },
+        "source_artifacts": { "$ref": "#/$defs/source_artifacts" }
+      }
+    },
+    "source_artifacts": {
+      "type": "object",
+      "required": ["access_preflight", "inspection", "top_left_sample"],
+      "additionalProperties": false,
+      "properties": {
+        "access_preflight": { "type": "string", "minLength": 1 },
+        "inspection": { "type": "string", "minLength": 1 },
+        "top_left_sample": { "type": "string", "minLength": 1 }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "source_document",
+        "access_mode",
+        "service_account_email",
+        "impersonated_subject",
+        "direct_service_account_access",
+        "xlsx_round_trip",
+        "write_operation"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_document": { "type": "string" },
+        "access_mode": { "type": "string" },
+        "service_account_email": { "type": "string" },
+        "impersonated_subject": { "type": "string" },
+        "direct_service_account_access": { "type": "object" },
+        "xlsx_round_trip": { "type": "string" },
+        "write_operation": { "type": "string" }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "required": [
+        "profile_range",
+        "value_sample_authorities",
+        "grid_profile_authority",
+        "formula_result_authority"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "profile_range": { "type": "string", "minLength": 1 },
+        "value_sample_authorities": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "grid_profile_authority": { "type": "string" },
+        "formula_result_authority": { "type": "string" }
+      }
+    },
+    "workbook": {
+      "type": "object",
+      "required": ["sheet_count", "sheets"],
+      "additionalProperties": false,
+      "properties": {
+        "sheet_count": { "type": "integer", "minimum": 0 },
+        "sheets": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sheet" }
+        }
+      }
+    },
+    "sheet": {
+      "type": "object",
+      "required": [
+        "name",
+        "sheet_id",
+        "index",
+        "state",
+        "dimensions",
+        "profile_window",
+        "sample_counts",
+        "grid_counts",
+        "view_state_counts",
+        "object_counts",
+        "style_counts",
+        "formula_counts",
+        "role_hints",
+        "risk_flags"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "sheet_id": { "type": "integer" },
+        "index": { "type": "integer", "minimum": 0 },
+        "state": { "type": "string", "enum": ["visible", "hidden"] },
+        "dimensions": { "$ref": "#/$defs/counts" },
+        "profile_window": {
+          "type": "object",
+          "required": ["range", "grid_data_fetched"],
+          "additionalProperties": false,
+          "properties": {
+            "range": { "type": "string", "minLength": 1 },
+            "grid_data_fetched": { "type": "boolean" }
+          }
+        },
+        "sample_counts": { "$ref": "#/$defs/counts" },
+        "grid_counts": { "$ref": "#/$defs/counts" },
+        "view_state_counts": { "$ref": "#/$defs/counts" },
+        "object_counts": { "$ref": "#/$defs/counts" },
+        "style_counts": { "$ref": "#/$defs/counts" },
+        "formula_counts": {
+          "type": "object",
+          "required": [
+            "formula_cell_count",
+            "dynamic_formula_cell_count",
+            "classification_counts",
+            "cross_sheet_formula_count"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "formula_cell_count": { "type": "integer", "minimum": 0 },
+            "dynamic_formula_cell_count": { "type": "integer", "minimum": 0 },
+            "classification_counts": { "$ref": "#/$defs/counts" },
+            "cross_sheet_formula_count": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "role_hints": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "risk_flags": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "formula_profile": {
+      "type": "object",
+      "required": [
+        "total_formula_count_in_profile_windows",
+        "dynamic_formula_count_in_profile_windows",
+        "cross_sheet_formula_count_in_profile_windows",
+        "classification_counts"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "total_formula_count_in_profile_windows": { "type": "integer", "minimum": 0 },
+        "dynamic_formula_count_in_profile_windows": { "type": "integer", "minimum": 0 },
+        "cross_sheet_formula_count_in_profile_windows": { "type": "integer", "minimum": 0 },
+        "classification_counts": { "$ref": "#/$defs/counts" }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["severity", "message", "evidence_refs"],
+      "additionalProperties": false,
+      "properties": {
+        "severity": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "permission_gap": {
+      "type": "object",
+      "required": ["capability", "status", "needed_when", "do_not_workaround"],
+      "additionalProperties": false,
+      "properties": {
+        "capability": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "minLength": 1 },
+        "needed_when": { "type": "string", "minLength": 1 },
+        "do_not_workaround": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["integer", "number", "boolean", "string", "null"]
+      }
+    }
+  }
+}

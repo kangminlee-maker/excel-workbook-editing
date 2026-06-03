@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-02T17:37:14+09:00",
+  "stage": "onto_direct_call_auth_recovery",
+  "project_root": "/Users/kangmin/Documents/excel-workbook-editing",
+  "source_packet": "review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/onto-reconstruct-micro-code-source-packet.json",
+  "diagnosis": {
+    "codex_doctor_auth": "configured_and_websocket_ok",
+    "global_codex_exec_high_effort": "succeeds_but_logs_stale_miro_mcp_oauth_warning",
+    "isolated_codex_home_exec": "succeeds_without_invalid_grant",
+    "invalid_grant_source": "global streamable_http MCP server miro-mcp OAuth refresh, not Codex ChatGPT OAuth",
+    "token_values_exposed": false
+  },
+  "global_mcp_update": {
+    "updated_at": "2026-06-02T17:41:37+09:00",
+    "server": "miro-mcp",
+    "action": "disabled",
+    "config_path": "/Users/kangmin/.codex/config.toml",
+    "backup_path": "/Users/kangmin/.codex/config.toml.bak-disable-miro-mcp-20260602-1738",
+    "codex_mcp_list_status": "disabled",
+    "post_disable_codex_exec": "succeeds_without_invalid_grant"
+  },
+  "recovery_method": {
+    "method": "temporary_isolated_codex_home",
+    "global_config_mutated": true,
+    "global_miro_mcp_logout_or_remove_performed": false,
+    "auth_material_handling": "copied ~/.codex/auth.json into a temporary 0700 directory for the duration of the test run only",
+    "timeout_override": {
+      "env": "ONTO_LLM_TIMEOUT_MS",
+      "value_ms": 360000
+    }
+  },
+  "reconstruct_retry": {
+    "session_root": ".onto/reconstruct/20260602-sheets-local-actionable-ontology-direct-auth-retry",
+    "resume_mode": "reuse_existing_authored_artifacts",
+    "candidate_inventory_generated": true,
+    "candidate_disposition_generated": true,
+    "candidate_disposition_validation_status": "valid",
+    "ontology_seed_generated": false,
+    "invalid_grant_present_in_isolated_retry": false,
+    "terminal_error": "codex CLI call timed out after 360000ms"
+  },
+  "status": {
+    "direct_call_auth_recovered": true,
+    "official_onto_reconstruct_seed_available": false,
+    "remaining_blocker": "ontology_seed_stage_timeout_or_prompt_size",
+    "shared_ontology_update_count": 0
+  },
+  "next_actions": [
+    "Reduce ontology-seed prompt surface or candidate disposition size before the next direct reconstruct retry.",
+    "Consider adding a stable onto-mcp option to pass codex --ignore-user-config or config overrides to child codex exec so unrelated OAuth MCP servers cannot affect stderr.",
+    "Keep the existing manual-ontology-seed.yaml as a validated draft only until official reconstruct output is produced."
+  ]
+}

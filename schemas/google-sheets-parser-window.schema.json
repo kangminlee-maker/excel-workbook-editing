@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/sheets-bridge/google-sheets-parser-window.schema.json",
+  "title": "Google Sheets Parser Window Snapshot",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "snapshot_id",
+    "captured_at",
+    "operation",
+    "spreadsheet_id",
+    "requested_ranges",
+    "windows",
+    "telemetry",
+    "artifacts"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "snapshot_id": { "type": "string", "minLength": 1 },
+    "captured_at": { "type": "string", "format": "date-time" },
+    "operation": {
+      "type": "string",
+      "enum": [
+        "inspect.grid_window",
+        "inspect.values_window",
+        "inspect.formula_window"
+      ]
+    },
+    "spreadsheet_id": { "type": "string", "minLength": 1 },
+    "requested_ranges": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "field_mask": {
+      "type": "string",
+      "enum": ["grid_basic_v1", "grid_formula_v1"]
+    },
+    "value_render_option": {
+      "type": "string",
+      "enum": ["FORMATTED_VALUE", "FORMULA"]
+    },
+    "windows": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "telemetry": {
+      "type": "object",
+      "required": ["request_count", "retry_count", "elapsed_ms", "timeout_budget"],
+      "additionalProperties": true,
+      "properties": {
+        "request_count": { "type": "integer", "minimum": 1 },
+        "retry_count": { "type": "integer", "minimum": 0 },
+        "elapsed_ms": { "type": "integer", "minimum": 0 },
+        "timeout_budget": {
+          "type": "object",
+          "required": ["read_seconds", "write_seconds", "poll_seconds"],
+          "additionalProperties": true,
+          "properties": {
+            "read_seconds": { "type": "integer", "minimum": 1 },
+            "write_seconds": { "type": "integer", "minimum": 1 },
+            "poll_seconds": { "type": "integer", "minimum": 1 }
+          }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "summary"],
+        "additionalProperties": true,
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": ["broker_policy", "broker_auth"]
+          },
+          "summary": { "type": "object" }
+        }
+      }
+    }
+  }
+}

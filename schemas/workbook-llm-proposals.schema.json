@@ -1,0 +1,479 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/workbook-llm-proposals.schema.json",
+  "title": "Workbook LLM Proposal Package",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_artifacts",
+    "method",
+    "proposal_context",
+    "semantic_concept_proposals",
+    "hierarchy_proposals",
+    "semantic_relation_proposals",
+    "alias_proposals",
+    "ambiguity_notes",
+    "validation_plan",
+    "summary",
+    "parser_observations"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "source_artifacts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["string", "null"]
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy", "llm_boundary"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "authority": {
+          "const": "proposal_only_not_claim_acceptance"
+        },
+        "decision_policy": {
+          "type": "string"
+        },
+        "llm_boundary": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "proposal_context": {
+      "type": "object",
+      "required": ["semantic_readiness", "action_contract_summary", "proposal_constraints"],
+      "properties": {
+        "semantic_readiness": {
+          "type": "object"
+        },
+        "action_contract_summary": {
+          "type": "object"
+        },
+        "proposal_constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "semantic_concept_proposals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/semanticConceptProposal"
+      }
+    },
+    "hierarchy_proposals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/hierarchyProposal"
+      }
+    },
+    "semantic_relation_proposals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/semanticRelationProposal"
+      }
+    },
+    "alias_proposals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/aliasProposal"
+      }
+    },
+    "ambiguity_notes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ambiguityNote"
+      }
+    },
+    "validation_plan": {
+      "type": "object",
+      "required": ["next_stage", "gate_counts", "minimum_acceptance_requirements"],
+      "properties": {
+        "next_stage": {
+          "const": "deterministic_validation_of_llm_proposals"
+        },
+        "gate_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "minimum_acceptance_requirements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "semantic_concept_proposal_count",
+        "hierarchy_proposal_count",
+        "semantic_relation_proposal_count",
+        "alias_proposal_count",
+        "ambiguity_note_count",
+        "local_domain_sensitive_proposal_count",
+        "proposal_status"
+      ],
+      "properties": {
+        "semantic_concept_proposal_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "hierarchy_proposal_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "semantic_relation_proposal_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "alias_proposal_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "ambiguity_note_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "local_domain_sensitive_proposal_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "proposal_status": {
+          "const": "proposal_only_pending_deterministic_validation"
+        }
+      },
+      "additionalProperties": true
+    },
+    "parser_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    }
+  },
+  "$defs": {
+    "proposalBase": {
+      "type": "object",
+      "required": [
+        "id",
+        "proposal_type",
+        "proposal_status",
+        "evidence_refs",
+        "required_gates",
+        "confidence",
+        "review_flags"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "proposal_type": {
+          "type": "string"
+        },
+        "proposal_status": {
+          "const": "proposed"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_gates": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "review_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "semanticConceptProposal": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/proposalBase"
+        },
+        {
+          "type": "object",
+          "required": [
+            "label",
+            "concept_kind",
+            "scope",
+            "description",
+            "matched_sheets",
+            "matched_terms",
+            "data_view_ids",
+            "local_boundary_ids",
+            "domain_source_refs"
+          ],
+          "properties": {
+            "proposal_type": {
+              "const": "semantic_concept_candidate"
+            },
+            "label": {
+              "type": "string"
+            },
+            "concept_kind": {
+              "type": "string"
+            },
+            "scope": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "matched_sheets": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "matched_terms": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "data_view_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "local_boundary_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "domain_source_refs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "hierarchyProposal": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/proposalBase"
+        },
+        {
+          "type": "object",
+          "required": ["relation_type", "parent", "child", "data_view_ids"],
+          "properties": {
+            "proposal_type": {
+              "const": "hierarchy_candidate"
+            },
+            "relation_type": {
+              "type": "string"
+            },
+            "parent": {
+              "type": "object"
+            },
+            "child": {
+              "type": "object"
+            },
+            "data_view_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "semanticRelationProposal": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/proposalBase"
+        },
+        {
+          "type": "object",
+          "required": [
+            "relation_type",
+            "from_concept_id",
+            "to_concept_id",
+            "from_sheet",
+            "to_sheet",
+            "pipeline_ids",
+            "input_ranges",
+            "output_ranges",
+            "domain_source_refs"
+          ],
+          "properties": {
+            "proposal_type": {
+              "const": "semantic_relation_candidate"
+            },
+            "relation_type": {
+              "type": "string"
+            },
+            "from_concept_id": {
+              "type": "string"
+            },
+            "to_concept_id": {
+              "type": "string"
+            },
+            "from_sheet": {
+              "type": "string"
+            },
+            "to_sheet": {
+              "type": "string"
+            },
+            "pipeline_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "input_ranges": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "output_ranges": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "domain_source_refs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "aliasProposal": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/proposalBase"
+        },
+        {
+          "type": "object",
+          "required": ["alias", "canonical_concept_id", "alias_scope", "matched_sheets"],
+          "properties": {
+            "proposal_type": {
+              "const": "alias_candidate"
+            },
+            "alias": {
+              "type": "string"
+            },
+            "canonical_concept_id": {
+              "type": "string"
+            },
+            "alias_scope": {
+              "type": "string"
+            },
+            "matched_sheets": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "ambiguityNote": {
+      "type": "object",
+      "required": [
+        "id",
+        "proposal_type",
+        "severity",
+        "topic",
+        "note",
+        "blocking_factors",
+        "required_resolution",
+        "evidence_refs"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "proposal_type": {
+          "const": "ambiguity_note"
+        },
+        "severity": {
+          "type": "string"
+        },
+        "topic": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "blocking_factors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_resolution": {
+          "type": "string"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "properties": {
+        "level": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

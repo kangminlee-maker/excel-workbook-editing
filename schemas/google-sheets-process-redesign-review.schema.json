@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-process-redesign-review.schema.json",
+  "title": "Google Sheets Process Redesign Review",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "method",
+    "stage_reviews",
+    "redesign_decisions",
+    "open_evidence_gaps",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "method": { "$ref": "#/$defs/method" },
+    "stage_reviews": { "type": "array", "items": { "$ref": "#/$defs/stage_review" } },
+    "redesign_decisions": { "type": "array", "items": { "$ref": "#/$defs/decision" } },
+    "open_evidence_gaps": { "type": "array", "items": { "$ref": "#/$defs/gap" } },
+    "summary": { "$ref": "#/$defs/counts" },
+    "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["live_inspection_dir", "source_artifacts"],
+      "additionalProperties": false,
+      "properties": {
+        "live_inspection_dir": { "type": "string", "minLength": 1 },
+        "source_artifacts": {
+          "type": "object",
+          "required": ["process_ledger", "tasklist", "design"],
+          "additionalProperties": false,
+          "properties": {
+            "process_ledger": { "type": "string", "minLength": 1 },
+            "tasklist": { "type": "string", "minLength": 1 },
+            "design": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": ["review_status", "parser_truth", "shared_ontology_updates"],
+      "additionalProperties": false,
+      "properties": {
+        "review_status": { "const": "process_redesign_review_completed" },
+        "parser_truth": { "const": "no_new_parser_claims" },
+        "shared_ontology_updates": { "const": 0 }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "const": "connected_sheets_process_redesign_review" },
+        "authority": { "const": "process_recommendation_not_parser_truth" },
+        "decision_policy": { "type": "string", "minLength": 1 }
+      }
+    },
+    "stage_review": {
+      "type": "object",
+      "required": ["stage_group", "recommendation", "reason"],
+      "additionalProperties": false,
+      "properties": {
+        "stage_group": { "type": "string", "minLength": 1 },
+        "recommendation": { "type": "string", "minLength": 1 },
+        "reason": { "type": "string", "minLength": 1 }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "required": ["id", "decision", "effect"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "decision": { "type": "string", "minLength": 1 },
+        "effect": { "type": "string", "minLength": 1 }
+      }
+    },
+    "gap": {
+      "type": "object",
+      "required": ["id", "priority", "description"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "priority": { "type": "string", "enum": ["low", "medium", "high"] },
+        "description": { "type": "string", "minLength": 1 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] }
+    }
+  }
+}

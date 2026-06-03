@@ -1,0 +1,467 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/workbook-data-view-projection.schema.json",
+  "title": "Workbook Data View Projection",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_artifacts",
+    "method",
+    "data_view_projections",
+    "document_object_projections",
+    "carry_forward",
+    "summary",
+    "parser_observations"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "source_artifacts": {
+      "type": "object",
+      "required": ["validated_document_graph", "readonly_sample"],
+      "properties": {
+        "validated_document_graph": {
+          "type": "string"
+        },
+        "readonly_sample": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy"],
+      "properties": {
+        "name": {
+          "const": "deterministic_data_view_projection"
+        },
+        "authority": {
+          "const": "validated_graph_projection_not_excel_recalculation"
+        },
+        "decision_policy": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "data_view_projections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/dataViewProjection"
+      }
+    },
+    "document_object_projections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/documentObjectProjection"
+      }
+    },
+    "carry_forward": {
+      "type": "object"
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "data_view_projection_count",
+        "pivot_view_projection_count",
+        "formula_summary_projection_count",
+        "formula_transform_projection_count",
+        "sampled_projection_count",
+        "partial_projection_count",
+        "not_sampled_projection_count",
+        "document_object_projection_count",
+        "image_ref_projection_count",
+        "pivot_object_projection_count",
+        "row_band_projection_count",
+        "carry_forward_document_review_count",
+        "carry_forward_proposal_review_count",
+        "projection_status"
+      ],
+      "properties": {
+        "data_view_projection_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pivot_view_projection_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "formula_summary_projection_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "formula_transform_projection_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sampled_projection_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "partial_projection_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "not_sampled_projection_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "document_object_projection_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "image_ref_projection_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pivot_object_projection_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "row_band_projection_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "carry_forward_document_review_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "carry_forward_proposal_review_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "projection_status": {
+          "const": "projected_with_carry_forward_warnings"
+        }
+      },
+      "additionalProperties": true
+    },
+    "parser_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    }
+  },
+  "$defs": {
+    "dataViewProjection": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "projection_kind",
+        "data_view_id",
+        "view_kind",
+        "role",
+        "sheet",
+        "range",
+        "semantic_context",
+        "related_object_ids",
+        "preview",
+        "metrics",
+        "formula_policy",
+        "warnings",
+        "evidence_refs",
+        "source_artifact_refs"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "const": "data_view_projection"
+        },
+        "projection_kind": {
+          "enum": [
+            "pivot_view_projection",
+            "formula_summary_projection",
+            "formula_transform_projection",
+            "table_view_projection"
+          ]
+        },
+        "data_view_id": {
+          "type": "string"
+        },
+        "view_kind": {
+          "type": ["string", "null"]
+        },
+        "role": {
+          "type": ["string", "null"]
+        },
+        "sheet": {
+          "type": ["string", "null"]
+        },
+        "range": {
+          "type": ["string", "null"]
+        },
+        "semantic_context": {
+          "$ref": "#/$defs/semanticContext"
+        },
+        "related_object_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "preview": {
+          "$ref": "#/$defs/preview"
+        },
+        "metrics": {
+          "$ref": "#/$defs/metrics"
+        },
+        "formula_policy": {
+          "$ref": "#/$defs/formulaPolicy"
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "documentObjectProjection": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "object_kind",
+        "source_node_id",
+        "label",
+        "sheet",
+        "range",
+        "properties",
+        "evidence_refs",
+        "source_artifact_refs"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "const": "document_object_projection"
+        },
+        "object_kind": {
+          "enum": [
+            "image_ref",
+            "text_block",
+            "row_band",
+            "pivot_table_block",
+            "pivot_value_region"
+          ]
+        },
+        "source_node_id": {
+          "type": "string"
+        },
+        "label": {
+          "type": ["string", "number", "null"]
+        },
+        "sheet": {
+          "type": ["string", "null"]
+        },
+        "range": {
+          "type": ["string", "null"]
+        },
+        "properties": {
+          "type": "object"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "semanticContext": {
+      "type": "object",
+      "required": [
+        "semantic_concept_ids",
+        "semantic_labels",
+        "accepted_aliases"
+      ],
+      "properties": {
+        "semantic_concept_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "semantic_labels": {
+          "type": "array",
+          "items": {
+            "type": ["string", "number", "null"]
+          }
+        },
+        "accepted_aliases": {
+          "type": "array",
+          "items": {
+            "type": ["string", "number", "null"]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "preview": {
+      "type": "object",
+      "required": ["status", "rows", "sampled_row_count"],
+      "properties": {
+        "status": {
+          "enum": ["sampled", "partial", "not_sampled"]
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/previewRow"
+          }
+        },
+        "sampled_row_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "range_row_span": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "range_column_span": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "previewRow": {
+      "type": "object",
+      "required": ["row", "cells"],
+      "properties": {
+        "row": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "cells": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/previewCell"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "previewCell": {
+      "type": "object",
+      "required": ["cell", "column", "value_type", "value_preview", "formula"],
+      "properties": {
+        "cell": {
+          "type": ["string", "null"]
+        },
+        "column": {
+          "type": ["integer", "string", "null"]
+        },
+        "value_type": {
+          "type": ["string", "null"]
+        },
+        "value_preview": {
+          "type": ["string", "number", "boolean", "null"]
+        },
+        "formula": {
+          "type": ["string", "number", "boolean", "null"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "sampled_row_count",
+        "sampled_cell_count",
+        "formula_cell_count",
+        "number_cell_count",
+        "string_cell_count",
+        "datetime_cell_count"
+      ],
+      "properties": {
+        "sampled_row_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sampled_cell_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "formula_cell_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "number_cell_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "string_cell_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "datetime_cell_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "formulaPolicy": {
+      "type": "object",
+      "required": [
+        "formula_text_is_evidence_only",
+        "excel_recalculation_required_for_formula_results"
+      ],
+      "properties": {
+        "formula_text_is_evidence_only": {
+          "const": true
+        },
+        "excel_recalculation_required_for_formula_results": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "properties": {
+        "level": {
+          "enum": ["info", "warning", "error"]
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

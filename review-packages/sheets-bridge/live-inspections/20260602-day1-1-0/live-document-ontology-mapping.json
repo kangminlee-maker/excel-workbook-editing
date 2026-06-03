@@ -1,0 +1,436 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-02T03:41:24.475208Z",
+  "source": {
+    "spreadsheet_id": "1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60",
+    "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60/edit?ouid=112662517307801676490",
+    "title": "[Day 1] 1.0 (from 20250707)",
+    "source_artifacts": {
+      "live_evidence_package": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/live-evidence-package.json"
+    }
+  },
+  "authority": {
+    "source_document": "live_google_sheet",
+    "mapping_status": "document_structure_ontology_mapping_only",
+    "semantic_ontology_generation": "not_performed",
+    "formula_result_authority": "not_established",
+    "source_spreadsheet_read_authority": "blocked_until_source_acl_and_broker_allowlist"
+  },
+  "ontology": {
+    "namespace": "document_structure",
+    "nodes": [
+      {
+        "id": "node_workbook",
+        "type": "workbook_document",
+        "status": "accepted",
+        "label": "[Day 1] 1.0 (from 20250707)",
+        "properties": {
+          "sheet_count": 52,
+          "hidden_sheet_count": 3,
+          "view_state_risk_surface_count": 40,
+          "formula_signal_count": 335,
+          "candidate_block_count": 539,
+          "candidate_region_count": 539
+        },
+        "evidence_refs": [
+          "live-evidence-package.json"
+        ]
+      },
+      {
+        "id": "node_accepted_evidence_body",
+        "type": "accepted_evidence_body",
+        "status": "accepted",
+        "label": "Accepted deterministic evidence",
+        "properties": {
+          "accepted_gate_count": 43,
+          "accepted_target_count": 4
+        },
+        "evidence_refs": [
+          "accepted_evidence"
+        ]
+      },
+      {
+        "id": "node_pipeline_pipeline_24_0102_same_sheet_range_24_0102",
+        "type": "calculation_pipeline",
+        "status": "accepted",
+        "label": "24_0102 formula surface",
+        "properties": {
+          "pipeline_id": "pipeline_24_0102_same_sheet_range_24_0102",
+          "role": "calculation",
+          "confidence": 0.76,
+          "input_label": "(2023. 12.26~ 2024. 01.01)",
+          "output_label": "24_0102 formula surface"
+        },
+        "evidence_refs": [
+          "pipeline_24_0102_same_sheet_range_24_0102"
+        ]
+      },
+      {
+        "id": "node_pipeline_pipeline_24_0108_same_sheet_range_24_0108",
+        "type": "calculation_pipeline",
+        "status": "accepted",
+        "label": "24_0108 formula surface",
+        "properties": {
+          "pipeline_id": "pipeline_24_0108_same_sheet_range_24_0108",
+          "role": "calculation",
+          "confidence": 0.76,
+          "input_label": "1월 목표",
+          "output_label": "24_0108 formula surface"
+        },
+        "evidence_refs": [
+          "pipeline_24_0108_same_sheet_range_24_0108"
+        ]
+      },
+      {
+        "id": "node_pipeline_pipeline_24_0115_same_sheet_range_24_0115",
+        "type": "calculation_pipeline",
+        "status": "accepted",
+        "label": "24_0115 formula surface",
+        "properties": {
+          "pipeline_id": "pipeline_24_0115_same_sheet_range_24_0115",
+          "role": "calculation",
+          "confidence": 0.76,
+          "input_label": "상반기 목표 매출/손익",
+          "output_label": "24_0115 formula surface"
+        },
+        "evidence_refs": [
+          "pipeline_24_0115_same_sheet_range_24_0115"
+        ]
+      },
+      {
+        "id": "node_review_review_external_dep_fc_data_a5",
+        "type": "review_queue_item",
+        "status": "review_required",
+        "label": "external_source_authority_blocker",
+        "properties": {
+          "severity": "high",
+          "message": "External IMPORTRANGE source remains blocked until source argument resolution, Google ACL, and broker allowlist are confirmed.",
+          "status": "blocked_until_source_acl_and_broker_allowlist"
+        },
+        "evidence_refs": [
+          "external_dep_fc_data_A5",
+          "sampled_region_fc_data_inspect_values_window_001"
+        ]
+      },
+      {
+        "id": "node_review_review_external_importrange_source_authority",
+        "type": "review_queue_item",
+        "status": "review_required",
+        "label": "permission_or_authority_blocker",
+        "properties": {
+          "severity": "high",
+          "message": "Resolve source spreadsheet ID, Google ACL, and broker allowlist before reading IMPORTRANGE source data.",
+          "status": "requires_human_or_broker_policy_action"
+        },
+        "evidence_refs": [
+          "external_dep_fc_data_A5"
+        ]
+      },
+      {
+        "id": "node_review_review_formula_error_surfaces",
+        "type": "review_queue_item",
+        "status": "review_required",
+        "label": "formula_result_authority_gap",
+        "properties": {
+          "severity": "high",
+          "message": "Displayed #REF! or formula errors must be reconciled before treating pipeline outputs as calculated values.",
+          "status": "requires_formula_result_review"
+        },
+        "evidence_refs": [
+          "action_error_sampled_region_fc_data_inspect_values_window_002",
+          "action_error_sampled_region_fc_data_inspect_values_window_009",
+          "action_error_sampled_region_fc_data_inspect_values_window_010"
+        ]
+      },
+      {
+        "id": "node_review_review_remaining_bounded_read_queue",
+        "type": "review_queue_item",
+        "status": "review_required",
+        "label": "coverage_gap",
+        "properties": {
+          "severity": "medium",
+          "message": "66 bounded read candidates remain unsampled; pipeline coverage is partial.",
+          "status": "pending_bounded_sampling"
+        },
+        "evidence_refs": [
+          "read_26_0518_next_window",
+          "read_26_0511_next_window",
+          "read_26_0504_next_window",
+          "read_26_0427_next_window",
+          "read_26_0420_next_window",
+          "read_26_0413_next_window",
+          "read_26_0406_next_window",
+          "read_26_0330_next_window",
+          "read_26_0323_next_window",
+          "read_26_0316_next_window",
+          "read_26_0309_next_window",
+          "read_26_0302_next_window"
+        ]
+      },
+      {
+        "id": "node_review_review_blocked_gate_results",
+        "type": "review_queue_item",
+        "status": "review_required",
+        "label": "blocked_deterministic_gates",
+        "properties": {
+          "severity": "high",
+          "message": "Blocked deterministic gates must be resolved before graph promotion.",
+          "status": "blocked"
+        },
+        "evidence_refs": [
+          "result_gate_target_external_source_external_dep_fc_data_a5_external_source_authority",
+          "result_gate_target_pipeline_pipeline_25_0707_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0714_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0721_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0728_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0804_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0811_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0818_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0825_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0901_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0908_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0915_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0922_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0929_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1013_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1020_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1027_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1103_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1110_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_fc_data_external_importrange_external_importrange_formula_error_reconciliation"
+        ]
+      }
+    ],
+    "relations": [
+      {
+        "id": "rel_workbook_has_accepted_evidence",
+        "type": "has_evidence_body",
+        "from": "node_workbook",
+        "to": "node_accepted_evidence_body",
+        "status": "accepted",
+        "evidence_refs": [
+          "live-evidence-package.json"
+        ]
+      },
+      {
+        "id": "rel_accepted_evidence_contains_node_pipeline_pipeline_24_0102_same_sheet_range_24_0102",
+        "type": "contains_accepted_pipeline",
+        "from": "node_accepted_evidence_body",
+        "to": "node_pipeline_pipeline_24_0102_same_sheet_range_24_0102",
+        "status": "accepted",
+        "evidence_refs": [
+          "pipeline_24_0102_same_sheet_range_24_0102"
+        ]
+      },
+      {
+        "id": "rel_accepted_evidence_contains_node_pipeline_pipeline_24_0108_same_sheet_range_24_0108",
+        "type": "contains_accepted_pipeline",
+        "from": "node_accepted_evidence_body",
+        "to": "node_pipeline_pipeline_24_0108_same_sheet_range_24_0108",
+        "status": "accepted",
+        "evidence_refs": [
+          "pipeline_24_0108_same_sheet_range_24_0108"
+        ]
+      },
+      {
+        "id": "rel_accepted_evidence_contains_node_pipeline_pipeline_24_0115_same_sheet_range_24_0115",
+        "type": "contains_accepted_pipeline",
+        "from": "node_accepted_evidence_body",
+        "to": "node_pipeline_pipeline_24_0115_same_sheet_range_24_0115",
+        "status": "accepted",
+        "evidence_refs": [
+          "pipeline_24_0115_same_sheet_range_24_0115"
+        ]
+      },
+      {
+        "id": "rel_workbook_has_review_node_review_review_external_dep_fc_data_a5",
+        "type": "has_review_item",
+        "from": "node_workbook",
+        "to": "node_review_review_external_dep_fc_data_a5",
+        "status": "review_required",
+        "evidence_refs": [
+          "external_dep_fc_data_A5",
+          "sampled_region_fc_data_inspect_values_window_001"
+        ]
+      },
+      {
+        "id": "rel_workbook_has_review_node_review_review_external_importrange_source_authority",
+        "type": "has_review_item",
+        "from": "node_workbook",
+        "to": "node_review_review_external_importrange_source_authority",
+        "status": "review_required",
+        "evidence_refs": [
+          "external_dep_fc_data_A5"
+        ]
+      },
+      {
+        "id": "rel_workbook_has_review_node_review_review_formula_error_surfaces",
+        "type": "has_review_item",
+        "from": "node_workbook",
+        "to": "node_review_review_formula_error_surfaces",
+        "status": "review_required",
+        "evidence_refs": [
+          "action_error_sampled_region_fc_data_inspect_values_window_002",
+          "action_error_sampled_region_fc_data_inspect_values_window_009",
+          "action_error_sampled_region_fc_data_inspect_values_window_010"
+        ]
+      },
+      {
+        "id": "rel_workbook_has_review_node_review_review_remaining_bounded_read_queue",
+        "type": "has_review_item",
+        "from": "node_workbook",
+        "to": "node_review_review_remaining_bounded_read_queue",
+        "status": "review_required",
+        "evidence_refs": [
+          "read_26_0518_next_window",
+          "read_26_0511_next_window",
+          "read_26_0504_next_window",
+          "read_26_0427_next_window",
+          "read_26_0420_next_window",
+          "read_26_0413_next_window",
+          "read_26_0406_next_window",
+          "read_26_0330_next_window",
+          "read_26_0323_next_window",
+          "read_26_0316_next_window",
+          "read_26_0309_next_window",
+          "read_26_0302_next_window"
+        ]
+      },
+      {
+        "id": "rel_workbook_has_review_node_review_review_blocked_gate_results",
+        "type": "has_review_item",
+        "from": "node_workbook",
+        "to": "node_review_review_blocked_gate_results",
+        "status": "review_required",
+        "evidence_refs": [
+          "result_gate_target_external_source_external_dep_fc_data_a5_external_source_authority",
+          "result_gate_target_pipeline_pipeline_25_0707_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0714_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0721_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0728_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0804_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0811_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0818_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0825_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0901_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0908_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0915_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0922_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0929_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1013_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1020_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1027_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1103_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1110_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_fc_data_external_importrange_external_importrange_formula_error_reconciliation"
+        ]
+      }
+    ],
+    "review_items": [
+      {
+        "id": "review_external_dep_fc_data_A5",
+        "type": "external_source_authority_blocker",
+        "severity": "high",
+        "status": "blocked_until_source_acl_and_broker_allowlist",
+        "message": "External IMPORTRANGE source remains blocked until source argument resolution, Google ACL, and broker allowlist are confirmed.",
+        "evidence_refs": [
+          "external_dep_fc_data_A5",
+          "sampled_region_fc_data_inspect_values_window_001"
+        ]
+      },
+      {
+        "id": "review_external_importrange_source_authority",
+        "type": "permission_or_authority_blocker",
+        "severity": "high",
+        "status": "requires_human_or_broker_policy_action",
+        "message": "Resolve source spreadsheet ID, Google ACL, and broker allowlist before reading IMPORTRANGE source data.",
+        "evidence_refs": [
+          "external_dep_fc_data_A5"
+        ]
+      },
+      {
+        "id": "review_formula_error_surfaces",
+        "type": "formula_result_authority_gap",
+        "severity": "high",
+        "status": "requires_formula_result_review",
+        "message": "Displayed #REF! or formula errors must be reconciled before treating pipeline outputs as calculated values.",
+        "evidence_refs": [
+          "action_error_sampled_region_fc_data_inspect_values_window_002",
+          "action_error_sampled_region_fc_data_inspect_values_window_009",
+          "action_error_sampled_region_fc_data_inspect_values_window_010"
+        ]
+      },
+      {
+        "id": "review_remaining_bounded_read_queue",
+        "type": "coverage_gap",
+        "severity": "medium",
+        "status": "pending_bounded_sampling",
+        "message": "66 bounded read candidates remain unsampled; pipeline coverage is partial.",
+        "evidence_refs": [
+          "read_26_0518_next_window",
+          "read_26_0511_next_window",
+          "read_26_0504_next_window",
+          "read_26_0427_next_window",
+          "read_26_0420_next_window",
+          "read_26_0413_next_window",
+          "read_26_0406_next_window",
+          "read_26_0330_next_window",
+          "read_26_0323_next_window",
+          "read_26_0316_next_window",
+          "read_26_0309_next_window",
+          "read_26_0302_next_window"
+        ]
+      },
+      {
+        "id": "review_blocked_gate_results",
+        "type": "blocked_deterministic_gates",
+        "severity": "high",
+        "status": "blocked",
+        "message": "Blocked deterministic gates must be resolved before graph promotion.",
+        "evidence_refs": [
+          "result_gate_target_external_source_external_dep_fc_data_a5_external_source_authority",
+          "result_gate_target_pipeline_pipeline_25_0707_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0714_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0721_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0728_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0804_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0811_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0818_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0825_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0901_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0908_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0915_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0922_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_0929_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1013_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1020_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1027_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1103_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_25_1110_cross_sheet_range_fc_data_formula_error_reconciliation",
+          "result_gate_target_pipeline_pipeline_fc_data_external_importrange_external_importrange_formula_error_reconciliation"
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "node_count": 10,
+    "accepted_node_count": 5,
+    "review_required_node_count": 5,
+    "relation_count": 9,
+    "accepted_relation_count": 4,
+    "review_required_relation_count": 5,
+    "review_item_count": 5,
+    "semantic_concept_count": 0,
+    "mapping_status": "document_structure_ontology_mapping_only"
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "Document ontology mapping uses the document-structure ontology only; semantic ontology generation is not performed."
+    },
+    {
+      "level": "warning",
+      "message": "5 review items are carried forward as review-required ontology nodes."
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-action-contracts.schema.json",
+  "title": "Google Sheets Action Contracts",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "action_contracts",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "action_contracts": { "type": "array", "items": { "$ref": "#/$defs/action_contract" } },
+    "summary": { "$ref": "#/$defs/counts" },
+    "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["spreadsheet_id", "spreadsheet_url", "title", "source_artifacts"],
+      "additionalProperties": false,
+      "properties": {
+        "spreadsheet_id": { "type": "string", "minLength": 1 },
+        "spreadsheet_url": { "type": ["string", "null"] },
+        "title": { "type": "string" },
+        "source_artifacts": {
+          "type": "object",
+          "required": ["live_document_ontology_mapping"],
+          "additionalProperties": false,
+          "properties": {
+            "live_document_ontology_mapping": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": ["source_document", "contract_status", "new_graph_claims", "semantic_ontology_generation"],
+      "additionalProperties": false,
+      "properties": {
+        "source_document": { "const": "live_google_sheet" },
+        "contract_status": { "const": "action_contract_layer_only" },
+        "new_graph_claims": { "const": false },
+        "semantic_ontology_generation": { "const": "not_performed" }
+      }
+    },
+    "action_contract": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "source_review_item_id",
+        "status",
+        "priority",
+        "owner",
+        "action",
+        "required_evidence",
+        "deterministic_gate",
+        "completion_condition",
+        "completion_effect",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "action_contract" },
+        "source_review_item_id": { "type": "string", "minLength": 1 },
+        "status": { "const": "open" },
+        "priority": { "type": "string", "enum": ["low", "medium", "high"] },
+        "owner": { "type": "string", "minLength": 1 },
+        "action": { "type": "string", "minLength": 1 },
+        "required_evidence": { "type": "array", "items": { "type": "string" } },
+        "deterministic_gate": { "type": "string", "minLength": 1 },
+        "completion_condition": { "type": "string", "minLength": 1 },
+        "completion_effect": { "type": "string", "minLength": 1 },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] }
+    }
+  }
+}

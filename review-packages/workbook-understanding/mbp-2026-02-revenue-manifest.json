@@ -1,0 +1,5613 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-05-31T08:17:44.634846Z",
+  "source": {
+    "path": "/Users/kangmin/cowork/day1_revenue_ontology/input/reference/mbp_2026년 02월_결제 및 수익인식F_260309.xlsx",
+    "file_name": "mbp_2026년 02월_결제 및 수익인식F_260309.xlsx",
+    "size_bytes": 105867506,
+    "sha256": "3392b1854fec1c8e634ceff36bd3d40e17f4dfc47bd47989ff08ebd7ae36f8f3"
+  },
+  "limits": {
+    "sample_limit": 10,
+    "max_sheet_xml_bytes": 50000000,
+    "max_shared_strings": 200000
+  },
+  "shared_strings": {
+    "available": true,
+    "loaded_count": 197538,
+    "truncated": false
+  },
+  "package_entries": {
+    "entry_count": 110,
+    "worksheet_count": 14,
+    "drawing_count": 1,
+    "chart_count": 0,
+    "media_count": 5,
+    "table_count": 0,
+    "pivot_cache_record_count": 6,
+    "external_link_count": 1,
+    "has_shared_strings": true,
+    "has_styles": true,
+    "has_calc_chain": true,
+    "largest_entries": [
+      {
+        "entry": "xl/worksheets/sheet8.xml",
+        "size_bytes": 753456825,
+        "compressed_size_bytes": 83275900
+      },
+      {
+        "entry": "xl/pivotCache/pivotCacheRecords5.xml",
+        "size_bytes": 213204564,
+        "compressed_size_bytes": 9860534
+      },
+      {
+        "entry": "xl/worksheets/sheet6.xml",
+        "size_bytes": 32093233,
+        "compressed_size_bytes": 3391468
+      },
+      {
+        "entry": "xl/calcChain.xml",
+        "size_bytes": 22301816,
+        "compressed_size_bytes": 2609372
+      },
+      {
+        "entry": "xl/worksheets/sheet3.xml",
+        "size_bytes": 8746405,
+        "compressed_size_bytes": 1234304
+      },
+      {
+        "entry": "xl/sharedStrings.xml",
+        "size_bytes": 7543580,
+        "compressed_size_bytes": 1988922
+      },
+      {
+        "entry": "xl/worksheets/sheet14.xml",
+        "size_bytes": 5090931,
+        "compressed_size_bytes": 587752
+      },
+      {
+        "entry": "xl/worksheets/sheet4.xml",
+        "size_bytes": 3825119,
+        "compressed_size_bytes": 506697
+      },
+      {
+        "entry": "xl/pivotCache/pivotCacheRecords6.xml",
+        "size_bytes": 3254676,
+        "compressed_size_bytes": 460762
+      },
+      {
+        "entry": "xl/pivotCache/pivotCacheRecords2.xml",
+        "size_bytes": 2845091,
+        "compressed_size_bytes": 411538
+      },
+      {
+        "entry": "xl/pivotCache/pivotCacheRecords1.xml",
+        "size_bytes": 2820893,
+        "compressed_size_bytes": 411456
+      },
+      {
+        "entry": "xl/worksheets/sheet11.xml",
+        "size_bytes": 1438657,
+        "compressed_size_bytes": 192504
+      },
+      {
+        "entry": "xl/pivotCache/pivotCacheRecords3.xml",
+        "size_bytes": 806785,
+        "compressed_size_bytes": 98619
+      },
+      {
+        "entry": "xl/worksheets/sheet7.xml",
+        "size_bytes": 628151,
+        "compressed_size_bytes": 93210
+      },
+      {
+        "entry": "xl/externalLinks/externalLink1.xml",
+        "size_bytes": 547989,
+        "compressed_size_bytes": 85630
+      },
+      {
+        "entry": "xl/worksheets/sheet9.xml",
+        "size_bytes": 420135,
+        "compressed_size_bytes": 62652
+      },
+      {
+        "entry": "xl/worksheets/sheet1.xml",
+        "size_bytes": 272086,
+        "compressed_size_bytes": 41702
+      },
+      {
+        "entry": "xl/media/image1.png",
+        "size_bytes": 260508,
+        "compressed_size_bytes": 260508
+      },
+      {
+        "entry": "xl/styles.xml",
+        "size_bytes": 120760,
+        "compressed_size_bytes": 7761
+      },
+      {
+        "entry": "xl/media/image4.PNG",
+        "size_bytes": 66789,
+        "compressed_size_bytes": 66789
+      }
+    ]
+  },
+  "workbook": {
+    "sheet_count": 14,
+    "pivot_caches": [
+      {
+        "cache_id": "0",
+        "relationship_id": "rId16",
+        "entry": "xl/pivotCache/pivotCacheDefinition1.xml",
+        "source": {
+          "type": "worksheet",
+          "sheet": "결제상세",
+          "range": "A2:AX4858",
+          "bounds": {
+            "min_row": 2,
+            "min_column": 1,
+            "max_row": 4858,
+            "max_column": 50
+          }
+        },
+        "record_count": 4856,
+        "cache_field_count": 51,
+        "cache_field_samples": [
+          "NO",
+          "PG사",
+          "부문",
+          "브랜드",
+          "상점아이디(MID)",
+          "정산액 입금일",
+          "매출일",
+          "교재 환불부채",
+          "결제/취소일",
+          "주문번호",
+          "유하다요 구분값",
+          "결제수단",
+          "결제상태",
+          "결제기관",
+          "구매자명",
+          "구매자 아이디",
+          "결제/환불",
+          "현물출고일",
+          "재봉틀 출고",
+          "강의미공개"
+        ]
+      },
+      {
+        "cache_id": "1",
+        "relationship_id": "rId17",
+        "entry": "xl/pivotCache/pivotCacheDefinition2.xml",
+        "source": {
+          "type": "worksheet",
+          "sheet": "결제상세",
+          "range": "A2:AX4862",
+          "bounds": {
+            "min_row": 2,
+            "min_column": 1,
+            "max_row": 4862,
+            "max_column": 50
+          }
+        },
+        "record_count": 4860,
+        "cache_field_count": 51,
+        "cache_field_samples": [
+          "NO",
+          "PG사",
+          "부문",
+          "브랜드",
+          "상점아이디(MID)",
+          "정산액 입금일",
+          "매출일",
+          "교재 환불부채",
+          "결제/취소일",
+          "주문번호",
+          "유하다요 구분값",
+          "결제수단",
+          "결제상태",
+          "결제기관",
+          "구매자명",
+          "구매자 아이디",
+          "결제/환불",
+          "현물출고일",
+          "재봉틀 출고",
+          "강의미공개"
+        ]
+      },
+      {
+        "cache_id": "2",
+        "relationship_id": "rId18",
+        "entry": "xl/pivotCache/pivotCacheDefinition3.xml",
+        "source": {
+          "type": "worksheet",
+          "sheet": "수익인식60일",
+          "range": "A4:Y1846",
+          "bounds": {
+            "min_row": 4,
+            "min_column": 1,
+            "max_row": 1846,
+            "max_column": 25
+          }
+        },
+        "record_count": 1842,
+        "cache_field_count": 25,
+        "cache_field_samples": [
+          "아임포트주문번호",
+          "결제년도",
+          "결제월",
+          "매출일자",
+          "강의결제액",
+          "교육과정명",
+          "부문",
+          "브랜드",
+          "환불부채",
+          "환급부채",
+          "코스 개강일",
+          "코스 개강일2",
+          "코스 종강일",
+          "수익인식방법",
+          "코스 일수",
+          "일수당 결제금액",
+          "무의미",
+          "2026-02-28",
+          "2026-03-31",
+          "2026-04-30"
+        ]
+      },
+      {
+        "cache_id": "3",
+        "relationship_id": "rId19",
+        "entry": "xl/pivotCache/pivotCacheDefinition4.xml",
+        "source": {
+          "type": "worksheet",
+          "sheet": "수익인식60일_강사료",
+          "range": "A4:X35",
+          "bounds": {
+            "min_row": 4,
+            "min_column": 1,
+            "max_row": 35,
+            "max_column": 24
+          }
+        },
+        "record_count": 31,
+        "cache_field_count": 24,
+        "cache_field_samples": [
+          "아임포트주문번호",
+          "결제년도",
+          "결제월",
+          "매출일자",
+          "강의결제액",
+          "교육과정명",
+          "부문",
+          "브랜드",
+          "환불부채",
+          "환급부채",
+          "코스 개강일",
+          "코스 개강일2",
+          "코스 종강일",
+          "수익인식방법",
+          "코스 일수",
+          "일수당 결제금액",
+          "무의미",
+          "2026-02-28",
+          "2026-03-31",
+          "2026-04-30"
+        ]
+      },
+      {
+        "cache_id": "4",
+        "relationship_id": "rId20",
+        "entry": "xl/pivotCache/pivotCacheDefinition5.xml",
+        "source": {
+          "type": "worksheet",
+          "sheet": "누적",
+          "range": "A4:EB190724",
+          "bounds": {
+            "min_row": 4,
+            "min_column": 1,
+            "max_row": 190724,
+            "max_column": 132
+          }
+        },
+        "record_count": 190720,
+        "cache_field_count": 132,
+        "cache_field_samples": [
+          "아임포트주문번호",
+          "결제년도",
+          "결제월",
+          "매출일자",
+          "강의결제액",
+          "교육과정명",
+          "부서",
+          "브랜드",
+          "코스 개강일",
+          "코스 개강일2",
+          "코스 종강일",
+          "수익인식방법",
+          "코스 일수",
+          "일수당 결제금액",
+          "무의미",
+          "2023-08-31",
+          "2023-09-30",
+          "2023-10-31",
+          "2023-11-30",
+          "2023-12-31"
+        ]
+      },
+      {
+        "cache_id": "5",
+        "relationship_id": "rId21",
+        "entry": "xl/pivotCache/pivotCacheDefinition6.xml",
+        "source": {
+          "type": "worksheet",
+          "sheet": "결제상세",
+          "range": "A2:AX4879",
+          "bounds": {
+            "min_row": 2,
+            "min_column": 1,
+            "max_row": 4879,
+            "max_column": 50
+          }
+        },
+        "record_count": 4877,
+        "cache_field_count": 50,
+        "cache_field_samples": [
+          "NO",
+          "PG사",
+          "부문",
+          "브랜드",
+          "상점아이디(MID)",
+          "정산액 입금일",
+          "매출일",
+          "교재 환불부채",
+          "결제/취소일",
+          "주문번호",
+          "유하다요 구분값",
+          "결제수단",
+          "결제상태",
+          "결제기관",
+          "구매자명",
+          "구매자 아이디",
+          "결제/환불",
+          "현물출고일",
+          "강의미공개",
+          "교재미출고"
+        ]
+      }
+    ],
+    "external_links": [
+      {
+        "entry": "xl/externalLinks/externalLink1.xml",
+        "relationship_id": "rId1",
+        "targets": [
+          {
+            "id": "rId1",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/externalLinkPath",
+            "target": "/000.221228/03.월마감자료/01.매출/24.09월%20매출%20정산자료/03_레모네이드_2024년%2009월_결제%20및%20수익인식_Final.xlsx",
+            "target_mode": "External"
+          },
+          {
+            "id": "rId2",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/externalLinkPath",
+            "target": "../24.09월%20매출%20정산자료/03_레모네이드_2024년%2009월_결제%20및%20수익인식_Final.xlsx",
+            "target_mode": "External"
+          }
+        ],
+        "sheet_name_count": 17,
+        "sheet_name_samples": [
+          "진행매출",
+          "Sheet2",
+          "9월_LE_결제상세",
+          "Sheet1",
+          "IFRS",
+          "선수수익_계약부채 잔액",
+          "외상매출금",
+          "당월산식",
+          "백로그",
+          "누적",
+          "결제요약",
+          "포도_종강일조정",
+          "포도Data",
+          "PG수수료",
+          "유하다요_평생수강",
+          "정가표",
+          "리스픽Data"
+        ]
+      }
+    ],
+    "sheets": [
+      {
+        "name": "매출",
+        "index": 0,
+        "sheet_id": "14",
+        "state": "visible",
+        "relationship_id": "rId1",
+        "entry": "xl/worksheets/sheet1.xml",
+        "detail_status": "scanned",
+        "entry_size_bytes": 272086,
+        "compressed_size_bytes": 41702,
+        "dimension": "A1:P4161",
+        "dimension_bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 4161,
+          "max_column": 16
+        },
+        "counts": {
+          "row_elements": 4151,
+          "column_dimension_elements": 13,
+          "cell_elements": 8719,
+          "styled_cell_elements": 500,
+          "value_elements": 486,
+          "formula_elements": 131,
+          "inline_string_elements": 0,
+          "merged_ranges": 0,
+          "drawing_refs": 0,
+          "table_part_refs": 0,
+          "hyperlinks": 0
+        },
+        "samples": {
+          "cells": [
+            {
+              "cell": "A1",
+              "type": "s",
+              "style_index": "541",
+              "raw_value": "197486",
+              "value_preview": "*2월 KGAAP기준 매출"
+            },
+            {
+              "cell": "A3",
+              "type": "s",
+              "style_index": "538",
+              "raw_value": "16762",
+              "value_preview": "행 레이블"
+            },
+            {
+              "cell": "B3",
+              "type": "s",
+              "style_index": "480",
+              "raw_value": "197485",
+              "value_preview": "Sum of 2026-02-282"
+            },
+            {
+              "cell": "C3",
+              "type": "s",
+              "style_index": "542",
+              "raw_value": "197487",
+              "value_preview": "교재매출"
+            },
+            {
+              "cell": "D3",
+              "type": "s",
+              "style_index": "542",
+              "raw_value": "197488",
+              "value_preview": "현물"
+            },
+            {
+              "cell": "E3",
+              "type": "s",
+              "style_index": "542",
+              "raw_value": "197489",
+              "value_preview": "합계"
+            },
+            {
+              "cell": "I3",
+              "type": "s",
+              "style_index": "545",
+              "raw_value": "197490",
+              "value_preview": "부서"
+            },
+            {
+              "cell": "J3",
+              "type": "s",
+              "style_index": "545",
+              "raw_value": "197491",
+              "value_preview": "강의매출"
+            },
+            {
+              "cell": "K3",
+              "type": "s",
+              "style_index": "545",
+              "raw_value": "197487",
+              "value_preview": "교재매출"
+            },
+            {
+              "cell": "L3",
+              "type": "s",
+              "style_index": "545",
+              "raw_value": "197489",
+              "value_preview": "합계"
+            }
+          ],
+          "formulas": [
+            {
+              "cell": "C4",
+              "formula": "SUMIFS(결제상세!$AK:$AK,결제상세!$D:$D,매출!$A4)",
+              "attributes": {}
+            },
+            {
+              "cell": "D4",
+              "formula": "SUMIFS(결제상세!$AF:$AF,결제상세!$D:$D,매출!$A4)",
+              "attributes": {}
+            },
+            {
+              "cell": "E4",
+              "formula": "SUM(B4:D4)",
+              "attributes": {}
+            },
+            {
+              "cell": "J4",
+              "formula": "SUMIFS($B$4:$B$25,$F$4:$F$25,$I4)",
+              "attributes": {}
+            },
+            {
+              "cell": "K4",
+              "formula": "SUMIFS($C$4:$C$25,$F$4:$F$25,$I4)",
+              "attributes": {}
+            },
+            {
+              "cell": "L4",
+              "formula": "SUM(J4:K4)",
+              "attributes": {}
+            },
+            {
+              "cell": "C5",
+              "formula": "SUMIFS(결제상세!$AK:$AK,결제상세!$D:$D,매출!$A5)",
+              "attributes": {}
+            },
+            {
+              "cell": "D5",
+              "formula": "SUMIFS(결제상세!$AF:$AF,결제상세!$D:$D,매출!$A5)",
+              "attributes": {}
+            },
+            {
+              "cell": "E5",
+              "formula": "SUM(B5:D5)",
+              "attributes": {
+                "t": "shared",
+                "ref": "E5:E25",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "J5",
+              "formula": "SUMIFS($B$4:$B$25,$F$4:$F$25,$I5)",
+              "attributes": {
+                "t": "shared",
+                "ref": "J5:J12",
+                "si": "1"
+              }
+            }
+          ],
+          "merged_ranges": [],
+          "column_dimensions": [
+            {
+              "min": "1",
+              "max": "1",
+              "width": "13.5",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "2",
+              "max": "2",
+              "width": "20.25",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "3",
+              "max": "3",
+              "width": "11.625",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "4",
+              "max": "4",
+              "width": "10.625",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "5",
+              "max": "5",
+              "width": "14.75",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "6",
+              "max": "6",
+              "width": "18.875",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "7",
+              "max": "7",
+              "width": "12.125",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "8",
+              "max": "8",
+              "width": "29.375",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "9",
+              "max": "9",
+              "width": "18.875",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "10",
+              "max": "10",
+              "width": "10.625",
+              "hidden": null,
+              "style": "5"
+            }
+          ],
+          "row_dimensions": [
+            {
+              "row": "49",
+              "height": "17.25",
+              "hidden": null,
+              "custom_height": null
+            },
+            {
+              "row": "58",
+              "height": "17.25",
+              "hidden": null,
+              "custom_height": null
+            }
+          ],
+          "drawing_refs": [],
+          "table_part_refs": []
+        },
+        "relationships": [
+          {
+            "id": "rId1",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable1.xml",
+            "entry": "xl/pivotTables/pivotTable1.xml"
+          },
+          {
+            "id": "rId10",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/printerSettings",
+            "target": "../printerSettings/printerSettings1.bin",
+            "entry": "xl/printerSettings/printerSettings1.bin"
+          },
+          {
+            "id": "rId2",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable2.xml",
+            "entry": "xl/pivotTables/pivotTable2.xml"
+          },
+          {
+            "id": "rId3",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable3.xml",
+            "entry": "xl/pivotTables/pivotTable3.xml"
+          },
+          {
+            "id": "rId4",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable4.xml",
+            "entry": "xl/pivotTables/pivotTable4.xml"
+          },
+          {
+            "id": "rId5",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable5.xml",
+            "entry": "xl/pivotTables/pivotTable5.xml"
+          },
+          {
+            "id": "rId6",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable6.xml",
+            "entry": "xl/pivotTables/pivotTable6.xml"
+          },
+          {
+            "id": "rId7",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable7.xml",
+            "entry": "xl/pivotTables/pivotTable7.xml"
+          },
+          {
+            "id": "rId8",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable8.xml",
+            "entry": "xl/pivotTables/pivotTable8.xml"
+          },
+          {
+            "id": "rId9",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable9.xml",
+            "entry": "xl/pivotTables/pivotTable9.xml"
+          }
+        ],
+        "pivot_tables": [
+          {
+            "id": "pivotTable1",
+            "name": "PivotTable2",
+            "entry": "xl/pivotTables/pivotTable1.xml",
+            "cache_id": "5",
+            "cache": {
+              "cache_id": "5",
+              "relationship_id": "rId21",
+              "entry": "xl/pivotCache/pivotCacheDefinition6.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4879",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4879,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4877,
+              "cache_field_count": 50,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "강의미공개",
+                "교재미출고"
+              ]
+            },
+            "location": {
+              "range": "A33:B40",
+              "bounds": {
+                "min_row": 33,
+                "min_column": 1,
+                "max_row": 40,
+                "max_column": 2
+              },
+              "first_header_row": 1,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 50,
+              "row_fields": 1,
+              "column_fields": 0,
+              "page_fields": 1,
+              "data_fields": 1
+            },
+            "relationship_id": "rId1"
+          },
+          {
+            "id": "pivotTable2",
+            "name": "PivotTable6",
+            "entry": "xl/pivotTables/pivotTable2.xml",
+            "cache_id": "2",
+            "cache": {
+              "cache_id": "2",
+              "relationship_id": "rId18",
+              "entry": "xl/pivotCache/pivotCacheDefinition3.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "수익인식60일",
+                "range": "A4:Y1846",
+                "bounds": {
+                  "min_row": 4,
+                  "min_column": 1,
+                  "max_row": 1846,
+                  "max_column": 25
+                }
+              },
+              "record_count": 1842,
+              "cache_field_count": 25,
+              "cache_field_samples": [
+                "아임포트주문번호",
+                "결제년도",
+                "결제월",
+                "매출일자",
+                "강의결제액",
+                "교육과정명",
+                "부문",
+                "브랜드",
+                "환불부채",
+                "환급부채",
+                "코스 개강일",
+                "코스 개강일2",
+                "코스 종강일",
+                "수익인식방법",
+                "코스 일수",
+                "일수당 결제금액",
+                "무의미",
+                "2026-02-28",
+                "2026-03-31",
+                "2026-04-30"
+              ]
+            },
+            "location": {
+              "range": "A48:D53",
+              "bounds": {
+                "min_row": 48,
+                "min_column": 1,
+                "max_row": 53,
+                "max_column": 4
+              },
+              "first_header_row": 0,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 25,
+              "row_fields": 1,
+              "column_fields": 1,
+              "page_fields": 0,
+              "data_fields": 3
+            },
+            "relationship_id": "rId2"
+          },
+          {
+            "id": "pivotTable3",
+            "name": "PivotTable5",
+            "entry": "xl/pivotTables/pivotTable3.xml",
+            "cache_id": "5",
+            "cache": {
+              "cache_id": "5",
+              "relationship_id": "rId21",
+              "entry": "xl/pivotCache/pivotCacheDefinition6.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4879",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4879,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4877,
+              "cache_field_count": 50,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "강의미공개",
+                "교재미출고"
+              ]
+            },
+            "location": {
+              "range": "J33:K35",
+              "bounds": {
+                "min_row": 33,
+                "min_column": 10,
+                "max_row": 35,
+                "max_column": 11
+              },
+              "first_header_row": 1,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 50,
+              "row_fields": 1,
+              "column_fields": 0,
+              "page_fields": 1,
+              "data_fields": 1
+            },
+            "relationship_id": "rId3"
+          },
+          {
+            "id": "pivotTable4",
+            "name": "PivotTable9",
+            "entry": "xl/pivotTables/pivotTable4.xml",
+            "cache_id": "4",
+            "cache": {
+              "cache_id": "4",
+              "relationship_id": "rId20",
+              "entry": "xl/pivotCache/pivotCacheDefinition5.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "누적",
+                "range": "A4:EB190724",
+                "bounds": {
+                  "min_row": 4,
+                  "min_column": 1,
+                  "max_row": 190724,
+                  "max_column": 132
+                }
+              },
+              "record_count": 190720,
+              "cache_field_count": 132,
+              "cache_field_samples": [
+                "아임포트주문번호",
+                "결제년도",
+                "결제월",
+                "매출일자",
+                "강의결제액",
+                "교육과정명",
+                "부서",
+                "브랜드",
+                "코스 개강일",
+                "코스 개강일2",
+                "코스 종강일",
+                "수익인식방법",
+                "코스 일수",
+                "일수당 결제금액",
+                "무의미",
+                "2023-08-31",
+                "2023-09-30",
+                "2023-10-31",
+                "2023-11-30",
+                "2023-12-31"
+              ]
+            },
+            "location": {
+              "range": "B88:P96",
+              "bounds": {
+                "min_row": 88,
+                "min_column": 2,
+                "max_row": 96,
+                "max_column": 16
+              },
+              "first_header_row": 0,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 132,
+              "row_fields": 1,
+              "column_fields": 1,
+              "page_fields": 0,
+              "data_fields": 14
+            },
+            "relationship_id": "rId4"
+          },
+          {
+            "id": "pivotTable5",
+            "name": "PivotTable1",
+            "entry": "xl/pivotTables/pivotTable5.xml",
+            "cache_id": "4",
+            "cache": {
+              "cache_id": "4",
+              "relationship_id": "rId20",
+              "entry": "xl/pivotCache/pivotCacheDefinition5.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "누적",
+                "range": "A4:EB190724",
+                "bounds": {
+                  "min_row": 4,
+                  "min_column": 1,
+                  "max_row": 190724,
+                  "max_column": 132
+                }
+              },
+              "record_count": 190720,
+              "cache_field_count": 132,
+              "cache_field_samples": [
+                "아임포트주문번호",
+                "결제년도",
+                "결제월",
+                "매출일자",
+                "강의결제액",
+                "교육과정명",
+                "부서",
+                "브랜드",
+                "코스 개강일",
+                "코스 개강일2",
+                "코스 종강일",
+                "수익인식방법",
+                "코스 일수",
+                "일수당 결제금액",
+                "무의미",
+                "2023-08-31",
+                "2023-09-30",
+                "2023-10-31",
+                "2023-11-30",
+                "2023-12-31"
+              ]
+            },
+            "location": {
+              "range": "A3:B26",
+              "bounds": {
+                "min_row": 3,
+                "min_column": 1,
+                "max_row": 26,
+                "max_column": 2
+              },
+              "first_header_row": 1,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 132,
+              "row_fields": 1,
+              "column_fields": 0,
+              "page_fields": 0,
+              "data_fields": 1
+            },
+            "relationship_id": "rId5"
+          },
+          {
+            "id": "pivotTable6",
+            "name": "PivotTable8",
+            "entry": "xl/pivotTables/pivotTable6.xml",
+            "cache_id": "5",
+            "cache": {
+              "cache_id": "5",
+              "relationship_id": "rId21",
+              "entry": "xl/pivotCache/pivotCacheDefinition6.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4879",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4879,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4877,
+              "cache_field_count": 50,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "강의미공개",
+                "교재미출고"
+              ]
+            },
+            "location": {
+              "range": "A71:D73",
+              "bounds": {
+                "min_row": 71,
+                "min_column": 1,
+                "max_row": 73,
+                "max_column": 4
+              },
+              "first_header_row": 0,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 50,
+              "row_fields": 1,
+              "column_fields": 1,
+              "page_fields": 1,
+              "data_fields": 3
+            },
+            "relationship_id": "rId6"
+          },
+          {
+            "id": "pivotTable7",
+            "name": "PivotTable4",
+            "entry": "xl/pivotTables/pivotTable7.xml",
+            "cache_id": "5",
+            "cache": {
+              "cache_id": "5",
+              "relationship_id": "rId21",
+              "entry": "xl/pivotCache/pivotCacheDefinition6.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4879",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4879,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4877,
+              "cache_field_count": 50,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "강의미공개",
+                "교재미출고"
+              ]
+            },
+            "location": {
+              "range": "G33:H36",
+              "bounds": {
+                "min_row": 33,
+                "min_column": 7,
+                "max_row": 36,
+                "max_column": 8
+              },
+              "first_header_row": 1,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 50,
+              "row_fields": 1,
+              "column_fields": 0,
+              "page_fields": 1,
+              "data_fields": 1
+            },
+            "relationship_id": "rId7"
+          },
+          {
+            "id": "pivotTable8",
+            "name": "PivotTable7",
+            "entry": "xl/pivotTables/pivotTable8.xml",
+            "cache_id": "5",
+            "cache": {
+              "cache_id": "5",
+              "relationship_id": "rId21",
+              "entry": "xl/pivotCache/pivotCacheDefinition6.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4879",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4879,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4877,
+              "cache_field_count": 50,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "강의미공개",
+                "교재미출고"
+              ]
+            },
+            "location": {
+              "range": "G50:H58",
+              "bounds": {
+                "min_row": 50,
+                "min_column": 7,
+                "max_row": 58,
+                "max_column": 8
+              },
+              "first_header_row": 1,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 50,
+              "row_fields": 1,
+              "column_fields": 0,
+              "page_fields": 1,
+              "data_fields": 1
+            },
+            "relationship_id": "rId8"
+          },
+          {
+            "id": "pivotTable9",
+            "name": "PivotTable3",
+            "entry": "xl/pivotTables/pivotTable9.xml",
+            "cache_id": "5",
+            "cache": {
+              "cache_id": "5",
+              "relationship_id": "rId21",
+              "entry": "xl/pivotCache/pivotCacheDefinition6.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4879",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4879,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4877,
+              "cache_field_count": 50,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "강의미공개",
+                "교재미출고"
+              ]
+            },
+            "location": {
+              "range": "D31:E43",
+              "bounds": {
+                "min_row": 31,
+                "min_column": 4,
+                "max_row": 43,
+                "max_column": 5
+              },
+              "first_header_row": 1,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 50,
+              "row_fields": 1,
+              "column_fields": 0,
+              "page_fields": 0,
+              "data_fields": 1
+            },
+            "relationship_id": "rId9"
+          }
+        ],
+        "drawing_objects": []
+      },
+      {
+        "name": "결제&수수료",
+        "index": 1,
+        "sheet_id": "6",
+        "state": "visible",
+        "relationship_id": "rId2",
+        "entry": "xl/worksheets/sheet2.xml",
+        "detail_status": "scanned",
+        "entry_size_bytes": 25638,
+        "compressed_size_bytes": 5994,
+        "dimension": "A1:R231",
+        "dimension_bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 231,
+          "max_column": 18
+        },
+        "counts": {
+          "row_elements": 119,
+          "column_dimension_elements": 12,
+          "cell_elements": 602,
+          "styled_cell_elements": 508,
+          "value_elements": 370,
+          "formula_elements": 61,
+          "inline_string_elements": 0,
+          "merged_ranges": 0,
+          "drawing_refs": 1,
+          "table_part_refs": 0,
+          "hyperlinks": 0
+        },
+        "samples": {
+          "cells": [
+            {
+              "cell": "A1",
+              "type": "s",
+              "style_index": "538",
+              "raw_value": "12488",
+              "value_preview": "결제/환불"
+            },
+            {
+              "cell": "B1",
+              "type": "s",
+              "style_index": "480",
+              "raw_value": "15136",
+              "value_preview": "결제"
+            },
+            {
+              "cell": "A3",
+              "type": "s",
+              "style_index": "538",
+              "raw_value": "16762",
+              "value_preview": "행 레이블"
+            },
+            {
+              "cell": "B3",
+              "type": "s",
+              "style_index": "480",
+              "raw_value": "16512",
+              "value_preview": "Sum of 결제·취소액 (A)"
+            },
+            {
+              "cell": "A4",
+              "type": "s",
+              "style_index": "561",
+              "raw_value": "16508",
+              "value_preview": "B2B"
+            },
+            {
+              "cell": "B4",
+              "type": null,
+              "style_index": "482",
+              "raw_value": "24674341",
+              "value_preview": "24674341"
+            },
+            {
+              "cell": "A5",
+              "type": "s",
+              "style_index": "561",
+              "raw_value": "16509",
+              "value_preview": "마이라이트"
+            },
+            {
+              "cell": "B5",
+              "type": null,
+              "style_index": "482",
+              "raw_value": "302709470",
+              "value_preview": "302709470"
+            },
+            {
+              "cell": "C5",
+              "type": null,
+              "style_index": "56",
+              "raw_value": "619451990",
+              "value_preview": "619451990"
+            },
+            {
+              "cell": "A6",
+              "type": "s",
+              "style_index": "561",
+              "raw_value": "16510",
+              "value_preview": "부스팅"
+            }
+          ],
+          "formulas": [
+            {
+              "cell": "C5",
+              "formula": "B5+B7",
+              "attributes": {}
+            },
+            {
+              "cell": "B11",
+              "formula": "SUMIFS(결제상세!$Z:$Z,결제상세!$Q:$Q,\"결제\")-B10",
+              "attributes": {}
+            },
+            {
+              "cell": "B48",
+              "formula": "B47+C47+D47+E47",
+              "attributes": {}
+            },
+            {
+              "cell": "E48",
+              "formula": "D44+E44+F44",
+              "attributes": {}
+            },
+            {
+              "cell": "F48",
+              "formula": "E48+G44",
+              "attributes": {}
+            },
+            {
+              "cell": "E49",
+              "formula": "D46+E46+F46",
+              "attributes": {}
+            },
+            {
+              "cell": "F49",
+              "formula": "E49+G46",
+              "attributes": {}
+            },
+            {
+              "cell": "E50",
+              "formula": "B44+C44+B45+C45",
+              "attributes": {}
+            },
+            {
+              "cell": "F50",
+              "formula": "E50",
+              "attributes": {}
+            },
+            {
+              "cell": "E51",
+              "formula": "B46+C46",
+              "attributes": {}
+            }
+          ],
+          "merged_ranges": [],
+          "column_dimensions": [
+            {
+              "min": "1",
+              "max": "1",
+              "width": "10.625",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "2",
+              "max": "2",
+              "width": "20.25",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "3",
+              "max": "3",
+              "width": "12.75",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "4",
+              "max": "4",
+              "width": "13.125",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "5",
+              "max": "5",
+              "width": "15",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "6",
+              "max": "6",
+              "width": "13.125",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "7",
+              "max": "7",
+              "width": "13",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "8",
+              "max": "8",
+              "width": "18.75",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "9",
+              "max": "9",
+              "width": "11.625",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "10",
+              "max": "10",
+              "width": "9",
+              "hidden": null,
+              "style": "5"
+            }
+          ],
+          "row_dimensions": [],
+          "drawing_refs": [
+            "rId16"
+          ],
+          "table_part_refs": []
+        },
+        "relationships": [
+          {
+            "id": "rId1",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable10.xml",
+            "entry": "xl/pivotTables/pivotTable10.xml"
+          },
+          {
+            "id": "rId10",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable19.xml",
+            "entry": "xl/pivotTables/pivotTable19.xml"
+          },
+          {
+            "id": "rId11",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable20.xml",
+            "entry": "xl/pivotTables/pivotTable20.xml"
+          },
+          {
+            "id": "rId12",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable21.xml",
+            "entry": "xl/pivotTables/pivotTable21.xml"
+          },
+          {
+            "id": "rId13",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable22.xml",
+            "entry": "xl/pivotTables/pivotTable22.xml"
+          },
+          {
+            "id": "rId14",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable23.xml",
+            "entry": "xl/pivotTables/pivotTable23.xml"
+          },
+          {
+            "id": "rId15",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/printerSettings",
+            "target": "../printerSettings/printerSettings2.bin",
+            "entry": "xl/printerSettings/printerSettings2.bin"
+          },
+          {
+            "id": "rId16",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/drawing",
+            "target": "../drawings/drawing1.xml",
+            "entry": "xl/drawings/drawing1.xml"
+          },
+          {
+            "id": "rId2",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable11.xml",
+            "entry": "xl/pivotTables/pivotTable11.xml"
+          },
+          {
+            "id": "rId3",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable12.xml",
+            "entry": "xl/pivotTables/pivotTable12.xml"
+          },
+          {
+            "id": "rId4",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable13.xml",
+            "entry": "xl/pivotTables/pivotTable13.xml"
+          },
+          {
+            "id": "rId5",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable14.xml",
+            "entry": "xl/pivotTables/pivotTable14.xml"
+          },
+          {
+            "id": "rId6",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable15.xml",
+            "entry": "xl/pivotTables/pivotTable15.xml"
+          },
+          {
+            "id": "rId7",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable16.xml",
+            "entry": "xl/pivotTables/pivotTable16.xml"
+          },
+          {
+            "id": "rId8",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable17.xml",
+            "entry": "xl/pivotTables/pivotTable17.xml"
+          },
+          {
+            "id": "rId9",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable18.xml",
+            "entry": "xl/pivotTables/pivotTable18.xml"
+          }
+        ],
+        "pivot_tables": [
+          {
+            "id": "pivotTable10",
+            "name": "피벗 테이블13",
+            "entry": "xl/pivotTables/pivotTable10.xml",
+            "cache_id": "1",
+            "cache": {
+              "cache_id": "1",
+              "relationship_id": "rId17",
+              "entry": "xl/pivotCache/pivotCacheDefinition2.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4862",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4862,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4860,
+              "cache_field_count": 51,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "재봉틀 출고",
+                "강의미공개"
+              ]
+            },
+            "location": {
+              "range": "A221:B224",
+              "bounds": {
+                "min_row": 221,
+                "min_column": 1,
+                "max_row": 224,
+                "max_column": 2
+              },
+              "first_header_row": 1,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 51,
+              "row_fields": 1,
+              "column_fields": 0,
+              "page_fields": 1,
+              "data_fields": 1
+            },
+            "relationship_id": "rId1"
+          },
+          {
+            "id": "pivotTable19",
+            "name": "피벗 테이블3",
+            "entry": "xl/pivotTables/pivotTable19.xml",
+            "cache_id": "0",
+            "cache": {
+              "cache_id": "0",
+              "relationship_id": "rId16",
+              "entry": "xl/pivotCache/pivotCacheDefinition1.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4858",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4858,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4856,
+              "cache_field_count": 51,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "재봉틀 출고",
+                "강의미공개"
+              ]
+            },
+            "location": {
+              "range": "A55:B64",
+              "bounds": {
+                "min_row": 55,
+                "min_column": 1,
+                "max_row": 64,
+                "max_column": 2
+              },
+              "first_header_row": 1,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 51,
+              "row_fields": 1,
+              "column_fields": 0,
+              "page_fields": 1,
+              "data_fields": 1
+            },
+            "relationship_id": "rId10"
+          },
+          {
+            "id": "pivotTable20",
+            "name": "피벗 테이블1",
+            "entry": "xl/pivotTables/pivotTable20.xml",
+            "cache_id": "5",
+            "cache": {
+              "cache_id": "5",
+              "relationship_id": "rId21",
+              "entry": "xl/pivotCache/pivotCacheDefinition6.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4879",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4879,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4877,
+              "cache_field_count": 50,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "강의미공개",
+                "교재미출고"
+              ]
+            },
+            "location": {
+              "range": "A15:B33",
+              "bounds": {
+                "min_row": 15,
+                "min_column": 1,
+                "max_row": 33,
+                "max_column": 2
+              },
+              "first_header_row": 1,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 50,
+              "row_fields": 2,
+              "column_fields": 0,
+              "page_fields": 0,
+              "data_fields": 1
+            },
+            "relationship_id": "rId11"
+          },
+          {
+            "id": "pivotTable21",
+            "name": "피벗 테이블2",
+            "entry": "xl/pivotTables/pivotTable21.xml",
+            "cache_id": "0",
+            "cache": {
+              "cache_id": "0",
+              "relationship_id": "rId16",
+              "entry": "xl/pivotCache/pivotCacheDefinition1.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4858",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4858,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4856,
+              "cache_field_count": 51,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "재봉틀 출고",
+                "강의미공개"
+              ]
+            },
+            "location": {
+              "range": "A43:H47",
+              "bounds": {
+                "min_row": 43,
+                "min_column": 1,
+                "max_row": 47,
+                "max_column": 8
+              },
+              "first_header_row": 0,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 51,
+              "row_fields": 1,
+              "column_fields": 1,
+              "page_fields": 1,
+              "data_fields": 7
+            },
+            "relationship_id": "rId12"
+          },
+          {
+            "id": "pivotTable22",
+            "name": "피벗 테이블14",
+            "entry": "xl/pivotTables/pivotTable22.xml",
+            "cache_id": "1",
+            "cache": {
+              "cache_id": "1",
+              "relationship_id": "rId17",
+              "entry": "xl/pivotCache/pivotCacheDefinition2.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4862",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4862,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4860,
+              "cache_field_count": 51,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "재봉틀 출고",
+                "강의미공개"
+              ]
+            },
+            "location": {
+              "range": "A228:B231",
+              "bounds": {
+                "min_row": 228,
+                "min_column": 1,
+                "max_row": 231,
+                "max_column": 2
+              },
+              "first_header_row": 1,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 51,
+              "row_fields": 1,
+              "column_fields": 0,
+              "page_fields": 1,
+              "data_fields": 1
+            },
+            "relationship_id": "rId13"
+          },
+          {
+            "id": "pivotTable23",
+            "name": "피벗 테이블11",
+            "entry": "xl/pivotTables/pivotTable23.xml",
+            "cache_id": "1",
+            "cache": {
+              "cache_id": "1",
+              "relationship_id": "rId17",
+              "entry": "xl/pivotCache/pivotCacheDefinition2.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4862",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4862,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4860,
+              "cache_field_count": 51,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "재봉틀 출고",
+                "강의미공개"
+              ]
+            },
+            "location": {
+              "range": "A207:B210",
+              "bounds": {
+                "min_row": 207,
+                "min_column": 1,
+                "max_row": 210,
+                "max_column": 2
+              },
+              "first_header_row": 1,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 51,
+              "row_fields": 1,
+              "column_fields": 0,
+              "page_fields": 1,
+              "data_fields": 1
+            },
+            "relationship_id": "rId14"
+          },
+          {
+            "id": "pivotTable11",
+            "name": "PivotTable1",
+            "entry": "xl/pivotTables/pivotTable11.xml",
+            "cache_id": "5",
+            "cache": {
+              "cache_id": "5",
+              "relationship_id": "rId21",
+              "entry": "xl/pivotCache/pivotCacheDefinition6.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4879",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4879,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4877,
+              "cache_field_count": 50,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "강의미공개",
+                "교재미출고"
+              ]
+            },
+            "location": {
+              "range": "A3:B10",
+              "bounds": {
+                "min_row": 3,
+                "min_column": 1,
+                "max_row": 10,
+                "max_column": 2
+              },
+              "first_header_row": 1,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 50,
+              "row_fields": 1,
+              "column_fields": 0,
+              "page_fields": 1,
+              "data_fields": 1
+            },
+            "relationship_id": "rId2"
+          },
+          {
+            "id": "pivotTable12",
+            "name": "피벗 테이블6",
+            "entry": "xl/pivotTables/pivotTable12.xml",
+            "cache_id": "0",
+            "cache": {
+              "cache_id": "0",
+              "relationship_id": "rId16",
+              "entry": "xl/pivotCache/pivotCacheDefinition1.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4858",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4858,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4856,
+              "cache_field_count": 51,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "재봉틀 출고",
+                "강의미공개"
+              ]
+            },
+            "location": {
+              "range": "A98:B101",
+              "bounds": {
+                "min_row": 98,
+                "min_column": 1,
+                "max_row": 101,
+                "max_column": 2
+              },
+              "first_header_row": 1,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 51,
+              "row_fields": 1,
+              "column_fields": 0,
+              "page_fields": 1,
+              "data_fields": 1
+            },
+            "relationship_id": "rId3"
+          },
+          {
+            "id": "pivotTable13",
+            "name": "피벗 테이블4",
+            "entry": "xl/pivotTables/pivotTable13.xml",
+            "cache_id": "0",
+            "cache": {
+              "cache_id": "0",
+              "relationship_id": "rId16",
+              "entry": "xl/pivotCache/pivotCacheDefinition1.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4858",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4858,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4856,
+              "cache_field_count": 51,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "재봉틀 출고",
+                "강의미공개"
+              ]
+            },
+            "location": {
+              "range": "A91:H93",
+              "bounds": {
+                "min_row": 91,
+                "min_column": 1,
+                "max_row": 93,
+                "max_column": 8
+              },
+              "first_header_row": 0,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 51,
+              "row_fields": 1,
+              "column_fields": 1,
+              "page_fields": 1,
+              "data_fields": 7
+            },
+            "relationship_id": "rId4"
+          },
+          {
+            "id": "pivotTable14",
+            "name": "피벗 테이블12",
+            "entry": "xl/pivotTables/pivotTable14.xml",
+            "cache_id": "1",
+            "cache": {
+              "cache_id": "1",
+              "relationship_id": "rId17",
+              "entry": "xl/pivotCache/pivotCacheDefinition2.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4862",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4862,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4860,
+              "cache_field_count": 51,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "재봉틀 출고",
+                "강의미공개"
+              ]
+            },
+            "location": {
+              "range": "A214:B217",
+              "bounds": {
+                "min_row": 214,
+                "min_column": 1,
+                "max_row": 217,
+                "max_column": 2
+              },
+              "first_header_row": 1,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 51,
+              "row_fields": 1,
+              "column_fields": 0,
+              "page_fields": 1,
+              "data_fields": 1
+            },
+            "relationship_id": "rId5"
+          },
+          {
+            "id": "pivotTable15",
+            "name": "피벗 테이블8",
+            "entry": "xl/pivotTables/pivotTable15.xml",
+            "cache_id": "0",
+            "cache": {
+              "cache_id": "0",
+              "relationship_id": "rId16",
+              "entry": "xl/pivotCache/pivotCacheDefinition1.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4858",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4858,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4856,
+              "cache_field_count": 51,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "재봉틀 출고",
+                "강의미공개"
+              ]
+            },
+            "location": {
+              "range": "A136:H139",
+              "bounds": {
+                "min_row": 136,
+                "min_column": 1,
+                "max_row": 139,
+                "max_column": 8
+              },
+              "first_header_row": 0,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 51,
+              "row_fields": 1,
+              "column_fields": 1,
+              "page_fields": 1,
+              "data_fields": 7
+            },
+            "relationship_id": "rId6"
+          },
+          {
+            "id": "pivotTable16",
+            "name": "피벗 테이블7",
+            "entry": "xl/pivotTables/pivotTable16.xml",
+            "cache_id": "0",
+            "cache": {
+              "cache_id": "0",
+              "relationship_id": "rId16",
+              "entry": "xl/pivotCache/pivotCacheDefinition1.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4858",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4858,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4856,
+              "cache_field_count": 51,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "재봉틀 출고",
+                "강의미공개"
+              ]
+            },
+            "location": {
+              "range": "A106:H109",
+              "bounds": {
+                "min_row": 106,
+                "min_column": 1,
+                "max_row": 109,
+                "max_column": 8
+              },
+              "first_header_row": 0,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 51,
+              "row_fields": 1,
+              "column_fields": 1,
+              "page_fields": 1,
+              "data_fields": 7
+            },
+            "relationship_id": "rId7"
+          },
+          {
+            "id": "pivotTable17",
+            "name": "피벗 테이블10",
+            "entry": "xl/pivotTables/pivotTable17.xml",
+            "cache_id": "1",
+            "cache": {
+              "cache_id": "1",
+              "relationship_id": "rId17",
+              "entry": "xl/pivotCache/pivotCacheDefinition2.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4862",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4862,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4860,
+              "cache_field_count": 51,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "재봉틀 출고",
+                "강의미공개"
+              ]
+            },
+            "location": {
+              "range": "A200:B203",
+              "bounds": {
+                "min_row": 200,
+                "min_column": 1,
+                "max_row": 203,
+                "max_column": 2
+              },
+              "first_header_row": 1,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 51,
+              "row_fields": 1,
+              "column_fields": 0,
+              "page_fields": 1,
+              "data_fields": 1
+            },
+            "relationship_id": "rId8"
+          },
+          {
+            "id": "pivotTable18",
+            "name": "피벗 테이블9",
+            "entry": "xl/pivotTables/pivotTable18.xml",
+            "cache_id": "0",
+            "cache": {
+              "cache_id": "0",
+              "relationship_id": "rId16",
+              "entry": "xl/pivotCache/pivotCacheDefinition1.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "결제상세",
+                "range": "A2:AX4858",
+                "bounds": {
+                  "min_row": 2,
+                  "min_column": 1,
+                  "max_row": 4858,
+                  "max_column": 50
+                }
+              },
+              "record_count": 4856,
+              "cache_field_count": 51,
+              "cache_field_samples": [
+                "NO",
+                "PG사",
+                "부문",
+                "브랜드",
+                "상점아이디(MID)",
+                "정산액 입금일",
+                "매출일",
+                "교재 환불부채",
+                "결제/취소일",
+                "주문번호",
+                "유하다요 구분값",
+                "결제수단",
+                "결제상태",
+                "결제기관",
+                "구매자명",
+                "구매자 아이디",
+                "결제/환불",
+                "현물출고일",
+                "재봉틀 출고",
+                "강의미공개"
+              ]
+            },
+            "location": {
+              "range": "A172:H174",
+              "bounds": {
+                "min_row": 172,
+                "min_column": 1,
+                "max_row": 174,
+                "max_column": 8
+              },
+              "first_header_row": 0,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 51,
+              "row_fields": 1,
+              "column_fields": 1,
+              "page_fields": 1,
+              "data_fields": 7
+            },
+            "relationship_id": "rId9"
+          }
+        ],
+        "drawing_objects": [
+          {
+            "id": "drawing1_object_1",
+            "type": "picture",
+            "name": "그림 2",
+            "drawing_entry": "xl/drawings/drawing1.xml",
+            "anchor_kind": "twoCellAnchor",
+            "from": {
+              "cell": "E1",
+              "row": 1,
+              "column": 5,
+              "row_offset": 0,
+              "column_offset": 0
+            },
+            "to": {
+              "cell": "AA42",
+              "row": 42,
+              "column": 27,
+              "row_offset": 200025,
+              "column_offset": 542925
+            },
+            "embed_relationship_id": "rId1",
+            "media_entry": "xl/media/image1.png"
+          },
+          {
+            "id": "drawing1_object_2",
+            "type": "picture",
+            "name": "그림 4",
+            "drawing_entry": "xl/drawings/drawing1.xml",
+            "anchor_kind": "twoCellAnchor",
+            "from": {
+              "cell": "G53",
+              "row": 53,
+              "column": 7,
+              "row_offset": 0,
+              "column_offset": 0
+            },
+            "to": {
+              "cell": "AD88",
+              "row": 88,
+              "column": 30,
+              "row_offset": 96287,
+              "column_offset": 316771
+            },
+            "embed_relationship_id": "rId2",
+            "media_entry": "xl/media/image2.PNG"
+          },
+          {
+            "id": "drawing1_object_3",
+            "type": "picture",
+            "name": "그림 6",
+            "drawing_entry": "xl/drawings/drawing1.xml",
+            "anchor_kind": "twoCellAnchor",
+            "from": {
+              "cell": "J90",
+              "row": 90,
+              "column": 10,
+              "row_offset": 0,
+              "column_offset": 0
+            },
+            "to": {
+              "cell": "X128",
+              "row": 128,
+              "column": 24,
+              "row_offset": 144006,
+              "column_offset": 144262
+            },
+            "embed_relationship_id": "rId3",
+            "media_entry": "xl/media/image3.PNG"
+          },
+          {
+            "id": "drawing1_object_4",
+            "type": "picture",
+            "name": "그림 8",
+            "drawing_entry": "xl/drawings/drawing1.xml",
+            "anchor_kind": "twoCellAnchor",
+            "from": {
+              "cell": "J129",
+              "row": 129,
+              "column": 10,
+              "row_offset": 0,
+              "column_offset": 0
+            },
+            "to": {
+              "cell": "AG168",
+              "row": 168,
+              "column": 33,
+              "row_offset": 67825,
+              "column_offset": 164176
+            },
+            "embed_relationship_id": "rId4",
+            "media_entry": "xl/media/image4.PNG"
+          },
+          {
+            "id": "drawing1_object_5",
+            "type": "picture",
+            "name": "그림 10",
+            "drawing_entry": "xl/drawings/drawing1.xml",
+            "anchor_kind": "twoCellAnchor",
+            "from": {
+              "cell": "J169",
+              "row": 169,
+              "column": 10,
+              "row_offset": 0,
+              "column_offset": 0
+            },
+            "to": {
+              "cell": "AH198",
+              "row": 198,
+              "column": 34,
+              "row_offset": 133350,
+              "column_offset": 552450
+            },
+            "embed_relationship_id": "rId5",
+            "media_entry": "xl/media/image5.png"
+          }
+        ]
+      },
+      {
+        "name": "결제상세",
+        "index": 2,
+        "sheet_id": "1",
+        "state": "visible",
+        "relationship_id": "rId3",
+        "entry": "xl/worksheets/sheet3.xml",
+        "detail_status": "scanned",
+        "entry_size_bytes": 8746405,
+        "compressed_size_bytes": 1234304,
+        "dimension": "A1:AX4879",
+        "dimension_bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 4879,
+          "max_column": 50
+        },
+        "counts": {
+          "row_elements": 4879,
+          "column_dimension_elements": 29,
+          "cell_elements": 210501,
+          "styled_cell_elements": 210501,
+          "value_elements": 153317,
+          "formula_elements": 43974,
+          "inline_string_elements": 0,
+          "merged_ranges": 0,
+          "drawing_refs": 0,
+          "table_part_refs": 0,
+          "hyperlinks": 0
+        },
+        "samples": {
+          "cells": [
+            {
+              "cell": "A1",
+              "type": null,
+              "style_index": "15",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "B1",
+              "type": null,
+              "style_index": "15",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "C1",
+              "type": null,
+              "style_index": "15",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "D1",
+              "type": null,
+              "style_index": "15",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "E1",
+              "type": null,
+              "style_index": "15",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "F1",
+              "type": null,
+              "style_index": "15",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "G1",
+              "type": null,
+              "style_index": "15",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "H1",
+              "type": null,
+              "style_index": "15",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "I1",
+              "type": null,
+              "style_index": "15",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "J1",
+              "type": null,
+              "style_index": "15",
+              "raw_value": null,
+              "value_preview": null
+            }
+          ],
+          "formulas": [
+            {
+              "cell": "Z1",
+              "formula": "SUBTOTAL(9,Z2:Z5000)",
+              "attributes": {}
+            },
+            {
+              "cell": "AA1",
+              "formula": "SUBTOTAL(9,AA2:AA5000)",
+              "attributes": {
+                "t": "shared",
+                "ref": "AA1:AL1",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "AB1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "AC1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "AD1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "AE1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "AF1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "AG1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "AH1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "AI1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            }
+          ],
+          "merged_ranges": [],
+          "column_dimensions": [
+            {
+              "min": "1",
+              "max": "4",
+              "width": "9",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "5",
+              "max": "5",
+              "width": "9.625",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "6",
+              "max": "6",
+              "width": "9",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "7",
+              "max": "7",
+              "width": "9.75",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "8",
+              "max": "8",
+              "width": "9",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "9",
+              "max": "9",
+              "width": "9.75",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "10",
+              "max": "10",
+              "width": "18.25",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "11",
+              "max": "14",
+              "width": "9",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "15",
+              "max": "22",
+              "width": "9",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "23",
+              "max": "23",
+              "width": "59.375",
+              "hidden": null,
+              "style": "5"
+            }
+          ],
+          "row_dimensions": [],
+          "drawing_refs": [],
+          "table_part_refs": []
+        },
+        "relationships": [
+          {
+            "id": "rId1",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/printerSettings",
+            "target": "../printerSettings/printerSettings3.bin",
+            "entry": "xl/printerSettings/printerSettings3.bin"
+          }
+        ],
+        "pivot_tables": [],
+        "drawing_objects": []
+      },
+      {
+        "name": "수익인식60일",
+        "index": 3,
+        "sheet_id": "12",
+        "state": "visible",
+        "relationship_id": "rId4",
+        "entry": "xl/worksheets/sheet4.xml",
+        "detail_status": "scanned",
+        "entry_size_bytes": 3825119,
+        "compressed_size_bytes": 506697,
+        "dimension": "A1:AI1846",
+        "dimension_bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 1846,
+          "max_column": 35
+        },
+        "counts": {
+          "row_elements": 1846,
+          "column_dimension_elements": 10,
+          "cell_elements": 54527,
+          "styled_cell_elements": 54527,
+          "value_elements": 48105,
+          "formula_elements": 24120,
+          "inline_string_elements": 0,
+          "merged_ranges": 0,
+          "drawing_refs": 0,
+          "table_part_refs": 0,
+          "hyperlinks": 0
+        },
+        "samples": {
+          "cells": [
+            {
+              "cell": "A1",
+              "type": null,
+              "style_index": "515",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "B1",
+              "type": null,
+              "style_index": "506",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "C1",
+              "type": null,
+              "style_index": "517",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "D1",
+              "type": null,
+              "style_index": "516",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "E1",
+              "type": null,
+              "style_index": "514",
+              "raw_value": "271177632.09410655",
+              "value_preview": "271177632.09410655"
+            },
+            {
+              "cell": "F1",
+              "type": null,
+              "style_index": "512",
+              "raw_value": "0",
+              "value_preview": "0"
+            },
+            {
+              "cell": "G1",
+              "type": null,
+              "style_index": "515",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "H1",
+              "type": null,
+              "style_index": "515",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "I1",
+              "type": null,
+              "style_index": "515",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "J1",
+              "type": null,
+              "style_index": "506",
+              "raw_value": null,
+              "value_preview": null
+            }
+          ],
+          "formulas": [
+            {
+              "cell": "E1",
+              "formula": "SUBTOTAL(9,E5:E1846)",
+              "attributes": {}
+            },
+            {
+              "cell": "V1",
+              "formula": "SUBTOTAL(9,V5:V1846)",
+              "attributes": {}
+            },
+            {
+              "cell": "W1",
+              "formula": "SUBTOTAL(9,W5:W1846)",
+              "attributes": {}
+            },
+            {
+              "cell": "X1",
+              "formula": "SUBTOTAL(9,X5:X1846)",
+              "attributes": {}
+            },
+            {
+              "cell": "Y1",
+              "formula": "SUBTOTAL(9,Y5:Y1846)",
+              "attributes": {}
+            },
+            {
+              "cell": "AD1",
+              "formula": "SUBTOTAL(9,AD5:AD1846)",
+              "attributes": {}
+            },
+            {
+              "cell": "AE1",
+              "formula": "SUBTOTAL(9,AE5:AE1846)",
+              "attributes": {}
+            },
+            {
+              "cell": "S3",
+              "formula": "EDATE(R3,1)",
+              "attributes": {}
+            },
+            {
+              "cell": "T3",
+              "formula": "EDATE(S3,1)",
+              "attributes": {}
+            },
+            {
+              "cell": "W3",
+              "formula": "EDATE(V3,1)",
+              "attributes": {}
+            }
+          ],
+          "merged_ranges": [],
+          "column_dimensions": [
+            {
+              "min": "5",
+              "max": "5",
+              "width": "15",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "6",
+              "max": "6",
+              "width": "34.5",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "11",
+              "max": "11",
+              "width": "11.125",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "12",
+              "max": "13",
+              "width": "9.75",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "18",
+              "max": "24",
+              "width": "11.375",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "30",
+              "max": "30",
+              "width": "9.75",
+              "hidden": null,
+              "style": "481"
+            },
+            {
+              "min": "31",
+              "max": "31",
+              "width": "11.625",
+              "hidden": null,
+              "style": "480"
+            },
+            {
+              "min": "32",
+              "max": "32",
+              "width": "9",
+              "hidden": null,
+              "style": "480"
+            },
+            {
+              "min": "33",
+              "max": "34",
+              "width": "9.125",
+              "hidden": null,
+              "style": "480"
+            },
+            {
+              "min": "35",
+              "max": "35",
+              "width": "9.625",
+              "hidden": null,
+              "style": "480"
+            }
+          ],
+          "row_dimensions": [
+            {
+              "row": "5",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "71",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "202",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "288",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "289",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "290",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "291",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "292",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "293",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "399",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            }
+          ],
+          "drawing_refs": [],
+          "table_part_refs": []
+        },
+        "relationships": [],
+        "pivot_tables": [],
+        "drawing_objects": []
+      },
+      {
+        "name": "수익인식60일_강사료",
+        "index": 4,
+        "sheet_id": "16",
+        "state": "visible",
+        "relationship_id": "rId5",
+        "entry": "xl/worksheets/sheet5.xml",
+        "detail_status": "scanned",
+        "entry_size_bytes": 56324,
+        "compressed_size_bytes": 10787,
+        "dimension": "A1:AH35",
+        "dimension_bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 35,
+          "max_column": 34
+        },
+        "counts": {
+          "row_elements": 35,
+          "column_dimension_elements": 10,
+          "cell_elements": 869,
+          "styled_cell_elements": 869,
+          "value_elements": 525,
+          "formula_elements": 365,
+          "inline_string_elements": 0,
+          "merged_ranges": 0,
+          "drawing_refs": 0,
+          "table_part_refs": 0,
+          "hyperlinks": 0
+        },
+        "samples": {
+          "cells": [
+            {
+              "cell": "A1",
+              "type": null,
+              "style_index": "515",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "B1",
+              "type": null,
+              "style_index": "506",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "C1",
+              "type": null,
+              "style_index": "517",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "D1",
+              "type": null,
+              "style_index": "516",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "E1",
+              "type": null,
+              "style_index": "514",
+              "raw_value": "27546199",
+              "value_preview": "27546199"
+            },
+            {
+              "cell": "F1",
+              "type": null,
+              "style_index": "512",
+              "raw_value": "0",
+              "value_preview": "0"
+            },
+            {
+              "cell": "G1",
+              "type": null,
+              "style_index": "515",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "H1",
+              "type": null,
+              "style_index": "515",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "I1",
+              "type": null,
+              "style_index": "515",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "J1",
+              "type": null,
+              "style_index": "506",
+              "raw_value": null,
+              "value_preview": null
+            }
+          ],
+          "formulas": [
+            {
+              "cell": "E1",
+              "formula": "SUBTOTAL(9,E5:E35)",
+              "attributes": {}
+            },
+            {
+              "cell": "V1",
+              "formula": "SUBTOTAL(9,V5:V35)",
+              "attributes": {}
+            },
+            {
+              "cell": "W1",
+              "formula": "SUBTOTAL(9,W5:W35)",
+              "attributes": {}
+            },
+            {
+              "cell": "X1",
+              "formula": "SUBTOTAL(9,X5:X35)",
+              "attributes": {}
+            },
+            {
+              "cell": "S3",
+              "formula": "EDATE(R3,1)",
+              "attributes": {}
+            },
+            {
+              "cell": "T3",
+              "formula": "EDATE(S3,1)",
+              "attributes": {}
+            },
+            {
+              "cell": "W3",
+              "formula": "EDATE(V3,1)",
+              "attributes": {}
+            },
+            {
+              "cell": "X3",
+              "formula": "EDATE(W3,1)",
+              "attributes": {}
+            },
+            {
+              "cell": "R4",
+              "formula": "S3-1",
+              "attributes": {}
+            },
+            {
+              "cell": "S4",
+              "formula": "T3-1",
+              "attributes": {}
+            }
+          ],
+          "merged_ranges": [],
+          "column_dimensions": [
+            {
+              "min": "4",
+              "max": "4",
+              "width": "9.75",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "5",
+              "max": "5",
+              "width": "15",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "6",
+              "max": "6",
+              "width": "34.5",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "11",
+              "max": "11",
+              "width": "11.125",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "12",
+              "max": "13",
+              "width": "9.75",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "18",
+              "max": "24",
+              "width": "11.375",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "27",
+              "max": "27",
+              "width": "11.875",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "28",
+              "max": "30",
+              "width": "19.75",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "31",
+              "max": "31",
+              "width": "11.875",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "32",
+              "max": "34",
+              "width": "9",
+              "hidden": null,
+              "style": "5"
+            }
+          ],
+          "row_dimensions": [],
+          "drawing_refs": [],
+          "table_part_refs": []
+        },
+        "relationships": [
+          {
+            "id": "rId1",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/pivotTable",
+            "target": "../pivotTables/pivotTable24.xml",
+            "entry": "xl/pivotTables/pivotTable24.xml"
+          }
+        ],
+        "pivot_tables": [
+          {
+            "id": "pivotTable24",
+            "name": "피벗 테이블2",
+            "entry": "xl/pivotTables/pivotTable24.xml",
+            "cache_id": "3",
+            "cache": {
+              "cache_id": "3",
+              "relationship_id": "rId19",
+              "entry": "xl/pivotCache/pivotCacheDefinition4.xml",
+              "source": {
+                "type": "worksheet",
+                "sheet": "수익인식60일_강사료",
+                "range": "A4:X35",
+                "bounds": {
+                  "min_row": 4,
+                  "min_column": 1,
+                  "max_row": 35,
+                  "max_column": 24
+                }
+              },
+              "record_count": 31,
+              "cache_field_count": 24,
+              "cache_field_samples": [
+                "아임포트주문번호",
+                "결제년도",
+                "결제월",
+                "매출일자",
+                "강의결제액",
+                "교육과정명",
+                "부문",
+                "브랜드",
+                "환불부채",
+                "환급부채",
+                "코스 개강일",
+                "코스 개강일2",
+                "코스 종강일",
+                "수익인식방법",
+                "코스 일수",
+                "일수당 결제금액",
+                "무의미",
+                "2026-02-28",
+                "2026-03-31",
+                "2026-04-30"
+              ]
+            },
+            "location": {
+              "range": "AA5:AD7",
+              "bounds": {
+                "min_row": 5,
+                "min_column": 27,
+                "max_row": 7,
+                "max_column": 30
+              },
+              "first_header_row": 0,
+              "first_data_row": 1,
+              "first_data_column": 1
+            },
+            "field_counts": {
+              "pivot_fields": 24,
+              "row_fields": 1,
+              "column_fields": 1,
+              "page_fields": 0,
+              "data_fields": 3
+            },
+            "relationship_id": "rId1"
+          }
+        ],
+        "drawing_objects": []
+      },
+      {
+        "name": "당월산식",
+        "index": 5,
+        "sheet_id": "13",
+        "state": "visible",
+        "relationship_id": "rId6",
+        "entry": "xl/worksheets/sheet6.xml",
+        "detail_status": "scanned",
+        "entry_size_bytes": 32093233,
+        "compressed_size_bytes": 3391468,
+        "dimension": "A1:AZ4620",
+        "dimension_bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 4620,
+          "max_column": 52
+        },
+        "counts": {
+          "row_elements": 4620,
+          "column_dimension_elements": 14,
+          "cell_elements": 240229,
+          "styled_cell_elements": 240229,
+          "value_elements": 232994,
+          "formula_elements": 185260,
+          "inline_string_elements": 0,
+          "merged_ranges": 0,
+          "drawing_refs": 0,
+          "table_part_refs": 0,
+          "hyperlinks": 0
+        },
+        "samples": {
+          "cells": [
+            {
+              "cell": "A1",
+              "type": null,
+              "style_index": "529",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "B1",
+              "type": null,
+              "style_index": "525",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "C1",
+              "type": null,
+              "style_index": "141",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "D1",
+              "type": null,
+              "style_index": "530",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "E1",
+              "type": null,
+              "style_index": "528",
+              "raw_value": "-713558.45454545692",
+              "value_preview": "-713558.45454545692"
+            },
+            {
+              "cell": "F1",
+              "type": null,
+              "style_index": "528",
+              "raw_value": "3.7252902984619141E-9",
+              "value_preview": "3.7252902984619141E-9"
+            },
+            {
+              "cell": "G1",
+              "type": null,
+              "style_index": "525",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "H1",
+              "type": null,
+              "style_index": "525",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "I1",
+              "type": null,
+              "style_index": "525",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "J1",
+              "type": null,
+              "style_index": "525",
+              "raw_value": null,
+              "value_preview": null
+            }
+          ],
+          "formulas": [
+            {
+              "cell": "E1",
+              "formula": "SUBTOTAL(9,E5:E4620)",
+              "attributes": {}
+            },
+            {
+              "cell": "F1",
+              "formula": "E1-SUM(AI1:AZ1)",
+              "attributes": {}
+            },
+            {
+              "cell": "P1",
+              "formula": "SUBTOTAL(9,P5:P94502)",
+              "attributes": {
+                "t": "shared",
+                "ref": "P1:AG1",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "Q1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "R1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "S1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "T1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "U1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "V1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "W1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            }
+          ],
+          "merged_ranges": [],
+          "column_dimensions": [
+            {
+              "min": "1",
+              "max": "1",
+              "width": "9",
+              "hidden": null,
+              "style": "520"
+            },
+            {
+              "min": "2",
+              "max": "3",
+              "width": "9",
+              "hidden": null,
+              "style": "518"
+            },
+            {
+              "min": "4",
+              "max": "4",
+              "width": "12.875",
+              "hidden": null,
+              "style": "519"
+            },
+            {
+              "min": "5",
+              "max": "5",
+              "width": "12.875",
+              "hidden": null,
+              "style": "518"
+            },
+            {
+              "min": "6",
+              "max": "6",
+              "width": "40.125",
+              "hidden": null,
+              "style": "518"
+            },
+            {
+              "min": "7",
+              "max": "8",
+              "width": "9",
+              "hidden": null,
+              "style": "518"
+            },
+            {
+              "min": "9",
+              "max": "9",
+              "width": "9.75",
+              "hidden": null,
+              "style": "518"
+            },
+            {
+              "min": "10",
+              "max": "10",
+              "width": "9",
+              "hidden": null,
+              "style": "518"
+            },
+            {
+              "min": "11",
+              "max": "11",
+              "width": "9.75",
+              "hidden": null,
+              "style": "518"
+            },
+            {
+              "min": "12",
+              "max": "12",
+              "width": "9",
+              "hidden": null,
+              "style": "519"
+            }
+          ],
+          "row_dimensions": [
+            {
+              "row": "5",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "6",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "7",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "8",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "9",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "10",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "11",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "12",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "13",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "14",
+              "height": null,
+              "hidden": "1",
+              "custom_height": null
+            }
+          ],
+          "drawing_refs": [],
+          "table_part_refs": []
+        },
+        "relationships": [],
+        "pivot_tables": [],
+        "drawing_objects": []
+      },
+      {
+        "name": "유하다요_강사료",
+        "index": 6,
+        "sheet_id": "15",
+        "state": "visible",
+        "relationship_id": "rId7",
+        "entry": "xl/worksheets/sheet7.xml",
+        "detail_status": "scanned",
+        "entry_size_bytes": 628151,
+        "compressed_size_bytes": 93210,
+        "dimension": "A1:AH452",
+        "dimension_bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 452,
+          "max_column": 34
+        },
+        "counts": {
+          "row_elements": 452,
+          "column_dimension_elements": 3,
+          "cell_elements": 15351,
+          "styled_cell_elements": 15351,
+          "value_elements": 14432,
+          "formula_elements": 68,
+          "inline_string_elements": 0,
+          "merged_ranges": 0,
+          "drawing_refs": 0,
+          "table_part_refs": 0,
+          "hyperlinks": 0
+        },
+        "samples": {
+          "cells": [
+            {
+              "cell": "A1",
+              "type": null,
+              "style_index": "481",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "B1",
+              "type": null,
+              "style_index": "481",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "C1",
+              "type": null,
+              "style_index": "481",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "D1",
+              "type": "s",
+              "style_index": "481",
+              "raw_value": "197528",
+              "value_preview": "강의결제액"
+            },
+            {
+              "cell": "E1",
+              "type": null,
+              "style_index": "481",
+              "raw_value": "109988700",
+              "value_preview": "109988700"
+            },
+            {
+              "cell": "F1",
+              "type": null,
+              "style_index": "481",
+              "raw_value": "0",
+              "value_preview": "0"
+            },
+            {
+              "cell": "G1",
+              "type": null,
+              "style_index": "481",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "H1",
+              "type": null,
+              "style_index": "481",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "I1",
+              "type": null,
+              "style_index": "481",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "J1",
+              "type": null,
+              "style_index": "481",
+              "raw_value": null,
+              "value_preview": null
+            }
+          ],
+          "formulas": [
+            {
+              "cell": "E1",
+              "formula": "SUBTOTAL(9,E7:E452)",
+              "attributes": {}
+            },
+            {
+              "cell": "F1",
+              "formula": "E1-SUM(Q1:AH1)",
+              "attributes": {}
+            },
+            {
+              "cell": "Q1",
+              "formula": "SUBTOTAL(9,Q8:Q452)",
+              "attributes": {}
+            },
+            {
+              "cell": "R1",
+              "formula": "SUBTOTAL(9,R8:R452)",
+              "attributes": {
+                "t": "shared",
+                "ref": "R1:AH1",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "S1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "T1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "U1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "V1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "W1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "X1",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            }
+          ],
+          "merged_ranges": [],
+          "column_dimensions": [
+            {
+              "min": "5",
+              "max": "5",
+              "width": "11.5",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "17",
+              "max": "17",
+              "width": "10.5",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "18",
+              "max": "18",
+              "width": "11.875",
+              "hidden": null,
+              "style": null
+            }
+          ],
+          "row_dimensions": [],
+          "drawing_refs": [],
+          "table_part_refs": []
+        },
+        "relationships": [],
+        "pivot_tables": [],
+        "drawing_objects": []
+      },
+      {
+        "name": "누적",
+        "index": 7,
+        "sheet_id": "11",
+        "state": "visible",
+        "relationship_id": "rId8",
+        "entry": "xl/worksheets/sheet8.xml",
+        "detail_status": "skipped_large_xml",
+        "entry_size_bytes": 753456825,
+        "compressed_size_bytes": 83275900,
+        "dimension": "A1:EC190724",
+        "dimension_bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 190724,
+          "max_column": 133
+        },
+        "counts": {
+          "row_elements": 0,
+          "column_dimension_elements": 0,
+          "cell_elements": 0,
+          "styled_cell_elements": 0,
+          "value_elements": 0,
+          "formula_elements": 0,
+          "inline_string_elements": 0,
+          "merged_ranges": 0,
+          "drawing_refs": 0,
+          "table_part_refs": 0,
+          "hyperlinks": 0
+        },
+        "samples": {
+          "cells": [],
+          "formulas": [],
+          "merged_ranges": [],
+          "column_dimensions": [],
+          "row_dimensions": [],
+          "drawing_refs": [],
+          "table_part_refs": []
+        },
+        "relationships": [
+          {
+            "id": "rId1",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/printerSettings",
+            "target": "../printerSettings/printerSettings4.bin",
+            "entry": "xl/printerSettings/printerSettings4.bin"
+          }
+        ],
+        "pivot_tables": [],
+        "drawing_objects": []
+      },
+      {
+        "name": "유하다요",
+        "index": 8,
+        "sheet_id": "10",
+        "state": "visible",
+        "relationship_id": "rId9",
+        "entry": "xl/worksheets/sheet9.xml",
+        "detail_status": "scanned",
+        "entry_size_bytes": 420135,
+        "compressed_size_bytes": 62652,
+        "dimension": "A1:R479",
+        "dimension_bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 479,
+          "max_column": 18
+        },
+        "counts": {
+          "row_elements": 479,
+          "column_dimension_elements": 14,
+          "cell_elements": 8622,
+          "styled_cell_elements": 8622,
+          "value_elements": 8621,
+          "formula_elements": 1378,
+          "inline_string_elements": 0,
+          "merged_ranges": 0,
+          "drawing_refs": 0,
+          "table_part_refs": 0,
+          "hyperlinks": 0
+        },
+        "samples": {
+          "cells": [
+            {
+              "cell": "A1",
+              "type": "s",
+              "style_index": "114",
+              "raw_value": "12482",
+              "value_preview": "NO"
+            },
+            {
+              "cell": "B1",
+              "type": "s",
+              "style_index": "114",
+              "raw_value": "12483",
+              "value_preview": "PG사"
+            },
+            {
+              "cell": "C1",
+              "type": "s",
+              "style_index": "114",
+              "raw_value": "12484",
+              "value_preview": "부문"
+            },
+            {
+              "cell": "D1",
+              "type": "s",
+              "style_index": "114",
+              "raw_value": "12485",
+              "value_preview": "브랜드"
+            },
+            {
+              "cell": "E1",
+              "type": "s",
+              "style_index": "113",
+              "raw_value": "0",
+              "value_preview": "상점아이디(MID)"
+            },
+            {
+              "cell": "F1",
+              "type": "s",
+              "style_index": "113",
+              "raw_value": "1",
+              "value_preview": "정산액 입금일"
+            },
+            {
+              "cell": "G1",
+              "type": "s",
+              "style_index": "113",
+              "raw_value": "2",
+              "value_preview": "매출일"
+            },
+            {
+              "cell": "H1",
+              "type": "s",
+              "style_index": "113",
+              "raw_value": "3",
+              "value_preview": "결제/취소일"
+            },
+            {
+              "cell": "I1",
+              "type": "s",
+              "style_index": "113",
+              "raw_value": "4",
+              "value_preview": "주문번호"
+            },
+            {
+              "cell": "J1",
+              "type": null,
+              "style_index": "113",
+              "raw_value": null,
+              "value_preview": null
+            }
+          ],
+          "formulas": [
+            {
+              "cell": "J2",
+              "formula": "A2&\"_\"&I2",
+              "attributes": {
+                "t": "shared",
+                "ref": "J2:J65",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "N2",
+              "formula": "M2-O2",
+              "attributes": {
+                "t": "shared",
+                "ref": "N2:N65",
+                "si": "1"
+              }
+            },
+            {
+              "cell": "P2",
+              "formula": "R2-Q2",
+              "attributes": {}
+            },
+            {
+              "cell": "J3",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "N3",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "1"
+              }
+            },
+            {
+              "cell": "Q3",
+              "formula": "G3+7",
+              "attributes": {}
+            },
+            {
+              "cell": "R3",
+              "formula": "Q3+P3-1",
+              "attributes": {}
+            },
+            {
+              "cell": "J4",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "N4",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "1"
+              }
+            },
+            {
+              "cell": "Q4",
+              "formula": "G4+7",
+              "attributes": {
+                "t": "shared",
+                "ref": "Q4:Q5",
+                "si": "2"
+              }
+            }
+          ],
+          "merged_ranges": [],
+          "column_dimensions": [
+            {
+              "min": "1",
+              "max": "4",
+              "width": "8.625",
+              "hidden": null,
+              "style": "105"
+            },
+            {
+              "min": "5",
+              "max": "5",
+              "width": "10.625",
+              "hidden": null,
+              "style": "105"
+            },
+            {
+              "min": "6",
+              "max": "6",
+              "width": "9.375",
+              "hidden": null,
+              "style": "105"
+            },
+            {
+              "min": "7",
+              "max": "7",
+              "width": "12.75",
+              "hidden": null,
+              "style": "105"
+            },
+            {
+              "min": "8",
+              "max": "8",
+              "width": "12.625",
+              "hidden": null,
+              "style": "105"
+            },
+            {
+              "min": "9",
+              "max": "10",
+              "width": "19",
+              "hidden": null,
+              "style": "105"
+            },
+            {
+              "min": "11",
+              "max": "11",
+              "width": "35.375",
+              "hidden": null,
+              "style": "105"
+            },
+            {
+              "min": "12",
+              "max": "12",
+              "width": "12.25",
+              "hidden": null,
+              "style": "105"
+            },
+            {
+              "min": "13",
+              "max": "14",
+              "width": "8.625",
+              "hidden": null,
+              "style": "105"
+            },
+            {
+              "min": "15",
+              "max": "15",
+              "width": "9",
+              "hidden": null,
+              "style": "105"
+            }
+          ],
+          "row_dimensions": [
+            {
+              "row": "1",
+              "height": "16.5",
+              "hidden": null,
+              "custom_height": "1"
+            },
+            {
+              "row": "2",
+              "height": "16.5",
+              "hidden": null,
+              "custom_height": "1"
+            },
+            {
+              "row": "3",
+              "height": "16.5",
+              "hidden": null,
+              "custom_height": "1"
+            },
+            {
+              "row": "4",
+              "height": "16.5",
+              "hidden": null,
+              "custom_height": "1"
+            },
+            {
+              "row": "5",
+              "height": "16.5",
+              "hidden": null,
+              "custom_height": "1"
+            },
+            {
+              "row": "6",
+              "height": "16.5",
+              "hidden": null,
+              "custom_height": "1"
+            },
+            {
+              "row": "7",
+              "height": "16.5",
+              "hidden": null,
+              "custom_height": "1"
+            },
+            {
+              "row": "8",
+              "height": "16.5",
+              "hidden": null,
+              "custom_height": "1"
+            },
+            {
+              "row": "9",
+              "height": "16.5",
+              "hidden": null,
+              "custom_height": "1"
+            },
+            {
+              "row": "10",
+              "height": "16.5",
+              "hidden": null,
+              "custom_height": "1"
+            }
+          ],
+          "drawing_refs": [],
+          "table_part_refs": []
+        },
+        "relationships": [
+          {
+            "id": "rId1",
+            "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/printerSettings",
+            "target": "../printerSettings/printerSettings5.bin",
+            "entry": "xl/printerSettings/printerSettings5.bin"
+          }
+        ],
+        "pivot_tables": [],
+        "drawing_objects": []
+      },
+      {
+        "name": "리스픽",
+        "index": 9,
+        "sheet_id": "9",
+        "state": "visible",
+        "relationship_id": "rId10",
+        "entry": "xl/worksheets/sheet10.xml",
+        "detail_status": "scanned",
+        "entry_size_bytes": 6613,
+        "compressed_size_bytes": 1564,
+        "dimension": "A1:M13",
+        "dimension_bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 13,
+          "max_column": 13
+        },
+        "counts": {
+          "row_elements": 12,
+          "column_dimension_elements": 10,
+          "cell_elements": 156,
+          "styled_cell_elements": 156,
+          "value_elements": 86,
+          "formula_elements": 0,
+          "inline_string_elements": 0,
+          "merged_ranges": 2,
+          "drawing_refs": 0,
+          "table_part_refs": 0,
+          "hyperlinks": 0
+        },
+        "samples": {
+          "cells": [
+            {
+              "cell": "A1",
+              "type": "s",
+              "style_index": "94",
+              "raw_value": "23634",
+              "value_preview": "2026년 02월 리스픽 결제 데이터"
+            },
+            {
+              "cell": "B1",
+              "type": null,
+              "style_index": "94",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "C1",
+              "type": null,
+              "style_index": "94",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "D1",
+              "type": null,
+              "style_index": "94",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "E1",
+              "type": null,
+              "style_index": "94",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "F1",
+              "type": null,
+              "style_index": "94",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "G1",
+              "type": null,
+              "style_index": "94",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "H1",
+              "type": null,
+              "style_index": "94",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "I1",
+              "type": null,
+              "style_index": "94",
+              "raw_value": null,
+              "value_preview": null
+            },
+            {
+              "cell": "J1",
+              "type": null,
+              "style_index": "94",
+              "raw_value": null,
+              "value_preview": null
+            }
+          ],
+          "formulas": [],
+          "merged_ranges": [
+            "A13:D13",
+            "H13:M13"
+          ],
+          "column_dimensions": [
+            {
+              "min": "1",
+              "max": "1",
+              "width": "4.25",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "2",
+              "max": "3",
+              "width": "12.25",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "4",
+              "max": "4",
+              "width": "9",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "5",
+              "max": "5",
+              "width": "9.5",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "6",
+              "max": "6",
+              "width": "8.625",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "7",
+              "max": "7",
+              "width": "7.25",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "8",
+              "max": "8",
+              "width": "11.125",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "9",
+              "max": "11",
+              "width": "9.75",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "12",
+              "max": "12",
+              "width": "22.375",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "13",
+              "max": "13",
+              "width": "11.125",
+              "hidden": null,
+              "style": "5"
+            }
+          ],
+          "row_dimensions": [],
+          "drawing_refs": [],
+          "table_part_refs": []
+        },
+        "relationships": [],
+        "pivot_tables": [],
+        "drawing_objects": []
+      },
+      {
+        "name": "포도",
+        "index": 10,
+        "sheet_id": "8",
+        "state": "visible",
+        "relationship_id": "rId11",
+        "entry": "xl/worksheets/sheet11.xml",
+        "detail_status": "scanned",
+        "entry_size_bytes": 1438657,
+        "compressed_size_bytes": 192504,
+        "dimension": "A1:U2146",
+        "dimension_bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 2146,
+          "max_column": 21
+        },
+        "counts": {
+          "row_elements": 2141,
+          "column_dimension_elements": 10,
+          "cell_elements": 36792,
+          "styled_cell_elements": 36792,
+          "value_elements": 31802,
+          "formula_elements": 0,
+          "inline_string_elements": 0,
+          "merged_ranges": 0,
+          "drawing_refs": 0,
+          "table_part_refs": 0,
+          "hyperlinks": 0
+        },
+        "samples": {
+          "cells": [
+            {
+              "cell": "A1",
+              "type": "s",
+              "style_index": "62",
+              "raw_value": "17056",
+              "value_preview": "수강권고유번호"
+            },
+            {
+              "cell": "B1",
+              "type": "s",
+              "style_index": "63",
+              "raw_value": "17057",
+              "value_preview": "아임포트 거래번호"
+            },
+            {
+              "cell": "C1",
+              "type": "s",
+              "style_index": "63",
+              "raw_value": "17058",
+              "value_preview": "아임포트 주문번호"
+            },
+            {
+              "cell": "D1",
+              "type": "s",
+              "style_index": "64",
+              "raw_value": "17059",
+              "value_preview": "고객명"
+            },
+            {
+              "cell": "E1",
+              "type": "s",
+              "style_index": "65",
+              "raw_value": "17060",
+              "value_preview": "결제방식"
+            },
+            {
+              "cell": "F1",
+              "type": "s",
+              "style_index": "65",
+              "raw_value": "17061",
+              "value_preview": "수강권기간"
+            },
+            {
+              "cell": "G1",
+              "type": "s",
+              "style_index": "65",
+              "raw_value": "17062",
+              "value_preview": "수업시간"
+            },
+            {
+              "cell": "H1",
+              "type": "s",
+              "style_index": "63",
+              "raw_value": "17063",
+              "value_preview": "수강권명"
+            },
+            {
+              "cell": "I1",
+              "type": "s",
+              "style_index": "78",
+              "raw_value": "17064",
+              "value_preview": "수강권 유효기간"
+            },
+            {
+              "cell": "J1",
+              "type": null,
+              "style_index": "79",
+              "raw_value": null,
+              "value_preview": null
+            }
+          ],
+          "formulas": [],
+          "merged_ranges": [],
+          "column_dimensions": [
+            {
+              "min": "1",
+              "max": "1",
+              "width": "20",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "3",
+              "max": "3",
+              "width": "9.75",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "6",
+              "max": "7",
+              "width": "9.5",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "8",
+              "max": "8",
+              "width": "9.125",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "9",
+              "max": "10",
+              "width": "10",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "11",
+              "max": "11",
+              "width": "9.25",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "12",
+              "max": "12",
+              "width": "9.5",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "13",
+              "max": "13",
+              "width": "11.625",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "14",
+              "max": "17",
+              "width": "9.25",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "20",
+              "max": "20",
+              "width": "10.25",
+              "hidden": null,
+              "style": null
+            }
+          ],
+          "row_dimensions": [
+            {
+              "row": "1",
+              "height": "17.25",
+              "hidden": null,
+              "custom_height": null
+            },
+            {
+              "row": "2",
+              "height": "17.25",
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "3",
+              "height": "17.25",
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "4",
+              "height": "17.25",
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "5",
+              "height": "17.25",
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "6",
+              "height": "17.25",
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "7",
+              "height": "17.25",
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "8",
+              "height": "17.25",
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "9",
+              "height": "17.25",
+              "hidden": "1",
+              "custom_height": null
+            },
+            {
+              "row": "10",
+              "height": "17.25",
+              "hidden": "1",
+              "custom_height": null
+            }
+          ],
+          "drawing_refs": [],
+          "table_part_refs": []
+        },
+        "relationships": [],
+        "pivot_tables": [],
+        "drawing_objects": []
+      },
+      {
+        "name": "얼리버드",
+        "index": 11,
+        "sheet_id": "5",
+        "state": "visible",
+        "relationship_id": "rId12",
+        "entry": "xl/worksheets/sheet12.xml",
+        "detail_status": "scanned",
+        "entry_size_bytes": 43763,
+        "compressed_size_bytes": 6411,
+        "dimension": "A1:D243",
+        "dimension_bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 243,
+          "max_column": 4
+        },
+        "counts": {
+          "row_elements": 243,
+          "column_dimension_elements": 2,
+          "cell_elements": 971,
+          "styled_cell_elements": 486,
+          "value_elements": 971,
+          "formula_elements": 242,
+          "inline_string_elements": 0,
+          "merged_ranges": 0,
+          "drawing_refs": 0,
+          "table_part_refs": 0,
+          "hyperlinks": 0
+        },
+        "samples": {
+          "cells": [
+            {
+              "cell": "A1",
+              "type": "s",
+              "style_index": "24",
+              "raw_value": "13828",
+              "value_preview": "imp_uid"
+            },
+            {
+              "cell": "B1",
+              "type": "s",
+              "style_index": "51",
+              "raw_value": "12509",
+              "value_preview": "개강일"
+            },
+            {
+              "cell": "D1",
+              "type": "s",
+              "style_index": null,
+              "raw_value": "16505",
+              "value_preview": "중복값"
+            },
+            {
+              "cell": "A2",
+              "type": "s",
+              "style_index": "24",
+              "raw_value": "7261",
+              "value_preview": "imp_003589740273"
+            },
+            {
+              "cell": "B2",
+              "type": null,
+              "style_index": "51",
+              "raw_value": "46115",
+              "value_preview": "46115"
+            },
+            {
+              "cell": "C2",
+              "type": null,
+              "style_index": null,
+              "raw_value": "1",
+              "value_preview": "1"
+            },
+            {
+              "cell": "D2",
+              "type": null,
+              "style_index": null,
+              "raw_value": "1",
+              "value_preview": "1"
+            },
+            {
+              "cell": "A3",
+              "type": "s",
+              "style_index": "24",
+              "raw_value": "12952",
+              "value_preview": "imp_011194078290"
+            },
+            {
+              "cell": "B3",
+              "type": null,
+              "style_index": "51",
+              "raw_value": "46112",
+              "value_preview": "46112"
+            },
+            {
+              "cell": "C3",
+              "type": null,
+              "style_index": null,
+              "raw_value": "1",
+              "value_preview": "1"
+            }
+          ],
+          "formulas": [
+            {
+              "cell": "D2",
+              "formula": "SUMIFS($C:$C,$A:$A,A2)",
+              "attributes": {}
+            },
+            {
+              "cell": "D3",
+              "formula": "SUMIFS($C:$C,$A:$A,A3)",
+              "attributes": {
+                "t": "shared",
+                "ref": "D3:D66",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "D4",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "D5",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "D6",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "D7",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "D8",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "D9",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "D10",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "D11",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            }
+          ],
+          "merged_ranges": [],
+          "column_dimensions": [
+            {
+              "min": "1",
+              "max": "1",
+              "width": "16.125",
+              "hidden": null,
+              "style": null
+            },
+            {
+              "min": "2",
+              "max": "2",
+              "width": "9.75",
+              "hidden": null,
+              "style": null
+            }
+          ],
+          "row_dimensions": [],
+          "drawing_refs": [],
+          "table_part_refs": []
+        },
+        "relationships": [],
+        "pivot_tables": [],
+        "drawing_objects": []
+      },
+      {
+        "name": "현물출고",
+        "index": 12,
+        "sheet_id": "4",
+        "state": "visible",
+        "relationship_id": "rId13",
+        "entry": "xl/worksheets/sheet13.xml",
+        "detail_status": "scanned",
+        "entry_size_bytes": 26194,
+        "compressed_size_bytes": 4209,
+        "dimension": "A1:O100",
+        "dimension_bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 100,
+          "max_column": 15
+        },
+        "counts": {
+          "row_elements": 100,
+          "column_dimension_elements": 8,
+          "cell_elements": 597,
+          "styled_cell_elements": 597,
+          "value_elements": 539,
+          "formula_elements": 0,
+          "inline_string_elements": 0,
+          "merged_ranges": 0,
+          "drawing_refs": 0,
+          "table_part_refs": 0,
+          "hyperlinks": 0
+        },
+        "samples": {
+          "cells": [
+            {
+              "cell": "A1",
+              "type": "s",
+              "style_index": "57",
+              "raw_value": "16416",
+              "value_preview": "아임포트"
+            },
+            {
+              "cell": "B1",
+              "type": "s",
+              "style_index": "57",
+              "raw_value": "16417",
+              "value_preview": "결제번호"
+            },
+            {
+              "cell": "C1",
+              "type": "s",
+              "style_index": "57",
+              "raw_value": "16418",
+              "value_preview": "출고 일자"
+            },
+            {
+              "cell": "D1",
+              "type": "s",
+              "style_index": "57",
+              "raw_value": "16419",
+              "value_preview": "주문일시"
+            },
+            {
+              "cell": "E1",
+              "type": "s",
+              "style_index": "57",
+              "raw_value": "15874",
+              "value_preview": "상품명"
+            },
+            {
+              "cell": "F1",
+              "type": "s",
+              "style_index": "40",
+              "raw_value": "16420",
+              "value_preview": "단가"
+            },
+            {
+              "cell": "G1",
+              "type": "s",
+              "style_index": "57",
+              "raw_value": "16421",
+              "value_preview": "파트"
+            },
+            {
+              "cell": "A2",
+              "type": "s",
+              "style_index": "53",
+              "raw_value": "12905",
+              "value_preview": "imp_303243380807"
+            },
+            {
+              "cell": "C2",
+              "type": null,
+              "style_index": "58",
+              "raw_value": "46080",
+              "value_preview": "46080"
+            },
+            {
+              "cell": "D2",
+              "type": null,
+              "style_index": "58",
+              "raw_value": "46075",
+              "value_preview": "46075"
+            }
+          ],
+          "formulas": [],
+          "merged_ranges": [],
+          "column_dimensions": [
+            {
+              "min": "1",
+              "max": "1",
+              "width": "35.25",
+              "hidden": null,
+              "style": "53"
+            },
+            {
+              "min": "2",
+              "max": "2",
+              "width": "28.25",
+              "hidden": null,
+              "style": "53"
+            },
+            {
+              "min": "3",
+              "max": "3",
+              "width": "9.75",
+              "hidden": null,
+              "style": "53"
+            },
+            {
+              "min": "4",
+              "max": "4",
+              "width": "11.125",
+              "hidden": null,
+              "style": "53"
+            },
+            {
+              "min": "5",
+              "max": "5",
+              "width": "24.5",
+              "hidden": null,
+              "style": "53"
+            },
+            {
+              "min": "6",
+              "max": "6",
+              "width": "8.375",
+              "hidden": null,
+              "style": "41"
+            },
+            {
+              "min": "7",
+              "max": "7",
+              "width": "12.125",
+              "hidden": null,
+              "style": "53"
+            },
+            {
+              "min": "15",
+              "max": "15",
+              "width": "11.125",
+              "hidden": null,
+              "style": null
+            }
+          ],
+          "row_dimensions": [],
+          "drawing_refs": [],
+          "table_part_refs": []
+        },
+        "relationships": [],
+        "pivot_tables": [],
+        "drawing_objects": []
+      },
+      {
+        "name": "정가표",
+        "index": 13,
+        "sheet_id": "3",
+        "state": "visible",
+        "relationship_id": "rId14",
+        "entry": "xl/worksheets/sheet14.xml",
+        "detail_status": "scanned",
+        "entry_size_bytes": 5090931,
+        "compressed_size_bytes": 587752,
+        "dimension": "A1:BA11950",
+        "dimension_bounds": {
+          "min_row": 1,
+          "min_column": 1,
+          "max_row": 11950,
+          "max_column": 53
+        },
+        "counts": {
+          "row_elements": 11950,
+          "column_dimension_elements": 13,
+          "cell_elements": 102891,
+          "styled_cell_elements": 102891,
+          "value_elements": 102878,
+          "formula_elements": 30975,
+          "inline_string_elements": 0,
+          "merged_ranges": 0,
+          "drawing_refs": 0,
+          "table_part_refs": 0,
+          "hyperlinks": 0
+        },
+        "samples": {
+          "cells": [
+            {
+              "cell": "A1",
+              "type": "s",
+              "style_index": "26",
+              "raw_value": "15858",
+              "value_preview": "사이트"
+            },
+            {
+              "cell": "B1",
+              "type": "s",
+              "style_index": "27",
+              "raw_value": "13828",
+              "value_preview": "imp_uid"
+            },
+            {
+              "cell": "C1",
+              "type": "s",
+              "style_index": "27",
+              "raw_value": "15859",
+              "value_preview": "거래ID"
+            },
+            {
+              "cell": "D1",
+              "type": "s",
+              "style_index": "28",
+              "raw_value": "15860",
+              "value_preview": "COURSE"
+            },
+            {
+              "cell": "E1",
+              "type": "s",
+              "style_index": "28",
+              "raw_value": "15861",
+              "value_preview": "GOODS"
+            },
+            {
+              "cell": "F1",
+              "type": "s",
+              "style_index": "28",
+              "raw_value": "15862",
+              "value_preview": "DIGITAL_BOOK"
+            },
+            {
+              "cell": "G1",
+              "type": "s",
+              "style_index": "28",
+              "raw_value": "15863",
+              "value_preview": "교재"
+            },
+            {
+              "cell": "H1",
+              "type": "s",
+              "style_index": "29",
+              "raw_value": "15864",
+              "value_preview": "합계"
+            },
+            {
+              "cell": "I1",
+              "type": "s",
+              "style_index": "30",
+              "raw_value": "15865",
+              "value_preview": "강의비율"
+            },
+            {
+              "cell": "J1",
+              "type": "s",
+              "style_index": "30",
+              "raw_value": "15866",
+              "value_preview": "교재비율"
+            }
+          ],
+          "formulas": [
+            {
+              "cell": "D2",
+              "formula": "SUMIFS($Z:$Z,$X:$X,D$1,$W:$W,$C2)",
+              "attributes": {
+                "t": "shared",
+                "ref": "D2:F17",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "E2",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "F2",
+              "formula": "",
+              "attributes": {
+                "t": "shared",
+                "si": "0"
+              }
+            },
+            {
+              "cell": "G2",
+              "formula": "E2",
+              "attributes": {
+                "t": "shared",
+                "ref": "G2",
+                "si": "1"
+              }
+            },
+            {
+              "cell": "H2",
+              "formula": "D2+E2+F2",
+              "attributes": {
+                "t": "shared",
+                "ref": "H2",
+                "si": "2"
+              }
+            },
+            {
+              "cell": "I2",
+              "formula": "(D2+F2)/H2",
+              "attributes": {
+                "t": "shared",
+                "ref": "I2",
+                "si": "3"
+              }
+            },
+            {
+              "cell": "J2",
+              "formula": "G2/H2",
+              "attributes": {
+                "t": "shared",
+                "ref": "J2",
+                "si": "4"
+              }
+            },
+            {
+              "cell": "K2",
+              "formula": "I2+J2",
+              "attributes": {
+                "t": "shared",
+                "ref": "K2",
+                "si": "5"
+              }
+            },
+            {
+              "cell": "L2",
+              "formula": "G2*0.9",
+              "attributes": {
+                "t": "shared",
+                "ref": "L2",
+                "si": "6"
+              }
+            },
+            {
+              "cell": "M2",
+              "formula": "SUMIFS($AE:$AE,$AC:$AC,M$1,$AB:$AB,$C2)",
+              "attributes": {
+                "t": "shared",
+                "ref": "M2:M65",
+                "si": "7"
+              }
+            }
+          ],
+          "merged_ranges": [],
+          "column_dimensions": [
+            {
+              "min": "1",
+              "max": "1",
+              "width": "9",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "2",
+              "max": "2",
+              "width": "16.125",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "3",
+              "max": "19",
+              "width": "9",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "22",
+              "max": "25",
+              "width": "9",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "26",
+              "max": "26",
+              "width": "9.625",
+              "hidden": null,
+              "style": "18"
+            },
+            {
+              "min": "28",
+              "max": "30",
+              "width": "9",
+              "hidden": null,
+              "style": "5"
+            },
+            {
+              "min": "31",
+              "max": "31",
+              "width": "9.5",
+              "hidden": null,
+              "style": "18"
+            },
+            {
+              "min": "32",
+              "max": "32",
+              "width": "9.25",
+              "hidden": null,
+              "style": "18"
+            },
+            {
+              "min": "33",
+              "max": "33",
+              "width": "9.375",
+              "hidden": null,
+              "style": "18"
+            },
+            {
+              "min": "35",
+              "max": "37",
+              "width": "9",
+              "hidden": null,
+              "style": "5"
+            }
+          ],
+          "row_dimensions": [],
+          "drawing_refs": [],
+          "table_part_refs": []
+        },
+        "relationships": [],
+        "pivot_tables": [],
+        "drawing_objects": []
+      }
+    ]
+  },
+  "summary": {
+    "sheet_count": 14,
+    "scanned_sheet_count": 13,
+    "skipped_large_sheet_count": 1,
+    "visible_sheet_count": 14,
+    "formula_elements_in_scanned_sheets": 286574,
+    "cell_elements_in_scanned_sheets": 680827,
+    "merged_ranges_in_scanned_sheets": 2,
+    "package_media_count": 5,
+    "package_external_link_count": 1,
+    "package_pivot_cache_record_count": 6,
+    "pivot_table_count": 24,
+    "pivot_cache_count": 6
+  },
+  "parser_observations": [
+    {
+      "level": "warning",
+      "message": "Skipped detailed XML scan for sheet '누적' because its worksheet XML is 753456825 bytes."
+    },
+    {
+      "level": "info",
+      "message": "Use a higher max_sheet_xml_bytes limit or targeted sheet extraction when detailed evidence is required."
+    },
+    {
+      "level": "warning",
+      "message": "Workbook contains 1 external link package entry; formula dependencies may require external workbook evidence."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome Sheets Bridge",
+  "version": "0.1.1",
+  "description": "Broker-backed Google Sheets inspection bridge for local spreadsheet review workflows.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1FDPWQiBjsExI6Z0Lzx5J+AGlH+PHlZWDv3y+HAm4oE3k9yonKQQXElcSfEvxJkAGUbUjmVIzT9eY6ZG63moLwJ2l/Q3wwuD0Rt7fKUQxLrfnfjDvo+O6FTbB4cw9evY+UF+bCmvtyZR0DyExhS8HBt0LYfkX0ESJeVUQYpkXdmF0MuJnS4L7KeX3v9Y0zj4f776smi/stuE1QMBmc9mJe/O4B+ZjNIG9ud30jG4XQAD00nByLB2PVyOiXiIxlYugmvBKQsxfWrf98Wmp71yi2xriQMXux8yZJdiXTf0oVQ/xaxh56JlkLIFhQjEfVjxA5JwRT6/zT2uFvSPRodjXwIDAQAB",
+  "action": {
+    "default_popup": "src/popup.html",
+    "default_title": "Sheets Bridge"
+  },
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://docs.google.com/spreadsheets/d/*"],
+      "js": ["src/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": [
+    "https://docs.google.com/spreadsheets/*",
+    "https://*.run.app/*",
+    "http://localhost/*"
+  ],
+  "oauth2": {
+    "client_id": "862894425240-1r90upabo0gb42t41p7gj36dp1r37j24.apps.googleusercontent.com",
+    "scopes": ["openid", "email", "profile"]
+  },
+  "permissions": ["activeTab", "identity", "identity.email", "nativeMessaging"]
+}

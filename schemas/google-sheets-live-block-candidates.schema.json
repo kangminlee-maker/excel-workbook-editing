@@ -1,0 +1,228 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-live-block-candidates.schema.json",
+  "title": "Google Sheets Live Block / Region Candidates",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "sheets",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "sheets": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/sheet" }
+    },
+    "summary": { "$ref": "#/$defs/counts" },
+    "parser_observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/observation" }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["spreadsheet_id", "spreadsheet_url", "title", "source_artifacts"],
+      "additionalProperties": false,
+      "properties": {
+        "spreadsheet_id": { "type": "string", "minLength": 1 },
+        "spreadsheet_url": { "type": ["string", "null"] },
+        "title": { "type": "string" },
+        "source_artifacts": {
+          "type": "object",
+          "required": ["live_manifest", "top_left_sample", "live_view_formula_profile"],
+          "additionalProperties": false,
+          "properties": {
+            "live_manifest": { "type": "string", "minLength": 1 },
+            "top_left_sample": { "type": "string", "minLength": 1 },
+            "live_view_formula_profile": { "type": "string", "minLength": 1 },
+            "parser_window_smoke": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "source_document",
+        "input_authority",
+        "expanded_live_reads_performed",
+        "profile_window",
+        "parser_window_contract_status",
+        "formula_result_authority",
+        "candidate_status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_document": { "const": "live_google_sheet" },
+        "input_authority": { "const": "existing_profile_window_artifacts" },
+        "expanded_live_reads_performed": { "const": false },
+        "profile_window": { "type": "string", "minLength": 1 },
+        "parser_window_contract_status": { "type": "string", "minLength": 1 },
+        "formula_result_authority": { "const": "not_established" },
+        "candidate_status": { "const": "candidate_not_accepted_graph_claim" }
+      }
+    },
+    "sheet": {
+      "type": "object",
+      "required": [
+        "name",
+        "sheet_id",
+        "index",
+        "state",
+        "dimensions",
+        "profile_window",
+        "role_hints",
+        "view_state_status",
+        "blocks",
+        "cell_regions",
+        "relations",
+        "read_candidates",
+        "summary",
+        "parser_observations"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "sheet_id": { "type": "integer" },
+        "index": { "type": "integer", "minimum": 0 },
+        "state": { "type": "string" },
+        "dimensions": { "$ref": "#/$defs/counts" },
+        "profile_window": { "type": "object", "additionalProperties": true },
+        "role_hints": { "type": "array", "items": { "type": "string" } },
+        "view_state_status": { "type": "string" },
+        "blocks": { "type": "array", "items": { "$ref": "#/$defs/block" } },
+        "cell_regions": { "type": "array", "items": { "$ref": "#/$defs/cell_region" } },
+        "relations": { "type": "array", "items": { "$ref": "#/$defs/relation" } },
+        "read_candidates": { "type": "array", "items": { "$ref": "#/$defs/read_candidate" } },
+        "summary": { "$ref": "#/$defs/counts" },
+        "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+      }
+    },
+    "block": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "subtype",
+        "sheet",
+        "label",
+        "bounds",
+        "metrics",
+        "preview",
+        "evidence",
+        "confidence",
+        "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "minLength": 1 },
+        "subtype": { "type": "string", "minLength": 1 },
+        "sheet": { "type": "string" },
+        "label": { "type": ["string", "null"] },
+        "bounds": { "$ref": "#/$defs/bounds" },
+        "metrics": { "$ref": "#/$defs/counts" },
+        "preview": { "type": "array", "items": { "type": "string" } },
+        "evidence": { "type": "array", "items": { "type": "string" } },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "status": { "type": "string" }
+      }
+    },
+    "cell_region": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "subtype",
+        "sheet",
+        "parent_block_id",
+        "label",
+        "bounds",
+        "metrics",
+        "preview",
+        "evidence",
+        "confidence",
+        "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "cell_region" },
+        "subtype": { "type": "string", "minLength": 1 },
+        "sheet": { "type": "string" },
+        "parent_block_id": { "type": "string", "minLength": 1 },
+        "label": { "type": ["string", "null"] },
+        "bounds": { "$ref": "#/$defs/bounds" },
+        "metrics": { "$ref": "#/$defs/counts" },
+        "preview": { "type": "array", "items": { "type": "string" } },
+        "evidence": { "type": "array", "items": { "type": "string" } },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "status": { "type": "string" }
+      }
+    },
+    "relation": {
+      "type": "object",
+      "required": ["id", "type", "sheet", "from", "to", "evidence", "confidence", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "minLength": 1 },
+        "sheet": { "type": "string" },
+        "from": { "type": "string" },
+        "to": { "type": "string" },
+        "evidence": { "type": "array", "items": { "type": "string" } },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "status": { "type": "string" }
+      }
+    },
+    "read_candidate": {
+      "type": "object",
+      "required": ["id", "operation", "range", "reason", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "operation": { "type": "string", "minLength": 1 },
+        "range": { "type": "string", "minLength": 1 },
+        "reason": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "minLength": 1 }
+      }
+    },
+    "bounds": {
+      "type": "object",
+      "required": ["start_row", "end_row", "start_column", "end_column", "a1_range"],
+      "additionalProperties": false,
+      "properties": {
+        "start_row": { "type": "integer", "minimum": 1 },
+        "end_row": { "type": "integer", "minimum": 1 },
+        "start_column": { "type": "integer", "minimum": 1 },
+        "end_column": { "type": "integer", "minimum": 1 },
+        "a1_range": { "type": "string", "minLength": 1 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["integer", "number", "boolean", "string", "null"]
+      }
+    }
+  }
+}

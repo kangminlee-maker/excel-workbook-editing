@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-validated-document-graph.schema.json",
+  "title": "Google Sheets Validated Document Graph",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "method",
+    "graph",
+    "carry_forward",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "method": { "$ref": "#/$defs/method" },
+    "graph": { "$ref": "#/$defs/graph" },
+    "carry_forward": { "$ref": "#/$defs/carry_forward" },
+    "summary": { "$ref": "#/$defs/counts" },
+    "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["spreadsheet_id", "spreadsheet_url", "title", "source_artifacts"],
+      "additionalProperties": false,
+      "properties": {
+        "spreadsheet_id": { "type": "string", "minLength": 1 },
+        "spreadsheet_url": { "type": ["string", "null"] },
+        "title": { "type": "string" },
+        "source_artifacts": {
+          "type": "object",
+          "required": [
+            "live_document_ontology_mapping",
+            "live_evidence_package",
+            "live_action_contracts",
+            "live_semantic_proposal_validation"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "live_document_ontology_mapping": { "type": "string", "minLength": 1 },
+            "live_evidence_package": { "type": "string", "minLength": 1 },
+            "live_action_contracts": { "type": "string", "minLength": 1 },
+            "live_semantic_proposal_validation": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "source_document",
+        "graph_status",
+        "semantic_graph_promotion",
+        "accepted_semantic_concepts",
+        "shared_ontology_updates",
+        "formula_result_authority"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_document": { "const": "live_google_sheet" },
+        "graph_status": { "const": "accepted_document_structure_only" },
+        "semantic_graph_promotion": { "const": "not_performed" },
+        "accepted_semantic_concepts": { "const": 0 },
+        "shared_ontology_updates": { "const": 0 },
+        "formula_result_authority": { "const": "not_established" }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "const": "connected_sheets_validated_graph_assembly" },
+        "authority": { "const": "accepted_graph_projection_with_carry_forward_review_queue" },
+        "decision_policy": { "type": "string", "minLength": 1 }
+      }
+    },
+    "graph": {
+      "type": "object",
+      "required": ["nodes", "relations", "semantic_nodes", "semantic_relations", "data_views"],
+      "additionalProperties": false,
+      "properties": {
+        "nodes": { "type": "array", "items": { "$ref": "#/$defs/node" } },
+        "relations": { "type": "array", "items": { "$ref": "#/$defs/relation" } },
+        "semantic_nodes": { "type": "array", "items": { "$ref": "#/$defs/node" } },
+        "semantic_relations": { "type": "array", "items": { "$ref": "#/$defs/relation" } },
+        "data_views": { "type": "array", "items": { "type": "object" } }
+      }
+    },
+    "node": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "ontology_class",
+        "status",
+        "label",
+        "properties",
+        "evidence_refs",
+        "source_artifact_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "minLength": 1 },
+        "ontology_class": { "type": "string", "minLength": 1 },
+        "status": { "const": "accepted" },
+        "label": { "type": ["string", "number", "null"] },
+        "properties": { "type": "object" },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } },
+        "source_artifact_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "relation": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "from",
+        "to",
+        "status",
+        "properties",
+        "evidence_refs",
+        "source_artifact_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "minLength": 1 },
+        "from": { "type": "string", "minLength": 1 },
+        "to": { "type": "string", "minLength": 1 },
+        "status": { "const": "accepted" },
+        "properties": { "type": "object" },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } },
+        "source_artifact_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "carry_forward": {
+      "type": "object",
+      "required": [
+        "document_review_queue",
+        "semantic_validation_review_queue",
+        "action_contract_summary",
+        "promotion_gate_results"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "document_review_queue": { "type": "array", "items": { "type": "object" } },
+        "semantic_validation_review_queue": { "type": "array", "items": { "type": "object" } },
+        "action_contract_summary": { "type": "object" },
+        "promotion_gate_results": { "type": "array", "items": { "type": "object" } }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] }
+    }
+  }
+}

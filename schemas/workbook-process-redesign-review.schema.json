@@ -1,0 +1,367 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/workbook-process-redesign-review.schema.json",
+  "title": "Workbook Process Redesign Review",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_materials",
+    "method",
+    "final_assessment",
+    "stage_reviews",
+    "recommended_pipeline",
+    "redesign_decisions",
+    "open_evidence_gaps",
+    "next_iteration_plan",
+    "summary",
+    "parser_observations"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "source_materials": {
+      "type": "object",
+      "required": [
+        "process_ledger",
+        "tasklist",
+        "design_doc",
+        "agents",
+        "implementation_map",
+        "artifact_dir",
+        "session_log_source",
+        "artifact_inventory",
+        "document_inventory"
+      ],
+      "properties": {
+        "session_log_source": {
+          "const": "process_ledger_jsonl"
+        },
+        "artifact_inventory": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "document_inventory": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy"],
+      "properties": {
+        "name": {
+          "const": "deterministic_process_redesign_review"
+        },
+        "authority": {
+          "const": "process_recommendation_not_parser_truth"
+        },
+        "decision_policy": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "final_assessment": {
+      "type": "object",
+      "required": ["status", "what_is_ready", "what_is_not_ready", "recommended_default_next_step"],
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "what_is_ready": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "what_is_not_ready": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "recommended_default_next_step": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "stage_reviews": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/stageReview"
+      }
+    },
+    "recommended_pipeline": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/recommendedPipelineStage"
+      }
+    },
+    "redesign_decisions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/redesignDecision"
+      }
+    },
+    "open_evidence_gaps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidenceGap"
+      }
+    },
+    "next_iteration_plan": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/nextStep"
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "ledger_entry_count",
+        "tasklist_stage_count",
+        "artifact_count",
+        "json_artifact_count",
+        "stage_review_count",
+        "high_priority_stage_review_count",
+        "recommended_pipeline_stage_count",
+        "redesign_decision_count",
+        "open_evidence_gap_count",
+        "review_status"
+      ],
+      "properties": {
+        "ledger_entry_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "tasklist_stage_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "artifact_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "json_artifact_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "stage_review_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "high_priority_stage_review_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "recommended_pipeline_stage_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "redesign_decision_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "open_evidence_gap_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "recommendation_counts": {
+          "type": "object"
+        },
+        "review_status": {
+          "const": "process_redesign_review_completed"
+        }
+      },
+      "additionalProperties": true
+    },
+    "parser_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    }
+  },
+  "$defs": {
+    "stageReview": {
+      "type": "object",
+      "required": [
+        "id",
+        "current_stage_number",
+        "current_stage",
+        "current_status",
+        "recommendation",
+        "priority",
+        "proposed_group",
+        "rationale",
+        "recommended_changes",
+        "completion_guard"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "current_stage_number": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "current_stage": {
+          "type": "string"
+        },
+        "current_status": {
+          "type": "string"
+        },
+        "recommendation": {
+          "type": "string"
+        },
+        "priority": {
+          "enum": ["high", "medium", "low"]
+        },
+        "proposed_group": {
+          "type": "string"
+        },
+        "rationale": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "recommended_changes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "completion_guard": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "recommendedPipelineStage": {
+      "type": "object",
+      "required": ["position", "stage", "source_current_stage_numbers", "change_type", "why"],
+      "properties": {
+        "position": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "stage": {
+          "type": "string"
+        },
+        "source_current_stage_numbers": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "change_type": {
+          "type": "string"
+        },
+        "why": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "redesignDecision": {
+      "type": "object",
+      "required": ["id", "decision", "status", "evidence", "effect"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "decision": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "effect": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "evidenceGap": {
+      "type": "object",
+      "required": ["id", "priority", "gap", "blocks", "required_evidence"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "priority": {
+          "enum": ["high", "medium", "low"]
+        },
+        "gap": {
+          "type": "string"
+        },
+        "blocks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "nextStep": {
+      "type": "object",
+      "required": ["step", "name", "done_when"],
+      "properties": {
+        "step": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "name": {
+          "type": "string"
+        },
+        "done_when": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "properties": {
+        "level": {
+          "enum": ["info", "warning", "error"]
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

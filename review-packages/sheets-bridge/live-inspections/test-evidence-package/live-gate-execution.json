@@ -1,0 +1,1 @@
+{"gate_results": [{"id": "gate_result_ok", "status": "accepted"}, {"id": "gate_result_blocked", "status": "blocked"}], "target_results": [{"id": "target_result_ok", "target_id": "target_ok", "target_type": "pipeline_flow", "status": "accepted"}, {"id": "target_result_blocked", "target_id": "target_blocked", "target_type": "pipeline_flow", "status": "blocked"}]}

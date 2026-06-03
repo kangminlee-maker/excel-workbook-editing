@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/sheets-bridge/edit-plan.schema.json",
+  "title": "Chrome Sheets Bridge Edit Plan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "plan_id",
+    "spreadsheet_id",
+    "created_at",
+    "intent",
+    "risk_level",
+    "timeout_budget",
+    "preconditions",
+    "operations",
+    "readback",
+    "rollback"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "plan_id": { "type": "string", "minLength": 1 },
+    "spreadsheet_id": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "intent": { "type": "string", "minLength": 1 },
+    "risk_level": { "type": "string", "enum": ["low", "medium", "high"] },
+    "timeout_budget": { "$ref": "#/$defs/timeout_budget" },
+    "preconditions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/precondition" }
+    },
+    "operations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/operation" }
+    },
+    "readback": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/readback" }
+    },
+    "rollback": { "$ref": "#/$defs/rollback" }
+  },
+  "$defs": {
+    "timeout_budget": {
+      "type": "object",
+      "required": ["read_seconds", "write_seconds", "poll_seconds"],
+      "additionalProperties": false,
+      "properties": {
+        "read_seconds": { "type": "integer", "minimum": 1, "default": 60 },
+        "write_seconds": { "type": "integer", "minimum": 1, "default": 60 },
+        "poll_seconds": { "type": "integer", "minimum": 1, "default": 120 }
+      }
+    },
+    "precondition": {
+      "type": "object",
+      "required": ["precondition_id", "sheet_id", "range", "expected"],
+      "additionalProperties": false,
+      "properties": {
+        "precondition_id": { "type": "string", "minLength": 1 },
+        "sheet_id": { "type": "integer" },
+        "range": { "type": "string", "minLength": 1 },
+        "expected": {},
+        "reason": { "type": "string" }
+      }
+    },
+    "operation": {
+      "type": "object",
+      "required": [
+        "operation_id",
+        "type",
+        "sheet_id",
+        "requires_explicit_approval",
+        "reason"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "operation_id": { "type": "string", "minLength": 1 },
+        "type": {
+          "type": "string",
+          "enum": [
+            "update_values",
+            "update_formulas",
+            "repeat_cell_format",
+            "set_data_validation",
+            "insert_dimension",
+            "delete_dimension"
+          ]
+        },
+        "sheet_id": { "type": "integer" },
+        "range": { "type": "string", "minLength": 1 },
+        "dimension_range": { "$ref": "#/$defs/dimension_range" },
+        "requires_explicit_approval": { "type": "boolean" },
+        "reason": { "type": "string", "minLength": 1 },
+        "values": { "type": "array" },
+        "format": { "type": "object" },
+        "validation": { "type": "object" }
+      },
+      "anyOf": [
+        { "required": ["range"] },
+        { "required": ["dimension_range"] }
+      ]
+    },
+    "dimension_range": {
+      "type": "object",
+      "required": ["dimension", "start_index", "end_index"],
+      "additionalProperties": false,
+      "properties": {
+        "dimension": { "type": "string", "enum": ["ROWS", "COLUMNS"] },
+        "start_index": { "type": "integer", "minimum": 0 },
+        "end_index": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "readback": {
+      "type": "object",
+      "required": ["readback_id", "sheet_id", "range"],
+      "additionalProperties": false,
+      "properties": {
+        "readback_id": { "type": "string", "minLength": 1 },
+        "sheet_id": { "type": "integer" },
+        "range": { "type": "string", "minLength": 1 },
+        "reason": { "type": "string" }
+      }
+    },
+    "rollback": {
+      "type": "object",
+      "required": ["before_state_required", "inverse_plan_status", "inverse_plan_ref"],
+      "additionalProperties": false,
+      "properties": {
+        "before_state_required": { "type": "boolean", "const": true },
+        "inverse_plan_status": {
+          "type": "string",
+          "enum": ["unsupported", "planned", "generated", "not_feasible"]
+        },
+        "inverse_plan_ref": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

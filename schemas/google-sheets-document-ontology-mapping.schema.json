@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-document-ontology-mapping.schema.json",
+  "title": "Google Sheets Document Ontology Mapping",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "ontology",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "ontology": { "$ref": "#/$defs/ontology" },
+    "summary": { "$ref": "#/$defs/counts" },
+    "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["spreadsheet_id", "spreadsheet_url", "title", "source_artifacts"],
+      "additionalProperties": false,
+      "properties": {
+        "spreadsheet_id": { "type": "string", "minLength": 1 },
+        "spreadsheet_url": { "type": ["string", "null"] },
+        "title": { "type": "string" },
+        "source_artifacts": {
+          "type": "object",
+          "required": ["live_evidence_package"],
+          "additionalProperties": false,
+          "properties": {
+            "live_evidence_package": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "source_document",
+        "mapping_status",
+        "semantic_ontology_generation",
+        "formula_result_authority",
+        "source_spreadsheet_read_authority"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_document": { "const": "live_google_sheet" },
+        "mapping_status": { "const": "document_structure_ontology_mapping_only" },
+        "semantic_ontology_generation": { "const": "not_performed" },
+        "formula_result_authority": { "const": "not_established" },
+        "source_spreadsheet_read_authority": { "const": "blocked_until_source_acl_and_broker_allowlist" }
+      }
+    },
+    "ontology": {
+      "type": "object",
+      "required": ["namespace", "nodes", "relations", "review_items"],
+      "additionalProperties": false,
+      "properties": {
+        "namespace": { "const": "document_structure" },
+        "nodes": { "type": "array", "items": { "$ref": "#/$defs/node" } },
+        "relations": { "type": "array", "items": { "$ref": "#/$defs/relation" } },
+        "review_items": { "type": "array", "items": { "$ref": "#/$defs/review_item" } }
+      }
+    },
+    "node": {
+      "type": "object",
+      "required": ["id", "type", "status", "label", "properties", "evidence_refs"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "enum": ["accepted", "review_required"] },
+        "label": { "type": ["string", "null"] },
+        "properties": { "type": "object", "additionalProperties": true },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "relation": {
+      "type": "object",
+      "required": ["id", "type", "from", "to", "status", "evidence_refs"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "minLength": 1 },
+        "from": { "type": "string", "minLength": 1 },
+        "to": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "enum": ["accepted", "review_required"] },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "review_item": {
+      "type": "object",
+      "required": ["id", "type", "severity", "status", "message", "evidence_refs"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "minLength": 1 },
+        "severity": { "type": "string", "enum": ["low", "medium", "high"] },
+        "status": { "type": "string", "minLength": 1 },
+        "message": { "type": "string", "minLength": 1 },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] }
+    }
+  }
+}

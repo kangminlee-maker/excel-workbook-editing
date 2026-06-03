@@ -1,0 +1,233 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/workbook-pipeline-role-validation.schema.json",
+  "title": "Workbook Pipeline Role Validation",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_artifacts",
+    "method",
+    "role_validations",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source_artifacts": { "$ref": "#/$defs/source_artifacts" },
+    "method": { "$ref": "#/$defs/method" },
+    "role_validations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/role_validation" }
+    },
+    "summary": { "$ref": "#/$defs/summary" },
+    "parser_observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/observation" }
+    }
+  },
+  "$defs": {
+    "source_artifacts": {
+      "type": "object",
+      "required": ["table_io_pipelines", "gate_execution", "boundary_decisions"],
+      "additionalProperties": false,
+      "properties": {
+        "table_io_pipelines": { "type": "string", "minLength": 1 },
+        "gate_execution": { "type": "string", "minLength": 1 },
+        "boundary_decisions": { "type": "string", "minLength": 1 }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "const": "deterministic_pipeline_role_validation" },
+        "authority": { "const": "pipeline_role_decision_not_final_document_graph" },
+        "decision_policy": { "type": "string", "minLength": 1 }
+      }
+    },
+    "role_validation": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "pipeline_id",
+        "status",
+        "reason",
+        "confidence",
+        "asserted_role",
+        "validated_role",
+        "output_ref",
+        "input_ref_count",
+        "transform_ref_count",
+        "role_evidence",
+        "review_flags",
+        "blockers",
+        "linked_gate_results",
+        "boundary_constraints",
+        "evidence_refs",
+        "notes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "pipeline_role_validation" },
+        "pipeline_id": { "type": "string", "minLength": 1 },
+        "status": {
+          "type": "string",
+          "enum": ["accepted", "rejected", "review_required"]
+        },
+        "reason": { "type": "string", "minLength": 1 },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "asserted_role": { "$ref": "#/$defs/role" },
+        "validated_role": {
+          "anyOf": [
+            { "$ref": "#/$defs/role" },
+            { "type": "null" }
+          ]
+        },
+        "output_ref": { "$ref": "#/$defs/compact_ref" },
+        "input_ref_count": { "type": "integer", "minimum": 0 },
+        "transform_ref_count": { "type": "integer", "minimum": 0 },
+        "role_evidence": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "review_flags": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "blockers": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "linked_gate_results": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/linked_gate_result" }
+        },
+        "boundary_constraints": { "$ref": "#/$defs/boundary_constraints" },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "input",
+        "parameter",
+        "bridge",
+        "transform",
+        "summary",
+        "report",
+        "audit_check"
+      ]
+    },
+    "compact_ref": {
+      "type": "object",
+      "required": ["id", "kind", "sheet", "range", "block_id", "region_id"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": ["string", "null"] },
+        "kind": { "type": ["string", "null"] },
+        "sheet": { "type": ["string", "null"] },
+        "range": { "type": ["string", "null"] },
+        "block_id": { "type": ["string", "null"] },
+        "region_id": { "type": ["string", "null"] }
+      }
+    },
+    "linked_gate_result": {
+      "type": "object",
+      "required": [
+        "id",
+        "gate_check_id",
+        "target_id",
+        "gate_type",
+        "status",
+        "reason",
+        "confidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": ["string", "null"] },
+        "gate_check_id": { "type": ["string", "null"] },
+        "target_id": { "type": ["string", "null"] },
+        "gate_type": { "type": ["string", "null"] },
+        "status": {
+          "type": ["string", "null"],
+          "enum": ["accepted", "rejected", "review_required", null]
+        },
+        "reason": { "type": ["string", "null"] },
+        "confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+      }
+    },
+    "boundary_constraints": {
+      "type": "object",
+      "required": [
+        "accepted_boundary_ids",
+        "review_required_boundary_ids",
+        "rejected_boundary_ids"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "accepted_boundary_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "review_required_boundary_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "rejected_boundary_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "role_validation_count",
+        "accepted_count",
+        "rejected_count",
+        "review_required_count",
+        "report_role_accepted_count",
+        "summary_role_accepted_count",
+        "transform_role_accepted_count",
+        "bridge_role_accepted_count",
+        "unresolved_input_review_count",
+        "external_dependency_review_count",
+        "linked_gate_review_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "role_validation_count": { "type": "integer", "minimum": 0 },
+        "accepted_count": { "type": "integer", "minimum": 0 },
+        "rejected_count": { "type": "integer", "minimum": 0 },
+        "review_required_count": { "type": "integer", "minimum": 0 },
+        "report_role_accepted_count": { "type": "integer", "minimum": 0 },
+        "summary_role_accepted_count": { "type": "integer", "minimum": 0 },
+        "transform_role_accepted_count": { "type": "integer", "minimum": 0 },
+        "bridge_role_accepted_count": { "type": "integer", "minimum": 0 },
+        "unresolved_input_review_count": { "type": "integer", "minimum": 0 },
+        "external_dependency_review_count": { "type": "integer", "minimum": 0 },
+        "linked_gate_review_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}

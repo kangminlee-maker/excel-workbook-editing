@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-version-breakpoint-detection.schema.json",
+  "title": "Google Sheets Version Breakpoint Detection",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "method",
+    "sheet_stats",
+    "version_groups",
+    "version_breakpoints",
+    "follow_up_actions",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "type": "object", "additionalProperties": true },
+    "authority": { "type": "object", "required": ["source_document", "detection_status", "version_truth", "shared_ontology_updates"], "additionalProperties": true },
+    "method": { "type": "object", "required": ["name", "authority", "decision_policy"], "additionalProperties": true },
+    "sheet_stats": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+    "version_groups": { "type": "array", "items": { "$ref": "#/$defs/version_group" } },
+    "version_breakpoints": { "type": "array", "items": { "$ref": "#/$defs/version_breakpoint" } },
+    "follow_up_actions": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+    "summary": { "type": "object", "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] } },
+    "parser_observations": { "type": "array", "items": { "type": "object", "required": ["level", "message"], "additionalProperties": true } }
+  },
+  "$defs": {
+    "version_group": {
+      "type": "object",
+      "required": ["id", "type", "status", "newest_tab", "oldest_tab", "member_tabs", "column_count", "evidence", "review_reasons", "evidence_refs"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "const": "version_group" },
+        "status": { "type": "string", "enum": ["accepted", "review_required", "blocked"] },
+        "newest_tab": { "type": "string" },
+        "oldest_tab": { "type": "string" },
+        "member_tabs": { "type": "array", "items": { "type": "string" } },
+        "column_count": { "type": "integer" },
+        "evidence": { "type": "object", "additionalProperties": true },
+        "review_reasons": { "type": "array", "items": { "type": "string" } },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "version_breakpoint": {
+      "type": "object",
+      "required": ["id", "type", "status", "newer_tab", "older_tab", "drift", "strong_signals", "review_reasons", "evidence_refs"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "const": "version_breakpoint" },
+        "status": { "type": "string", "enum": ["accepted", "review_required", "blocked"] },
+        "newer_tab": { "type": "string" },
+        "older_tab": { "type": "string" },
+        "drift": { "type": "object", "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] } },
+        "strong_signals": { "type": "array", "items": { "type": "string" } },
+        "review_reasons": { "type": "array", "items": { "type": "string" } },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

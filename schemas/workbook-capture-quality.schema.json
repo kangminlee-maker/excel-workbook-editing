@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/workbook-capture-quality.schema.json",
+  "title": "Workbook Capture Quality",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_artifacts",
+    "method",
+    "quality_results",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source_artifacts": { "$ref": "#/$defs/source_artifacts" },
+    "method": { "$ref": "#/$defs/method" },
+    "quality_results": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/quality_result" }
+    },
+    "summary": { "$ref": "#/$defs/summary" },
+    "parser_observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/observation" }
+    }
+  },
+  "$defs": {
+    "source_artifacts": {
+      "type": "object",
+      "required": ["render_captures"],
+      "additionalProperties": false,
+      "properties": {
+        "render_captures": { "type": "string", "minLength": 1 }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "thresholds"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "const": "deterministic_png_capture_quality" },
+        "thresholds": {
+          "type": "object",
+          "additionalProperties": { "type": ["number", "integer"] }
+        }
+      }
+    },
+    "quality_result": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "status",
+        "capture_id",
+        "target_id",
+        "sheet",
+        "requested_range",
+        "capture_window_range",
+        "png_path",
+        "dimensions",
+        "range_shape",
+        "metrics",
+        "checks",
+        "recommendations",
+        "evidence_refs",
+        "notes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "capture_quality_result" },
+        "status": {
+          "type": "string",
+          "enum": [
+            "usable",
+            "review_required",
+            "recapture_required",
+            "capture_failed"
+          ]
+        },
+        "capture_id": { "type": ["string", "null"] },
+        "target_id": { "type": ["string", "null"] },
+        "sheet": { "type": ["string", "null"] },
+        "requested_range": { "type": ["string", "null"] },
+        "capture_window_range": { "type": ["string", "null"] },
+        "png_path": { "type": "string" },
+        "dimensions": { "$ref": "#/$defs/dimensions" },
+        "range_shape": { "$ref": "#/$defs/range_shape" },
+        "metrics": { "$ref": "#/$defs/metrics" },
+        "checks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/check" }
+        },
+        "recommendations": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "dimensions": {
+      "type": "object",
+      "required": ["width", "height", "size_bytes"],
+      "additionalProperties": false,
+      "properties": {
+        "width": { "type": ["integer", "null"], "minimum": 1 },
+        "height": { "type": ["integer", "null"], "minimum": 1 },
+        "size_bytes": { "type": ["integer", "null"], "minimum": 0 }
+      }
+    },
+    "range_shape": {
+      "type": "object",
+      "required": [
+        "status",
+        "min_row",
+        "min_column",
+        "max_row",
+        "max_column",
+        "row_count",
+        "column_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["parsed", "not_available", "parse_failed"]
+        },
+        "min_row": { "type": ["integer", "null"], "minimum": 1 },
+        "min_column": { "type": ["integer", "null"], "minimum": 1 },
+        "max_row": { "type": ["integer", "null"], "minimum": 1 },
+        "max_column": { "type": ["integer", "null"], "minimum": 1 },
+        "row_count": { "type": ["integer", "null"], "minimum": 1 },
+        "column_count": { "type": ["integer", "null"], "minimum": 1 }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "aspect_ratio",
+        "pixels_per_row",
+        "pixels_per_column",
+        "visible_pixel_ratio",
+        "alpha_coverage_ratio"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "aspect_ratio": { "type": ["number", "null"], "minimum": 0 },
+        "pixels_per_row": { "type": ["number", "null"], "minimum": 0 },
+        "pixels_per_column": { "type": ["number", "null"], "minimum": 0 },
+        "visible_pixel_ratio": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "alpha_coverage_ratio": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+      }
+    },
+    "check": {
+      "type": "object",
+      "required": ["id", "type", "status", "severity", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "capture_quality_check" },
+        "status": {
+          "type": "string",
+          "enum": ["pass", "warning", "fail", "skipped"]
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["info", "warning", "error"]
+        },
+        "message": { "type": "string" }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "capture_count",
+        "evaluated_count",
+        "usable_count",
+        "review_required_count",
+        "recapture_required_count",
+        "capture_failed_count",
+        "too_thin_count",
+        "low_row_pixels_count",
+        "extreme_aspect_count",
+        "low_visible_content_count",
+        "tiling_recommended_count",
+        "expanded_window_recommended_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "capture_count": { "type": "integer", "minimum": 0 },
+        "evaluated_count": { "type": "integer", "minimum": 0 },
+        "usable_count": { "type": "integer", "minimum": 0 },
+        "review_required_count": { "type": "integer", "minimum": 0 },
+        "recapture_required_count": { "type": "integer", "minimum": 0 },
+        "capture_failed_count": { "type": "integer", "minimum": 0 },
+        "too_thin_count": { "type": "integer", "minimum": 0 },
+        "low_row_pixels_count": { "type": "integer", "minimum": 0 },
+        "extreme_aspect_count": { "type": "integer", "minimum": 0 },
+        "low_visible_content_count": { "type": "integer", "minimum": 0 },
+        "tiling_recommended_count": { "type": "integer", "minimum": 0 },
+        "expanded_window_recommended_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}

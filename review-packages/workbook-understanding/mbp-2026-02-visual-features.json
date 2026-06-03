@@ -1,0 +1,5088 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-01T07:33:14.166772Z",
+  "source_artifacts": {
+    "coordinate_normalization": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-coordinate-normalization.json",
+    "render_capture_files": [
+      "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-render-captures.json",
+      "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-recapture-candidate-captures.json"
+    ]
+  },
+  "method": {
+    "name": "deterministic_capture_visual_feature_detection",
+    "authority": "capture_image_features_not_semantic_truth",
+    "image_thresholds": {
+      "max_analysis_dimension": 800,
+      "visible_threshold": 245,
+      "line_density_threshold": 0.55
+    }
+  },
+  "feature_results": [
+    {
+      "id": "features_coord_quality_capture_target_결제_수수료_cell_region_1",
+      "type": "visual_feature_result",
+      "status": "detected",
+      "mapping_id": "coord_quality_capture_target_결제_수수료_cell_region_1",
+      "capture_id": "capture_target_결제_수수료_cell_region_1",
+      "target_id": "target_결제_수수료_cell_region_1",
+      "sheet": "결제&수수료",
+      "cell_range": "A1:D13",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_001_57389d2f28.png",
+      "quality_status": "usable",
+      "normalization_status": "normalized_visible_range",
+      "view_state_classification": "no_material_view_state_signal",
+      "image_metrics": {
+        "width": 341,
+        "height": 222,
+        "analysis_width": 341,
+        "analysis_height": 222,
+        "visible_pixel_ratio": 0.214037,
+        "whitespace_ratio": 0.785963,
+        "alpha_coverage_ratio": 0.215661,
+        "content_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 341,
+          "height": 222
+        }
+      },
+      "line_features": {
+        "horizontal_line_count": 9,
+        "vertical_line_count": 3,
+        "horizontal_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 0.997067,
+            "avg_density": 0.997067
+          },
+          {
+            "start": 10,
+            "end": 17,
+            "thickness": 8,
+            "max_density": 1.0,
+            "avg_density": 0.607405
+          },
+          {
+            "start": 34,
+            "end": 43,
+            "thickness": 10,
+            "max_density": 1.0,
+            "avg_density": 0.596188
+          },
+          {
+            "start": 51,
+            "end": 51,
+            "thickness": 1,
+            "max_density": 0.997067,
+            "avg_density": 0.997067
+          },
+          {
+            "start": 153,
+            "end": 156,
+            "thickness": 4,
+            "max_density": 1.0,
+            "avg_density": 0.66349
+          },
+          {
+            "start": 169,
+            "end": 170,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.77566
+          },
+          {
+            "start": 187,
+            "end": 187,
+            "thickness": 1,
+            "max_density": 0.997067,
+            "avg_density": 0.997067
+          },
+          {
+            "start": 204,
+            "end": 204,
+            "thickness": 1,
+            "max_density": 0.997067,
+            "avg_density": 0.997067
+          },
+          {
+            "start": 221,
+            "end": 221,
+            "thickness": 1,
+            "max_density": 0.997067,
+            "avg_density": 0.997067
+          }
+        ],
+        "vertical_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 185,
+            "end": 185,
+            "thickness": 1,
+            "max_density": 0.977477,
+            "avg_density": 0.977477
+          },
+          {
+            "start": 261,
+            "end": 261,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          }
+        ]
+      },
+      "color_features": {
+        "dominant_color_count": 5,
+        "dominant_colors": [
+          {
+            "rgb_hex": "#d0f0f0",
+            "ratio": 0.460532
+          },
+          {
+            "rgb_hex": "#d0d0d0",
+            "ratio": 0.222675
+          },
+          {
+            "rgb_hex": "#101010",
+            "ratio": 0.192063
+          },
+          {
+            "rgb_hex": "#90d0f0",
+            "ratio": 0.034808
+          },
+          {
+            "rgb_hex": "#303030",
+            "ratio": 0.013639
+          }
+        ]
+      },
+      "layout_signals": [
+        "visible_content_bbox",
+        "grid_or_table_line_structure"
+      ],
+      "feature_notes": "Visual features were detected from the normalized visible capture.",
+      "evidence_refs": [
+        "coord_quality_capture_target_결제_수수료_cell_region_1",
+        "capture_target_결제_수수료_cell_region_1"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_target_결제상세_cell_region_1",
+      "type": "visual_feature_result",
+      "status": "skipped_quality_review",
+      "mapping_id": "coord_quality_capture_target_결제상세_cell_region_1",
+      "capture_id": "capture_target_결제상세_cell_region_1",
+      "target_id": "target_결제상세_cell_region_1",
+      "sheet": "결제상세",
+      "cell_range": "A1:AY22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_002_cd6f96738d.png",
+      "quality_status": "review_required",
+      "normalization_status": "review_required",
+      "view_state_classification": "no_material_view_state_signal",
+      "image_metrics": {
+        "width": null,
+        "height": null,
+        "analysis_width": null,
+        "analysis_height": null,
+        "visible_pixel_ratio": null,
+        "whitespace_ratio": null,
+        "alpha_coverage_ratio": null,
+        "content_bbox": null
+      },
+      "line_features": {
+        "horizontal_line_count": 0,
+        "vertical_line_count": 0,
+        "horizontal_line_spans": [],
+        "vertical_line_spans": []
+      },
+      "color_features": {
+        "dominant_color_count": 0,
+        "dominant_colors": []
+      },
+      "layout_signals": [
+        "sparse_visible_content",
+        "wide_range"
+      ],
+      "feature_notes": "Skipped because capture quality requires review before visual feature gates trust it.",
+      "evidence_refs": [
+        "coord_quality_capture_target_결제상세_cell_region_1",
+        "capture_target_결제상세_cell_region_1"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_target_당월산식_cell_region_1",
+      "type": "visual_feature_result",
+      "status": "skipped_view_state_blocked",
+      "mapping_id": "coord_quality_capture_target_당월산식_cell_region_1",
+      "capture_id": "capture_target_당월산식_cell_region_1",
+      "target_id": "target_당월산식_cell_region_1",
+      "sheet": "당월산식",
+      "cell_range": "A1:BA22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_003_8c8cc45aab.png",
+      "quality_status": "recapture_required",
+      "normalization_status": "blocked_by_view_state",
+      "view_state_classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "image_metrics": {
+        "width": null,
+        "height": null,
+        "analysis_width": null,
+        "analysis_height": null,
+        "visible_pixel_ratio": null,
+        "whitespace_ratio": null,
+        "alpha_coverage_ratio": null,
+        "content_bbox": null
+      },
+      "line_features": {
+        "horizontal_line_count": 0,
+        "vertical_line_count": 0,
+        "horizontal_line_spans": [],
+        "vertical_line_spans": []
+      },
+      "color_features": {
+        "dominant_color_count": 0,
+        "dominant_colors": []
+      },
+      "layout_signals": [
+        "sparse_visible_content",
+        "wide_range"
+      ],
+      "feature_notes": "Skipped because hidden/filter view-state blocks visual absence claims for this capture.",
+      "evidence_refs": [
+        "coord_quality_capture_target_당월산식_cell_region_1",
+        "capture_target_당월산식_cell_region_1"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_target_리스픽_cell_region_2",
+      "type": "visual_feature_result",
+      "status": "detected",
+      "mapping_id": "coord_quality_capture_target_리스픽_cell_region_2",
+      "capture_id": "capture_target_리스픽_cell_region_2",
+      "target_id": "target_리스픽_cell_region_2",
+      "sheet": "리스픽",
+      "cell_range": "A2:N15",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_004_a280430449.png",
+      "quality_status": "usable",
+      "normalization_status": "normalized_visible_range",
+      "view_state_classification": "no_material_view_state_signal",
+      "image_metrics": {
+        "width": 873,
+        "height": 239,
+        "analysis_width": 800,
+        "analysis_height": 219,
+        "visible_pixel_ratio": 0.413858,
+        "whitespace_ratio": 0.586142,
+        "alpha_coverage_ratio": 0.441518,
+        "content_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 873,
+          "height": 238
+        }
+      },
+      "line_features": {
+        "horizontal_line_count": 12,
+        "vertical_line_count": 31,
+        "horizontal_line_spans": [
+          {
+            "start": 0,
+            "end": 16,
+            "thickness": 17,
+            "max_density": 1.0,
+            "avg_density": 0.951618
+          },
+          {
+            "start": 31,
+            "end": 47,
+            "thickness": 17,
+            "max_density": 1.0,
+            "avg_density": 0.940368
+          },
+          {
+            "start": 62,
+            "end": 63,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 77,
+            "end": 78,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 93,
+            "end": 94,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 109,
+            "end": 109,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 124,
+            "end": 125,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 140,
+            "end": 141,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 155,
+            "end": 156,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 171,
+            "end": 187,
+            "thickness": 17,
+            "max_density": 1.0,
+            "avg_density": 0.955
+          },
+          {
+            "start": 202,
+            "end": 203,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 218,
+            "end": 218,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          }
+        ],
+        "vertical_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 2,
+            "end": 23,
+            "thickness": 22,
+            "max_density": 1.0,
+            "avg_density": 0.752594
+          },
+          {
+            "start": 49,
+            "end": 50,
+            "thickness": 2,
+            "max_density": 0.589041,
+            "avg_density": 0.586758
+          },
+          {
+            "start": 54,
+            "end": 60,
+            "thickness": 7,
+            "max_density": 0.630137,
+            "avg_density": 0.589041
+          },
+          {
+            "start": 64,
+            "end": 65,
+            "thickness": 2,
+            "max_density": 0.570776,
+            "avg_density": 0.56621
+          },
+          {
+            "start": 68,
+            "end": 68,
+            "thickness": 1,
+            "max_density": 0.579909,
+            "avg_density": 0.579909
+          },
+          {
+            "start": 89,
+            "end": 90,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.995434
+          },
+          {
+            "start": 116,
+            "end": 117,
+            "thickness": 2,
+            "max_density": 0.570776,
+            "avg_density": 0.568493
+          },
+          {
+            "start": 121,
+            "end": 123,
+            "thickness": 3,
+            "max_density": 0.598174,
+            "avg_density": 0.581431
+          },
+          {
+            "start": 125,
+            "end": 126,
+            "thickness": 2,
+            "max_density": 0.643836,
+            "avg_density": 0.627854
+          },
+          {
+            "start": 130,
+            "end": 130,
+            "thickness": 1,
+            "max_density": 0.557078,
+            "avg_density": 0.557078
+          },
+          {
+            "start": 134,
+            "end": 136,
+            "thickness": 3,
+            "max_density": 0.60274,
+            "avg_density": 0.581431
+          },
+          {
+            "start": 156,
+            "end": 157,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 165,
+            "end": 167,
+            "thickness": 3,
+            "max_density": 0.575342,
+            "avg_density": 0.57382
+          },
+          {
+            "start": 174,
+            "end": 175,
+            "thickness": 2,
+            "max_density": 0.625571,
+            "avg_density": 0.611872
+          },
+          {
+            "start": 180,
+            "end": 180,
+            "thickness": 1,
+            "max_density": 0.561644,
+            "avg_density": 0.561644
+          },
+          {
+            "start": 183,
+            "end": 185,
+            "thickness": 3,
+            "max_density": 0.643836,
+            "avg_density": 0.628615
+          },
+          {
+            "start": 189,
+            "end": 189,
+            "thickness": 1,
+            "max_density": 0.611872,
+            "avg_density": 0.611872
+          },
+          {
+            "start": 193,
+            "end": 194,
+            "thickness": 2,
+            "max_density": 0.570776,
+            "avg_density": 0.568493
+          },
+          {
+            "start": 202,
+            "end": 204,
+            "thickness": 3,
+            "max_density": 0.575342,
+            "avg_density": 0.567732
+          }
+        ]
+      },
+      "color_features": {
+        "dominant_color_count": 5,
+        "dominant_colors": [
+          {
+            "rgb_hex": "#101010",
+            "ratio": 0.415209
+          },
+          {
+            "rgb_hex": "#303030",
+            "ratio": 0.239684
+          },
+          {
+            "rgb_hex": "#1070d0",
+            "ratio": 0.165237
+          },
+          {
+            "rgb_hex": "#d0d0d0",
+            "ratio": 0.091038
+          },
+          {
+            "rgb_hex": "#f0f0f0",
+            "ratio": 0.035555
+          }
+        ]
+      },
+      "layout_signals": [
+        "visible_content_bbox",
+        "grid_or_table_line_structure"
+      ],
+      "feature_notes": "Visual features were detected from the normalized visible capture.",
+      "evidence_refs": [
+        "coord_quality_capture_target_리스픽_cell_region_2",
+        "capture_target_리스픽_cell_region_2"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_target_매출_cell_region_1",
+      "type": "visual_feature_result",
+      "status": "detected",
+      "mapping_id": "coord_quality_capture_target_매출_cell_region_1",
+      "capture_id": "capture_target_매출_cell_region_1",
+      "target_id": "target_매출_cell_region_1",
+      "sheet": "매출",
+      "cell_range": "A1:M60",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_005_dea19809c1.png",
+      "quality_status": "usable",
+      "normalization_status": "normalized_visible_range",
+      "view_state_classification": "no_material_view_state_signal",
+      "image_metrics": {
+        "width": 1278,
+        "height": 1023,
+        "analysis_width": 800,
+        "analysis_height": 640,
+        "visible_pixel_ratio": 0.27609,
+        "whitespace_ratio": 0.72391,
+        "alpha_coverage_ratio": 0.276139,
+        "content_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1278,
+          "height": 1022
+        }
+      },
+      "line_features": {
+        "horizontal_line_count": 58,
+        "vertical_line_count": 13,
+        "horizontal_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 10,
+            "end": 11,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 21,
+            "end": 32,
+            "thickness": 12,
+            "max_density": 1.0,
+            "avg_density": 0.728125
+          },
+          {
+            "start": 42,
+            "end": 43,
+            "thickness": 2,
+            "max_density": 0.84375,
+            "avg_density": 0.84375
+          },
+          {
+            "start": 53,
+            "end": 53,
+            "thickness": 1,
+            "max_density": 0.84375,
+            "avg_density": 0.84375
+          },
+          {
+            "start": 63,
+            "end": 64,
+            "thickness": 2,
+            "max_density": 0.84375,
+            "avg_density": 0.84375
+          },
+          {
+            "start": 74,
+            "end": 75,
+            "thickness": 2,
+            "max_density": 0.84375,
+            "avg_density": 0.84375
+          },
+          {
+            "start": 84,
+            "end": 85,
+            "thickness": 2,
+            "max_density": 0.84375,
+            "avg_density": 0.83625
+          },
+          {
+            "start": 95,
+            "end": 96,
+            "thickness": 2,
+            "max_density": 0.84375,
+            "avg_density": 0.84375
+          },
+          {
+            "start": 106,
+            "end": 107,
+            "thickness": 2,
+            "max_density": 0.84375,
+            "avg_density": 0.84375
+          },
+          {
+            "start": 116,
+            "end": 117,
+            "thickness": 2,
+            "max_density": 0.84375,
+            "avg_density": 0.84375
+          },
+          {
+            "start": 127,
+            "end": 128,
+            "thickness": 2,
+            "max_density": 0.84375,
+            "avg_density": 0.84375
+          },
+          {
+            "start": 138,
+            "end": 138,
+            "thickness": 1,
+            "max_density": 0.84375,
+            "avg_density": 0.84375
+          },
+          {
+            "start": 148,
+            "end": 149,
+            "thickness": 2,
+            "max_density": 0.84375,
+            "avg_density": 0.84375
+          },
+          {
+            "start": 159,
+            "end": 160,
+            "thickness": 2,
+            "max_density": 0.84375,
+            "avg_density": 0.84375
+          },
+          {
+            "start": 170,
+            "end": 170,
+            "thickness": 1,
+            "max_density": 0.84375,
+            "avg_density": 0.84375
+          },
+          {
+            "start": 180,
+            "end": 181,
+            "thickness": 2,
+            "max_density": 0.84375,
+            "avg_density": 0.84375
+          },
+          {
+            "start": 191,
+            "end": 192,
+            "thickness": 2,
+            "max_density": 0.84375,
+            "avg_density": 0.84375
+          },
+          {
+            "start": 201,
+            "end": 202,
+            "thickness": 2,
+            "max_density": 0.84375,
+            "avg_density": 0.84375
+          },
+          {
+            "start": 212,
+            "end": 213,
+            "thickness": 2,
+            "max_density": 0.84375,
+            "avg_density": 0.84375
+          }
+        ],
+        "vertical_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 126,
+            "end": 127,
+            "thickness": 2,
+            "max_density": 0.935937,
+            "avg_density": 0.934375
+          },
+          {
+            "start": 170,
+            "end": 170,
+            "thickness": 1,
+            "max_density": 0.935937,
+            "avg_density": 0.935937
+          },
+          {
+            "start": 210,
+            "end": 211,
+            "thickness": 2,
+            "max_density": 0.820312,
+            "avg_density": 0.779687
+          },
+          {
+            "start": 265,
+            "end": 266,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.984375
+          },
+          {
+            "start": 336,
+            "end": 336,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 381,
+            "end": 382,
+            "thickness": 2,
+            "max_density": 0.85625,
+            "avg_density": 0.85625
+          },
+          {
+            "start": 491,
+            "end": 492,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.9875
+          },
+          {
+            "start": 562,
+            "end": 563,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 602,
+            "end": 603,
+            "thickness": 2,
+            "max_density": 0.985938,
+            "avg_density": 0.985938
+          },
+          {
+            "start": 657,
+            "end": 658,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 728,
+            "end": 729,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 799,
+            "end": 799,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          }
+        ]
+      },
+      "color_features": {
+        "dominant_color_count": 5,
+        "dominant_colors": [
+          {
+            "rgb_hex": "#d0d0d0",
+            "ratio": 0.518556
+          },
+          {
+            "rgb_hex": "#101010",
+            "ratio": 0.158739
+          },
+          {
+            "rgb_hex": "#d0f0f0",
+            "ratio": 0.151367
+          },
+          {
+            "rgb_hex": "#f0f0f0",
+            "ratio": 0.058483
+          },
+          {
+            "rgb_hex": "#f0f0d0",
+            "ratio": 0.01741
+          }
+        ]
+      },
+      "layout_signals": [
+        "visible_content_bbox",
+        "grid_or_table_line_structure"
+      ],
+      "feature_notes": "Visual features were detected from the normalized visible capture.",
+      "evidence_refs": [
+        "coord_quality_capture_target_매출_cell_region_1",
+        "capture_target_매출_cell_region_1"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_target_수익인식60일_cell_region_1",
+      "type": "visual_feature_result",
+      "status": "detected_with_view_state_warning",
+      "mapping_id": "coord_quality_capture_target_수익인식60일_cell_region_1",
+      "capture_id": "capture_target_수익인식60일_cell_region_1",
+      "target_id": "target_수익인식60일_cell_region_1",
+      "sheet": "수익인식60일",
+      "cell_range": "A1:AC22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_006_12955465b8.png",
+      "quality_status": "usable",
+      "normalization_status": "normalized_with_view_state_warning",
+      "view_state_classification": "filtered_rows_affect_capture_window",
+      "image_metrics": {
+        "width": 1858,
+        "height": 358,
+        "analysis_width": 800,
+        "analysis_height": 154,
+        "visible_pixel_ratio": 0.494172,
+        "whitespace_ratio": 0.505828,
+        "alpha_coverage_ratio": 0.495446,
+        "content_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1857,
+          "height": 357
+        }
+      },
+      "line_features": {
+        "horizontal_line_count": 21,
+        "vertical_line_count": 53,
+        "horizontal_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 7,
+            "end": 7,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 14,
+            "end": 15,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 21,
+            "end": 29,
+            "thickness": 9,
+            "max_density": 1.0,
+            "avg_density": 0.97375
+          },
+          {
+            "start": 36,
+            "end": 37,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.9925
+          },
+          {
+            "start": 43,
+            "end": 44,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.999375
+          },
+          {
+            "start": 51,
+            "end": 51,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 58,
+            "end": 59,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.99
+          },
+          {
+            "start": 65,
+            "end": 66,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 72,
+            "end": 73,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.90625
+          },
+          {
+            "start": 80,
+            "end": 81,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.935625
+          },
+          {
+            "start": 87,
+            "end": 88,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 94,
+            "end": 95,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.978125
+          },
+          {
+            "start": 102,
+            "end": 102,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 109,
+            "end": 110,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 116,
+            "end": 117,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.984375
+          },
+          {
+            "start": 124,
+            "end": 124,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 131,
+            "end": 132,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.995
+          },
+          {
+            "start": 138,
+            "end": 139,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.99
+          },
+          {
+            "start": 146,
+            "end": 146,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          }
+        ],
+        "vertical_line_spans": [
+          {
+            "start": 0,
+            "end": 8,
+            "thickness": 9,
+            "max_density": 1.0,
+            "avg_density": 0.683983
+          },
+          {
+            "start": 10,
+            "end": 23,
+            "thickness": 14,
+            "max_density": 1.0,
+            "avg_density": 0.71846
+          },
+          {
+            "start": 29,
+            "end": 38,
+            "thickness": 10,
+            "max_density": 0.707792,
+            "avg_density": 0.682468
+          },
+          {
+            "start": 45,
+            "end": 46,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 56,
+            "end": 57,
+            "thickness": 2,
+            "max_density": 0.707792,
+            "avg_density": 0.694805
+          },
+          {
+            "start": 68,
+            "end": 91,
+            "thickness": 24,
+            "max_density": 1.0,
+            "avg_density": 0.902597
+          },
+          {
+            "start": 112,
+            "end": 112,
+            "thickness": 1,
+            "max_density": 0.642857,
+            "avg_density": 0.642857
+          },
+          {
+            "start": 114,
+            "end": 127,
+            "thickness": 14,
+            "max_density": 0.75974,
+            "avg_density": 0.704082
+          },
+          {
+            "start": 129,
+            "end": 196,
+            "thickness": 68,
+            "max_density": 1.0,
+            "avg_density": 0.676948
+          },
+          {
+            "start": 198,
+            "end": 198,
+            "thickness": 1,
+            "max_density": 0.558442,
+            "avg_density": 0.558442
+          },
+          {
+            "start": 201,
+            "end": 204,
+            "thickness": 4,
+            "max_density": 0.564935,
+            "avg_density": 0.558442
+          },
+          {
+            "start": 219,
+            "end": 219,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 221,
+            "end": 232,
+            "thickness": 12,
+            "max_density": 0.811688,
+            "avg_density": 0.729978
+          },
+          {
+            "start": 241,
+            "end": 242,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.996753
+          },
+          {
+            "start": 244,
+            "end": 246,
+            "thickness": 3,
+            "max_density": 0.811688,
+            "avg_density": 0.779221
+          },
+          {
+            "start": 248,
+            "end": 255,
+            "thickness": 8,
+            "max_density": 0.811688,
+            "avg_density": 0.73539
+          },
+          {
+            "start": 264,
+            "end": 265,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 287,
+            "end": 288,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.996753
+          },
+          {
+            "start": 310,
+            "end": 321,
+            "thickness": 12,
+            "max_density": 1.0,
+            "avg_density": 0.725108
+          },
+          {
+            "start": 323,
+            "end": 328,
+            "thickness": 6,
+            "max_density": 0.733766,
+            "avg_density": 0.692641
+          }
+        ]
+      },
+      "color_features": {
+        "dominant_color_count": 5,
+        "dominant_colors": [
+          {
+            "rgb_hex": "#101010",
+            "ratio": 0.594166
+          },
+          {
+            "rgb_hex": "#d0d0d0",
+            "ratio": 0.248596
+          },
+          {
+            "rgb_hex": "#f0f0f0",
+            "ratio": 0.034263
+          },
+          {
+            "rgb_hex": "#909090",
+            "ratio": 0.025771
+          },
+          {
+            "rgb_hex": "#f0f0d0",
+            "ratio": 0.025147
+          }
+        ]
+      },
+      "layout_signals": [
+        "visible_content_bbox",
+        "grid_or_table_line_structure",
+        "wide_range",
+        "view_state_warning"
+      ],
+      "feature_notes": "Visual features were detected, but view-state affects part of the range.",
+      "evidence_refs": [
+        "coord_quality_capture_target_수익인식60일_cell_region_1",
+        "capture_target_수익인식60일_cell_region_1"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_target_수익인식60일_강사료_cell_region_1",
+      "type": "visual_feature_result",
+      "status": "detected",
+      "mapping_id": "coord_quality_capture_target_수익인식60일_강사료_cell_region_1",
+      "capture_id": "capture_target_수익인식60일_강사료_cell_region_1",
+      "target_id": "target_수익인식60일_강사료_cell_region_1",
+      "sheet": "수익인식60일_강사료",
+      "cell_range": "A1:Y22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_007_f763d98820.png",
+      "quality_status": "usable",
+      "normalization_status": "normalized_visible_range",
+      "view_state_classification": "no_material_view_state_signal",
+      "image_metrics": {
+        "width": 1651,
+        "height": 375,
+        "analysis_width": 800,
+        "analysis_height": 181,
+        "visible_pixel_ratio": 0.399047,
+        "whitespace_ratio": 0.600953,
+        "alpha_coverage_ratio": 0.39971,
+        "content_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1651,
+          "height": 373
+        }
+      },
+      "line_features": {
+        "horizontal_line_count": 22,
+        "vertical_line_count": 46,
+        "horizontal_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 8,
+            "end": 8,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 16,
+            "end": 17,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 24,
+            "end": 33,
+            "thickness": 10,
+            "max_density": 1.0,
+            "avg_density": 0.982
+          },
+          {
+            "start": 40,
+            "end": 41,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.99125
+          },
+          {
+            "start": 49,
+            "end": 49,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 57,
+            "end": 58,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 65,
+            "end": 66,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 73,
+            "end": 74,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.998125
+          },
+          {
+            "start": 81,
+            "end": 82,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.986875
+          },
+          {
+            "start": 90,
+            "end": 90,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 98,
+            "end": 99,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 106,
+            "end": 107,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 114,
+            "end": 115,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.9975
+          },
+          {
+            "start": 122,
+            "end": 123,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.985625
+          },
+          {
+            "start": 131,
+            "end": 131,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 139,
+            "end": 140,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 147,
+            "end": 148,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 155,
+            "end": 156,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.99625
+          },
+          {
+            "start": 163,
+            "end": 164,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.95625
+          }
+        ],
+        "vertical_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 25,
+            "end": 26,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.994475
+          },
+          {
+            "start": 33,
+            "end": 43,
+            "thickness": 11,
+            "max_density": 0.701657,
+            "avg_density": 0.662983
+          },
+          {
+            "start": 51,
+            "end": 51,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 63,
+            "end": 65,
+            "thickness": 3,
+            "max_density": 0.701657,
+            "avg_density": 0.635359
+          },
+          {
+            "start": 76,
+            "end": 105,
+            "thickness": 30,
+            "max_density": 1.0,
+            "avg_density": 0.894843
+          },
+          {
+            "start": 127,
+            "end": 129,
+            "thickness": 3,
+            "max_density": 0.729282,
+            "avg_density": 0.675875
+          },
+          {
+            "start": 131,
+            "end": 135,
+            "thickness": 5,
+            "max_density": 0.740331,
+            "avg_density": 0.688398
+          },
+          {
+            "start": 137,
+            "end": 145,
+            "thickness": 9,
+            "max_density": 0.745856,
+            "avg_density": 0.657459
+          },
+          {
+            "start": 148,
+            "end": 149,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.997238
+          },
+          {
+            "start": 248,
+            "end": 249,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.997238
+          },
+          {
+            "start": 274,
+            "end": 275,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.994475
+          },
+          {
+            "start": 300,
+            "end": 301,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.941989
+          },
+          {
+            "start": 325,
+            "end": 326,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.933702
+          },
+          {
+            "start": 351,
+            "end": 352,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.994475
+          },
+          {
+            "start": 384,
+            "end": 384,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 389,
+            "end": 403,
+            "thickness": 15,
+            "max_density": 0.701657,
+            "avg_density": 0.643831
+          },
+          {
+            "start": 405,
+            "end": 407,
+            "thickness": 3,
+            "max_density": 0.657459,
+            "avg_density": 0.624309
+          },
+          {
+            "start": 412,
+            "end": 412,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 417,
+            "end": 426,
+            "thickness": 10,
+            "max_density": 0.674033,
+            "avg_density": 0.645856
+          }
+        ]
+      },
+      "color_features": {
+        "dominant_color_count": 5,
+        "dominant_colors": [
+          {
+            "rgb_hex": "#101010",
+            "ratio": 0.573691
+          },
+          {
+            "rgb_hex": "#d0d0d0",
+            "ratio": 0.251289
+          },
+          {
+            "rgb_hex": "#f0f0d0",
+            "ratio": 0.041674
+          },
+          {
+            "rgb_hex": "#f0f0f0",
+            "ratio": 0.025665
+          },
+          {
+            "rgb_hex": "#b0d0b0",
+            "ratio": 0.019608
+          }
+        ]
+      },
+      "layout_signals": [
+        "visible_content_bbox",
+        "grid_or_table_line_structure",
+        "wide_range"
+      ],
+      "feature_notes": "Visual features were detected from the normalized visible capture.",
+      "evidence_refs": [
+        "coord_quality_capture_target_수익인식60일_강사료_cell_region_1",
+        "capture_target_수익인식60일_강사료_cell_region_1"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_target_얼리버드_cell_region_1",
+      "type": "visual_feature_result",
+      "status": "detected",
+      "mapping_id": "coord_quality_capture_target_얼리버드_cell_region_1",
+      "capture_id": "capture_target_얼리버드_cell_region_1",
+      "target_id": "target_얼리버드_cell_region_1",
+      "sheet": "얼리버드",
+      "cell_range": "A1:E22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_008_db60fadebf.png",
+      "quality_status": "usable",
+      "normalization_status": "normalized_visible_range",
+      "view_state_classification": "no_material_view_state_signal",
+      "image_metrics": {
+        "width": 315,
+        "height": 375,
+        "analysis_width": 315,
+        "analysis_height": 375,
+        "visible_pixel_ratio": 0.200483,
+        "whitespace_ratio": 0.799517,
+        "alpha_coverage_ratio": 0.200483,
+        "content_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 315,
+          "height": 375
+        }
+      },
+      "line_features": {
+        "horizontal_line_count": 23,
+        "vertical_line_count": 9,
+        "horizontal_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 17,
+            "end": 17,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 34,
+            "end": 34,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 51,
+            "end": 51,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 68,
+            "end": 68,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 85,
+            "end": 85,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 102,
+            "end": 102,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 119,
+            "end": 119,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 136,
+            "end": 136,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 153,
+            "end": 153,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 170,
+            "end": 170,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 187,
+            "end": 187,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 204,
+            "end": 204,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 221,
+            "end": 221,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 238,
+            "end": 238,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 255,
+            "end": 255,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 272,
+            "end": 272,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 289,
+            "end": 289,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 306,
+            "end": 306,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 323,
+            "end": 323,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          }
+        ],
+        "vertical_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 14,
+            "end": 15,
+            "thickness": 2,
+            "max_density": 0.589333,
+            "avg_density": 0.589333
+          },
+          {
+            "start": 97,
+            "end": 97,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 155,
+            "end": 155,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 203,
+            "end": 203,
+            "thickness": 1,
+            "max_density": 0.565333,
+            "avg_density": 0.565333
+          },
+          {
+            "start": 208,
+            "end": 208,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 256,
+            "end": 256,
+            "thickness": 1,
+            "max_density": 0.565333,
+            "avg_density": 0.565333
+          },
+          {
+            "start": 261,
+            "end": 261,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 314,
+            "end": 314,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          }
+        ]
+      },
+      "color_features": {
+        "dominant_color_count": 2,
+        "dominant_colors": [
+          {
+            "rgb_hex": "#101010",
+            "ratio": 0.60489
+          },
+          {
+            "rgb_hex": "#d0d0d0",
+            "ratio": 0.39511
+          }
+        ]
+      },
+      "layout_signals": [
+        "visible_content_bbox",
+        "grid_or_table_line_structure"
+      ],
+      "feature_notes": "Visual features were detected from the normalized visible capture.",
+      "evidence_refs": [
+        "coord_quality_capture_target_얼리버드_cell_region_1",
+        "capture_target_얼리버드_cell_region_1"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_target_유하다요_cell_region_1",
+      "type": "visual_feature_result",
+      "status": "detected",
+      "mapping_id": "coord_quality_capture_target_유하다요_cell_region_1",
+      "capture_id": "capture_target_유하다요_cell_region_1",
+      "target_id": "target_유하다요_cell_region_1",
+      "sheet": "유하다요",
+      "cell_range": "A1:S22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_009_7723c8ac59.png",
+      "quality_status": "usable",
+      "normalization_status": "normalized_visible_range",
+      "view_state_classification": "no_material_view_state_signal",
+      "image_metrics": {
+        "width": 1416,
+        "height": 353,
+        "analysis_width": 800,
+        "analysis_height": 199,
+        "visible_pixel_ratio": 0.543342,
+        "whitespace_ratio": 0.456658,
+        "alpha_coverage_ratio": 0.545785,
+        "content_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1416,
+          "height": 352
+        }
+      },
+      "line_features": {
+        "horizontal_line_count": 43,
+        "vertical_line_count": 99,
+        "horizontal_line_spans": [
+          {
+            "start": 0,
+            "end": 9,
+            "thickness": 10,
+            "max_density": 1.0,
+            "avg_density": 0.9755
+          },
+          {
+            "start": 12,
+            "end": 15,
+            "thickness": 4,
+            "max_density": 0.63,
+            "avg_density": 0.624375
+          },
+          {
+            "start": 17,
+            "end": 18,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.9575
+          },
+          {
+            "start": 21,
+            "end": 24,
+            "thickness": 4,
+            "max_density": 0.6225,
+            "avg_density": 0.613438
+          },
+          {
+            "start": 26,
+            "end": 27,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.953125
+          },
+          {
+            "start": 30,
+            "end": 33,
+            "thickness": 4,
+            "max_density": 0.63125,
+            "avg_density": 0.613437
+          },
+          {
+            "start": 35,
+            "end": 36,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.956875
+          },
+          {
+            "start": 39,
+            "end": 42,
+            "thickness": 4,
+            "max_density": 0.6325,
+            "avg_density": 0.614062
+          },
+          {
+            "start": 44,
+            "end": 45,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.950625
+          },
+          {
+            "start": 48,
+            "end": 51,
+            "thickness": 4,
+            "max_density": 0.60625,
+            "avg_density": 0.592187
+          },
+          {
+            "start": 54,
+            "end": 54,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 57,
+            "end": 60,
+            "thickness": 4,
+            "max_density": 0.62375,
+            "avg_density": 0.613438
+          },
+          {
+            "start": 63,
+            "end": 63,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 66,
+            "end": 69,
+            "thickness": 4,
+            "max_density": 0.63,
+            "avg_density": 0.614375
+          },
+          {
+            "start": 72,
+            "end": 72,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 75,
+            "end": 78,
+            "thickness": 4,
+            "max_density": 0.635,
+            "avg_density": 0.619375
+          },
+          {
+            "start": 81,
+            "end": 81,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 84,
+            "end": 87,
+            "thickness": 4,
+            "max_density": 0.63875,
+            "avg_density": 0.61875
+          },
+          {
+            "start": 90,
+            "end": 90,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 93,
+            "end": 96,
+            "thickness": 4,
+            "max_density": 0.64625,
+            "avg_density": 0.62875
+          }
+        ],
+        "vertical_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 25,
+            "end": 27,
+            "thickness": 3,
+            "max_density": 0.753769,
+            "avg_density": 0.680067
+          },
+          {
+            "start": 29,
+            "end": 30,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.987437
+          },
+          {
+            "start": 32,
+            "end": 35,
+            "thickness": 4,
+            "max_density": 0.748744,
+            "avg_density": 0.744975
+          },
+          {
+            "start": 38,
+            "end": 40,
+            "thickness": 3,
+            "max_density": 0.653266,
+            "avg_density": 0.644891
+          },
+          {
+            "start": 58,
+            "end": 59,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 61,
+            "end": 65,
+            "thickness": 5,
+            "max_density": 0.829146,
+            "avg_density": 0.752764
+          },
+          {
+            "start": 67,
+            "end": 70,
+            "thickness": 4,
+            "max_density": 0.81407,
+            "avg_density": 0.801508
+          },
+          {
+            "start": 72,
+            "end": 76,
+            "thickness": 5,
+            "max_density": 0.824121,
+            "avg_density": 0.746734
+          },
+          {
+            "start": 78,
+            "end": 82,
+            "thickness": 5,
+            "max_density": 0.819095,
+            "avg_density": 0.740704
+          },
+          {
+            "start": 88,
+            "end": 88,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 90,
+            "end": 94,
+            "thickness": 5,
+            "max_density": 0.894472,
+            "avg_density": 0.736683
+          },
+          {
+            "start": 96,
+            "end": 105,
+            "thickness": 10,
+            "max_density": 0.824121,
+            "avg_density": 0.695477
+          },
+          {
+            "start": 107,
+            "end": 111,
+            "thickness": 5,
+            "max_density": 0.728643,
+            "avg_density": 0.688442
+          },
+          {
+            "start": 117,
+            "end": 125,
+            "thickness": 9,
+            "max_density": 1.0,
+            "avg_density": 0.724735
+          },
+          {
+            "start": 127,
+            "end": 129,
+            "thickness": 3,
+            "max_density": 0.733668,
+            "avg_density": 0.643216
+          },
+          {
+            "start": 131,
+            "end": 136,
+            "thickness": 6,
+            "max_density": 0.743719,
+            "avg_density": 0.621441
+          },
+          {
+            "start": 138,
+            "end": 139,
+            "thickness": 2,
+            "max_density": 0.678392,
+            "avg_density": 0.640704
+          },
+          {
+            "start": 141,
+            "end": 148,
+            "thickness": 8,
+            "max_density": 0.768844,
+            "avg_density": 0.68907
+          },
+          {
+            "start": 150,
+            "end": 151,
+            "thickness": 2,
+            "max_density": 0.653266,
+            "avg_density": 0.638191
+          }
+        ]
+      },
+      "color_features": {
+        "dominant_color_count": 5,
+        "dominant_colors": [
+          {
+            "rgb_hex": "#101010",
+            "ratio": 0.531353
+          },
+          {
+            "rgb_hex": "#d0d0d0",
+            "ratio": 0.349526
+          },
+          {
+            "rgb_hex": "#f0f0d0",
+            "ratio": 0.060532
+          },
+          {
+            "rgb_hex": "#b0b0b0",
+            "ratio": 0.014682
+          },
+          {
+            "rgb_hex": "#f0f0f0",
+            "ratio": 0.012925
+          }
+        ]
+      },
+      "layout_signals": [
+        "visible_content_bbox",
+        "grid_or_table_line_structure",
+        "wide_range"
+      ],
+      "feature_notes": "Visual features were detected from the normalized visible capture.",
+      "evidence_refs": [
+        "coord_quality_capture_target_유하다요_cell_region_1",
+        "capture_target_유하다요_cell_region_1"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_target_유하다요_강사료_cell_region_1",
+      "type": "visual_feature_result",
+      "status": "skipped_quality_review",
+      "mapping_id": "coord_quality_capture_target_유하다요_강사료_cell_region_1",
+      "capture_id": "capture_target_유하다요_강사료_cell_region_1",
+      "target_id": "target_유하다요_강사료_cell_region_1",
+      "sheet": "유하다요_강사료",
+      "cell_range": "A1:AI22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_010_e0feda6b15.png",
+      "quality_status": "review_required",
+      "normalization_status": "review_required",
+      "view_state_classification": "no_material_view_state_signal",
+      "image_metrics": {
+        "width": null,
+        "height": null,
+        "analysis_width": null,
+        "analysis_height": null,
+        "visible_pixel_ratio": null,
+        "whitespace_ratio": null,
+        "alpha_coverage_ratio": null,
+        "content_bbox": null
+      },
+      "line_features": {
+        "horizontal_line_count": 0,
+        "vertical_line_count": 0,
+        "horizontal_line_spans": [],
+        "vertical_line_spans": []
+      },
+      "color_features": {
+        "dominant_color_count": 0,
+        "dominant_colors": []
+      },
+      "layout_signals": [
+        "sparse_visible_content",
+        "wide_range"
+      ],
+      "feature_notes": "Skipped because capture quality requires review before visual feature gates trust it.",
+      "evidence_refs": [
+        "coord_quality_capture_target_유하다요_강사료_cell_region_1",
+        "capture_target_유하다요_강사료_cell_region_1"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_target_정가표_cell_region_1",
+      "type": "visual_feature_result",
+      "status": "detected",
+      "mapping_id": "coord_quality_capture_target_정가표_cell_region_1",
+      "capture_id": "capture_target_정가표_cell_region_1",
+      "target_id": "target_정가표_cell_region_1",
+      "sheet": "정가표",
+      "cell_range": "A1:T22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_011_dc1b0b305f.png",
+      "quality_status": "usable",
+      "normalization_status": "normalized_visible_range",
+      "view_state_classification": "no_material_view_state_signal",
+      "image_metrics": {
+        "width": 1123,
+        "height": 375,
+        "analysis_width": 800,
+        "analysis_height": 267,
+        "visible_pixel_ratio": 0.562027,
+        "whitespace_ratio": 0.437973,
+        "alpha_coverage_ratio": 0.562402,
+        "content_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1123,
+          "height": 374
+        }
+      },
+      "line_features": {
+        "horizontal_line_count": 45,
+        "vertical_line_count": 70,
+        "horizontal_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 4,
+            "end": 9,
+            "thickness": 6,
+            "max_density": 0.62625,
+            "avg_density": 0.605417
+          },
+          {
+            "start": 12,
+            "end": 12,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 16,
+            "end": 21,
+            "thickness": 6,
+            "max_density": 0.64,
+            "avg_density": 0.607083
+          },
+          {
+            "start": 24,
+            "end": 24,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 28,
+            "end": 33,
+            "thickness": 6,
+            "max_density": 0.62625,
+            "avg_density": 0.602917
+          },
+          {
+            "start": 36,
+            "end": 37,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 41,
+            "end": 45,
+            "thickness": 5,
+            "max_density": 0.64875,
+            "avg_density": 0.63275
+          },
+          {
+            "start": 48,
+            "end": 49,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 53,
+            "end": 57,
+            "thickness": 5,
+            "max_density": 0.64875,
+            "avg_density": 0.635
+          },
+          {
+            "start": 60,
+            "end": 61,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 65,
+            "end": 67,
+            "thickness": 3,
+            "max_density": 0.57125,
+            "avg_density": 0.569167
+          },
+          {
+            "start": 72,
+            "end": 73,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 77,
+            "end": 81,
+            "thickness": 5,
+            "max_density": 0.585,
+            "avg_density": 0.5685
+          },
+          {
+            "start": 84,
+            "end": 85,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 89,
+            "end": 93,
+            "thickness": 5,
+            "max_density": 0.635,
+            "avg_density": 0.619
+          },
+          {
+            "start": 96,
+            "end": 97,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 101,
+            "end": 105,
+            "thickness": 5,
+            "max_density": 0.64625,
+            "avg_density": 0.62675
+          },
+          {
+            "start": 108,
+            "end": 109,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.998125
+          },
+          {
+            "start": 113,
+            "end": 117,
+            "thickness": 5,
+            "max_density": 0.60875,
+            "avg_density": 0.591
+          }
+        ],
+        "vertical_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 7,
+            "end": 7,
+            "thickness": 1,
+            "max_density": 0.797753,
+            "avg_density": 0.797753
+          },
+          {
+            "start": 10,
+            "end": 10,
+            "thickness": 1,
+            "max_density": 0.617978,
+            "avg_density": 0.617978
+          },
+          {
+            "start": 12,
+            "end": 15,
+            "thickness": 4,
+            "max_density": 0.782772,
+            "avg_density": 0.691948
+          },
+          {
+            "start": 17,
+            "end": 21,
+            "thickness": 5,
+            "max_density": 0.797753,
+            "avg_density": 0.738577
+          },
+          {
+            "start": 24,
+            "end": 29,
+            "thickness": 6,
+            "max_density": 0.756554,
+            "avg_density": 0.658552
+          },
+          {
+            "start": 32,
+            "end": 36,
+            "thickness": 5,
+            "max_density": 0.7603,
+            "avg_density": 0.692135
+          },
+          {
+            "start": 38,
+            "end": 39,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 41,
+            "end": 41,
+            "thickness": 1,
+            "max_density": 0.685393,
+            "avg_density": 0.685393
+          },
+          {
+            "start": 48,
+            "end": 49,
+            "thickness": 2,
+            "max_density": 0.685393,
+            "avg_density": 0.634831
+          },
+          {
+            "start": 57,
+            "end": 58,
+            "thickness": 2,
+            "max_density": 0.625468,
+            "avg_density": 0.621723
+          },
+          {
+            "start": 61,
+            "end": 62,
+            "thickness": 2,
+            "max_density": 0.670412,
+            "avg_density": 0.651685
+          },
+          {
+            "start": 65,
+            "end": 66,
+            "thickness": 2,
+            "max_density": 0.659176,
+            "avg_density": 0.651685
+          },
+          {
+            "start": 69,
+            "end": 71,
+            "thickness": 3,
+            "max_density": 0.617978,
+            "avg_density": 0.598002
+          },
+          {
+            "start": 74,
+            "end": 75,
+            "thickness": 2,
+            "max_density": 0.621723,
+            "avg_density": 0.61236
+          },
+          {
+            "start": 78,
+            "end": 79,
+            "thickness": 2,
+            "max_density": 0.640449,
+            "avg_density": 0.623596
+          },
+          {
+            "start": 82,
+            "end": 84,
+            "thickness": 3,
+            "max_density": 0.602996,
+            "avg_density": 0.589263
+          },
+          {
+            "start": 86,
+            "end": 88,
+            "thickness": 3,
+            "max_density": 0.614232,
+            "avg_density": 0.593009
+          },
+          {
+            "start": 91,
+            "end": 92,
+            "thickness": 2,
+            "max_density": 0.617978,
+            "avg_density": 0.604869
+          },
+          {
+            "start": 95,
+            "end": 96,
+            "thickness": 2,
+            "max_density": 0.64794,
+            "avg_density": 0.634831
+          }
+        ]
+      },
+      "color_features": {
+        "dominant_color_count": 5,
+        "dominant_colors": [
+          {
+            "rgb_hex": "#f0f0d0",
+            "ratio": 0.450674
+          },
+          {
+            "rgb_hex": "#101010",
+            "ratio": 0.251022
+          },
+          {
+            "rgb_hex": "#d0d0d0",
+            "ratio": 0.238311
+          },
+          {
+            "rgb_hex": "#f0f0f0",
+            "ratio": 0.010229
+          },
+          {
+            "rgb_hex": "#d0f0d0",
+            "ratio": 0.010188
+          }
+        ]
+      },
+      "layout_signals": [
+        "visible_content_bbox",
+        "grid_or_table_line_structure",
+        "wide_range"
+      ],
+      "feature_notes": "Visual features were detected from the normalized visible capture.",
+      "evidence_refs": [
+        "coord_quality_capture_target_정가표_cell_region_1",
+        "capture_target_정가표_cell_region_1"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_target_포도_cell_region_1",
+      "type": "visual_feature_result",
+      "status": "skipped_view_state_blocked",
+      "mapping_id": "coord_quality_capture_target_포도_cell_region_1",
+      "capture_id": "capture_target_포도_cell_region_1",
+      "target_id": "target_포도_cell_region_1",
+      "sheet": "포도",
+      "cell_range": "A1:R22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/render-captures/captures/capture_012_459378b2ad.png",
+      "quality_status": "recapture_required",
+      "normalization_status": "blocked_by_view_state",
+      "view_state_classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "image_metrics": {
+        "width": null,
+        "height": null,
+        "analysis_width": null,
+        "analysis_height": null,
+        "visible_pixel_ratio": null,
+        "whitespace_ratio": null,
+        "alpha_coverage_ratio": null,
+        "content_bbox": null
+      },
+      "line_features": {
+        "horizontal_line_count": 0,
+        "vertical_line_count": 0,
+        "horizontal_line_spans": [],
+        "vertical_line_spans": []
+      },
+      "color_features": {
+        "dominant_color_count": 0,
+        "dominant_colors": []
+      },
+      "layout_signals": [
+        "sparse_visible_content",
+        "wide_range"
+      ],
+      "feature_notes": "Skipped because hidden/filter view-state blocks visual absence claims for this capture.",
+      "evidence_refs": [
+        "coord_quality_capture_target_포도_cell_region_1",
+        "capture_target_포도_cell_region_1"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "type": "visual_feature_result",
+      "status": "detected",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "capture_id": "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "sheet": "결제상세",
+      "cell_range": "A1:R22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_001_be06d2a5d0.png",
+      "quality_status": "usable",
+      "normalization_status": "normalized_visible_range",
+      "view_state_classification": "no_material_view_state_signal",
+      "image_metrics": {
+        "width": 1040,
+        "height": 375,
+        "analysis_width": 800,
+        "analysis_height": 288,
+        "visible_pixel_ratio": 0.418641,
+        "whitespace_ratio": 0.581359,
+        "alpha_coverage_ratio": 0.418932,
+        "content_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1039,
+          "height": 374
+        }
+      },
+      "line_features": {
+        "horizontal_line_count": 22,
+        "vertical_line_count": 107,
+        "horizontal_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 13,
+            "end": 26,
+            "thickness": 14,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 39,
+            "end": 39,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 52,
+            "end": 53,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 65,
+            "end": 66,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 78,
+            "end": 79,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 91,
+            "end": 92,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 104,
+            "end": 105,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 117,
+            "end": 118,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 130,
+            "end": 131,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 143,
+            "end": 144,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 156,
+            "end": 157,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 169,
+            "end": 170,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 182,
+            "end": 183,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 195,
+            "end": 196,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 208,
+            "end": 209,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.995
+          },
+          {
+            "start": 221,
+            "end": 222,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.9925
+          },
+          {
+            "start": 234,
+            "end": 235,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.99
+          },
+          {
+            "start": 248,
+            "end": 248,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 261,
+            "end": 261,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          }
+        ],
+        "vertical_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 37,
+            "end": 38,
+            "thickness": 2,
+            "max_density": 0.614583,
+            "avg_density": 0.607639
+          },
+          {
+            "start": 41,
+            "end": 42,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 45,
+            "end": 49,
+            "thickness": 5,
+            "max_density": 0.670139,
+            "avg_density": 0.667361
+          },
+          {
+            "start": 54,
+            "end": 54,
+            "thickness": 1,
+            "max_density": 0.569444,
+            "avg_density": 0.569444
+          },
+          {
+            "start": 83,
+            "end": 83,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 86,
+            "end": 92,
+            "thickness": 7,
+            "max_density": 0.753472,
+            "avg_density": 0.64881
+          },
+          {
+            "start": 94,
+            "end": 99,
+            "thickness": 6,
+            "max_density": 0.753472,
+            "avg_density": 0.734375
+          },
+          {
+            "start": 102,
+            "end": 102,
+            "thickness": 1,
+            "max_density": 0.569444,
+            "avg_density": 0.569444
+          },
+          {
+            "start": 104,
+            "end": 104,
+            "thickness": 1,
+            "max_density": 0.569444,
+            "avg_density": 0.569444
+          },
+          {
+            "start": 106,
+            "end": 107,
+            "thickness": 2,
+            "max_density": 0.75,
+            "avg_density": 0.748264
+          },
+          {
+            "start": 110,
+            "end": 112,
+            "thickness": 3,
+            "max_density": 0.71875,
+            "avg_density": 0.646991
+          },
+          {
+            "start": 114,
+            "end": 115,
+            "thickness": 2,
+            "max_density": 0.739583,
+            "avg_density": 0.708333
+          },
+          {
+            "start": 124,
+            "end": 125,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 129,
+            "end": 132,
+            "thickness": 4,
+            "max_density": 0.756944,
+            "avg_density": 0.698785
+          },
+          {
+            "start": 136,
+            "end": 137,
+            "thickness": 2,
+            "max_density": 0.635417,
+            "avg_density": 0.618056
+          },
+          {
+            "start": 139,
+            "end": 140,
+            "thickness": 2,
+            "max_density": 0.760417,
+            "avg_density": 0.690972
+          },
+          {
+            "start": 143,
+            "end": 143,
+            "thickness": 1,
+            "max_density": 0.572917,
+            "avg_density": 0.572917
+          },
+          {
+            "start": 147,
+            "end": 148,
+            "thickness": 2,
+            "max_density": 0.753472,
+            "avg_density": 0.748264
+          },
+          {
+            "start": 151,
+            "end": 155,
+            "thickness": 5,
+            "max_density": 0.649306,
+            "avg_density": 0.613889
+          }
+        ]
+      },
+      "color_features": {
+        "dominant_color_count": 5,
+        "dominant_colors": [
+          {
+            "rgb_hex": "#101010",
+            "ratio": 0.516355
+          },
+          {
+            "rgb_hex": "#d0d0d0",
+            "ratio": 0.429309
+          },
+          {
+            "rgb_hex": "#303030",
+            "ratio": 0.01693
+          },
+          {
+            "rgb_hex": "#b0b0b0",
+            "ratio": 0.010461
+          },
+          {
+            "rgb_hex": "#505050",
+            "ratio": 0.008698
+          }
+        ]
+      },
+      "layout_signals": [
+        "visible_content_bbox",
+        "grid_or_table_line_structure",
+        "wide_range"
+      ],
+      "feature_notes": "Visual features were detected from the normalized visible capture.",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "type": "visual_feature_result",
+      "status": "detected",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "capture_id": "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "sheet": "결제상세",
+      "cell_range": "S1:AJ22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_002_25dad63e7a.png",
+      "quality_status": "usable",
+      "normalization_status": "normalized_visible_range",
+      "view_state_classification": "no_material_view_state_signal",
+      "image_metrics": {
+        "width": 1568,
+        "height": 375,
+        "analysis_width": 800,
+        "analysis_height": 191,
+        "visible_pixel_ratio": 0.354758,
+        "whitespace_ratio": 0.645242,
+        "alpha_coverage_ratio": 0.356139,
+        "content_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1568,
+          "height": 374
+        }
+      },
+      "line_features": {
+        "horizontal_line_count": 22,
+        "vertical_line_count": 38,
+        "horizontal_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 8,
+            "end": 17,
+            "thickness": 10,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 25,
+            "end": 26,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.969375
+          },
+          {
+            "start": 34,
+            "end": 35,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 43,
+            "end": 43,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 51,
+            "end": 52,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.97
+          },
+          {
+            "start": 60,
+            "end": 61,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 69,
+            "end": 69,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 77,
+            "end": 78,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.9775
+          },
+          {
+            "start": 86,
+            "end": 87,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 95,
+            "end": 95,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 103,
+            "end": 104,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.979375
+          },
+          {
+            "start": 112,
+            "end": 113,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.999375
+          },
+          {
+            "start": 121,
+            "end": 121,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 129,
+            "end": 130,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.985625
+          },
+          {
+            "start": 138,
+            "end": 139,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.999375
+          },
+          {
+            "start": 147,
+            "end": 147,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 155,
+            "end": 156,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.994375
+          },
+          {
+            "start": 164,
+            "end": 165,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.99875
+          },
+          {
+            "start": 173,
+            "end": 173,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          }
+        ],
+        "vertical_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 27,
+            "end": 28,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.997382
+          },
+          {
+            "start": 54,
+            "end": 55,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.926702
+          },
+          {
+            "start": 82,
+            "end": 83,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.997382
+          },
+          {
+            "start": 110,
+            "end": 110,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 112,
+            "end": 123,
+            "thickness": 12,
+            "max_density": 0.753927,
+            "avg_density": 0.690663
+          },
+          {
+            "start": 126,
+            "end": 136,
+            "thickness": 11,
+            "max_density": 0.759162,
+            "avg_density": 0.701095
+          },
+          {
+            "start": 140,
+            "end": 154,
+            "thickness": 15,
+            "max_density": 0.790576,
+            "avg_density": 0.736824
+          },
+          {
+            "start": 158,
+            "end": 166,
+            "thickness": 9,
+            "max_density": 0.780105,
+            "avg_density": 0.725422
+          },
+          {
+            "start": 168,
+            "end": 171,
+            "thickness": 4,
+            "max_density": 0.764398,
+            "avg_density": 0.663613
+          },
+          {
+            "start": 173,
+            "end": 176,
+            "thickness": 4,
+            "max_density": 0.764398,
+            "avg_density": 0.638743
+          },
+          {
+            "start": 179,
+            "end": 183,
+            "thickness": 5,
+            "max_density": 0.670157,
+            "avg_density": 0.615707
+          },
+          {
+            "start": 185,
+            "end": 186,
+            "thickness": 2,
+            "max_density": 0.633508,
+            "avg_density": 0.617801
+          },
+          {
+            "start": 188,
+            "end": 190,
+            "thickness": 3,
+            "max_density": 0.670157,
+            "avg_density": 0.621291
+          },
+          {
+            "start": 291,
+            "end": 292,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.997382
+          },
+          {
+            "start": 319,
+            "end": 320,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.926702
+          },
+          {
+            "start": 346,
+            "end": 347,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.997382
+          },
+          {
+            "start": 382,
+            "end": 383,
+            "thickness": 2,
+            "max_density": 0.743455,
+            "avg_density": 0.709424
+          },
+          {
+            "start": 385,
+            "end": 390,
+            "thickness": 6,
+            "max_density": 0.73822,
+            "avg_density": 0.701571
+          },
+          {
+            "start": 392,
+            "end": 400,
+            "thickness": 9,
+            "max_density": 0.748691,
+            "avg_density": 0.692845
+          }
+        ]
+      },
+      "color_features": {
+        "dominant_color_count": 5,
+        "dominant_colors": [
+          {
+            "rgb_hex": "#d0d0d0",
+            "ratio": 0.639604
+          },
+          {
+            "rgb_hex": "#101010",
+            "ratio": 0.281292
+          },
+          {
+            "rgb_hex": "#505050",
+            "ratio": 0.018872
+          },
+          {
+            "rgb_hex": "#909090",
+            "ratio": 0.01878
+          },
+          {
+            "rgb_hex": "#b0b0b0",
+            "ratio": 0.01616
+          }
+        ]
+      },
+      "layout_signals": [
+        "visible_content_bbox",
+        "grid_or_table_line_structure",
+        "wide_range"
+      ],
+      "feature_notes": "Visual features were detected from the normalized visible capture.",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "type": "visual_feature_result",
+      "status": "detected",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "capture_id": "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "sheet": "결제상세",
+      "cell_range": "AK1:AY22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_003_f75855ae83.png",
+      "quality_status": "usable",
+      "normalization_status": "normalized_visible_range",
+      "view_state_classification": "no_material_view_state_signal",
+      "image_metrics": {
+        "width": 872,
+        "height": 375,
+        "analysis_width": 800,
+        "analysis_height": 344,
+        "visible_pixel_ratio": 0.310167,
+        "whitespace_ratio": 0.689833,
+        "alpha_coverage_ratio": 0.310182,
+        "content_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 871,
+          "height": 374
+        }
+      },
+      "line_features": {
+        "horizontal_line_count": 22,
+        "vertical_line_count": 52,
+        "horizontal_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 15,
+            "end": 32,
+            "thickness": 18,
+            "max_density": 1.0,
+            "avg_density": 0.959931
+          },
+          {
+            "start": 46,
+            "end": 47,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 62,
+            "end": 63,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 78,
+            "end": 78,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 93,
+            "end": 94,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 109,
+            "end": 110,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 124,
+            "end": 125,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 140,
+            "end": 141,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 155,
+            "end": 156,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 171,
+            "end": 172,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 187,
+            "end": 188,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 202,
+            "end": 203,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 218,
+            "end": 219,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 233,
+            "end": 234,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 249,
+            "end": 250,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 265,
+            "end": 265,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 280,
+            "end": 281,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 296,
+            "end": 297,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 311,
+            "end": 312,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          }
+        ],
+        "vertical_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 67,
+            "end": 67,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 129,
+            "end": 130,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.998547
+          },
+          {
+            "start": 148,
+            "end": 149,
+            "thickness": 2,
+            "max_density": 0.625,
+            "avg_density": 0.588663
+          },
+          {
+            "start": 154,
+            "end": 155,
+            "thickness": 2,
+            "max_density": 0.578488,
+            "avg_density": 0.571221
+          },
+          {
+            "start": 159,
+            "end": 159,
+            "thickness": 1,
+            "max_density": 0.587209,
+            "avg_density": 0.587209
+          },
+          {
+            "start": 161,
+            "end": 161,
+            "thickness": 1,
+            "max_density": 0.601744,
+            "avg_density": 0.601744
+          },
+          {
+            "start": 178,
+            "end": 179,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.986919
+          },
+          {
+            "start": 192,
+            "end": 193,
+            "thickness": 2,
+            "max_density": 0.587209,
+            "avg_density": 0.587209
+          },
+          {
+            "start": 203,
+            "end": 204,
+            "thickness": 2,
+            "max_density": 0.575581,
+            "avg_density": 0.568314
+          },
+          {
+            "start": 228,
+            "end": 229,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 239,
+            "end": 239,
+            "thickness": 1,
+            "max_density": 0.561047,
+            "avg_density": 0.561047
+          },
+          {
+            "start": 242,
+            "end": 242,
+            "thickness": 1,
+            "max_density": 0.590116,
+            "avg_density": 0.590116
+          },
+          {
+            "start": 253,
+            "end": 253,
+            "thickness": 1,
+            "max_density": 0.572674,
+            "avg_density": 0.572674
+          },
+          {
+            "start": 278,
+            "end": 278,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 327,
+            "end": 328,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 400,
+            "end": 400,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 449,
+            "end": 450,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 499,
+            "end": 499,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 528,
+            "end": 530,
+            "thickness": 3,
+            "max_density": 0.572674,
+            "avg_density": 0.562016
+          }
+        ]
+      },
+      "color_features": {
+        "dominant_color_count": 5,
+        "dominant_colors": [
+          {
+            "rgb_hex": "#d0d0d0",
+            "ratio": 0.4903
+          },
+          {
+            "rgb_hex": "#101010",
+            "ratio": 0.429169
+          },
+          {
+            "rgb_hex": "#b0b0b0",
+            "ratio": 0.015089
+          },
+          {
+            "rgb_hex": "#505050",
+            "ratio": 0.01475
+          },
+          {
+            "rgb_hex": "#f0d0f0",
+            "ratio": 0.012969
+          }
+        ]
+      },
+      "layout_signals": [
+        "visible_content_bbox",
+        "grid_or_table_line_structure",
+        "wide_range"
+      ],
+      "feature_notes": "Visual features were detected from the normalized visible capture.",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "type": "visual_feature_result",
+      "status": "skipped_view_state_blocked",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "sheet": "당월산식",
+      "cell_range": "A1:BA22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_004_7ee126545e.png",
+      "quality_status": "recapture_required",
+      "normalization_status": "blocked_by_view_state",
+      "view_state_classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "image_metrics": {
+        "width": null,
+        "height": null,
+        "analysis_width": null,
+        "analysis_height": null,
+        "visible_pixel_ratio": null,
+        "whitespace_ratio": null,
+        "alpha_coverage_ratio": null,
+        "content_bbox": null
+      },
+      "line_features": {
+        "horizontal_line_count": 0,
+        "vertical_line_count": 0,
+        "horizontal_line_spans": [],
+        "vertical_line_spans": []
+      },
+      "color_features": {
+        "dominant_color_count": 0,
+        "dominant_colors": []
+      },
+      "layout_signals": [
+        "sparse_visible_content",
+        "wide_range"
+      ],
+      "feature_notes": "Skipped because hidden/filter view-state blocks visual absence claims for this capture.",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+        "capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "type": "visual_feature_result",
+      "status": "skipped_view_state_blocked",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "sheet": "당월산식",
+      "cell_range": "A21:R100",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_005_4c1035ab25.png",
+      "quality_status": "recapture_required",
+      "normalization_status": "blocked_by_view_state",
+      "view_state_classification": "all_rows_hidden_or_zero_height",
+      "image_metrics": {
+        "width": null,
+        "height": null,
+        "analysis_width": null,
+        "analysis_height": null,
+        "visible_pixel_ratio": null,
+        "whitespace_ratio": null,
+        "alpha_coverage_ratio": null,
+        "content_bbox": null
+      },
+      "line_features": {
+        "horizontal_line_count": 0,
+        "vertical_line_count": 0,
+        "horizontal_line_spans": [],
+        "vertical_line_spans": []
+      },
+      "color_features": {
+        "dominant_color_count": 0,
+        "dominant_colors": []
+      },
+      "layout_signals": [
+        "sparse_visible_content",
+        "wide_range"
+      ],
+      "feature_notes": "Skipped because hidden/filter view-state blocks visual absence claims for this capture.",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "type": "visual_feature_result",
+      "status": "skipped_view_state_blocked",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "sheet": "당월산식",
+      "cell_range": "S21:AJ100",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_006_33a3867a7b.png",
+      "quality_status": "recapture_required",
+      "normalization_status": "blocked_by_view_state",
+      "view_state_classification": "all_rows_hidden_or_zero_height",
+      "image_metrics": {
+        "width": null,
+        "height": null,
+        "analysis_width": null,
+        "analysis_height": null,
+        "visible_pixel_ratio": null,
+        "whitespace_ratio": null,
+        "alpha_coverage_ratio": null,
+        "content_bbox": null
+      },
+      "line_features": {
+        "horizontal_line_count": 0,
+        "vertical_line_count": 0,
+        "horizontal_line_spans": [],
+        "vertical_line_spans": []
+      },
+      "color_features": {
+        "dominant_color_count": 0,
+        "dominant_colors": []
+      },
+      "layout_signals": [
+        "sparse_visible_content",
+        "wide_range"
+      ],
+      "feature_notes": "Skipped because hidden/filter view-state blocks visual absence claims for this capture.",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "type": "visual_feature_result",
+      "status": "skipped_view_state_blocked",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "sheet": "당월산식",
+      "cell_range": "AK21:BA100",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_007_cf0646c2df.png",
+      "quality_status": "recapture_required",
+      "normalization_status": "blocked_by_view_state",
+      "view_state_classification": "all_rows_hidden_or_zero_height",
+      "image_metrics": {
+        "width": null,
+        "height": null,
+        "analysis_width": null,
+        "analysis_height": null,
+        "visible_pixel_ratio": null,
+        "whitespace_ratio": null,
+        "alpha_coverage_ratio": null,
+        "content_bbox": null
+      },
+      "line_features": {
+        "horizontal_line_count": 0,
+        "vertical_line_count": 0,
+        "horizontal_line_spans": [],
+        "vertical_line_spans": []
+      },
+      "color_features": {
+        "dominant_color_count": 0,
+        "dominant_colors": []
+      },
+      "layout_signals": [
+        "sparse_visible_content",
+        "wide_range"
+      ],
+      "feature_notes": "Skipped because hidden/filter view-state blocks visual absence claims for this capture.",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "type": "visual_feature_result",
+      "status": "detected",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "capture_id": "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "target_id": "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "sheet": "유하다요_강사료",
+      "cell_range": "A1:R22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_008_472c22f6f1.png",
+      "quality_status": "usable",
+      "normalization_status": "normalized_visible_range",
+      "view_state_classification": "no_material_view_state_signal",
+      "image_metrics": {
+        "width": 999,
+        "height": 375,
+        "analysis_width": 800,
+        "analysis_height": 300,
+        "visible_pixel_ratio": 0.391608,
+        "whitespace_ratio": 0.608392,
+        "alpha_coverage_ratio": 0.391779,
+        "content_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 999,
+          "height": 374
+        }
+      },
+      "line_features": {
+        "horizontal_line_count": 22,
+        "vertical_line_count": 36,
+        "horizontal_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 13,
+            "end": 14,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 27,
+            "end": 28,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 40,
+            "end": 41,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 54,
+            "end": 55,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 67,
+            "end": 68,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.975
+          },
+          {
+            "start": 81,
+            "end": 95,
+            "thickness": 15,
+            "max_density": 1.0,
+            "avg_density": 0.999917
+          },
+          {
+            "start": 108,
+            "end": 109,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 122,
+            "end": 123,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 135,
+            "end": 136,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.9975
+          },
+          {
+            "start": 149,
+            "end": 150,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 163,
+            "end": 164,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 176,
+            "end": 177,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 190,
+            "end": 191,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 203,
+            "end": 204,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.9975
+          },
+          {
+            "start": 217,
+            "end": 218,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 231,
+            "end": 232,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 244,
+            "end": 245,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 258,
+            "end": 259,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 271,
+            "end": 272,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.9725
+          }
+        ],
+        "vertical_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 42,
+            "end": 43,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.951667
+          },
+          {
+            "start": 84,
+            "end": 85,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.998333
+          },
+          {
+            "start": 127,
+            "end": 170,
+            "thickness": 44,
+            "max_density": 1.0,
+            "avg_density": 0.822652
+          },
+          {
+            "start": 192,
+            "end": 192,
+            "thickness": 1,
+            "max_density": 0.573333,
+            "avg_density": 0.573333
+          },
+          {
+            "start": 196,
+            "end": 197,
+            "thickness": 2,
+            "max_density": 0.576667,
+            "avg_density": 0.571667
+          },
+          {
+            "start": 201,
+            "end": 201,
+            "thickness": 1,
+            "max_density": 0.566667,
+            "avg_density": 0.566667
+          },
+          {
+            "start": 207,
+            "end": 208,
+            "thickness": 2,
+            "max_density": 0.573333,
+            "avg_density": 0.568333
+          },
+          {
+            "start": 211,
+            "end": 213,
+            "thickness": 3,
+            "max_density": 0.613333,
+            "avg_density": 0.577778
+          },
+          {
+            "start": 216,
+            "end": 216,
+            "thickness": 1,
+            "max_density": 0.566667,
+            "avg_density": 0.566667
+          },
+          {
+            "start": 218,
+            "end": 218,
+            "thickness": 1,
+            "max_density": 0.59,
+            "avg_density": 0.59
+          },
+          {
+            "start": 225,
+            "end": 225,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 239,
+            "end": 239,
+            "thickness": 1,
+            "max_density": 0.55,
+            "avg_density": 0.55
+          },
+          {
+            "start": 267,
+            "end": 268,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.998333
+          },
+          {
+            "start": 275,
+            "end": 276,
+            "thickness": 2,
+            "max_density": 0.623333,
+            "avg_density": 0.608333
+          },
+          {
+            "start": 279,
+            "end": 284,
+            "thickness": 6,
+            "max_density": 0.613333,
+            "avg_density": 0.601667
+          },
+          {
+            "start": 291,
+            "end": 292,
+            "thickness": 2,
+            "max_density": 0.623333,
+            "avg_density": 0.613333
+          },
+          {
+            "start": 296,
+            "end": 297,
+            "thickness": 2,
+            "max_density": 0.583333,
+            "avg_density": 0.583333
+          },
+          {
+            "start": 299,
+            "end": 300,
+            "thickness": 2,
+            "max_density": 0.603333,
+            "avg_density": 0.598333
+          },
+          {
+            "start": 309,
+            "end": 310,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 0.998333
+          }
+        ]
+      },
+      "color_features": {
+        "dominant_color_count": 5,
+        "dominant_colors": [
+          {
+            "rgb_hex": "#101010",
+            "ratio": 0.473166
+          },
+          {
+            "rgb_hex": "#d0d0d0",
+            "ratio": 0.225438
+          },
+          {
+            "rgb_hex": "#f0f0d0",
+            "ratio": 0.086619
+          },
+          {
+            "rgb_hex": "#f0f010",
+            "ratio": 0.06767
+          },
+          {
+            "rgb_hex": "#f0f0f0",
+            "ratio": 0.031909
+          }
+        ]
+      },
+      "layout_signals": [
+        "visible_content_bbox",
+        "grid_or_table_line_structure",
+        "wide_range"
+      ],
+      "feature_notes": "Visual features were detected from the normalized visible capture.",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+        "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "type": "visual_feature_result",
+      "status": "detected",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "capture_id": "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "target_id": "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "sheet": "유하다요_강사료",
+      "cell_range": "S1:AI22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_009_4b225c7f12.png",
+      "quality_status": "usable",
+      "normalization_status": "normalized_visible_range",
+      "view_state_classification": "no_material_view_state_signal",
+      "image_metrics": {
+        "width": 902,
+        "height": 375,
+        "analysis_width": 800,
+        "analysis_height": 332,
+        "visible_pixel_ratio": 0.333852,
+        "whitespace_ratio": 0.666148,
+        "alpha_coverage_ratio": 0.333878,
+        "content_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 902,
+          "height": 374
+        }
+      },
+      "line_features": {
+        "horizontal_line_count": 27,
+        "vertical_line_count": 81,
+        "horizontal_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 6,
+            "end": 9,
+            "thickness": 4,
+            "max_density": 0.62125,
+            "avg_density": 0.615
+          },
+          {
+            "start": 15,
+            "end": 15,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 30,
+            "end": 30,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 36,
+            "end": 39,
+            "thickness": 4,
+            "max_density": 0.6125,
+            "avg_density": 0.606875
+          },
+          {
+            "start": 45,
+            "end": 46,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 60,
+            "end": 61,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 66,
+            "end": 69,
+            "thickness": 4,
+            "max_density": 0.6125,
+            "avg_density": 0.605938
+          },
+          {
+            "start": 75,
+            "end": 76,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 81,
+            "end": 81,
+            "thickness": 1,
+            "max_density": 0.5625,
+            "avg_density": 0.5625
+          },
+          {
+            "start": 85,
+            "end": 86,
+            "thickness": 2,
+            "max_density": 0.59875,
+            "avg_density": 0.585
+          },
+          {
+            "start": 90,
+            "end": 106,
+            "thickness": 17,
+            "max_density": 1.0,
+            "avg_density": 0.955515
+          },
+          {
+            "start": 120,
+            "end": 121,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 135,
+            "end": 136,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 150,
+            "end": 151,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 165,
+            "end": 166,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 180,
+            "end": 181,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 195,
+            "end": 196,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 210,
+            "end": 211,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 225,
+            "end": 226,
+            "thickness": 2,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          }
+        ],
+        "vertical_line_spans": [
+          {
+            "start": 0,
+            "end": 0,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 19,
+            "end": 19,
+            "thickness": 1,
+            "max_density": 0.587349,
+            "avg_density": 0.587349
+          },
+          {
+            "start": 25,
+            "end": 25,
+            "thickness": 1,
+            "max_density": 0.572289,
+            "avg_density": 0.572289
+          },
+          {
+            "start": 32,
+            "end": 32,
+            "thickness": 1,
+            "max_density": 0.587349,
+            "avg_density": 0.587349
+          },
+          {
+            "start": 37,
+            "end": 37,
+            "thickness": 1,
+            "max_density": 0.578313,
+            "avg_density": 0.578313
+          },
+          {
+            "start": 42,
+            "end": 43,
+            "thickness": 2,
+            "max_density": 0.581325,
+            "avg_density": 0.578313
+          },
+          {
+            "start": 47,
+            "end": 47,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 66,
+            "end": 66,
+            "thickness": 1,
+            "max_density": 0.587349,
+            "avg_density": 0.587349
+          },
+          {
+            "start": 72,
+            "end": 72,
+            "thickness": 1,
+            "max_density": 0.587349,
+            "avg_density": 0.587349
+          },
+          {
+            "start": 79,
+            "end": 79,
+            "thickness": 1,
+            "max_density": 0.593373,
+            "avg_density": 0.593373
+          },
+          {
+            "start": 84,
+            "end": 85,
+            "thickness": 2,
+            "max_density": 0.575301,
+            "avg_density": 0.563253
+          },
+          {
+            "start": 88,
+            "end": 88,
+            "thickness": 1,
+            "max_density": 0.554217,
+            "avg_density": 0.554217
+          },
+          {
+            "start": 90,
+            "end": 90,
+            "thickness": 1,
+            "max_density": 0.581325,
+            "avg_density": 0.581325
+          },
+          {
+            "start": 94,
+            "end": 94,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          },
+          {
+            "start": 113,
+            "end": 113,
+            "thickness": 1,
+            "max_density": 0.587349,
+            "avg_density": 0.587349
+          },
+          {
+            "start": 119,
+            "end": 119,
+            "thickness": 1,
+            "max_density": 0.578313,
+            "avg_density": 0.578313
+          },
+          {
+            "start": 126,
+            "end": 126,
+            "thickness": 1,
+            "max_density": 0.587349,
+            "avg_density": 0.587349
+          },
+          {
+            "start": 131,
+            "end": 131,
+            "thickness": 1,
+            "max_density": 0.575301,
+            "avg_density": 0.575301
+          },
+          {
+            "start": 136,
+            "end": 137,
+            "thickness": 2,
+            "max_density": 0.575301,
+            "avg_density": 0.575301
+          },
+          {
+            "start": 141,
+            "end": 141,
+            "thickness": 1,
+            "max_density": 1.0,
+            "avg_density": 1.0
+          }
+        ]
+      },
+      "color_features": {
+        "dominant_color_count": 5,
+        "dominant_colors": [
+          {
+            "rgb_hex": "#101010",
+            "ratio": 0.778349
+          },
+          {
+            "rgb_hex": "#d0d0d0",
+            "ratio": 0.100427
+          },
+          {
+            "rgb_hex": "#f0f0d0",
+            "ratio": 0.049847
+          },
+          {
+            "rgb_hex": "#f0f0f0",
+            "ratio": 0.01386
+          },
+          {
+            "rgb_hex": "#505050",
+            "ratio": 0.012811
+          }
+        ]
+      },
+      "layout_signals": [
+        "visible_content_bbox",
+        "grid_or_table_line_structure",
+        "wide_range"
+      ],
+      "feature_notes": "Visual features were detected from the normalized visible capture.",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+        "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "type": "visual_feature_result",
+      "status": "skipped_view_state_blocked",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "capture_id": "capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "sheet": "포도",
+      "cell_range": "A1:R22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_010_21e4a8d588.png",
+      "quality_status": "recapture_required",
+      "normalization_status": "blocked_by_view_state",
+      "view_state_classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "image_metrics": {
+        "width": null,
+        "height": null,
+        "analysis_width": null,
+        "analysis_height": null,
+        "visible_pixel_ratio": null,
+        "whitespace_ratio": null,
+        "alpha_coverage_ratio": null,
+        "content_bbox": null
+      },
+      "line_features": {
+        "horizontal_line_count": 0,
+        "vertical_line_count": 0,
+        "horizontal_line_spans": [],
+        "vertical_line_spans": []
+      },
+      "color_features": {
+        "dominant_color_count": 0,
+        "dominant_colors": []
+      },
+      "layout_signals": [
+        "sparse_visible_content",
+        "wide_range"
+      ],
+      "feature_notes": "Skipped because hidden/filter view-state blocks visual absence claims for this capture.",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+        "capture_candidate_capture_target_포도_cell_region_1_same_window_control_01"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "type": "visual_feature_result",
+      "status": "skipped_view_state_blocked",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "capture_id": "capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "sheet": "포도",
+      "cell_range": "A1:R80",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_011_0129a6f7b9.png",
+      "quality_status": "recapture_required",
+      "normalization_status": "blocked_by_view_state",
+      "view_state_classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "image_metrics": {
+        "width": null,
+        "height": null,
+        "analysis_width": null,
+        "analysis_height": null,
+        "visible_pixel_ratio": null,
+        "whitespace_ratio": null,
+        "alpha_coverage_ratio": null,
+        "content_bbox": null
+      },
+      "line_features": {
+        "horizontal_line_count": 0,
+        "vertical_line_count": 0,
+        "horizontal_line_spans": [],
+        "vertical_line_spans": []
+      },
+      "color_features": {
+        "dominant_color_count": 0,
+        "dominant_colors": []
+      },
+      "layout_signals": [
+        "sparse_visible_content",
+        "wide_range"
+      ],
+      "feature_notes": "Skipped because hidden/filter view-state blocks visual absence claims for this capture.",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+        "capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01"
+      ]
+    },
+    {
+      "id": "features_coord_quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "type": "visual_feature_result",
+      "status": "skipped_view_state_blocked",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "capture_id": "capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "sheet": "포도",
+      "cell_range": "A21:R100",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_012_211fe53139.png",
+      "quality_status": "recapture_required",
+      "normalization_status": "blocked_by_view_state",
+      "view_state_classification": "filtered_or_hidden_rows_explain_capture_failure",
+      "image_metrics": {
+        "width": null,
+        "height": null,
+        "analysis_width": null,
+        "analysis_height": null,
+        "visible_pixel_ratio": null,
+        "whitespace_ratio": null,
+        "alpha_coverage_ratio": null,
+        "content_bbox": null
+      },
+      "line_features": {
+        "horizontal_line_count": 0,
+        "vertical_line_count": 0,
+        "horizontal_line_spans": [],
+        "vertical_line_spans": []
+      },
+      "color_features": {
+        "dominant_color_count": 0,
+        "dominant_colors": []
+      },
+      "layout_signals": [
+        "sparse_visible_content",
+        "wide_range"
+      ],
+      "feature_notes": "Skipped because hidden/filter view-state blocks visual absence claims for this capture.",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+        "capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01"
+      ]
+    }
+  ],
+  "gate_results": [
+    {
+      "id": "gate_features_coord_quality_capture_target_결제_수수료_cell_region_1",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_target_결제_수수료_cell_region_1",
+      "mapping_id": "coord_quality_capture_target_결제_수수료_cell_region_1",
+      "capture_id": "capture_target_결제_수수료_cell_region_1",
+      "target_id": "target_결제_수수료_cell_region_1",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "passed",
+      "feature_status": "detected",
+      "evidence_refs": [
+        "coord_quality_capture_target_결제_수수료_cell_region_1",
+        "capture_target_결제_수수료_cell_region_1"
+      ],
+      "notes": "Visual features were detected from the normalized visible capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_target_결제상세_cell_region_1",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_target_결제상세_cell_region_1",
+      "mapping_id": "coord_quality_capture_target_결제상세_cell_region_1",
+      "capture_id": "capture_target_결제상세_cell_region_1",
+      "target_id": "target_결제상세_cell_region_1",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "review_required",
+      "feature_status": "skipped_quality_review",
+      "evidence_refs": [
+        "coord_quality_capture_target_결제상세_cell_region_1",
+        "capture_target_결제상세_cell_region_1"
+      ],
+      "notes": "Skipped because capture quality requires review before visual feature gates trust it."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_target_당월산식_cell_region_1",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_target_당월산식_cell_region_1",
+      "mapping_id": "coord_quality_capture_target_당월산식_cell_region_1",
+      "capture_id": "capture_target_당월산식_cell_region_1",
+      "target_id": "target_당월산식_cell_region_1",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "blocked",
+      "feature_status": "skipped_view_state_blocked",
+      "evidence_refs": [
+        "coord_quality_capture_target_당월산식_cell_region_1",
+        "capture_target_당월산식_cell_region_1"
+      ],
+      "notes": "Skipped because hidden/filter view-state blocks visual absence claims for this capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_target_리스픽_cell_region_2",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_target_리스픽_cell_region_2",
+      "mapping_id": "coord_quality_capture_target_리스픽_cell_region_2",
+      "capture_id": "capture_target_리스픽_cell_region_2",
+      "target_id": "target_리스픽_cell_region_2",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "passed",
+      "feature_status": "detected",
+      "evidence_refs": [
+        "coord_quality_capture_target_리스픽_cell_region_2",
+        "capture_target_리스픽_cell_region_2"
+      ],
+      "notes": "Visual features were detected from the normalized visible capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_target_매출_cell_region_1",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_target_매출_cell_region_1",
+      "mapping_id": "coord_quality_capture_target_매출_cell_region_1",
+      "capture_id": "capture_target_매출_cell_region_1",
+      "target_id": "target_매출_cell_region_1",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "passed",
+      "feature_status": "detected",
+      "evidence_refs": [
+        "coord_quality_capture_target_매출_cell_region_1",
+        "capture_target_매출_cell_region_1"
+      ],
+      "notes": "Visual features were detected from the normalized visible capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_target_수익인식60일_cell_region_1",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_target_수익인식60일_cell_region_1",
+      "mapping_id": "coord_quality_capture_target_수익인식60일_cell_region_1",
+      "capture_id": "capture_target_수익인식60일_cell_region_1",
+      "target_id": "target_수익인식60일_cell_region_1",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "review_required",
+      "feature_status": "detected_with_view_state_warning",
+      "evidence_refs": [
+        "coord_quality_capture_target_수익인식60일_cell_region_1",
+        "capture_target_수익인식60일_cell_region_1"
+      ],
+      "notes": "Visual features were detected, but view-state affects part of the range."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_target_수익인식60일_강사료_cell_region_1",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_target_수익인식60일_강사료_cell_region_1",
+      "mapping_id": "coord_quality_capture_target_수익인식60일_강사료_cell_region_1",
+      "capture_id": "capture_target_수익인식60일_강사료_cell_region_1",
+      "target_id": "target_수익인식60일_강사료_cell_region_1",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "passed",
+      "feature_status": "detected",
+      "evidence_refs": [
+        "coord_quality_capture_target_수익인식60일_강사료_cell_region_1",
+        "capture_target_수익인식60일_강사료_cell_region_1"
+      ],
+      "notes": "Visual features were detected from the normalized visible capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_target_얼리버드_cell_region_1",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_target_얼리버드_cell_region_1",
+      "mapping_id": "coord_quality_capture_target_얼리버드_cell_region_1",
+      "capture_id": "capture_target_얼리버드_cell_region_1",
+      "target_id": "target_얼리버드_cell_region_1",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "passed",
+      "feature_status": "detected",
+      "evidence_refs": [
+        "coord_quality_capture_target_얼리버드_cell_region_1",
+        "capture_target_얼리버드_cell_region_1"
+      ],
+      "notes": "Visual features were detected from the normalized visible capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_target_유하다요_cell_region_1",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_target_유하다요_cell_region_1",
+      "mapping_id": "coord_quality_capture_target_유하다요_cell_region_1",
+      "capture_id": "capture_target_유하다요_cell_region_1",
+      "target_id": "target_유하다요_cell_region_1",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "passed",
+      "feature_status": "detected",
+      "evidence_refs": [
+        "coord_quality_capture_target_유하다요_cell_region_1",
+        "capture_target_유하다요_cell_region_1"
+      ],
+      "notes": "Visual features were detected from the normalized visible capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_target_유하다요_강사료_cell_region_1",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_target_유하다요_강사료_cell_region_1",
+      "mapping_id": "coord_quality_capture_target_유하다요_강사료_cell_region_1",
+      "capture_id": "capture_target_유하다요_강사료_cell_region_1",
+      "target_id": "target_유하다요_강사료_cell_region_1",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "review_required",
+      "feature_status": "skipped_quality_review",
+      "evidence_refs": [
+        "coord_quality_capture_target_유하다요_강사료_cell_region_1",
+        "capture_target_유하다요_강사료_cell_region_1"
+      ],
+      "notes": "Skipped because capture quality requires review before visual feature gates trust it."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_target_정가표_cell_region_1",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_target_정가표_cell_region_1",
+      "mapping_id": "coord_quality_capture_target_정가표_cell_region_1",
+      "capture_id": "capture_target_정가표_cell_region_1",
+      "target_id": "target_정가표_cell_region_1",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "passed",
+      "feature_status": "detected",
+      "evidence_refs": [
+        "coord_quality_capture_target_정가표_cell_region_1",
+        "capture_target_정가표_cell_region_1"
+      ],
+      "notes": "Visual features were detected from the normalized visible capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_target_포도_cell_region_1",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_target_포도_cell_region_1",
+      "mapping_id": "coord_quality_capture_target_포도_cell_region_1",
+      "capture_id": "capture_target_포도_cell_region_1",
+      "target_id": "target_포도_cell_region_1",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "blocked",
+      "feature_status": "skipped_view_state_blocked",
+      "evidence_refs": [
+        "coord_quality_capture_target_포도_cell_region_1",
+        "capture_target_포도_cell_region_1"
+      ],
+      "notes": "Skipped because hidden/filter view-state blocks visual absence claims for this capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "capture_id": "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "passed",
+      "feature_status": "detected",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01"
+      ],
+      "notes": "Visual features were detected from the normalized visible capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "capture_id": "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "passed",
+      "feature_status": "detected",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02"
+      ],
+      "notes": "Visual features were detected from the normalized visible capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "capture_id": "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "passed",
+      "feature_status": "detected",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03"
+      ],
+      "notes": "Visual features were detected from the normalized visible capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "blocked",
+      "feature_status": "skipped_view_state_blocked",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+        "capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01"
+      ],
+      "notes": "Skipped because hidden/filter view-state blocks visual absence claims for this capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "blocked",
+      "feature_status": "skipped_view_state_blocked",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01"
+      ],
+      "notes": "Skipped because hidden/filter view-state blocks visual absence claims for this capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "blocked",
+      "feature_status": "skipped_view_state_blocked",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02"
+      ],
+      "notes": "Skipped because hidden/filter view-state blocks visual absence claims for this capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "blocked",
+      "feature_status": "skipped_view_state_blocked",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03"
+      ],
+      "notes": "Skipped because hidden/filter view-state blocks visual absence claims for this capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "capture_id": "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "target_id": "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "passed",
+      "feature_status": "detected",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+        "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01"
+      ],
+      "notes": "Visual features were detected from the normalized visible capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "capture_id": "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "target_id": "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "passed",
+      "feature_status": "detected",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+        "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02"
+      ],
+      "notes": "Visual features were detected from the normalized visible capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "capture_id": "capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "blocked",
+      "feature_status": "skipped_view_state_blocked",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+        "capture_candidate_capture_target_포도_cell_region_1_same_window_control_01"
+      ],
+      "notes": "Skipped because hidden/filter view-state blocks visual absence claims for this capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "capture_id": "capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "blocked",
+      "feature_status": "skipped_view_state_blocked",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+        "capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01"
+      ],
+      "notes": "Skipped because hidden/filter view-state blocks visual absence claims for this capture."
+    },
+    {
+      "id": "gate_features_coord_quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "type": "visual_feature_gate_result",
+      "feature_result_id": "features_coord_quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "mapping_id": "coord_quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "capture_id": "capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "gate_type": "capture_visual_feature_detection",
+      "status": "blocked",
+      "feature_status": "skipped_view_state_blocked",
+      "evidence_refs": [
+        "coord_quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+        "capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01"
+      ],
+      "notes": "Skipped because hidden/filter view-state blocks visual absence claims for this capture."
+    }
+  ],
+  "summary": {
+    "feature_result_count": 24,
+    "detected_count": 12,
+    "detected_with_view_state_warning_count": 1,
+    "no_visible_content_detected_count": 0,
+    "skipped_quality_review_count": 2,
+    "skipped_view_state_blocked_count": 9,
+    "skipped_unusable_count": 0,
+    "not_available_count": 0,
+    "grid_like_result_count": 13,
+    "passed_gate_count": 12,
+    "review_gate_count": 3,
+    "blocked_gate_count": 9
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "Visual feature detection extracts deterministic image features for later gates. It does not assign document semantics."
+    },
+    {
+      "level": "warning",
+      "message": "9 mappings were skipped because hidden/filter view-state blocks visual absence claims."
+    }
+  ]
+}

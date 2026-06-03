@@ -1,0 +1,32 @@
+#!/bin/sh
+set -u
+
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+HOST_ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)
+REPO_ROOT=$(CDPATH= cd -- "$HOST_ROOT/.." && pwd)
+HOST_SCRIPT="$HOST_ROOT/src/host.py"
+LOG_DIR="${SHEETS_BRIDGE_NATIVE_HOST_LOG_DIR:-$REPO_ROOT/review-packages/sheets-bridge/native-host}"
+LOG_FILE="$LOG_DIR/native-host.log"
+
+mkdir -p "$LOG_DIR" 2>/dev/null || true
+
+if [ -x /usr/bin/python3 ]; then
+  PYTHON_BIN=/usr/bin/python3
+elif [ -x /opt/homebrew/bin/python3 ]; then
+  PYTHON_BIN=/opt/homebrew/bin/python3
+else
+  PYTHON_BIN=python3
+fi
+
+{
+  printf '%s %s\n' "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" "start python=$PYTHON_BIN"
+} >>"$LOG_FILE" 2>/dev/null || true
+
+"$PYTHON_BIN" "$HOST_SCRIPT" 2>>"$LOG_FILE"
+STATUS=$?
+
+{
+  printf '%s %s\n' "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" "exit status=$STATUS"
+} >>"$LOG_FILE" 2>/dev/null || true
+
+exit "$STATUS"

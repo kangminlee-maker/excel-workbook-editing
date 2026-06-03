@@ -1,0 +1,2260 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-02T03:07:05.056511Z",
+  "source": {
+    "spreadsheet_id": "1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60",
+    "title": "[Day 1] 1.0 (from 20250707)",
+    "source_artifacts": {
+      "live_block_candidates": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/live-block-candidates.json",
+      "bounded_window_sample": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/live-bounded-window-sample.json"
+    }
+  },
+  "authority": {
+    "source_document": "live_google_sheet",
+    "input_authority": "candidate_artifact_plus_broker_bounded_sample",
+    "tuning_status": "tuning_packet_not_accepted_graph_claim",
+    "formula_result_authority": "not_established"
+  },
+  "sampled_regions": [
+    {
+      "id": "sampled_region_fc_data_inspect_values_window_001",
+      "operation": "inspect.values_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_external_source_region",
+      "bounds": {
+        "start_row": 1,
+        "end_row": 2,
+        "start_column": 1,
+        "end_column": 18,
+        "a1_range": "A1:R2"
+      },
+      "metrics": {
+        "row_count": 2,
+        "non_empty_cell_count": 6,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 1,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R1: https://docs.google.com/spreadsheets/d/1CPfJoD6VlChrev00xmagW6qJ2x7eNoJnlQeKe9AMYrs/edit?gid=1221520043#gid=1221520043 | [FC] 콘텐츠 사업 리더 Weekly (25년11월24일-)",
+        "R2: 시트 | 지표 | 기준 월요일(자동) | 2026. 6. 1"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "add_external_source_candidate"
+    },
+    {
+      "id": "sampled_region_fc_data_inspect_values_window_002",
+      "operation": "inspect.values_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_display_region",
+      "bounds": {
+        "start_row": 4,
+        "end_row": 5,
+        "start_column": 1,
+        "end_column": 26,
+        "a1_range": "A4:Z5"
+      },
+      "metrics": {
+        "row_count": 2,
+        "non_empty_cell_count": 11,
+        "formula_cell_count": 0,
+        "error_display_count": 1,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R4: FC 부문 내부 목표에 따른 숫자 | 데이원 차원 목표에 따른 숫자",
+        "R5: #REF! | 1월 | 2월 | 3월 | 4월 | 5월 | 6월 | 7월"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "annotate_error_state"
+    },
+    {
+      "id": "sampled_region_fc_data_inspect_values_window_003",
+      "operation": "inspect.values_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_table_region",
+      "bounds": {
+        "start_row": 32,
+        "end_row": 32,
+        "start_column": 19,
+        "end_column": 26,
+        "a1_range": "S32:Z32"
+      },
+      "metrics": {
+        "row_count": 1,
+        "non_empty_cell_count": 8,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 8
+      },
+      "preview": [
+        "R32: 1,875,000,000 | 1,853,758,729 | 2,035,885,960 | 1,947,454,993 | 1,947,454,993 | 2,072,454,993 | 2,125,000,000 | 2,000,000,000"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "extend_table_candidate_evidence"
+    },
+    {
+      "id": "sampled_region_fc_data_inspect_values_window_004",
+      "operation": "inspect.values_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_table_region",
+      "bounds": {
+        "start_row": 34,
+        "end_row": 34,
+        "start_column": 19,
+        "end_column": 26,
+        "a1_range": "S34:Z34"
+      },
+      "metrics": {
+        "row_count": 1,
+        "non_empty_cell_count": 8,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 8
+      },
+      "preview": [
+        "R34: 0.00% | 0.00% | 0.00% | 0.00% | 0.00% | 0.00% | 0.00% | 0.00%"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "extend_table_candidate_evidence"
+    },
+    {
+      "id": "sampled_region_fc_data_inspect_values_window_005",
+      "operation": "inspect.values_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_table_region",
+      "bounds": {
+        "start_row": 37,
+        "end_row": 38,
+        "start_column": 19,
+        "end_column": 26,
+        "a1_range": "S37:Z38"
+      },
+      "metrics": {
+        "row_count": 2,
+        "non_empty_cell_count": 16,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 16
+      },
+      "preview": [
+        "R37: 1,875,000,000 | 1,853,758,729 | 2,035,885,960 | 1,947,454,993 | 1,947,454,993 | 2,072,454,993 | 2,125,000,000 | 2,000,000,000",
+        "R38: 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "extend_table_candidate_evidence"
+    },
+    {
+      "id": "sampled_region_fc_data_inspect_values_window_006",
+      "operation": "inspect.values_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_table_region",
+      "bounds": {
+        "start_row": 44,
+        "end_row": 44,
+        "start_column": 19,
+        "end_column": 26,
+        "a1_range": "S44:Z44"
+      },
+      "metrics": {
+        "row_count": 1,
+        "non_empty_cell_count": 8,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 8
+      },
+      "preview": [
+        "R44: 500,908,604 | 483,162,647 | 528,412,003 | 485,835,034 | 494,415,723 | 497,121,816 | 533,628,233 | 521,594,755"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "extend_table_candidate_evidence"
+    },
+    {
+      "id": "sampled_region_fc_data_inspect_values_window_007",
+      "operation": "inspect.values_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_table_region",
+      "bounds": {
+        "start_row": 53,
+        "end_row": 53,
+        "start_column": 19,
+        "end_column": 26,
+        "a1_range": "S53:Z53"
+      },
+      "metrics": {
+        "row_count": 1,
+        "non_empty_cell_count": 8,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 8
+      },
+      "preview": [
+        "R53: 1,042,500,000 | 1,053,640,320 | 1,174,084,374 | 1,074,780,008 | 1,074,780,008 | 1,144,280,008 | 1,181,500,000 | 1,112,000,000"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "extend_table_candidate_evidence"
+    },
+    {
+      "id": "sampled_region_fc_data_inspect_values_window_008",
+      "operation": "inspect.values_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_table_region",
+      "bounds": {
+        "start_row": 55,
+        "end_row": 58,
+        "start_column": 18,
+        "end_column": 26,
+        "a1_range": "R55:Z58"
+      },
+      "metrics": {
+        "row_count": 4,
+        "non_empty_cell_count": 33,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 32
+      },
+      "preview": [
+        "R55: -1,042,500,000 | -1,053,640,320 | -1,174,084,374 | -1,074,780,008 | -1,074,780,008 | -1,144,280,008 | -1,181,500,000 | -1,112,000,000",
+        "R56: 63% | 63% | 63% | 63% | 63% | 63% | 63% | 63%",
+        "R57: 0.00% | 0.00% | 0.00% | 0.00% | 0.00% | 0.00% | 0.00% | 0.00%",
+        "R58: 25' 마케팅비 총합 (예산) | 416,273,338 | 426,455,129 | 466,274,563 | 428,806,829 | 436,357,836 | 438,739,198 | 470,864,845"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "extend_table_candidate_evidence"
+    },
+    {
+      "id": "sampled_region_fc_data_inspect_values_window_009",
+      "operation": "inspect.values_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_table_region",
+      "bounds": {
+        "start_row": 71,
+        "end_row": 74,
+        "start_column": 18,
+        "end_column": 21,
+        "a1_range": "R71:U74"
+      },
+      "metrics": {
+        "row_count": 4,
+        "non_empty_cell_count": 13,
+        "formula_cell_count": 0,
+        "error_display_count": 1,
+        "url_cell_count": 0,
+        "number_like_cell_count": 5
+      },
+      "preview": [
+        "R71: 월 순매출 목표액 | Day | 월 진행률",
+        "R72: 2,072,454,993 | 0 | 0.00%",
+        "R73: 진행률에 따른 목표액 | 진행 순매출액 | 순매출 목표 대비 (진행) | 순매출 목표 대비 (월)",
+        "R74: 0 | #DIV/0! | 0.00%"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "extend_table_candidate_evidence"
+    },
+    {
+      "id": "sampled_region_fc_data_inspect_values_window_010",
+      "operation": "inspect.values_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_table_region",
+      "bounds": {
+        "start_row": 76,
+        "end_row": 79,
+        "start_column": 18,
+        "end_column": 21,
+        "a1_range": "R76:U79"
+      },
+      "metrics": {
+        "row_count": 4,
+        "non_empty_cell_count": 13,
+        "formula_cell_count": 0,
+        "error_display_count": 1,
+        "url_cell_count": 0,
+        "number_like_cell_count": 5
+      },
+      "preview": [
+        "R76: 월 공헌이익 목표액 | Day | 월 진행률",
+        "R77: 1,144,280,008 | 0 | 0.00%",
+        "R78: 진행률에 따른 목표액 | 진행 공헌이익액 | 공헌이익 목표 대비 (진행) | 공헌이익 목표 대비 (월)",
+        "R79: 0 | #DIV/0! | 0.00%"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "extend_table_candidate_evidence"
+    },
+    {
+      "id": "sampled_region_26_0601_inspect_values_window_001",
+      "operation": "inspect.values_window",
+      "sheet": "26_0601",
+      "range": "'26_0601'!A81:Z160",
+      "subtype": "sampled_table_region",
+      "bounds": {
+        "start_row": 81,
+        "end_row": 99,
+        "start_column": 6,
+        "end_column": 10,
+        "a1_range": "F81:J99"
+      },
+      "metrics": {
+        "row_count": 19,
+        "non_empty_cell_count": 95,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 19
+      },
+      "preview": [
+        "R81: 261669 | 랄프톤 1위 개발자가 알려주는 실전 하네스 엔지니어링 A to Z | 2026. 4. 20 | est. 42,091,704 | - 최근 주목받는 하네스 엔지니어링 키워드의 케이스 스터디 기반으로 풀었지만 평준한 성과",
+        "R82: 263064 | The Camp 오프라인 완주반 1기 | 2026. 4. 20 | est. 20,584,900 | - 하네스 엔지니어링으로 제작한 완주반으로 첫주 좋은 성과",
+        "R83: 263067 | [오프라인 2일] OpenClaw X Claude Code 기반 멀티 에이전트와 협업하는 실전 AX 워크숍 | 2026. 4. 20 | est. 19,814,141 | - SNS에서 주목 받았던 GPTers AX 사례의 주인공의 스프린트로 좋은 성과",
+        "R84: 263046 | [오프라인] 3주 완성 하네스 엔지니어링 : \"1인 팀 0회 터치\" 랄프톤 우승자에게 배우는 완벽한 하네스 | 2026. 4. 17 | est. 36,579,143 | - 하네스 엔지니어링을 오프라인 고가로 좋은 성적 기록",
+        "R85: 260595 | 나노바나나 인물 | 2026. 4. 13 | est. 15,855,921 | - AI 인물에만 포커스한 시도 광고 집행 후 성과가 개선되고 있어서 더 지켜볼 필요 있음",
+        "R86: 262837 | 트렌디한 영상 편집 오뜨케해?: 45종 예제와 400종 템플릿으로 완성하기 | 2026. 4. 13 | est. 13,620,045 | - AI가 아닌 인플루언시와 영상 편집에 집중한 가의"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:'26_0601'!A81:Z160"
+      ],
+      "tuning_effect": "extend_table_candidate_evidence"
+    },
+    {
+      "id": "sampled_region_26_0601_inspect_values_window_002",
+      "operation": "inspect.values_window",
+      "sheet": "26_0601",
+      "range": "'26_0601'!A81:Z160",
+      "subtype": "sampled_display_region",
+      "bounds": {
+        "start_row": 101,
+        "end_row": 104,
+        "start_column": 2,
+        "end_column": 2,
+        "a1_range": "B101:B104"
+      },
+      "metrics": {
+        "row_count": 4,
+        "non_empty_cell_count": 4,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R101: D. 마케팅",
+        "R102: Comment",
+        "R103: - 광고 소재 외주 제작 프로세스 삭제 (5월이 마지막), 상세페이지 제작도 6월이 마지막",
+        "R104: - 자체적으로 할 수있는 내부 실력 더 갖추는 방향으로 진행"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:'26_0601'!A81:Z160"
+      ],
+      "tuning_effect": "add_display_evidence"
+    },
+    {
+      "id": "sampled_region_26_0601_inspect_values_window_003",
+      "operation": "inspect.values_window",
+      "sheet": "26_0601",
+      "range": "'26_0601'!A81:Z160",
+      "subtype": "sampled_table_region",
+      "bounds": {
+        "start_row": 112,
+        "end_row": 116,
+        "start_column": 2,
+        "end_column": 14,
+        "a1_range": "B112:N116"
+      },
+      "metrics": {
+        "row_count": 5,
+        "non_empty_cell_count": 29,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 16
+      },
+      "preview": [
+        "R112: E. 인원 변경",
+        "R113: Comment | 표15 | FC HeadCount",
+        "R114: 리더 | 기획자 | 마케터 | 영상 | APM | CX | 서비스전략 | 합",
+        "R115: 2026. 5. 25 | 7 | 18 | 22 | 3 | 2 | 4 | 0",
+        "R116: 2026. 6. 1 | 7 | 18 | 22 | 3 | 2 | 4 | 0"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:'26_0601'!A81:Z160"
+      ],
+      "tuning_effect": "extend_table_candidate_evidence"
+    },
+    {
+      "id": "sampled_region_26_0601_inspect_values_window_004",
+      "operation": "inspect.values_window",
+      "sheet": "26_0601",
+      "range": "'26_0601'!A81:Z160",
+      "subtype": "sampled_display_region",
+      "bounds": {
+        "start_row": 122,
+        "end_row": 122,
+        "start_column": 2,
+        "end_column": 2,
+        "a1_range": "B122"
+      },
+      "metrics": {
+        "row_count": 1,
+        "non_empty_cell_count": 1,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R122: [콜로소] - 3분"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:'26_0601'!A81:Z160"
+      ],
+      "tuning_effect": "add_display_evidence"
+    },
+    {
+      "id": "sampled_region_26_0601_inspect_values_window_005",
+      "operation": "inspect.values_window",
+      "sheet": "26_0601",
+      "range": "'26_0601'!A81:Z160",
+      "subtype": "sampled_table_region",
+      "bounds": {
+        "start_row": 124,
+        "end_row": 127,
+        "start_column": 2,
+        "end_column": 13,
+        "a1_range": "B124:M127"
+      },
+      "metrics": {
+        "row_count": 4,
+        "non_empty_cell_count": 27,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 11
+      },
+      "preview": [
+        "R124: 1. 전체실적 (YJ)",
+        "R125: 5월 현황 | 기준 일정 | 2026. 5. 31",
+        "R126: 결제액 목표 | 누적 결제액 | 진척률 | 광고비 목표 | 누적 광고비 | 진척률 | CAC | 이익 목표",
+        "R127: 2,361,309,334 | 56,967,690 | 2.41% | 12,532,892 | 359,588,491 | 2869.16% | 631.21% | 18.62%"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:'26_0601'!A81:Z160"
+      ],
+      "tuning_effect": "extend_table_candidate_evidence"
+    },
+    {
+      "id": "sampled_region_26_0601_inspect_values_window_006",
+      "operation": "inspect.values_window",
+      "sheet": "26_0601",
+      "range": "'26_0601'!A81:Z160",
+      "subtype": "sampled_table_region",
+      "bounds": {
+        "start_row": 129,
+        "end_row": 134,
+        "start_column": 2,
+        "end_column": 6,
+        "a1_range": "B129:F134"
+      },
+      "metrics": {
+        "row_count": 6,
+        "non_empty_cell_count": 21,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 13
+      },
+      "preview": [
+        "R129: 주간 현황",
+        "R130: 총결제액(원) | 광고비 | 광고비 CAC%",
+        "R131: 5/25~5/31 | 410,729,615 | 51,775,933 | 12.61% | -5.68%",
+        "R132: 5/18~5/24 | 435,450,905 | 90,277,821 | 20.73%",
+        "R133: 5/11~5/17 | 530,895,746 | 82,723,186 | 15.58%",
+        "R134: 5/4~5/10 | 427,320,943 | 71,221,708 | 16.67%"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:'26_0601'!A81:Z160"
+      ],
+      "tuning_effect": "extend_table_candidate_evidence"
+    },
+    {
+      "id": "sampled_region_26_0601_inspect_values_window_007",
+      "operation": "inspect.values_window",
+      "sheet": "26_0601",
+      "range": "'26_0601'!A81:Z160",
+      "subtype": "sampled_display_region",
+      "bounds": {
+        "start_row": 136,
+        "end_row": 145,
+        "start_column": 2,
+        "end_column": 2,
+        "a1_range": "B136:B145"
+      },
+      "metrics": {
+        "row_count": 10,
+        "non_empty_cell_count": 10,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R136: Comment (주간 실적 및 집중영역)",
+        "R137: - 22주차 주간 매출 총 4.1억으로 전주 대비 -5% 감소. 5월 최종 월매출은 기대했던것에 비해선 19.5억으로 다소 아쉽게 마무리",
+        "R138: - 월간 최종 매출 자체는 26년중 가장 우수한 성과이나, 결제액 kpi는 약 3억가량 못미친 달성률 83%로 마감",
+        "R139: - 주간 실적이 소폭 빠진데 있어선 얼리버드의 주간 매출 하락이 가장 큰 영향. 2주차 주간매출 1.3억 피크를 찍고 이후 주간별로 7.9천 > 5.4천으로 점점 빠지며 월 마감함",
+        "R140: - 마지막주차엔 21주까지도 지속적으로 클래스를 오픈하였으나 크게 대박나는 과정이 없어 전체 얼리버드 실적 하향. (이상화 80만원, Kevin 140만원, 리요리요 110만원, 세렌뷰트 300만원)",
+        "R141: - 롱테일 매출은 3주차 환불보장제로 3.9억 피크를 찍고 그 다음 주간 매출에서 -4천만원 정도 빠졌으나 감사제 영향으로 매출 빠짐 저지되며 큰 낙폭 없이 주간 진행"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:'26_0601'!A81:Z160"
+      ],
+      "tuning_effect": "add_display_evidence"
+    },
+    {
+      "id": "sampled_region_26_0601_inspect_values_window_008",
+      "operation": "inspect.values_window",
+      "sheet": "26_0601",
+      "range": "'26_0601'!A81:Z160",
+      "subtype": "sampled_table_region",
+      "bounds": {
+        "start_row": 148,
+        "end_row": 160,
+        "start_column": 2,
+        "end_column": 8,
+        "a1_range": "B148:H160"
+      },
+      "metrics": {
+        "row_count": 13,
+        "non_empty_cell_count": 59,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 46
+      },
+      "preview": [
+        "R148: 2. 기획 (SJ)",
+        "R149: 신규 콘텐츠 overview",
+        "R150: 주차별 신규 콘텐츠 성과",
+        "R151: 주차 | 주자별 매출 | 콘텐츠 발행량 | 티어",
+        "R152: 주자별 전체 매출 | 주차별 신규 콘텐츠 매출 | 주차별 콘텐츠 발행량 | 1Tier(0.1억 ▲) | 2Tier(0.05억 ▲) | 3Tier(0.05억 ▼)",
+        "R153: 1 | 237,452,904 | 6,840,000 | 2 | 2"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:'26_0601'!A81:Z160"
+      ],
+      "tuning_effect": "extend_table_candidate_evidence"
+    },
+    {
+      "id": "sampled_region_26_0525_inspect_values_window_001",
+      "operation": "inspect.values_window",
+      "sheet": "26_0525",
+      "range": "'26_0525'!A81:Z160",
+      "subtype": "sampled_display_region",
+      "bounds": {
+        "start_row": 87,
+        "end_row": 87,
+        "start_column": 6,
+        "end_column": 6,
+        "a1_range": "F87"
+      },
+      "metrics": {
+        "row_count": 1,
+        "non_empty_cell_count": 1,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R87: ⎿ 강사료"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:'26_0525'!A81:Z160"
+      ],
+      "tuning_effect": "add_display_evidence"
+    },
+    {
+      "id": "sampled_region_26_0525_inspect_values_window_002",
+      "operation": "inspect.values_window",
+      "sheet": "26_0525",
+      "range": "'26_0525'!A81:Z160",
+      "subtype": "sampled_display_region",
+      "bounds": {
+        "start_row": 99,
+        "end_row": 99,
+        "start_column": 6,
+        "end_column": 6,
+        "a1_range": "F99"
+      },
+      "metrics": {
+        "row_count": 1,
+        "non_empty_cell_count": 1,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R99: ⎿ 마케팅비"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:'26_0525'!A81:Z160"
+      ],
+      "tuning_effect": "add_display_evidence"
+    },
+    {
+      "id": "sampled_region_26_0525_inspect_values_window_003",
+      "operation": "inspect.values_window",
+      "sheet": "26_0525",
+      "range": "'26_0525'!A81:Z160",
+      "subtype": "sampled_table_region",
+      "bounds": {
+        "start_row": 114,
+        "end_row": 160,
+        "start_column": 2,
+        "end_column": 17,
+        "a1_range": "B114:Q160"
+      },
+      "metrics": {
+        "row_count": 47,
+        "non_empty_cell_count": 325,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 132
+      },
+      "preview": [
+        "R114: D. 최근 신규 오픈 코스 (최근 9주)",
+        "R115: Comment | 표7~8 | 신규 코스",
+        "R116: - AI에 집중할 경우, 포맷을 다양하게 할 수는 있으나 결제액 증분은 다른 차원의 이야기 | 표11 | 신규 코스 개수 및 인당 생산성 | Course id | Course Title | 런칭일 | 9주 매출 예상치 | 광고비 | CAC",
+        "R117: - 주제가 갖는 수요의 크기가 먼저고, 그 이후에 온/오프라인 포맷으로 나뉨 | AI | 261599 | 인디게임 AI - 꼬꼬질라 | 2026. 5. 18 | est. 29,628,564 | 0 | 0.00%",
+        "R118: - 주제가 갖는 수요의 크기에 대한 기대치를 얼마나 갖는지가 중요 | 263238 | LLM wiki + Claude code + Obsidian | 2026. 5. 18 | est. 146,055,018 | 0 | 0.00% | - 최초최신이면서 구성이 좋았음. 초반 마케팅 빌드업도 긍정적",
+        "R119: - 조금은 니치한 시장(ex. 게임)이라도 꾸준히 진행하여 모든 수요 갖고오는ㅂ ㅏㅇ향 | 263601 | 클로드 디자인 | 2026. 5. 18 | est. 21,463,442 | 0 | 0.00% | - 최초최신에 부합하는 기획 방향. 비록 매출이 낮아도 이런류의 기획 구준히 예정"
+      ],
+      "evidence": [
+        "broker_window:inspect.values_window:'26_0525'!A81:Z160"
+      ],
+      "tuning_effect": "extend_table_candidate_evidence"
+    },
+    {
+      "id": "sampled_region_fc_data_inspect_formula_window_001",
+      "operation": "inspect.formula_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 1,
+        "end_row": 2,
+        "start_column": 1,
+        "end_column": 18,
+        "a1_range": "A1:R2"
+      },
+      "metrics": {
+        "row_count": 2,
+        "non_empty_cell_count": 6,
+        "formula_cell_count": 1,
+        "error_display_count": 0,
+        "url_cell_count": 1,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R1: https://docs.google.com/spreadsheets/d/1CPfJoD6VlChrev00xmagW6qJ2x7eNoJnlQeKe9AMYrs/edit?gid=1221520043#gid=1221520043 | [FC] 콘텐츠 사업 리더 Weekly (25년11월24일-)",
+        "R2: 시트 | 지표 | 기준 월요일(자동) | =if(WEEKDAY(today(),2)=1,today(),if(WEEKDAY(today(),2)=2,today()-1,if(WEEKDAY(today(),2)=3,today()-2,if(WEEKDAY(today(),2)=4,today()-3,if(WEEKDAY(today(),2)=5,today()-4,if(WEEKDAY(today(),2)=6,today()-5,if(WEEKDAY(today(),2)=7,today()-6,\"에러남\")))))))"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_fc_data_inspect_formula_window_002",
+      "operation": "inspect.formula_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 4,
+        "end_row": 6,
+        "start_column": 1,
+        "end_column": 26,
+        "a1_range": "A4:Z6"
+      },
+      "metrics": {
+        "row_count": 3,
+        "non_empty_cell_count": 12,
+        "formula_cell_count": 2,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R4: FC 부문 내부 목표에 따른 숫자 | 데이원 차원 목표에 따른 숫자",
+        "R5: =IMPORTRANGE(B1,\"지표!T4:AH175\") | 1월 | 2월 | 3월 | 4월 | 5월 | 6월 | 7월",
+        "R6: ={A6:O31}"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_fc_data_inspect_formula_window_003",
+      "operation": "inspect.formula_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 32,
+        "end_row": 35,
+        "start_column": 17,
+        "end_column": 26,
+        "a1_range": "Q32:Z35"
+      },
+      "metrics": {
+        "row_count": 4,
+        "non_empty_cell_count": 19,
+        "formula_cell_count": 11,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 8
+      },
+      "preview": [
+        "R32: ={A32:B57} | 1875000000 | 1853758729 | 2035885960 | 1947454993 | 1947454993 | 2072454993 | 2125000000",
+        "R33: ={C33:O33}",
+        "R34: =S33/S32 | =T33/T32 | =U33/U32 | =V33/V32 | =W33/W32 | =X33/X32 | =Y33/Y32 | =Z33/Z32",
+        "R35: ={C35:O36}"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_fc_data_inspect_formula_window_004",
+      "operation": "inspect.formula_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 37,
+        "end_row": 39,
+        "start_column": 19,
+        "end_column": 26,
+        "a1_range": "S37:Z39"
+      },
+      "metrics": {
+        "row_count": 3,
+        "non_empty_cell_count": 17,
+        "formula_cell_count": 17,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R37: =S32-S33 | =T32-T33 | =U32-U33 | =V32-V33 | =W32-W33 | =X32-X33 | =Y32-Y33 | =Z32-Z33",
+        "R38: =S36-S35 | =T36-T35 | =U36-U35 | =V36-V35 | =W36-W35 | =X36-X35 | =Y36-Y35 | =Z36-Z35",
+        "R39: ={C39:O43}"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_fc_data_inspect_formula_window_005",
+      "operation": "inspect.formula_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 44,
+        "end_row": 45,
+        "start_column": 19,
+        "end_column": 26,
+        "a1_range": "S44:Z45"
+      },
+      "metrics": {
+        "row_count": 2,
+        "non_empty_cell_count": 9,
+        "formula_cell_count": 1,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 8
+      },
+      "preview": [
+        "R44: 500908604 | 483162647 | 528412003 | 485835034 | 494415723 | 497121816 | 533628233 | 521594755",
+        "R45: ={C45:O52}"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_fc_data_inspect_formula_window_006",
+      "operation": "inspect.formula_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 53,
+        "end_row": 58,
+        "start_column": 18,
+        "end_column": 26,
+        "a1_range": "R53:Z58"
+      },
+      "metrics": {
+        "row_count": 6,
+        "non_empty_cell_count": 42,
+        "formula_cell_count": 17,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 24
+      },
+      "preview": [
+        "R53: 1042500000 | 1053640320 | 1174084374 | 1074780008 | 1074780008 | 1144280008 | 1181500000 | 1112000000",
+        "R54: ={C54:O54}",
+        "R55: =S54-S53 | =T54-T53 | =U54-U53 | =V54-V53 | =W54-W53 | =X54-X53 | =Y54-Y53 | =Z54-Z53",
+        "R56: 0.63 | 0.63 | 0.63 | 0.63 | 0.63 | 0.63 | 0.63 | 0.63",
+        "R57: =iferror(S54/S33,0) | =iferror(T54/T33,0) | =iferror(U54/U33,0) | =iferror(V54/V33,0) | =iferror(W54/W33,0) | =iferror(X54/X33,0) | =iferror(Y54/Y33,0) | =iferror(Z54/Z33,0)",
+        "R58: 25' 마케팅비 총합 (예산) | 416273338 | 426455129 | 466274563 | 428806829 | 436357836 | 438739198 | 470864845"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_fc_data_inspect_formula_window_007",
+      "operation": "inspect.formula_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 60,
+        "end_row": 60,
+        "start_column": 18,
+        "end_column": 18,
+        "a1_range": "R60"
+      },
+      "metrics": {
+        "row_count": 1,
+        "non_empty_cell_count": 1,
+        "formula_cell_count": 1,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R60: ={A60:D69}"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_fc_data_inspect_formula_window_008",
+      "operation": "inspect.formula_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 71,
+        "end_row": 74,
+        "start_column": 18,
+        "end_column": 21,
+        "a1_range": "R71:U74"
+      },
+      "metrics": {
+        "row_count": 4,
+        "non_empty_cell_count": 14,
+        "formula_cell_count": 7,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R71: 월 순매출 목표액 | Day | 월 진행률",
+        "R72: =OFFSET(R32,0,month(R2),1,1) | =DAY(R2)-1 | =S72/day(eomonth($B$3,0))",
+        "R73: 진행률에 따른 목표액 | 진행 순매출액 | 순매출 목표 대비 (진행) | 순매출 목표 대비 (월)",
+        "R74: =R72*T72 | =OFFSET(R33,0,month(R2),1,1) | =S74/R74 | =S74/R72"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_fc_data_inspect_formula_window_009",
+      "operation": "inspect.formula_window",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 76,
+        "end_row": 79,
+        "start_column": 18,
+        "end_column": 21,
+        "a1_range": "R76:U79"
+      },
+      "metrics": {
+        "row_count": 4,
+        "non_empty_cell_count": 14,
+        "formula_cell_count": 7,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R76: 월 공헌이익 목표액 | Day | 월 진행률",
+        "R77: =OFFSET(R53,0,month(R2),1,1) | =DAY(R2)-1 | =S77/day(eomonth($B$3,0))",
+        "R78: 진행률에 따른 목표액 | 진행 공헌이익액 | 공헌이익 목표 대비 (진행) | 공헌이익 목표 대비 (월)",
+        "R79: =R77*T77 | =OFFSET(R54,0,month(R2),1,1) | =S79/R79 | =S79/R77"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:FC_DATA!A1:Z80"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_25_1110_inspect_formula_window_001",
+      "operation": "inspect.formula_window",
+      "sheet": "25_1110",
+      "range": "'25_1110'!A81:Z160",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 81,
+        "end_row": 82,
+        "start_column": 2,
+        "end_column": 2,
+        "a1_range": "B81:B82"
+      },
+      "metrics": {
+        "row_count": 2,
+        "non_empty_cell_count": 2,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R81: 2) 일러스트와, 반도체를 제외하고는",
+        "R82: 이번 달 남은 신규 코스들의 주제들은 모두 시의성, 시장성 있는 코스들로 대기중"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:'25_1110'!A81:Z160"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_25_1110_inspect_formula_window_002",
+      "operation": "inspect.formula_window",
+      "sheet": "25_1110",
+      "range": "'25_1110'!A81:Z160",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 89,
+        "end_row": 89,
+        "start_column": 17,
+        "end_column": 19,
+        "a1_range": "Q89:S89"
+      },
+      "metrics": {
+        "row_count": 1,
+        "non_empty_cell_count": 3,
+        "formula_cell_count": 2,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R89: 평균 | =AVERAGE(R80:R88) | =AVERAGE(S80:S88)"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:'25_1110'!A81:Z160"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_25_1110_inspect_formula_window_003",
+      "operation": "inspect.formula_window",
+      "sheet": "25_1110",
+      "range": "'25_1110'!A81:Z160",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 92,
+        "end_row": 92,
+        "start_column": 6,
+        "end_column": 11,
+        "a1_range": "F92:K92"
+      },
+      "metrics": {
+        "row_count": 1,
+        "non_empty_cell_count": 2,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R92: 표11 | 주간 출루율 | 표12 | 월 단위 인당 샌산성"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:'25_1110'!A81:Z160"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_25_1110_inspect_formula_window_004",
+      "operation": "inspect.formula_window",
+      "sheet": "25_1110",
+      "range": "'25_1110'!A81:Z160",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 105,
+        "end_row": 105,
+        "start_column": 6,
+        "end_column": 6,
+        "a1_range": "F105"
+      },
+      "metrics": {
+        "row_count": 1,
+        "non_empty_cell_count": 1,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R105: (기준 : 런칭 초반 9주 누적 매출, 1천 5백 이하 아웃)"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:'25_1110'!A81:Z160"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_25_1110_inspect_formula_window_005",
+      "operation": "inspect.formula_window",
+      "sheet": "25_1110",
+      "range": "'25_1110'!A81:Z160",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 108,
+        "end_row": 151,
+        "start_column": 2,
+        "end_column": 14,
+        "a1_range": "B108:N151"
+      },
+      "metrics": {
+        "row_count": 44,
+        "non_empty_cell_count": 385,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 169
+      },
+      "preview": [
+        "R108: D. 최근 신규 오픈 코스 (최근 9주)",
+        "R109: Comment | 표13 | 최근 신규 오픈 코스 | 최신 주간 데이터로 업데이트 완료",
+        "R110: 1) 오프라인이 매력적인 주제들이 분명 있고, 꾸준히 발견되고 있음 | 코스ID | 콘텐츠명 | 런칭일 | ◼︎ 총 매출 | ◼︎ 누적 CAC | ◼︎ 계약구분 | ◼︎ 총 이익",
+        "R111: 온라인에 비해 기획자 에너지가 많이 들어가는 것은 사실이라 시도의 양이 꺼려지는데, | 257506 | 설계독학의 임베디드 리눅스 & FPGA: 반도체 설계 완성편 | 2025. 11. 7 | 603100 | 0.0625 | 고정급 + P/S | 296489",
+        "R112: 조직 운영, 구조도에서 이를 해결해서 26년에도 꾸준히 진행할 수 있도록 구조 변경 | 257357 | 70억을 만든 뷰티 디바이스 올인원 성공 공식: 뷰티디바이스 기획부터 인허가까지 | 2025. 11. 3 | 4983000 | 0.1218 | 고정급 | -1223958",
+        "R113: 257452 | FPGA 핵심: 실무자가 설계를 판단하는 법 | 2025. 11. 3 | 101150 | 0.1556 | 고정급 | 85407 | est. 743,453"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:'25_1110'!A81:Z160"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_25_1110_inspect_formula_window_006",
+      "operation": "inspect.formula_window",
+      "sheet": "25_1110",
+      "range": "'25_1110'!A81:Z160",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 154,
+        "end_row": 160,
+        "start_column": 2,
+        "end_column": 6,
+        "a1_range": "B154:F160"
+      },
+      "metrics": {
+        "row_count": 7,
+        "non_empty_cell_count": 8,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R154: E. 이익 증대를 위한 액션",
+        "R155: Comment | 기존",
+        "R156: 1) 원소스멀티유즈의 기획 방식 업그레이드",
+        "R157: - OSMU 하면서 부족했던 커리큘럼, 과목을 AI로 만들어 대체",
+        "R158: - 강사 추가 섭외를 통한 시간 낭비 x, 추가 강사료 x",
+        "R159: 2) 초기에는 신규 과정 오픈과 동일한 기획/마케팅 프로세스로 업무 진행 후"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:'25_1110'!A81:Z160"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_25_1103_inspect_formula_window_001",
+      "operation": "inspect.formula_window",
+      "sheet": "25_1103",
+      "range": "'25_1103'!A81:Z160",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 89,
+        "end_row": 89,
+        "start_column": 17,
+        "end_column": 19,
+        "a1_range": "Q89:S89"
+      },
+      "metrics": {
+        "row_count": 1,
+        "non_empty_cell_count": 3,
+        "formula_cell_count": 2,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R89: 평균 | =AVERAGE(R80:R88) | =AVERAGE(S80:S88)"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:'25_1103'!A81:Z160"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_25_1103_inspect_formula_window_002",
+      "operation": "inspect.formula_window",
+      "sheet": "25_1103",
+      "range": "'25_1103'!A81:Z160",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 92,
+        "end_row": 92,
+        "start_column": 6,
+        "end_column": 11,
+        "a1_range": "F92:K92"
+      },
+      "metrics": {
+        "row_count": 1,
+        "non_empty_cell_count": 2,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R92: 표11 | 주간 출루율 | 표12 | 월 단위 인당 샌산성"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:'25_1103'!A81:Z160"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_25_1103_inspect_formula_window_003",
+      "operation": "inspect.formula_window",
+      "sheet": "25_1103",
+      "range": "'25_1103'!A81:Z160",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 105,
+        "end_row": 105,
+        "start_column": 6,
+        "end_column": 6,
+        "a1_range": "F105"
+      },
+      "metrics": {
+        "row_count": 1,
+        "non_empty_cell_count": 1,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R105: (기준 : 런칭 초반 9주 누적 매출, 1천 5백 이하 아웃)"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:'25_1103'!A81:Z160"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_25_1103_inspect_formula_window_004",
+      "operation": "inspect.formula_window",
+      "sheet": "25_1103",
+      "range": "'25_1103'!A81:Z160",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 108,
+        "end_row": 149,
+        "start_column": 2,
+        "end_column": 14,
+        "a1_range": "B108:N149"
+      },
+      "metrics": {
+        "row_count": 42,
+        "non_empty_cell_count": 375,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 163
+      },
+      "preview": [
+        "R108: D. 최근 신규 오픈 코스 (최근 9주) | 최신 주간 데이터로 업데이트 완료",
+        "R109: Comment | 코스ID | 콘텐츠명 | 런칭일 | ◼︎ 총 매출 | ◼︎ 누적 CAC | ◼︎ 계약구분 | ◼︎ 총 이익",
+        "R110: 1) 바이브코딩 키워드 꾸준한 시도 중이고, | 256837 | [본 상세페이지] 최초/최신 : 나노바나나 | 2025. 10. 29 | 35724400 | 0.0598 | 고정급 | 8687907",
+        "R111: 경쟁 업체가 없는 상황에 우리 기존 코스와 겹치지 않는 방향으로 가이드 | 255431 | 빠르다! AI로 초단기 합격하는 영어 시험·자격증 학습법 | 2025. 10. 27 | 5342800 | 0.1875 | 고정급 | -6259098",
+        "R112: (수익화 키워드도 좋긴하지만 겹치는 주제보다는 게임처럼 조금 시장 안 겹치게) | 257324 | 설계독학맛비의 Verilog HDL 마스터 클래스 | 2025. 10. 27 | 4435700 | 0.0274 | P/S | 4314029",
+        "R113: 257451 | 바이브코딩 게임 개발 패키지 : AI로 나 혼자 완성하는 8가지 게임 · 수익화 노하우 | 2025. 10. 27 | 8012350 | 0.0824 | 고정급 | -15147647 | est. 58,890,773"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:'25_1103'!A81:Z160"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    },
+    {
+      "id": "sampled_region_25_1103_inspect_formula_window_005",
+      "operation": "inspect.formula_window",
+      "sheet": "25_1103",
+      "range": "'25_1103'!A81:Z160",
+      "subtype": "sampled_formula_region",
+      "bounds": {
+        "start_row": 153,
+        "end_row": 160,
+        "start_column": 2,
+        "end_column": 14,
+        "a1_range": "B153:N160"
+      },
+      "metrics": {
+        "row_count": 8,
+        "non_empty_cell_count": 36,
+        "formula_cell_count": 0,
+        "error_display_count": 0,
+        "url_cell_count": 0,
+        "number_like_cell_count": 0
+      },
+      "preview": [
+        "R153: E. 마케팅/프로모션 주간 주요 현황 | 표14 | FC 프로모션 캘린더",
+        "R154: Comment | 구분 | 운영팀 | 월 | 화 | 수 | 목 | 금",
+        "R155: - 페이백, 가격인상까지 한 주 동안 2회의 마감으로 마감 효과 2회 발생. | 11월 | 11/3 | 11/4 | 11/5 | 11/6 | 11/7 | 11/8",
+        "R156: - 직후 이어진 챌린지의 경우 주말 오픈이라 매출 저조한 모습으로 나타나나 | 플랫폼 | 환급챌린지 종료 > | < [M] 1+1 : 강의 1개 사면 1개 더",
+        "R157: 운영 기간 자체가 워낙 짧다보니 금일부터 대놓고 얼전시 메세지 나갈 예정. | 1G | 연구자 기획전 종료 : 쿠폰/자유이용권 >",
+        "R158: - 각 사업부 파트별로 다양한 서브 기획전(프로모션)이 다수 병렬 배치되어 운영 | 1G | < [1G] 야근방지 자동화 기획전 : 기간제/자유이용권 (11/5 ~ 11/18)"
+      ],
+      "evidence": [
+        "broker_window:inspect.formula_window:'25_1103'!A81:Z160"
+      ],
+      "tuning_effect": "confirm_formula_surface"
+    }
+  ],
+  "tuning_actions": [
+    {
+      "id": "action_sampled_region_fc_data_inspect_values_window_001",
+      "type": "display_region_candidate_update",
+      "sheet": "FC_DATA",
+      "target_range": "A1:R2",
+      "effect": "add_external_source_candidate",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_values_window_001"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_url_sampled_region_fc_data_inspect_values_window_001",
+      "type": "external_source_url_candidate",
+      "sheet": "FC_DATA",
+      "target_range": "A1:R2",
+      "effect": "use_url_as_candidate_source_id_for_importrange_review",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_values_window_001"
+      ],
+      "status": "requires_source_allowlist_review"
+    },
+    {
+      "id": "action_sampled_region_fc_data_inspect_values_window_002",
+      "type": "display_region_candidate_update",
+      "sheet": "FC_DATA",
+      "target_range": "A4:Z5",
+      "effect": "annotate_error_state",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_values_window_002"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_error_sampled_region_fc_data_inspect_values_window_002",
+      "type": "formula_error_annotation",
+      "sheet": "FC_DATA",
+      "target_range": "A4:Z5",
+      "effect": "keep_formula_result_authority_unestablished",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_values_window_002"
+      ],
+      "status": "requires_formula_result_review"
+    },
+    {
+      "id": "action_sampled_region_fc_data_inspect_values_window_003",
+      "type": "display_region_candidate_update",
+      "sheet": "FC_DATA",
+      "target_range": "S32:Z32",
+      "effect": "extend_table_candidate_evidence",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_values_window_003"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_sampled_region_fc_data_inspect_values_window_004",
+      "type": "display_region_candidate_update",
+      "sheet": "FC_DATA",
+      "target_range": "S34:Z34",
+      "effect": "extend_table_candidate_evidence",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_values_window_004"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_sampled_region_fc_data_inspect_values_window_005",
+      "type": "display_region_candidate_update",
+      "sheet": "FC_DATA",
+      "target_range": "S37:Z38",
+      "effect": "extend_table_candidate_evidence",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_values_window_005"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_sampled_region_fc_data_inspect_values_window_006",
+      "type": "display_region_candidate_update",
+      "sheet": "FC_DATA",
+      "target_range": "S44:Z44",
+      "effect": "extend_table_candidate_evidence",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_values_window_006"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_sampled_region_fc_data_inspect_values_window_007",
+      "type": "display_region_candidate_update",
+      "sheet": "FC_DATA",
+      "target_range": "S53:Z53",
+      "effect": "extend_table_candidate_evidence",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_values_window_007"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_sampled_region_fc_data_inspect_values_window_008",
+      "type": "display_region_candidate_update",
+      "sheet": "FC_DATA",
+      "target_range": "R55:Z58",
+      "effect": "extend_table_candidate_evidence",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_values_window_008"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_sampled_region_fc_data_inspect_values_window_009",
+      "type": "display_region_candidate_update",
+      "sheet": "FC_DATA",
+      "target_range": "R71:U74",
+      "effect": "extend_table_candidate_evidence",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_values_window_009"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_error_sampled_region_fc_data_inspect_values_window_009",
+      "type": "formula_error_annotation",
+      "sheet": "FC_DATA",
+      "target_range": "R71:U74",
+      "effect": "keep_formula_result_authority_unestablished",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_values_window_009"
+      ],
+      "status": "requires_formula_result_review"
+    },
+    {
+      "id": "action_sampled_region_fc_data_inspect_values_window_010",
+      "type": "display_region_candidate_update",
+      "sheet": "FC_DATA",
+      "target_range": "R76:U79",
+      "effect": "extend_table_candidate_evidence",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_values_window_010"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_error_sampled_region_fc_data_inspect_values_window_010",
+      "type": "formula_error_annotation",
+      "sheet": "FC_DATA",
+      "target_range": "R76:U79",
+      "effect": "keep_formula_result_authority_unestablished",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_values_window_010"
+      ],
+      "status": "requires_formula_result_review"
+    },
+    {
+      "id": "action_sampled_region_26_0601_inspect_values_window_001",
+      "type": "display_region_candidate_update",
+      "sheet": "26_0601",
+      "target_range": "F81:J99",
+      "effect": "extend_table_candidate_evidence",
+      "evidence_refs": [
+        "sampled_region_26_0601_inspect_values_window_001"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_sampled_region_26_0601_inspect_values_window_002",
+      "type": "display_region_candidate_update",
+      "sheet": "26_0601",
+      "target_range": "B101:B104",
+      "effect": "add_display_evidence",
+      "evidence_refs": [
+        "sampled_region_26_0601_inspect_values_window_002"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_sampled_region_26_0601_inspect_values_window_003",
+      "type": "display_region_candidate_update",
+      "sheet": "26_0601",
+      "target_range": "B112:N116",
+      "effect": "extend_table_candidate_evidence",
+      "evidence_refs": [
+        "sampled_region_26_0601_inspect_values_window_003"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_sampled_region_26_0601_inspect_values_window_004",
+      "type": "display_region_candidate_update",
+      "sheet": "26_0601",
+      "target_range": "B122",
+      "effect": "add_display_evidence",
+      "evidence_refs": [
+        "sampled_region_26_0601_inspect_values_window_004"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_sampled_region_26_0601_inspect_values_window_005",
+      "type": "display_region_candidate_update",
+      "sheet": "26_0601",
+      "target_range": "B124:M127",
+      "effect": "extend_table_candidate_evidence",
+      "evidence_refs": [
+        "sampled_region_26_0601_inspect_values_window_005"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_sampled_region_26_0601_inspect_values_window_006",
+      "type": "display_region_candidate_update",
+      "sheet": "26_0601",
+      "target_range": "B129:F134",
+      "effect": "extend_table_candidate_evidence",
+      "evidence_refs": [
+        "sampled_region_26_0601_inspect_values_window_006"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_sampled_region_26_0601_inspect_values_window_007",
+      "type": "display_region_candidate_update",
+      "sheet": "26_0601",
+      "target_range": "B136:B145",
+      "effect": "add_display_evidence",
+      "evidence_refs": [
+        "sampled_region_26_0601_inspect_values_window_007"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_sampled_region_26_0601_inspect_values_window_008",
+      "type": "display_region_candidate_update",
+      "sheet": "26_0601",
+      "target_range": "B148:H160",
+      "effect": "extend_table_candidate_evidence",
+      "evidence_refs": [
+        "sampled_region_26_0601_inspect_values_window_008"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_sampled_region_26_0525_inspect_values_window_001",
+      "type": "display_region_candidate_update",
+      "sheet": "26_0525",
+      "target_range": "F87",
+      "effect": "add_display_evidence",
+      "evidence_refs": [
+        "sampled_region_26_0525_inspect_values_window_001"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_sampled_region_26_0525_inspect_values_window_002",
+      "type": "display_region_candidate_update",
+      "sheet": "26_0525",
+      "target_range": "F99",
+      "effect": "add_display_evidence",
+      "evidence_refs": [
+        "sampled_region_26_0525_inspect_values_window_002"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_sampled_region_26_0525_inspect_values_window_003",
+      "type": "display_region_candidate_update",
+      "sheet": "26_0525",
+      "target_range": "B114:Q160",
+      "effect": "extend_table_candidate_evidence",
+      "evidence_refs": [
+        "sampled_region_26_0525_inspect_values_window_003"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_formula_sampled_region_fc_data_inspect_formula_window_001",
+      "type": "formula_surface_confirmation",
+      "sheet": "FC_DATA",
+      "target_range": "A1:R2",
+      "effect": "raise_formula_surface_confidence_keep_formula_result_unestablished",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_formula_window_001"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_url_sampled_region_fc_data_inspect_formula_window_001",
+      "type": "external_source_url_candidate",
+      "sheet": "FC_DATA",
+      "target_range": "A1:R2",
+      "effect": "use_url_as_candidate_source_id_for_importrange_review",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_formula_window_001"
+      ],
+      "status": "requires_source_allowlist_review"
+    },
+    {
+      "id": "action_formula_sampled_region_fc_data_inspect_formula_window_002",
+      "type": "formula_surface_confirmation",
+      "sheet": "FC_DATA",
+      "target_range": "A4:Z6",
+      "effect": "raise_formula_surface_confidence_keep_formula_result_unestablished",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_formula_window_002"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_formula_sampled_region_fc_data_inspect_formula_window_003",
+      "type": "formula_surface_confirmation",
+      "sheet": "FC_DATA",
+      "target_range": "Q32:Z35",
+      "effect": "raise_formula_surface_confidence_keep_formula_result_unestablished",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_formula_window_003"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_formula_sampled_region_fc_data_inspect_formula_window_004",
+      "type": "formula_surface_confirmation",
+      "sheet": "FC_DATA",
+      "target_range": "S37:Z39",
+      "effect": "raise_formula_surface_confidence_keep_formula_result_unestablished",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_formula_window_004"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_formula_sampled_region_fc_data_inspect_formula_window_005",
+      "type": "formula_surface_confirmation",
+      "sheet": "FC_DATA",
+      "target_range": "S44:Z45",
+      "effect": "raise_formula_surface_confidence_keep_formula_result_unestablished",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_formula_window_005"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_formula_sampled_region_fc_data_inspect_formula_window_006",
+      "type": "formula_surface_confirmation",
+      "sheet": "FC_DATA",
+      "target_range": "R53:Z58",
+      "effect": "raise_formula_surface_confidence_keep_formula_result_unestablished",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_formula_window_006"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_formula_sampled_region_fc_data_inspect_formula_window_007",
+      "type": "formula_surface_confirmation",
+      "sheet": "FC_DATA",
+      "target_range": "R60",
+      "effect": "raise_formula_surface_confidence_keep_formula_result_unestablished",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_formula_window_007"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_formula_sampled_region_fc_data_inspect_formula_window_008",
+      "type": "formula_surface_confirmation",
+      "sheet": "FC_DATA",
+      "target_range": "R71:U74",
+      "effect": "raise_formula_surface_confidence_keep_formula_result_unestablished",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_formula_window_008"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_formula_sampled_region_fc_data_inspect_formula_window_009",
+      "type": "formula_surface_confirmation",
+      "sheet": "FC_DATA",
+      "target_range": "R76:U79",
+      "effect": "raise_formula_surface_confidence_keep_formula_result_unestablished",
+      "evidence_refs": [
+        "sampled_region_fc_data_inspect_formula_window_009"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_formula_sampled_region_25_1110_inspect_formula_window_002",
+      "type": "formula_surface_confirmation",
+      "sheet": "25_1110",
+      "target_range": "Q89:S89",
+      "effect": "raise_formula_surface_confidence_keep_formula_result_unestablished",
+      "evidence_refs": [
+        "sampled_region_25_1110_inspect_formula_window_002"
+      ],
+      "status": "candidate_update"
+    },
+    {
+      "id": "action_formula_sampled_region_25_1103_inspect_formula_window_001",
+      "type": "formula_surface_confirmation",
+      "sheet": "25_1103",
+      "target_range": "Q89:S89",
+      "effect": "raise_formula_surface_confidence_keep_formula_result_unestablished",
+      "evidence_refs": [
+        "sampled_region_25_1103_inspect_formula_window_001"
+      ],
+      "status": "candidate_update"
+    }
+  ],
+  "remaining_read_queue": [
+    {
+      "id": "read_26_0518_next_window",
+      "sheet": "26_0518",
+      "operation": "inspect.values_window",
+      "range": "'26_0518'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_26_0511_next_window",
+      "sheet": "26_0511",
+      "operation": "inspect.values_window",
+      "range": "'26_0511'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_26_0504_next_window",
+      "sheet": "26_0504",
+      "operation": "inspect.values_window",
+      "range": "'26_0504'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_26_0427_next_window",
+      "sheet": "26_0427",
+      "operation": "inspect.values_window",
+      "range": "'26_0427'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_26_0420_next_window",
+      "sheet": "26_0420",
+      "operation": "inspect.values_window",
+      "range": "'26_0420'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_26_0413_next_window",
+      "sheet": "26_0413",
+      "operation": "inspect.values_window",
+      "range": "'26_0413'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_26_0406_next_window",
+      "sheet": "26_0406",
+      "operation": "inspect.values_window",
+      "range": "'26_0406'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_26_0330_next_window",
+      "sheet": "26_0330",
+      "operation": "inspect.values_window",
+      "range": "'26_0330'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_26_0323_next_window",
+      "sheet": "26_0323",
+      "operation": "inspect.values_window",
+      "range": "'26_0323'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_26_0316_next_window",
+      "sheet": "26_0316",
+      "operation": "inspect.values_window",
+      "range": "'26_0316'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_26_0309_next_window",
+      "sheet": "26_0309",
+      "operation": "inspect.values_window",
+      "range": "'26_0309'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_26_0302_next_window",
+      "sheet": "26_0302",
+      "operation": "inspect.values_window",
+      "range": "'26_0302'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_26_0223_next_window",
+      "sheet": "26_0223",
+      "operation": "inspect.values_window",
+      "range": "'26_0223'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_26_0209_next_window",
+      "sheet": "26_0209",
+      "operation": "inspect.values_window",
+      "range": "'26_0209'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_26_0202_next_window",
+      "sheet": "26_0202",
+      "operation": "inspect.values_window",
+      "range": "'26_0202'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_26_0126_next_window",
+      "sheet": "26_0126",
+      "operation": "inspect.values_window",
+      "range": "'26_0126'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_26_0119_next_window",
+      "sheet": "26_0119",
+      "operation": "inspect.values_window",
+      "range": "'26_0119'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_26_0112_next_window",
+      "sheet": "26_0112",
+      "operation": "inspect.values_window",
+      "range": "'26_0112'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_26_0105_next_window",
+      "sheet": "26_0105",
+      "operation": "inspect.values_window",
+      "range": "'26_0105'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_1229_next_window",
+      "sheet": "25_1229",
+      "operation": "inspect.values_window",
+      "range": "'25_1229'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_1222_next_window",
+      "sheet": "25_1222",
+      "operation": "inspect.values_window",
+      "range": "'25_1222'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_1215_next_window",
+      "sheet": "25_1215",
+      "operation": "inspect.values_window",
+      "range": "'25_1215'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_1208_next_window",
+      "sheet": "25_1208",
+      "operation": "inspect.values_window",
+      "range": "'25_1208'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_1201_next_window",
+      "sheet": "25_1201",
+      "operation": "inspect.values_window",
+      "range": "'25_1201'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_1124_next_window",
+      "sheet": "25_1124",
+      "operation": "inspect.values_window",
+      "range": "'25_1124'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_1117_next_window",
+      "sheet": "25_1117",
+      "operation": "inspect.values_window",
+      "range": "'25_1117'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_1027_next_window",
+      "sheet": "25_1027",
+      "operation": "inspect.values_window",
+      "range": "'25_1027'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_1027_formula_next_window",
+      "sheet": "25_1027",
+      "operation": "inspect.formula_window",
+      "range": "'25_1027'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_1020_next_window",
+      "sheet": "25_1020",
+      "operation": "inspect.values_window",
+      "range": "'25_1020'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_1020_formula_next_window",
+      "sheet": "25_1020",
+      "operation": "inspect.formula_window",
+      "range": "'25_1020'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_1013_next_window",
+      "sheet": "25_1013",
+      "operation": "inspect.values_window",
+      "range": "'25_1013'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_1013_formula_next_window",
+      "sheet": "25_1013",
+      "operation": "inspect.formula_window",
+      "range": "'25_1013'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0929_next_window",
+      "sheet": "25_0929",
+      "operation": "inspect.values_window",
+      "range": "'25_0929'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0929_formula_next_window",
+      "sheet": "25_0929",
+      "operation": "inspect.formula_window",
+      "range": "'25_0929'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0922_next_window",
+      "sheet": "25_0922",
+      "operation": "inspect.values_window",
+      "range": "'25_0922'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0922_formula_next_window",
+      "sheet": "25_0922",
+      "operation": "inspect.formula_window",
+      "range": "'25_0922'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0915_next_window",
+      "sheet": "25_0915",
+      "operation": "inspect.values_window",
+      "range": "'25_0915'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0915_formula_next_window",
+      "sheet": "25_0915",
+      "operation": "inspect.formula_window",
+      "range": "'25_0915'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0908_next_window",
+      "sheet": "25_0908",
+      "operation": "inspect.values_window",
+      "range": "'25_0908'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0908_formula_next_window",
+      "sheet": "25_0908",
+      "operation": "inspect.formula_window",
+      "range": "'25_0908'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0901_next_window",
+      "sheet": "25_0901",
+      "operation": "inspect.values_window",
+      "range": "'25_0901'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0901_formula_next_window",
+      "sheet": "25_0901",
+      "operation": "inspect.formula_window",
+      "range": "'25_0901'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0825_next_window",
+      "sheet": "25_0825",
+      "operation": "inspect.values_window",
+      "range": "'25_0825'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0825_formula_next_window",
+      "sheet": "25_0825",
+      "operation": "inspect.formula_window",
+      "range": "'25_0825'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0818_next_window",
+      "sheet": "25_0818",
+      "operation": "inspect.values_window",
+      "range": "'25_0818'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0818_formula_next_window",
+      "sheet": "25_0818",
+      "operation": "inspect.formula_window",
+      "range": "'25_0818'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0811_next_window",
+      "sheet": "25_0811",
+      "operation": "inspect.values_window",
+      "range": "'25_0811'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0811_formula_next_window",
+      "sheet": "25_0811",
+      "operation": "inspect.formula_window",
+      "range": "'25_0811'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0804_next_window",
+      "sheet": "25_0804",
+      "operation": "inspect.values_window",
+      "range": "'25_0804'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0804_formula_next_window",
+      "sheet": "25_0804",
+      "operation": "inspect.formula_window",
+      "range": "'25_0804'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0728_next_window",
+      "sheet": "25_0728",
+      "operation": "inspect.values_window",
+      "range": "'25_0728'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0728_formula_next_window",
+      "sheet": "25_0728",
+      "operation": "inspect.formula_window",
+      "range": "'25_0728'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0721_next_window",
+      "sheet": "25_0721",
+      "operation": "inspect.values_window",
+      "range": "'25_0721'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0721_formula_next_window",
+      "sheet": "25_0721",
+      "operation": "inspect.formula_window",
+      "range": "'25_0721'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0714_next_window",
+      "sheet": "25_0714",
+      "operation": "inspect.values_window",
+      "range": "'25_0714'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0714_formula_next_window",
+      "sheet": "25_0714",
+      "operation": "inspect.formula_window",
+      "range": "'25_0714'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0707_next_window",
+      "sheet": "25_0707",
+      "operation": "inspect.values_window",
+      "range": "'25_0707'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_25_0707_formula_next_window",
+      "sheet": "25_0707",
+      "operation": "inspect.formula_window",
+      "range": "'25_0707'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_fc_data_next_window",
+      "sheet": "FC_DATA",
+      "operation": "inspect.values_window",
+      "range": "'FC_DATA'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_fc_data_formula_next_window",
+      "sheet": "FC_DATA",
+      "operation": "inspect.formula_window",
+      "range": "'FC_DATA'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_24_0115_next_window",
+      "sheet": "24_0115",
+      "operation": "inspect.values_window",
+      "range": "'24_0115'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_24_0115_formula_next_window",
+      "sheet": "24_0115",
+      "operation": "inspect.formula_window",
+      "range": "'24_0115'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_24_0108_next_window",
+      "sheet": "24_0108",
+      "operation": "inspect.values_window",
+      "range": "'24_0108'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_24_0108_formula_next_window",
+      "sheet": "24_0108",
+      "operation": "inspect.formula_window",
+      "range": "'24_0108'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_24_0102_next_window",
+      "sheet": "24_0102",
+      "operation": "inspect.values_window",
+      "range": "'24_0102'!A81:Z160",
+      "reason": "sheet extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    },
+    {
+      "id": "read_24_0102_formula_next_window",
+      "sheet": "24_0102",
+      "operation": "inspect.formula_window",
+      "range": "'24_0102'!A81:Z160",
+      "reason": "formula surface extends beyond current profile window",
+      "status": "pending_bounded_sampling"
+    }
+  ],
+  "summary": {
+    "sampled_region_count": 41,
+    "tuning_action_count": 37,
+    "display_region_update_count": 21,
+    "formula_surface_confirmation_count": 11,
+    "external_source_url_candidate_count": 2,
+    "formula_error_annotation_count": 3,
+    "remaining_read_queue_count": 66,
+    "tuning_status": "generated_candidate_updates"
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "Tuning actions are candidate updates only; they are not accepted graph claims."
+    },
+    {
+      "level": "warning",
+      "message": "URL candidates can guide IMPORTRANGE source review but do not authorize source spreadsheet reads."
+    },
+    {
+      "level": "warning",
+      "message": "Displayed errors were observed in bounded samples; formula-result authority remains unestablished."
+    }
+  ]
+}

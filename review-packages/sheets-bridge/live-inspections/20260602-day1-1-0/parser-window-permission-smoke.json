@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "captured_at": "2026-06-02T02:13:47+00:00",
+  "purpose": "sanitized broker-backed parser window permission smoke",
+  "broker": {
+    "service": "run-mcp-day1-development-sheets-bridge-broker",
+    "revision": "run-mcp-day1-development-sheets-bridge-broker-00014-v84",
+    "policy_version": "parser-readonly-windows-2026-06-02",
+    "project": "day1-dev",
+    "region": "asia-northeast3"
+  },
+  "authority": {
+    "principal": "kangmin.lee@day1company.co.kr",
+    "impersonated_subject": "kangmin.lee@day1company.co.kr",
+    "scope": "https://www.googleapis.com/auth/spreadsheets.readonly",
+    "credential_boundary": "no service account keys, OAuth tokens, ID tokens, access tokens, bearer headers, or raw credentials stored"
+  },
+  "spreadsheet": {
+    "spreadsheet_id": "1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60",
+    "title": "[Day 1] 1.0 (from 20250707)",
+    "tab_count": 52
+  },
+  "policy_limits": {
+    "operations": [
+      "inspect.metadata",
+      "inspect.grid_window",
+      "inspect.values_window",
+      "inspect.formula_window"
+    ],
+    "max_ranges_per_request": 8,
+    "max_cells_per_request": 20000,
+    "max_total_cells_per_run": 120000,
+    "max_timeout_seconds": 60,
+    "max_retries": 1,
+    "allowed_field_masks": [
+      "grid_basic_v1",
+      "grid_formula_v1"
+    ]
+  },
+  "smoke_results": [
+    {
+      "operation": "inspect.metadata",
+      "range": "spreadsheet metadata",
+      "result": "passed",
+      "summary": "metadata returned title and 52 tabs"
+    },
+    {
+      "operation": "inspect.grid_window",
+      "range": "'26_0601'!A1:Z80",
+      "result": "passed",
+      "summary": "includeGridData=true with field mask grid_basic_v1 returned one sheet window"
+    },
+    {
+      "operation": "inspect.values_window",
+      "range": "'26_0601'!A1:Z80",
+      "result": "passed",
+      "summary": "valueRenderOption=FORMATTED_VALUE returned 80 rows"
+    },
+    {
+      "operation": "inspect.formula_window",
+      "range": "'26_0601'!A1:Z80",
+      "result": "passed",
+      "summary": "valueRenderOption=FORMULA returned 80 rows"
+    },
+    {
+      "operation": "inspect.values_window",
+      "range": "'26_0601'!A1:ZZ100",
+      "result": "denied",
+      "summary": "broker policy returned range_too_large before a Sheets API read"
+    }
+  ]
+}

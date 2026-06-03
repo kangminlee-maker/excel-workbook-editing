@@ -1,0 +1,9 @@
+{
+  "name": "com.day1company.sheets_bridge",
+  "description": "Chrome Sheets Bridge native host for local review package persistence.",
+  "path": "/Users/kangmin/Documents/excel-workbook-editing/native-host/bin/sheets-bridge-native-host",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://jahlkdjaokmjbipfhlhnjggcgjmpeiij/"
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-02T03:45:13.912181Z",
+  "source": {
+    "spreadsheet_id": "1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60",
+    "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60/edit?ouid=112662517307801676490",
+    "title": "[Day 1] 1.0 (from 20250707)",
+    "source_artifacts": {
+      "live_document_ontology_mapping": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/live-document-ontology-mapping.json"
+    }
+  },
+  "authority": {
+    "source_document": "live_google_sheet",
+    "contract_status": "action_contract_layer_only",
+    "new_graph_claims": false,
+    "semantic_ontology_generation": "not_performed"
+  },
+  "action_contracts": [
+    {
+      "id": "contract_review_external_dep_fc_data_a5",
+      "type": "action_contract",
+      "source_review_item_id": "review_external_dep_fc_data_A5",
+      "status": "open",
+      "priority": "high",
+      "owner": "sheet_owner_and_broker_policy_owner",
+      "action": "Resolve IMPORTRANGE source argument, confirm Google ACL, and add source spreadsheet to broker allowlist before source reads.",
+      "required_evidence": [
+        "resolved source spreadsheet ID",
+        "Google ACL confirmation for principal",
+        "broker allowlist entry for source spreadsheet"
+      ],
+      "deterministic_gate": "external_source_authority",
+      "completion_condition": "Source spreadsheet can be inspected through broker policy without bypassing ACL or broker controls.",
+      "completion_effect": "External source dependency gates may be re-run.",
+      "evidence_refs": [
+        "external_dep_fc_data_A5",
+        "sampled_region_fc_data_inspect_values_window_001"
+      ]
+    },
+    {
+      "id": "contract_review_external_importrange_source_authority",
+      "type": "action_contract",
+      "source_review_item_id": "review_external_importrange_source_authority",
+      "status": "open",
+      "priority": "high",
+      "owner": "human_reviewer",
+      "action": "Review unresolved parser item and provide required evidence or an explicit deferral.",
+      "required_evidence": [
+        "human review decision"
+      ],
+      "deterministic_gate": "manual_review_gate",
+      "completion_condition": "Review item has a documented decision.",
+      "completion_effect": "Review item can be closed, deferred, or routed to another contract.",
+      "evidence_refs": [
+        "external_dep_fc_data_A5"
+      ]
+    },
+    {
+      "id": "contract_review_formula_error_surfaces",
+      "type": "action_contract",
+      "source_review_item_id": "review_formula_error_surfaces",
+      "status": "open",
+      "priority": "high",
+      "owner": "sheet_owner_or_formula_reconciliation_reviewer",
+      "action": "Reconcile displayed formula errors and establish whether affected outputs are valid, expected stale states, or broken calculations.",
+      "required_evidence": [
+        "error cell locations",
+        "formula text and display value comparison",
+        "resolved upstream source/result authority"
+      ],
+      "deterministic_gate": "formula_error_reconciliation",
+      "completion_condition": "Affected pipeline outputs can be classified as valid, invalid, or intentionally unresolved.",
+      "completion_effect": "Formula-error blocked pipeline targets may be re-evaluated.",
+      "evidence_refs": [
+        "action_error_sampled_region_fc_data_inspect_values_window_002",
+        "action_error_sampled_region_fc_data_inspect_values_window_009",
+        "action_error_sampled_region_fc_data_inspect_values_window_010"
+      ]
+    },
+    {
+      "id": "contract_review_remaining_bounded_read_queue",
+      "type": "action_contract",
+      "source_review_item_id": "review_remaining_bounded_read_queue",
+      "status": "open",
+      "priority": "medium",
+      "owner": "parser_operator",
+      "action": "Execute or explicitly defer remaining current-workbook bounded read candidates under broker policy.",
+      "required_evidence": [
+        "bounded read execution artifact or explicit deferral record",
+        "policy-compliant range list"
+      ],
+      "deterministic_gate": "bounded_read_policy_check",
+      "completion_condition": "Remaining coverage gap is reduced or accepted as a documented limitation.",
+      "completion_effect": "Coverage review queue can be reduced or carried with narrower scope.",
+      "evidence_refs": [
+        "read_26_0518_next_window",
+        "read_26_0511_next_window",
+        "read_26_0504_next_window",
+        "read_26_0427_next_window",
+        "read_26_0420_next_window",
+        "read_26_0413_next_window",
+        "read_26_0406_next_window",
+        "read_26_0330_next_window",
+        "read_26_0323_next_window",
+        "read_26_0316_next_window",
+        "read_26_0309_next_window",
+        "read_26_0302_next_window"
+      ]
+    },
+    {
+      "id": "contract_review_blocked_gate_results",
+      "type": "action_contract",
+      "source_review_item_id": "review_blocked_gate_results",
+      "status": "open",
+      "priority": "high",
+      "owner": "parser_operator",
+      "action": "Re-run deterministic gates after source authority, formula-error, or coverage blockers are resolved.",
+      "required_evidence": [
+        "updated blocker evidence",
+        "new gate execution artifact"
+      ],
+      "deterministic_gate": "gate_reexecution",
+      "completion_condition": "Previously blocked gates move to accepted or review-required with explicit rationale.",
+      "completion_effect": "Evidence package and ontology mapping can be refreshed.",
+      "evidence_refs": [
+        "result_gate_target_external_source_external_dep_fc_data_a5_external_source_authority",
+        "result_gate_target_pipeline_pipeline_25_0707_cross_sheet_range_fc_data_formula_error_reconciliation",
+        "result_gate_target_pipeline_pipeline_25_0714_cross_sheet_range_fc_data_formula_error_reconciliation",
+        "result_gate_target_pipeline_pipeline_25_0721_cross_sheet_range_fc_data_formula_error_reconciliation",
+        "result_gate_target_pipeline_pipeline_25_0728_cross_sheet_range_fc_data_formula_error_reconciliation",
+        "result_gate_target_pipeline_pipeline_25_0804_cross_sheet_range_fc_data_formula_error_reconciliation",
+        "result_gate_target_pipeline_pipeline_25_0811_cross_sheet_range_fc_data_formula_error_reconciliation",
+        "result_gate_target_pipeline_pipeline_25_0818_cross_sheet_range_fc_data_formula_error_reconciliation",
+        "result_gate_target_pipeline_pipeline_25_0825_cross_sheet_range_fc_data_formula_error_reconciliation",
+        "result_gate_target_pipeline_pipeline_25_0901_cross_sheet_range_fc_data_formula_error_reconciliation",
+        "result_gate_target_pipeline_pipeline_25_0908_cross_sheet_range_fc_data_formula_error_reconciliation",
+        "result_gate_target_pipeline_pipeline_25_0915_cross_sheet_range_fc_data_formula_error_reconciliation",
+        "result_gate_target_pipeline_pipeline_25_0922_cross_sheet_range_fc_data_formula_error_reconciliation",
+        "result_gate_target_pipeline_pipeline_25_0929_cross_sheet_range_fc_data_formula_error_reconciliation",
+        "result_gate_target_pipeline_pipeline_25_1013_cross_sheet_range_fc_data_formula_error_reconciliation",
+        "result_gate_target_pipeline_pipeline_25_1020_cross_sheet_range_fc_data_formula_error_reconciliation",
+        "result_gate_target_pipeline_pipeline_25_1027_cross_sheet_range_fc_data_formula_error_reconciliation",
+        "result_gate_target_pipeline_pipeline_25_1103_cross_sheet_range_fc_data_formula_error_reconciliation",
+        "result_gate_target_pipeline_pipeline_25_1110_cross_sheet_range_fc_data_formula_error_reconciliation",
+        "result_gate_target_pipeline_pipeline_fc_data_external_importrange_external_importrange_formula_error_reconciliation"
+      ]
+    }
+  ],
+  "summary": {
+    "action_contract_count": 5,
+    "open_contract_count": 5,
+    "high_priority_contract_count": 4,
+    "medium_priority_contract_count": 1,
+    "sheet_owner_contract_count": 2,
+    "parser_operator_contract_count": 2,
+    "semantic_concept_count": 0,
+    "contract_status": "action_contract_layer_only"
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "Action contracts translate review-required ontology items into owner, action, evidence, gate, and completion criteria."
+    },
+    {
+      "level": "warning",
+      "message": "5 contracts remain open before graph promotion can advance."
+    }
+  ]
+}

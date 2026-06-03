@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/workbook-action-contracts.schema.json",
+  "title": "Workbook Action Contracts",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_artifacts",
+    "method",
+    "action_contracts",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source_artifacts": { "$ref": "#/$defs/source_artifacts" },
+    "method": { "$ref": "#/$defs/method" },
+    "action_contracts": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/action_contract" }
+    },
+    "summary": { "$ref": "#/$defs/summary" },
+    "parser_observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/observation" }
+    }
+  },
+  "$defs": {
+    "source_artifacts": {
+      "type": "object",
+      "required": ["document_ontology_mapping", "evidence_package"],
+      "additionalProperties": false,
+      "properties": {
+        "document_ontology_mapping": { "type": "string", "minLength": 1 },
+        "evidence_package": { "type": "string", "minLength": 1 }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "const": "deterministic_action_contract_layer" },
+        "authority": { "const": "action_contract_projection_not_claim_acceptance" },
+        "decision_policy": { "type": "string", "minLength": 1 }
+      }
+    },
+    "action_contract": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "action_status",
+        "priority",
+        "action_type",
+        "action_owner",
+        "target",
+        "trigger",
+        "required_evidence",
+        "deterministic_gate",
+        "completion_condition",
+        "completion_effect",
+        "evidence_refs",
+        "source_artifact_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "action_contract" },
+        "action_status": {
+          "type": "string",
+          "enum": ["ready", "open", "blocked"]
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        },
+        "action_type": { "$ref": "#/$defs/action_type" },
+        "action_owner": { "$ref": "#/$defs/action_owner" },
+        "target": { "$ref": "#/$defs/target" },
+        "trigger": { "$ref": "#/$defs/trigger" },
+        "required_evidence": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "deterministic_gate": { "type": "string", "minLength": 1 },
+        "completion_condition": { "type": "string", "minLength": 1 },
+        "completion_effect": { "type": "string", "minLength": 1 },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "source_artifact_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "target_kind",
+        "node_id",
+        "data_view_id",
+        "review_item_id",
+        "sheet",
+        "range"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "target_kind": { "type": ["string", "null"] },
+        "node_id": { "type": ["string", "null"] },
+        "data_view_id": { "type": ["string", "null"] },
+        "review_item_id": { "type": ["string", "null"] },
+        "sheet": { "type": ["string", "null"] },
+        "range": { "type": ["string", "null"] }
+      }
+    },
+    "trigger": {
+      "type": "object",
+      "required": ["source_status", "reason", "source_kind"],
+      "additionalProperties": false,
+      "properties": {
+        "source_status": { "type": ["string", "null"] },
+        "reason": { "type": ["string", "null"] },
+        "source_kind": { "type": ["string", "null"] }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "action_contract_count",
+        "ready_count",
+        "open_count",
+        "blocked_count",
+        "high_priority_count",
+        "medium_priority_count",
+        "low_priority_count",
+        "data_view_contract_count",
+        "review_item_contract_count",
+        "excel_capture_owner_count",
+        "human_review_owner_count",
+        "deterministic_parser_owner_count",
+        "downstream_parser_owner_count",
+        "resolve_input_region_ownership_count",
+        "acquire_render_capture_count",
+        "recapture_or_tile_range_count",
+        "reconcile_view_state_authority_count",
+        "corroborate_boundary_evidence_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "action_contract_count": { "type": "integer", "minimum": 0 },
+        "ready_count": { "type": "integer", "minimum": 0 },
+        "open_count": { "type": "integer", "minimum": 0 },
+        "blocked_count": { "type": "integer", "minimum": 0 },
+        "high_priority_count": { "type": "integer", "minimum": 0 },
+        "medium_priority_count": { "type": "integer", "minimum": 0 },
+        "low_priority_count": { "type": "integer", "minimum": 0 },
+        "data_view_contract_count": { "type": "integer", "minimum": 0 },
+        "review_item_contract_count": { "type": "integer", "minimum": 0 },
+        "excel_capture_owner_count": { "type": "integer", "minimum": 0 },
+        "human_review_owner_count": { "type": "integer", "minimum": 0 },
+        "deterministic_parser_owner_count": { "type": "integer", "minimum": 0 },
+        "downstream_parser_owner_count": { "type": "integer", "minimum": 0 },
+        "resolve_input_region_ownership_count": { "type": "integer", "minimum": 0 },
+        "acquire_render_capture_count": { "type": "integer", "minimum": 0 },
+        "recapture_or_tile_range_count": { "type": "integer", "minimum": 0 },
+        "reconcile_view_state_authority_count": { "type": "integer", "minimum": 0 },
+        "corroborate_boundary_evidence_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "action_type": {
+      "type": "string",
+      "enum": [
+        "consume_as_structural_data_view",
+        "resolve_input_region_ownership",
+        "acquire_render_capture",
+        "recapture_or_tile_range",
+        "reconcile_view_state_authority",
+        "review_view_state_warning",
+        "corroborate_boundary_evidence",
+        "review_title_hierarchy",
+        "review_unknown_issue"
+      ]
+    },
+    "action_owner": {
+      "type": "string",
+      "enum": [
+        "deterministic_parser",
+        "excel_capture",
+        "human_review",
+        "llm_proposal",
+        "downstream_parser",
+        "domain_model"
+      ]
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}

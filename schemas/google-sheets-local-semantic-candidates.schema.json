@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-local-semantic-candidates.schema.json",
+  "title": "Google Sheets Local Semantic Candidates",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "method",
+    "local_semantic_candidates",
+    "candidate_relations",
+    "review_queue",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "method": { "$ref": "#/$defs/method" },
+    "local_semantic_candidates": { "type": "array", "items": { "$ref": "#/$defs/candidate" } },
+    "candidate_relations": { "type": "array", "items": { "$ref": "#/$defs/relation" } },
+    "review_queue": { "type": "array", "items": { "$ref": "#/$defs/review_item" } },
+    "summary": { "$ref": "#/$defs/counts" },
+    "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["spreadsheet_id", "spreadsheet_url", "title", "source_artifacts"],
+      "additionalProperties": false,
+      "properties": {
+        "spreadsheet_id": { "type": "string", "minLength": 1 },
+        "spreadsheet_url": { "type": ["string", "null"] },
+        "title": { "type": "string" },
+        "source_artifacts": {
+          "type": "object",
+          "required": [
+            "live_data_view_projection",
+            "live_semantic_proposal_validation",
+            "live_domain_source_model"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "live_data_view_projection": { "type": "string", "minLength": 1 },
+            "live_semantic_proposal_validation": { "type": "string", "minLength": 1 },
+            "live_domain_source_model": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "source_document",
+        "candidate_status",
+        "accepted_local_semantic_candidates",
+        "shared_ontology_updates",
+        "formula_result_authority",
+        "local_boundary_confirmed"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_document": { "const": "live_google_sheet" },
+        "candidate_status": { "const": "boundary_scoped_candidates_only" },
+        "accepted_local_semantic_candidates": { "const": 0 },
+        "shared_ontology_updates": { "const": 0 },
+        "formula_result_authority": { "const": "not_established" },
+        "local_boundary_confirmed": { "type": "boolean" }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "const": "connected_sheets_local_semantic_candidate_generation" },
+        "authority": { "const": "local_candidates_not_accepted_or_shared" },
+        "decision_policy": { "type": "string", "minLength": 1 }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "status",
+        "label",
+        "candidate_kind",
+        "boundary_scope",
+        "boundary_status",
+        "projection_id",
+        "pipeline_id",
+        "sheet",
+        "range",
+        "properties",
+        "blockers",
+        "shared_promotion_status",
+        "evidence_refs",
+        "required_evidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "local_semantic_candidate" },
+        "status": { "const": "blocked" },
+        "label": { "type": ["string", "number", "null"] },
+        "candidate_kind": { "type": "string", "minLength": 1 },
+        "boundary_scope": { "type": "string", "minLength": 1 },
+        "boundary_status": { "type": "string", "minLength": 1 },
+        "projection_id": { "type": "string", "minLength": 1 },
+        "pipeline_id": { "type": "string", "minLength": 1 },
+        "sheet": { "type": ["string", "null"] },
+        "range": { "type": ["string", "null"] },
+        "properties": { "type": "object" },
+        "blockers": { "type": "array", "items": { "type": "string" } },
+        "shared_promotion_status": { "const": "blocked" },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } },
+        "required_evidence": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "relation": {
+      "type": "object",
+      "required": ["id", "type", "status", "relation_type", "from", "to", "blockers", "evidence_refs"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "local_semantic_candidate_relation" },
+        "status": { "const": "blocked" },
+        "relation_type": { "type": "string", "minLength": 1 },
+        "from": { "type": "string", "minLength": 1 },
+        "to": { "type": "string", "minLength": 1 },
+        "blockers": { "type": "array", "items": { "type": "string" } },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "review_item": {
+      "type": "object",
+      "required": ["id", "target_id", "severity", "status", "blocking_gates", "required_action"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "target_id": { "type": "string", "minLength": 1 },
+        "severity": { "type": "string", "enum": ["low", "medium", "high"] },
+        "status": { "type": "string", "minLength": 1 },
+        "blocking_gates": { "type": "array", "items": { "type": "string" } },
+        "required_action": { "type": "string", "minLength": 1 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] }
+    }
+  }
+}

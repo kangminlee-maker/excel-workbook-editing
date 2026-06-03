@@ -1,0 +1,231 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/workbook-coordinate-normalization.schema.json",
+  "title": "Workbook Coordinate Normalization",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_artifacts",
+    "method",
+    "coordinate_mappings",
+    "gate_results",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source_artifacts": { "$ref": "#/$defs/source_artifacts" },
+    "method": { "$ref": "#/$defs/method" },
+    "coordinate_mappings": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/coordinate_mapping" }
+    },
+    "gate_results": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/gate_result" }
+    },
+    "summary": { "$ref": "#/$defs/summary" },
+    "parser_observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/observation" }
+    }
+  },
+  "$defs": {
+    "source_artifacts": {
+      "type": "object",
+      "required": [
+        "render_capture_files",
+        "capture_quality_files",
+        "view_state_profile"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "render_capture_files": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "capture_quality_files": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "view_state_profile": { "type": ["string", "null"] }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "visible_state_policy"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "const": "deterministic_capture_range_coordinate_normalization" },
+        "authority": { "const": "range_to_capture_bbox_mapping_not_visual_feature_truth" },
+        "visible_state_policy": { "type": "string", "minLength": 1 }
+      }
+    },
+    "coordinate_mapping": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "status",
+        "capture_id",
+        "target_id",
+        "sheet",
+        "cell_range",
+        "range_bounds",
+        "capture_bbox",
+        "pixel_scale",
+        "quality_status",
+        "view_state_classification",
+        "view_state_authority_decision",
+        "render_capture_file",
+        "capture_quality_file",
+        "normalization_notes",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "coordinate_mapping" },
+        "status": {
+          "type": "string",
+          "enum": [
+            "normalized_visible_range",
+            "normalized_with_view_state_warning",
+            "review_required",
+            "blocked_by_view_state",
+            "unusable_capture",
+            "not_available"
+          ]
+        },
+        "capture_id": { "type": ["string", "null"] },
+        "target_id": { "type": ["string", "null"] },
+        "sheet": { "type": ["string", "null"] },
+        "cell_range": { "type": ["string", "null"] },
+        "range_bounds": { "anyOf": [{ "$ref": "#/$defs/bounds" }, { "type": "null" }] },
+        "capture_bbox": { "anyOf": [{ "$ref": "#/$defs/capture_bbox" }, { "type": "null" }] },
+        "pixel_scale": { "$ref": "#/$defs/pixel_scale" },
+        "quality_status": { "type": ["string", "null"] },
+        "view_state_classification": { "type": ["string", "null"] },
+        "view_state_authority_decision": { "type": ["string", "null"] },
+        "render_capture_file": { "type": ["string", "null"] },
+        "capture_quality_file": { "type": ["string", "null"] },
+        "normalization_notes": { "type": "string" },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "bounds": {
+      "type": "object",
+      "required": ["min_row", "min_column", "max_row", "max_column"],
+      "additionalProperties": false,
+      "properties": {
+        "min_row": { "type": "integer", "minimum": 1 },
+        "min_column": { "type": "integer", "minimum": 1 },
+        "max_row": { "type": "integer", "minimum": 1 },
+        "max_column": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "capture_bbox": {
+      "type": "object",
+      "required": ["x", "y", "width", "height"],
+      "additionalProperties": false,
+      "properties": {
+        "x": { "type": "integer", "minimum": 0 },
+        "y": { "type": "integer", "minimum": 0 },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "pixel_scale": {
+      "type": "object",
+      "required": [
+        "row_count",
+        "column_count",
+        "pixels_per_row_estimate",
+        "pixels_per_column_estimate",
+        "axis_model"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "row_count": { "type": ["integer", "null"], "minimum": 1 },
+        "column_count": { "type": ["integer", "null"], "minimum": 1 },
+        "pixels_per_row_estimate": { "type": ["number", "null"], "minimum": 0 },
+        "pixels_per_column_estimate": { "type": ["number", "null"], "minimum": 0 },
+        "axis_model": { "const": "uniform_range_estimate" }
+      }
+    },
+    "gate_result": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "mapping_id",
+        "capture_id",
+        "target_id",
+        "gate_type",
+        "status",
+        "normalization_status",
+        "evidence_refs",
+        "notes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "coordinate_normalization_gate_result" },
+        "mapping_id": { "type": "string", "minLength": 1 },
+        "capture_id": { "type": ["string", "null"] },
+        "target_id": { "type": ["string", "null"] },
+        "gate_type": { "const": "range_capture_bbox_mapping" },
+        "status": { "type": "string", "enum": ["passed", "review_required", "blocked"] },
+        "normalization_status": { "type": "string", "minLength": 1 },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "mapping_count",
+        "normalized_visible_range_count",
+        "normalized_with_view_state_warning_count",
+        "review_required_count",
+        "blocked_by_view_state_count",
+        "unusable_capture_count",
+        "not_available_count",
+        "passed_gate_count",
+        "review_gate_count",
+        "blocked_gate_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "mapping_count": { "type": "integer", "minimum": 0 },
+        "normalized_visible_range_count": { "type": "integer", "minimum": 0 },
+        "normalized_with_view_state_warning_count": { "type": "integer", "minimum": 0 },
+        "review_required_count": { "type": "integer", "minimum": 0 },
+        "blocked_by_view_state_count": { "type": "integer", "minimum": 0 },
+        "unusable_capture_count": { "type": "integer", "minimum": 0 },
+        "not_available_count": { "type": "integer", "minimum": 0 },
+        "passed_gate_count": { "type": "integer", "minimum": 0 },
+        "review_gate_count": { "type": "integer", "minimum": 0 },
+        "blocked_gate_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}

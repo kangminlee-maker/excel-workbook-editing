@@ -1,12 +1,12 @@
-# Excel Workbook Editing Skill
+# Excel Workbook and Connected Google Sheets Editing Skill
 
-A model-agnostic agent skill for designing, editing, debugging, reconciling, and validating Excel workbooks.
+A model-agnostic agent skill for designing, editing, debugging, reconciling, previewing, and validating Excel workbooks and connected Google Sheets.
 
 ## What this skill does
 
-When an LLM agent works with `.xlsx` files, this skill gives it a reusable Excel workflow:
+When an LLM agent works with spreadsheet artifacts, this skill gives it a reusable workflow:
 
-- Treat Excel as a calculation engine, not just a file format
+- Treat spreadsheets as calculation and review systems, not just tabular files
 - Preserve traceable `input -> intermediate -> output` logic
 - Prefer layered recurring-workbook structure such as `carry-in -> current raw -> bridge -> output -> carry-out`
 - Standardize messy operational raw files into stable input sheets before wiring formulas
@@ -17,15 +17,23 @@ When an LLM agent works with `.xlsx` files, this skill gives it a reusable Excel
 - Use the temporary-copy Excel validation wrapper for unattended agent runs
 - Use narrow recalc-and-sample validation loops instead of broad workbook scans
 - Run workbook-wide formula error scans after recalculation
+- Preserve existing Google Sheets identity, `sheetId` values, validations, protected ranges, formulas, Apps Script-connected behavior, and external dependencies
+- Avoid `.xlsx` round-trips for existing connected Google Sheets unless replacement or cloning is explicitly requested
+- Verify Google Sheets edits with live readback from the same spreadsheet
+- Handle Google Sheets timeout, quota, `IMPORTRANGE`, external loading, Apps Script, and rollback risks explicitly
+- Generate review packages with HTML/JSON/Markdown evidence when CLI-visible inspection is needed
 - Separate source gaps from logic bugs when debugging mismatches
 - Keep known limitations explicit instead of hiding workbook-only patches in formulas
 
 ## Requirements
 
 - macOS or Windows desktop with Microsoft Excel installed for real Excel-engine validation
+- Google Sheets connector/API access for in-place edits to existing Google Sheets
 - An agent runtime that can read a `SKILL.md`-style folder or otherwise load the skill files into context
 
 The bundled Excel automation (`scripts/excel_engine_sample.py`) requires desktop Microsoft Excel. It uses AppleScript on macOS and PowerShell/COM Automation on Windows. Core skill guidance (formula design, workbook structure, debugging heuristics) works on any platform, but real Excel validation requires a supported desktop Excel environment.
+
+Existing Google Sheets edits require live spreadsheet access. The safe default is an in-place range-scoped edit through a Google Sheets connector or API, not export/edit/reupload.
 
 ## Installation
 
@@ -70,13 +78,21 @@ Restart or reload the agent runtime after installing so the new skill is picked 
 ```
 excel-workbook-editing/
 ├── SKILL.md                          # Main skill (auto-trigger rules included)
+├── IMPLEMENTATION_MAP.html           # Current architecture and roadmap view
 ├── agents/
 │   └── openai.yaml                   # Optional Codex UI metadata
+├── docs/
+│   ├── chrome-extension-sheets-bridge-design.md # Chrome Extension bridge architecture
+│   ├── chrome-extension-sheets-bridge-work-plan.md # Staged implementation plan through Apply Plan
+│   └── claude-code-sheets-bridge.md # Claude Code bridge artifact handoff
+├── native-host/
+│   ├── install_macos.sh                # macOS Chrome Native Messaging installer
+│   └── install_windows.ps1             # Windows Chrome Native Messaging installer
 ├── references/
-│   ├── excel-workbook-principles.md  # Formula, structure, and validation defaults
-│   ├── efficient-excel-workflows.md  # Debugging heuristics and workflow patterns
-│   ├── desktop-excel-automation.md   # macOS AppleScript and Windows COM examples
-│   └── agent-excel-usage-guidelines.md # Model-agnostic agent checklist
+│   ├── spreadsheet-principles.md # Shared CRUD, workflow, and validation rules
+│   ├── excel-workbook-principles.md # Excel/.xlsx structure, formulas, validation, automation
+│   ├── connected-google-sheets-principles.md # In-place Sheets editing and operational risks
+│   └── spreadsheet-review-package.md # HTML/JSON/Markdown review bundle guidance
 └── scripts/
     ├── excel_engine_sample.py                    # Temporary-copy Excel recalc wrapper
     ├── excel_recalculate_and_sample.applescript  # Read-only recalc helper
@@ -85,11 +101,23 @@ excel-workbook-editing/
     └── inspect_workbook.py                       # Workbook structure summary
 ```
 
+## Design docs
+
+- [Codex Goal: Chrome Extension Sheets Bridge](docs/codex-goal-chrome-extension-sheets-bridge.md)
+- [Chrome Extension Sheets Bridge Design](docs/chrome-extension-sheets-bridge-design.md)
+- [Chrome Extension Sheets Bridge Work Plan](docs/chrome-extension-sheets-bridge-work-plan.md)
+- [Claude Code Sheets Bridge Handoff](docs/claude-code-sheets-bridge.md)
+- [Implementation Map](IMPLEMENTATION_MAP.html)
+
 ## Key principles
 
-- **Explainability first**: workbooks should explain the logic, not hide it behind copied totals
+- **Explainability first**: spreadsheet artifacts should explain the logic, not hide it behind copied totals
 - **Code builds, Excel validates**: use `openpyxl` for deterministic edits, real Excel for recalculation
+- **Live Sheets stay live**: edit existing Google Sheets in place and preserve `spreadsheetId`, `sheetId`, permissions, formulas, protections, validations, and connected dependencies
 - **Prompt-safe validation**: for unattended agent runs, open a temporary workbook copy and sample only the cells needed
+- **Live readback for Google Sheets**: after connector/API writes, re-read the changed ranges and dependent outputs from the same spreadsheet
+- **Bounded Google Sheets operations**: plan timeout budgets, retries, import-load checks, and rollback snapshots for large or externally linked Sheets
+- **Review packages are evidence**: static HTML/JSON previews help CLI review but do not replace Excel recalculation or Google Sheets live readback
 - **Structure before dataframes**: inspect sheets, names, formulas, and template features before flattening a workbook into tables
 - **Formula errors are blockers**: sweep formula and literal errors after recalculation, and document any intentional remaining errors
 - **Source vs. logic**: classify mismatches before chasing formula bugs

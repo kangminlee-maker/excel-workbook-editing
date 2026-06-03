@@ -1,0 +1,291 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-live-view-formula-profile.schema.json",
+  "title": "Google Sheets Live View-State / Formula Dependency Profile",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "view_state_surfaces",
+    "formula_observations",
+    "signature_groups",
+    "dependency_edges",
+    "external_dependencies",
+    "permission_requirements",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "view_state_surfaces": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/view_state_surface" }
+    },
+    "formula_observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/formula_observation" }
+    },
+    "signature_groups": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/signature_group" }
+    },
+    "dependency_edges": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/dependency_edge" }
+    },
+    "external_dependencies": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/external_dependency" }
+    },
+    "permission_requirements": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/permission_requirement" }
+    },
+    "summary": { "$ref": "#/$defs/counts" },
+    "parser_observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/observation" }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["spreadsheet_id", "spreadsheet_url", "title", "source_artifacts"],
+      "additionalProperties": false,
+      "properties": {
+        "spreadsheet_id": { "type": "string", "minLength": 1 },
+        "spreadsheet_url": { "type": ["string", "null"] },
+        "title": { "type": "string" },
+        "source_artifacts": {
+          "type": "object",
+          "required": ["live_manifest", "top_left_sample"],
+          "additionalProperties": false,
+          "properties": {
+            "live_manifest": { "type": "string", "minLength": 1 },
+            "top_left_sample": { "type": "string", "minLength": 1 },
+            "parser_window_smoke": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "source_document",
+        "input_authority",
+        "new_live_read_performed",
+        "profile_window",
+        "formula_text_authority",
+        "formula_result_authority",
+        "expanded_range_authority"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_document": { "const": "live_google_sheet" },
+        "input_authority": { "const": "existing_live_manifest_and_top_left_sample_artifacts" },
+        "new_live_read_performed": { "const": false },
+        "profile_window": { "type": "string", "minLength": 1 },
+        "formula_text_authority": { "const": "formula_text_only" },
+        "formula_result_authority": { "const": "not_established" },
+        "expanded_range_authority": {
+          "type": "string",
+          "enum": [
+            "requires_broker_grid_window_contract",
+            "broker_bounded_window_contract_verified"
+          ]
+        }
+      }
+    },
+    "view_state_surface": {
+      "type": "object",
+      "required": [
+        "id",
+        "sheet",
+        "sheet_id",
+        "index",
+        "state",
+        "dimensions",
+        "profile_window",
+        "view_state_counts",
+        "object_counts",
+        "style_counts",
+        "risk_flags",
+        "semantic_effect",
+        "diagnostic_status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "sheet": { "type": "string" },
+        "sheet_id": { "type": "integer" },
+        "index": { "type": "integer", "minimum": 0 },
+        "state": { "type": "string" },
+        "dimensions": { "$ref": "#/$defs/counts" },
+        "profile_window": { "type": "object", "additionalProperties": true },
+        "view_state_counts": { "$ref": "#/$defs/counts" },
+        "object_counts": { "$ref": "#/$defs/counts" },
+        "style_counts": { "$ref": "#/$defs/counts" },
+        "risk_flags": { "type": "array", "items": { "type": "string" } },
+        "semantic_effect": { "type": "string", "minLength": 1 },
+        "diagnostic_status": { "type": "string", "minLength": 1 }
+      }
+    },
+    "formula_observation": {
+      "type": "object",
+      "required": [
+        "id",
+        "sheet",
+        "sheet_id",
+        "cell",
+        "row",
+        "column",
+        "formula",
+        "signature",
+        "classifications",
+        "references",
+        "authority",
+        "result_status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "sheet": { "type": "string" },
+        "sheet_id": { "type": ["integer", "null"] },
+        "cell": { "type": "string" },
+        "row": { "type": ["integer", "null"], "minimum": 1 },
+        "column": { "type": ["integer", "null"], "minimum": 1 },
+        "formula": { "type": "string" },
+        "signature": { "type": "string" },
+        "classifications": { "type": "array", "items": { "type": "string" } },
+        "references": { "type": "array", "items": { "$ref": "#/$defs/reference" } },
+        "authority": { "const": "formula_text_only" },
+        "result_status": { "const": "not_recalculated" }
+      }
+    },
+    "reference": {
+      "type": "object",
+      "required": ["kind"],
+      "additionalProperties": {
+        "type": ["string", "number", "integer", "boolean", "null"]
+      },
+      "properties": {
+        "kind": { "type": "string", "minLength": 1 }
+      }
+    },
+    "signature_group": {
+      "type": "object",
+      "required": [
+        "id",
+        "signature",
+        "formula_count",
+        "source_sheets",
+        "sample_cells",
+        "formula_examples",
+        "reference_sheets",
+        "classifications",
+        "structure_hint"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "signature": { "type": "string" },
+        "formula_count": { "type": "integer", "minimum": 0 },
+        "source_sheets": { "type": "array", "items": { "type": "string" } },
+        "sample_cells": { "type": "array", "items": { "type": "string" } },
+        "formula_examples": { "type": "array", "items": { "type": "string" } },
+        "reference_sheets": { "type": "array", "items": { "type": "string" } },
+        "classifications": { "type": "array", "items": { "type": "string" } },
+        "structure_hint": { "type": "string", "minLength": 1 }
+      }
+    },
+    "dependency_edge": {
+      "type": "object",
+      "required": [
+        "id",
+        "source_sheet",
+        "source_sheet_id",
+        "target_kind",
+        "target_sheet",
+        "target_sheet_id",
+        "target_status",
+        "formula_count",
+        "sample_formula_cells",
+        "sample_target_ranges",
+        "classifications",
+        "authority"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "source_sheet": { "type": "string" },
+        "source_sheet_id": { "type": ["integer", "null"] },
+        "target_kind": { "type": "string" },
+        "target_sheet": { "type": ["string", "null"] },
+        "target_sheet_id": { "type": ["integer", "null"] },
+        "target_status": { "type": "string" },
+        "formula_count": { "type": "integer", "minimum": 0 },
+        "sample_formula_cells": { "type": "array", "items": { "type": "string" } },
+        "sample_target_ranges": { "type": "array", "items": { "type": "string" } },
+        "classifications": { "type": "array", "items": { "type": "string" } },
+        "authority": { "const": "formula_text_dependency_candidate" }
+      }
+    },
+    "external_dependency": {
+      "type": "object",
+      "required": [
+        "id",
+        "formula_sheet",
+        "formula_cell",
+        "source_argument",
+        "range_argument",
+        "source_resolution_status",
+        "state",
+        "required_evidence"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "formula_sheet": { "type": "string" },
+        "formula_cell": { "type": "string" },
+        "source_argument": { "type": "string" },
+        "range_argument": { "type": "string" },
+        "source_resolution_status": { "type": "string" },
+        "state": { "type": "string" },
+        "required_evidence": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "permission_requirement": {
+      "type": "object",
+      "required": ["capability", "status", "required_broker_operations", "reason"],
+      "additionalProperties": false,
+      "properties": {
+        "capability": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "minLength": 1 },
+        "required_broker_operations": { "type": "array", "items": { "type": "string" } },
+        "reason": { "type": "string", "minLength": 1 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message", "evidence_refs"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["integer", "number", "boolean", "string", "null"]
+      }
+    }
+  }
+}

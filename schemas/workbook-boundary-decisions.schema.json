@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/workbook-boundary-decisions.schema.json",
+  "title": "Workbook Boundary Decisions",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_artifacts",
+    "method",
+    "boundary_decisions",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source_artifacts": { "$ref": "#/$defs/source_artifacts" },
+    "method": { "$ref": "#/$defs/method" },
+    "boundary_decisions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/boundary_decision" }
+    },
+    "summary": { "$ref": "#/$defs/summary" },
+    "parser_observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/observation" }
+    }
+  },
+  "$defs": {
+    "source_artifacts": {
+      "type": "object",
+      "required": ["block_candidates", "gate_execution"],
+      "additionalProperties": false,
+      "properties": {
+        "block_candidates": { "type": "string", "minLength": 1 },
+        "gate_execution": { "type": "string", "minLength": 1 }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "const": "deterministic_boundary_acceptance" },
+        "authority": { "const": "boundary_decision_not_final_document_graph" },
+        "decision_policy": { "type": "string", "minLength": 1 }
+      }
+    },
+    "boundary_decision": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "sheet",
+        "candidate_id",
+        "candidate_type",
+        "boundary_kind",
+        "source_boundary_gate_result_id",
+        "source_boundary_status",
+        "source_boundary_decision",
+        "source_boundary_score",
+        "status",
+        "decision",
+        "reason",
+        "confidence",
+        "graph_effect",
+        "related_region_ids",
+        "boundary_location",
+        "linked_gate_results",
+        "evidence_refs",
+        "notes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "document_boundary_decision" },
+        "sheet": { "type": ["string", "null"] },
+        "candidate_id": { "type": ["string", "null"] },
+        "candidate_type": {
+          "type": ["string", "null"],
+          "enum": [
+            "blank_column_boundary",
+            "repeated_header_touching_boundary",
+            "style_discontinuity_boundary",
+            "merged_range_title_boundary",
+            null
+          ]
+        },
+        "boundary_kind": {
+          "type": "string",
+          "enum": ["split_boundary", "title_or_section_boundary"]
+        },
+        "source_boundary_gate_result_id": { "type": ["string", "null"] },
+        "source_boundary_status": {
+          "type": ["string", "null"],
+          "enum": ["strong_candidate", "review_candidate", "weak_signal", null]
+        },
+        "source_boundary_decision": { "type": ["string", "null"] },
+        "source_boundary_score": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "status": {
+          "type": "string",
+          "enum": ["accepted", "rejected", "review_required"]
+        },
+        "decision": {
+          "type": "string",
+          "enum": ["accept_split_boundary", "reject_boundary", "retain_review_item"]
+        },
+        "reason": { "type": "string", "minLength": 1 },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "graph_effect": {
+          "type": "string",
+          "enum": [
+            "create_validated_split_boundary",
+            "do_not_create_graph_boundary",
+            "no_graph_boundary_created"
+          ]
+        },
+        "related_region_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "boundary_location": {
+          "anyOf": [
+            { "$ref": "#/$defs/boundary_location" },
+            { "type": "null" }
+          ]
+        },
+        "linked_gate_results": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/linked_gate_result" }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "boundary_location": {
+      "type": "object",
+      "required": [
+        "parent_seed_block_id",
+        "from_region_id",
+        "to_region_id",
+        "boundary_within_region_id",
+        "boundary_after_column",
+        "boundary_before_column"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "parent_seed_block_id": { "type": ["string", "null"] },
+        "from_region_id": { "type": ["string", "null"] },
+        "to_region_id": { "type": ["string", "null"] },
+        "boundary_within_region_id": { "type": ["string", "null"] },
+        "boundary_after_column": { "type": ["integer", "null"], "minimum": 1 },
+        "boundary_before_column": { "type": ["integer", "null"], "minimum": 1 }
+      }
+    },
+    "linked_gate_result": {
+      "type": "object",
+      "required": [
+        "id",
+        "gate_check_id",
+        "target_id",
+        "status",
+        "reason",
+        "confidence",
+        "link_type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": ["string", "null"] },
+        "gate_check_id": { "type": ["string", "null"] },
+        "target_id": { "type": ["string", "null"] },
+        "status": {
+          "type": ["string", "null"],
+          "enum": ["accepted", "rejected", "review_required", null]
+        },
+        "reason": { "type": ["string", "null"] },
+        "confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "link_type": { "type": "string", "enum": ["direct", "associated"] }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "boundary_decision_count",
+        "accepted_count",
+        "rejected_count",
+        "review_required_count",
+        "split_boundary_count",
+        "title_or_section_boundary_count",
+        "accepted_split_boundary_count",
+        "style_only_review_count",
+        "missing_capture_review_count",
+        "view_state_review_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "boundary_decision_count": { "type": "integer", "minimum": 0 },
+        "accepted_count": { "type": "integer", "minimum": 0 },
+        "rejected_count": { "type": "integer", "minimum": 0 },
+        "review_required_count": { "type": "integer", "minimum": 0 },
+        "split_boundary_count": { "type": "integer", "minimum": 0 },
+        "title_or_section_boundary_count": { "type": "integer", "minimum": 0 },
+        "accepted_split_boundary_count": { "type": "integer", "minimum": 0 },
+        "style_only_review_count": { "type": "integer", "minimum": 0 },
+        "missing_capture_review_count": { "type": "integer", "minimum": 0 },
+        "view_state_review_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}

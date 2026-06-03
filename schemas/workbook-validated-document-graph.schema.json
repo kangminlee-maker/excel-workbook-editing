@@ -1,0 +1,388 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/workbook-validated-document-graph.schema.json",
+  "title": "Workbook Validated Document Graph",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_artifacts",
+    "method",
+    "graph",
+    "carry_forward",
+    "summary",
+    "parser_observations"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "source_artifacts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["string", "null"]
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy"],
+      "properties": {
+        "name": {
+          "const": "deterministic_validated_document_graph_assembly"
+        },
+        "authority": {
+          "const": "accepted_graph_projection_with_carry_forward_review_queue"
+        },
+        "decision_policy": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "graph": {
+      "type": "object",
+      "required": ["nodes", "relations", "data_views", "semantic_aliases"],
+      "properties": {
+        "nodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/node"
+          }
+        },
+        "relations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relation"
+          }
+        },
+        "data_views": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/dataView"
+          }
+        },
+        "semantic_aliases": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/semanticAlias"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "carry_forward": {
+      "type": "object",
+      "required": [
+        "document_review_queue",
+        "proposal_review_queue",
+        "filtered_document_relations",
+        "action_contract_summary"
+      ],
+      "properties": {
+        "document_review_queue": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "proposal_review_queue": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "filtered_document_relations": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "action_contract_summary": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": true
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "graph_node_count",
+        "document_node_count",
+        "semantic_node_count",
+        "graph_relation_count",
+        "document_relation_count",
+        "semantic_relation_count",
+        "accepted_data_view_count",
+        "semantic_alias_count",
+        "document_review_queue_count",
+        "proposal_review_queue_count",
+        "open_action_contract_count",
+        "blocked_action_contract_count",
+        "accepted_proposal_result_count",
+        "graph_status"
+      ],
+      "properties": {
+        "graph_node_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "document_node_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "semantic_node_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "graph_relation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "document_relation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "semantic_relation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "accepted_data_view_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "semantic_alias_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "document_review_queue_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "proposal_review_queue_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "open_action_contract_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blocked_action_contract_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "accepted_proposal_result_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "graph_status": {
+          "const": "assembled_with_carry_forward_review_queue"
+        }
+      },
+      "additionalProperties": true
+    },
+    "parser_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    }
+  },
+  "$defs": {
+    "node": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "ontology_class",
+        "label",
+        "status",
+        "properties",
+        "evidence_refs",
+        "source_artifact_refs"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "ontology_class": {
+          "type": "string"
+        },
+        "label": {
+          "type": ["string", "number", "null"]
+        },
+        "status": {
+          "const": "accepted"
+        },
+        "sheet": {
+          "type": ["string", "null"]
+        },
+        "range": {
+          "type": ["string", "null"]
+        },
+        "properties": {
+          "type": "object"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "relation": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "from",
+        "to",
+        "status",
+        "properties",
+        "evidence_refs",
+        "source_artifact_refs"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "status": {
+          "const": "accepted"
+        },
+        "properties": {
+          "type": "object"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "dataView": {
+      "type": "object",
+      "required": ["id", "status", "evidence_refs", "source_artifact_refs"],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "status": {
+          "const": "accepted"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "semanticAlias": {
+      "type": "object",
+      "required": [
+        "id",
+        "alias",
+        "canonical_concept_id",
+        "status",
+        "scope",
+        "matched_sheets",
+        "evidence_refs",
+        "source_artifact_refs",
+        "validation_result_id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "alias": {
+          "type": ["string", "null"]
+        },
+        "canonical_concept_id": {
+          "type": "string"
+        },
+        "status": {
+          "const": "accepted"
+        },
+        "scope": {
+          "type": ["string", "null"]
+        },
+        "matched_sheets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence": {
+          "type": ["number", "null"]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_artifact_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "validation_result_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "properties": {
+        "level": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

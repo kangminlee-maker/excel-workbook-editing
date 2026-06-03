@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-semantic-gate-iteration.schema.json",
+  "title": "Google Sheets Semantic Gate Iteration",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "corrected_domain_classification",
+    "semantic_candidates",
+    "semantic_gate_results",
+    "metric_equivalence_checks",
+    "carry_forward_review",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "type": "object", "additionalProperties": true },
+    "authority": { "type": "object", "required": ["source_document", "iteration_status", "semantic_truth", "shared_ontology_updates"], "additionalProperties": true },
+    "corrected_domain_classification": { "type": "object", "additionalProperties": true },
+    "semantic_candidates": { "type": "array", "items": { "$ref": "#/$defs/candidate" } },
+    "semantic_gate_results": { "type": "array", "items": { "$ref": "#/$defs/gate" } },
+    "metric_equivalence_checks": { "type": "array", "items": { "$ref": "#/$defs/metric_check" } },
+    "carry_forward_review": { "type": "array", "items": { "type": "object", "required": ["id", "severity", "message"], "additionalProperties": true } },
+    "summary": { "type": "object", "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] } },
+    "parser_observations": { "type": "array", "items": { "type": "object", "required": ["level", "message"], "additionalProperties": true } }
+  },
+  "$defs": {
+    "candidate": {
+      "type": "object",
+      "required": ["id", "type", "status", "domain_layer", "label", "description", "gate_outcome", "evidence_refs", "review_reasons"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "const": "semantic_candidate" },
+        "status": { "type": "string", "enum": ["accepted", "review_required", "blocked"] },
+        "domain_layer": { "type": "string" },
+        "label": { "type": "string" },
+        "description": { "type": "string" },
+        "gate_outcome": { "type": "string" },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } },
+        "review_reasons": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "required": ["id", "type", "gate_type", "status", "message", "evidence_refs"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "const": "semantic_gate_result" },
+        "gate_type": { "type": "string" },
+        "status": { "type": "string", "enum": ["accepted", "review_required", "blocked"] },
+        "message": { "type": "string" },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "metric_check": {
+      "type": "object",
+      "required": ["id", "type", "status", "candidate_parent_label", "visible_label_bucket", "surface_count", "sample_surfaces", "dimensions_to_verify", "current_basis", "decision", "evidence_refs"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "const": "metric_equivalence_check" },
+        "status": { "const": "review_required" },
+        "candidate_parent_label": { "type": "string" },
+        "visible_label_bucket": { "type": "string" },
+        "surface_count": { "type": "integer" },
+        "sample_surfaces": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+        "dimensions_to_verify": { "type": "array", "items": { "type": "string" } },
+        "current_basis": { "type": "string" },
+        "decision": { "type": "string" },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

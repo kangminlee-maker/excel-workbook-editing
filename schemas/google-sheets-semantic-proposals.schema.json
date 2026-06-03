@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-semantic-proposals.schema.json",
+  "title": "Google Sheets Semantic Proposals",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "semantic_concept_proposals",
+    "semantic_relation_proposals",
+    "validation_plan",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "semantic_concept_proposals": { "type": "array", "items": { "$ref": "#/$defs/concept" } },
+    "semantic_relation_proposals": { "type": "array", "items": { "$ref": "#/$defs/relation" } },
+    "validation_plan": { "type": "array", "items": { "$ref": "#/$defs/validation_item" } },
+    "summary": { "$ref": "#/$defs/counts" },
+    "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["spreadsheet_id", "spreadsheet_url", "title", "source_artifacts"],
+      "additionalProperties": false,
+      "properties": {
+        "spreadsheet_id": { "type": "string", "minLength": 1 },
+        "spreadsheet_url": { "type": ["string", "null"] },
+        "title": { "type": "string" },
+        "source_artifacts": {
+          "type": "object",
+          "required": ["live_domain_source_model", "live_evidence_package", "live_document_ontology_mapping"],
+          "additionalProperties": false,
+          "properties": {
+            "live_domain_source_model": { "type": "string", "minLength": 1 },
+            "live_evidence_package": { "type": "string", "minLength": 1 },
+            "live_document_ontology_mapping": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "source_document",
+        "proposal_status",
+        "shared_ontology_updates",
+        "semantic_generation_scope",
+        "formula_result_authority"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_document": { "const": "live_google_sheet" },
+        "proposal_status": { "const": "proposal_only_not_accepted" },
+        "shared_ontology_updates": { "const": 0 },
+        "semantic_generation_scope": { "type": "string", "minLength": 1 },
+        "formula_result_authority": { "const": "not_established" }
+      }
+    },
+    "concept": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "status",
+        "domain_layer",
+        "label",
+        "description",
+        "source_evidence_refs",
+        "domain_source_refs",
+        "shared_promotion_status",
+        "blockers"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "semantic_concept_proposal" },
+        "status": { "const": "proposed" },
+        "domain_layer": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "source_evidence_refs": { "type": "array", "items": { "type": "string" } },
+        "domain_source_refs": { "type": "array", "items": { "type": "string" } },
+        "shared_promotion_status": { "type": "string", "minLength": 1 },
+        "blockers": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "relation": {
+      "type": "object",
+      "required": ["id", "type", "status", "relation_type", "from", "to", "source_evidence_refs", "blockers"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "semantic_relation_proposal" },
+        "status": { "const": "proposed" },
+        "relation_type": { "type": "string", "minLength": 1 },
+        "from": { "type": "string", "minLength": 1 },
+        "to": { "type": "string", "minLength": 1 },
+        "source_evidence_refs": { "type": "array", "items": { "type": "string" } },
+        "blockers": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "validation_item": {
+      "type": "object",
+      "required": ["id", "target_id", "target_type", "required_gates", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "target_id": { "type": "string", "minLength": 1 },
+        "target_type": { "type": "string", "minLength": 1 },
+        "required_gates": { "type": "array", "items": { "type": "string" } },
+        "status": { "type": "string", "minLength": 1 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] }
+    }
+  }
+}

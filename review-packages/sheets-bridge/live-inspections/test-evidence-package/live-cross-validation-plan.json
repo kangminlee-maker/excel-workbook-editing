@@ -1,0 +1,1 @@
+{"validation_targets": [{"id": "target_ok", "related_pipeline_ids": ["pipeline_ok"]}, {"id": "target_blocked", "related_pipeline_ids": ["pipeline_blocked"]}]}

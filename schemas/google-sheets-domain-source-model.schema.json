@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-domain-source-model.schema.json",
+  "title": "Google Sheets Domain Source Model",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "general_domain_sources",
+    "local_domain_boundary",
+    "unavailable_sources",
+    "semantic_readiness",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "general_domain_sources": { "type": "array", "items": { "$ref": "#/$defs/general_source" } },
+    "local_domain_boundary": { "$ref": "#/$defs/local_boundary" },
+    "unavailable_sources": { "type": "array", "items": { "$ref": "#/$defs/unavailable_source" } },
+    "semantic_readiness": { "$ref": "#/$defs/counts" },
+    "summary": { "$ref": "#/$defs/counts" },
+    "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["spreadsheet_id", "spreadsheet_url", "title", "source_artifacts"],
+      "additionalProperties": false,
+      "properties": {
+        "spreadsheet_id": { "type": "string", "minLength": 1 },
+        "spreadsheet_url": { "type": ["string", "null"] },
+        "title": { "type": "string" },
+        "source_artifacts": {
+          "type": "object",
+          "required": ["live_action_contracts", "live_evidence_package"],
+          "additionalProperties": false,
+          "properties": {
+            "live_action_contracts": { "type": "string", "minLength": 1 },
+            "live_evidence_package": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "source_document",
+        "model_status",
+        "semantic_proposal_generation",
+        "general_domain_authority",
+        "local_domain_authority"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_document": { "const": "live_google_sheet" },
+        "model_status": { "const": "domain_source_model_only" },
+        "semantic_proposal_generation": { "const": "not_performed" },
+        "general_domain_authority": { "type": "string", "enum": ["available_as_reference_only", "not_selected"] },
+        "local_domain_authority": { "type": "string", "enum": ["boundary_not_confirmed", "boundary_confirmed"] }
+      }
+    },
+    "general_source": {
+      "type": "object",
+      "required": ["id", "layer", "path", "size_bytes", "status", "applicability", "authority"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "layer": { "const": "general_domain" },
+        "path": { "type": "string", "minLength": 1 },
+        "size_bytes": { "type": "integer", "minimum": 0 },
+        "status": { "type": "string", "minLength": 1 },
+        "applicability": { "type": "array", "items": { "type": "string" } },
+        "authority": { "type": "string", "minLength": 1 }
+      }
+    },
+    "local_boundary": {
+      "type": "object",
+      "required": [
+        "layer",
+        "boundary_label",
+        "boundary_status",
+        "available_local_evidence",
+        "missing_local_evidence",
+        "promotion_policy"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "layer": { "const": "local_domain" },
+        "boundary_label": { "type": "string" },
+        "boundary_status": { "type": "string" },
+        "available_local_evidence": { "type": "array", "items": { "type": "string" } },
+        "missing_local_evidence": { "type": "array", "items": { "type": "string" } },
+        "reporting_basis": { "type": "string" },
+        "promotion_policy": { "type": "string" }
+      }
+    },
+    "unavailable_source": {
+      "type": "object",
+      "required": ["id", "type", "status", "reason", "related_contract_ids"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "minLength": 1 },
+        "reason": { "type": "string", "minLength": 1 },
+        "related_contract_ids": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] }
+    }
+  }
+}

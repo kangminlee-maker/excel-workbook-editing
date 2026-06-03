@@ -1,0 +1,1 @@
+{"sampling_plan": {"planned_requests": [{"ranges": ["'FC_DATA'!A1:Z80"]}]}, "broker_responses": [{"operation": "inspect.values_window", "payload": {"windows": [{"range": "FC_DATA!A1:Z80", "values": [["https://docs.google.com/spreadsheets/d/source/edit", "Title"], ["#REF!", "100", "200", "300", "400"]]}]}}]}

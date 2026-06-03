@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-formula-result-authority-checkpoint.schema.json",
+  "title": "Google Sheets Formula Result Authority Checkpoint",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "method",
+    "evidence_inputs",
+    "range_authority_results",
+    "pipeline_authority_results",
+    "gate_results",
+    "follow_up_actions",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "authority": { "$ref": "#/$defs/authority" },
+    "method": { "$ref": "#/$defs/method" },
+    "evidence_inputs": { "type": "object", "additionalProperties": true },
+    "range_authority_results": { "type": "array", "items": { "$ref": "#/$defs/range_result" } },
+    "pipeline_authority_results": { "type": "array", "items": { "$ref": "#/$defs/pipeline_result" } },
+    "gate_results": { "type": "array", "items": { "$ref": "#/$defs/gate_result" } },
+    "follow_up_actions": { "type": "array", "items": { "$ref": "#/$defs/follow_up" } },
+    "summary": { "$ref": "#/$defs/counts" },
+    "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["spreadsheet_id", "spreadsheet_url", "title", "source_artifacts"],
+      "additionalProperties": false,
+      "properties": {
+        "spreadsheet_id": { "type": "string", "minLength": 1 },
+        "spreadsheet_url": { "type": ["string", "null"] },
+        "title": { "type": "string" },
+        "source_artifacts": { "type": "object", "additionalProperties": { "type": "string" } }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "source_document",
+        "checkpoint_status",
+        "formula_result_authority_basis",
+        "shared_ontology_updates",
+        "parser_truth"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_document": { "const": "live_google_sheet" },
+        "checkpoint_status": { "const": "completed" },
+        "formula_result_authority_basis": { "const": "google_sheets_api_grid_effective_value" },
+        "shared_ontology_updates": { "const": 0 },
+        "parser_truth": { "const": "range_level_authority_only_no_semantic_promotion" }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "const": "connected_sheets_formula_result_authority_checkpoint" },
+        "authority": { "const": "deterministic_grid_effective_value_gate" },
+        "decision_policy": { "type": "string", "minLength": 1 }
+      }
+    },
+    "range_result": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "source_kind",
+        "sheet",
+        "range",
+        "status",
+        "authority_basis",
+        "metrics",
+        "error_samples",
+        "formula_samples",
+        "blockers",
+        "message",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "formula_result_range_authority" },
+        "source_kind": { "type": "string", "minLength": 1 },
+        "sheet": { "type": "string", "minLength": 1 },
+        "range": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "enum": ["accepted", "review_required", "blocked"] },
+        "authority_basis": { "const": "google_sheets_api_grid_effective_value" },
+        "metrics": { "$ref": "#/$defs/metrics" },
+        "error_samples": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+        "formula_samples": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+        "blockers": { "type": "array", "items": { "type": "string" } },
+        "message": { "type": "string", "minLength": 1 },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "cell_count",
+        "formatted_value_count",
+        "formula_cell_count",
+        "formula_cell_with_effective_value_count",
+        "formula_error_cell_count",
+        "effective_value_count",
+        "effective_error_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "cell_count": { "type": "integer" },
+        "formatted_value_count": { "type": "integer" },
+        "formula_cell_count": { "type": "integer" },
+        "formula_cell_with_effective_value_count": { "type": "integer" },
+        "formula_error_cell_count": { "type": "integer" },
+        "effective_value_count": { "type": "integer" },
+        "effective_error_count": { "type": "integer" }
+      }
+    },
+    "pipeline_result": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "pipeline_id",
+        "role",
+        "sheet",
+        "range",
+        "status",
+        "authority_basis",
+        "probed_range_result_id",
+        "review_flags",
+        "transform_formula_count",
+        "projection_preview_status",
+        "blockers",
+        "message",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "formula_result_pipeline_authority" },
+        "pipeline_id": { "type": "string", "minLength": 1 },
+        "role": { "type": "string" },
+        "sheet": { "type": "string" },
+        "range": { "type": "string" },
+        "status": { "type": "string", "enum": ["accepted", "review_required", "blocked"] },
+        "authority_basis": { "type": "string" },
+        "probed_range_result_id": { "type": ["string", "null"] },
+        "review_flags": { "type": "array", "items": { "type": "string" } },
+        "transform_formula_count": { "type": "integer" },
+        "projection_preview_status": { "type": ["string", "null"] },
+        "blockers": { "type": "array", "items": { "type": "string" } },
+        "message": { "type": "string", "minLength": 1 },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "gate_result": {
+      "type": "object",
+      "required": ["id", "status", "message", "evidence_refs"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "enum": ["accepted", "review_required", "blocked"] },
+        "message": { "type": "string", "minLength": 1 },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "follow_up": {
+      "type": "object",
+      "required": ["id", "priority", "action", "done_when"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "priority": { "type": "string", "enum": ["low", "medium", "high"] },
+        "action": { "type": "string", "minLength": 1 },
+        "done_when": { "type": "string", "minLength": 1 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string", "minLength": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] }
+    }
+  }
+}

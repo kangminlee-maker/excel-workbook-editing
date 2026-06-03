@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/workbook-readonly-sample.schema.json",
+  "title": "Workbook Read-Only Row Sample",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "engine",
+    "limits",
+    "sheets",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "engine": { "$ref": "#/$defs/engine" },
+    "limits": { "$ref": "#/$defs/limits" },
+    "sheets": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/sheet" }
+    },
+    "summary": { "$ref": "#/$defs/summary" },
+    "parser_observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/observation" }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["path", "file_name", "size_bytes", "sha256"],
+      "additionalProperties": false,
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "file_name": { "type": "string", "minLength": 1 },
+        "size_bytes": { "type": "integer", "minimum": 0 },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "engine": {
+      "type": "object",
+      "required": ["library", "mode", "data_only", "keep_links", "load_seconds"],
+      "additionalProperties": false,
+      "properties": {
+        "library": { "const": "openpyxl" },
+        "mode": { "const": "read_only" },
+        "data_only": { "const": false },
+        "keep_links": { "const": false },
+        "load_seconds": { "type": "number", "minimum": 0 }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "required": ["default_max_rows", "max_columns", "preview_chars"],
+      "additionalProperties": false,
+      "properties": {
+        "default_max_rows": { "type": "integer", "minimum": 1 },
+        "max_columns": { "type": "integer", "minimum": 1 },
+        "preview_chars": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "sheet": {
+      "type": "object",
+      "required": ["name", "max_row", "max_column", "sample_seconds", "windows"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "max_row": { "type": "integer", "minimum": 1 },
+        "max_column": { "type": "integer", "minimum": 1 },
+        "sample_seconds": { "type": "number", "minimum": 0 },
+        "windows": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/window" }
+        }
+      }
+    },
+    "window": {
+      "type": "object",
+      "required": [
+        "start_row",
+        "end_row",
+        "max_columns",
+        "row_count",
+        "non_empty_cell_count",
+        "formula_cell_count",
+        "rows"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "start_row": { "type": "integer", "minimum": 1 },
+        "end_row": { "type": "integer", "minimum": 1 },
+        "max_columns": { "type": "integer", "minimum": 1 },
+        "row_count": { "type": "integer", "minimum": 0 },
+        "non_empty_cell_count": { "type": "integer", "minimum": 0 },
+        "formula_cell_count": { "type": "integer", "minimum": 0 },
+        "rows": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/row" }
+        }
+      }
+    },
+    "row": {
+      "type": "object",
+      "required": [
+        "row",
+        "non_empty_count",
+        "formula_count",
+        "first_non_empty_column",
+        "last_non_empty_column",
+        "cells"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "row": { "type": "integer", "minimum": 1 },
+        "non_empty_count": { "type": "integer", "minimum": 0 },
+        "formula_count": { "type": "integer", "minimum": 0 },
+        "first_non_empty_column": { "type": ["integer", "null"], "minimum": 1 },
+        "last_non_empty_column": { "type": ["integer", "null"], "minimum": 1 },
+        "cells": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/cell" }
+        }
+      }
+    },
+    "cell": {
+      "type": "object",
+      "required": ["cell", "row", "column", "value_type", "value_preview", "formula"],
+      "additionalProperties": false,
+      "properties": {
+        "cell": { "type": "string", "minLength": 1 },
+        "row": { "type": "integer", "minimum": 1 },
+        "column": { "type": "integer", "minimum": 1 },
+        "value_type": {
+          "type": "string",
+          "enum": ["blank", "boolean", "datetime", "formula", "number", "string"]
+        },
+        "value_preview": { "type": ["string", "null"] },
+        "formula": { "type": ["string", "null"] }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "sheet_count",
+        "window_count",
+        "sampled_row_count",
+        "non_empty_cell_count",
+        "formula_cell_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "sheet_count": { "type": "integer", "minimum": 0 },
+        "window_count": { "type": "integer", "minimum": 0 },
+        "sampled_row_count": { "type": "integer", "minimum": 0 },
+        "non_empty_cell_count": { "type": "integer", "minimum": 0 },
+        "formula_cell_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}

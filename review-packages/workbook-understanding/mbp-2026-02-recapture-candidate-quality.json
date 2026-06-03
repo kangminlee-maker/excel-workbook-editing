@@ -1,0 +1,1302 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-01T04:46:23.261380Z",
+  "source_artifacts": {
+    "render_captures": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/mbp-2026-02-recapture-candidate-captures.json"
+  },
+  "method": {
+    "name": "deterministic_png_capture_quality",
+    "thresholds": {
+      "min_height_px_fail": 50,
+      "min_height_px_warn": 120,
+      "min_pixels_per_row_fail": 4.0,
+      "min_pixels_per_row_warn": 8.0,
+      "min_pixels_per_column_fail": 4.0,
+      "min_pixels_per_column_warn": 8.0,
+      "aspect_ratio_fail": 25.0,
+      "aspect_ratio_warn": 12.0,
+      "wide_capture_width_warn": 2200,
+      "wide_capture_column_warn": 35,
+      "visible_pixel_ratio_fail": 0.002,
+      "visible_pixel_ratio_warn": 0.01
+    }
+  },
+  "quality_results": [
+    {
+      "id": "quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "type": "capture_quality_result",
+      "status": "usable",
+      "capture_id": "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_01",
+      "sheet": "결제상세",
+      "requested_range": "A1:R22",
+      "capture_window_range": "A1:R22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_001_be06d2a5d0.png",
+      "dimensions": {
+        "width": 1040,
+        "height": 375,
+        "size_bytes": 127306
+      },
+      "range_shape": {
+        "status": "parsed",
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 18,
+        "row_count": 22,
+        "column_count": 18
+      },
+      "metrics": {
+        "aspect_ratio": 2.7733,
+        "pixels_per_row": 17.0455,
+        "pixels_per_column": 57.7778,
+        "visible_pixel_ratio": 0.61217,
+        "alpha_coverage_ratio": 0.624392
+      },
+      "checks": [
+        {
+          "id": "capture_status",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Render capture status is captured."
+        },
+        {
+          "id": "png_file_exists",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG file exists: /Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_001_be06d2a5d0.png"
+        },
+        {
+          "id": "dimensions_available",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG dimensions are 1040 x 375."
+        },
+        {
+          "id": "height_readability",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Capture image height should be large enough for visual review. 375 px is within threshold."
+        },
+        {
+          "id": "pixels_per_row",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Rows should have enough rendered height for visual gates. 17.0455 px/row is within threshold."
+        },
+        {
+          "id": "pixels_per_column",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Columns should have enough rendered width for visual gates. 57.7778 px/column is within threshold."
+        },
+        {
+          "id": "aspect_ratio",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Aspect ratio 2.7733 is reviewable."
+        },
+        {
+          "id": "visible_content",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Visible pixel ratio 0.61217 is above blank-image thresholds."
+        },
+        {
+          "id": "wide_capture",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Capture width does not require tiling by default."
+        }
+      ],
+      "recommendations": [
+        "accept_for_next_visual_gate"
+      ],
+      "evidence_refs": [
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_01"
+      ],
+      "notes": "Capture quality checks passed."
+    },
+    {
+      "id": "quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "type": "capture_quality_result",
+      "status": "usable",
+      "capture_id": "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_02",
+      "sheet": "결제상세",
+      "requested_range": "S1:AJ22",
+      "capture_window_range": "S1:AJ22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_002_25dad63e7a.png",
+      "dimensions": {
+        "width": 1568,
+        "height": 375,
+        "size_bytes": 81148
+      },
+      "range_shape": {
+        "status": "parsed",
+        "min_row": 1,
+        "min_column": 19,
+        "max_row": 22,
+        "max_column": 36,
+        "row_count": 22,
+        "column_count": 18
+      },
+      "metrics": {
+        "aspect_ratio": 4.1813,
+        "pixels_per_row": 17.0455,
+        "pixels_per_column": 87.1111,
+        "visible_pixel_ratio": 0.538263,
+        "alpha_coverage_ratio": 0.545868
+      },
+      "checks": [
+        {
+          "id": "capture_status",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Render capture status is captured."
+        },
+        {
+          "id": "png_file_exists",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG file exists: /Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_002_25dad63e7a.png"
+        },
+        {
+          "id": "dimensions_available",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG dimensions are 1568 x 375."
+        },
+        {
+          "id": "height_readability",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Capture image height should be large enough for visual review. 375 px is within threshold."
+        },
+        {
+          "id": "pixels_per_row",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Rows should have enough rendered height for visual gates. 17.0455 px/row is within threshold."
+        },
+        {
+          "id": "pixels_per_column",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Columns should have enough rendered width for visual gates. 87.1111 px/column is within threshold."
+        },
+        {
+          "id": "aspect_ratio",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Aspect ratio 4.1813 is reviewable."
+        },
+        {
+          "id": "visible_content",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Visible pixel ratio 0.538263 is above blank-image thresholds."
+        },
+        {
+          "id": "wide_capture",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Capture width does not require tiling by default."
+        }
+      ],
+      "recommendations": [
+        "accept_for_next_visual_gate"
+      ],
+      "evidence_refs": [
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_02"
+      ],
+      "notes": "Capture quality checks passed."
+    },
+    {
+      "id": "quality_capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "type": "capture_quality_result",
+      "status": "usable",
+      "capture_id": "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "target_id": "candidate_capture_target_결제상세_cell_region_1_column_tile_03",
+      "sheet": "결제상세",
+      "requested_range": "AK1:AY22",
+      "capture_window_range": "AK1:AY22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_003_f75855ae83.png",
+      "dimensions": {
+        "width": 872,
+        "height": 375,
+        "size_bytes": 69146
+      },
+      "range_shape": {
+        "status": "parsed",
+        "min_row": 1,
+        "min_column": 37,
+        "max_row": 22,
+        "max_column": 51,
+        "row_count": 22,
+        "column_count": 15
+      },
+      "metrics": {
+        "aspect_ratio": 2.3253,
+        "pixels_per_row": 17.0455,
+        "pixels_per_column": 58.1333,
+        "visible_pixel_ratio": 0.464317,
+        "alpha_coverage_ratio": 0.467122
+      },
+      "checks": [
+        {
+          "id": "capture_status",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Render capture status is captured."
+        },
+        {
+          "id": "png_file_exists",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG file exists: /Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_003_f75855ae83.png"
+        },
+        {
+          "id": "dimensions_available",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG dimensions are 872 x 375."
+        },
+        {
+          "id": "height_readability",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Capture image height should be large enough for visual review. 375 px is within threshold."
+        },
+        {
+          "id": "pixels_per_row",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Rows should have enough rendered height for visual gates. 17.0455 px/row is within threshold."
+        },
+        {
+          "id": "pixels_per_column",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Columns should have enough rendered width for visual gates. 58.1333 px/column is within threshold."
+        },
+        {
+          "id": "aspect_ratio",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Aspect ratio 2.3253 is reviewable."
+        },
+        {
+          "id": "visible_content",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Visible pixel ratio 0.464317 is above blank-image thresholds."
+        },
+        {
+          "id": "wide_capture",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Capture width does not require tiling by default."
+        }
+      ],
+      "recommendations": [
+        "accept_for_next_visual_gate"
+      ],
+      "evidence_refs": [
+        "capture_candidate_capture_target_결제상세_cell_region_1_column_tile_03"
+      ],
+      "notes": "Capture quality checks passed."
+    },
+    {
+      "id": "quality_capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "type": "capture_quality_result",
+      "status": "recapture_required",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_same_window_control_01",
+      "sheet": "당월산식",
+      "requested_range": "A1:BA22",
+      "capture_window_range": "A1:BA22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_004_7ee126545e.png",
+      "dimensions": {
+        "width": 2311,
+        "height": 69,
+        "size_bytes": 20763
+      },
+      "range_shape": {
+        "status": "parsed",
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 53,
+        "row_count": 22,
+        "column_count": 53
+      },
+      "metrics": {
+        "aspect_ratio": 33.4928,
+        "pixels_per_row": 3.1364,
+        "pixels_per_column": 43.6038,
+        "visible_pixel_ratio": 0.750909,
+        "alpha_coverage_ratio": 0.751591
+      },
+      "checks": [
+        {
+          "id": "capture_status",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Render capture status is captured."
+        },
+        {
+          "id": "png_file_exists",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG file exists: /Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_004_7ee126545e.png"
+        },
+        {
+          "id": "dimensions_available",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG dimensions are 2311 x 69."
+        },
+        {
+          "id": "height_readability",
+          "type": "capture_quality_check",
+          "status": "warning",
+          "severity": "warning",
+          "message": "Capture image height should be large enough for visual review. 69 px is below warning threshold 120."
+        },
+        {
+          "id": "pixels_per_row",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Rows should have enough rendered height for visual gates. 3.1364 px/row is below fail threshold 4.0."
+        },
+        {
+          "id": "pixels_per_column",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Columns should have enough rendered width for visual gates. 43.6038 px/column is within threshold."
+        },
+        {
+          "id": "aspect_ratio",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Aspect ratio 33.4928 exceeds fail threshold 25.0."
+        },
+        {
+          "id": "visible_content",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Visible pixel ratio 0.750909 is above blank-image thresholds."
+        },
+        {
+          "id": "wide_capture",
+          "type": "capture_quality_check",
+          "status": "warning",
+          "severity": "warning",
+          "message": "Capture spans 53 columns at 2311px; tiling may improve reviewability."
+        }
+      ],
+      "recommendations": [
+        "recapture_with_tiling",
+        "recapture_with_visible_row_context"
+      ],
+      "evidence_refs": [
+        "capture_candidate_capture_target_당월산식_cell_region_1_same_window_control_01"
+      ],
+      "notes": "recapture_required: height_readability, pixels_per_row, aspect_ratio, wide_capture"
+    },
+    {
+      "id": "quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "type": "capture_quality_result",
+      "status": "recapture_required",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01",
+      "sheet": "당월산식",
+      "requested_range": "A21:R100",
+      "capture_window_range": "A21:R100",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_005_4c1035ab25.png",
+      "dimensions": {
+        "width": 1052,
+        "height": 1,
+        "size_bytes": 192
+      },
+      "range_shape": {
+        "status": "parsed",
+        "min_row": 21,
+        "min_column": 1,
+        "max_row": 100,
+        "max_column": 18,
+        "row_count": 80,
+        "column_count": 18
+      },
+      "metrics": {
+        "aspect_ratio": 1052.0,
+        "pixels_per_row": 0.0125,
+        "pixels_per_column": 58.4444,
+        "visible_pixel_ratio": 0.0,
+        "alpha_coverage_ratio": 0.0
+      },
+      "checks": [
+        {
+          "id": "capture_status",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Render capture status is captured."
+        },
+        {
+          "id": "png_file_exists",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG file exists: /Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_005_4c1035ab25.png"
+        },
+        {
+          "id": "dimensions_available",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG dimensions are 1052 x 1."
+        },
+        {
+          "id": "height_readability",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Capture image height should be large enough for visual review. 1 px is below fail threshold 50."
+        },
+        {
+          "id": "pixels_per_row",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Rows should have enough rendered height for visual gates. 0.0125 px/row is below fail threshold 4.0."
+        },
+        {
+          "id": "pixels_per_column",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Columns should have enough rendered width for visual gates. 58.4444 px/column is within threshold."
+        },
+        {
+          "id": "aspect_ratio",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Aspect ratio 1052.0 exceeds fail threshold 25.0."
+        },
+        {
+          "id": "visible_content",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Visible pixel ratio 0.0 is below fail threshold 0.002."
+        },
+        {
+          "id": "wide_capture",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Capture width does not require tiling by default."
+        }
+      ],
+      "recommendations": [
+        "inspect_for_blank_or_clipped_capture",
+        "recapture_with_expanded_window_or_zoom",
+        "recapture_with_visible_row_context"
+      ],
+      "evidence_refs": [
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_01"
+      ],
+      "notes": "recapture_required: height_readability, pixels_per_row, aspect_ratio, visible_content"
+    },
+    {
+      "id": "quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "type": "capture_quality_result",
+      "status": "recapture_required",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02",
+      "sheet": "당월산식",
+      "requested_range": "S21:AJ100",
+      "capture_window_range": "S21:AJ100",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_006_33a3867a7b.png",
+      "dimensions": {
+        "width": 183,
+        "height": 1,
+        "size_bytes": 167
+      },
+      "range_shape": {
+        "status": "parsed",
+        "min_row": 21,
+        "min_column": 19,
+        "max_row": 100,
+        "max_column": 36,
+        "row_count": 80,
+        "column_count": 18
+      },
+      "metrics": {
+        "aspect_ratio": 183.0,
+        "pixels_per_row": 0.0125,
+        "pixels_per_column": 10.1667,
+        "visible_pixel_ratio": 0.0,
+        "alpha_coverage_ratio": 0.0
+      },
+      "checks": [
+        {
+          "id": "capture_status",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Render capture status is captured."
+        },
+        {
+          "id": "png_file_exists",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG file exists: /Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_006_33a3867a7b.png"
+        },
+        {
+          "id": "dimensions_available",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG dimensions are 183 x 1."
+        },
+        {
+          "id": "height_readability",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Capture image height should be large enough for visual review. 1 px is below fail threshold 50."
+        },
+        {
+          "id": "pixels_per_row",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Rows should have enough rendered height for visual gates. 0.0125 px/row is below fail threshold 4.0."
+        },
+        {
+          "id": "pixels_per_column",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Columns should have enough rendered width for visual gates. 10.1667 px/column is within threshold."
+        },
+        {
+          "id": "aspect_ratio",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Aspect ratio 183.0 exceeds fail threshold 25.0."
+        },
+        {
+          "id": "visible_content",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Visible pixel ratio 0.0 is below fail threshold 0.002."
+        },
+        {
+          "id": "wide_capture",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Capture width does not require tiling by default."
+        }
+      ],
+      "recommendations": [
+        "inspect_for_blank_or_clipped_capture",
+        "recapture_with_expanded_window_or_zoom",
+        "recapture_with_visible_row_context"
+      ],
+      "evidence_refs": [
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_02"
+      ],
+      "notes": "recapture_required: height_readability, pixels_per_row, aspect_ratio, visible_content"
+    },
+    {
+      "id": "quality_capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "type": "capture_quality_result",
+      "status": "recapture_required",
+      "capture_id": "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "target_id": "candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03",
+      "sheet": "당월산식",
+      "requested_range": "AK21:BA100",
+      "capture_window_range": "AK21:BA100",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_007_cf0646c2df.png",
+      "dimensions": {
+        "width": 1078,
+        "height": 1,
+        "size_bytes": 192
+      },
+      "range_shape": {
+        "status": "parsed",
+        "min_row": 21,
+        "min_column": 37,
+        "max_row": 100,
+        "max_column": 53,
+        "row_count": 80,
+        "column_count": 17
+      },
+      "metrics": {
+        "aspect_ratio": 1078.0,
+        "pixels_per_row": 0.0125,
+        "pixels_per_column": 63.4118,
+        "visible_pixel_ratio": 0.0,
+        "alpha_coverage_ratio": 0.0
+      },
+      "checks": [
+        {
+          "id": "capture_status",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Render capture status is captured."
+        },
+        {
+          "id": "png_file_exists",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG file exists: /Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_007_cf0646c2df.png"
+        },
+        {
+          "id": "dimensions_available",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG dimensions are 1078 x 1."
+        },
+        {
+          "id": "height_readability",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Capture image height should be large enough for visual review. 1 px is below fail threshold 50."
+        },
+        {
+          "id": "pixels_per_row",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Rows should have enough rendered height for visual gates. 0.0125 px/row is below fail threshold 4.0."
+        },
+        {
+          "id": "pixels_per_column",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Columns should have enough rendered width for visual gates. 63.4118 px/column is within threshold."
+        },
+        {
+          "id": "aspect_ratio",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Aspect ratio 1078.0 exceeds fail threshold 25.0."
+        },
+        {
+          "id": "visible_content",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Visible pixel ratio 0.0 is below fail threshold 0.002."
+        },
+        {
+          "id": "wide_capture",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Capture width does not require tiling by default."
+        }
+      ],
+      "recommendations": [
+        "inspect_for_blank_or_clipped_capture",
+        "recapture_with_expanded_window_or_zoom",
+        "recapture_with_visible_row_context"
+      ],
+      "evidence_refs": [
+        "capture_candidate_capture_target_당월산식_cell_region_1_visible_row_context_tile_03"
+      ],
+      "notes": "recapture_required: height_readability, pixels_per_row, aspect_ratio, visible_content"
+    },
+    {
+      "id": "quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "type": "capture_quality_result",
+      "status": "usable",
+      "capture_id": "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "target_id": "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01",
+      "sheet": "유하다요_강사료",
+      "requested_range": "A1:R22",
+      "capture_window_range": "A1:R22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_008_472c22f6f1.png",
+      "dimensions": {
+        "width": 999,
+        "height": 375,
+        "size_bytes": 103395
+      },
+      "range_shape": {
+        "status": "parsed",
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 18,
+        "row_count": 22,
+        "column_count": 18
+      },
+      "metrics": {
+        "aspect_ratio": 2.664,
+        "pixels_per_row": 17.0455,
+        "pixels_per_column": 55.5,
+        "visible_pixel_ratio": 0.535767,
+        "alpha_coverage_ratio": 0.537933
+      },
+      "checks": [
+        {
+          "id": "capture_status",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Render capture status is captured."
+        },
+        {
+          "id": "png_file_exists",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG file exists: /Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_008_472c22f6f1.png"
+        },
+        {
+          "id": "dimensions_available",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG dimensions are 999 x 375."
+        },
+        {
+          "id": "height_readability",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Capture image height should be large enough for visual review. 375 px is within threshold."
+        },
+        {
+          "id": "pixels_per_row",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Rows should have enough rendered height for visual gates. 17.0455 px/row is within threshold."
+        },
+        {
+          "id": "pixels_per_column",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Columns should have enough rendered width for visual gates. 55.5 px/column is within threshold."
+        },
+        {
+          "id": "aspect_ratio",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Aspect ratio 2.664 is reviewable."
+        },
+        {
+          "id": "visible_content",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Visible pixel ratio 0.535767 is above blank-image thresholds."
+        },
+        {
+          "id": "wide_capture",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Capture width does not require tiling by default."
+        }
+      ],
+      "recommendations": [
+        "accept_for_next_visual_gate"
+      ],
+      "evidence_refs": [
+        "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_01"
+      ],
+      "notes": "Capture quality checks passed."
+    },
+    {
+      "id": "quality_capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "type": "capture_quality_result",
+      "status": "usable",
+      "capture_id": "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "target_id": "candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02",
+      "sheet": "유하다요_강사료",
+      "requested_range": "S1:AI22",
+      "capture_window_range": "S1:AI22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_009_4b225c7f12.png",
+      "dimensions": {
+        "width": 902,
+        "height": 375,
+        "size_bytes": 39516
+      },
+      "range_shape": {
+        "status": "parsed",
+        "min_row": 1,
+        "min_column": 19,
+        "max_row": 22,
+        "max_column": 35,
+        "row_count": 22,
+        "column_count": 17
+      },
+      "metrics": {
+        "aspect_ratio": 2.4053,
+        "pixels_per_row": 17.0455,
+        "pixels_per_column": 53.0588,
+        "visible_pixel_ratio": 0.541401,
+        "alpha_coverage_ratio": 0.54238
+      },
+      "checks": [
+        {
+          "id": "capture_status",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Render capture status is captured."
+        },
+        {
+          "id": "png_file_exists",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG file exists: /Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_009_4b225c7f12.png"
+        },
+        {
+          "id": "dimensions_available",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG dimensions are 902 x 375."
+        },
+        {
+          "id": "height_readability",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Capture image height should be large enough for visual review. 375 px is within threshold."
+        },
+        {
+          "id": "pixels_per_row",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Rows should have enough rendered height for visual gates. 17.0455 px/row is within threshold."
+        },
+        {
+          "id": "pixels_per_column",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Columns should have enough rendered width for visual gates. 53.0588 px/column is within threshold."
+        },
+        {
+          "id": "aspect_ratio",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Aspect ratio 2.4053 is reviewable."
+        },
+        {
+          "id": "visible_content",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Visible pixel ratio 0.541401 is above blank-image thresholds."
+        },
+        {
+          "id": "wide_capture",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Capture width does not require tiling by default."
+        }
+      ],
+      "recommendations": [
+        "accept_for_next_visual_gate"
+      ],
+      "evidence_refs": [
+        "capture_candidate_capture_target_유하다요_강사료_cell_region_1_column_tile_02"
+      ],
+      "notes": "Capture quality checks passed."
+    },
+    {
+      "id": "quality_capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "type": "capture_quality_result",
+      "status": "recapture_required",
+      "capture_id": "capture_candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_same_window_control_01",
+      "sheet": "포도",
+      "requested_range": "A1:R22",
+      "capture_window_range": "A1:R22",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_010_21e4a8d588.png",
+      "dimensions": {
+        "width": 1082,
+        "height": 19,
+        "size_bytes": 9658
+      },
+      "range_shape": {
+        "status": "parsed",
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 22,
+        "max_column": 18,
+        "row_count": 22,
+        "column_count": 18
+      },
+      "metrics": {
+        "aspect_ratio": 56.9474,
+        "pixels_per_row": 0.8636,
+        "pixels_per_column": 60.1111,
+        "visible_pixel_ratio": 0.946786,
+        "alpha_coverage_ratio": 0.967857
+      },
+      "checks": [
+        {
+          "id": "capture_status",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Render capture status is captured."
+        },
+        {
+          "id": "png_file_exists",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG file exists: /Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_010_21e4a8d588.png"
+        },
+        {
+          "id": "dimensions_available",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG dimensions are 1082 x 19."
+        },
+        {
+          "id": "height_readability",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Capture image height should be large enough for visual review. 19 px is below fail threshold 50."
+        },
+        {
+          "id": "pixels_per_row",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Rows should have enough rendered height for visual gates. 0.8636 px/row is below fail threshold 4.0."
+        },
+        {
+          "id": "pixels_per_column",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Columns should have enough rendered width for visual gates. 60.1111 px/column is within threshold."
+        },
+        {
+          "id": "aspect_ratio",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Aspect ratio 56.9474 exceeds fail threshold 25.0."
+        },
+        {
+          "id": "visible_content",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Visible pixel ratio 0.946786 is above blank-image thresholds."
+        },
+        {
+          "id": "wide_capture",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Capture width does not require tiling by default."
+        }
+      ],
+      "recommendations": [
+        "recapture_with_expanded_window_or_zoom",
+        "recapture_with_visible_row_context"
+      ],
+      "evidence_refs": [
+        "capture_candidate_capture_target_포도_cell_region_1_same_window_control_01"
+      ],
+      "notes": "recapture_required: height_readability, pixels_per_row, aspect_ratio"
+    },
+    {
+      "id": "quality_capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "type": "capture_quality_result",
+      "status": "recapture_required",
+      "capture_id": "capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_expanded_row_context_01",
+      "sheet": "포도",
+      "requested_range": "A1:R80",
+      "capture_window_range": "A1:R80",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_011_0129a6f7b9.png",
+      "dimensions": {
+        "width": 1082,
+        "height": 91,
+        "size_bytes": 33186
+      },
+      "range_shape": {
+        "status": "parsed",
+        "min_row": 1,
+        "min_column": 1,
+        "max_row": 80,
+        "max_column": 18,
+        "row_count": 80,
+        "column_count": 18
+      },
+      "metrics": {
+        "aspect_ratio": 11.8901,
+        "pixels_per_row": 1.1375,
+        "pixels_per_column": 60.1111,
+        "visible_pixel_ratio": 0.717273,
+        "alpha_coverage_ratio": 0.724773
+      },
+      "checks": [
+        {
+          "id": "capture_status",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Render capture status is captured."
+        },
+        {
+          "id": "png_file_exists",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG file exists: /Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_011_0129a6f7b9.png"
+        },
+        {
+          "id": "dimensions_available",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG dimensions are 1082 x 91."
+        },
+        {
+          "id": "height_readability",
+          "type": "capture_quality_check",
+          "status": "warning",
+          "severity": "warning",
+          "message": "Capture image height should be large enough for visual review. 91 px is below warning threshold 120."
+        },
+        {
+          "id": "pixels_per_row",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Rows should have enough rendered height for visual gates. 1.1375 px/row is below fail threshold 4.0."
+        },
+        {
+          "id": "pixels_per_column",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Columns should have enough rendered width for visual gates. 60.1111 px/column is within threshold."
+        },
+        {
+          "id": "aspect_ratio",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Aspect ratio 11.8901 is reviewable."
+        },
+        {
+          "id": "visible_content",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Visible pixel ratio 0.717273 is above blank-image thresholds."
+        },
+        {
+          "id": "wide_capture",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Capture width does not require tiling by default."
+        }
+      ],
+      "recommendations": [
+        "recapture_with_visible_row_context"
+      ],
+      "evidence_refs": [
+        "capture_candidate_capture_target_포도_cell_region_1_expanded_row_context_01"
+      ],
+      "notes": "recapture_required: height_readability, pixels_per_row"
+    },
+    {
+      "id": "quality_capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "type": "capture_quality_result",
+      "status": "recapture_required",
+      "capture_id": "capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "target_id": "candidate_capture_target_포도_cell_region_1_visible_row_context_01",
+      "sheet": "포도",
+      "requested_range": "A21:R100",
+      "capture_window_range": "A21:R100",
+      "png_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_012_211fe53139.png",
+      "dimensions": {
+        "width": 1082,
+        "height": 73,
+        "size_bytes": 23135
+      },
+      "range_shape": {
+        "status": "parsed",
+        "min_row": 21,
+        "min_column": 1,
+        "max_row": 100,
+        "max_column": 18,
+        "row_count": 80,
+        "column_count": 18
+      },
+      "metrics": {
+        "aspect_ratio": 14.8219,
+        "pixels_per_row": 0.9125,
+        "pixels_per_column": 60.1111,
+        "visible_pixel_ratio": 0.668077,
+        "alpha_coverage_ratio": 0.668846
+      },
+      "checks": [
+        {
+          "id": "capture_status",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Render capture status is captured."
+        },
+        {
+          "id": "png_file_exists",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG file exists: /Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/recapture-candidates/captures/capture_012_211fe53139.png"
+        },
+        {
+          "id": "dimensions_available",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "PNG dimensions are 1082 x 73."
+        },
+        {
+          "id": "height_readability",
+          "type": "capture_quality_check",
+          "status": "warning",
+          "severity": "warning",
+          "message": "Capture image height should be large enough for visual review. 73 px is below warning threshold 120."
+        },
+        {
+          "id": "pixels_per_row",
+          "type": "capture_quality_check",
+          "status": "fail",
+          "severity": "error",
+          "message": "Rows should have enough rendered height for visual gates. 0.9125 px/row is below fail threshold 4.0."
+        },
+        {
+          "id": "pixels_per_column",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Columns should have enough rendered width for visual gates. 60.1111 px/column is within threshold."
+        },
+        {
+          "id": "aspect_ratio",
+          "type": "capture_quality_check",
+          "status": "warning",
+          "severity": "warning",
+          "message": "Aspect ratio 14.8219 exceeds warning threshold 12.0."
+        },
+        {
+          "id": "visible_content",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Visible pixel ratio 0.668077 is above blank-image thresholds."
+        },
+        {
+          "id": "wide_capture",
+          "type": "capture_quality_check",
+          "status": "pass",
+          "severity": "info",
+          "message": "Capture width does not require tiling by default."
+        }
+      ],
+      "recommendations": [
+        "recapture_with_visible_row_context"
+      ],
+      "evidence_refs": [
+        "capture_candidate_capture_target_포도_cell_region_1_visible_row_context_01"
+      ],
+      "notes": "recapture_required: height_readability, pixels_per_row, aspect_ratio"
+    }
+  ],
+  "summary": {
+    "capture_count": 12,
+    "evaluated_count": 12,
+    "usable_count": 5,
+    "review_required_count": 0,
+    "recapture_required_count": 7,
+    "capture_failed_count": 0,
+    "too_thin_count": 7,
+    "low_row_pixels_count": 7,
+    "extreme_aspect_count": 6,
+    "low_visible_content_count": 3,
+    "tiling_recommended_count": 1,
+    "expanded_window_recommended_count": 4
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "Capture quality checks score PNG usability for downstream visual gates. They do not accept or reject semantic claims."
+    }
+  ]
+}

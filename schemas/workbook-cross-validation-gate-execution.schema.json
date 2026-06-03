@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/workbook-cross-validation-gate-execution.schema.json",
+  "title": "Workbook Cross-Validation Gate Execution",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_artifacts",
+    "method",
+    "gate_results",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source_artifacts": { "$ref": "#/$defs/source_artifacts" },
+    "method": { "$ref": "#/$defs/method" },
+    "gate_results": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/gate_result" }
+    },
+    "summary": { "$ref": "#/$defs/summary" },
+    "parser_observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/observation" }
+    }
+  },
+  "$defs": {
+    "source_artifacts": {
+      "type": "object",
+      "required": ["cross_validation_plan", "visual_features"],
+      "additionalProperties": false,
+      "properties": {
+        "cross_validation_plan": { "type": "string", "minLength": 1 },
+        "visual_features": { "type": "string", "minLength": 1 }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "decision_policy"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "const": "deterministic_cross_validation_gate_execution" },
+        "authority": { "const": "evidence_gate_status_not_final_document_graph_truth" },
+        "decision_policy": { "type": "string", "minLength": 1 }
+      }
+    },
+    "gate_result": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "gate_check_id",
+        "target_id",
+        "gate_type",
+        "status",
+        "reason",
+        "confidence",
+        "target_type",
+        "sheet",
+        "range",
+        "feature_result_id",
+        "feature_status",
+        "layout_signals",
+        "deterministic_inputs",
+        "evidence_refs",
+        "notes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "cross_validation_gate_result" },
+        "gate_check_id": { "type": ["string", "null"] },
+        "target_id": { "type": ["string", "null"] },
+        "gate_type": { "type": ["string", "null"] },
+        "status": { "type": "string", "enum": ["accepted", "rejected", "review_required"] },
+        "reason": { "type": "string", "minLength": 1 },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "target_type": { "type": ["string", "null"] },
+        "sheet": { "type": ["string", "null"] },
+        "range": { "type": ["string", "null"] },
+        "feature_result_id": { "type": ["string", "null"] },
+        "feature_status": { "type": ["string", "null"] },
+        "layout_signals": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "deterministic_inputs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "gate_result_count",
+        "accepted_count",
+        "rejected_count",
+        "review_required_count",
+        "capture_required_count",
+        "view_state_blocked_count",
+        "quality_review_required_count",
+        "object_hierarchy_review_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "gate_result_count": { "type": "integer", "minimum": 0 },
+        "accepted_count": { "type": "integer", "minimum": 0 },
+        "rejected_count": { "type": "integer", "minimum": 0 },
+        "review_required_count": { "type": "integer", "minimum": 0 },
+        "capture_required_count": { "type": "integer", "minimum": 0 },
+        "view_state_blocked_count": { "type": "integer", "minimum": 0 },
+        "quality_review_required_count": { "type": "integer", "minimum": 0 },
+        "object_hierarchy_review_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}

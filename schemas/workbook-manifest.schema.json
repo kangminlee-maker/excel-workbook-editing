@@ -1,0 +1,501 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/workbook-manifest.schema.json",
+  "title": "Workbook ZIP/XML Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "limits",
+    "shared_strings",
+    "package_entries",
+    "workbook",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "$ref": "#/$defs/source" },
+    "limits": { "$ref": "#/$defs/limits" },
+    "shared_strings": { "$ref": "#/$defs/shared_strings" },
+    "package_entries": { "$ref": "#/$defs/package_entries" },
+    "workbook": { "$ref": "#/$defs/workbook" },
+    "summary": { "$ref": "#/$defs/summary" },
+    "parser_observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/observation" }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["path", "file_name", "size_bytes", "sha256"],
+      "additionalProperties": false,
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "file_name": { "type": "string", "minLength": 1 },
+        "size_bytes": { "type": "integer", "minimum": 0 },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "required": ["sample_limit", "max_sheet_xml_bytes", "max_shared_strings"],
+      "additionalProperties": false,
+      "properties": {
+        "sample_limit": { "type": "integer", "minimum": 1 },
+        "max_sheet_xml_bytes": { "type": "integer", "minimum": 1 },
+        "max_shared_strings": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "shared_strings": {
+      "type": "object",
+      "required": ["available", "loaded_count", "truncated"],
+      "additionalProperties": false,
+      "properties": {
+        "available": { "type": "boolean" },
+        "loaded_count": { "type": "integer", "minimum": 0 },
+        "truncated": { "type": "boolean" }
+      }
+    },
+    "package_entries": {
+      "type": "object",
+      "required": [
+        "entry_count",
+        "worksheet_count",
+        "drawing_count",
+        "chart_count",
+        "media_count",
+        "table_count",
+        "pivot_cache_record_count",
+        "external_link_count",
+        "has_shared_strings",
+        "has_styles",
+        "has_calc_chain",
+        "largest_entries"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "entry_count": { "type": "integer", "minimum": 0 },
+        "worksheet_count": { "type": "integer", "minimum": 0 },
+        "drawing_count": { "type": "integer", "minimum": 0 },
+        "chart_count": { "type": "integer", "minimum": 0 },
+        "media_count": { "type": "integer", "minimum": 0 },
+        "table_count": { "type": "integer", "minimum": 0 },
+        "pivot_cache_record_count": { "type": "integer", "minimum": 0 },
+        "external_link_count": { "type": "integer", "minimum": 0 },
+        "has_shared_strings": { "type": "boolean" },
+        "has_styles": { "type": "boolean" },
+        "has_calc_chain": { "type": "boolean" },
+        "largest_entries": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/entry" }
+        }
+      }
+    },
+    "entry": {
+      "type": "object",
+      "required": ["entry", "size_bytes", "compressed_size_bytes"],
+      "additionalProperties": false,
+      "properties": {
+        "entry": { "type": "string" },
+        "size_bytes": { "type": "integer", "minimum": 0 },
+        "compressed_size_bytes": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "workbook": {
+      "type": "object",
+      "required": ["sheet_count", "pivot_caches", "external_links", "sheets"],
+      "additionalProperties": false,
+      "properties": {
+        "sheet_count": { "type": "integer", "minimum": 0 },
+        "pivot_caches": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/pivot_cache" }
+        },
+        "external_links": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/external_link" }
+        },
+        "sheets": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sheet" }
+        }
+      }
+    },
+    "sheet": {
+      "type": "object",
+      "required": [
+        "name",
+        "index",
+        "sheet_id",
+        "state",
+        "relationship_id",
+        "entry",
+        "detail_status",
+        "entry_size_bytes",
+        "compressed_size_bytes",
+        "dimension",
+        "dimension_bounds",
+        "counts",
+        "samples",
+        "relationships",
+        "pivot_tables",
+        "drawing_objects"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "index": { "type": "integer", "minimum": 0 },
+        "sheet_id": { "type": "string" },
+        "state": { "type": "string" },
+        "relationship_id": { "type": ["string", "null"] },
+        "entry": { "type": "string" },
+        "detail_status": {
+          "type": "string",
+          "enum": ["scanned", "skipped_large_xml", "missing_entry"]
+        },
+        "entry_size_bytes": { "type": "integer", "minimum": 0 },
+        "compressed_size_bytes": { "type": "integer", "minimum": 0 },
+        "dimension": { "type": ["string", "null"] },
+        "dimension_bounds": {
+          "anyOf": [
+            { "$ref": "#/$defs/bounds" },
+            { "type": "null" }
+          ]
+        },
+        "counts": { "$ref": "#/$defs/counts" },
+        "samples": { "$ref": "#/$defs/samples" },
+        "relationships": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/relationship" }
+        },
+        "pivot_tables": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/pivot_table" }
+        },
+        "drawing_objects": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/drawing_object" }
+        }
+      }
+    },
+    "bounds": {
+      "type": "object",
+      "required": ["min_row", "min_column", "max_row", "max_column"],
+      "additionalProperties": false,
+      "properties": {
+        "min_row": { "type": "integer", "minimum": 1 },
+        "min_column": { "type": "integer", "minimum": 1 },
+        "max_row": { "type": "integer", "minimum": 1 },
+        "max_column": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "required": [
+        "row_elements",
+        "column_dimension_elements",
+        "cell_elements",
+        "styled_cell_elements",
+        "value_elements",
+        "formula_elements",
+        "inline_string_elements",
+        "merged_ranges",
+        "drawing_refs",
+        "table_part_refs",
+        "hyperlinks"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "row_elements": { "type": "integer", "minimum": 0 },
+        "column_dimension_elements": { "type": "integer", "minimum": 0 },
+        "cell_elements": { "type": "integer", "minimum": 0 },
+        "styled_cell_elements": { "type": "integer", "minimum": 0 },
+        "value_elements": { "type": "integer", "minimum": 0 },
+        "formula_elements": { "type": "integer", "minimum": 0 },
+        "inline_string_elements": { "type": "integer", "minimum": 0 },
+        "merged_ranges": { "type": "integer", "minimum": 0 },
+        "drawing_refs": { "type": "integer", "minimum": 0 },
+        "table_part_refs": { "type": "integer", "minimum": 0 },
+        "hyperlinks": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "samples": {
+      "type": "object",
+      "required": [
+        "cells",
+        "formulas",
+        "merged_ranges",
+        "column_dimensions",
+        "row_dimensions",
+        "drawing_refs",
+        "table_part_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "cells": { "type": "array", "items": { "type": "object" } },
+        "formulas": { "type": "array", "items": { "type": "object" } },
+        "merged_ranges": { "type": "array", "items": { "type": "string" } },
+        "column_dimensions": { "type": "array", "items": { "type": "object" } },
+        "row_dimensions": { "type": "array", "items": { "type": "object" } },
+        "drawing_refs": { "type": "array", "items": { "type": "string" } },
+        "table_part_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "relationship": {
+      "type": "object",
+      "required": ["id", "type", "target", "entry"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "target": { "type": "string" },
+        "entry": { "type": "string" }
+      }
+    },
+    "pivot_table": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "entry",
+        "cache_id",
+        "cache",
+        "location",
+        "field_counts",
+        "relationship_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": ["string", "null"] },
+        "entry": { "type": "string" },
+        "cache_id": { "type": "string" },
+        "cache": {
+          "anyOf": [
+            { "$ref": "#/$defs/pivot_cache" },
+            { "type": "null" }
+          ]
+        },
+        "location": { "$ref": "#/$defs/pivot_location" },
+        "field_counts": { "$ref": "#/$defs/pivot_field_counts" },
+        "relationship_id": { "type": "string" }
+      }
+    },
+    "pivot_cache": {
+      "type": "object",
+      "required": [
+        "cache_id",
+        "relationship_id",
+        "entry",
+        "source",
+        "record_count",
+        "cache_field_count",
+        "cache_field_samples"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "cache_id": { "type": "string" },
+        "relationship_id": { "type": "string" },
+        "entry": { "type": "string" },
+        "source": {
+          "anyOf": [
+            { "$ref": "#/$defs/pivot_cache_source" },
+            { "type": "null" }
+          ]
+        },
+        "record_count": { "type": ["integer", "null"], "minimum": 0 },
+        "cache_field_count": { "type": "integer", "minimum": 0 },
+        "cache_field_samples": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "pivot_cache_source": {
+      "type": "object",
+      "required": ["type", "sheet", "range", "bounds"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "type": ["string", "null"] },
+        "sheet": { "type": ["string", "null"] },
+        "range": { "type": ["string", "null"] },
+        "bounds": {
+          "anyOf": [
+            { "$ref": "#/$defs/bounds" },
+            { "type": "null" }
+          ]
+        }
+      }
+    },
+    "pivot_location": {
+      "type": "object",
+      "required": [
+        "range",
+        "bounds",
+        "first_header_row",
+        "first_data_row",
+        "first_data_column"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "range": { "type": ["string", "null"] },
+        "bounds": {
+          "anyOf": [
+            { "$ref": "#/$defs/bounds" },
+            { "type": "null" }
+          ]
+        },
+        "first_header_row": { "type": ["integer", "null"], "minimum": 0 },
+        "first_data_row": { "type": ["integer", "null"], "minimum": 0 },
+        "first_data_column": { "type": ["integer", "null"], "minimum": 0 }
+      }
+    },
+    "pivot_field_counts": {
+      "type": "object",
+      "required": [
+        "pivot_fields",
+        "row_fields",
+        "column_fields",
+        "page_fields",
+        "data_fields"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "pivot_fields": { "type": "integer", "minimum": 0 },
+        "row_fields": { "type": "integer", "minimum": 0 },
+        "column_fields": { "type": "integer", "minimum": 0 },
+        "page_fields": { "type": "integer", "minimum": 0 },
+        "data_fields": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "external_link": {
+      "type": "object",
+      "required": [
+        "entry",
+        "relationship_id",
+        "targets",
+        "sheet_name_count",
+        "sheet_name_samples"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "entry": { "type": "string" },
+        "relationship_id": { "type": ["string", "null"] },
+        "targets": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/external_link_target" }
+        },
+        "sheet_name_count": { "type": "integer", "minimum": 0 },
+        "sheet_name_samples": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "external_link_target": {
+      "type": "object",
+      "required": ["id", "type", "target", "target_mode"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "target": { "type": "string" },
+        "target_mode": { "type": ["string", "null"] }
+      }
+    },
+    "drawing_object": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "name",
+        "drawing_entry",
+        "anchor_kind",
+        "from",
+        "to",
+        "embed_relationship_id",
+        "media_entry"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "const": "picture" },
+        "name": { "type": ["string", "null"] },
+        "drawing_entry": { "type": "string" },
+        "anchor_kind": { "type": "string" },
+        "from": {
+          "anyOf": [
+            { "$ref": "#/$defs/drawing_marker" },
+            { "type": "null" }
+          ]
+        },
+        "to": {
+          "anyOf": [
+            { "$ref": "#/$defs/drawing_marker" },
+            { "type": "null" }
+          ]
+        },
+        "embed_relationship_id": { "type": ["string", "null"] },
+        "media_entry": { "type": "string" }
+      }
+    },
+    "drawing_marker": {
+      "type": "object",
+      "required": ["cell", "row", "column", "row_offset", "column_offset"],
+      "additionalProperties": false,
+      "properties": {
+        "cell": { "type": "string" },
+        "row": { "type": "integer", "minimum": 1 },
+        "column": { "type": "integer", "minimum": 1 },
+        "row_offset": { "type": "integer", "minimum": 0 },
+        "column_offset": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "sheet_count",
+        "scanned_sheet_count",
+        "skipped_large_sheet_count",
+        "visible_sheet_count",
+        "formula_elements_in_scanned_sheets",
+        "cell_elements_in_scanned_sheets",
+        "merged_ranges_in_scanned_sheets",
+        "package_media_count",
+        "package_external_link_count",
+        "package_pivot_cache_record_count",
+        "pivot_table_count",
+        "pivot_cache_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "sheet_count": { "type": "integer", "minimum": 0 },
+        "scanned_sheet_count": { "type": "integer", "minimum": 0 },
+        "skipped_large_sheet_count": { "type": "integer", "minimum": 0 },
+        "visible_sheet_count": { "type": "integer", "minimum": 0 },
+        "formula_elements_in_scanned_sheets": { "type": "integer", "minimum": 0 },
+        "cell_elements_in_scanned_sheets": { "type": "integer", "minimum": 0 },
+        "merged_ranges_in_scanned_sheets": { "type": "integer", "minimum": 0 },
+        "package_media_count": { "type": "integer", "minimum": 0 },
+        "package_external_link_count": { "type": "integer", "minimum": 0 },
+        "package_pivot_cache_record_count": { "type": "integer", "minimum": 0 },
+        "pivot_table_count": { "type": "integer", "minimum": 0 },
+        "pivot_cache_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}

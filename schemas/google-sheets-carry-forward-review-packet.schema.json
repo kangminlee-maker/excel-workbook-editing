@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-carry-forward-review-packet.schema.json",
+  "title": "Google Sheets Carry-forward Review Packet",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source",
+    "authority",
+    "method",
+    "review_lanes",
+    "decision_items",
+    "suggested_review_order",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": { "type": "object", "additionalProperties": true },
+    "authority": {
+      "type": "object",
+      "required": ["source_document", "packet_status", "parser_truth", "shared_ontology_updates"],
+      "additionalProperties": false,
+      "properties": {
+        "source_document": { "const": "live_google_sheet" },
+        "packet_status": { "const": "review_packet_only" },
+        "parser_truth": { "const": "no_new_parser_claims" },
+        "shared_ontology_updates": { "const": 0 }
+      }
+    },
+    "method": { "type": "object", "additionalProperties": true },
+    "review_lanes": { "type": "array", "items": { "$ref": "#/$defs/lane" } },
+    "decision_items": { "type": "array", "items": { "$ref": "#/$defs/decision_item" } },
+    "suggested_review_order": { "type": "array", "items": { "type": "string" } },
+    "summary": { "type": "object", "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] } },
+    "parser_observations": { "type": "array", "items": { "type": "object", "required": ["level", "message"], "additionalProperties": true } }
+  },
+  "$defs": {
+    "lane": {
+      "type": "object",
+      "required": ["id", "type", "title", "priority", "status", "description", "decision_item_count", "total_evidence_item_count", "decision_items"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "const": "review_lane" },
+        "title": { "type": "string" },
+        "priority": { "type": "string", "enum": ["low", "medium", "high"] },
+        "status": { "type": "string" },
+        "description": { "type": "string" },
+        "decision_item_count": { "type": "integer" },
+        "total_evidence_item_count": { "type": "integer" },
+        "decision_items": { "type": "array", "items": { "$ref": "#/$defs/decision_item" } }
+      }
+    },
+    "decision_item": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "lane",
+        "priority",
+        "status",
+        "question",
+        "impact",
+        "recommended_next_action",
+        "total_item_count",
+        "sample_items",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "const": "review_decision_item" },
+        "lane": { "type": "string" },
+        "priority": { "type": "string", "enum": ["low", "medium", "high"] },
+        "status": { "type": "string" },
+        "question": { "type": "string" },
+        "impact": { "type": "string" },
+        "recommended_next_action": { "type": "string" },
+        "total_item_count": { "type": "integer" },
+        "sample_items": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

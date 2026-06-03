@@ -1,0 +1,359 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/workbook-document-ontology-mapping.schema.json",
+  "title": "Workbook Document Ontology Mapping",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_artifacts",
+    "method",
+    "ontology",
+    "nodes",
+    "relations",
+    "data_views",
+    "review_queue",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source_artifacts": { "$ref": "#/$defs/source_artifacts" },
+    "method": { "$ref": "#/$defs/method" },
+    "ontology": { "$ref": "#/$defs/ontology" },
+    "nodes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/node" }
+    },
+    "relations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/relation" }
+    },
+    "data_views": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/data_view" }
+    },
+    "review_queue": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/review_queue_item" }
+    },
+    "summary": { "$ref": "#/$defs/summary" },
+    "parser_observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/observation" }
+    }
+  },
+  "$defs": {
+    "source_artifacts": {
+      "type": "object",
+      "required": [
+        "evidence_package",
+        "block_candidates",
+        "table_io_pipelines",
+        "gate_execution",
+        "boundary_decisions",
+        "pipeline_role_validation",
+        "coordinate_normalization",
+        "visual_features"
+      ],
+      "additionalProperties": { "type": "string", "minLength": 1 },
+      "properties": {
+        "evidence_package": { "type": "string", "minLength": 1 },
+        "block_candidates": { "type": "string", "minLength": 1 },
+        "table_io_pipelines": { "type": "string", "minLength": 1 },
+        "gate_execution": { "type": "string", "minLength": 1 },
+        "boundary_decisions": { "type": "string", "minLength": 1 },
+        "pipeline_role_validation": { "type": "string", "minLength": 1 },
+        "coordinate_normalization": { "type": "string", "minLength": 1 },
+        "visual_features": { "type": "string", "minLength": 1 }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": ["name", "authority", "ontology_use", "decision_policy"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "const": "deterministic_document_ontology_mapping" },
+        "authority": { "const": "evidence_package_projection_not_semantic_generation" },
+        "ontology_use": { "const": "document_structure_ontology_application" },
+        "decision_policy": { "type": "string", "minLength": 1 }
+      }
+    },
+    "ontology": {
+      "type": "object",
+      "required": [
+        "id",
+        "layer",
+        "application_mode",
+        "generated_semantic_ontology",
+        "node_types",
+        "relation_types"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "layer": { "const": "document_structure" },
+        "application_mode": { "const": "reuse_existing_ontology" },
+        "generated_semantic_ontology": { "const": false },
+        "node_types": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/node_type" },
+          "minItems": 1
+        },
+        "relation_types": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/relation_type" },
+          "minItems": 1
+        }
+      }
+    },
+    "node": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "ontology_class",
+        "label",
+        "status",
+        "sheet",
+        "range",
+        "properties",
+        "evidence_refs",
+        "source_artifact_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "$ref": "#/$defs/node_type" },
+        "ontology_class": { "type": "string", "minLength": 1 },
+        "label": { "type": ["string", "number", "null"] },
+        "status": { "$ref": "#/$defs/status" },
+        "sheet": { "type": ["string", "null"] },
+        "range": { "type": ["string", "null"] },
+        "properties": { "type": "object" },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "source_artifact_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "relation": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "from",
+        "to",
+        "status",
+        "properties",
+        "evidence_refs",
+        "source_artifact_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "$ref": "#/$defs/relation_type" },
+        "from": { "type": "string", "minLength": 1 },
+        "to": { "type": "string", "minLength": 1 },
+        "status": { "$ref": "#/$defs/status" },
+        "properties": { "type": "object" },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "source_artifact_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "data_view": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "view_kind",
+        "status",
+        "role",
+        "pipeline_node_id",
+        "output_node_id",
+        "input_node_ids",
+        "transform_node_ids",
+        "sheet",
+        "range",
+        "properties",
+        "evidence_refs",
+        "source_artifact_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "data_view" },
+        "view_kind": {
+          "type": "string",
+          "enum": [
+            "pivot_report_view",
+            "formula_summary_view",
+            "formula_transform_view",
+            "table_pipeline_view"
+          ]
+        },
+        "status": { "$ref": "#/$defs/status" },
+        "role": {
+          "type": ["string", "null"],
+          "enum": [
+            "unknown",
+            "input",
+            "parameter",
+            "bridge",
+            "transform",
+            "summary",
+            "report",
+            "audit_check",
+            null
+          ]
+        },
+        "pipeline_node_id": { "type": "string", "minLength": 1 },
+        "output_node_id": { "type": "string", "minLength": 1 },
+        "input_node_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "transform_node_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "sheet": { "type": ["string", "null"] },
+        "range": { "type": ["string", "null"] },
+        "properties": { "type": "object" },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "source_artifact_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "review_queue_item": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "status",
+        "reason",
+        "sheet",
+        "range",
+        "target_node_id",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "kind": { "type": ["string", "null"] },
+        "status": { "$ref": "#/$defs/status" },
+        "reason": { "type": ["string", "null"] },
+        "sheet": { "type": ["string", "null"] },
+        "range": { "type": ["string", "null"] },
+        "target_node_id": { "type": ["string", "null"] },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "node_count",
+        "relation_count",
+        "data_view_count",
+        "review_queue_count",
+        "sheet_node_count",
+        "block_node_count",
+        "cell_region_node_count",
+        "pipeline_node_count",
+        "transform_step_node_count",
+        "visual_evidence_node_count",
+        "range_ref_node_count",
+        "accepted_node_count",
+        "review_required_node_count",
+        "candidate_node_count",
+        "accepted_data_view_count",
+        "review_required_data_view_count",
+        "contains_relation_count",
+        "derived_from_relation_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "node_count": { "type": "integer", "minimum": 0 },
+        "relation_count": { "type": "integer", "minimum": 0 },
+        "data_view_count": { "type": "integer", "minimum": 0 },
+        "review_queue_count": { "type": "integer", "minimum": 0 },
+        "sheet_node_count": { "type": "integer", "minimum": 0 },
+        "block_node_count": { "type": "integer", "minimum": 0 },
+        "cell_region_node_count": { "type": "integer", "minimum": 0 },
+        "pipeline_node_count": { "type": "integer", "minimum": 0 },
+        "transform_step_node_count": { "type": "integer", "minimum": 0 },
+        "visual_evidence_node_count": { "type": "integer", "minimum": 0 },
+        "range_ref_node_count": { "type": "integer", "minimum": 0 },
+        "accepted_node_count": { "type": "integer", "minimum": 0 },
+        "review_required_node_count": { "type": "integer", "minimum": 0 },
+        "candidate_node_count": { "type": "integer", "minimum": 0 },
+        "accepted_data_view_count": { "type": "integer", "minimum": 0 },
+        "review_required_data_view_count": { "type": "integer", "minimum": 0 },
+        "contains_relation_count": { "type": "integer", "minimum": 0 },
+        "derived_from_relation_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "node_type": {
+      "type": "string",
+      "enum": [
+        "workbook",
+        "sheet",
+        "document_block",
+        "cell_region",
+        "data_pipeline",
+        "transform_step",
+        "range_ref",
+        "visual_evidence",
+        "review_item"
+      ]
+    },
+    "relation_type": {
+      "type": "string",
+      "enum": [
+        "contains",
+        "has_region",
+        "has_boundary_decision",
+        "has_visual_evidence",
+        "has_pipeline_output",
+        "has_pipeline_input",
+        "has_pipeline_transform",
+        "derived_from",
+        "candidate_relation",
+        "requires_review"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["accepted", "candidate", "review_required", "rejected"]
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}

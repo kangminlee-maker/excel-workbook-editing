@@ -1,0 +1,297 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/excel-workbook-editing/workbook-recapture-candidate-plan.schema.json",
+  "title": "Workbook Recapture Candidate Plan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_artifacts",
+    "method",
+    "candidate_groups",
+    "capture_targets",
+    "recommended_first_batch_target_ids",
+    "summary",
+    "parser_observations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source_artifacts": { "$ref": "#/$defs/source_artifacts" },
+    "method": { "$ref": "#/$defs/method" },
+    "candidate_groups": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/candidate_group" }
+    },
+    "capture_targets": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/capture_target" }
+    },
+    "recommended_first_batch_target_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "summary": { "$ref": "#/$defs/summary" },
+    "parser_observations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/observation" }
+    }
+  },
+  "$defs": {
+    "source_artifacts": {
+      "type": "object",
+      "required": ["render_captures", "capture_quality"],
+      "additionalProperties": false,
+      "properties": {
+        "render_captures": { "type": "string", "minLength": 1 },
+        "capture_quality": { "type": "string", "minLength": 1 }
+      }
+    },
+    "method": {
+      "type": "object",
+      "required": [
+        "name",
+        "max_columns_per_tile",
+        "visible_context_rows",
+        "expanded_context_rows",
+        "authority"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "const": "recapture_candidate_generation" },
+        "max_columns_per_tile": { "type": "integer", "minimum": 1 },
+        "visible_context_rows": { "type": "integer", "minimum": 1 },
+        "expanded_context_rows": { "type": "integer", "minimum": 1 },
+        "authority": { "const": "candidate_generation_not_final_selection" }
+      }
+    },
+    "candidate_group": {
+      "type": "object",
+      "required": [
+        "source_capture_id",
+        "source_quality_result_id",
+        "source_quality_status",
+        "sheet",
+        "source_range",
+        "recommendations",
+        "candidate_target_ids"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_capture_id": { "type": ["string", "null"] },
+        "source_quality_result_id": { "type": ["string", "null"] },
+        "source_quality_status": { "type": ["string", "null"] },
+        "sheet": { "type": ["string", "null"] },
+        "source_range": { "type": ["string", "null"] },
+        "recommendations": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "candidate_target_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "capture_target": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "target_type",
+        "status",
+        "priority",
+        "score",
+        "sheet",
+        "range",
+        "bounds",
+        "capture_window",
+        "target_ref",
+        "source_capture_id",
+        "source_quality_result_id",
+        "source_quality_status",
+        "candidate_strategy",
+        "candidate_rationale",
+        "tile_index",
+        "tile_count",
+        "related_pipeline_ids",
+        "related_block_ids",
+        "related_region_ids",
+        "related_boundary_gate_ids",
+        "reasons",
+        "gate_checks",
+        "review_questions",
+        "evidence_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "visual_formula_validation_target" },
+        "target_type": { "const": "recapture_candidate" },
+        "status": { "const": "candidate" },
+        "priority": { "type": "string", "enum": ["high", "medium", "low"] },
+        "score": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "sheet": { "type": ["string", "null"] },
+        "range": { "type": "string", "minLength": 1 },
+        "bounds": { "$ref": "#/$defs/dimension_bounds" },
+        "capture_window": { "$ref": "#/$defs/capture_window" },
+        "target_ref": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "source_capture_id": { "type": "string", "minLength": 1 },
+        "source_quality_result_id": { "type": ["string", "null"] },
+        "source_quality_status": { "type": ["string", "null"] },
+        "candidate_strategy": {
+          "type": "string",
+          "enum": [
+            "same_window_control",
+            "expanded_row_context",
+            "visible_row_context",
+            "visible_row_context_tile",
+            "column_tile"
+          ]
+        },
+        "candidate_rationale": { "type": "string" },
+        "tile_index": { "type": "integer", "minimum": 1 },
+        "tile_count": { "type": "integer", "minimum": 1 },
+        "related_pipeline_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "related_block_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "related_region_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "related_boundary_gate_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "reasons": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "gate_checks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/gate_check" }
+        },
+        "review_questions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "capture_window": {
+      "type": "object",
+      "required": ["sheet", "range", "bounds", "authority", "coordinate_systems"],
+      "additionalProperties": false,
+      "properties": {
+        "sheet": { "type": ["string", "null"] },
+        "range": { "type": "string", "minLength": 1 },
+        "bounds": { "$ref": "#/$defs/dimension_bounds" },
+        "authority": { "const": "excel_render_capture" },
+        "coordinate_systems": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["cell_range", "grid_coordinate", "capture_bbox"]
+          }
+        }
+      }
+    },
+    "gate_check": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "target_id",
+        "gate_type",
+        "status",
+        "deterministic_inputs",
+        "pass_conditions",
+        "failure_signals"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "const": "visual_formula_gate_check" },
+        "target_id": { "type": "string", "minLength": 1 },
+        "gate_type": { "const": "recapture_candidate_quality_confirmation" },
+        "status": { "const": "pending_capture" },
+        "deterministic_inputs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "pass_conditions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "failure_signals": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "dimension_bounds": {
+      "type": "object",
+      "required": ["min_row", "min_column", "max_row", "max_column"],
+      "additionalProperties": false,
+      "properties": {
+        "min_row": { "type": "integer", "minimum": 1 },
+        "min_column": { "type": "integer", "minimum": 1 },
+        "max_row": { "type": "integer", "minimum": 1 },
+        "max_column": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "source_capture_count",
+        "candidate_target_count",
+        "high_priority_count",
+        "medium_priority_count",
+        "same_window_control_count",
+        "expanded_row_context_count",
+        "visible_row_context_count",
+        "visible_row_context_tile_count",
+        "column_tile_count",
+        "sheet_count",
+        "gate_check_count",
+        "recommended_first_batch_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_capture_count": { "type": "integer", "minimum": 0 },
+        "candidate_target_count": { "type": "integer", "minimum": 0 },
+        "high_priority_count": { "type": "integer", "minimum": 0 },
+        "medium_priority_count": { "type": "integer", "minimum": 0 },
+        "same_window_control_count": { "type": "integer", "minimum": 0 },
+        "expanded_row_context_count": { "type": "integer", "minimum": 0 },
+        "visible_row_context_count": { "type": "integer", "minimum": 0 },
+        "visible_row_context_tile_count": { "type": "integer", "minimum": 0 },
+        "column_tile_count": { "type": "integer", "minimum": 0 },
+        "sheet_count": { "type": "integer", "minimum": 0 },
+        "gate_check_count": { "type": "integer", "minimum": 0 },
+        "recommended_first_batch_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "required": ["level", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["info", "warning", "error"] },
+        "message": { "type": "string" }
+      }
+    }
+  }
+}
