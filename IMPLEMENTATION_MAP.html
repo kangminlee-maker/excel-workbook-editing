@@ -134,6 +134,10 @@
           <p>Workbook understanding artifacts now separate image anchors, pivot table definitions, row-oriented seeds, 2D cell region candidates, split candidates, formula references, structural style evidence, large-sheet formula patterns, and table I/O pipeline candidates.</p>
         </div>
         <div class="card">
+          <h3>Claim Ledger Architecture</h3>
+          <p><code>docs/evidence-backed-spreadsheet-claim-ledger-design.md</code> and ADR <code>0001</code> define the current top-level model: bitemporal evidence ledger, candidate claims, gate decisions, adjudicated claim graph, ontology governance, projections, governed retrieval, and action control plane.</p>
+        </div>
+        <div class="card">
           <h3>Table I/O Pipelines</h3>
           <p>The sample workbook currently produces 45 output-centered pipeline candidates and the HTML viewer renders Mermaid sheet-level and pipeline-level input/output graphs.</p>
         </div>
@@ -284,7 +288,7 @@
         </thead>
         <tbody>
           <tr><td>0. Foundations</td><td>Protocol, schemas, and phase contracts defined.</td><td class="ok">Complete</td></tr>
-          <tr><td>Workbook Understanding</td><td>Generate manifest, view-state preflight, read-only sample, block candidates, pivot cache links, formula pattern profile, 2D cell region candidates, structural style evidence, split candidates, table I/O pipeline candidates with Mermaid I/O graphs, cross-validation target plans, first-batch render captures, capture quality checks, recapture candidate experiments, view-state reconciliation, coordinate normalization, visual feature detection, gate execution, boundary decisions, pipeline role validation, workbook evidence package, process ledger, sample-specific general-domain source binding, and HTML review viewer for sample workbooks.</td><td class="warn">Active</td></tr>
+          <tr><td>Workbook Understanding</td><td>Generate manifest, view-state preflight, read-only sample, block candidates, pivot cache links, formula pattern profile, 2D cell region candidates, structural style evidence, split candidates, table I/O pipeline candidates with Mermaid I/O graphs, cross-validation target plans, render captures, gate execution, boundary decisions, pipeline role validation, evidence packages, process ledger, and HTML review viewers. Current architecture work is shifting these artifacts into a bitemporal evidence/claim ledger with adjudicated projections.</td><td class="warn">Active</td></tr>
           <tr><td>1. Broker Auth</td><td>Detect active Sheet, dispatch /v1/inspect, verify user identity from Chrome or local gcloud, expose /v1/health readiness, enforce broker policy, keyless DWD token minting, read-only metadata inspect, and bounded grid/value/formula parser windows. Live CLI smoke passes through verified identity, wildcard spreadsheet policy, DWD signJwt/token exchange, Sheets metadata read, and A1:Z80 parser windows for spreadsheets the pilot user can access.</td><td class="ok">CLI smoke passed</td></tr>
           <tr><td>2. Native Host Bridge</td><td>Persist sanitized broker snapshots as local review packages through Native Messaging. macOS and Windows install candidates, protocol tests, package tests, and Claude Code handoff docs exist; Chrome registration smoke remains manual.</td><td class="warn">Cross-platform local candidate ready</td></tr>
           <tr><td>3. Deep Inspect</td><td>Broker now exposes bounded parser window primitives for grid, formatted values, and formulas. Higher-level classification of protections, validations, imports, and loading states remains planned.</td><td class="warn">Window primitives ready</td></tr>
@@ -325,7 +329,11 @@
         </div>
         <div class="card">
           <h3 class="ok">Domain Evidence Boundary</h3>
-          <p>For the current sample only, <code>accounting-kr</code> provides reusable general accounting constraints. Workbook evidence and boundary-scoped local terms remain separate authorities.</p>
+          <p>Domain packs are document-specific evidence, not automatic context. <code>accounting-kr</code> applied only to the earlier accounting workbook sample; the current connected Sheets sample is cash-basis operational reporting and excludes that domain pack.</p>
+        </div>
+        <div class="card">
+          <h3 class="ok">Adjudicated Claims</h3>
+          <p>LLM and deterministic parser outputs enter as claims. Gates classify status; document graphs, dataflow graphs, ontology graphs, review queues, and LLM context packs are projections over adjudicated claims and evidence.</p>
         </div>
       </div>
     </section>
