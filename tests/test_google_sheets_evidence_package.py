@@ -16,7 +16,7 @@ from google_sheets_evidence_package import build_google_sheets_evidence_package 
 
 class GoogleSheetsEvidencePackageTest(unittest.TestCase):
     def test_assembles_accepted_body_and_review_queue(self) -> None:
-        fixture_dir = REPO_ROOT / "review-packages" / "sheets-bridge" / "live-inspections" / "test-evidence-package"
+        fixture_dir = REPO_ROOT / "review-packages" / "spreadsheet-processing" / "live-inspections" / "test-evidence-package"
         fixture_dir.mkdir(parents=True, exist_ok=True)
         paths = {
             "manifest": fixture_dir / "live-manifest.json",
@@ -86,7 +86,7 @@ def _table_io() -> dict:
             {
                 "id": "external_dep",
                 "evidence_refs": ["external_dep"],
-                "status": "blocked_until_source_acl_and_broker_allowlist",
+                "status": "blocked_until_source_access_evidence",
             }
         ],
         "review_queue": [

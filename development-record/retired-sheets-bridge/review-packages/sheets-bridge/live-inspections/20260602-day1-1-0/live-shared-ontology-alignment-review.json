@@ -1,0 +1,260 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-02T07:05:26.376343Z",
+  "source": {
+    "spreadsheet_id": "1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60",
+    "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60/edit?ouid=112662517307801676490",
+    "title": "[Day 1] 1.0 (from 20250707)",
+    "source_artifacts": {
+      "live_local_semantic_candidates": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/live-local-semantic-candidates.json",
+      "live_data_view_projection": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/live-data-view-projection.json",
+      "live_domain_source_model": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/live-domain-source-model.json"
+    }
+  },
+  "authority": {
+    "source_document": "live_google_sheet",
+    "review_status": "review_only_no_shared_promotion",
+    "shared_ontology_updates": 0,
+    "formula_result_authority": "not_established",
+    "local_boundary_confirmed": true
+  },
+  "method": {
+    "name": "connected_sheets_shared_ontology_alignment_review",
+    "authority": "human_review_packet_no_ontology_write",
+    "decision_policy": "Evaluate local semantic candidates against shared-promotion prerequisites and emit a blocker-focused human review packet. This stage does not write or update shared ontology concepts."
+  },
+  "alignment_items": [
+    {
+      "id": "alignment_local_candidate_pipeline_24_0102_same_sheet_range_24_0102",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_candidate_pipeline_24_0102_same_sheet_range_24_0102",
+      "candidate_label": "24_0102 formula surface",
+      "status": "blocked",
+      "recommended_action": "no_shared_update",
+      "preconditions": [
+        {
+          "id": "local_boundary_confirmed",
+          "status": "passed",
+          "message": "Local boundary must be explicitly confirmed."
+        },
+        {
+          "id": "source_authority_available",
+          "status": "blocked",
+          "message": "External source and formula-result authorities must be available."
+        },
+        {
+          "id": "repeated_workbook_family_evidence_available",
+          "status": "blocked",
+          "message": "Repeated workbook-family evidence is not available in this sample."
+        },
+        {
+          "id": "formula_result_authority_established",
+          "status": "blocked",
+          "message": "Formula-result authority is not established."
+        },
+        {
+          "id": "human_promotion_approval_recorded",
+          "status": "blocked",
+          "message": "Human approval for shared ontology promotion is not recorded."
+        }
+      ],
+      "blocking_preconditions": [
+        "source_authority_available",
+        "repeated_workbook_family_evidence_available",
+        "formula_result_authority_established",
+        "human_promotion_approval_recorded"
+      ],
+      "shared_update": null,
+      "evidence_refs": [
+        "pipeline_24_0102_same_sheet_range_24_0102",
+        "edge_24_0102_same_sheet_range_24_0102",
+        "signature_79311c1c31de",
+        "signature_8890fec40256",
+        "signature_9a6c85b55d8b",
+        "signature_3f8102fe8e94",
+        "signature_6a2dda7466ed",
+        "signature_163c9e68d151",
+        "signature_fc5efa07f925",
+        "signature_2d484c593b8c"
+      ]
+    },
+    {
+      "id": "alignment_local_candidate_pipeline_24_0108_same_sheet_range_24_0108",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_candidate_pipeline_24_0108_same_sheet_range_24_0108",
+      "candidate_label": "24_0108 formula surface",
+      "status": "blocked",
+      "recommended_action": "no_shared_update",
+      "preconditions": [
+        {
+          "id": "local_boundary_confirmed",
+          "status": "passed",
+          "message": "Local boundary must be explicitly confirmed."
+        },
+        {
+          "id": "source_authority_available",
+          "status": "blocked",
+          "message": "External source and formula-result authorities must be available."
+        },
+        {
+          "id": "repeated_workbook_family_evidence_available",
+          "status": "blocked",
+          "message": "Repeated workbook-family evidence is not available in this sample."
+        },
+        {
+          "id": "formula_result_authority_established",
+          "status": "blocked",
+          "message": "Formula-result authority is not established."
+        },
+        {
+          "id": "human_promotion_approval_recorded",
+          "status": "blocked",
+          "message": "Human approval for shared ontology promotion is not recorded."
+        }
+      ],
+      "blocking_preconditions": [
+        "source_authority_available",
+        "repeated_workbook_family_evidence_available",
+        "formula_result_authority_established",
+        "human_promotion_approval_recorded"
+      ],
+      "shared_update": null,
+      "evidence_refs": [
+        "pipeline_24_0108_same_sheet_range_24_0108",
+        "edge_24_0108_same_sheet_range_24_0108",
+        "signature_79311c1c31de",
+        "signature_8890fec40256",
+        "signature_9a6c85b55d8b",
+        "signature_3f8102fe8e94",
+        "signature_6a2dda7466ed",
+        "signature_163c9e68d151",
+        "signature_fc5efa07f925",
+        "signature_2d484c593b8c"
+      ]
+    },
+    {
+      "id": "alignment_local_candidate_pipeline_24_0115_same_sheet_range_24_0115",
+      "type": "shared_ontology_alignment_item",
+      "candidate_id": "local_candidate_pipeline_24_0115_same_sheet_range_24_0115",
+      "candidate_label": "24_0115 formula surface",
+      "status": "blocked",
+      "recommended_action": "no_shared_update",
+      "preconditions": [
+        {
+          "id": "local_boundary_confirmed",
+          "status": "passed",
+          "message": "Local boundary must be explicitly confirmed."
+        },
+        {
+          "id": "source_authority_available",
+          "status": "blocked",
+          "message": "External source and formula-result authorities must be available."
+        },
+        {
+          "id": "repeated_workbook_family_evidence_available",
+          "status": "blocked",
+          "message": "Repeated workbook-family evidence is not available in this sample."
+        },
+        {
+          "id": "formula_result_authority_established",
+          "status": "blocked",
+          "message": "Formula-result authority is not established."
+        },
+        {
+          "id": "human_promotion_approval_recorded",
+          "status": "blocked",
+          "message": "Human approval for shared ontology promotion is not recorded."
+        }
+      ],
+      "blocking_preconditions": [
+        "source_authority_available",
+        "repeated_workbook_family_evidence_available",
+        "formula_result_authority_established",
+        "human_promotion_approval_recorded"
+      ],
+      "shared_update": null,
+      "evidence_refs": [
+        "pipeline_24_0115_same_sheet_range_24_0115",
+        "edge_24_0115_same_sheet_range_24_0115",
+        "signature_79311c1c31de",
+        "signature_8890fec40256",
+        "signature_9a6c85b55d8b",
+        "signature_3f8102fe8e94",
+        "signature_6a2dda7466ed",
+        "signature_163c9e68d151",
+        "signature_fc5efa07f925",
+        "signature_2d484c593b8c"
+      ]
+    }
+  ],
+  "review_questions": [
+    {
+      "id": "question_local_boundary",
+      "priority": "high",
+      "question": "이 Google Sheet가 어떤 organization/project/team/workbook-family boundary 안에서 의미가 유효한가?",
+      "required_for": [
+        "local_candidate_acceptance",
+        "shared_promotion"
+      ]
+    },
+    {
+      "id": "question_source_authority",
+      "priority": "high",
+      "question": "FC_DATA의 IMPORTRANGE 원본 spreadsheet ACL과 broker allowlist를 확보해 원본 source authority를 검증할 수 있는가?",
+      "required_for": [
+        "pipeline_acceptance",
+        "semantic_acceptance"
+      ]
+    },
+    {
+      "id": "question_formula_result_authority",
+      "priority": "high",
+      "question": "표시값과 formula 결과를 어떤 authority로 검산할 것인가?",
+      "required_for": [
+        "formula_result_validation",
+        "candidate_acceptance"
+      ]
+    },
+    {
+      "id": "question_workbook_family_repetition",
+      "priority": "medium",
+      "question": "동일 workbook family의 반복 문서에서 같은 period-tab calculation surface가 반복되는가?",
+      "required_for": [
+        "shared_promotion"
+      ]
+    },
+    {
+      "id": "question_reporting_basis",
+      "priority": "medium",
+      "question": "이 문서의 revenue/profit 관련 표는 어떤 reporting basis와 aggregation rule로 해석해야 하는가?",
+      "required_for": [
+        "general_domain_alignment",
+        "human_review"
+      ]
+    }
+  ],
+  "shared_ontology_updates": [],
+  "summary": {
+    "alignment_item_count": 3,
+    "blocked_alignment_count": 3,
+    "promoted_alignment_count": 0,
+    "review_question_count": 5,
+    "high_priority_question_count": 3,
+    "shared_ontology_update_count": 0,
+    "alignment_status": "review_only_no_shared_promotion"
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "Shared ontology alignment review emits a human review packet only."
+    },
+    {
+      "level": "warning",
+      "message": "3 alignment items are blocked from shared promotion."
+    },
+    {
+      "level": "warning",
+      "message": "No shared ontology updates were emitted."
+    }
+  ]
+}

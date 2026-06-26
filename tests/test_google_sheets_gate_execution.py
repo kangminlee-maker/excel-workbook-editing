@@ -16,7 +16,7 @@ from google_sheets_gate_execution import build_google_sheets_gate_execution  # n
 
 class GoogleSheetsGateExecutionTest(unittest.TestCase):
     def test_executes_deterministic_gate_results(self) -> None:
-        fixture_dir = REPO_ROOT / "review-packages" / "sheets-bridge" / "live-inspections" / "test-gate-execution"
+        fixture_dir = REPO_ROOT / "review-packages" / "spreadsheet-processing" / "live-inspections" / "test-gate-execution"
         fixture_dir.mkdir(parents=True, exist_ok=True)
         plan_path = fixture_dir / "live-cross-validation-plan.json"
         batch_path = fixture_dir / "live-validation-batch-execution.json"

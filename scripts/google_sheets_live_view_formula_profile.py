@@ -372,7 +372,7 @@ def _external_dependencies(formulas: list[dict[str, Any]]) -> list[dict[str, Any
                     "required_evidence": [
                         "source argument value lookup",
                         "source spreadsheet Google ACL check",
-                        "broker source spreadsheet allowlist",
+                        "source spreadsheet access evidence",
                     ],
                 }
             )
@@ -389,15 +389,15 @@ def _permission_requirements(
         else "required_for_next_live_read"
     )
     window_reason = (
-        "Broker smoke passed for bounded grid/value/formula parser windows; later reads must stay within policy limits."
+        "Source evidence smoke passed for bounded grid/value/formula parser windows; later reads must stay within policy limits."
         if _parser_window_ops_verified(parser_window_smoke)
-        else "Current profile is limited to existing A1:Z80 artifacts; deeper block and pipeline parsing needs range-scoped broker reads."
+        else "Current profile is limited to existing A1:Z80 artifacts; deeper block and pipeline parsing needs range-scoped source evidence reads."
     )
     requirements = [
         {
             "capability": "bounded_grid_formula_value_windows",
             "status": window_status,
-            "required_broker_operations": [
+            "required_source_evidence_operations": [
                 "inspect.grid_window",
                 "inspect.values_window",
                 "inspect.formula_window",
@@ -414,8 +414,8 @@ def _permission_requirements(
             {
                 "capability": "source_spreadsheet_allowlist",
                 "status": "required_after_source_ids_are_resolved",
-                "required_broker_operations": ["inspect.metadata", "inspect.grid_window"],
-                "reason": "IMPORTRANGE source spreadsheets must be authorized separately by Google ACL and broker policy.",
+                "required_source_evidence_operations": ["inspect.metadata", "inspect.grid_window"],
+                "reason": "IMPORTRANGE source spreadsheets must be authorized separately by Google ACL and source access policy.",
             }
         )
     return requirements
@@ -450,7 +450,7 @@ def _summary(
         ),
         "external_dependency_count": len(external_dependencies),
         "permission_requirement_count": len(permission_requirements),
-        "broker_window_contract_status": (
+        "source_evidence_window_contract_status": (
             "verified_for_current_policy_limits"
             if _parser_window_ops_verified(parser_window_smoke)
             else "not_verified"
@@ -483,7 +483,7 @@ def _parser_observations(
             {
                 "level": "info",
                 "message": (
-                    "Broker-backed bounded grid/value/formula window operations are verified "
+                    "Source-evidence-backed bounded grid/value/formula window operations are verified "
                     "for the current policy limits; expanded reads must remain within those limits."
                 ),
                 "evidence_refs": ["parser-window-permission-smoke.json"],
@@ -495,7 +495,7 @@ def _parser_observations(
                 "level": "warning",
                 "message": (
                     f"Profile authority is limited to {manifest['limits']['profile_range']} windows; "
-                    "expanded block parsing needs broker-backed bounded grid/formula/value reads."
+                    "expanded block parsing needs approved-authority bounded grid/formula/value reads."
                 ),
                 "evidence_refs": ["docs/google-sheets-parser-permission-requirements.md"],
             }
@@ -532,7 +532,7 @@ def _parser_observations(
                 "level": "warning",
                 "message": (
                     f"{len(external_dependencies)} IMPORTRANGE dependency requires source "
-                    "argument resolution, Google ACL confirmation, and broker allowlist review."
+                    "argument resolution, Google ACL confirmation, and source access evidence review."
                 ),
                 "evidence_refs": [item["id"] for item in external_dependencies[:8]],
             }
@@ -541,7 +541,7 @@ def _parser_observations(
         observations.append(
             {
                 "level": "warning",
-                "message": "Missing broker contract items remain explicit stop conditions for deeper live reads.",
+                "message": "Missing source evidence contract items remain explicit stop conditions for deeper live reads.",
                 "evidence_refs": [item["capability"] for item in permission_requirements],
             }
         )
@@ -569,8 +569,8 @@ def _formula_signature(formula: str, row: int | None, column: int | None) -> str
 
 def _expanded_range_authority(parser_window_smoke: dict[str, Any] | None) -> str:
     if _parser_window_ops_verified(parser_window_smoke):
-        return "broker_bounded_window_contract_verified"
-    return "requires_broker_grid_window_contract"
+        return "bounded_source_evidence_window_contract_verified"
+    return "requires_source_evidence_grid_window_contract"
 
 
 def _parser_window_ops_verified(parser_window_smoke: dict[str, Any] | None) -> bool:
@@ -732,7 +732,7 @@ def render_live_view_formula_profile_section(profile: dict[str, Any]) -> str:
         "<tr>"
         f"<td>{_esc(item['capability'])}</td>"
         f"<td>{_esc(item['status'])}</td>"
-        f"<td>{_esc(', '.join(item['required_broker_operations']))}</td>"
+        f"<td>{_esc(', '.join(item['required_source_evidence_operations']))}</td>"
         f"<td>{_esc(item['reason'])}</td>"
         "</tr>"
         for item in profile["permission_requirements"]
@@ -757,7 +757,7 @@ def render_live_view_formula_profile_section(profile: dict[str, Any]) -> str:
   <h2>External Dependencies</h2>
   <section class="panel"><table><thead><tr><th>Formula Cell</th><th>Source Arg</th><th>Range Arg</th><th>Resolution</th><th>State</th></tr></thead><tbody>{external_rows}</tbody></table></section>
   <h2>Next Permission Requirements</h2>
-  <section class="panel"><table><thead><tr><th>Capability</th><th>Status</th><th>Broker Ops</th><th>Reason</th></tr></thead><tbody>{requirement_rows}</tbody></table></section>
+  <section class="panel"><table><thead><tr><th>Capability</th><th>Status</th><th>Source Evidence Ops</th><th>Reason</th></tr></thead><tbody>{requirement_rows}</tbody></table></section>
   <h2>Stage Observations</h2>
   <section class="panel"><table><thead><tr><th>Level</th><th>Message</th><th>Evidence</th></tr></thead><tbody>{observation_rows}</tbody></table></section>
 """

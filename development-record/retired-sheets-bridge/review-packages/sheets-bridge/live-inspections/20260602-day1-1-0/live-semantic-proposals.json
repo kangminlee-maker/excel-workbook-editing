@@ -1,0 +1,120 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-02T07:05:25.216610Z",
+  "source": {
+    "spreadsheet_id": "1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60",
+    "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60/edit?ouid=112662517307801676490",
+    "title": "[Day 1] 1.0 (from 20250707)",
+    "source_artifacts": {
+      "live_domain_source_model": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/live-domain-source-model.json",
+      "live_evidence_package": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/live-evidence-package.json",
+      "live_document_ontology_mapping": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/live-document-ontology-mapping.json"
+    }
+  },
+  "authority": {
+    "source_document": "live_google_sheet",
+    "proposal_status": "proposal_only_not_accepted",
+    "shared_ontology_updates": 0,
+    "semantic_generation_scope": "cash_basis_operational_reporting_local_candidates",
+    "formula_result_authority": "not_established"
+  },
+  "semantic_concept_proposals": [
+    {
+      "id": "proposal_period_tab_calculation_surface",
+      "type": "semantic_concept_proposal",
+      "status": "proposed",
+      "domain_layer": "local_domain",
+      "label": "period-tab calculation surface",
+      "description": "Accepted document-structure calculation nodes and internal formula surfaces that appear to calculate within period-labeled tabs.",
+      "source_evidence_refs": [
+        "node_pipeline_pipeline_24_0102_same_sheet_range_24_0102",
+        "node_pipeline_pipeline_24_0108_same_sheet_range_24_0108",
+        "node_pipeline_pipeline_24_0115_same_sheet_range_24_0115",
+        "pipeline_24_0102_same_sheet_range_24_0102",
+        "pipeline_24_0108_same_sheet_range_24_0108",
+        "pipeline_24_0115_same_sheet_range_24_0115"
+      ],
+      "domain_source_refs": [],
+      "shared_promotion_status": "blocked",
+      "blockers": [
+        "shared_promotion_blocked",
+        "source_authority_unavailable"
+      ]
+    },
+    {
+      "id": "proposal_source_authority_blocker_context",
+      "type": "semantic_concept_proposal",
+      "status": "proposed",
+      "domain_layer": "process_semantic",
+      "label": "source authority blocker context",
+      "description": "External source and formula-result blockers materially constrain semantic interpretation of FC_DATA-dependent report flows.",
+      "source_evidence_refs": [
+        "review_external_dep_fc_data_A5",
+        "review_external_importrange_source_authority",
+        "review_formula_error_surfaces",
+        "review_remaining_bounded_read_queue",
+        "review_blocked_gate_results"
+      ],
+      "domain_source_refs": [],
+      "shared_promotion_status": "blocked",
+      "blockers": [
+        "shared_promotion_blocked",
+        "source_authority_unavailable"
+      ]
+    }
+  ],
+  "semantic_relation_proposals": [],
+  "validation_plan": [
+    {
+      "id": "validate_proposal_period_tab_calculation_surface",
+      "target_id": "proposal_period_tab_calculation_surface",
+      "target_type": "semantic_concept_proposal",
+      "required_gates": [
+        "source_trace_gate",
+        "local_boundary_gate",
+        "shared_promotion_blocker_gate"
+      ],
+      "status": "pending_validation"
+    },
+    {
+      "id": "validate_proposal_source_authority_blocker_context",
+      "target_id": "proposal_source_authority_blocker_context",
+      "target_type": "semantic_concept_proposal",
+      "required_gates": [
+        "source_trace_gate",
+        "local_boundary_gate",
+        "shared_promotion_blocker_gate"
+      ],
+      "status": "pending_validation"
+    },
+    {
+      "id": "validate_shared_promotion_blocked",
+      "target_id": "shared_ontology_promotion",
+      "target_type": "promotion_gate",
+      "required_gates": [
+        "human_review_gate",
+        "local_boundary_gate",
+        "source_authority_gate"
+      ],
+      "status": "blocked"
+    }
+  ],
+  "summary": {
+    "semantic_concept_proposal_count": 2,
+    "semantic_relation_proposal_count": 0,
+    "validation_plan_count": 3,
+    "accepted_semantic_concept_count": 0,
+    "shared_ontology_update_count": 0,
+    "proposal_status": "proposal_only_not_accepted"
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "Semantic candidates are proposal-only and require deterministic validation before acceptance."
+    },
+    {
+      "level": "warning",
+      "message": "Shared ontology promotion remains blocked by local boundary, source authority, repeated evidence, or formula-result authority gaps."
+    }
+  ]
+}

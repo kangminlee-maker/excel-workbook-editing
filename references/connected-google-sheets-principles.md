@@ -40,7 +40,7 @@ Prefer narrow A1 ranges, field masks, and chunked reads for large Sheets.
 
 ## 4. Update
 
-- Prefer in-place connector/API updates against existing ranges.
+- Prefer in-place approved external updates against existing ranges.
 - Write only needed cells, formulas, formats, or validations.
 - Preserve formulas unless replacing them is the requested behavior.
 - Check validation-backed cells before choosing replacement values.
@@ -54,9 +54,9 @@ Prefer narrow A1 ranges, field masks, and chunked reads for large Sheets.
 
 ## 6. Operational Risks
 
-Large or connected Sheets can fail because of:
+Large or connected Sheets can fail at the access authority because of:
 
-- API timeouts or quota limits
+- API timeouts or quota limits reported by the approved external access surface
 - oversized reads/writes
 - import functions still loading
 - `IMPORTRANGE` permission blocks
@@ -77,8 +77,10 @@ Classify external data states as:
 
 ## 7. Verification
 
-- Re-read changed ranges from the same live spreadsheet.
-- Re-read dependent outputs when formulas or dashboards matter.
+- Consume approved external readback evidence for changed ranges from the same
+  live spreadsheet.
+- Consume approved external readback evidence for dependent outputs when
+  formulas or dashboards matter.
 - Verify formulas, validations, protections, and loading states when they are part of the change.
 - Capture rollback snapshots for risky edits.
 - Report quota, timeout, import loading, Apps Script, and connected-dashboard risks when they cannot be fully verified.
@@ -86,6 +88,7 @@ Classify external data states as:
 ## 8. Done Criteria
 
 - The intended spreadsheet identity was preserved or replacement was explicitly requested.
-- Changed ranges were read back from the live spreadsheet.
+- Changed ranges have approved external readback evidence from the live
+  spreadsheet.
 - Important formulas and dependent outputs are correct or explicitly unverified.
 - External loading, permission, quota, Apps Script, rollback, and dashboard risks are documented when relevant.

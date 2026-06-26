@@ -39,7 +39,7 @@ def build_google_sheets_document_ontology_mapping(
             "mapping_status": "document_structure_ontology_mapping_only",
             "semantic_ontology_generation": "not_performed",
             "formula_result_authority": "not_established",
-            "source_spreadsheet_read_authority": "blocked_until_source_acl_and_broker_allowlist",
+            "source_spreadsheet_read_authority": "blocked_until_source_access_evidence",
         },
         "ontology": {
             "namespace": "document_structure",

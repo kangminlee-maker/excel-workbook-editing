@@ -1,1 +1,0 @@
-{"source": {"title": "Live Sheet"}, "broker_read_plan": {"status": "planned_not_executed", "batches": [{"id": "broker_batch_inspect_formula_window", "operation": "inspect.formula_window", "ranges": ["'Output'!A81:Z160"], "read_candidate_ids": ["read_output_formula_next_window"]}], "blocked_source_reads": []}}

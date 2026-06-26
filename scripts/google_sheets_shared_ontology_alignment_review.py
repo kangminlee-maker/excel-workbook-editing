@@ -192,7 +192,7 @@ def _review_questions(
         {
             "id": "question_source_authority",
             "priority": "high",
-            "question": "FC_DATA의 IMPORTRANGE 원본 spreadsheet ACL과 broker allowlist를 확보해 원본 source authority를 검증할 수 있는가?",
+            "question": "FC_DATA의 IMPORTRANGE 원본 spreadsheet ACL과 source access evidence를 확보해 원본 source authority를 검증할 수 있는가?",
             "required_for": ["pipeline_acceptance", "semantic_acceptance"],
         },
         {

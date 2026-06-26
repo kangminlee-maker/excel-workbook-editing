@@ -72,7 +72,7 @@ def build_google_sheets_table_io_pipelines(
             "pipeline_status": "candidate_not_accepted_graph_claim",
             "formula_text_authority": "formula_text_only",
             "formula_result_authority": "not_established",
-            "external_source_read_authority": "blocked_until_source_acl_and_broker_allowlist",
+            "external_source_read_authority": "blocked_until_source_access_evidence",
         },
         "pipelines": sorted(
             pipelines,
@@ -286,7 +286,7 @@ def _input_ref(
             "region_id": None,
             "bounds": None,
             "label": source.get("spreadsheet_id") or "unresolved IMPORTRANGE source",
-            "authority": "blocked_until_source_acl_and_broker_allowlist",
+            "authority": "blocked_until_source_access_evidence",
             "source_spreadsheet_id": source.get("spreadsheet_id"),
             "source_spreadsheet_url": source.get("spreadsheet_url"),
         }
@@ -416,7 +416,7 @@ def _sampled_ref(region: dict[str, Any], *, role: str) -> dict[str, Any]:
         "region_id": region["id"],
         "bounds": region["bounds"],
         "label": region["subtype"],
-        "authority": "broker_bounded_sample",
+        "authority": "bounded_source_evidence",
     }
 
 
@@ -442,7 +442,7 @@ def _review_flags(
             flags.append("source_url_unresolved")
     if transform_ref["repeated_formula_family"]:
         flags.append("repeated_formula_family")
-    if input_ref["authority"] == "broker_bounded_sample":
+    if input_ref["authority"] == "bounded_source_evidence":
         flags.append("sampled_input_confirmed")
     if input_ref["kind"] in {"support_surface", "sheet_range"}:
         flags.append("input_region_unresolved")
@@ -495,7 +495,7 @@ def _pipeline_notes(edge: dict[str, Any], review_flags: list[str]) -> list[str]:
         "Formula text dependency is projected to table-level I/O candidate; formula result is not authority."
     ]
     if "source_allowlist_required" in review_flags:
-        notes.append("IMPORTRANGE source read is blocked until source ACL and broker allowlist are verified.")
+        notes.append("IMPORTRANGE source read is blocked until source ACL and source access evidence are verified.")
     if "formula_error_observed" in review_flags:
         notes.append("Displayed formula errors were observed in bounded samples.")
     if edge.get("sample_target_ranges"):
@@ -522,7 +522,7 @@ def _external_sources(
                 "candidate_source_spreadsheet_id": url_candidate.get("spreadsheet_id"),
                 "candidate_source_spreadsheet_url": url_candidate.get("spreadsheet_url"),
                 "required_evidence": dependency["required_evidence"],
-                "status": "blocked_until_source_acl_and_broker_allowlist",
+                "status": "blocked_until_source_access_evidence",
                 "evidence_refs": [dependency["id"], *url_candidate.get("evidence_refs", [])],
             }
         )
@@ -542,9 +542,9 @@ def _review_queue(
                 "id": "review_external_importrange_source_authority",
                 "type": "permission_or_authority_blocker",
                 "severity": "high",
-                "message": "Resolve source spreadsheet ID, Google ACL, and broker allowlist before reading IMPORTRANGE source data.",
+                "message": "Resolve source spreadsheet ID, Google ACL, and source access evidence before reading IMPORTRANGE source data.",
                 "evidence_refs": [item["id"] for item in external_sources],
-                "status": "requires_human_or_broker_policy_action",
+                "status": "requires_human_or_source_access_policy_evidence_action",
             }
         )
     if any("formula_error_observed" in item["review_flags"] for item in pipelines):
@@ -621,7 +621,7 @@ def _parser_observations(
         observations.append(
             {
                 "level": "warning",
-                "message": "IMPORTRANGE source data is not read in this stage; source ACL and broker allowlist are explicit blockers.",
+                "message": "IMPORTRANGE source data is not read in this stage; source ACL and source access evidence are explicit blockers.",
             }
         )
     if review_queue:

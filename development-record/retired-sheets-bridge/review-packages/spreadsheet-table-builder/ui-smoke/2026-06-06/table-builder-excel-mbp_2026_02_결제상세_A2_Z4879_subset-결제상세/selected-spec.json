@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "spec_kind": "formula_table_builder_v1",
+  "artifact_type": "excel_workbook",
+  "spreadsheet_id": "",
+  "source": {
+    "artifact_type": "excel_workbook",
+    "spreadsheet_id": "",
+    "workbook_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/excel-real-smoke/outputs/mbp_2026_02_결제상세_A2_Z4879_subset.xlsx",
+    "sheet_title": "결제상세",
+    "qualified_range": "'결제상세'!A1:Z120",
+    "header_row": 1
+  },
+  "fields": {
+    "row_label": {
+      "column": "D",
+      "header": "브랜드",
+      "selected_cell": "D1"
+    },
+    "column_label": {
+      "column": "L",
+      "header": "결제수단",
+      "selected_cell": "L1"
+    },
+    "measure": {
+      "column": "Z",
+      "header": "결제·취소액 (A)",
+      "selected_cell": "Z1"
+    }
+  },
+  "formula": {
+    "template": "=IFERROR(SUMIFS({measure_range},{row_label_range},{row_label_cell},{column_label_range},{column_label_cell}),0)"
+  },
+  "output": {
+    "sheet_title": "MCP_TABLE_20260606_0000",
+    "title": "MCP Formula Table",
+    "creation_mode": "copy",
+    "workbook_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/excel-real-smoke/outputs/mbp_2026_02_결제상세_A2_Z4879_subset-formula-table.xlsx",
+    "format": {
+      "header_bold": true,
+      "freeze_header_rows": 2,
+      "auto_resize_columns": true,
+      "protect_created_sheet": false
+    }
+  }
+}

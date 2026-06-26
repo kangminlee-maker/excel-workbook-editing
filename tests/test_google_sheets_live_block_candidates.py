@@ -16,7 +16,7 @@ from google_sheets_live_block_candidates import build_live_block_candidates  # n
 
 class GoogleSheetsLiveBlockCandidatesTest(unittest.TestCase):
     def test_builds_schema_valid_block_candidates(self) -> None:
-        fixture_dir = REPO_ROOT / "review-packages" / "sheets-bridge" / "live-inspections" / "test-block-candidates"
+        fixture_dir = REPO_ROOT / "review-packages" / "spreadsheet-processing" / "live-inspections" / "test-block-candidates"
         fixture_dir.mkdir(parents=True, exist_ok=True)
         live_manifest_path = fixture_dir / "live-manifest.json"
         top_left_sample_path = fixture_dir / "top-left-sample.json"

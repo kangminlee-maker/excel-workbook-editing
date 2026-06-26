@@ -1,0 +1,1304 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-02T04:59:09.524006Z",
+  "source": {
+    "spreadsheet_id": "1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60",
+    "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60/edit?ouid=112662517307801676490",
+    "title": "[Day 1] 1.0 (from 20250707)",
+    "source_artifacts": {
+      "live_manifest": "live-manifest.json",
+      "live_table_io_pipelines": "live-table-io-pipelines.json",
+      "live_data_view_projection": "live-data-view-projection.json",
+      "live_blocker_resolution_update": "live-blocker-resolution-update.json",
+      "formula_result_grid_current_probes": "formula-result-grid-current-probes.json",
+      "source_fc_data_grid_formula_window": "source-fc-data-grid-formula-window.json"
+    }
+  },
+  "authority": {
+    "source_document": "live_google_sheet",
+    "checkpoint_status": "completed",
+    "formula_result_authority_basis": "google_sheets_api_grid_effective_value",
+    "shared_ontology_updates": 0,
+    "parser_truth": "range_level_authority_only_no_semantic_promotion"
+  },
+  "method": {
+    "name": "connected_sheets_formula_result_authority_checkpoint",
+    "authority": "deterministic_grid_effective_value_gate",
+    "decision_policy": "Accept formula-result authority only for probed ranges where Google Sheets grid effective values exist for formula cells and no effective error values are present. Blocked upstream FC_DATA/source ranges block dependent report pipelines. This stage does not accept semantic claims or shared ontology updates."
+  },
+  "evidence_inputs": {
+    "grid_field_mask": "grid_formula_v1",
+    "current_workbook_probe_ranges": [
+      "'24_0102'!B8:T67",
+      "'24_0108'!B8:M56",
+      "'24_0115'!B8:M57",
+      "FC_DATA!A1:Z80"
+    ],
+    "source_workbook_probe_ranges": [
+      "FC_DATA!A1:Z80"
+    ],
+    "reporting_basis": "cash basis; 결제액 기반 운영 현황 보고이며 K-IFRS/K-GAAP 매출 산출물이 아님",
+    "local_boundary": "전사레벨 현황 보고 문서"
+  },
+  "range_authority_results": [
+    {
+      "id": "range_authority_current_workbook_fc_data_fc_data_a1_z80",
+      "type": "formula_result_range_authority",
+      "source_kind": "current_workbook",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "status": "blocked",
+      "authority_basis": "google_sheets_api_grid_effective_value",
+      "metrics": {
+        "cell_count": 1783,
+        "formatted_value_count": 124,
+        "effective_value_count": 124,
+        "formula_cell_count": 64,
+        "formula_cell_with_effective_value_count": 54,
+        "formula_error_cell_count": 3,
+        "effective_error_count": 3
+      },
+      "error_samples": [
+        {
+          "formatted_value": "#REF!",
+          "error": {
+            "message": "Cannot find range or sheet for imported range.",
+            "type": "REF"
+          },
+          "formula": "=IMPORTRANGE(B1,\"지표!T4:AH175\")"
+        },
+        {
+          "formatted_value": "#DIV/0!",
+          "error": {
+            "message": "Function DIVIDE parameter 2 cannot be zero.",
+            "type": "DIVIDE_BY_ZERO"
+          },
+          "formula": "=S74/R74"
+        },
+        {
+          "formatted_value": "#DIV/0!",
+          "error": {
+            "message": "Function DIVIDE parameter 2 cannot be zero.",
+            "type": "DIVIDE_BY_ZERO"
+          },
+          "formula": "=S79/R79"
+        }
+      ],
+      "formula_samples": [
+        {
+          "formula": "=if(WEEKDAY(today(),2)=1,today(),if(WEEKDAY(today(),2)=2,today()-1,if(WEEKDAY(today(),2)=3,today()-2,if(WEEKDAY(today(),2)=4,today()-3,if(WEEKDAY(today(),2)=5,today()-4,if(WEEKDAY(today(),2)=6,today()-5,if(WEEKDAY(today(),2)=7,today()-6,\"에러남\")))))))",
+          "formatted_value": "2026. 6. 1",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=IMPORTRANGE(B1,\"지표!T4:AH175\")",
+          "formatted_value": "#REF!",
+          "effective_value_type": "errorValue"
+        },
+        {
+          "formula": "={A6:O31}",
+          "formatted_value": "",
+          "effective_value_type": "none"
+        },
+        {
+          "formula": "={A32:B57}",
+          "formatted_value": "",
+          "effective_value_type": "none"
+        },
+        {
+          "formula": "={C33:O33}",
+          "formatted_value": "",
+          "effective_value_type": "none"
+        },
+        {
+          "formula": "=S33/S32",
+          "formatted_value": "0.00%",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=T33/T32",
+          "formatted_value": "0.00%",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=U33/U32",
+          "formatted_value": "0.00%",
+          "effective_value_type": "numberValue"
+        }
+      ],
+      "blockers": [
+        "effective_error_values_present"
+      ],
+      "message": "Formula/effective error values are present in the probed range.",
+      "evidence_refs": [
+        "grid_formula_v1:current_workbook:FC_DATA!A1:Z80",
+        "parser-readonly-windows-2026-06-02:kangmin.lee@day1company.co.kr:1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60:inspect.grid_window"
+      ]
+    },
+    {
+      "id": "range_authority_current_workbook_24_0115_24_0115_b8_m57",
+      "type": "formula_result_range_authority",
+      "source_kind": "current_workbook",
+      "sheet": "24_0115",
+      "range": "'24_0115'!B8:M57",
+      "status": "accepted",
+      "authority_basis": "google_sheets_api_grid_effective_value",
+      "metrics": {
+        "cell_count": 574,
+        "formatted_value_count": 247,
+        "effective_value_count": 247,
+        "formula_cell_count": 65,
+        "formula_cell_with_effective_value_count": 65,
+        "formula_error_cell_count": 0,
+        "effective_error_count": 0
+      },
+      "error_samples": [],
+      "formula_samples": [
+        {
+          "formula": "=I8-B8",
+          "formatted_value": "0",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=J8-C8",
+          "formatted_value": "1",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=I9-B9",
+          "formatted_value": "0",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=J9-C9",
+          "formatted_value": "2",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=I10-B10",
+          "formatted_value": "0",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=J10-C10",
+          "formatted_value": "0",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=I11-B11",
+          "formatted_value": "0",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=J11-C11",
+          "formatted_value": "1",
+          "effective_value_type": "numberValue"
+        }
+      ],
+      "blockers": [],
+      "message": "Formula cells expose Google Sheets effective values and no effective errors were observed.",
+      "evidence_refs": [
+        "grid_formula_v1:current_workbook:'24_0115'!B8:M57",
+        "parser-readonly-windows-2026-06-02:kangmin.lee@day1company.co.kr:1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60:inspect.grid_window"
+      ]
+    },
+    {
+      "id": "range_authority_current_workbook_24_0108_24_0108_b8_m56",
+      "type": "formula_result_range_authority",
+      "source_kind": "current_workbook",
+      "sheet": "24_0108",
+      "range": "'24_0108'!B8:M56",
+      "status": "accepted",
+      "authority_basis": "google_sheets_api_grid_effective_value",
+      "metrics": {
+        "cell_count": 564,
+        "formatted_value_count": 226,
+        "effective_value_count": 226,
+        "formula_cell_count": 68,
+        "formula_cell_with_effective_value_count": 68,
+        "formula_error_cell_count": 0,
+        "effective_error_count": 0
+      },
+      "error_samples": [],
+      "formula_samples": [
+        {
+          "formula": "=I8-B8",
+          "formatted_value": "4",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=J8-C8",
+          "formatted_value": "-1",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=I9-B9",
+          "formatted_value": "1",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=J9-C9",
+          "formatted_value": "-3",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=I10-B10",
+          "formatted_value": "-1",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=J10-C10",
+          "formatted_value": "0",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=I11-B11",
+          "formatted_value": "7",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=J11-C11",
+          "formatted_value": "0",
+          "effective_value_type": "numberValue"
+        }
+      ],
+      "blockers": [],
+      "message": "Formula cells expose Google Sheets effective values and no effective errors were observed.",
+      "evidence_refs": [
+        "grid_formula_v1:current_workbook:'24_0108'!B8:M56",
+        "parser-readonly-windows-2026-06-02:kangmin.lee@day1company.co.kr:1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60:inspect.grid_window"
+      ]
+    },
+    {
+      "id": "range_authority_current_workbook_24_0102_24_0102_b8_t67",
+      "type": "formula_result_range_authority",
+      "source_kind": "current_workbook",
+      "sheet": "24_0102",
+      "range": "'24_0102'!B8:T67",
+      "status": "accepted",
+      "authority_basis": "google_sheets_api_grid_effective_value",
+      "metrics": {
+        "cell_count": 1140,
+        "formatted_value_count": 347,
+        "effective_value_count": 347,
+        "formula_cell_count": 99,
+        "formula_cell_with_effective_value_count": 99,
+        "formula_error_cell_count": 0,
+        "effective_error_count": 0
+      },
+      "error_samples": [],
+      "formula_samples": [
+        {
+          "formula": "=I8-B8",
+          "formatted_value": "7",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=J8-C8",
+          "formatted_value": "-9",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=I9-B9",
+          "formatted_value": "0",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=J9-C9",
+          "formatted_value": "-1",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=I10-B10",
+          "formatted_value": "-1",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=J10-C10",
+          "formatted_value": "0",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=I11-B11",
+          "formatted_value": "0",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=J11-C11",
+          "formatted_value": "0",
+          "effective_value_type": "numberValue"
+        }
+      ],
+      "blockers": [],
+      "message": "Formula cells expose Google Sheets effective values and no effective errors were observed.",
+      "evidence_refs": [
+        "grid_formula_v1:current_workbook:'24_0102'!B8:T67",
+        "parser-readonly-windows-2026-06-02:kangmin.lee@day1company.co.kr:1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60:inspect.grid_window"
+      ]
+    },
+    {
+      "id": "range_authority_fc_data_source_workbook_fc_data_fc_data_a1_z80",
+      "type": "formula_result_range_authority",
+      "source_kind": "fc_data_source_workbook",
+      "sheet": "FC_DATA",
+      "range": "FC_DATA!A1:Z80",
+      "status": "blocked",
+      "authority_basis": "google_sheets_api_grid_effective_value",
+      "metrics": {
+        "cell_count": 1812,
+        "formatted_value_count": 1521,
+        "effective_value_count": 1521,
+        "formula_cell_count": 64,
+        "formula_cell_with_effective_value_count": 63,
+        "effective_error_count": 17,
+        "formula_error_cell_count": 2
+      },
+      "error_samples": [
+        {
+          "formatted_value": "#N/A",
+          "error": {
+            "type": "N_A"
+          },
+          "formula": ""
+        },
+        {
+          "formatted_value": "#N/A",
+          "error": {
+            "type": "N_A"
+          },
+          "formula": ""
+        },
+        {
+          "formatted_value": "#DIV/0!",
+          "error": {
+            "type": "DIVIDE_BY_ZERO"
+          },
+          "formula": ""
+        },
+        {
+          "formatted_value": "#N/A",
+          "error": {
+            "type": "N_A"
+          },
+          "formula": ""
+        },
+        {
+          "formatted_value": "#N/A",
+          "error": {
+            "type": "N_A"
+          },
+          "formula": ""
+        },
+        {
+          "formatted_value": "#DIV/0!",
+          "error": {
+            "type": "DIVIDE_BY_ZERO"
+          },
+          "formula": ""
+        },
+        {
+          "formatted_value": "#DIV/0!",
+          "error": {
+            "type": "DIVIDE_BY_ZERO"
+          },
+          "formula": ""
+        },
+        {
+          "formatted_value": "#DIV/0!",
+          "error": {
+            "type": "DIVIDE_BY_ZERO"
+          },
+          "formula": ""
+        },
+        {
+          "formatted_value": "#DIV/0!",
+          "error": {
+            "type": "DIVIDE_BY_ZERO"
+          },
+          "formula": ""
+        },
+        {
+          "formatted_value": "#DIV/0!",
+          "error": {
+            "type": "DIVIDE_BY_ZERO"
+          },
+          "formula": ""
+        },
+        {
+          "formatted_value": "#DIV/0!",
+          "error": {
+            "type": "DIVIDE_BY_ZERO"
+          },
+          "formula": ""
+        },
+        {
+          "formatted_value": "#DIV/0!",
+          "error": {
+            "type": "DIVIDE_BY_ZERO"
+          },
+          "formula": ""
+        }
+      ],
+      "formula_samples": [
+        {
+          "formula": "=if(WEEKDAY(today(),2)=1,today(),if(WEEKDAY(today(),2)=2,today()-1,if(WEEKDAY(today(),2)=3,today()-2,if(WEEKDAY(today(),2)=4,today()-3,if(WEEKDAY(today(),2)=5,today()-4,if(WEEKDAY(today(),2)=6,today()-5,if(WEEKDAY(today(),2)=7,today()-6,\"에러남\")))))))",
+          "formatted_value": "2026. 6. 1",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=IMPORTRANGE(B1,\"지표!T4:AH175\")",
+          "formatted_value": "전체",
+          "effective_value_type": "stringValue"
+        },
+        {
+          "formula": "={A6:O31}",
+          "formatted_value": "전체",
+          "effective_value_type": "stringValue"
+        },
+        {
+          "formula": "={A32:B57}",
+          "formatted_value": "전체",
+          "effective_value_type": "stringValue"
+        },
+        {
+          "formula": "={C33:O33}",
+          "formatted_value": "1,939,513,812",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=S33/S32",
+          "formatted_value": "103.44%",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=T33/T32",
+          "formatted_value": "91.90%",
+          "effective_value_type": "numberValue"
+        },
+        {
+          "formula": "=U33/U32",
+          "formatted_value": "92.94%",
+          "effective_value_type": "numberValue"
+        }
+      ],
+      "blockers": [
+        "effective_error_values_present"
+      ],
+      "message": "Formula/effective error values are present in the probed range.",
+      "evidence_refs": [
+        "grid_formula_v1:fc_data_source_workbook:FC_DATA!A1:Z80",
+        "parser-readonly-windows-2026-06-02:kangmin.lee@day1company.co.kr:1CPfJoD6VlChrev00xmagW6qJ2x7eNoJnlQeKe9AMYrs:inspect.grid_window"
+      ]
+    }
+  ],
+  "pipeline_authority_results": [
+    {
+      "id": "pipeline_authority_pipeline_fc_data_same_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_fc_data_same_sheet_range_fc_data",
+      "role": "input_staging",
+      "sheet": "FC_DATA",
+      "range": "A1:R2",
+      "status": "blocked",
+      "authority_basis": "google_sheets_api_grid_effective_value",
+      "probed_range_result_id": "range_authority_current_workbook_fc_data_fc_data_a1_z80",
+      "review_flags": [
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "same_sheet_dataflow",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 115,
+      "projection_preview_status": null,
+      "blockers": [
+        "effective_error_values_present",
+        "formula_error_reconciliation_required"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_fc_data_same_sheet_range_fc_data",
+        "signature_8890fec40256",
+        "signature_2504c700ae2c",
+        "signature_436bc14b24c1",
+        "signature_b02a6a9dc15d",
+        "signature_c92b83a09068",
+        "signature_cc82dfb7ae67",
+        "signature_a68c6bfc53da",
+        "signature_ae9733d02c30",
+        "range_authority_current_workbook_fc_data_fc_data_a1_z80"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_24_0102_same_sheet_range_24_0102",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_24_0102_same_sheet_range_24_0102",
+      "role": "calculation",
+      "sheet": "24_0102",
+      "range": "B8:T67",
+      "status": "accepted",
+      "authority_basis": "google_sheets_api_grid_effective_value",
+      "probed_range_result_id": "range_authority_current_workbook_24_0102_24_0102_b8_t67",
+      "review_flags": [
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "same_sheet_dataflow"
+      ],
+      "transform_formula_count": 178,
+      "projection_preview_status": "sampled_from_top_left_window",
+      "blockers": [],
+      "message": "Pipeline output range has accepted Google Sheets effective-value authority.",
+      "evidence_refs": [
+        "edge_24_0102_same_sheet_range_24_0102",
+        "signature_79311c1c31de",
+        "signature_8890fec40256",
+        "signature_9a6c85b55d8b",
+        "signature_3f8102fe8e94",
+        "signature_6a2dda7466ed",
+        "signature_163c9e68d151",
+        "signature_fc5efa07f925",
+        "signature_2d484c593b8c",
+        "range_authority_current_workbook_24_0102_24_0102_b8_t67"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_24_0108_same_sheet_range_24_0108",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_24_0108_same_sheet_range_24_0108",
+      "role": "calculation",
+      "sheet": "24_0108",
+      "range": "B8:M56",
+      "status": "accepted",
+      "authority_basis": "google_sheets_api_grid_effective_value",
+      "probed_range_result_id": "range_authority_current_workbook_24_0108_24_0108_b8_m56",
+      "review_flags": [
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "same_sheet_dataflow"
+      ],
+      "transform_formula_count": 122,
+      "projection_preview_status": "sampled_from_top_left_window",
+      "blockers": [],
+      "message": "Pipeline output range has accepted Google Sheets effective-value authority.",
+      "evidence_refs": [
+        "edge_24_0108_same_sheet_range_24_0108",
+        "signature_79311c1c31de",
+        "signature_8890fec40256",
+        "signature_9a6c85b55d8b",
+        "signature_3f8102fe8e94",
+        "signature_6a2dda7466ed",
+        "signature_163c9e68d151",
+        "signature_fc5efa07f925",
+        "signature_2d484c593b8c",
+        "range_authority_current_workbook_24_0108_24_0108_b8_m56"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_24_0115_same_sheet_range_24_0115",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_24_0115_same_sheet_range_24_0115",
+      "role": "calculation",
+      "sheet": "24_0115",
+      "range": "B8:M57",
+      "status": "accepted",
+      "authority_basis": "google_sheets_api_grid_effective_value",
+      "probed_range_result_id": "range_authority_current_workbook_24_0115_24_0115_b8_m57",
+      "review_flags": [
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "same_sheet_dataflow"
+      ],
+      "transform_formula_count": 116,
+      "projection_preview_status": "sampled_from_top_left_window",
+      "blockers": [],
+      "message": "Pipeline output range has accepted Google Sheets effective-value authority.",
+      "evidence_refs": [
+        "edge_24_0115_same_sheet_range_24_0115",
+        "signature_79311c1c31de",
+        "signature_8890fec40256",
+        "signature_9a6c85b55d8b",
+        "signature_3f8102fe8e94",
+        "signature_6a2dda7466ed",
+        "signature_163c9e68d151",
+        "signature_fc5efa07f925",
+        "signature_2d484c593b8c",
+        "range_authority_current_workbook_24_0115_24_0115_b8_m57"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_25_0707_cross_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_25_0707_cross_sheet_range_fc_data",
+      "role": "report",
+      "sheet": "25_0707",
+      "range": "A2:R80",
+      "status": "blocked",
+      "authority_basis": "not_probed",
+      "probed_range_result_id": null,
+      "review_flags": [
+        "cross_sheet_dataflow",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 2,
+      "projection_preview_status": null,
+      "blockers": [
+        "formula_error_reconciliation_required",
+        "formula_result_probe_missing"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_25_0707_cross_sheet_range_fc_data",
+        "signature_3c2407d2b3ed",
+        "signature_b4bd044581ce"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_25_0714_cross_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_25_0714_cross_sheet_range_fc_data",
+      "role": "report",
+      "sheet": "25_0714",
+      "range": "A2:R80",
+      "status": "blocked",
+      "authority_basis": "not_probed",
+      "probed_range_result_id": null,
+      "review_flags": [
+        "cross_sheet_dataflow",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 2,
+      "projection_preview_status": null,
+      "blockers": [
+        "formula_error_reconciliation_required",
+        "formula_result_probe_missing"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_25_0714_cross_sheet_range_fc_data",
+        "signature_3c2407d2b3ed",
+        "signature_b4bd044581ce"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_25_0721_cross_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_25_0721_cross_sheet_range_fc_data",
+      "role": "report",
+      "sheet": "25_0721",
+      "range": "A2:R80",
+      "status": "blocked",
+      "authority_basis": "not_probed",
+      "probed_range_result_id": null,
+      "review_flags": [
+        "cross_sheet_dataflow",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 2,
+      "projection_preview_status": null,
+      "blockers": [
+        "formula_error_reconciliation_required",
+        "formula_result_probe_missing"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_25_0721_cross_sheet_range_fc_data",
+        "signature_3c2407d2b3ed",
+        "signature_b4bd044581ce"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_25_0728_cross_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_25_0728_cross_sheet_range_fc_data",
+      "role": "report",
+      "sheet": "25_0728",
+      "range": "Q80:R80",
+      "status": "blocked",
+      "authority_basis": "not_probed",
+      "probed_range_result_id": null,
+      "review_flags": [
+        "cross_sheet_dataflow",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 2,
+      "projection_preview_status": null,
+      "blockers": [
+        "formula_error_reconciliation_required",
+        "formula_result_probe_missing"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_25_0728_cross_sheet_range_fc_data",
+        "signature_3c2407d2b3ed",
+        "signature_b4bd044581ce"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_25_0804_cross_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_25_0804_cross_sheet_range_fc_data",
+      "role": "report",
+      "sheet": "25_0804",
+      "range": "Q80:R80",
+      "status": "blocked",
+      "authority_basis": "not_probed",
+      "probed_range_result_id": null,
+      "review_flags": [
+        "cross_sheet_dataflow",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 2,
+      "projection_preview_status": null,
+      "blockers": [
+        "formula_error_reconciliation_required",
+        "formula_result_probe_missing"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_25_0804_cross_sheet_range_fc_data",
+        "signature_3c2407d2b3ed",
+        "signature_b4bd044581ce"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_25_0811_cross_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_25_0811_cross_sheet_range_fc_data",
+      "role": "report",
+      "sheet": "25_0811",
+      "range": "Q80:R80",
+      "status": "blocked",
+      "authority_basis": "not_probed",
+      "probed_range_result_id": null,
+      "review_flags": [
+        "cross_sheet_dataflow",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 2,
+      "projection_preview_status": null,
+      "blockers": [
+        "formula_error_reconciliation_required",
+        "formula_result_probe_missing"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_25_0811_cross_sheet_range_fc_data",
+        "signature_3c2407d2b3ed",
+        "signature_b4bd044581ce"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_25_0818_cross_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_25_0818_cross_sheet_range_fc_data",
+      "role": "report",
+      "sheet": "25_0818",
+      "range": "Q80:R80",
+      "status": "blocked",
+      "authority_basis": "not_probed",
+      "probed_range_result_id": null,
+      "review_flags": [
+        "cross_sheet_dataflow",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 2,
+      "projection_preview_status": null,
+      "blockers": [
+        "formula_error_reconciliation_required",
+        "formula_result_probe_missing"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_25_0818_cross_sheet_range_fc_data",
+        "signature_3c2407d2b3ed",
+        "signature_b4bd044581ce"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_25_0825_cross_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_25_0825_cross_sheet_range_fc_data",
+      "role": "report",
+      "sheet": "25_0825",
+      "range": "Q80:R80",
+      "status": "blocked",
+      "authority_basis": "not_probed",
+      "probed_range_result_id": null,
+      "review_flags": [
+        "cross_sheet_dataflow",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 2,
+      "projection_preview_status": null,
+      "blockers": [
+        "formula_error_reconciliation_required",
+        "formula_result_probe_missing"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_25_0825_cross_sheet_range_fc_data",
+        "signature_3c2407d2b3ed",
+        "signature_b4bd044581ce"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_25_0901_cross_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_25_0901_cross_sheet_range_fc_data",
+      "role": "report",
+      "sheet": "25_0901",
+      "range": "Q80:R80",
+      "status": "blocked",
+      "authority_basis": "not_probed",
+      "probed_range_result_id": null,
+      "review_flags": [
+        "cross_sheet_dataflow",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 2,
+      "projection_preview_status": null,
+      "blockers": [
+        "formula_error_reconciliation_required",
+        "formula_result_probe_missing"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_25_0901_cross_sheet_range_fc_data",
+        "signature_3c2407d2b3ed",
+        "signature_b4bd044581ce"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_25_0908_cross_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_25_0908_cross_sheet_range_fc_data",
+      "role": "report",
+      "sheet": "25_0908",
+      "range": "Q80:R80",
+      "status": "blocked",
+      "authority_basis": "not_probed",
+      "probed_range_result_id": null,
+      "review_flags": [
+        "cross_sheet_dataflow",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 2,
+      "projection_preview_status": null,
+      "blockers": [
+        "formula_error_reconciliation_required",
+        "formula_result_probe_missing"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_25_0908_cross_sheet_range_fc_data",
+        "signature_3c2407d2b3ed",
+        "signature_b4bd044581ce"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_25_0915_cross_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_25_0915_cross_sheet_range_fc_data",
+      "role": "report",
+      "sheet": "25_0915",
+      "range": "Q80:R80",
+      "status": "blocked",
+      "authority_basis": "not_probed",
+      "probed_range_result_id": null,
+      "review_flags": [
+        "cross_sheet_dataflow",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 2,
+      "projection_preview_status": null,
+      "blockers": [
+        "formula_error_reconciliation_required",
+        "formula_result_probe_missing"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_25_0915_cross_sheet_range_fc_data",
+        "signature_3c2407d2b3ed",
+        "signature_b4bd044581ce"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_25_0922_cross_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_25_0922_cross_sheet_range_fc_data",
+      "role": "report",
+      "sheet": "25_0922",
+      "range": "Q80:R80",
+      "status": "blocked",
+      "authority_basis": "not_probed",
+      "probed_range_result_id": null,
+      "review_flags": [
+        "cross_sheet_dataflow",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 2,
+      "projection_preview_status": null,
+      "blockers": [
+        "formula_error_reconciliation_required",
+        "formula_result_probe_missing"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_25_0922_cross_sheet_range_fc_data",
+        "signature_3c2407d2b3ed",
+        "signature_b4bd044581ce"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_25_0929_cross_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_25_0929_cross_sheet_range_fc_data",
+      "role": "report",
+      "sheet": "25_0929",
+      "range": "Q80:R80",
+      "status": "blocked",
+      "authority_basis": "not_probed",
+      "probed_range_result_id": null,
+      "review_flags": [
+        "cross_sheet_dataflow",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 2,
+      "projection_preview_status": null,
+      "blockers": [
+        "formula_error_reconciliation_required",
+        "formula_result_probe_missing"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_25_0929_cross_sheet_range_fc_data",
+        "signature_3c2407d2b3ed",
+        "signature_b4bd044581ce"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_25_1013_cross_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_25_1013_cross_sheet_range_fc_data",
+      "role": "report",
+      "sheet": "25_1013",
+      "range": "Q80:R80",
+      "status": "blocked",
+      "authority_basis": "not_probed",
+      "probed_range_result_id": null,
+      "review_flags": [
+        "cross_sheet_dataflow",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 2,
+      "projection_preview_status": null,
+      "blockers": [
+        "formula_error_reconciliation_required",
+        "formula_result_probe_missing"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_25_1013_cross_sheet_range_fc_data",
+        "signature_3c2407d2b3ed",
+        "signature_b4bd044581ce"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_25_1020_cross_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_25_1020_cross_sheet_range_fc_data",
+      "role": "report",
+      "sheet": "25_1020",
+      "range": "Q80:R80",
+      "status": "blocked",
+      "authority_basis": "not_probed",
+      "probed_range_result_id": null,
+      "review_flags": [
+        "cross_sheet_dataflow",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 2,
+      "projection_preview_status": null,
+      "blockers": [
+        "formula_error_reconciliation_required",
+        "formula_result_probe_missing"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_25_1020_cross_sheet_range_fc_data",
+        "signature_3c2407d2b3ed",
+        "signature_b4bd044581ce"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_25_1027_cross_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_25_1027_cross_sheet_range_fc_data",
+      "role": "report",
+      "sheet": "25_1027",
+      "range": "Q80:R80",
+      "status": "blocked",
+      "authority_basis": "not_probed",
+      "probed_range_result_id": null,
+      "review_flags": [
+        "cross_sheet_dataflow",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 2,
+      "projection_preview_status": null,
+      "blockers": [
+        "formula_error_reconciliation_required",
+        "formula_result_probe_missing"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_25_1027_cross_sheet_range_fc_data",
+        "signature_3c2407d2b3ed",
+        "signature_b4bd044581ce"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_25_1103_cross_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_25_1103_cross_sheet_range_fc_data",
+      "role": "report",
+      "sheet": "25_1103",
+      "range": "Q89:S89",
+      "status": "blocked",
+      "authority_basis": "not_probed",
+      "probed_range_result_id": null,
+      "review_flags": [
+        "cross_sheet_dataflow",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 2,
+      "projection_preview_status": null,
+      "blockers": [
+        "formula_error_reconciliation_required",
+        "formula_result_probe_missing"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_25_1103_cross_sheet_range_fc_data",
+        "signature_3c2407d2b3ed",
+        "signature_b4bd044581ce"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_25_1110_cross_sheet_range_fc_data",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_25_1110_cross_sheet_range_fc_data",
+      "role": "report",
+      "sheet": "25_1110",
+      "range": "Q89:S89",
+      "status": "blocked",
+      "authority_basis": "not_probed",
+      "probed_range_result_id": null,
+      "review_flags": [
+        "cross_sheet_dataflow",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "repeated_formula_family",
+        "sampled_input_confirmed"
+      ],
+      "transform_formula_count": 2,
+      "projection_preview_status": null,
+      "blockers": [
+        "formula_error_reconciliation_required",
+        "formula_result_probe_missing"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_25_1110_cross_sheet_range_fc_data",
+        "signature_3c2407d2b3ed",
+        "signature_b4bd044581ce"
+      ]
+    },
+    {
+      "id": "pipeline_authority_pipeline_fc_data_external_importrange_external_importrange",
+      "type": "formula_result_pipeline_authority",
+      "pipeline_id": "pipeline_fc_data_external_importrange_external_importrange",
+      "role": "source_ingestion",
+      "sheet": "FC_DATA",
+      "range": "A1:R2",
+      "status": "blocked",
+      "authority_basis": "google_sheets_api_grid_effective_value",
+      "probed_range_result_id": "range_authority_current_workbook_fc_data_fc_data_a1_z80",
+      "review_flags": [
+        "external_source_dependency",
+        "formula_error_observed",
+        "formula_result_not_established",
+        "source_allowlist_required",
+        "source_url_candidate_available"
+      ],
+      "transform_formula_count": 1,
+      "projection_preview_status": null,
+      "blockers": [
+        "effective_error_values_present",
+        "external_source_dependency",
+        "formula_error_reconciliation_required",
+        "nested_or_external_source_authority_follow_up"
+      ],
+      "message": "Pipeline remains blocked by formula errors or external source lineage.",
+      "evidence_refs": [
+        "edge_fc_data_external_importrange_external_importrange",
+        "signature_40f0f71ea2a7",
+        "range_authority_current_workbook_fc_data_fc_data_a1_z80"
+      ]
+    }
+  ],
+  "gate_results": [
+    {
+      "id": "gate_reporting_basis_resolved",
+      "status": "accepted",
+      "message": "cash basis; 결제액 기반 운영 현황 보고이며 K-IFRS/K-GAAP 매출 산출물이 아님",
+      "evidence_refs": [
+        "live-blocker-resolution-update.json"
+      ]
+    },
+    {
+      "id": "gate_effective_value_probe_available",
+      "status": "accepted",
+      "message": "5 grid_formula_v1 range probes were summarized.",
+      "evidence_refs": [
+        "formula-result-grid-current-probes.json",
+        "source-fc-data-grid-formula-window.json"
+      ]
+    },
+    {
+      "id": "gate_no_effective_errors_in_all_formula_ranges",
+      "status": "blocked",
+      "message": "Effective error values must be absent before range-level result authority can be accepted.",
+      "evidence_refs": [
+        "range_authority_current_workbook_fc_data_fc_data_a1_z80",
+        "range_authority_fc_data_source_workbook_fc_data_fc_data_a1_z80"
+      ]
+    },
+    {
+      "id": "gate_pipeline_authority_coverage",
+      "status": "review_required",
+      "message": "All pipelines require accepted output probes and clean upstream dependencies for full coverage.",
+      "evidence_refs": [
+        "pipeline_authority_pipeline_fc_data_same_sheet_range_fc_data",
+        "pipeline_authority_pipeline_25_0707_cross_sheet_range_fc_data",
+        "pipeline_authority_pipeline_25_0714_cross_sheet_range_fc_data",
+        "pipeline_authority_pipeline_25_0721_cross_sheet_range_fc_data",
+        "pipeline_authority_pipeline_25_0728_cross_sheet_range_fc_data",
+        "pipeline_authority_pipeline_25_0804_cross_sheet_range_fc_data",
+        "pipeline_authority_pipeline_25_0811_cross_sheet_range_fc_data",
+        "pipeline_authority_pipeline_25_0818_cross_sheet_range_fc_data",
+        "pipeline_authority_pipeline_25_0825_cross_sheet_range_fc_data",
+        "pipeline_authority_pipeline_25_0901_cross_sheet_range_fc_data",
+        "pipeline_authority_pipeline_25_0908_cross_sheet_range_fc_data",
+        "pipeline_authority_pipeline_25_0915_cross_sheet_range_fc_data",
+        "pipeline_authority_pipeline_25_0922_cross_sheet_range_fc_data",
+        "pipeline_authority_pipeline_25_0929_cross_sheet_range_fc_data",
+        "pipeline_authority_pipeline_25_1013_cross_sheet_range_fc_data",
+        "pipeline_authority_pipeline_25_1020_cross_sheet_range_fc_data",
+        "pipeline_authority_pipeline_25_1027_cross_sheet_range_fc_data",
+        "pipeline_authority_pipeline_25_1103_cross_sheet_range_fc_data",
+        "pipeline_authority_pipeline_25_1110_cross_sheet_range_fc_data",
+        "pipeline_authority_pipeline_fc_data_external_importrange_external_importrange"
+      ]
+    }
+  ],
+  "follow_up_actions": [
+    {
+      "id": "reconcile_fc_data_error_surfaces",
+      "priority": "high",
+      "action": "Investigate current/source FC_DATA effective errors before accepting FC_DATA-dependent report pipelines.",
+      "done_when": "FC_DATA probed ranges have 0 effective error values or each remaining error is documented as intentionally non-authoritative."
+    },
+    {
+      "id": "probe_uncovered_report_outputs",
+      "priority": "medium",
+      "action": "Run grid_formula_v1 probes for blocked or review-required report output ranges after FC_DATA errors are reconciled.",
+      "done_when": "Each report pipeline output has accepted range-level effective-value authority or a specific blocker."
+    },
+    {
+      "id": "rerun_semantic_authority_stages",
+      "priority": "medium",
+      "action": "Regenerate domain/source, semantic proposal, validation, local candidate, and shared alignment artifacts using accepted formula-result checkpoint outcomes.",
+      "done_when": "Semantic blockers reflect accepted cash-basis and range-level authority outcomes."
+    }
+  ],
+  "summary": {
+    "range_result_count": 5,
+    "accepted_range_result_count": 3,
+    "blocked_range_result_count": 2,
+    "pipeline_result_count": 23,
+    "accepted_pipeline_result_count": 3,
+    "review_required_pipeline_result_count": 0,
+    "blocked_pipeline_result_count": 20,
+    "effective_error_range_count": 2,
+    "formula_cell_count": 360,
+    "formula_cell_with_effective_value_count": 349,
+    "formula_error_cell_count": 5,
+    "shared_ontology_update_count": 0
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "3 probed ranges have accepted Google Sheets effective-value authority."
+    },
+    {
+      "level": "warning",
+      "message": "2 probed ranges contain effective errors and remain blocked."
+    },
+    {
+      "level": "warning",
+      "message": "20 pipeline authority results remain blocked; 3 are accepted."
+    }
+  ]
+}

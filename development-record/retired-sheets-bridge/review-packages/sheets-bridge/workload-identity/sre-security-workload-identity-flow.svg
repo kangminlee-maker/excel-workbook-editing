@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1040" viewBox="0 0 1600 1040" role="img" aria-labelledby="title desc">
+  <title id="title">Sheets Broker Workload Identity 구조</title>
+  <desc id="desc">SRE와 보안팀에 설명하기 위한 Sheets Broker의 keyless Workload Identity, Domain-wide Delegation, IAM Credentials, Google Sheets 접근 흐름과 승인 요청사항.</desc>
+  <defs>
+    <style>
+      :root {
+        --ink: #17212b;
+        --muted: #5b6673;
+        --line: #aeb8c4;
+        --bg: #f6f8fb;
+        --panel: #ffffff;
+        --user: #e8f2ff;
+        --broker: #eaf7f1;
+        --google: #fff3d9;
+        --security: #f8eafd;
+        --sre: #eef0ff;
+        --danger: #ffe8e8;
+        --ok: #0f7b4f;
+        --blue: #2266c7;
+        --purple: #7b3fb2;
+        --orange: #c46a00;
+      }
+      * { box-sizing: border-box; }
+      text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", Arial, sans-serif;
+        fill: var(--ink);
+      }
+      .title { font-size: 34px; font-weight: 760; }
+      .subtitle { font-size: 18px; fill: var(--muted); }
+      .lane-title { font-size: 19px; font-weight: 760; }
+      .box-title { font-size: 17px; font-weight: 740; }
+      .box-text { font-size: 14px; fill: var(--muted); }
+      .small { font-size: 12px; fill: var(--muted); }
+      .badge { font-size: 12px; font-weight: 720; fill: white; }
+      .lane { fill: var(--panel); stroke: #d8dee7; stroke-width: 1.5; rx: 16; }
+      .box { stroke-width: 1.5; rx: 14; }
+      .user { fill: var(--user); stroke: #93bee9; }
+      .broker { fill: var(--broker); stroke: #84c7a6; }
+      .google { fill: var(--google); stroke: #ddb56a; }
+      .security { fill: var(--security); stroke: #c89bdf; }
+      .sre { fill: var(--sre); stroke: #a6afe8; }
+      .warn { fill: var(--danger); stroke: #e7a2a2; }
+      .arrow { fill: none; stroke: #586879; stroke-width: 2.2; marker-end: url(#arrow); }
+      .arrow-blue { fill: none; stroke: var(--blue); stroke-width: 2.4; marker-end: url(#arrow-blue); }
+      .arrow-purple { fill: none; stroke: var(--purple); stroke-width: 2.4; marker-end: url(#arrow-purple); }
+      .arrow-orange { fill: none; stroke: var(--orange); stroke-width: 2.4; marker-end: url(#arrow-orange); }
+      .dash { stroke-dasharray: 6 6; }
+      .pill { rx: 999; }
+      .code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; fill: #243241; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#586879"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2266c7"/>
+    </marker>
+    <marker id="arrow-purple" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7b3fb2"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c46a00"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1040" fill="var(--bg)"/>
+
+  <text class="title" x="64" y="64">Sheets Broker keyless Workload Identity 구조</text>
+  <text class="subtitle" x="64" y="96">로컬/웹 MCP 클라이언트는 제한된 요청만 보내고, Google 권한은 승인된 hosted runtime 내부에서만 생성됩니다.</text>
+
+  <rect class="lane" x="48" y="130" width="332" height="540"/>
+  <rect class="lane" x="412" y="130" width="382" height="540"/>
+  <rect class="lane" x="826" y="130" width="344" height="540"/>
+  <rect class="lane" x="1202" y="130" width="350" height="540"/>
+
+  <text class="lane-title" x="72" y="166">MCP / 사용자 요청</text>
+  <text class="lane-title" x="436" y="166">Cloud Run Sheets Broker</text>
+  <text class="lane-title" x="850" y="166">Google Authority</text>
+  <text class="lane-title" x="1226" y="166">Google Sheets</text>
+
+  <rect class="box user" x="72" y="198" width="284" height="118"/>
+  <text class="box-title" x="94" y="232">1. 제한된 inspect/apply 요청</text>
+  <text class="box-text" x="94" y="260">spreadsheet id, sheet id, range,</text>
+  <text class="box-text" x="94" y="282">operation, risk level만 전달</text>
+  <text class="code" x="94" y="304">X-Broker-Authorization</text>
+
+  <rect class="box user" x="72" y="380" width="284" height="126"/>
+  <text class="box-title" x="94" y="414">2. 사용자/세션 identity evidence</text>
+  <text class="box-text" x="94" y="442">verified email principal</text>
+  <text class="box-text" x="94" y="464">audience, issuer, hosted domain</text>
+  <text class="box-text" x="94" y="486">검증 대상</text>
+
+  <rect class="box broker" x="438" y="198" width="330" height="120"/>
+  <text class="box-title" x="460" y="232">3. Identity Gate</text>
+  <text class="box-text" x="460" y="260">issuer / audience / email_verified</text>
+  <text class="box-text" x="460" y="282">hosted domain 검증</text>
+  <text class="small" x="460" y="304">실패 시 Google API 호출 전 차단</text>
+
+  <rect class="box broker" x="438" y="352" width="330" height="138"/>
+  <text class="box-title" x="460" y="386">4. Broker Policy Gate</text>
+  <text class="box-text" x="460" y="414">principal, spreadsheet, sheet, range,</text>
+  <text class="box-text" x="460" y="436">operation, risk allowlist 검증</text>
+  <text class="code" x="460" y="462">default deny</text>
+
+  <rect class="box broker" x="438" y="538" width="330" height="92"/>
+  <text class="box-title" x="460" y="572">Readiness</text>
+  <text class="box-text" x="460" y="600">/v1/health는 authority mode와</text>
+  <text class="box-text" x="460" y="622">token flow만 비민감 정보로 공개</text>
+
+  <rect class="box google" x="852" y="198" width="292" height="116"/>
+  <text class="box-title" x="874" y="232">5. Runtime Identity</text>
+  <text class="box-text" x="874" y="260">Cloud Run runtime identity가</text>
+  <text class="box-text" x="874" y="282">metadata server에서 runtime token 획득</text>
+
+  <rect class="box google" x="852" y="350" width="292" height="120"/>
+  <text class="box-title" x="874" y="384">6. IAM Credentials</text>
+  <text class="box-text" x="874" y="412">승인된 delegated identity에 대해</text>
+  <text class="code" x="874" y="438">signJwt</text>
+  <text class="box-text" x="936" y="438">호출</text>
+
+  <rect class="box google" x="852" y="520" width="292" height="110"/>
+  <text class="box-title" x="874" y="554">7. OAuth JWT Bearer Exchange</text>
+  <text class="box-text" x="874" y="582">DWD subject = verified user</text>
+  <text class="box-text" x="874" y="604">승인 scope로 Google token 생성</text>
+
+  <rect class="box google" x="1228" y="198" width="298" height="118"/>
+  <text class="box-title" x="1250" y="232">8. Bounded Sheets API</text>
+  <text class="box-text" x="1250" y="260">metadata / values / formulas / grid</text>
+  <text class="box-text" x="1250" y="282">또는 승인된 apply/rollback만 수행</text>
+  <text class="small" x="1250" y="304">Google ACL이 최종 접근 권한</text>
+
+  <rect class="box google" x="1228" y="382" width="298" height="122"/>
+  <text class="box-title" x="1250" y="416">9. Sanitized Result</text>
+  <text class="box-text" x="1250" y="444">값/수식/메타데이터 evidence 반환</text>
+  <text class="box-text" x="1250" y="466">권한 요약만 포함</text>
+  <text class="box-text" x="1250" y="488">credential material은 출력하지 않음</text>
+
+  <rect class="box google" x="1228" y="552" width="298" height="78"/>
+  <text class="box-title" x="1250" y="586">Audit Log</text>
+  <text class="box-text" x="1250" y="614">request id, principal, policy decision, error</text>
+
+  <path class="arrow-blue" d="M356 256 C390 256 400 256 438 256"/>
+  <path class="arrow-blue" d="M356 440 C390 440 400 294 438 294"/>
+  <path class="arrow" d="M768 258 C806 258 812 256 852 256"/>
+  <path class="arrow-orange" d="M998 314 L998 350"/>
+  <path class="arrow-orange" d="M998 470 L998 520"/>
+  <path class="arrow" d="M1144 575 C1180 575 1190 256 1228 256"/>
+  <path class="arrow-purple" d="M1228 444 C820 720 420 720 214 506"/>
+  <path class="arrow-purple dash" d="M1377 552 C1377 520 1377 512 1377 504"/>
+
+  <rect class="pill" x="64" y="700" width="168" height="30" fill="#2266c7"/>
+  <text class="badge" x="84" y="720">SRE 요청사항</text>
+  <rect class="box sre" x="64" y="744" width="700" height="224"/>
+  <text class="box-title" x="92" y="782">GCP / Runtime 준비</text>
+  <text class="box-text" x="92" y="816">• Cloud Run service와 runtime identity 지정</text>
+  <text class="box-text" x="92" y="846">• IAM Credentials API, Sheets API 활성화</text>
+  <text class="box-text" x="92" y="876">• runtime identity가 delegated identity에 대해 IAM Credentials signJwt 호출 가능하도록 권한 부여</text>
+  <text class="box-text" x="92" y="906">• BROKER_AUDIENCE, BROKER_SERVICE_ACCOUNT_EMAIL, BROKER_POLICY_JSON 등 runtime env 설정</text>
+  <text class="box-text" x="92" y="936">• /v1/health 확인 후 승인 spreadsheet으로 /v1/inspect smoke 실행</text>
+
+  <rect class="pill" x="836" y="700" width="190" height="30" fill="#7b3fb2"/>
+  <text class="badge" x="856" y="720">보안팀 요청사항</text>
+  <rect class="box security" x="836" y="744" width="700" height="224"/>
+  <text class="box-title" x="864" y="782">Workspace / Policy 승인</text>
+  <text class="box-text" x="864" y="816">• Domain-wide Delegation 승인 및 필요한 Google Workspace scope 등록</text>
+  <text class="box-text" x="864" y="846">• 허용 사용자/도메인 경계 승인: 예) verified user, hosted domain</text>
+  <text class="box-text" x="864" y="876">• broker policy 원칙 승인: default deny, spreadsheet/range/operation/risk allowlist</text>
+  <text class="box-text" x="864" y="906">• audit log 보존 기준 승인: principal, operation, spreadsheet id, policy decision, error</text>
+  <text class="box-text" x="864" y="936">• 외부 소유 spreadsheet 접근 정책 결정: 사용자 ACL 기반 허용 여부</text>
+
+  <rect class="box warn" x="64" y="988" width="1472" height="36"/>
+  <text class="box-text" x="88" y="1012">핵심 메시지: 클라이언트와 LLM-visible 결과에는 credential material이 남지 않고, Google authority 생성과 사용은 승인된 hosted runtime과 정책 gate 내부에서만 수행됩니다.</text>
+</svg>

@@ -10,7 +10,7 @@
     "authority",
     "validation_targets",
     "deterministic_gates",
-    "broker_read_plan",
+    "source_evidence_read_plan",
     "summary",
     "parser_observations"
   ],
@@ -22,7 +22,7 @@
     "authority": { "$ref": "#/$defs/authority" },
     "validation_targets": { "type": "array", "items": { "$ref": "#/$defs/validation_target" } },
     "deterministic_gates": { "type": "array", "items": { "$ref": "#/$defs/gate" } },
-    "broker_read_plan": { "$ref": "#/$defs/broker_read_plan" },
+    "source_evidence_read_plan": { "$ref": "#/$defs/source_evidence_read_plan" },
     "summary": { "$ref": "#/$defs/counts" },
     "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
   },
@@ -53,15 +53,15 @@
         "plan_status",
         "formula_result_authority",
         "source_spreadsheet_read_authority",
-        "allowed_live_read_scope"
+        "allowed_evidence_scope"
       ],
       "additionalProperties": false,
       "properties": {
-        "source_document": { "const": "live_google_sheet" },
+        "source_document": { "const": "connected_google_sheet_evidence" },
         "plan_status": { "const": "validation_plan_only_no_live_read" },
         "formula_result_authority": { "const": "not_established" },
-        "source_spreadsheet_read_authority": { "const": "blocked_until_source_acl_and_broker_allowlist" },
-        "allowed_live_read_scope": { "const": "broker_bounded_parser_windows_only" }
+        "source_spreadsheet_read_authority": { "const": "blocked_until_source_access_evidence" },
+        "allowed_evidence_scope": { "const": "bounded_source_evidence_only" }
       }
     },
     "validation_target": {
@@ -137,7 +137,7 @@
         "failure_signals": { "type": "array", "items": { "type": "string" } }
       }
     },
-    "broker_read_plan": {
+    "source_evidence_read_plan": {
       "type": "object",
       "required": [
         "status",
@@ -150,12 +150,12 @@
       "properties": {
         "status": { "const": "planned_not_executed" },
         "max_ranges_per_operation": { "type": "integer", "minimum": 1 },
-        "batches": { "type": "array", "items": { "$ref": "#/$defs/broker_batch" } },
+        "batches": { "type": "array", "items": { "$ref": "#/$defs/source_evidence_batch" } },
         "blocked_source_reads": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
         "unauthorized_source_read_count": { "type": "integer", "minimum": 0 }
       }
     },
-    "broker_batch": {
+    "source_evidence_batch": {
       "type": "object",
       "required": ["id", "operation", "ranges", "read_candidate_ids", "status", "authority"],
       "additionalProperties": false,
@@ -165,7 +165,7 @@
         "ranges": { "type": "array", "items": { "type": "string" } },
         "read_candidate_ids": { "type": "array", "items": { "type": "string" } },
         "status": { "const": "planned_not_executed" },
-        "authority": { "const": "broker_bounded_parser_window_only" }
+        "authority": { "const": "bounded_source_evidence_only" }
       }
     },
     "observation": {

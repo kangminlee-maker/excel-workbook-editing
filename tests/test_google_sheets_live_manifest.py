@@ -82,12 +82,8 @@ def _access_preflight() -> dict:
         "authority": {
             "source_document": "live_google_sheet",
             "access_mode": "sheets_api_readonly_with_domain_wide_delegation",
-            "service_account_email": "day1-mcp-wrapper@day1-dev.iam.gserviceaccount.com",
+            "service_account_email": "approved-access@example.invalid",
             "impersonated_subject": "pilot.user@day1company.co.kr",
-            "direct_service_account_access": {
-                "status": "http_error",
-                "http_status": 403,
-            },
             "xlsx_round_trip": "not_used",
             "write_operation": "not_performed",
         },

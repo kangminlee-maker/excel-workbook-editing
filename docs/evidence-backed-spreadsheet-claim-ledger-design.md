@@ -1,10 +1,8 @@
 # Evidence-Backed Spreadsheet Claim Ledger Design
 
-Last updated: 2026-06-03
-
 ## Purpose
 
-This document records the revised top-level architecture for extracting, storing, and connecting meaning from document-shaped spreadsheets.
+This document records the current top-level architecture for extracting, storing, and connecting meaning from document-shaped spreadsheets.
 
 The goal is not to parse tables from rows and columns. The goal is to accumulate evidence-backed, reviewable claims about a spreadsheet, then project those claims into document structure, dataflow, semantic ontology, review queues, and LLM retrieval contexts.
 
@@ -29,7 +27,8 @@ This avoids turning uncertain layout, semantic, or ontology interpretations into
 - Ontology is both an input constraint plane and an output projection.
 - Retrieval must use governed context packs, not raw graph dumps.
 - Actionability requires instance binding, relation binding, accountable review ownership, runtime proof, and writeback policy.
-- Identity, anchoring, provenance, lineage, version, time, and authority are cross-cutting axes across all layers.
+- Project identity, source identity, anchoring, provenance, lineage, version,
+  time, and authority are cross-cutting axes across all layers.
 
 ## Revised Top-Level Architecture
 
@@ -58,7 +57,7 @@ flowchart TD
 |---|---|---|
 | CQ / Purpose Registry | Defines why the document is being parsed, what questions must become answerable, and when extraction is sufficient. | It must not be decorative metadata. It scopes extraction, gates, and review priority. |
 | Authority Policy & Source Boundary | Defines workbook/sheet/source authority, permissions, visible state, snapshot identity, read/write limits, and sensitive boundaries. | It must not silently treat all observed data as equally authoritative. |
-| Bitemporal Evidence Ledger | Append-only record of observations, captures, parser outputs, broker reads, reviewer decisions, gate decisions, and source changes. | It must not overwrite prior observations or hide stale evidence. |
+| Bitemporal Evidence Ledger | Append-only record of observations, captures, parser outputs, source-access evidence/results, reviewer decisions, gate decisions, and source changes. | It must not overwrite prior observations or hide stale evidence. |
 | Authority Resolution | Labels value/result authority, including formula text vs formula result, pivot source/cache/settings, external source freshness, and engine-relative outputs. | It must not promote formula text, render-only values, or stale external cache as result authority. |
 | Derived Structural Layer | Deterministically derived or heuristic structural hypotheses such as layout regions, formula DAG, pivot metadata, view-state effects, and dataflow candidates. | It must not treat layout segmentation or grouping as accepted semantic truth. |
 | Candidate Claim Store | Stores structural, relation, semantic, equivalence, dataflow, ontology, action, and review claims with provenance. | It must not merge all claim kinds or hide the source of a claim. |
@@ -98,8 +97,8 @@ Claim statuses:
 | Source boundary claim | This workbook snapshot is read-only; this Google Sheet subject has access. |
 | View-state claim | Rows are hidden; filter state explains visible render. |
 | Structural claim | Range `B8:M56` is a calculation surface; image X describes table Y. |
-| Formula/dataflow claim | `FC_DATA` is upstream of report tabs; `24_0108!B8:M56` is a calculation output surface. |
-| Authority claim | Formula-result authority is accepted for a probed range; FC_DATA remains blocked. |
+| Formula/dataflow claim | A source table is upstream of a report tab; a calculation range is an output surface. |
+| Authority claim | Formula-result authority is accepted for a probed range; an external source remains blocked. |
 | Semantic claim | This surface reports cash-basis payment/status metrics, not K-IFRS revenue. |
 | Equivalence claim | `결제액`, `매출`, and `순매출` are separate scoped metrics unless gates prove otherwise. |
 | Ontology claim | A local concept can align to a shared concept only after repeated evidence and human review. |
@@ -203,6 +202,7 @@ The canonical store is the bitemporal evidence and claim ledger.
 Required record fields:
 
 - `source_artifact_id`
+- `project_id`
 - `source_version_id`
 - `workbook_snapshot_id`
 - `sheet_id` / `sheet_name`
@@ -227,7 +227,7 @@ Required record fields:
 
 Storage separation:
 
-- Immutable run artifacts: raw observations, captures, broker reads, parser outputs, gate decisions, review decisions.
+- Immutable run artifacts: raw observations, captures, source-access evidence/results, parser outputs, gate decisions, review decisions.
 - Mutable current projections: current accepted graph, current review queue, current semantic view, current retrieval index.
 
 ## Read Models And Retrieval
@@ -285,26 +285,6 @@ gate blocker
 -> updated projection
 ```
 
-## Migration From Earlier Pipeline
-
-The earlier pipeline remains useful as an implementation history and source of stage artifacts. It should be reinterpreted as producing evidence, derived structural facts, candidate claims, gate decisions, and projections.
-
-Important remappings:
-
-| Earlier term | Revised term |
-|---|---|
-| Evidence package | Evidence registry snapshot |
-| Block candidates | Structural candidate claims |
-| Boundary decisions | Structural gate decisions |
-| Pipeline role validation | Dataflow role gate decisions |
-| Semantic proposals | LLM candidate semantic claims |
-| Proposal validation | Semantic and ontology gate decisions |
-| Validated document graph | Projection over accepted/adjudicated claims |
-| Data view projection | Read model projection |
-| Local semantic candidates | Local ontology projection candidates |
-| Shared ontology alignment review | Ontology promotion review projection |
-| Action contracts | Control-plane action records |
-
 ## Design Risks
 
 - The ledger architecture can be heavier than a task-first parser for one-off questions.
@@ -324,7 +304,7 @@ Use deterministic extraction for:
 - pivot metadata
 - object anchors
 - style, merge, and view-state inventories
-- broker/API effective-value probes
+- approved external effective-value evidence
 
 Use LLMs for:
 

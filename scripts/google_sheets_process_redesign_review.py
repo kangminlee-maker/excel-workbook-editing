@@ -144,7 +144,7 @@ def _stage_reviews() -> list[dict[str, Any]]:
         {
             "stage_group": "access_and_manifest",
             "recommendation": "keep",
-            "reason": "Broker/DWD identity, metadata, view-state, and permission boundaries must be known before parsing.",
+            "reason": "Source access identity, metadata, view-state, and permission boundaries must be known before parsing.",
         },
         {
             "stage_group": "bounded_sampling_and_tuning",
@@ -193,7 +193,7 @@ def _redesign_decisions() -> list[dict[str, Any]]:
         },
         {
             "id": "decision_permission_contract_as_stage",
-            "decision": "Treat broker policy and Google ACL requirements as process inputs, not incidental failures.",
+            "decision": "Treat source access policy and Google ACL requirements as process inputs, not incidental failures.",
             "effect": "Missing operations stop the process explicitly instead of encouraging workaround extraction paths.",
         },
         {
@@ -206,7 +206,7 @@ def _redesign_decisions() -> list[dict[str, Any]]:
 
 def _open_evidence_gaps() -> list[dict[str, Any]]:
     return [
-        {"id": "gap_external_source_authority", "priority": "high", "description": "FC_DATA IMPORTRANGE source ACL and broker allowlist are still needed."},
+        {"id": "gap_external_source_authority", "priority": "high", "description": "FC_DATA IMPORTRANGE source ACL and source access evidence are still needed."},
         {"id": "gap_formula_result_authority", "priority": "high", "description": "Formula-result authority is not established for projected calculation surfaces."},
         {"id": "gap_local_boundary", "priority": "high", "description": "Organization/project/team/workbook-family boundary is not confirmed."},
         {"id": "gap_repeated_workbook_family", "priority": "medium", "description": "Repeated workbook-family evidence is not yet available for shared promotion."},

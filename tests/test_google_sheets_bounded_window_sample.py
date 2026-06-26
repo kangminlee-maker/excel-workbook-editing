@@ -15,8 +15,8 @@ from google_sheets_bounded_window_sample import build_bounded_window_sample  # n
 
 
 class GoogleSheetsBoundedWindowSampleTest(unittest.TestCase):
-    def test_builds_schema_valid_executed_sample_with_fake_broker(self) -> None:
-        fixture_dir = REPO_ROOT / "review-packages" / "sheets-bridge" / "live-inspections" / "test-bounded-window"
+    def test_builds_schema_valid_sample_with_source_evidence_results(self) -> None:
+        fixture_dir = REPO_ROOT / "review-packages" / "spreadsheet-processing" / "live-inspections" / "test-bounded-window"
         fixture_dir.mkdir(parents=True, exist_ok=True)
         block_candidates_path = fixture_dir / "live-block-candidates.json"
         block_candidates_path.write_text(
@@ -28,8 +28,7 @@ class GoogleSheetsBoundedWindowSampleTest(unittest.TestCase):
             live_block_candidates_path=block_candidates_path,
             spreadsheet_id="spreadsheet-1",
             principal="pilot.user@day1company.co.kr",
-            execute=True,
-            broker_invoker=_fake_broker,
+            source_evidence_results=[_source_evidence_result("inspect.values_window"), _source_evidence_result("inspect.formula_window")],
         )
 
         schema = json.loads(
@@ -41,7 +40,7 @@ class GoogleSheetsBoundedWindowSampleTest(unittest.TestCase):
         )
         jsonschema.Draft202012Validator(schema).validate(sample)
 
-        self.assertEqual(sample["summary"]["executed_request_count"], 2)
+        self.assertEqual(sample["summary"]["evidence_result_count"], 2)
         self.assertEqual(sample["summary"]["successful_response_count"], 2)
         self.assertGreater(sample["summary"]["non_empty_cell_count"], 0)
         self.assertGreater(sample["summary"]["url_sample_count"], 0)
@@ -72,7 +71,7 @@ def _block_candidates() -> dict:
                         "id": "read_fc_data_profile_formulas",
                         "operation": "inspect.formula_window",
                         "range": "'FC_DATA'!A1:Z80",
-                        "reason": "confirm formula-bearing profile window through broker-backed formula read",
+                        "reason": "confirm formula-bearing profile window through approved-authority formula read",
                         "status": "verified_for_current_policy_limits",
                     },
                 ],
@@ -94,14 +93,14 @@ def _block_candidates() -> dict:
     }
 
 
-def _fake_broker(request: dict) -> dict:
+def _source_evidence_result(operation: str) -> dict:
     return {
         "ok": True,
         "payload": {
             "schema_version": "1.0",
-            "operation": request["operation"],
-            "spreadsheet_id": request["spreadsheet_id"],
-            "requested_ranges": request["ranges"],
+            "operation": operation,
+            "spreadsheet_id": "spreadsheet-1",
+            "requested_ranges": ["'FC_DATA'!A1:Z80"],
             "captured_at": "2026-06-02T00:00:00+00:00",
             "snapshot_id": "snapshot-1",
             "telemetry": {
@@ -117,7 +116,7 @@ def _fake_broker(request: dict) -> dict:
             "artifacts": [],
             "windows": [
                 {
-                    "range": request["ranges"][0].replace("'", ""),
+                    "range": "FC_DATA!A1:Z80",
                     "row_count": 2,
                     "column_count": 2,
                     "values": [

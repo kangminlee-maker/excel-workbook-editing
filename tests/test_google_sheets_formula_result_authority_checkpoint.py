@@ -167,7 +167,7 @@ def _source_grid() -> dict:
 
 def _policy() -> dict:
     return {
-        "kind": "broker_policy",
+        "kind": "source_access_policy_evidence",
         "summary": {
             "decision_id": "policy:grid_formula_v1",
             "allowed": True,

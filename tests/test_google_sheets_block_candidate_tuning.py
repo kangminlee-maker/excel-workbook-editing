@@ -16,7 +16,7 @@ from google_sheets_block_candidate_tuning import build_block_candidate_tuning  #
 
 class GoogleSheetsBlockCandidateTuningTest(unittest.TestCase):
     def test_builds_schema_valid_tuning_packet(self) -> None:
-        fixture_dir = REPO_ROOT / "review-packages" / "sheets-bridge" / "live-inspections" / "test-candidate-tuning"
+        fixture_dir = REPO_ROOT / "review-packages" / "spreadsheet-processing" / "live-inspections" / "test-candidate-tuning"
         fixture_dir.mkdir(parents=True, exist_ok=True)
         block_candidates_path = fixture_dir / "live-block-candidates.json"
         bounded_sample_path = fixture_dir / "live-bounded-window-sample.json"
@@ -75,7 +75,7 @@ def _bounded_sample() -> dict:
                 {"ranges": ["'FC_DATA'!A1:Z80"]},
             ]
         },
-        "broker_responses": [
+        "source_evidence_results": [
             {
                 "operation": "inspect.values_window",
                 "payload": {

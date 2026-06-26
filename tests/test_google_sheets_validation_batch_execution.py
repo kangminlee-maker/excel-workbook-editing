@@ -17,8 +17,8 @@ from google_sheets_validation_batch_execution import (  # noqa: E402
 
 
 class GoogleSheetsValidationBatchExecutionTest(unittest.TestCase):
-    def test_executes_planned_batches_with_fake_broker(self) -> None:
-        fixture_dir = REPO_ROOT / "review-packages" / "sheets-bridge" / "live-inspections" / "test-validation-batch"
+    def test_merges_planned_batches_with_source_evidence_results(self) -> None:
+        fixture_dir = REPO_ROOT / "review-packages" / "spreadsheet-processing" / "live-inspections" / "test-validation-batch"
         fixture_dir.mkdir(parents=True, exist_ok=True)
         plan_path = fixture_dir / "live-cross-validation-plan.json"
         plan_path.write_text(json.dumps(_plan(), ensure_ascii=False), encoding="utf-8")
@@ -27,8 +27,7 @@ class GoogleSheetsValidationBatchExecutionTest(unittest.TestCase):
             live_cross_validation_plan_path=plan_path,
             spreadsheet_id="spreadsheet-1",
             principal="user@example.com",
-            execute=True,
-            broker_invoker=_fake_broker,
+            source_evidence_results=[_source_evidence_result()],
         )
 
         schema = json.loads(
@@ -40,7 +39,7 @@ class GoogleSheetsValidationBatchExecutionTest(unittest.TestCase):
         )
         jsonschema.Draft202012Validator(schema).validate(execution)
 
-        self.assertEqual(execution["summary"]["executed_request_count"], 1)
+        self.assertEqual(execution["summary"]["evidence_result_count"], 1)
         self.assertEqual(execution["summary"]["successful_response_count"], 1)
         self.assertEqual(execution["summary"]["source_spreadsheet_read_count"], 0)
         self.assertGreater(execution["summary"]["formula_cell_count"], 0)
@@ -57,11 +56,11 @@ def _plan() -> dict:
         "source": {
             "title": "Live Sheet",
         },
-        "broker_read_plan": {
+        "source_evidence_read_plan": {
             "status": "planned_not_executed",
             "batches": [
                 {
-                    "id": "broker_batch_inspect_formula_window",
+                    "id": "source_evidence_batch_inspect_formula_window",
                     "operation": "inspect.formula_window",
                     "ranges": ["'Output'!A81:Z160"],
                     "read_candidate_ids": ["read_output_formula_next_window"],
@@ -72,13 +71,13 @@ def _plan() -> dict:
     }
 
 
-def _fake_broker(request: dict) -> dict:
+def _source_evidence_result() -> dict:
     return {
         "ok": True,
         "payload": {
             "windows": [
                 {
-                    "range": request["ranges"][0],
+                    "range": "'Output'!A81:Z160",
                     "row_count": 2,
                     "column_count": 3,
                     "values": [

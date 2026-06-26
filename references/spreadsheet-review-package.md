@@ -1,6 +1,6 @@
 # Spreadsheet Review Packages
 
-Use this file when spreadsheet work needs CLI-visible evidence without requiring a human to open Excel or Google Sheets during review.
+Use this file when spreadsheet work needs agent-visible evidence without requiring a human to open Excel or Google Sheets during review.
 
 The package is evidence, not the source of truth. The source of truth remains the `.xlsx` workbook, generator code, or live Google Sheet.
 

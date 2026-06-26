@@ -9,7 +9,7 @@
     "source",
     "authority",
     "execution_plan",
-    "broker_responses",
+    "source_evidence_results",
     "window_summaries",
     "evidence_updates",
     "summary",
@@ -22,7 +22,7 @@
     "source": { "$ref": "#/$defs/source" },
     "authority": { "$ref": "#/$defs/authority" },
     "execution_plan": { "$ref": "#/$defs/execution_plan" },
-    "broker_responses": { "type": "array", "items": { "$ref": "#/$defs/broker_response" } },
+    "source_evidence_results": { "type": "array", "items": { "$ref": "#/$defs/source_evidence_result" } },
     "window_summaries": { "type": "array", "items": { "$ref": "#/$defs/window_summary" } },
     "evidence_updates": { "type": "array", "items": { "$ref": "#/$defs/evidence_update" } },
     "summary": { "$ref": "#/$defs/counts" },
@@ -50,7 +50,7 @@
       "type": "object",
       "required": [
         "source_document",
-        "broker_backed_read",
+        "evidence_backed_read",
         "read_scope",
         "source_spreadsheet_reads_performed",
         "credential_boundary",
@@ -58,9 +58,9 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "source_document": { "const": "live_google_sheet" },
-        "broker_backed_read": { "type": "boolean" },
-        "read_scope": { "const": "current_workbook_planned_broker_batches_only" },
+        "source_document": { "const": "connected_google_sheet_evidence" },
+        "evidence_backed_read": { "type": "boolean" },
+        "read_scope": { "const": "current_workbook_planned_source_evidence_only" },
         "source_spreadsheet_reads_performed": { "const": false },
         "credential_boundary": { "type": "string", "minLength": 1 },
         "formula_result_authority": { "const": "not_established" }
@@ -77,7 +77,7 @@
         "blocked_source_reads": { "type": "array", "items": { "type": "object", "additionalProperties": true } }
       }
     },
-    "broker_response": {
+    "source_evidence_result": {
       "type": "object",
       "required": ["operation", "source_batch_id", "requested_ranges", "read_candidate_ids", "ok", "payload"],
       "additionalProperties": false,

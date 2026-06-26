@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="860" viewBox="0 0 1280 860" role="img" aria-labelledby="title desc">
+  <title id="title">MCP-first 전환 후 남길 내용 정리도</title>
+  <desc id="desc">Active runtime에 남길 내용, archive로만 남길 내용, active에서 제거할 내용을 구분한 SVG 다이어그램</desc>
+  <defs>
+    <style>
+      .bg { fill: #f6f8fb; }
+      .title { font: 800 34px Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; fill: #172033; }
+      .subtitle { font: 500 17px Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; fill: #5c6678; }
+      .panel-title { font: 800 22px Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; fill: #172033; }
+      .panel-sub { font: 600 14px Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; fill: #657083; }
+      .item { font: 600 15px Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; fill: #20293a; }
+      .small { font: 500 13px Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; fill: #5c6678; }
+      .tiny { font: 500 12px Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; fill: #697386; }
+      .label { font: 800 13px Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; letter-spacing: .4px; }
+      .panel { fill: #ffffff; stroke: #d8e0ec; stroke-width: 1.5; }
+      .active { fill: #eaf7f1; stroke: #65a98b; }
+      .archive { fill: #eef3fb; stroke: #7d99c5; }
+      .retired { fill: #fff0ee; stroke: #ca7b70; }
+      .flow { fill: #ffffff; stroke: #cfd8e6; stroke-width: 1.5; }
+      .chip-active { fill: #2f7d5b; }
+      .chip-archive { fill: #3f6fa6; }
+      .chip-retired { fill: #b34b44; }
+      .chip-text { font: 800 12px Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; fill: #ffffff; }
+      .arrow { stroke: #7f8a9d; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .arrow-active { stroke: #2f7d5b; stroke-width: 2.4; fill: none; marker-end: url(#arrowActive); }
+      .arrow-muted { stroke: #a7b0bf; stroke-width: 1.8; fill: none; stroke-dasharray: 5 5; marker-end: url(#arrowMuted); }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#7f8a9d" />
+    </marker>
+    <marker id="arrowActive" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2f7d5b" />
+    </marker>
+    <marker id="arrowMuted" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#a7b0bf" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1280" height="860" />
+
+  <text class="title" x="56" y="62">MCP-first 전환 후 남길 내용</text>
+  <text class="subtitle" x="56" y="91">active 문서는 현재 실행 경로만, archive는 과거 판단 근거만, retired는 런타임 표면에서 제거합니다.</text>
+
+  <rect class="panel active" x="48" y="128" width="380" height="470" rx="12" />
+  <rect class="chip-active" x="74" y="154" width="112" height="28" rx="14" />
+  <text class="chip-text" x="94" y="173">ACTIVE</text>
+  <text class="panel-title" x="74" y="215">계속 남길 현재 경로</text>
+  <text class="panel-sub" x="74" y="241">구현과 테스트가 바라볼 source of truth</text>
+
+  <circle cx="84" cy="282" r="5" fill="#2f7d5b" />
+  <text class="item" x="100" y="287">MCP stdio server</text>
+  <text class="small" x="100" y="307">Claude/Codex desktop local runtime</text>
+
+  <circle cx="84" cy="335" r="5" fill="#2f7d5b" />
+  <text class="item" x="100" y="340">MCP-managed local OAuth</text>
+  <text class="small" x="100" y="360">토큰은 모델/리뷰 패키지에 노출하지 않음</text>
+
+  <circle cx="84" cy="388" r="5" fill="#2f7d5b" />
+  <text class="item" x="100" y="393">Remote MCP service</text>
+  <text class="small" x="100" y="413">ChatGPT web용 HTTPS + user/session authority</text>
+
+  <circle cx="84" cy="441" r="5" fill="#2f7d5b" />
+  <text class="item" x="100" y="446">Shared table-builder UI</text>
+  <text class="small" x="100" y="466">사용자는 결과표 모양과 프롬프트만 입력</text>
+
+  <circle cx="84" cy="494" r="5" fill="#2f7d5b" />
+  <text class="item" x="100" y="499">Intent → Plan → Apply spec</text>
+  <text class="small" x="100" y="519">TableBuildIntent, TableBuildPlan, formula_table_apply_v1</text>
+
+  <circle cx="84" cy="547" r="5" fill="#2f7d5b" />
+  <text class="item" x="100" y="552">Live readback / Excel recalc / rollback</text>
+  <text class="small" x="100" y="572">값 권위와 되돌리기는 명시적 tool 결과로만</text>
+
+  <rect class="panel archive" x="460" y="128" width="380" height="470" rx="12" />
+  <rect class="chip-archive" x="486" y="154" width="116" height="28" rx="14" />
+  <text class="chip-text" x="510" y="173">RECORD</text>
+  <text class="panel-title" x="486" y="215">기록으로만 남길 내용</text>
+  <text class="panel-sub" x="486" y="241">왜 바뀌었는지 설명하는 과거 근거</text>
+
+  <circle cx="496" cy="282" r="5" fill="#3f6fa6" />
+  <text class="item" x="512" y="287">Chrome extension pilot</text>
+  <text class="small" x="512" y="307">Web Store, OAuth client, extension UX 기록</text>
+
+  <circle cx="496" cy="335" r="5" fill="#3f6fa6" />
+  <text class="item" x="512" y="340">Native Messaging / native-host</text>
+  <text class="small" x="512" y="360">record package 실험과 설치 근거</text>
+
+  <circle cx="496" cy="388" r="5" fill="#3f6fa6" />
+  <text class="item" x="512" y="393">Broker/DWD pilot evidence</text>
+  <text class="small" x="512" y="413">enterprise variant 또는 과거 smoke 자료</text>
+
+  <circle cx="496" cy="441" r="5" fill="#3f6fa6" />
+  <text class="item" x="512" y="446">old goal specs / work plans</text>
+  <text class="small" x="512" y="466">경로 탐색, 리뷰 결과, superseded 설계</text>
+
+  <circle cx="496" cy="494" r="5" fill="#3f6fa6" />
+  <text class="item" x="512" y="499">managed deployment artifacts</text>
+  <text class="small" x="512" y="519">테스터 배포, policy, rollback checklist</text>
+
+  <circle cx="496" cy="547" r="5" fill="#3f6fa6" />
+  <text class="item" x="512" y="552">sample-specific parser history</text>
+  <text class="small" x="512" y="572">현재 런타임 계약이 아닌 증거 로그</text>
+
+  <rect class="panel retired" x="872" y="128" width="380" height="470" rx="12" />
+  <rect class="chip-retired" x="898" y="154" width="116" height="28" rx="14" />
+  <text class="chip-text" x="917" y="173">RETIRED</text>
+  <text class="panel-title" x="898" y="215">active에서 제거할 내용</text>
+  <text class="panel-sub" x="898" y="241">구현 지시/런타임 표면으로 돌아오면 안 됨</text>
+
+  <circle cx="908" cy="282" r="5" fill="#b34b44" />
+  <text class="item" x="924" y="287">Chrome extension runtime path</text>
+  <text class="small" x="924" y="307">설치/팝업/record package를 기본 경로로 사용하지 않음</text>
+
+  <circle cx="908" cy="335" r="5" fill="#b34b44" />
+  <text class="item" x="924" y="340">CLI-assist / local CLI OAuth 표현</text>
+  <text class="small" x="924" y="360">MCP-managed local OAuth로 명명</text>
+
+  <circle cx="908" cy="388" r="5" fill="#b34b44" />
+  <text class="item" x="924" y="393">사용자 복사 JSON spec 쓰기</text>
+  <text class="small" x="924" y="413">submit tool과 승인된 apply spec만 허용</text>
+
+  <circle cx="908" cy="441" r="5" fill="#b34b44" />
+  <text class="item" x="924" y="446">formula_table_builder_v1</text>
+  <text class="small" x="924" y="466">formula_table_apply_v1로 대체</text>
+
+  <circle cx="908" cy="494" r="5" fill="#b34b44" />
+  <text class="item" x="924" y="499">broker-only permission wording</text>
+  <text class="small" x="924" y="519">MCP/approved authority path로 일반화</text>
+
+  <circle cx="908" cy="547" r="5" fill="#b34b44" />
+  <text class="item" x="924" y="552">export/edit/reupload shortcut</text>
+  <text class="small" x="924" y="572">연결된 Google Sheet 기본 편집 경로로 금지</text>
+
+  <path class="arrow-muted" d="M 872 300 C 830 300, 828 300, 840 300" />
+  <text class="tiny" x="789" y="292">pilot/history만</text>
+  <path class="arrow-active" d="M 248 624 L 248 660" />
+  <path class="arrow-active" d="M 650 624 L 650 660" />
+  <path class="arrow-muted" d="M 1060 624 L 1060 660" />
+
+  <rect class="flow" x="48" y="672" width="1204" height="150" rx="12" />
+  <text class="panel-title" x="74" y="712">현재 남길 실행 흐름</text>
+  <text class="panel-sub" x="74" y="737">모든 write는 사용자의 스케치와 프롬프트를 구조화한 뒤, 승인된 apply spec을 통해서만 진행합니다.</text>
+
+  <g transform="translate(74 764)">
+    <rect x="0" y="0" width="145" height="48" rx="8" fill="#eaf7f1" stroke="#65a98b" />
+    <text class="label" x="18" y="21" fill="#2f7d5b">SOURCE</text>
+    <text class="tiny" x="18" y="38">Sheet / Excel</text>
+    <path class="arrow-active" d="M 152 24 L 186 24" />
+
+    <rect x="194" y="0" width="145" height="48" rx="8" fill="#eaf7f1" stroke="#65a98b" />
+    <text class="label" x="212" y="21" fill="#2f7d5b">EVIDENCE</text>
+    <text class="tiny" x="212" y="38">sanitized package</text>
+    <path class="arrow-active" d="M 346 24 L 380 24" />
+
+    <rect x="388" y="0" width="145" height="48" rx="8" fill="#eaf7f1" stroke="#65a98b" />
+    <text class="label" x="406" y="21" fill="#2f7d5b">INTENT</text>
+    <text class="tiny" x="406" y="38">canvas + prompt</text>
+    <path class="arrow-active" d="M 540 24 L 574 24" />
+
+    <rect x="582" y="0" width="145" height="48" rx="8" fill="#eaf7f1" stroke="#65a98b" />
+    <text class="label" x="600" y="21" fill="#2f7d5b">PLAN</text>
+    <text class="tiny" x="600" y="38">LLM preview</text>
+    <path class="arrow-active" d="M 734 24 L 768 24" />
+
+    <rect x="776" y="0" width="145" height="48" rx="8" fill="#eaf7f1" stroke="#65a98b" />
+    <text class="label" x="794" y="21" fill="#2f7d5b">APPLY SPEC</text>
+    <text class="tiny" x="794" y="38">approved formulas</text>
+    <path class="arrow-active" d="M 928 24 L 962 24" />
+
+    <rect x="970" y="0" width="145" height="48" rx="8" fill="#eaf7f1" stroke="#65a98b" />
+    <text class="label" x="988" y="21" fill="#2f7d5b">READBACK</text>
+    <text class="tiny" x="988" y="38">validate + rollback</text>
+  </g>
+</svg>

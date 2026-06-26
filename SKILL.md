@@ -15,13 +15,14 @@ For existing artifacts, preserve both the intended logic and the artifact identi
 ## Quick Start
 
 1. Identify the artifact type: Excel workbook, workbook generator, existing Google Sheet, new standalone Google Sheet, or review package.
-2. Separate raw inputs, parameters, intermediate calculations, derived outputs, and any prior-period carryovers.
-3. Read [references/spreadsheet-principles.md](references/spreadsheet-principles.md) for shared spreadsheet rules.
-4. Route to the right artifact-specific workflow:
+2. Locate or create the project workspace under `projects/` when the work will continue across turns or runs.
+3. Separate raw inputs, parameters, intermediate calculations, derived outputs, and any prior-period carryovers.
+4. Read [references/spreadsheet-principles.md](references/spreadsheet-principles.md) for shared spreadsheet rules.
+5. Route to the right artifact-specific workflow:
    - Excel workbook or `.xlsx` generator: read [references/excel-workbook-principles.md](references/excel-workbook-principles.md).
    - Existing Google Sheet: read [references/connected-google-sheets-principles.md](references/connected-google-sheets-principles.md).
-   - Review package or CLI preview: read [references/spreadsheet-review-package.md](references/spreadsheet-review-package.md).
-5. Choose the lowest-risk edit surface: workbook formulas, named ranges, template layout, generator script, Google Sheets range patch, or validation automation.
+   - Review package or agent preview: read [references/spreadsheet-review-package.md](references/spreadsheet-review-package.md).
+6. Choose the lowest-risk edit surface: workbook formulas, named ranges, template layout, generator script, Google Sheets range patch, or validation automation.
 
 ## Task Routing
 
@@ -39,12 +40,12 @@ For existing artifacts, preserve both the intended logic and the artifact identi
 - **PRESERVE**: Do not download an existing Google Sheet to `.xlsx`, edit it locally, and upload it back as the default workflow. Existing Sheets are identity-bearing connected documents.
 - **RISK SCAN**: Look for `IMPORTRANGE`, import functions, `QUERY`, `ARRAYFORMULA`, `INDIRECT`, custom functions, Apps Script signals, protected ranges, validation-backed cells, and external dashboards or automations before planning writes.
 - **TIMEBOX**: For large or externally linked Sheets, plan reads, writes, retries, and post-write polling under explicit timeout and quota budgets.
-- **PATCH**: Prefer narrow Google Sheets API or connector edits against existing ranges. Avoid deleting and recreating tabs, replacing whole sheets, or overwriting formulas with displayed values unless the user explicitly requests that behavior.
+- **PATCH**: Prefer narrow approved external range edits against existing ranges. Avoid deleting and recreating tabs, replacing whole sheets, or overwriting formulas with displayed values unless the user explicitly requests that behavior.
 - **READBACK**: Re-read the changed cells, formulas, validations, import/load states, and key dependent outputs from the live Google Sheet after writing.
 
 ### Review Packages
 
-- **PACKAGE**: When the user needs CLI-visible evidence, produce a self-contained review package with HTML previews, JSON structure, formula/dependency risk logs, key values, and before/after summaries.
+- **PACKAGE**: When the user needs agent-visible evidence, produce a self-contained review package with HTML previews, JSON structure, formula/dependency risk logs, key values, and before/after summaries.
 - **SEPARATE**: Treat visualization as evidence, not calculation proof. Report the calculation engine or live readback used for validation.
 
 ## Editing Defaults
@@ -104,7 +105,7 @@ Choose tools by task type rather than by habit.
 - Use the Excel application when you need authoritative recalculation, visual inspection, feature behavior that only Excel can express, or confirmation that a human reviewer can actually follow the workbook.
 - Keep bulk data transformation and workbook construction out of desktop automation and Excel UI when code can do it more safely and repeatably.
 - Use the bundled desktop helpers only when you need a read-only recalc-and-sample loop in real Excel: `scripts/excel_recalculate_and_sample.applescript` on macOS, or `scripts/excel_recalculate_and_sample.ps1` on Windows.
-- Use Google Sheets connectors or APIs for existing Google Sheets edits so the live document identity, range metadata, and dependency graph are preserved.
+- Use an approved external access surface for existing Google Sheets edits so the live document identity, range metadata, and dependency graph are preserved.
 - Use `.xlsx` to Google Sheets import only for new standalone Sheets or explicit replacement/clone workflows, not for ordinary edits to connected existing spreadsheets.
 
 ## Validation Workflow
@@ -145,7 +146,7 @@ This separates logic bugs, source gaps, workbook wiring bugs, and Excel behavior
 - If Excel file access prompts repeat for project paths, validate a temporary copy instead of opening the source workbook directly.
 - If the real Excel application is unavailable, treat formula-result validation as incomplete and say so explicitly.
 - If Google Sheets Apps Script bindings, installable triggers, add-ons, or webhooks may matter but cannot be inspected, mark that as an unverified connected-document risk.
-- If a Google Sheets API request times out, returns `429`, or returns `503`, reduce request size or spreadsheet complexity before repeating the same operation.
+- If the approved external access surface reports timeout, quota, `429`, or `503` errors, reduce request size or spreadsheet complexity before repeating the same operation.
 
 ## Execution Examples
 
@@ -216,13 +217,13 @@ Primary tools:
 2. Read spreadsheet metadata, target cells, formulas, validations, protections, and named ranges.
 3. Identify `IMPORTRANGE`, import functions, `ARRAYFORMULA`, Apps Script custom functions, and dependent outputs near the edit.
 4. Classify import cells as loaded, loading, permission-blocked, source-blocked, or broken before writing around them.
-5. Apply a narrow range-scoped update through the Google Sheets connector or API.
+5. Apply a narrow range-scoped update through an approved external access surface.
 6. Re-read the changed cells and dependent outputs from the live spreadsheet under a bounded polling plan.
 
 Primary tools:
 
-- Google Sheets connector or API for in-place edits
-- review package output for CLI-visible evidence when needed
+- approved external access surface for in-place edits
+- review package output for agent-visible evidence when needed
 
 ## Common Failure Modes
 
@@ -259,5 +260,4 @@ Primary tools:
 Load [references/spreadsheet-principles.md](references/spreadsheet-principles.md) for shared spreadsheet identity, CRUD, agent workflow, and verification rules.
 Load [references/excel-workbook-principles.md](references/excel-workbook-principles.md) for `.xlsx` structure, formula safety, Excel-engine validation, reconciliation, and desktop automation guidance.
 Load [references/connected-google-sheets-principles.md](references/connected-google-sheets-principles.md) before inspecting or editing existing Google Sheets, including large, external, Apps Script-connected, or rollback-sensitive Sheets.
-Load [references/spreadsheet-review-package.md](references/spreadsheet-review-package.md) when the user needs CLI-visible evidence, HTML previews, or review bundles for Excel or Google Sheets work.
-Load [docs/codex-goal-chrome-extension-sheets-bridge.md](docs/codex-goal-chrome-extension-sheets-bridge.md) first when implementing the Chrome Extension and Native Messaging bridge for connected Google Sheets inspection or Apply Plan workflows. Use [docs/chrome-extension-sheets-bridge-design.md](docs/chrome-extension-sheets-bridge-design.md) for architecture context and [docs/chrome-extension-sheets-bridge-work-plan.md](docs/chrome-extension-sheets-bridge-work-plan.md) for roadmap context.
+Load [references/spreadsheet-review-package.md](references/spreadsheet-review-package.md) when the user needs agent-visible evidence, HTML previews, or review bundles for Excel or Google Sheets work.

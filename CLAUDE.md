@@ -1,30 +1,47 @@
 # CLAUDE.md
 
-Claude agents working here must follow `AGENTS.md`.
+Claude agents working here follow `AGENTS.md`.
 
-## Required References
+## Required Runtime References
 
-For Excel workbook or spreadsheet CRUD work, consult the relevant files in `references/`:
+For Excel workbook or spreadsheet CRUD work, consult:
 
 - `references/spreadsheet-principles.md`
 - `references/excel-workbook-principles.md`
 - `references/spreadsheet-review-package.md`
 
-For connected Google Sheets behavior, also consult:
+For connected Google Sheets behavior, consult:
 
 - `references/connected-google-sheets-principles.md`
 
-For Chrome Sheets Bridge or native-host review packages, also consult:
+For the current connected-Sheets processing boundary, consult:
 
-- `docs/claude-code-sheets-bridge.md`
-- `docs/chrome-extension-sheets-bridge-design.md`
-- `native-host/README.md`
+- `docs/data-processing-spreadsheet-package-design.md`
 
-Claude agents must consume only sanitized bridge artifacts such as
-`manifest.json` and `snapshot.json`. Do not request, store, echo, or derive
-OAuth tokens, ID tokens, access tokens, bearer headers, service account keys,
-private keys, cookies, or raw DWD credentials.
+## Credential Boundary
+
+Claude agents consume local Excel files, review-package JSON, and
+credential-free spreadsheet evidence/results.
+
+Credential-bearing material stays inside approved external access surfaces:
+
+- tokens
+- bearer headers
+- cookies
+- raw credential material
+
+## Current Product Surface
+
+- Approved external spreadsheet access surfaces own Google Drive and Google
+  Sheets access, authentication, policy, write gates, and Google API calls.
+- This repository owns Excel/spreadsheet processing, evidence interpretation,
+  formula/dataflow discovery, validation artifacts, and review packages.
+- User-facing table creation follows neutral processing contracts after host
+  runtime fields are split from table-builder artifacts.
+- Spreadsheet value authority comes from Google Sheets live readback or real
+  Microsoft Excel recalculation, according to artifact type.
 
 ## ADR Location
 
-Store architecture decisions in `docs/adr/` and use `docs/adr/README.md` for the local format.
+Store architecture decisions in `docs/adr/` and use `docs/adr/README.md` for
+the local format.

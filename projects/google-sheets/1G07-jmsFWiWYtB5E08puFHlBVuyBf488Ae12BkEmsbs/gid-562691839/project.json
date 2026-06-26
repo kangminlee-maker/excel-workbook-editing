@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "project_id": "gs_1G07-jmsFWiWYtB5E08puFHlBVuyBf488Ae12BkEmsbs_gid_562691839",
+  "kind": "google_sheets_surface",
+  "display_name": "connected-sheet-initial-understanding",
+  "identity": {
+    "spreadsheet_id": "1G07-jmsFWiWYtB5E08puFHlBVuyBf488Ae12BkEmsbs",
+    "sheet_gid": "562691839",
+    "canonical_url": "https://docs.google.com/spreadsheets/d/1G07-jmsFWiWYtB5E08puFHlBVuyBf488Ae12BkEmsbs/edit#gid=562691839",
+    "authority_key": "google_sheets_url"
+  },
+  "artifact_roots": [],
+  "work_roots": {
+    "evidence": "evidence",
+    "analysis": "analysis",
+    "review": "review",
+    "domain": "domain"
+  },
+  "status": "active"
+}

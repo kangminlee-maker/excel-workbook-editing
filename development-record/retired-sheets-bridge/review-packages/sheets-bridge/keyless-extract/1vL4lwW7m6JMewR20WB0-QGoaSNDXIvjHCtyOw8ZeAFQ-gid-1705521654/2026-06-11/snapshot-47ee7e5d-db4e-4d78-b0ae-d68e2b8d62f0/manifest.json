@@ -1,0 +1,31 @@
+{
+  "artifact_kind": "sheets_bridge_mcp_package",
+  "artifacts": [
+    {
+      "kind": "inspection_snapshot",
+      "path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/keyless-extract/1vL4lwW7m6JMewR20WB0-QGoaSNDXIvjHCtyOw8ZeAFQ-gid-1705521654/2026-06-11/snapshot-47ee7e5d-db4e-4d78-b0ae-d68e2b8d62f0/snapshot.json",
+      "summary": {
+        "operation": "inspect.formula_window",
+        "requested_ranges": [
+          "'[4/7] 상세페이지 자료'!A1:R31"
+        ],
+        "spreadsheet_id": "1vL4lwW7m6JMewR20WB0-QGoaSNDXIvjHCtyOw8ZeAFQ",
+        "tab_count": 0,
+        "title": "",
+        "window_count": 1
+      }
+    },
+    {
+      "kind": "mcp_handoff",
+      "path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/keyless-extract/1vL4lwW7m6JMewR20WB0-QGoaSNDXIvjHCtyOw8ZeAFQ-gid-1705521654/2026-06-11/snapshot-47ee7e5d-db4e-4d78-b0ae-d68e2b8d62f0/mcp-handoff.json",
+      "summary": {
+        "manifest_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/keyless-extract/1vL4lwW7m6JMewR20WB0-QGoaSNDXIvjHCtyOw8ZeAFQ-gid-1705521654/2026-06-11/snapshot-47ee7e5d-db4e-4d78-b0ae-d68e2b8d62f0/manifest.json",
+        "mcp_prompt": "이 Sheets Bridge 패키지를 분석해줘: /Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/keyless-extract/1vL4lwW7m6JMewR20WB0-QGoaSNDXIvjHCtyOw8ZeAFQ-gid-1705521654/2026-06-11/snapshot-47ee7e5d-db4e-4d78-b0ae-d68e2b8d62f0/manifest.json"
+      }
+    }
+  ],
+  "created_at": "2026-06-11T07:37:47.247432+00:00",
+  "request_id": "snapshot-47ee7e5d-db4e-4d78-b0ae-d68e2b8d62f0",
+  "schema_version": "1.0",
+  "source": "mcp_user_oauth"
+}

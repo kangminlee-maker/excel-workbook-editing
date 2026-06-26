@@ -1,0 +1,21 @@
+{
+  "artifact_kind": "spreadsheet_table_builder_mcp_package",
+  "artifacts": [
+    {
+      "kind": "formula_table_result",
+      "path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/excel-desktop-smoke/mcp/2026-06-06/formula-table-result/result.json"
+    },
+    {
+      "kind": "formula_table_result_html",
+      "path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/excel-desktop-smoke/mcp/2026-06-06/formula-table-result/index.html"
+    },
+    {
+      "kind": "mcp_handoff",
+      "path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/excel-desktop-smoke/mcp/2026-06-06/formula-table-result/mcp-handoff.json"
+    }
+  ],
+  "created_at": "2026-06-06T00:00:00+00:00",
+  "request_id": "formula-table-result",
+  "schema_version": "1.0",
+  "source": "mcp_spreadsheet_table_builder"
+}

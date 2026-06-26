@@ -1,0 +1,303 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-04T08:49:23+09:00",
+  "stage": "formula_dataflow_first_window_summary",
+  "spreadsheet_id": "16vSTLkSxs-j3NxRJ8g_PNYGPuskQkJOWYBss_BDYQJg",
+  "sheet_title": "[ML] 매출_최종",
+  "sheet_id": 1116370414,
+  "sampled_range": "'[ML] 매출_최종'!A1:AN453",
+  "formula_window_artifact": "formula-window-ML-sales-final-A1-AN453.json",
+  "values_window_artifact": "values-window-ML-sales-final-A1-AN453.json",
+  "observed_rows": 444,
+  "observed_max_cols": 40,
+  "nonempty_cells": 17057,
+  "formula_cell_count": 13026,
+  "unique_formula_count": 13026,
+  "sample_formula_cells": [
+    {
+      "cell": "C9",
+      "formula": "=sumifs(C:C,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "D9",
+      "formula": "=sumifs(D:D,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "E9",
+      "formula": "=sumifs(E:E,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "F9",
+      "formula": "=sumifs(F:F,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "G9",
+      "formula": "=sumifs(G:G,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "H9",
+      "formula": "=sumifs(H:H,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "I9",
+      "formula": "=sumifs(I:I,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "J9",
+      "formula": "=sumifs(J:J,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "K9",
+      "formula": "=sumifs(K:K,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "L9",
+      "formula": "=sumifs(L:L,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "M9",
+      "formula": "=sumifs(M:M,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "N9",
+      "formula": "=sumifs(N:N,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "O9",
+      "formula": "=sumifs(O:O,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "P9",
+      "formula": "=sumifs(P:P,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "Q9",
+      "formula": "=sumifs(Q:Q,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "R9",
+      "formula": "=sumifs(R:R,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "S9",
+      "formula": "=sumifs(S:S,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "T9",
+      "formula": "=sumifs(T:T,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "U9",
+      "formula": "=sumifs(U:U,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    },
+    {
+      "cell": "V9",
+      "formula": "=sumifs(V:V,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+    }
+  ],
+  "rough_reference_count_first_2000_formula_cells": 7998,
+  "sample_references": [
+    {
+      "from_cell": "C9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "C:C"
+    },
+    {
+      "from_cell": "C9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "C9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "D9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "D:D"
+    },
+    {
+      "from_cell": "D9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "D9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "E9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "E:E"
+    },
+    {
+      "from_cell": "E9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "E9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "F9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "F:F"
+    },
+    {
+      "from_cell": "F9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "F9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "G9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "G:G"
+    },
+    {
+      "from_cell": "G9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "G9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "H9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "H:H"
+    },
+    {
+      "from_cell": "H9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "H9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "I9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "I:I"
+    },
+    {
+      "from_cell": "I9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "I9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "J9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "J:J"
+    },
+    {
+      "from_cell": "J9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "J9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "K9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "K:K"
+    },
+    {
+      "from_cell": "K9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "K9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "L9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "L:L"
+    },
+    {
+      "from_cell": "L9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "L9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "M9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "M:M"
+    },
+    {
+      "from_cell": "M9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "M9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "N9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "N:N"
+    },
+    {
+      "from_cell": "N9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "N9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "O9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "O:O"
+    },
+    {
+      "from_cell": "O9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "O9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "$A:$A"
+    },
+    {
+      "from_cell": "P9",
+      "referenced_sheet": "[ML] 매출_최종",
+      "referenced_range": "P:P"
+    }
+  ],
+  "readiness": "first_window_ready_for_formula_inventory",
+  "coverage_note": "This covers columns A:AN only. The target sheet has 1848 columns, so additional bounded chunks are required before full-sheet dataflow conclusions."
+}

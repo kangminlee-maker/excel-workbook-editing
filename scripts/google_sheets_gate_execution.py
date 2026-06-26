@@ -54,7 +54,7 @@ def build_google_sheets_gate_execution(
             "source_document": "live_google_sheet",
             "gate_execution_status": "deterministic_evidence_only",
             "formula_result_authority": "not_established",
-            "source_spreadsheet_read_authority": "blocked_until_source_acl_and_broker_allowlist",
+            "source_spreadsheet_read_authority": "blocked_until_source_access_evidence",
             "accepted_gate_is_not_graph_promotion": True,
         },
         "gate_results": gate_results,
@@ -127,7 +127,7 @@ def _context(
         "sampled_region_ids": sampled_region_ids,
         "evidence_update_ids": evidence_update_ids,
         "source_read_count": source_read_count,
-        "broker_batches_succeeded": planned_request_count == successful_response_count,
+        "source_evidence_batches_succeeded": planned_request_count == successful_response_count,
         "planned_request_count": planned_request_count,
         "formula_result_authority": plan["authority"]["formula_result_authority"],
     }
@@ -179,17 +179,17 @@ def _execute_gate(gate: dict[str, Any], context: dict[str, Any]) -> dict[str, An
             gate["deterministic_inputs"],
         )
     if gate_type == "bounded_read_policy_check":
-        if context["broker_batches_succeeded"] and context["source_read_count"] == 0:
+        if context["source_evidence_batches_succeeded"] and context["source_read_count"] == 0:
             return _gate_result(
                 gate,
                 "accepted",
-                "Planned current-workbook broker batches executed successfully and no source-spreadsheet reads occurred.",
+                "Planned current-workbook source evidence batches executed successfully and no source-spreadsheet reads occurred.",
                 [f"planned_request_count={context['planned_request_count']}"],
             )
         return _gate_result(
             gate,
             "review_required",
-            "Broker batch execution did not fully satisfy planned policy checks.",
+            "Source evidence batch execution did not fully satisfy planned policy checks.",
             [f"source_read_count={context['source_read_count']}"],
         )
     return _gate_result(
@@ -220,7 +220,7 @@ def _gate_result(
 
 def _blocking_evidence(gate_type: str) -> list[str]:
     if gate_type == "external_source_authority":
-        return ["source ACL required", "broker source allowlist required"]
+        return ["source ACL required", "source access evidence required"]
     if gate_type == "formula_error_reconciliation":
         return ["formula error reconciliation required", "formula result authority not established"]
     return ["validation plan blocked gate"]

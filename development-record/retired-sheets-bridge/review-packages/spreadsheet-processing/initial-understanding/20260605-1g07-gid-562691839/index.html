@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>초기 시트 이해</title>
+  <style>
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #17202a; background: #f7f9fb; }
+    header { padding: 28px 36px; background: #17324d; color: white; }
+    main { padding: 28px 36px 60px; max-width: 1320px; margin: 0 auto; }
+    h1, h2, h3 { margin: 0 0 12px; }
+    section { margin: 28px 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+    .card { background: white; border: 1px solid #d9e2ec; border-radius: 8px; padding: 16px; }
+    table { width: 100%; border-collapse: collapse; background: white; border: 1px solid #d9e2ec; }
+    th, td { padding: 8px 10px; border-bottom: 1px solid #e8eef5; text-align: left; vertical-align: top; font-size: 13px; }
+    th { background: #edf3f8; position: sticky; top: 0; }
+    code, pre { background: #eef3f8; border-radius: 4px; padding: 2px 4px; }
+    pre { padding: 14px; overflow: auto; white-space: pre-wrap; }
+    .flow-svg { background: white; border: 1px solid #d9e2ec; border-radius: 8px; padding: 12px; overflow: auto; }
+    .io-svg { display: block; width: 100%; min-width: 980px; height: auto; }
+    .muted { color: #5c6f82; }
+    .negative { color: #a12a2a; font-weight: 700; }
+    .positive { color: #237344; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>초기 시트 이해</h1>
+    <p>대상: <strong>[취미/부업 본부 - 교육콘텐츠그룹] 마이라이트 Dashboard_2026</strong> / <strong>MLL_Overview(신규/롱테일)</strong></p>
+  </header>
+  <main>
+    <section>
+      <h2>요약 설명</h2>
+      <div class="grid">
+        <div class="card"><h3>목적</h3><p>신규/롱테일 기준으로 광고비, 결제액, 순매출, 구매/결제 수, ROAS, 고객획득비용, 평균 객단가를 월/일/주 단위로 집계하는 MLL 성과 화면입니다.</p></div>
+        <div class="card"><h3>원천 근거</h3><p>주요 원천 시트는 <code>[DB]RAW_광고비</code>, <code>[DB]RAW_결제액</code>, <code>[DB]RAW_결제수</code>, <code>[DB]RAW_순매출</code>, <code>[DB]RAW_순구매수</code> 계열입니다.</p></div>
+        <div class="card"><h3>확인 필요 사항</h3><p>J/N/AD/AH처럼 합계에 포함되지만 표기가 비어 있는 컬럼과 신규/롱테일 29/30일 경계, 공통광고비 배부 기준은 확인 질문이 필요합니다.</p></div>
+      </div>
+    </section>
+    <section><h2>시트 표면 목록</h2><table><thead><tr><th>시트</th><th>역할</th><th>세부 유형</th><th>범위</th></tr></thead><tbody><tr><td>MLL_Overview(카테고리)</td><td>결과 표시</td><td>개요 화면</td><td>&#x27;MLL_Overview(카테고리)&#x27;!A1:AV1212</td></tr>
+<tr><td>MLL_Overview(신규/롱테일)</td><td>결과 표시</td><td>개요 화면</td><td>&#x27;MLL_Overview(신규/롱테일)&#x27;!A1:AU872</td></tr>
+<tr><td>MLL_Overview(월간)</td><td>결과 표시</td><td>개요 화면</td><td>&#x27;MLL_Overview(월간)&#x27;!A1:Z1000</td></tr>
+<tr><td>Weekly-초안</td><td>주석/검토 화면</td><td>주간/회고 화면</td><td>&#x27;Weekly-초안&#x27;!A1:U111</td></tr>
+<tr><td>Weekly ver.1</td><td>주석/검토 화면</td><td>주간/회고 화면</td><td>&#x27;Weekly ver.1&#x27;!A1:P500</td></tr>
+<tr><td>회고 ver.1</td><td>주석/검토 화면</td><td>주간/회고 화면</td><td>&#x27;회고 ver.1&#x27;!A1:V60</td></tr>
+<tr><td>MLL_데이터확인(특정상품/롱테일)</td><td>검토 화면</td><td>데이터 확인</td><td>&#x27;MLL_데이터확인(특정상품/롱테일)&#x27;!A1:Y1210</td></tr>
+<tr><td>MLL_데이터확인(특정상품/신규)</td><td>검토 화면</td><td>데이터 확인</td><td>&#x27;MLL_데이터확인(특정상품/신규)&#x27;!A1:Z1210</td></tr>
+<tr><td>[DB]RAW_결제액-필터금지</td><td>원천 근거</td><td>결제액</td><td>&#x27;[DB]RAW_결제액-필터금지&#x27;!A1:AOA1000</td></tr>
+<tr><td>[DB]RAW_순매출-필터금지</td><td>원천 근거</td><td>순매출</td><td>&#x27;[DB]RAW_순매출-필터금지&#x27;!A1:AOA1000</td></tr>
+<tr><td>[DB]RAW_결제수-필터금지</td><td>원천 근거</td><td>결제수</td><td>&#x27;[DB]RAW_결제수-필터금지&#x27;!A1:AOA1000</td></tr>
+<tr><td>[DB]RAW_순구매수-필터금지</td><td>원천 근거</td><td>순구매수</td><td>&#x27;[DB]RAW_순구매수-필터금지&#x27;!A1:ANX501</td></tr>
+<tr><td>[DB]RAW_광고비-필터금지</td><td>원천 근거</td><td>광고비</td><td>&#x27;[DB]RAW_광고비-필터금지&#x27;!A1:AOA1000</td></tr>
+<tr><td>[DB]RAW_회원가입수</td><td>원천 근거</td><td>회원가입 수</td><td>&#x27;[DB]RAW_회원가입수&#x27;!A1:C1037</td></tr>
+<tr><td>[DB]RAW_GA4</td><td>원천 근거</td><td>GA4</td><td>&#x27;[DB]RAW_GA4&#x27;!A1:L1005</td></tr>
+<tr><td>[DB]RAW_맵핑</td><td>매핑 참조</td><td>매핑</td><td>&#x27;[DB]RAW_맵핑&#x27;!A1:L1000</td></tr>
+<tr><td>SupermetricsQueries</td><td>자동화 설정</td><td>Supermetrics 조회 설정</td><td>&#x27;SupermetricsQueries&#x27;!A1:AZ40</td></tr>
+<tr><td>[DB]데이터정리_정산용_상품별광고비 ver1</td><td>가공 원천</td><td>광고비 정산용 가공</td><td>&#x27;[DB]데이터정리_정산용_상품별광고비 ver1&#x27;!A1:I506</td></tr>
+<tr><td>[DB]데이터정리_정산용_상품별광고비 ver2</td><td>가공 원천</td><td>광고비 정산용 가공</td><td>&#x27;[DB]데이터정리_정산용_상품별광고비 ver2&#x27;!A1:J386</td></tr></tbody></table></section>
+    <section><h2>표 후보</h2><div class="grid"><article class='card'><h3>결제액 기준 목표지표 카드</h3><p><code>&#x27;MLL_Overview(신규/롱테일)&#x27;!K1:U5</code></p><p>결과 표시 · 샘플 기준 수용</p><ul><li>상단 요약 표기</li><li>2026-06 월별 행과 목표지표 상수를 참조하는 수식</li></ul></article>
+<article class='card'><h3>순매출 기준 목표지표 카드</h3><p><code>&#x27;MLL_Overview(신규/롱테일)&#x27;!AE1:AO5</code></p><p>결과 표시 · 샘플 기준 수용</p><ul><li>상단 요약 표기</li><li>2026-06 월별 행과 목표지표 상수를 참조하는 수식</li></ul></article>
+<article class='card'><h3>월별 MLL 성과 요약</h3><p><code>&#x27;MLL_Overview(신규/롱테일)&#x27;!A7:AT31</code></p><p>가공 결과표 · 샘플 기준 수용</p><ul><li>7행 표기 구조</li><li>8:31행 월별 표기</li><li>일별 시계열 행을 집계하는 수식</li></ul></article>
+<article class='card'><h3>일별 MLL 성과 집계</h3><p><code>&#x27;MLL_Overview(신규/롱테일)&#x27;!A32:AT867</code></p><p>가공 결과표 · 샘플 기준 수용</p><ul><li>날짜 행</li><li>공유되는 조건 합산 수식 패턴</li><li>외부 원천 시트 참조</li></ul></article>
+<article class='card'><h3>주간 MLL 성과 집계 행</h3><p><code>&#x27;MLL_Overview(신규/롱테일)&#x27;!A39:AT871</code></p><p>가공 결과표 · 샘플 기준 수용, 미래 행 혼재</p><ul><li>12/30주 같은 주간 표기</li><li>앞선 7개 일별 행을 합산하는 수식</li></ul></article>
+<article class='card'><h3>미래 일자 사전 생성 행</h3><p><code>&#x27;MLL_Overview(신규/롱테일)&#x27;!A868:AT871</code></p><p>사전 생성 미래 표시 · 검토 필요</p><ul><li>2027-01 행에 #N/A 값이 있음</li></ul></article></div></section>
+    <section><h2>표 입출력 흐름</h2><div class="flow-svg"><svg class="io-svg" viewBox="0 0 1180 620" role="img" aria-labelledby="io-title io-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="io-title">표 입출력 흐름</title>
+  <desc id="io-desc">원천 시트가 일별 MLL 집계표로 이어지고, 일별 행은 주간 행과 월별 요약으로 집계됩니다. 월별 요약은 결제액과 순매출 목표지표 카드로 이어집니다. Supermetrics 설정은 원천 시트의 갱신 근거를 제공합니다.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#41627f" />
+    </marker>
+    <marker id="arrow-dashed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#8a6f24" />
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f2437" flood-opacity="0.16" />
+    </filter>
+  </defs>
+  <rect width="1180" height="620" rx="18" fill="#f6f9fc" />
+  <text x="36" y="42" font-size="22" font-weight="700" fill="#17324d">표 입출력 흐름</text>
+  <text x="36" y="68" font-size="13" fill="#5c6f82">원천 근거 -> 일별 가공표 -> 주간/월별 집계 -> 목표지표 카드</text>
+
+  <g class="lane">
+    <text x="48" y="116" font-size="13" font-weight="700" fill="#41627f">원천 근거</text>
+    <rect x="36" y="128" width="260" height="342" rx="12" fill="#e9f2fb" stroke="#bed0e0" />
+  </g>
+  <g class="lane">
+    <text x="386" y="116" font-size="13" font-weight="700" fill="#41627f">가공 결과</text>
+    <rect x="360" y="128" width="260" height="342" rx="12" fill="#eef8f2" stroke="#bdd7c5" />
+  </g>
+  <g class="lane">
+    <text x="694" y="116" font-size="13" font-weight="700" fill="#41627f">집계</text>
+    <rect x="680" y="128" width="190" height="342" rx="12" fill="#fff6e6" stroke="#dfc991" />
+  </g>
+  <g class="lane">
+    <text x="952" y="116" font-size="13" font-weight="700" fill="#41627f">최종 표시</text>
+    <rect x="930" y="128" width="214" height="342" rx="12" fill="#f4effb" stroke="#cfbfdf" />
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="66" y="152" width="200" height="48" rx="8" fill="#ffffff" stroke="#9cb8d1" />
+    <text x="82" y="173" font-size="13" font-weight="700" fill="#17324d">광고비 원천</text>
+    <text x="82" y="190" font-size="11" fill="#5c6f82">[DB]RAW_광고비</text>
+
+    <rect x="66" y="210" width="200" height="48" rx="8" fill="#ffffff" stroke="#9cb8d1" />
+    <text x="82" y="231" font-size="13" font-weight="700" fill="#17324d">결제수 원천</text>
+    <text x="82" y="248" font-size="11" fill="#5c6f82">[DB]RAW_결제수</text>
+
+    <rect x="66" y="268" width="200" height="48" rx="8" fill="#ffffff" stroke="#9cb8d1" />
+    <text x="82" y="289" font-size="13" font-weight="700" fill="#17324d">결제액 원천</text>
+    <text x="82" y="306" font-size="11" fill="#5c6f82">[DB]RAW_결제액</text>
+
+    <rect x="66" y="326" width="200" height="48" rx="8" fill="#ffffff" stroke="#9cb8d1" />
+    <text x="82" y="347" font-size="13" font-weight="700" fill="#17324d">순구매수 원천</text>
+    <text x="82" y="364" font-size="11" fill="#5c6f82">[DB]RAW_순구매수</text>
+
+    <rect x="66" y="384" width="200" height="48" rx="8" fill="#ffffff" stroke="#9cb8d1" />
+    <text x="82" y="405" font-size="13" font-weight="700" fill="#17324d">순매출 원천</text>
+    <text x="82" y="422" font-size="11" fill="#5c6f82">[DB]RAW_순매출</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="390" y="238" width="200" height="126" rx="10" fill="#ffffff" stroke="#9bc5a7" />
+    <text x="410" y="264" font-size="15" font-weight="700" fill="#17324d">일별 MLL 성과 집계</text>
+    <text x="410" y="286" font-size="12" fill="#5c6f82">'MLL_Overview'!A32:AT867</text>
+    <text x="410" y="312" font-size="12" fill="#2f6d43">조건 합산 수식</text>
+    <text x="410" y="332" font-size="12" fill="#5c6f82">날짜 + 신규/롱테일 조건</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="704" y="184" width="142" height="82" rx="10" fill="#ffffff" stroke="#d1b66d" />
+    <text x="722" y="211" font-size="14" font-weight="700" fill="#17324d">월별 요약</text>
+    <text x="722" y="232" font-size="11" fill="#5c6f82">A7:AT31</text>
+    <text x="722" y="249" font-size="11" fill="#8a6f24">월별 집계 수식</text>
+
+    <rect x="704" y="334" width="142" height="82" rx="10" fill="#ffffff" stroke="#d1b66d" />
+    <text x="722" y="361" font-size="14" font-weight="700" fill="#17324d">주간 집계 행</text>
+    <text x="722" y="382" font-size="11" fill="#5c6f82">A39:AT871</text>
+    <text x="722" y="399" font-size="11" fill="#8a6f24">7일 합산</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="958" y="182" width="154" height="88" rx="10" fill="#ffffff" stroke="#b9a5d0" />
+    <text x="976" y="209" font-size="14" font-weight="700" fill="#17324d">결제액 목표지표</text>
+    <text x="976" y="230" font-size="11" fill="#5c6f82">K1:U5</text>
+    <text x="976" y="247" font-size="11" fill="#6a4d8f">6월/목표지표/달성률</text>
+
+    <rect x="958" y="318" width="154" height="88" rx="10" fill="#ffffff" stroke="#b9a5d0" />
+    <text x="976" y="345" font-size="14" font-weight="700" fill="#17324d">순매출 목표지표</text>
+    <text x="976" y="366" font-size="11" fill="#5c6f82">AE1:AO5</text>
+    <text x="976" y="383" font-size="11" fill="#6a4d8f">6월/목표지표/달성률</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="390" y="500" width="200" height="58" rx="10" fill="#fffdf4" stroke="#d5bd67" />
+    <text x="410" y="523" font-size="13" font-weight="700" fill="#17324d">SupermetricsQueries</text>
+    <text x="410" y="542" font-size="11" fill="#8a6f24">원천 갱신 근거</text>
+  </g>
+
+  <g fill="none" stroke="#41627f" stroke-width="2.4" marker-end="url(#arrow)">
+    <path d="M266 176 C316 176 330 254 390 272" />
+    <path d="M266 234 C320 234 332 278 390 292" />
+    <path d="M266 292 C320 292 332 304 390 308" />
+    <path d="M266 350 C320 350 332 326 390 322" />
+    <path d="M266 408 C320 408 334 348 390 338" />
+    <path d="M590 280 C642 250 656 224 704 224" />
+    <path d="M590 326 C642 352 656 376 704 376" />
+    <path d="M846 224 C894 224 914 224 958 224" />
+    <path d="M846 240 C906 274 920 342 958 362" />
+  </g>
+  <g fill="none" stroke="#8a6f24" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arrow-dashed)">
+    <path d="M390 528 C302 516 290 178 266 176" />
+    <path d="M490 500 C490 452 490 408 490 364" />
+  </g>
+
+  <g>
+    <rect x="54" y="520" width="20" height="10" fill="#ffffff" stroke="#9cb8d1" />
+    <text x="82" y="530" font-size="11" fill="#5c6f82">실선: 수식으로 계산된 값 흐름</text>
+    <line x1="54" y1="550" x2="74" y2="550" stroke="#8a6f24" stroke-width="2" stroke-dasharray="5 4" />
+    <text x="82" y="554" font-size="11" fill="#5c6f82">점선: 갱신/자동화 근거</text>
+  </g>
+</svg></div></section>
+    <section><h2>표기 사전</h2><table><thead><tr><th>열</th><th>표기</th><th>역할</th><th>의미</th><th>예시 수식</th></tr></thead><tbody><tr><td>A</td><td>날짜</td><td>날짜 축</td><td>분석 기준 날짜 또는 월/주 라벨</td><td><code>2024-12-30</code></td></tr>
+<tr><td>AA</td><td>순 구매수 합계</td><td>가공 합계</td><td>순 구매수 합계 = 신규 + 롱테일 + 미표기 보조값</td><td><code>=SUM(AB32:AD32)</code></td></tr>
+<tr><td>AB</td><td>신규</td><td>원천 기반 가공</td><td>신규 순구매수, RAW_순구매수에서 계산</td><td><code>=SUMPRODUCT(
+  (&#x27;[DB]RAW_순구매수-필터금지&#x27;!$C$7:$C$523&lt;&gt;&quot;언어&quot;)*
+  ($A32&gt;=&#x27;[DB]RAW_순구매수-필터금지&#x27;!$A$7:$A$523)*
+  ($A32&lt;=&#x27;[DB]RAW_순구매수-필터금지&#x27;!$A$7:$A$523+29)*
+  INDEX(
+    &#x27;[DB]RAW_순구매수-필터금지&#x27;!$AS$7:$ANW$523,
+    0,
+    MATCH($A32,&#x27;[DB]RAW_순구매수-필터금지&#x27;!$AS$2:$ANW$2,0)
+  )
+)
+</code></td></tr>
+<tr><td>AC</td><td>롱테일</td><td>원천 기반 가공</td><td>롱테일 순구매수, RAW_순구매수에서 계산</td><td><code>=SUMPRODUCT(
+  (&#x27;[DB]RAW_순구매수-필터금지&#x27;!$C$7:$C$523&lt;&gt;&quot;언어&quot;)*
+  ($A32&gt;&#x27;[DB]RAW_순구매수-필터금지&#x27;!$A$7:$A$523+30)*
+  INDEX(
+    &#x27;[DB]RAW_순구매수-필터금지&#x27;!$AS$7:$ANW$523,
+    0,
+    MATCH($A32,&#x27;[DB]RAW_순구매수-필터금지&#x27;!$AS$2:$ANW$2,0)
+  )
+)
+</code></td></tr>
+<tr><td>AD</td><td></td><td>검토 필요</td><td>순 구매수 합계에 포함되지만 7행 표기가 비어 있음</td><td><code>=SUMIFS(AD$32:AD,$A$32:$A,&quot;&gt;=&quot;&amp;$A8,$A$32:$A,&quot;&lt;=&quot;&amp;$B8)</code></td></tr>
+<tr><td>AE</td><td>순 매출 합계</td><td>가공 합계</td><td>순 매출 합계 = 신규 + 롱테일 + 미표기 보조값</td><td><code>=SUM(AF32:AH32)</code></td></tr>
+<tr><td>AF</td><td>신규</td><td>원천 기반 가공</td><td>신규 순매출, RAW_순매출에서 계산</td><td><code>=SUMPRODUCT(
+  (&#x27;[DB]RAW_순매출-필터금지&#x27;!$C$6:$C$380&lt;&gt;&quot;언어&quot;)*
+  ($A32&gt;=&#x27;[DB]RAW_순매출-필터금지&#x27;!$A$6:$A$380)*
+  ($A32&lt;=&#x27;[DB]RAW_순매출-필터금지&#x27;!$A$6:$A$380+29)*
+  INDEX(
+    &#x27;[DB]RAW_순매출-필터금지&#x27;!$AV$6:$ANZ$380,
+    0,
+    MATCH($A32,&#x27;[DB]RAW_순매출-필터금지&#x27;!$AV$2:$ANZ$2,0)
+  )
+)
+</code></td></tr>
+<tr><td>AG</td><td>롱테일</td><td>원천 기반 가공</td><td>롱테일 순매출, RAW_순매출에서 계산</td><td><code>=SUMPRODUCT(
+  (&#x27;[DB]RAW_순매출-필터금지&#x27;!$C$6:$C$380&lt;&gt;&quot;언어&quot;)*
+  ($A32&gt;=&#x27;[DB]RAW_순매출-필터금지&#x27;!$A$6:$A$380+30)*
+  INDEX(
+    &#x27;[DB]RAW_순매출-필터금지&#x27;!$AV$6:$ANZ$380,
+    0,
+    MATCH($A32,&#x27;[DB]RAW_순매출-필터금지&#x27;!$AV$2:$ANZ$2,0)
+  )
+)
+</code></td></tr>
+<tr><td>AH</td><td></td><td>검토 필요</td><td>순 매출 합계에 포함되지만 7행 표기가 비어 있음</td><td><code>=SUMIFS(AH$32:AH,$A$32:$A,&quot;&gt;=&quot;&amp;$A8,$A$32:$A,&quot;&lt;=&quot;&amp;$B8)</code></td></tr>
+<tr><td>AI</td><td>순 매출 비중</td><td>계산 비율</td><td>순 매출 비중 합계 = 신규 + 롱테일 비중</td><td><code>=AJ32+AK32</code></td></tr>
+<tr><td>AJ</td><td>신규</td><td>계산 비율</td><td>신규 순매출 / 순 매출 합계</td><td><code>=IFERROR(AF32/AE32,0)</code></td></tr>
+<tr><td>AK</td><td>롱테일</td><td>계산 비율</td><td>롱테일 순매출 / 순 매출 합계</td><td><code>=IFERROR(AG32/AE32,0)</code></td></tr>
+<tr><td>AL</td><td>ROAS</td><td>계산 비율</td><td>순매출 기준 ROAS = 순 매출 합계 / 광고비 합계</td><td><code>=IFERROR(AE32/C32,0)</code></td></tr>
+<tr><td>AM</td><td>신규</td><td>계산 비율</td><td>신규 순매출 기준 ROAS = 신규 순매출 / 신규 광고비</td><td><code>=IFERROR(AF32/D32,0)</code></td></tr>
+<tr><td>AN</td><td>롱테일</td><td>계산 비율</td><td>롱테일 순매출 기준 ROAS = 롱테일 순매출 / (롱테일 광고비 + 공통광고비)</td><td><code>=IFERROR(AG32/(E32+F32),0)</code></td></tr>
+<tr><td>AO</td><td>고객획득비용</td><td>계산 비율</td><td>순매출 기준 고객획득비용 = 광고비 합계 / 순 매출 합계</td><td><code>=IFERROR(C32/AE32,0)</code></td></tr>
+<tr><td>AP</td><td>신규</td><td>계산 비율</td><td>신규 순매출 기준 고객획득비용 = 신규 광고비 / 신규 순매출</td><td><code>=IFERROR(D32/AF32,0)</code></td></tr>
+<tr><td>AQ</td><td>롱테일</td><td>계산 비율</td><td>롱테일 순매출 기준 고객획득비용 = (롱테일 광고비 + 공통광고비) / 롱테일 순매출</td><td><code>=IFERROR((E32+F32)/AG32,0)</code></td></tr>
+<tr><td>AR</td><td>평균 객단가</td><td>계산 비율</td><td>순매출 평균 객단가 = 순 매출 합계 / 순 구매수 합계</td><td><code>=IFERROR(AE32/AA32,0)</code></td></tr>
+<tr><td>AS</td><td>신규</td><td>계산 비율</td><td>신규 순매출 평균 객단가 = 신규 순매출 / 신규 순구매수</td><td><code>=IFERROR(AF32/AB32,0)</code></td></tr>
+<tr><td>AT</td><td>롱테일</td><td>계산 비율</td><td>롱테일 순매출 평균 객단가 = 롱테일 순매출 / 롱테일 순구매수</td><td><code>=IFERROR(AG32/AC32,0)</code></td></tr></tbody></table></section>
+    
+    <section>
+      <h2>결제액 하락 원인 분석</h2>
+      <div class="grid">
+        <div class="card"><h3>지표 기준</h3><p>사용자가 확인한 결제액 기준입니다. 회계상 매출 기준이 아닙니다.</p></div>
+        <div class="card"><h3>이번주 분석 구간</h3><p><code>2026-06-01, 2026-06-02, 2026-06-03, 2026-06-04</code></p><p class="muted">마지막 결제액 입력일: 2026-06-04</p></div>
+        <div class="card"><h3>검증 결과</h3><p>카테고리 화면의 결제액 합계와 원천 상품군 합계가 샘플 비교 구간에서 일치했습니다.</p></div>
+      </div>
+      <h3>카테고리 하락 신호</h3>
+      <table><thead><tr><th>카테고리</th><th>상태</th><th>이번주 결제액</th><th>전년 대비 변화</th><th>전월 대비 변화</th><th>최근 3주 평균 대비 변화</th></tr></thead><tbody><tr><td>취미</td><td>복수 기준 하락</td><td>14,694,100</td><td class='negative'>-4,367,600<br><span class='muted'>-22.9%</span></td><td class='negative'>-4,557,800<br><span class='muted'>-23.7%</span></td><td class='positive'>+4,132,100<br><span class='muted'>39.1%</span></td></tr><tr><td>부업</td><td>단일 기준 하락</td><td>12,657,300</td><td class='negative'>-3,139,400<br><span class='muted'>-19.9%</span></td><td class='positive'>+6,254,800<br><span class='muted'>97.7%</span></td><td class='positive'>+1,463,253<br><span class='muted'>13.1%</span></td></tr><tr><td>커리어/재테크</td><td>단일 기준 하락</td><td>2,482,400</td><td class='positive'>+1,355,800<br><span class='muted'>120.3%</span></td><td class='positive'>+489,400<br><span class='muted'>24.6%</span></td><td class='negative'>-1,712,127<br><span class='muted'>-40.8%</span></td></tr><tr><td>그외</td><td>복수 기준 하락</td><td>759,800</td><td class='positive'>+41,800<br><span class='muted'>5.8%</span></td><td class='negative'>-3,213,200<br><span class='muted'>-80.9%</span></td><td class='negative'>-221,267<br><span class='muted'>-22.6%</span></td></tr></tbody></table>
+      <h3>원인 후보별 하락 규모 요약</h3>
+      <p class="muted">상품별 하락 신호의 절대 하락액 기준입니다. 같은 상품이 여러 비교축에서 하락하면 여러 하락 신호로 집계됩니다.</p>
+      <table><thead><tr><th>원인 후보</th><th>결제액 하락 합계</th><th>광고비 변화 합계</th><th>하락 신호 수</th><th>고유 상품 수</th><th>카테고리</th><th>주요 예시</th></tr></thead><tbody><tr><td>광고비 하락 일부 가능성: 효율 변화 추가 확인 필요</td><td class='negative'>-30,255,860<br><span class='muted'>57.9%</span></td><td class='negative'>-11,889,619</td><td>19</td><td>18</td><td>부업, 취미, 커리어/재테크</td><td>방구석DJ(-9,056,000), 감성반주(-5,235,000), 문구수익화(-3,430,000)</td></tr><tr><td>광고비 근거 없음: 상품별 광고비 0/미검출, 수요·전환·상품/가격·채널 믹스 확인 필요</td><td class='negative'>-19,361,800<br><span class='muted'>37.1%</span></td><td class=''>0</td><td>49</td><td>47</td><td>그외, 부업, 취미, 커리어/재테크</td><td>올패스_취미+부업(-1,514,200), 성우(-1,502,200), 묶음상품(-1,349,000)</td></tr><tr><td>혼합: 광고비도 줄었지만 ROAS도 크게 악화</td><td class='negative'>-1,425,000<br><span class='muted'>2.7%</span></td><td class='negative'>-407,382</td><td>1</td><td>1</td><td>취미</td><td>달리드로잉(-1,425,000)</td></tr><tr><td>광고비 증가에도 결제액 하락: 효율/전환/상품 수요 문제 가능성</td><td class='negative'>-668,600<br><span class='muted'>1.3%</span></td><td class='positive'>+268,413</td><td>1</td><td>1</td><td>취미</td><td>이연일상드로잉(-668,600)</td></tr><tr><td>광고비 하락 가능성 높음: ROAS는 유지/개선권</td><td class='negative'>-536,700<br><span class='muted'>1.0%</span></td><td class='negative'>-634,790</td><td>1</td><td>1</td><td>취미</td><td>일렉기타(-536,700)</td></tr></tbody></table>
+      <h3>최근 ROAS 하락 과정</h3>
+      <p class="muted">결제액 감소 후보 중 3주 전, 2주 전, 1주 전, 이번주 누적 ROAS% 기울기가 음수이고 이번주 ROAS%가 직전 3개 구간 평균보다 낮은 과정입니다.</p>
+      <table><thead><tr><th>상품군</th><th>과정</th><th>상위 카테고리</th><th>원인 후보</th><th>결제액 변화</th><th>ROAS% 하락폭</th><th>ROAS% 흐름</th><th>광고비 변화</th></tr></thead><tbody><tr><td>취미</td><td>이연일상드로잉</td><td>취미/드로잉</td><td>광고비 증가에도 결제액 하락: 효율/전환/상품 수요 문제 가능성; 광고비 하락 일부 가능성: 효율 변화 추가 확인 필요</td><td class='negative'>-1,135,467<br><span class='muted'>이번주 0 / 직전 3주 평균 1,135,467</span></td><td class='negative'>-717.7포인트<br><span class='muted'>이번주 0.0% / 직전 3주 평균 717.7%</span></td><td>817.9% -&gt; 494.2% -&gt; 840.9% -&gt; 0.0%</td><td class='positive'>+112,553</td></tr><tr><td>취미</td><td>달리드로잉</td><td>취미/드로잉</td><td>혼합: 광고비도 줄었지만 ROAS도 크게 악화</td><td class='negative'>-903,667<br><span class='muted'>이번주 618,000 / 직전 3주 평균 1,521,667</span></td><td class='negative'>-377.2포인트<br><span class='muted'>이번주 69.9% / 직전 3주 평균 447.1%</span></td><td>352.2% -&gt; 898.7% -&gt; 90.4% -&gt; 69.9%</td><td class='positive'>+432,104</td></tr></tbody></table>
+      <h3>공통상품 하락 후보</h3>
+      <table><thead><tr><th>상품군</th><th>공통상품</th><th>상위 카테고리</th><th>하락 신호 수</th><th>총 하락액</th><th>주요 원인 후보</th></tr></thead><tbody><tr><td>취미</td><td>통기타</td><td>취미/악기</td><td>2</td><td class='negative'>-2,276,700</td><td>광고비 하락 일부 가능성: 효율 변화 추가 확인 필요</td></tr><tr><td>취미</td><td>이연일상드로잉</td><td>취미/드로잉</td><td>2</td><td class='negative'>-1,993,400</td><td>광고비 증가에도 결제액 하락: 효율/전환/상품 수요 문제 가능성</td></tr><tr><td>그외</td><td>묶음상품</td><td>결합패키지</td><td>2</td><td class='negative'>-1,572,067</td><td>광고비 근거 없음: 상품별 광고비 0/미검출, 수요·전환·상품/가격·채널 믹스 확인 필요</td></tr><tr><td>취미</td><td>방구석DJ</td><td>취미/악기</td><td>1</td><td class='negative'>-9,056,000</td><td>광고비 하락 일부 가능성: 효율 변화 추가 확인 필요</td></tr><tr><td>취미</td><td>감성반주</td><td>취미/악기</td><td>1</td><td class='negative'>-5,235,000</td><td>광고비 하락 일부 가능성: 효율 변화 추가 확인 필요</td></tr><tr><td>부업</td><td>문구수익화</td><td>N잡/부업</td><td>1</td><td class='negative'>-3,430,000</td><td>광고비 하락 일부 가능성: 효율 변화 추가 확인 필요</td></tr><tr><td>부업</td><td>작사가</td><td>데뷔시리즈</td><td>1</td><td class='negative'>-2,942,000</td><td>광고비 하락 일부 가능성: 효율 변화 추가 확인 필요</td></tr><tr><td>그외</td><td>올패스_취미+부업</td><td>결합패키지</td><td>1</td><td class='negative'>-1,514,200</td><td>광고비 근거 없음: 상품별 광고비 0/미검출, 수요·전환·상품/가격·채널 믹스 확인 필요</td></tr><tr><td>부업</td><td>성우</td><td>데뷔시리즈</td><td>1</td><td class='negative'>-1,502,200</td><td>광고비 근거 없음: 상품별 광고비 0/미검출, 수요·전환·상품/가격·채널 믹스 확인 필요</td></tr><tr><td>커리어/재테크</td><td>제이슨주식</td><td>금융/재테크</td><td>1</td><td class='negative'>-1,437,333</td><td>광고비 하락 일부 가능성: 효율 변화 추가 확인 필요</td></tr><tr><td>취미</td><td>달리드로잉</td><td>취미/드로잉</td><td>1</td><td class='negative'>-1,425,000</td><td>혼합: 광고비도 줄었지만 ROAS도 크게 악화</td></tr><tr><td>취미</td><td>미니재봉틀</td><td>취미/공예</td><td>1</td><td class='negative'>-988,000</td><td>광고비 근거 없음: 상품별 광고비 0/미검출, 수요·전환·상품/가격·채널 믹스 확인 필요</td></tr></tbody></table>
+      <h3>비교 기준별 주요 하락 상품</h3>
+      <table><thead><tr><th>카테고리</th><th>비교 기준</th><th>공통상품</th><th>상위 카테고리</th><th>결제액 변화</th><th>광고비 변화</th><th>원인 후보</th></tr></thead><tbody><tr><td>취미</td><td>전년도 대비</td><td>방구석DJ</td><td>취미/악기</td><td class='negative'>-9,056,000</td><td class='negative'>-2,692,122</td><td>광고비 하락 일부 가능성: 효율 변화 추가 확인 필요</td></tr><tr><td>취미</td><td>전년도 대비</td><td>감성반주</td><td>취미/악기</td><td class='negative'>-5,235,000</td><td class='negative'>-1,514,168</td><td>광고비 하락 일부 가능성: 효율 변화 추가 확인 필요</td></tr><tr><td>취미</td><td>전년도 대비</td><td>통기타</td><td>취미/악기</td><td class='negative'>-1,444,500</td><td class='negative'>-785,653</td><td>광고비 하락 일부 가능성: 효율 변화 추가 확인 필요</td></tr><tr><td>취미</td><td>전월 대비</td><td>달리드로잉</td><td>취미/드로잉</td><td class='negative'>-1,425,000</td><td class='negative'>-407,382</td><td>혼합: 광고비도 줄었지만 ROAS도 크게 악화</td></tr><tr><td>취미</td><td>전월 대비</td><td>이연일상드로잉</td><td>취미/드로잉</td><td class='negative'>-1,324,800</td><td class='negative'>-350,349</td><td>광고비 하락 일부 가능성: 효율 변화 추가 확인 필요</td></tr><tr><td>취미</td><td>전월 대비</td><td>미니재봉틀</td><td>취미/공예</td><td class='negative'>-988,000</td><td class=''>0</td><td>광고비 근거 없음: 상품별 광고비 0/미검출, 수요·전환·상품/가격·채널 믹스 확인 필요</td></tr><tr><td>부업</td><td>전년도 대비</td><td>문구수익화</td><td>N잡/부업</td><td class='negative'>-3,430,000</td><td class='negative'>-674,099</td><td>광고비 하락 일부 가능성: 효율 변화 추가 확인 필요</td></tr><tr><td>부업</td><td>전년도 대비</td><td>작사가</td><td>데뷔시리즈</td><td class='negative'>-2,942,000</td><td class='negative'>-1,696,492</td><td>광고비 하락 일부 가능성: 효율 변화 추가 확인 필요</td></tr><tr><td>부업</td><td>전년도 대비</td><td>성우</td><td>데뷔시리즈</td><td class='negative'>-1,502,200</td><td class=''>0</td><td>광고비 근거 없음: 상품별 광고비 0/미검출, 수요·전환·상품/가격·채널 믹스 확인 필요</td></tr><tr><td>커리어/재테크</td><td>지난 3주 평균 대비</td><td>제이슨주식</td><td>금융/재테크</td><td class='negative'>-1,437,333</td><td class='negative'>-99,890</td><td>광고비 하락 일부 가능성: 효율 변화 추가 확인 필요</td></tr><tr><td>커리어/재테크</td><td>지난 3주 평균 대비</td><td>흥버튼스피치</td><td>커리어/직무</td><td class='negative'>-315,193</td><td class='negative'>-6,134</td><td>광고비 하락 일부 가능성: 효율 변화 추가 확인 필요</td></tr><tr><td>커리어/재테크</td><td>지난 3주 평균 대비</td><td>AI툴</td><td>커리어/직무</td><td class='negative'>-139,333</td><td class=''>0</td><td>광고비 근거 없음: 상품별 광고비 0/미검출, 수요·전환·상품/가격·채널 믹스 확인 필요</td></tr><tr><td>그외</td><td>전월 대비</td><td>올패스_취미+부업</td><td>결합패키지</td><td class='negative'>-1,514,200</td><td class=''>0</td><td>광고비 근거 없음: 상품별 광고비 0/미검출, 수요·전환·상품/가격·채널 믹스 확인 필요</td></tr><tr><td>그외</td><td>전월 대비</td><td>묶음상품</td><td>결합패키지</td><td class='negative'>-1,349,000</td><td class=''>0</td><td>광고비 근거 없음: 상품별 광고비 0/미검출, 수요·전환·상품/가격·채널 믹스 확인 필요</td></tr><tr><td>그외</td><td>전월 대비</td><td>평생교육이용권</td><td>결합패키지</td><td class='negative'>-350,000</td><td class=''>0</td><td>광고비 근거 없음: 상품별 광고비 0/미검출, 수요·전환·상품/가격·채널 믹스 확인 필요</td></tr><tr><td>그외</td><td>지난 3주 평균 대비</td><td>묶음상품</td><td>결합패키지</td><td class='negative'>-223,067</td><td class=''>0</td><td>광고비 근거 없음: 상품별 광고비 0/미검출, 수요·전환·상품/가격·채널 믹스 확인 필요</td></tr></tbody></table>
+      <h3>검증 메모</h3>
+      <ul><li>이번주 값은 2026-06-01~2026-06-04 누적 기준이며 이후 0 표시 날짜는 현재 분석에서 제외했다.</li>
+<li>광고비 원인 판정은 RAW 상품별 개별 광고비 기준이다. 공통광고비 배부 로직은 상품/카테고리별로 확정하지 않았다.</li>
+<li>전월 대비는 달력상 전월 전체가 아니라 같은 요일 길이의 4주 전 비교로 정의했다.</li>
+<li>전년 대비는 같은 요일 길이의 52주 전 비교로 정의했다.</li></ul>
+    </section>
+
+    <section><h2>검토 질문</h2><ol><li><strong>질문 1</strong><p>J/N/AD/AH처럼 합계에 포함되지만 7행 표기가 비어 있는 컬럼은 어떤 의미인가요? 수식상 특정 제외/보조 카테고리로 보이지만 명칭 확인이 필요합니다.</p><p><code>J7:J867, N7:N867, AD7:AD867, AH7:AH867</code></p></li>
+<li><strong>질문 2</strong><p>신규/롱테일 구분은 RAW 시트의 날짜 기준 29일/30일 경계로 계산되는 것으로 보입니다. 이 경계가 공식 정의인가요?</p><p><code>D32:E867, H32:I867, L32:M867, AF32:AG867</code></p></li>
+<li><strong>질문 3</strong><p>공통광고비는 롱테일 ROAS/고객획득비용 계산에서 롱테일 쪽에 합산되고 있습니다. 이 배부 방식이 의도된 공식인가요?</p><p><code>F32:F867, T32:W867, AN32:AQ867</code></p></li>
+<li><strong>질문 4</strong><p>이 문서에서 결제액, 순매출, 결제수, 순구매수, 광고비 중 어떤 지표가 요약 설명의 1차 기준이어야 하나요?</p><p><code>A7:AT31, A32:AT867, K1:U5, AE1:AO5</code></p></li>
+<li><strong>질문 5</strong><p>SupermetricsQueries가 원천 시트들을 갱신하는 것으로 보입니다. 최신성/갱신 주기와 실패 시 처리 기준을 확인해야 하나요?</p><p><code>SupermetricsQueries!A1:AZ40</code></p></li></ol></section>
+    <section><h2>산출물</h2><p class="muted">생성 위치: <code>/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/initial-understanding/20260605-1g07-gid-562691839</code></p></section>
+  </main>
+</body>
+</html>

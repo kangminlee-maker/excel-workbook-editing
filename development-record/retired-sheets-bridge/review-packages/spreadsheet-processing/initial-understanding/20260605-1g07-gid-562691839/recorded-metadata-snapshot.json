@@ -1,0 +1,282 @@
+{
+  "artifacts": [
+    {
+      "kind": "broker_policy",
+      "summary": {
+        "allowed": true,
+        "decision_id": "parser-readonly-windows-2026-06-02:kangmin.lee@day1company.co.kr:1G07-jmsFWiWYtB5E08puFHlBVuyBf488Ae12BkEmsbs:inspect.metadata",
+        "policy_version": "parser-readonly-windows-2026-06-02",
+        "principal": "kangmin.lee@day1company.co.kr",
+        "reason": "allowed",
+        "spreadsheet_id": "1G07-jmsFWiWYtB5E08puFHlBVuyBf488Ae12BkEmsbs"
+      }
+    },
+    {
+      "kind": "broker_auth",
+      "summary": {
+        "impersonated_subject": "kangmin.lee@day1company.co.kr",
+        "principal": "kangmin.lee@day1company.co.kr"
+      }
+    }
+  ],
+  "captured_at": "2026-06-05T01:49:49.389960+00:00",
+  "cell_states": [],
+  "data_validations": [],
+  "formula_samples": [],
+  "locale": "ko_KR",
+  "named_ranges": [
+    {
+      "name": "zsupermetrics_Zf5cYVwHvC8DRCeBdr3YhLJwBZkZMW",
+      "range": {
+        "range": "A679:B830",
+        "sheet_id": 634031060
+      }
+    },
+    {
+      "name": "zsupermetrics_forceRefresh",
+      "range": {
+        "range": "H4:H4",
+        "sheet_id": 1691653687
+      }
+    },
+    {
+      "name": "zsupermetrics_refreshAllSilent",
+      "range": {
+        "range": "H6:H6",
+        "sheet_id": 1691653687
+      }
+    },
+    {
+      "name": "zsupermetrics_dTEMhhbQ8xGX39YJKsSi49mnUZXVyL",
+      "range": {
+        "range": "G679:H831",
+        "sheet_id": 634031060
+      }
+    },
+    {
+      "name": "zsupermetrics_BsLKQg6VfnxjDdzT2TfGj3ZaPKYTKB",
+      "range": {
+        "range": "J679:K831",
+        "sheet_id": 634031060
+      }
+    },
+    {
+      "name": "zsupermetrics_sfKaUd3HPgbsZtAQyvryzXW7GGrEqJ",
+      "range": {
+        "range": "D679:E831",
+        "sheet_id": 634031060
+      }
+    },
+    {
+      "name": "zsupermetrics_refreshAll",
+      "range": {
+        "range": "H5:H5",
+        "sheet_id": 1691653687
+      }
+    }
+  ],
+  "protected_ranges": [
+    {
+      "protected_range_id": 884469417,
+      "range": {
+        "range": "A1:A1",
+        "sheet_id": 773372857
+      },
+      "warning_only": false
+    },
+    {
+      "protected_range_id": 1641688758,
+      "range": {
+        "range": "A1:A1",
+        "sheet_id": 1634857792
+      },
+      "warning_only": false
+    },
+    {
+      "protected_range_id": 779872433,
+      "range": {
+        "range": "A1:A1",
+        "sheet_id": 481453757
+      },
+      "warning_only": false
+    },
+    {
+      "protected_range_id": 509805566,
+      "range": {
+        "range": "A1:A1",
+        "sheet_id": 1215418668
+      },
+      "warning_only": false
+    }
+  ],
+  "schema_version": "1.0",
+  "snapshot_id": "snapshot-50a947e1-94f4-4438-9ffb-8c6f6a259a62",
+  "spreadsheet_id": "1G07-jmsFWiWYtB5E08puFHlBVuyBf488Ae12BkEmsbs",
+  "tabs": [
+    {
+      "column_count": 48,
+      "hidden": false,
+      "index": 0,
+      "row_count": 1212,
+      "sheet_id": 0,
+      "title": "MLL_Overview(카테고리)"
+    },
+    {
+      "column_count": 47,
+      "hidden": false,
+      "index": 1,
+      "row_count": 872,
+      "sheet_id": 562691839,
+      "title": "MLL_Overview(신규/롱테일)"
+    },
+    {
+      "column_count": 26,
+      "hidden": true,
+      "index": 2,
+      "row_count": 1000,
+      "sheet_id": 1606788312,
+      "title": "MLL_Overview(월간)"
+    },
+    {
+      "column_count": 21,
+      "hidden": true,
+      "index": 3,
+      "row_count": 111,
+      "sheet_id": 1588884344,
+      "title": "Weekly-초안"
+    },
+    {
+      "column_count": 16,
+      "hidden": true,
+      "index": 4,
+      "row_count": 500,
+      "sheet_id": 1731365130,
+      "title": "Weekly ver.1"
+    },
+    {
+      "column_count": 22,
+      "hidden": false,
+      "index": 5,
+      "row_count": 60,
+      "sheet_id": 1026513398,
+      "title": "회고 ver.1"
+    },
+    {
+      "column_count": 25,
+      "hidden": false,
+      "index": 6,
+      "row_count": 1210,
+      "sheet_id": 928161126,
+      "title": "MLL_데이터확인(특정상품/롱테일)"
+    },
+    {
+      "column_count": 26,
+      "hidden": false,
+      "index": 7,
+      "row_count": 1210,
+      "sheet_id": 1087326342,
+      "title": "MLL_데이터확인(특정상품/신규)"
+    },
+    {
+      "column_count": 1067,
+      "hidden": false,
+      "index": 8,
+      "row_count": 1000,
+      "sheet_id": 773372857,
+      "title": "[DB]RAW_결제액-필터금지"
+    },
+    {
+      "column_count": 1067,
+      "hidden": false,
+      "index": 9,
+      "row_count": 1000,
+      "sheet_id": 1634857792,
+      "title": "[DB]RAW_순매출-필터금지"
+    },
+    {
+      "column_count": 1067,
+      "hidden": false,
+      "index": 10,
+      "row_count": 1000,
+      "sheet_id": 481453757,
+      "title": "[DB]RAW_결제수-필터금지"
+    },
+    {
+      "column_count": 1064,
+      "hidden": true,
+      "index": 11,
+      "row_count": 501,
+      "sheet_id": 1957890194,
+      "title": "[DB]RAW_순구매수-필터금지"
+    },
+    {
+      "column_count": 1067,
+      "hidden": false,
+      "index": 12,
+      "row_count": 1000,
+      "sheet_id": 1215418668,
+      "title": "[DB]RAW_광고비-필터금지"
+    },
+    {
+      "column_count": 3,
+      "hidden": false,
+      "index": 13,
+      "row_count": 1037,
+      "sheet_id": 1304452951,
+      "title": "[DB]RAW_회원가입수"
+    },
+    {
+      "column_count": 12,
+      "hidden": false,
+      "index": 14,
+      "row_count": 1005,
+      "sheet_id": 634031060,
+      "title": "[DB]RAW_GA4"
+    },
+    {
+      "column_count": 12,
+      "hidden": false,
+      "index": 15,
+      "row_count": 1000,
+      "sheet_id": 2135222289,
+      "title": "[DB]RAW_맵핑"
+    },
+    {
+      "column_count": 52,
+      "hidden": false,
+      "index": 16,
+      "row_count": 40,
+      "sheet_id": 1691653687,
+      "title": "SupermetricsQueries"
+    },
+    {
+      "column_count": 9,
+      "hidden": false,
+      "index": 17,
+      "row_count": 506,
+      "sheet_id": 325906342,
+      "title": "[DB]데이터정리_정산용_상품별광고비 ver1"
+    },
+    {
+      "column_count": 10,
+      "hidden": false,
+      "index": 18,
+      "row_count": 386,
+      "sheet_id": 1637312945,
+      "title": "[DB]데이터정리_정산용_상품별광고비 ver2"
+    }
+  ],
+  "telemetry": {
+    "client_elapsed_ms": 2228,
+    "elapsed_ms": 578,
+    "request_count": 1,
+    "retry_count": 0,
+    "timeout_budget": {
+      "poll_seconds": 120,
+      "read_seconds": 60,
+      "write_seconds": 60
+    }
+  },
+  "time_zone": "Asia/Seoul",
+  "title": "[취미/부업 본부 - 교육콘텐츠그룹] 마이라이트 Dashboard_2026"
+}

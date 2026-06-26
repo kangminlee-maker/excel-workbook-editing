@@ -1,0 +1,571 @@
+{
+  "id": 2,
+  "jsonrpc": "2.0",
+  "result": {
+    "tools": [
+      {
+        "annotations": {
+          "idempotentHint": true,
+          "readOnlyHint": true
+        },
+        "description": "Check whether Sheets Bridge has local Google OAuth credentials configured.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {},
+          "type": "object"
+        },
+        "name": "sheets_bridge_auth_status"
+      },
+      {
+        "annotations": {
+          "idempotentHint": true,
+          "readOnlyHint": false
+        },
+        "description": "Store the local Google OAuth desktop client id for Sheets Bridge.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "access": {
+              "default": "readonly",
+              "enum": [
+                "readonly",
+                "readwrite",
+                "copy",
+                "copy_full"
+              ],
+              "type": "string"
+            },
+            "client_id": {
+              "type": "string"
+            },
+            "client_secret": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "client_id"
+          ],
+          "type": "object"
+        },
+        "name": "sheets_bridge_configure_oauth"
+      },
+      {
+        "annotations": {
+          "idempotentHint": false,
+          "readOnlyHint": false
+        },
+        "description": "Open the Google OAuth consent flow and wait for the local callback.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {},
+          "type": "object"
+        },
+        "name": "sheets_bridge_start_oauth_login"
+      },
+      {
+        "annotations": {
+          "idempotentHint": false,
+          "readOnlyHint": false
+        },
+        "description": "Delete the local Sheets Bridge OAuth token cache.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {},
+          "type": "object"
+        },
+        "name": "sheets_bridge_logout"
+      },
+      {
+        "annotations": {
+          "idempotentHint": true,
+          "readOnlyHint": true
+        },
+        "description": "Read the current Google Sheets URL, gid, and selected range from Chrome remote debugging.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "chrome_debug_url": {
+              "default": "http://127.0.0.1:9222",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "name": "sheets_bridge_current_chrome_sheet"
+      },
+      {
+        "annotations": {
+          "idempotentHint": false,
+          "readOnlyHint": true
+        },
+        "description": "Inspect a Google Sheet through local user OAuth and write a sanitized review package.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "chrome_debug_url": {
+              "default": "http://127.0.0.1:9222",
+              "type": "string"
+            },
+            "field_mask": {
+              "default": "grid_basic_v1",
+              "enum": [
+                "grid_basic_v1",
+                "grid_formula_v1"
+              ],
+              "type": "string"
+            },
+            "from_chrome": {
+              "default": false,
+              "type": "boolean"
+            },
+            "gid": {
+              "type": "string"
+            },
+            "operation": {
+              "default": "inspect.metadata",
+              "enum": [
+                "inspect.metadata",
+                "inspect.values_window",
+                "inspect.formula_window",
+                "inspect.grid_window"
+              ],
+              "type": "string"
+            },
+            "package_root": {
+              "type": "string"
+            },
+            "ranges": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "spreadsheet_id": {
+              "type": "string"
+            },
+            "spreadsheet_url": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "name": "sheets_bridge_inspect"
+      },
+      {
+        "annotations": {
+          "idempotentHint": false,
+          "readOnlyHint": false
+        },
+        "description": "Apply a bounded USER_ENTERED values/formulas update with a before snapshot and rollback package.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "gid": {
+              "type": "string"
+            },
+            "package_root": {
+              "type": "string"
+            },
+            "rollback_required": {
+              "type": "boolean"
+            },
+            "spreadsheet_id": {
+              "type": "string"
+            },
+            "spreadsheet_url": {
+              "type": "string"
+            },
+            "write_requests": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "range": {
+                    "type": "string"
+                  },
+                  "values": {
+                    "items": {
+                      "type": "array"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "range",
+                  "values"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "write_requests",
+            "rollback_required"
+          ],
+          "type": "object"
+        },
+        "name": "sheets_bridge_apply_values_update"
+      },
+      {
+        "annotations": {
+          "idempotentHint": false,
+          "readOnlyHint": false
+        },
+        "description": "Restore values/formulas from a rollback object generated by Sheets Bridge.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "gid": {
+              "type": "string"
+            },
+            "package_root": {
+              "type": "string"
+            },
+            "rollback": {
+              "type": "object"
+            },
+            "spreadsheet_id": {
+              "type": "string"
+            },
+            "spreadsheet_url": {
+              "type": "string"
+            },
+            "write_requests": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "range": {
+                    "type": "string"
+                  },
+                  "values": {
+                    "items": {
+                      "type": "array"
+                    },
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "range",
+                  "values"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "name": "sheets_bridge_rollback_values_restore"
+      },
+      {
+        "annotations": {
+          "idempotentHint": false,
+          "readOnlyHint": true
+        },
+        "description": "Build a sanitized HTML/SVG package that visualizes table input/output flow for a bounded Google Sheets range.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "chrome_debug_url": {
+              "default": "http://127.0.0.1:9222",
+              "type": "string"
+            },
+            "from_chrome": {
+              "default": false,
+              "type": "boolean"
+            },
+            "gid": {
+              "type": "string"
+            },
+            "max_columns": {
+              "default": 80,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "max_rows": {
+              "default": 300,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "package_root": {
+              "type": "string"
+            },
+            "pattern": {
+              "default": "auto",
+              "enum": [
+                "auto",
+                "monthly_product_performance_v1"
+              ],
+              "type": "string"
+            },
+            "spreadsheet_id": {
+              "type": "string"
+            },
+            "spreadsheet_url": {
+              "type": "string"
+            },
+            "target_range": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "name": "sheets_bridge_visualize_table_io"
+      },
+      {
+        "annotations": {
+          "idempotentHint": false,
+          "readOnlyHint": false
+        },
+        "description": "Create a new minimal-formula projection sheet for the supported monthly product performance pattern and validate it against the original output table.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "chrome_debug_url": {
+              "default": "http://127.0.0.1:9222",
+              "type": "string"
+            },
+            "dry_run": {
+              "default": false,
+              "type": "boolean"
+            },
+            "from_chrome": {
+              "default": false,
+              "type": "boolean"
+            },
+            "gid": {
+              "type": "string"
+            },
+            "output_sheet_title": {
+              "type": "string"
+            },
+            "package_root": {
+              "type": "string"
+            },
+            "source_ad_sheet_title": {
+              "type": "string"
+            },
+            "source_output_sheet_title": {
+              "type": "string"
+            },
+            "source_sku_sheet_title": {
+              "type": "string"
+            },
+            "spreadsheet_id": {
+              "type": "string"
+            },
+            "spreadsheet_url": {
+              "type": "string"
+            },
+            "validation_attempts": {
+              "default": 6,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "validation_range": {
+              "default": "A5:AQ129",
+              "type": "string"
+            },
+            "validation_sleep_seconds": {
+              "default": 2.0,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "name": "sheets_bridge_refactor_minimal_formula_sheet"
+      },
+      {
+        "_meta": {
+          "ui": {
+            "resourceUri": "ui://sheets-bridge/table-builder",
+            "visibility": [
+              "model",
+              "app"
+            ]
+          },
+          "ui/resourceUri": "ui://sheets-bridge/table-builder"
+        },
+        "annotations": {
+          "idempotentHint": false,
+          "readOnlyHint": true
+        },
+        "description": "Create an interactive browser UI for sketching the desired output table and writing the LLM request prompt from a Google Sheet or Excel workbook preview. Desktop Google Sheets source reads use the MCP-managed local OAuth token cache.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "chrome_debug_url": {
+              "default": "http://127.0.0.1:9222",
+              "type": "string"
+            },
+            "from_chrome": {
+              "default": false,
+              "type": "boolean"
+            },
+            "gid": {
+              "type": "string"
+            },
+            "max_columns": {
+              "default": 30,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "max_rows": {
+              "default": 200,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "package_root": {
+              "type": "string"
+            },
+            "sheet_name": {
+              "type": "string"
+            },
+            "source_preview": {
+              "description": "Sanitized source preview supplied by a remote host. When present, the server does not read local OAuth, Chrome, or workbook files.",
+              "type": "object"
+            },
+            "source_range": {
+              "type": "string"
+            },
+            "spreadsheet_id": {
+              "type": "string"
+            },
+            "spreadsheet_url": {
+              "type": "string"
+            },
+            "workbook_path": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "name": "spreadsheet_table_builder_ui"
+      },
+      {
+        "_meta": {
+          "ui": {
+            "resourceUri": "ui://sheets-bridge/table-builder",
+            "visibility": [
+              "app"
+            ]
+          },
+          "ui/resourceUri": "ui://sheets-bridge/table-builder"
+        },
+        "annotations": {
+          "idempotentHint": false,
+          "readOnlyHint": false
+        },
+        "description": "Save a TableBuildIntent submitted from the interactive table-builder UI.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "intent": {
+              "type": "object"
+            },
+            "package_root": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "intent"
+          ],
+          "type": "object"
+        },
+        "name": "spreadsheet_table_builder_save_intent"
+      },
+      {
+        "annotations": {
+          "idempotentHint": false,
+          "readOnlyHint": false
+        },
+        "description": "Create a new auditable formula-only table from a table-builder spec JSON object or spec file path for Google Sheets or Excel workbooks.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "dry_run": {
+              "default": false,
+              "type": "boolean"
+            },
+            "package_root": {
+              "type": "string"
+            },
+            "spec": {
+              "type": "object"
+            },
+            "spec_path": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "name": "spreadsheet_create_formula_table_from_spec"
+      },
+      {
+        "annotations": {
+          "idempotentHint": false,
+          "readOnlyHint": false
+        },
+        "description": "Execute a rollback instruction for a spreadsheet table-builder created sheet, spreadsheet copy, workbook copy, or Excel worksheet.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "dry_run": {
+              "default": false,
+              "type": "boolean"
+            },
+            "rollback": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "rollback"
+          ],
+          "type": "object"
+        },
+        "name": "spreadsheet_rollback_created_artifact"
+      },
+      {
+        "annotations": {
+          "idempotentHint": false,
+          "readOnlyHint": true
+        },
+        "description": "Run static workbook formula-error checks and optionally sample cells through the real Microsoft Excel engine.",
+        "inputSchema": {
+          "additionalProperties": false,
+          "properties": {
+            "cells": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "run_excel_engine": {
+              "default": true,
+              "type": "boolean"
+            },
+            "timeout_seconds": {
+              "default": 180,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "workbook_path": {
+              "type": "string"
+            },
+            "worksheet": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "workbook_path",
+            "worksheet",
+            "cells"
+          ],
+          "type": "object"
+        },
+        "name": "spreadsheet_validate_excel_formula_results"
+      }
+    ]
+  }
+}

@@ -76,7 +76,7 @@
       "additionalProperties": false,
       "properties": {
         "name": { "const": "connected_sheets_blocker_resolution_update" },
-        "authority": { "const": "user_feedback_plus_broker_smoke_evidence" },
+        "authority": { "const": "user_feedback_plus_source_evidence_smoke" },
         "decision_policy": { "type": "string", "minLength": 1 }
       }
     },

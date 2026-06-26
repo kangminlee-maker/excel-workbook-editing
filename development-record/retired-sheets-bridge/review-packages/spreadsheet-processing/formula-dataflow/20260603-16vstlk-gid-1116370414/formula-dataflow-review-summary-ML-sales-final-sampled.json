@@ -1,0 +1,1934 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-04T19:43:03.532414+09:00",
+  "stage": "formula_dataflow_review_summary",
+  "coverage_status": "sampled_partial",
+  "coverage_note": "Includes captured windows only; the 1,848-column sheet still needs additional full-height chunks for complete inventory.",
+  "metrics": {
+    "formula_cell_count": 38029,
+    "reference_edge_count": 174562,
+    "pattern_group_count": 26412,
+    "region_family_count": 152,
+    "pipeline_candidate_count": 8,
+    "automation_tool_finding_count": 3,
+    "detected_automation_tool_count": 1,
+    "region_family_gate_count": 152,
+    "pipeline_gate_count": 8,
+    "sampled_window_count": 7
+  },
+  "top_functions": [
+    {
+      "function": "SUMIFS",
+      "count": 27749
+    },
+    {
+      "function": "SUM",
+      "count": 9644
+    },
+    {
+      "function": "TEXT",
+      "count": 40
+    }
+  ],
+  "top_referenced_sheets": [
+    {
+      "sheet": "[DB] raw_매출(26년)",
+      "count": 108318
+    },
+    {
+      "sheet": "[ML] 매출_최종",
+      "count": 65500
+    },
+    {
+      "sheet": "[DB] raw_매출(26년)누적",
+      "count": 744
+    }
+  ],
+  "reference_shape_counts": {
+    "column_range": 110310,
+    "cell_range": 9534,
+    "cell": 54718
+  },
+  "formula_classification_counts": {
+    "sumifs": 27749
+  },
+  "top_pattern_groups": [
+    {
+      "pattern_group_id": "pg_5cfa0ae68854",
+      "formula_count": 5018,
+      "output_bbox": {
+        "start_cell": "C28",
+        "end_cell": "BSB444",
+        "rows": 417,
+        "columns": 1846
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 5018
+        }
+      ],
+      "sample_formula": "=SUM(H21:H27)",
+      "normalized_signature": "=SUM(R[-7]C[0]:R[-1]C[0])"
+    },
+    {
+      "pattern_group_id": "pg_6b0a1834707d",
+      "formula_count": 1260,
+      "output_bbox": {
+        "start_cell": "PA127",
+        "end_cell": "BHR443",
+        "rows": 317,
+        "columns": 1162
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 1260
+        }
+      ],
+      "sample_formula": "=SUM(PB127:PD127)",
+      "normalized_signature": "=SUM(R[0]C[1]:R[0]C[3])"
+    },
+    {
+      "pattern_group_id": "pg_53a2e9881d3c",
+      "formula_count": 574,
+      "output_bbox": {
+        "start_cell": "H21",
+        "end_cell": "AQX443",
+        "rows": 423,
+        "columns": 1135
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 574
+        }
+      ],
+      "sample_formula": "=SUM(I21:J21)",
+      "normalized_signature": "=SUM(R[0]C[1]:R[0]C[2])"
+    },
+    {
+      "pattern_group_id": "pg_abd013956d7d",
+      "formula_count": 318,
+      "output_bbox": {
+        "start_cell": "G127",
+        "end_cell": "G444",
+        "rows": 318,
+        "columns": 1
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 318
+        }
+      ],
+      "sample_formula": "=sum(YT127:BSB127)/2",
+      "normalized_signature": "=sum(R[0]C[663]:R[0]C[1841])/2"
+    },
+    {
+      "pattern_group_id": "pg_dbc6b6f329c1",
+      "formula_count": 318,
+      "output_bbox": {
+        "start_cell": "F127",
+        "end_cell": "F444",
+        "rows": 318,
+        "columns": 1
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 318
+        }
+      ],
+      "sample_formula": "=sum(K127:YS127)/2",
+      "normalized_signature": "=sum(R[0]C[5]:R[0]C[663])/2"
+    },
+    {
+      "pattern_group_id": "pg_dc92d5d507a4",
+      "formula_count": 318,
+      "output_bbox": {
+        "start_cell": "E127",
+        "end_cell": "E444",
+        "rows": 318,
+        "columns": 1
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 636
+        }
+      ],
+      "sample_formula": "=C127-D127",
+      "normalized_signature": "=R[0]C[-2]-R[0]C[-1]"
+    },
+    {
+      "pattern_group_id": "pg_109cd46f5412",
+      "formula_count": 278,
+      "output_bbox": {
+        "start_cell": "J127",
+        "end_cell": "J443",
+        "rows": 317,
+        "columns": 1
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1112
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 278
+        }
+      ],
+      "sample_formula": "=sumIfs('[DB] raw_매출(26년)'!$J:$J,'[DB] raw_매출(26년)'!$B:$B,A127,'[DB] raw_매출(26년)'!$J:$J,\"<\"&0,'[DB] raw_매출(26년)'!$F:$F,\"더가벼운학습지\")",
+      "normalized_signature": "=sumIfs([DB] raw_매출(26년)!J:J,[DB] raw_매출(26년)!B:B,R[0]C[-9],[DB] raw_매출(26년)!J:J,\"\"&0,[DB] raw_매출(26년)!F:F,\"\")"
+    },
+    {
+      "pattern_group_id": "pg_c242b1d4e022",
+      "formula_count": 278,
+      "output_bbox": {
+        "start_cell": "K127",
+        "end_cell": "K443",
+        "rows": 317,
+        "columns": 1
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 278
+        }
+      ],
+      "sample_formula": "=sum(L127:BY127)",
+      "normalized_signature": "=sum(R[0]C[1]:R[0]C[66])"
+    },
+    {
+      "pattern_group_id": "pg_c32a814282d1",
+      "formula_count": 278,
+      "output_bbox": {
+        "start_cell": "A127",
+        "end_cell": "A443",
+        "rows": 317,
+        "columns": 1
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 278
+        }
+      ],
+      "sample_formula": "=A119+7",
+      "normalized_signature": "=R[-8]C[0]+7"
+    },
+    {
+      "pattern_group_id": "pg_fdc8b1f30ab4",
+      "formula_count": 278,
+      "output_bbox": {
+        "start_cell": "I127",
+        "end_cell": "I443",
+        "rows": 317,
+        "columns": 1
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1112
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 278
+        }
+      ],
+      "sample_formula": "=sumIfs('[DB] raw_매출(26년)'!$J:$J,'[DB] raw_매출(26년)'!$B:$B,A127,'[DB] raw_매출(26년)'!$J:$J,\"<\"&0,'[DB] raw_매출(26년)'!$F:$F,\"가벼운학습지\")",
+      "normalized_signature": "=sumIfs([DB] raw_매출(26년)!J:J,[DB] raw_매출(26년)!B:B,R[0]C[-8],[DB] raw_매출(26년)!J:J,\"\"&0,[DB] raw_매출(26년)!F:F,\"\")"
+    },
+    {
+      "pattern_group_id": "pg_783c7c727423",
+      "formula_count": 270,
+      "output_bbox": {
+        "start_cell": "C127",
+        "end_cell": "C443",
+        "rows": 317,
+        "columns": 1
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 810
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 270
+        }
+      ],
+      "sample_formula": "=sumIfs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,A127,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+      "normalized_signature": "=sumIfs([DB] raw_매출(26년)!U:U,[DB] raw_매출(26년)!B:B,R[0]C[-2],[DB] raw_매출(26년)!U:U,\"\"&0)"
+    },
+    {
+      "pattern_group_id": "pg_a853afe1cd03",
+      "formula_count": 270,
+      "output_bbox": {
+        "start_cell": "D127",
+        "end_cell": "D443",
+        "rows": 317,
+        "columns": 1
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 270
+        }
+      ],
+      "sample_formula": "=sum(F127:G127)",
+      "normalized_signature": "=sum(R[0]C[2]:R[0]C[3])"
+    },
+    {
+      "pattern_group_id": "pg_7dd13c7fe011",
+      "formula_count": 240,
+      "output_bbox": {
+        "start_cell": "GO127",
+        "end_cell": "AQQ443",
+        "rows": 317,
+        "columns": 939
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 240
+        }
+      ],
+      "sample_formula": "=sum(GP127:GR127)",
+      "normalized_signature": "=sum(R[0]C[1]:R[0]C[3])"
+    },
+    {
+      "pattern_group_id": "pg_b59da7e30673",
+      "formula_count": 216,
+      "output_bbox": {
+        "start_cell": "RG127",
+        "end_cell": "BEM443",
+        "rows": 317,
+        "columns": 1021
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 216
+        }
+      ],
+      "sample_formula": "=SUM(RH127:RK127)",
+      "normalized_signature": "=SUM(R[0]C[1]:R[0]C[4])"
+    },
+    {
+      "pattern_group_id": "pg_0ad18c029d21",
+      "formula_count": 192,
+      "output_bbox": {
+        "start_cell": "QE127",
+        "end_cell": "BRV443",
+        "rows": 317,
+        "columns": 1396
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 192
+        }
+      ],
+      "sample_formula": "=SUM(QF127:QJ127)",
+      "normalized_signature": "=SUM(R[0]C[1]:R[0]C[5])"
+    },
+    {
+      "pattern_group_id": "pg_9c7934c8ce8e",
+      "formula_count": 93,
+      "output_bbox": {
+        "start_cell": "J21",
+        "end_cell": "J126",
+        "rows": 106,
+        "columns": 1
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)누적",
+          "count": 372
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 93
+        }
+      ],
+      "sample_formula": "=sumIfs('[DB] raw_매출(26년)누적'!$J:$J,'[DB] raw_매출(26년)누적'!$B:$B,A21,'[DB] raw_매출(26년)누적'!$J:$J,\"<\"&0,'[DB] raw_매출(26년)누적'!$F:$F,\"더가벼운학습지\")",
+      "normalized_signature": "=sumIfs([DB] raw_매출(26년)누적!J:J,[DB] raw_매출(26년)누적!B:B,R[0]C[-9],[DB] raw_매출(26년)누적!J:J,\"\"&0,[DB] raw_매출(26년)누적!F:F,\"\")"
+    },
+    {
+      "pattern_group_id": "pg_ca9960c563fb",
+      "formula_count": 93,
+      "output_bbox": {
+        "start_cell": "I21",
+        "end_cell": "I126",
+        "rows": 106,
+        "columns": 1
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)누적",
+          "count": 372
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 93
+        }
+      ],
+      "sample_formula": "=sumIfs('[DB] raw_매출(26년)누적'!$J:$J,'[DB] raw_매출(26년)누적'!$B:$B,A21,'[DB] raw_매출(26년)누적'!$J:$J,\"<\"&0,'[DB] raw_매출(26년)누적'!$F:$F,\"가벼운학습지\")",
+      "normalized_signature": "=sumIfs([DB] raw_매출(26년)누적!J:J,[DB] raw_매출(26년)누적!B:B,R[0]C[-8],[DB] raw_매출(26년)누적!J:J,\"\"&0,[DB] raw_매출(26년)누적!F:F,\"\")"
+    },
+    {
+      "pattern_group_id": "pg_26dc32af7ee0",
+      "formula_count": 84,
+      "output_bbox": {
+        "start_cell": "HI127",
+        "end_cell": "AKK443",
+        "rows": 317,
+        "columns": 757
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 84
+        }
+      ],
+      "sample_formula": "=SUM(HJ127:HP127)",
+      "normalized_signature": "=SUM(R[0]C[1]:R[0]C[7])"
+    },
+    {
+      "pattern_group_id": "pg_3a1eece85286",
+      "formula_count": 84,
+      "output_bbox": {
+        "start_cell": "HA120",
+        "end_cell": "AJT443",
+        "rows": 324,
+        "columns": 748
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 84
+        }
+      ],
+      "sample_formula": "=SUM(SF120)",
+      "normalized_signature": "=SUM(R[0]C[1])"
+    },
+    {
+      "pattern_group_id": "pg_91362893ad28",
+      "formula_count": 84,
+      "output_bbox": {
+        "start_cell": "QO127",
+        "end_cell": "APN443",
+        "rows": 317,
+        "columns": 650
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 84
+        }
+      ],
+      "sample_formula": "=sum(QP127:QS127)",
+      "normalized_signature": "=sum(R[0]C[1]:R[0]C[4])"
+    }
+  ],
+  "top_region_families": [
+    {
+      "region_family_id": "rf_07a79272925a",
+      "formula_count": 8808,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_A_AN",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "C127",
+        "end_cell": "AN443",
+        "rows": 317,
+        "columns": 38
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 34962
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 16790
+        }
+      ],
+      "sample_formulas": [
+        "=sumIfs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,A127,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumIfs('[DB] raw_매출(26년)'!$J:$J,'[DB] raw_매출(26년)'!$B:$B,A127,'[DB] raw_매출(26년)'!$J:$J,\"<\"&0,'[DB] raw_매출(26년)'!$F:$F,\"가벼운학습지\")",
+        "=sumIfs('[DB] raw_매출(26년)'!$J:$J,'[DB] raw_매출(26년)'!$B:$B,A127,'[DB] raw_매출(26년)'!$J:$J,\"<\"&0,'[DB] raw_매출(26년)'!$F:$F,\"더가벼운학습지\")"
+      ]
+    },
+    {
+      "region_family_id": "rf_66b710c8e0c0",
+      "formula_count": 1468,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_A_AN",
+      "formula_kind": "same_sheet_horizontal_sum",
+      "primary_function": "SUM",
+      "output_bbox": {
+        "start_cell": "D120",
+        "end_cell": "K444",
+        "rows": 325,
+        "columns": 8
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 1468
+        }
+      ],
+      "sample_formulas": [
+        "=SUM(I120:J120)",
+        "=SUM(I121:J121)",
+        "=SUM(I122:J122)"
+      ]
+    },
+    {
+      "region_family_id": "rf_72856d884656",
+      "formula_count": 1389,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_A_AN",
+      "formula_kind": "same_sheet_vertical_sum",
+      "primary_function": "SUM",
+      "output_bbox": {
+        "start_cell": "C124",
+        "end_cell": "AN444",
+        "rows": 321,
+        "columns": 38
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 1389
+        }
+      ],
+      "sample_formulas": [
+        "=SUM(H117:H123)",
+        "=SUM(I117:I123)",
+        "=SUM(J117:J123)"
+      ]
+    },
+    {
+      "region_family_id": "rf_0deab84bb5eb",
+      "formula_count": 596,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_A_AN",
+      "formula_kind": "same_sheet_arithmetic_or_formula",
+      "primary_function": "NO_FUNCTION",
+      "output_bbox": {
+        "start_cell": "A127",
+        "end_cell": "E444",
+        "rows": 318,
+        "columns": 5
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 914
+        }
+      ],
+      "sample_formulas": [
+        "=A119+7",
+        "=C127-D127",
+        "=A120+7"
+      ]
+    },
+    {
+      "region_family_id": "rf_16172b6cc794",
+      "formula_count": 468,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_BKC_BLP",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "BKC127",
+        "end_cell": "BLP443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1872
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 936
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BKC$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BKD$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BKE$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_36b5a8cdf2b2",
+      "formula_count": 468,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_DQ_FD",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "DQ127",
+        "end_cell": "FD443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1872
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 936
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,DQ$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,DR$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,DS$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_6a0971b11ce6",
+      "formula_count": 468,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_CC_DP",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "CC127",
+        "end_cell": "DP443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1872
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 936
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,CC$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,CD$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,CE$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_b9b7b7b2b963",
+      "formula_count": 468,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_BNE_BOR",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "BNE127",
+        "end_cell": "BOR443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1872
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 936
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BNE$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BNF$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BNG$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_f4c00245384c",
+      "formula_count": 468,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_BLQ_BND",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "BLQ127",
+        "end_cell": "BND443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1872
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 936
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BLQ$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BLR$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BLS$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_68e7ef74ae9c",
+      "formula_count": 467,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_AO_CB",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "AO127",
+        "end_cell": "CB443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1868
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 934
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,AO$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,AP$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,AQ$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_9792e02953a5",
+      "formula_count": 456,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_BOS_BQF",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "BOS127",
+        "end_cell": "BQF443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1824
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 912
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BOS$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BOT$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BOU$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_dfb22920fda0",
+      "formula_count": 452,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_BIO_BKB",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "BIO127",
+        "end_cell": "BKB443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1808
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 904
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BIO$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BIP$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BIQ$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_59fbce843e49",
+      "formula_count": 450,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_JU_LH",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "JU120",
+        "end_cell": "LH443",
+        "rows": 324,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1800
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 900
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A120,'[DB] raw_매출(26년)'!$T:$T,KT$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A121,'[DB] raw_매출(26년)'!$T:$T,KT$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A122,'[DB] raw_매출(26년)'!$T:$T,KT$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_f01df78e6661",
+      "formula_count": 448,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_FE_GR",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "FE127",
+        "end_cell": "GR443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1792
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 896
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,FE$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,FF$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,FG$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_98bf2661d427",
+      "formula_count": 444,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_IG_JT",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "IG127",
+        "end_cell": "JT443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1776
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 888
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,IG$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,IH$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,II$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_9c2dfe4fd68d",
+      "formula_count": 432,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_MW_OJ",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "MW127",
+        "end_cell": "OJ443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1728
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 864
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,MW$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,MY$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,MZ$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_cab760ca0415",
+      "formula_count": 430,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_UO_WB",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "UO127",
+        "end_cell": "WB443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1720
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 860
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,UO$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,UP$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,UQ$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_72df0786ecf8",
+      "formula_count": 429,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_WC_XP",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "WC240",
+        "end_cell": "XP443",
+        "rows": 204,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1716
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 858
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A240,'[DB] raw_매출(26년)'!$T:$T,WC$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A240,'[DB] raw_매출(26년)'!$T:$T,WE$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A240,'[DB] raw_매출(26년)'!$T:$T,WF$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_66757b3c1be4",
+      "formula_count": 420,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_AGW_AIJ",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "AGW127",
+        "end_cell": "AIJ443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1680
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 840
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,AGW$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,AGY$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,AGZ$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_6a79c7ffa4b2",
+      "formula_count": 420,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_ADU_AFH",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "ADU127",
+        "end_cell": "AFH443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1680
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 840
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,ADU$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,ADV$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,ADW$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_8abc3abe24db",
+      "formula_count": 420,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_ZE_AAR",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "ZE127",
+        "end_cell": "AAR443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1680
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 840
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,ZE$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,ZF$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,ZG$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_a33d013848c7",
+      "formula_count": 420,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_BQG_BRT",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "BQG127",
+        "end_cell": "BRT443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1680
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 840
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BQG$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BQH$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BQI$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_ed7af01c810b",
+      "formula_count": 420,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_TA_UN",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "TA127",
+        "end_cell": "UN443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1680
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 840
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,TA$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,TB$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,TC$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_473e245d832c",
+      "formula_count": 419,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_AAS_ACF",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "AAS127",
+        "end_cell": "ACF443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1676
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 838
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,AAS$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,AAT$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,AAU$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_e361ed3f4a05",
+      "formula_count": 416,
+      "row_band": "summary_rows_1_20",
+      "column_block": "cols_A_AN",
+      "formula_kind": "same_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "C9",
+        "end_cell": "AN20",
+        "rows": 12,
+        "columns": 38
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 1248
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs(C:C,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")",
+        "=sumifs(D:D,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")",
+        "=sumifs(E:E,$A:$A,\">=2026-01-01\",$A:$A,\"<=2026-01-31\")"
+      ]
+    },
+    {
+      "region_family_id": "rf_959ec7249cfa",
+      "formula_count": 408,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_ACG_ADT",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "ACG127",
+        "end_cell": "ADT443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1632
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 816
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,ACG$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,ACH$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,ACI$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_5564b889d329",
+      "formula_count": 405,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_XQ_ZD",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "XQ127",
+        "end_cell": "ZD443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1620
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 810
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,YU$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,YV$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,YW$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_244bab445013",
+      "formula_count": 396,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_AOO_AQB",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "AOO127",
+        "end_cell": "AQA443",
+        "rows": 317,
+        "columns": 39
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1584
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 792
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,AOO$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,AOP$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,AOQ$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_364744d838c4",
+      "formula_count": 396,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_BHA_BIN",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "BHA127",
+        "end_cell": "BIN443",
+        "rows": 317,
+        "columns": 40
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1584
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 792
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BHA$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BHC$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,BHD$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    },
+    {
+      "region_family_id": "rf_c2db7106ef5b",
+      "formula_count": 396,
+      "row_band": "detail_rows_120_453",
+      "column_block": "cols_GS_IF",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_function": "SUMIFS",
+      "output_bbox": {
+        "start_cell": "GT127",
+        "end_cell": "IF443",
+        "rows": 317,
+        "columns": 39
+      },
+      "referenced_sheets": [
+        {
+          "sheet": "[DB] raw_매출(26년)",
+          "count": 1584
+        },
+        {
+          "sheet": "[ML] 매출_최종",
+          "count": 792
+        }
+      ],
+      "sample_formulas": [
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,GT$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,GU$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)",
+        "=sumifs('[DB] raw_매출(26년)'!$U:$U,'[DB] raw_매출(26년)'!$B:$B,$A127,'[DB] raw_매출(26년)'!$T:$T,GV$7,'[DB] raw_매출(26년)'!$U:$U,\">\"&0)"
+      ]
+    }
+  ],
+  "top_pipeline_candidates": [
+    {
+      "pipeline_candidate_id": "pipe_d17f91644a45",
+      "source": {
+        "sheet": "[DB] raw_매출(26년)",
+        "kind": "source_sheet"
+      },
+      "target_kind": "formula_region_family",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_functions": [
+        {
+          "function": "SUMIFS",
+          "count": 27147
+        }
+      ],
+      "family_count": 47,
+      "formula_count": 27147,
+      "region_family_ids": [
+        "rf_07a79272925a",
+        "rf_16172b6cc794",
+        "rf_36b5a8cdf2b2",
+        "rf_6a0971b11ce6",
+        "rf_b9b7b7b2b963",
+        "rf_f4c00245384c",
+        "rf_68e7ef74ae9c",
+        "rf_9792e02953a5",
+        "rf_dfb22920fda0",
+        "rf_59fbce843e49",
+        "rf_f01df78e6661",
+        "rf_98bf2661d427",
+        "rf_9c2dfe4fd68d",
+        "rf_cab760ca0415",
+        "rf_72df0786ecf8",
+        "rf_66757b3c1be4",
+        "rf_6a79c7ffa4b2",
+        "rf_8abc3abe24db",
+        "rf_a33d013848c7",
+        "rf_ed7af01c810b",
+        "rf_473e245d832c",
+        "rf_959ec7249cfa",
+        "rf_5564b889d329",
+        "rf_244bab445013",
+        "rf_364744d838c4",
+        "rf_c2db7106ef5b",
+        "rf_2f9c6721513e",
+        "rf_4430fbc19d0c",
+        "rf_836b7e3ac183",
+        "rf_e038b59d714b"
+      ],
+      "sample_output_bboxes": [
+        {
+          "start_cell": "C127",
+          "end_cell": "AN443",
+          "rows": 317,
+          "columns": 38
+        },
+        {
+          "start_cell": "BKC127",
+          "end_cell": "BLP443",
+          "rows": 317,
+          "columns": 40
+        },
+        {
+          "start_cell": "DQ127",
+          "end_cell": "FD443",
+          "rows": 317,
+          "columns": 40
+        },
+        {
+          "start_cell": "CC127",
+          "end_cell": "DP443",
+          "rows": 317,
+          "columns": 40
+        },
+        {
+          "start_cell": "BNE127",
+          "end_cell": "BOR443",
+          "rows": 317,
+          "columns": 40
+        },
+        {
+          "start_cell": "BLQ127",
+          "end_cell": "BND443",
+          "rows": 317,
+          "columns": 40
+        },
+        {
+          "start_cell": "AO127",
+          "end_cell": "CB443",
+          "rows": 317,
+          "columns": 40
+        },
+        {
+          "start_cell": "BOS127",
+          "end_cell": "BQF443",
+          "rows": 317,
+          "columns": 40
+        },
+        {
+          "start_cell": "BIO127",
+          "end_cell": "BKB443",
+          "rows": 317,
+          "columns": 40
+        },
+        {
+          "start_cell": "JU120",
+          "end_cell": "LH443",
+          "rows": 324,
+          "columns": 40
+        },
+        {
+          "start_cell": "FE127",
+          "end_cell": "GR443",
+          "rows": 317,
+          "columns": 40
+        },
+        {
+          "start_cell": "IG127",
+          "end_cell": "JT443",
+          "rows": 317,
+          "columns": 40
+        }
+      ],
+      "status": "candidate",
+      "authority": "formula_reference_sampled"
+    },
+    {
+      "pipeline_candidate_id": "pipe_25e75f902f8c",
+      "source": {
+        "sheet": "[ML] 매출_최종",
+        "kind": "same_sheet_formula_region"
+      },
+      "target_kind": "formula_region_family",
+      "formula_kind": "same_sheet_vertical_sum",
+      "primary_functions": [
+        {
+          "function": "SUM",
+          "count": 5018
+        }
+      ],
+      "family_count": 48,
+      "formula_count": 5018,
+      "region_family_ids": [
+        "rf_72856d884656",
+        "rf_a2977d73c147",
+        "rf_01474748b680",
+        "rf_071d675e38fa",
+        "rf_07baaa6e68d6",
+        "rf_10938e33861e",
+        "rf_1d5c3cec1b01",
+        "rf_2251a017ac18",
+        "rf_2302a4d4ced0",
+        "rf_23a87931d809",
+        "rf_2a39009e60fa",
+        "rf_3155ca347bc5",
+        "rf_36429863df09",
+        "rf_3bf756fd7775",
+        "rf_5143e2ebbd8f",
+        "rf_51fd46b9ab1a",
+        "rf_5527127d0dd1",
+        "rf_5745fca8a029",
+        "rf_5f11515e559c",
+        "rf_6a1e1cf779d4",
+        "rf_84882198c07a",
+        "rf_8a80870146c5",
+        "rf_9418b84db9b9",
+        "rf_9861481cd3c8",
+        "rf_9cab3b53e219",
+        "rf_9e67525c4e20",
+        "rf_9f85e81d6577",
+        "rf_a0b0c893c961",
+        "rf_a305b7b4acb0",
+        "rf_a402edadfb07"
+      ],
+      "sample_output_bboxes": [
+        {
+          "start_cell": "C124",
+          "end_cell": "AN444",
+          "rows": 321,
+          "columns": 38
+        },
+        {
+          "start_cell": "JU124",
+          "end_cell": "LH444",
+          "rows": 321,
+          "columns": 40
+        },
+        {
+          "start_cell": "AIK244",
+          "end_cell": "AJX444",
+          "rows": 201,
+          "columns": 40
+        },
+        {
+          "start_cell": "AXU244",
+          "end_cell": "AZH444",
+          "rows": 201,
+          "columns": 40
+        },
+        {
+          "start_cell": "AOO244",
+          "end_cell": "AQB444",
+          "rows": 201,
+          "columns": 40
+        },
+        {
+          "start_cell": "OK244",
+          "end_cell": "PX444",
+          "rows": 201,
+          "columns": 40
+        },
+        {
+          "start_cell": "AWG244",
+          "end_cell": "AXT444",
+          "rows": 201,
+          "columns": 40
+        },
+        {
+          "start_cell": "BHA244",
+          "end_cell": "BIN444",
+          "rows": 201,
+          "columns": 40
+        },
+        {
+          "start_cell": "UO244",
+          "end_cell": "WB444",
+          "rows": 201,
+          "columns": 40
+        },
+        {
+          "start_cell": "ALM244",
+          "end_cell": "AMZ444",
+          "rows": 201,
+          "columns": 40
+        },
+        {
+          "start_cell": "ANA244",
+          "end_cell": "AON444",
+          "rows": 201,
+          "columns": 40
+        },
+        {
+          "start_cell": "AFI244",
+          "end_cell": "AGV444",
+          "rows": 201,
+          "columns": 40
+        }
+      ],
+      "status": "candidate",
+      "authority": "formula_reference_sampled"
+    },
+    {
+      "pipeline_candidate_id": "pipe_33c5a448b428",
+      "source": {
+        "sheet": "[ML] 매출_최종",
+        "kind": "same_sheet_formula_region"
+      },
+      "target_kind": "formula_region_family",
+      "formula_kind": "same_sheet_horizontal_sum",
+      "primary_functions": [
+        {
+          "function": "SUM",
+          "count": 4516
+        }
+      ],
+      "family_count": 47,
+      "formula_count": 4516,
+      "region_family_ids": [
+        "rf_66b710c8e0c0",
+        "rf_2539caebae18",
+        "rf_3c10760fb115",
+        "rf_4eeade6a03fe",
+        "rf_7d54f21a9870",
+        "rf_8926df3ca442",
+        "rf_a238eebb0011",
+        "rf_b821ec2acccc",
+        "rf_20d7b250fa5f",
+        "rf_2ff8d75007e2",
+        "rf_42990552ce0d",
+        "rf_c70d868c2528",
+        "rf_db75351eec07",
+        "rf_03d2ef7c105e",
+        "rf_498f0c5917f1",
+        "rf_58a4c0cb7cb6",
+        "rf_a9d2719b7f5f",
+        "rf_d60ab6288957",
+        "rf_55c01b4a4a8a",
+        "rf_612185e77668",
+        "rf_c57561035027",
+        "rf_c720e5ee08f6",
+        "rf_23e72de033e9",
+        "rf_990ec2a6b6de",
+        "rf_cdc6cc35ba05",
+        "rf_0d0382eac729",
+        "rf_1e394b172400",
+        "rf_767cc62b9acc",
+        "rf_b3fd1dc1a017",
+        "rf_1bfe0a9a5aec"
+      ],
+      "sample_output_bboxes": [
+        {
+          "start_cell": "D120",
+          "end_cell": "K444",
+          "rows": 325,
+          "columns": 8
+        },
+        {
+          "start_cell": "ANB127",
+          "end_cell": "AON443",
+          "rows": 317,
+          "columns": 39
+        },
+        {
+          "start_cell": "BFN127",
+          "end_cell": "BGX443",
+          "rows": 317,
+          "columns": 37
+        },
+        {
+          "start_cell": "BCK127",
+          "end_cell": "BDW443",
+          "rows": 317,
+          "columns": 39
+        },
+        {
+          "start_cell": "AQF127",
+          "end_cell": "ARP443",
+          "rows": 317,
+          "columns": 37
+        },
+        {
+          "start_cell": "AZJ127",
+          "end_cell": "BAV443",
+          "rows": 317,
+          "columns": 39
+        },
+        {
+          "start_cell": "AWI127",
+          "end_cell": "AXS443",
+          "rows": 317,
+          "columns": 37
+        },
+        {
+          "start_cell": "ATG127",
+          "end_cell": "AUR443",
+          "rows": 317,
+          "columns": 38
+        },
+        {
+          "start_cell": "AUV127",
+          "end_cell": "AWE443",
+          "rows": 317,
+          "columns": 36
+        },
+        {
+          "start_cell": "BAZ127",
+          "end_cell": "BCG443",
+          "rows": 317,
+          "columns": 34
+        },
+        {
+          "start_cell": "AXW127",
+          "end_cell": "AZF443",
+          "rows": 317,
+          "columns": 36
+        },
+        {
+          "start_cell": "AJY127",
+          "end_cell": "ALJ443",
+          "rows": 317,
+          "columns": 38
+        }
+      ],
+      "status": "candidate",
+      "authority": "formula_reference_sampled"
+    },
+    {
+      "pipeline_candidate_id": "pipe_234285e4efaf",
+      "source": {
+        "sheet": "[ML] 매출_최종",
+        "kind": "same_sheet_formula_region"
+      },
+      "target_kind": "formula_region_family",
+      "formula_kind": "same_sheet_arithmetic_or_formula",
+      "primary_functions": [
+        {
+          "function": "NO_FUNCTION",
+          "count": 596
+        }
+      ],
+      "family_count": 1,
+      "formula_count": 596,
+      "region_family_ids": [
+        "rf_0deab84bb5eb"
+      ],
+      "sample_output_bboxes": [
+        {
+          "start_cell": "A127",
+          "end_cell": "E444",
+          "rows": 318,
+          "columns": 5
+        }
+      ],
+      "status": "candidate",
+      "authority": "formula_reference_sampled"
+    },
+    {
+      "pipeline_candidate_id": "pipe_8fbecf9bffd1",
+      "source": {
+        "sheet": "[ML] 매출_최종",
+        "kind": "same_sheet_formula_region"
+      },
+      "target_kind": "formula_region_family",
+      "formula_kind": "same_sheet_conditional_aggregate",
+      "primary_functions": [
+        {
+          "function": "SUMIFS",
+          "count": 416
+        }
+      ],
+      "family_count": 1,
+      "formula_count": 416,
+      "region_family_ids": [
+        "rf_e361ed3f4a05"
+      ],
+      "sample_output_bboxes": [
+        {
+          "start_cell": "C9",
+          "end_cell": "AN20",
+          "rows": 12,
+          "columns": 38
+        }
+      ],
+      "status": "candidate",
+      "authority": "formula_reference_sampled"
+    },
+    {
+      "pipeline_candidate_id": "pipe_0742a4032beb",
+      "source": {
+        "sheet": "[DB] raw_매출(26년)누적",
+        "kind": "source_sheet"
+      },
+      "target_kind": "formula_region_family",
+      "formula_kind": "cross_sheet_conditional_aggregate",
+      "primary_functions": [
+        {
+          "function": "SUMIFS",
+          "count": 186
+        }
+      ],
+      "family_count": 2,
+      "formula_count": 186,
+      "region_family_ids": [
+        "rf_fde9374583ec",
+        "rf_c002f96e3f6a"
+      ],
+      "sample_output_bboxes": [
+        {
+          "start_cell": "I21",
+          "end_cell": "J119",
+          "rows": 99,
+          "columns": 2
+        },
+        {
+          "start_cell": "I120",
+          "end_cell": "J126",
+          "rows": 7,
+          "columns": 2
+        }
+      ],
+      "status": "candidate",
+      "authority": "formula_reference_sampled"
+    },
+    {
+      "pipeline_candidate_id": "pipe_e26ec7a82af3",
+      "source": {
+        "sheet": "[ML] 매출_최종",
+        "kind": "same_sheet_formula_region"
+      },
+      "target_kind": "formula_region_family",
+      "formula_kind": "same_sheet_sum",
+      "primary_functions": [
+        {
+          "function": "SUM",
+          "count": 110
+        }
+      ],
+      "family_count": 5,
+      "formula_count": 110,
+      "region_family_ids": [
+        "rf_671c26b0110f",
+        "rf_a376a7218bec",
+        "rf_9584c80834ff",
+        "rf_5232a1ea03e6",
+        "rf_75015ab2a2e6"
+      ],
+      "sample_output_bboxes": [
+        {
+          "start_cell": "SE120",
+          "end_cell": "SG443",
+          "rows": 324,
+          "columns": 3
+        },
+        {
+          "start_cell": "LO127",
+          "end_cell": "MV443",
+          "rows": 317,
+          "columns": 34
+        },
+        {
+          "start_cell": "ASS127",
+          "end_cell": "ASS444",
+          "rows": 318,
+          "columns": 1
+        },
+        {
+          "start_cell": "AJT127",
+          "end_cell": "AJT443",
+          "rows": 317,
+          "columns": 1
+        },
+        {
+          "start_cell": "HA127",
+          "end_cell": "HA443",
+          "rows": 317,
+          "columns": 1
+        }
+      ],
+      "status": "candidate",
+      "authority": "formula_reference_sampled"
+    },
+    {
+      "pipeline_candidate_id": "pipe_be0bbc2095cb",
+      "source": {
+        "sheet": "[ML] 매출_최종",
+        "kind": "same_sheet_formula_region"
+      },
+      "target_kind": "formula_region_family",
+      "formula_kind": "text_projection",
+      "primary_functions": [
+        {
+          "function": "TEXT",
+          "count": 40
+        }
+      ],
+      "family_count": 1,
+      "formula_count": 40,
+      "region_family_ids": [
+        "rf_021f09df53e3"
+      ],
+      "sample_output_bboxes": [
+        {
+          "start_cell": "A132",
+          "end_cell": "A444",
+          "rows": 313,
+          "columns": 1
+        }
+      ],
+      "status": "candidate",
+      "authority": "formula_reference_sampled"
+    }
+  ],
+  "metric_basis": {
+    "canonical_metric": "payment_amount",
+    "korean_label": "결제액",
+    "source_label_warning": "Workbook labels use `매출`, but the user-confirmed business meaning in this sheet is payment amount, not accounting revenue.",
+    "accounting_revenue_basis": "not_applicable"
+  },
+  "connected_automation_summary": {
+    "overall_status": "review_required",
+    "detected_tools": [
+      "supermetrics"
+    ],
+    "message": "Connected automation evidence exists and source freshness/scope must be classified before promoting full dataflow claims.",
+    "apps_script_authority": "not_requested",
+    "external_automation_authority": "not_available_from_sheets_metadata_alone"
+  },
+  "region_gate_summary": {
+    "overall_status": "review_required",
+    "region_family_status_counts": {
+      "review_required": 146,
+      "accepted_sampled": 6
+    },
+    "gate_status_counts": {
+      "coverage:accepted_sampled": 10,
+      "source_sheet_metadata_authority:accepted_sampled": 152,
+      "formula_result_value_pair:accepted_sampled": 10,
+      "whole_column_self_reference:accepted_sampled": 151,
+      "connected_automation_context:review_required": 49,
+      "connected_automation_context:accepted_sampled": 103,
+      "coverage:review_required": 142,
+      "formula_result_value_pair:review_required": 142,
+      "whole_column_self_reference:review_required": 1
+    },
+    "formula_window_count": 5,
+    "value_window_count": 2
+  },
+  "pipeline_gate_summary": {
+    "overall_status": "review_required",
+    "pipeline_status_counts": {
+      "review_required": 6,
+      "accepted_sampled": 2
+    }
+  },
+  "review_findings": [
+    {
+      "id": "partial_coverage",
+      "status": "review_required",
+      "message": "Current artifacts are sampled windows only. Full-sheet conclusions require additional column chunks."
+    },
+    {
+      "id": "strong_self_aggregation_pattern",
+      "status": "observed",
+      "message": "Large repeated self-sheet SUM patterns indicate many report/output cells are aggregations over nearby rows or columns."
+    },
+    {
+      "id": "raw_payment_amount_source_dependency",
+      "status": "observed",
+      "message": "Repeated SUMIFS patterns reference raw `매출`-labeled sheets; interpret these as payment-amount sources for this workbook, not accounting revenue sources."
+    },
+    {
+      "id": "metric_basis_payment_amount",
+      "status": "user_confirmed",
+      "message": "The user confirmed that `매출` in this sheet means 결제액/payment amount, not accounting revenue."
+    },
+    {
+      "id": "region_family_reduction",
+      "status": "observed",
+      "message": "Region-family grouping reduces formula signatures into broader role-like families suitable for table-level pipeline review."
+    },
+    {
+      "id": "connected_automation_detected",
+      "status": "review_required",
+      "message": "Connected automation evidence exists and source freshness/scope must be classified before promoting full dataflow claims."
+    },
+    {
+      "id": "deterministic_gate_tuning",
+      "status": "review_required",
+      "message": "Pipeline candidates now carry deterministic gate outcomes for coverage, source metadata, value-pair authority, self-reference risk, and connected automation context."
+    }
+  ]
+}

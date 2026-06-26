@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "root": "projects",
+  "identity_policy": {
+    "google_sheets": "spreadsheetId + gid",
+    "excel_exact_revision": "sha256(file_bytes)",
+    "excel_family": "normalized workbook manifest and formula-structure fingerprint with review-required fallback"
+  },
+  "entries": [
+    {
+      "project_id": "gs_1G07-jmsFWiWYtB5E08puFHlBVuyBf488Ae12BkEmsbs_gid_562691839",
+      "kind": "google_sheets_surface",
+      "path": "projects/google-sheets/1G07-jmsFWiWYtB5E08puFHlBVuyBf488Ae12BkEmsbs/gid-562691839",
+      "identity": {
+        "spreadsheet_id": "1G07-jmsFWiWYtB5E08puFHlBVuyBf488Ae12BkEmsbs",
+        "sheet_gid": "562691839"
+      },
+      "status": "active"
+    },
+    {
+      "project_id": "gs_16vSTLkSxs-j3NxRJ8g_PNYGPuskQkJOWYBss_BDYQJg_gid_1116370414",
+      "kind": "google_sheets_surface",
+      "path": "projects/google-sheets/16vSTLkSxs-j3NxRJ8g_PNYGPuskQkJOWYBss_BDYQJg/gid-1116370414",
+      "identity": {
+        "spreadsheet_id": "16vSTLkSxs-j3NxRJ8g_PNYGPuskQkJOWYBss_BDYQJg",
+        "sheet_gid": "1116370414"
+      },
+      "status": "active"
+    },
+    {
+      "project_id": "gs_1vL4lwW7m6JMewR20WB0-QGoaSNDXIvjHCtyOw8ZeAFQ_gid_1705521654",
+      "kind": "google_sheets_surface",
+      "path": "projects/google-sheets/1vL4lwW7m6JMewR20WB0-QGoaSNDXIvjHCtyOw8ZeAFQ/gid-1705521654",
+      "identity": {
+        "spreadsheet_id": "1vL4lwW7m6JMewR20WB0-QGoaSNDXIvjHCtyOw8ZeAFQ",
+        "sheet_gid": "1705521654"
+      },
+      "status": "active"
+    }
+  ]
+}

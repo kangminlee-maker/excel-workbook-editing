@@ -67,7 +67,7 @@ For every spreadsheet task:
 
 ## 8. Evidence And Done Criteria
 
-When CLI-visible evidence is needed, create a review package that separates:
+When agent-visible evidence is needed, create a review package that separates:
 
 - artifact identity
 - structure and dependency inventory

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "project_id": "gs_16vSTLkSxs-j3NxRJ8g_PNYGPuskQkJOWYBss_BDYQJg_gid_1116370414",
+  "kind": "google_sheets_surface",
+  "display_name": "formula-dataflow-discovery",
+  "identity": {
+    "spreadsheet_id": "16vSTLkSxs-j3NxRJ8g_PNYGPuskQkJOWYBss_BDYQJg",
+    "sheet_gid": "1116370414",
+    "canonical_url": "https://docs.google.com/spreadsheets/d/16vSTLkSxs-j3NxRJ8g_PNYGPuskQkJOWYBss_BDYQJg/edit#gid=1116370414",
+    "authority_key": "google_sheets_url"
+  },
+  "artifact_roots": [],
+  "work_roots": {
+    "evidence": "evidence",
+    "analysis": "analysis",
+    "review": "review",
+    "domain": "domain"
+  },
+  "status": "active"
+}

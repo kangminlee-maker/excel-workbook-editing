@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://day1company.local/spreadsheet-processing/table-build-plan.schema.json",
+  "title": "TableBuildPlan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "plan_kind",
+    "intent_ref",
+    "interpreted_output_shape",
+    "source_evidence_needed",
+    "formula_strategy",
+    "target",
+    "validation_plan",
+    "rollback_plan",
+    "unresolved_questions"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "1.0" },
+    "plan_kind": { "const": "table_build_plan_v1" },
+    "intent_ref": { "type": "string", "minLength": 1 },
+    "interpreted_output_shape": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "rows": { "type": "array", "items": { "type": "string" } },
+        "columns": { "type": "array", "items": { "type": "string" } },
+        "measure": { "type": "string" }
+      }
+    },
+    "source_evidence_needed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["range", "purpose"],
+        "additionalProperties": true,
+        "properties": {
+          "range": { "type": "string", "minLength": 1 },
+          "purpose": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "formula_strategy": {
+      "type": "object",
+      "required": ["summary"],
+      "additionalProperties": true,
+      "properties": {
+        "summary": { "type": "string", "minLength": 1 },
+        "risk_annotations": { "type": "array" }
+      }
+    },
+    "target": {
+      "type": "object",
+      "required": ["artifact_type", "creation_mode"],
+      "additionalProperties": true,
+      "properties": {
+        "artifact_type": { "type": "string", "enum": ["google_sheets", "excel_workbook"] },
+        "creation_mode": { "type": "string", "enum": ["sheet", "copy"] },
+        "sheet_title": { "type": "string" },
+        "workbook_path": { "type": "string" }
+      }
+    },
+    "validation_plan": { "type": "object" },
+    "rollback_plan": { "type": "object" },
+    "unresolved_questions": { "type": "array", "items": { "type": "string" } }
+  }
+}

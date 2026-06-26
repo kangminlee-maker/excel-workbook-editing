@@ -1,0 +1,51 @@
+{
+  "schema_version": "review_questions_v1",
+  "questions": [
+    {
+      "id": "q_unlabeled_language_columns",
+      "question": "J/N/AD/AH처럼 합계에 포함되지만 7행 표기가 비어 있는 컬럼은 어떤 의미인가요? 수식상 특정 제외/보조 카테고리로 보이지만 명칭 확인이 필요합니다.",
+      "related_ranges": [
+        "J7:J867",
+        "N7:N867",
+        "AD7:AD867",
+        "AH7:AH867"
+      ]
+    },
+    {
+      "id": "q_new_longtail_rule",
+      "question": "신규/롱테일 구분은 RAW 시트의 날짜 기준 29일/30일 경계로 계산되는 것으로 보입니다. 이 경계가 공식 정의인가요?",
+      "related_ranges": [
+        "D32:E867",
+        "H32:I867",
+        "L32:M867",
+        "AF32:AG867"
+      ]
+    },
+    {
+      "id": "q_common_ad_spend",
+      "question": "공통광고비는 롱테일 ROAS/고객획득비용 계산에서 롱테일 쪽에 합산되고 있습니다. 이 배부 방식이 의도된 공식인가요?",
+      "related_ranges": [
+        "F32:F867",
+        "T32:W867",
+        "AN32:AQ867"
+      ]
+    },
+    {
+      "id": "q_metric_basis",
+      "question": "이 문서에서 결제액, 순매출, 결제수, 순구매수, 광고비 중 어떤 지표가 요약 설명의 1차 기준이어야 하나요?",
+      "related_ranges": [
+        "A7:AT31",
+        "A32:AT867",
+        "K1:U5",
+        "AE1:AO5"
+      ]
+    },
+    {
+      "id": "q_supermetrics_freshness",
+      "question": "SupermetricsQueries가 원천 시트들을 갱신하는 것으로 보입니다. 최신성/갱신 주기와 실패 시 처리 기준을 확인해야 하나요?",
+      "related_ranges": [
+        "SupermetricsQueries!A1:AZ40"
+      ]
+    }
+  ]
+}

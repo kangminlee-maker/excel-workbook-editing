@@ -76,7 +76,6 @@
         "access_mode",
         "service_account_email",
         "impersonated_subject",
-        "direct_service_account_access",
         "xlsx_round_trip",
         "write_operation"
       ],
@@ -86,7 +85,6 @@
         "access_mode": { "type": "string" },
         "service_account_email": { "type": "string" },
         "impersonated_subject": { "type": "string" },
-        "direct_service_account_access": { "type": "object" },
         "xlsx_round_trip": { "type": "string" },
         "write_operation": { "type": "string" }
       }

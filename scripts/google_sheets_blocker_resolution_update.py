@@ -29,7 +29,7 @@ def build_google_sheets_blocker_resolution_update(
     reporting_basis: str,
 ) -> dict[str, Any]:
     out_dir = out_dir.expanduser().resolve()
-    metadata = _read_json(out_dir / "source-fc-data-broker-metadata.json")
+    metadata = _read_json(out_dir / "source-fc-data-source-evidence-metadata.json")
     values_window = _read_json(out_dir / "source-fc-data-values-window.json")
     formula_window = _read_json(out_dir / "source-fc-data-formula-window.json")
 
@@ -46,9 +46,9 @@ def build_google_sheets_blocker_resolution_update(
         {
             "id": "direct_fc_data_source_authority",
             "status": "resolved",
-            "meaning": "사용자가 제공한 FC_DATA 원본 spreadsheet을 broker read-only smoke로 직접 검증했다.",
+            "meaning": "사용자가 제공한 FC_DATA 원본 spreadsheet을 source evidence read-only smoke로 직접 검증했다.",
             "evidence_refs": [
-                "source-fc-data-broker-metadata.json",
+                "source-fc-data-source-evidence-metadata.json",
                 "source-fc-data-values-window.json",
                 "source-fc-data-formula-window.json",
             ],
@@ -78,7 +78,7 @@ def build_google_sheets_blocker_resolution_update(
             "id": "repeated_workbook_family_evidence",
             "status": "partially_resolved_version_detection_required",
             "meaning": "모든 period 탭은 반복문서이나 포맷 업데이트와 부서 재구성에 따른 version breakpoint를 먼저 나눠야 한다.",
-            "evidence_refs": ["source-fc-data-broker-metadata.json"],
+            "evidence_refs": ["source-fc-data-source-evidence-metadata.json"],
         },
         {
             "id": "reporting_basis",
@@ -128,7 +128,7 @@ def build_google_sheets_blocker_resolution_update(
             "source_spreadsheet_url": fc_data_source_url,
             "source_title": metadata_payload.get("title", ""),
             "source_artifacts": {
-                "metadata": "source-fc-data-broker-metadata.json",
+                "metadata": "source-fc-data-source-evidence-metadata.json",
                 "values_window": "source-fc-data-values-window.json",
                 "formula_window": "source-fc-data-formula-window.json",
             },
@@ -140,9 +140,9 @@ def build_google_sheets_blocker_resolution_update(
         },
         "method": {
             "name": "connected_sheets_blocker_resolution_update",
-            "authority": "user_feedback_plus_broker_smoke_evidence",
+            "authority": "user_feedback_plus_source_evidence_smoke",
             "decision_policy": (
-                "Record resolved and still-open blockers after human feedback and broker source smoke. "
+                "Record resolved and still-open blockers after human feedback and source-evidence smoke. "
                 "Do not silently mutate prior semantic or shared-alignment truth; later stages must rerun "
                 "against this update."
             ),
@@ -194,7 +194,7 @@ def build_google_sheets_blocker_resolution_update(
         "parser_observations": [
             {
                 "level": "info",
-                "message": "Direct FC_DATA source authority is verified by broker metadata, values-window, and formula-window smoke.",
+                "message": "Direct FC_DATA source authority is verified by source evidence metadata, values-window, and formula-window smoke.",
             },
             {
                 "level": "warning",
@@ -335,7 +335,7 @@ def _payload(response: dict[str, Any]) -> dict[str, Any]:
 
 def _policy_summary(payload: dict[str, Any]) -> dict[str, Any]:
     for artifact in payload.get("artifacts", []):
-        if artifact.get("kind") == "broker_policy":
+        if artifact.get("kind") == "source_access_policy_evidence":
             return artifact.get("summary", {})
     return {}
 
@@ -481,7 +481,7 @@ def _esc(value: Any) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Record connected Google Sheets blocker resolutions from user feedback and broker source smoke."
+        description="Record connected Google Sheets blocker resolutions from user feedback and source-evidence smoke."
     )
     parser.add_argument("--out-dir", type=Path, required=True)
     parser.add_argument("--fc-data-source-url", default=SOURCE_SPREADSHEET_URL)

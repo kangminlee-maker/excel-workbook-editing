@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://day1company.local/sheets-bridge/google-sheets-parser-window.schema.json",
+  "$id": "https://day1company.local/spreadsheet-processing/google-sheets-parser-window.schema.json",
   "title": "Google Sheets Parser Window Snapshot",
   "type": "object",
   "required": [
@@ -74,7 +74,7 @@
         "properties": {
           "kind": {
             "type": "string",
-            "enum": ["broker_policy", "broker_auth"]
+            "enum": ["source_access_policy_evidence", "source_access_auth_evidence"]
           },
           "summary": { "type": "object" }
         }

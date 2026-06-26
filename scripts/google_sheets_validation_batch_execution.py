@@ -4,7 +4,6 @@ import argparse
 import html
 import json
 import re
-import sys
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -12,15 +11,10 @@ from typing import Any
 from openpyxl.utils import range_boundaries
 
 from google_sheets_live_manifest import render_live_manifest_html
-
-
-REPO_ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(REPO_ROOT / "cli" / "sheets-bridge"))
-
-from sheets_bridge_cli import (  # noqa: E402
-    DEFAULT_BROKER_URL,
-    build_inspect_request,
-    invoke_broker_inspect,
+from google_sheets_source_evidence import (
+    build_source_evidence_request,
+    load_source_evidence_results,
+    source_evidence_response_record,
 )
 
 
@@ -31,12 +25,11 @@ def build_google_sheets_validation_batch_execution(
     *,
     live_cross_validation_plan_path: Path,
     spreadsheet_id: str,
-    principal: str,
-    execute: bool = False,
-    broker_url: str = DEFAULT_BROKER_URL,
+    principal: str = "",
+    source_evidence_results_path: Path | None = None,
+    source_evidence_results: list[dict[str, Any]] | None = None,
     timeout_seconds: int = 60,
     retry_count: int = 0,
-    broker_invoker=None,
 ) -> dict[str, Any]:
     live_cross_validation_plan_path = live_cross_validation_plan_path.expanduser().resolve()
     plan = _read_json(live_cross_validation_plan_path)
@@ -47,15 +40,12 @@ def build_google_sheets_validation_batch_execution(
         timeout_seconds=timeout_seconds,
         retry_count=retry_count,
     )
-    responses = []
-    if execute:
-        for request in requests:
-            response = _invoke_request(
-                request,
-                broker_url=broker_url,
-                broker_invoker=broker_invoker,
-            )
-            responses.append(_response_record(request, response))
+    source_results = list(source_evidence_results or [])
+    source_results.extend(load_source_evidence_results(source_evidence_results_path))
+    responses = [
+        _response_record(request, source_results[index])
+        for index, request in enumerate(requests[: len(source_results)])
+    ]
     windows = _window_summaries(responses)
     evidence_updates = _evidence_updates(windows)
     return {
@@ -69,20 +59,20 @@ def build_google_sheets_validation_batch_execution(
             },
         },
         "authority": {
-            "source_document": "live_google_sheet",
-            "broker_backed_read": execute,
-            "read_scope": "current_workbook_planned_broker_batches_only",
+            "source_document": "connected_google_sheet_evidence",
+            "evidence_backed_read": bool(responses),
+            "read_scope": "current_workbook_planned_source_evidence_only",
             "source_spreadsheet_reads_performed": False,
-            "credential_boundary": "identity token sent only to broker; no OAuth tokens, access tokens, bearer headers, or service account keys stored",
+            "credential_boundary": "source evidence artifacts are read locally; live Google access is handled by an approved external access surface",
             "formula_result_authority": "not_established",
         },
         "execution_plan": {
-            "source_plan_status": plan["broker_read_plan"]["status"],
+            "source_plan_status": plan["source_evidence_read_plan"]["status"],
             "planned_request_count": len(requests),
             "planned_requests": requests,
-            "blocked_source_reads": plan["broker_read_plan"].get("blocked_source_reads", []),
+            "blocked_source_reads": plan["source_evidence_read_plan"].get("blocked_source_reads", []),
         },
-        "broker_responses": responses,
+        "source_evidence_results": responses,
         "window_summaries": windows,
         "evidence_updates": evidence_updates,
         "summary": _summary(requests, responses, windows, evidence_updates),
@@ -142,9 +132,9 @@ def _planned_requests(
     retry_count: int,
 ) -> list[dict[str, Any]]:
     requests = []
-    for batch in plan.get("broker_read_plan", {}).get("batches", []):
+    for batch in plan.get("source_evidence_read_plan", {}).get("batches", []):
         total_cells = sum(_range_cell_count(range_text) for range_text in batch["ranges"])
-        request = build_inspect_request(
+        request = build_source_evidence_request(
             spreadsheet_id=spreadsheet_id,
             principal=principal,
             operation=batch["operation"],
@@ -159,27 +149,13 @@ def _planned_requests(
     return requests
 
 
-def _invoke_request(
-    request: dict[str, Any],
-    *,
-    broker_url: str,
-    broker_invoker,
-) -> dict[str, Any]:
-    if broker_invoker:
-        return broker_invoker(request)
-    return invoke_broker_inspect(broker_url=broker_url, request=request)
-
-
 def _response_record(request: dict[str, Any], response: dict[str, Any]) -> dict[str, Any]:
-    payload = response.get("payload", {}) if response.get("ok") else response
-    return {
-        "operation": request["operation"],
-        "source_batch_id": request.get("source_batch_id"),
-        "requested_ranges": request["ranges"],
-        "read_candidate_ids": request.get("read_candidate_ids", []),
-        "ok": bool(response.get("ok")),
-        "payload": payload,
-    }
+    return source_evidence_response_record(
+        request=request,
+        response=response,
+        source_batch_id=request.get("source_batch_id"),
+        read_candidate_ids=request.get("read_candidate_ids", []),
+    )
 
 
 def _window_summaries(responses: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -252,7 +228,7 @@ def _summary(
 ) -> dict[str, Any]:
     return {
         "planned_request_count": len(requests),
-        "executed_request_count": len(responses),
+        "evidence_result_count": len(responses),
         "successful_response_count": sum(1 for item in responses if item["ok"]),
         "window_count": len(windows),
         "non_empty_cell_count": sum(item["non_empty_cell_count"] for item in windows),
@@ -261,7 +237,7 @@ def _summary(
         "url_sample_count": sum(len(item["url_cell_samples"]) for item in windows),
         "evidence_update_count": len(evidence_updates),
         "source_spreadsheet_read_count": 0,
-        "execution_status": "executed" if responses else "planned_only",
+        "execution_status": "evidence_supplied" if responses else "planned_only",
     }
 
 
@@ -273,21 +249,21 @@ def _parser_observations(
     observations = [
         {
             "level": "info",
-            "message": "Validation batch execution uses only current-workbook broker-bounded parser windows.",
+            "message": "Validation batch execution uses only supplied current-workbook source evidence windows.",
         }
     ]
     if requests and not responses:
         observations.append(
             {
                 "level": "warning",
-                "message": "Execution plan was generated but broker execution was not performed.",
+                "message": "Execution plan was generated but source evidence results were not supplied.",
             }
         )
     if any(not response["ok"] for response in responses):
         observations.append(
             {
                 "level": "error",
-                "message": "At least one planned broker batch failed.",
+                "message": "At least one supplied source evidence result failed.",
             }
         )
     if any(window["formula_cell_count"] for window in windows):
@@ -429,7 +405,7 @@ def render_google_sheets_validation_batch_execution_section(execution: dict[str,
     return f"""
   <h2>Validation Batch Execution</h2>
   <section class="grid">{metrics}</section>
-  <h2>Executed Broker Requests</h2>
+  <h2>Source Evidence Requests</h2>
   <section class="panel"><table><thead><tr><th>Operation</th><th>Cells</th><th>Sample Ranges</th></tr></thead><tbody>{request_rows}</tbody></table></section>
   <h2>Validation Window Summaries</h2>
   <section class="panel"><table><thead><tr><th>Operation</th><th>Range</th><th>Non-empty</th><th>Formula cells</th><th>Error cells</th><th>Preview</th></tr></thead><tbody>{window_rows}</tbody></table></section>
@@ -442,7 +418,7 @@ def render_google_sheets_validation_batch_execution_section(execution: dict[str,
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Execute planned current-workbook bounded validation batches for Google Sheets."
+        description="Merge planned current-workbook bounded validation batches with local source evidence results."
     )
     parser.add_argument("--out-dir", type=Path, required=True)
     parser.add_argument("--access-preflight", type=Path, required=True)
@@ -454,19 +430,17 @@ def main() -> None:
     parser.add_argument("--live-table-io-pipelines", type=Path, required=True)
     parser.add_argument("--live-cross-validation-plan", type=Path, required=True)
     parser.add_argument("--spreadsheet-id", required=True)
-    parser.add_argument("--principal", required=True)
-    parser.add_argument("--broker-url", default=DEFAULT_BROKER_URL)
+    parser.add_argument("--principal", default="")
+    parser.add_argument("--source-evidence-results", type=Path)
     parser.add_argument("--timeout-seconds", type=int, default=60)
     parser.add_argument("--retry-count", type=int, default=0)
-    parser.add_argument("--execute", action="store_true")
     args = parser.parse_args()
 
     execution = build_google_sheets_validation_batch_execution(
         live_cross_validation_plan_path=args.live_cross_validation_plan,
         spreadsheet_id=args.spreadsheet_id,
         principal=args.principal,
-        execute=args.execute,
-        broker_url=args.broker_url,
+        source_evidence_results_path=args.source_evidence_results,
         timeout_seconds=args.timeout_seconds,
         retry_count=args.retry_count,
     )

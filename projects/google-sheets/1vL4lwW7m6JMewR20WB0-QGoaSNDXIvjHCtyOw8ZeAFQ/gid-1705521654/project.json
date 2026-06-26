@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "project_id": "gs_1vL4lwW7m6JMewR20WB0-QGoaSNDXIvjHCtyOw8ZeAFQ_gid_1705521654",
+  "kind": "google_sheets_surface",
+  "display_name": "cursor-curriculum-detail-page-materials",
+  "identity": {
+    "spreadsheet_id": "1vL4lwW7m6JMewR20WB0-QGoaSNDXIvjHCtyOw8ZeAFQ",
+    "sheet_gid": "1705521654",
+    "canonical_url": "https://docs.google.com/spreadsheets/d/1vL4lwW7m6JMewR20WB0-QGoaSNDXIvjHCtyOw8ZeAFQ/edit#gid=1705521654",
+    "authority_key": "google_sheets_url"
+  },
+  "artifact_roots": [],
+  "work_roots": {
+    "evidence": "evidence",
+    "analysis": "analysis",
+    "review": "review",
+    "domain": "domain"
+  },
+  "status": "active"
+}

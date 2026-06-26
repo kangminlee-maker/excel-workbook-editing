@@ -3750,7 +3750,7 @@ def _onto_reconstruct_seed_min_summary_section(
 <section id="stage-onto-seed-min">
   <h2>61. Onto Seed Prompt / Timeout Mitigation</h2>
   <div class="section-body">
-    <div class="stage-note">Official onto-mcp direct reconstruct now produced a valid local ontology seed. The seed is accepted as local seed authority only; it is still not action-ready, writeback-ready, shared, K-IFRS/K-GAAP, or accounting-kr aligned.</div>
+    <div class="stage-note">Official ontology reconstruct now produced a valid local ontology seed. The seed is accepted as local seed authority only; it is still not action-ready, writeback-ready, shared, K-IFRS/K-GAAP, or accounting-kr aligned.</div>
     {_metrics(summary_metrics)}
     {_metrics(claim_metrics)}
     <div class="review-panels">
@@ -3765,7 +3765,7 @@ def _onto_reconstruct_seed_min_summary_section(
         <p>Domain pack used: <code>{_esc(run_profile.get('domain_pack_used'))}</code></p>
         <p>Reporting basis: <code>{_esc(run_profile.get('reporting_basis'))}</code></p>
         <p>Excluded domains: <code>{_esc(', '.join(run_profile.get('excluded_domain_sources', [])))}</code></p>
-        <p>Miro MCP: <code>{_esc(run_profile.get('miro_mcp_status'))}</code></p>
+        <p>Miro integration: <code>{_esc(run_profile.get('miro_integration_status'))}</code></p>
       </div>
       <div class="review-panel">
         <h3>Candidate Reduction</h3>

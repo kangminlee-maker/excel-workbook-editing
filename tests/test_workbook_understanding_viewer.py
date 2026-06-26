@@ -1258,7 +1258,7 @@ def _onto_seed_summary() -> dict:
             "excluded_domain_sources": ["accounting-kr"],
             "reporting_basis": "cash_basis_payment_status_operational_reporting",
             "shared_ontology_update_count": 0,
-            "miro_mcp_status": "disabled",
+            "miro_integration_status": "disabled",
         },
         "mitigation": {
             "previous_candidate_count": 52,
@@ -1285,7 +1285,7 @@ def _onto_seed_summary() -> dict:
             "unsupported_question_count": 8,
         },
         "authority_boundary": {
-            "accepted_as": "official onto-mcp direct reconstruct seed artifact",
+            "accepted_as": "official ontology reconstruct seed artifact",
             "not_accepted_as": ["action-ready ontology"],
             "remaining_maturation_frontier": ["metric equivalence unresolved"],
         },

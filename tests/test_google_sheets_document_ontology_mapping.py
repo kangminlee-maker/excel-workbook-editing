@@ -18,7 +18,7 @@ from google_sheets_document_ontology_mapping import (  # noqa: E402
 
 class GoogleSheetsDocumentOntologyMappingTest(unittest.TestCase):
     def test_maps_evidence_package_to_document_structure_only(self) -> None:
-        fixture_dir = REPO_ROOT / "review-packages" / "sheets-bridge" / "live-inspections" / "test-document-ontology"
+        fixture_dir = REPO_ROOT / "review-packages" / "spreadsheet-processing" / "live-inspections" / "test-document-ontology"
         fixture_dir.mkdir(parents=True, exist_ok=True)
         evidence_path = fixture_dir / "live-evidence-package.json"
         evidence_path.write_text(json.dumps(_evidence_package(), ensure_ascii=False), encoding="utf-8")

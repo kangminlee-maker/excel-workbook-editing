@@ -1,0 +1,8 @@
+{
+  "blocked_until_user_confirms": [
+    "spreadsheet_create_formula_table_from_spec",
+    "spreadsheet_rollback_created_artifact"
+  ],
+  "reason": "ChatGPT web smoke stops after TableBuildPlan preview. No spreadsheet write tool is called before explicit user confirmation.",
+  "status": "awaiting_user_confirmation"
+}

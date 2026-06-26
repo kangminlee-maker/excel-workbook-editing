@@ -1,0 +1,142 @@
+ M .gitignore
+ M AGENTS.md
+ M CLAUDE.md
+ M IMPLEMENTATION_MAP.html
+ M README.md
+ M SKILL.md
+ M agents/openai.yaml
+ M broker/cloud-run-sheets-broker/README.md
+ M broker/cloud-run-sheets-broker/src/broker.py
+ M broker/cloud-run-sheets-broker/src/policy.py
+ M broker/cloud-run-sheets-broker/src/server.py
+ M broker/cloud-run-sheets-broker/src/sheets_client.py
+ M broker/cloud-run-sheets-broker/test/test_auth.py
+ M broker/cloud-run-sheets-broker/test/test_broker.py
+ M broker/cloud-run-sheets-broker/test/test_identity.py
+ M broker/cloud-run-sheets-broker/test/test_policy.py
+ M broker/cloud-run-sheets-broker/test/test_server.py
+ M broker/cloud-run-sheets-broker/test/test_sheets_client.py
+ M broker/cloud-run-sheets-broker/test/test_token_provider.py
+ D cli/sheets-bridge/README.md
+ D cli/sheets-bridge/sheets_bridge_cli.py
+ D cli/sheets-bridge/test/test_cli_requests.py
+ D docs/chrome-extension-managed-deployment.md
+ D docs/chrome-extension-sheets-bridge-design.md
+ D docs/chrome-extension-sheets-bridge-work-plan.md
+ D docs/chrome-sheets-bridge-privacy-policy.md
+ D docs/claude-code-sheets-bridge.md
+ D docs/codex-goal-chrome-extension-sheets-bridge.md
+ M docs/document-shaped-excel-understanding-design.md
+ M docs/document-shaped-excel-understanding-tasklist.md
+ M docs/evidence-backed-spreadsheet-claim-ledger-design.md
+ M docs/google-sheets-parser-permission-requirements.md
+ D extension/chrome-sheets-bridge/manifest.json
+ D extension/chrome-sheets-bridge/package.json
+ D extension/chrome-sheets-bridge/src/background.js
+ D extension/chrome-sheets-bridge/src/constants.js
+ D extension/chrome-sheets-bridge/src/content.js
+ D extension/chrome-sheets-bridge/src/native_bridge.js
+ D extension/chrome-sheets-bridge/src/popup.css
+ D extension/chrome-sheets-bridge/src/popup.html
+ D extension/chrome-sheets-bridge/src/popup.js
+ D extension/chrome-sheets-bridge/src/sheets_api.js
+ D extension/chrome-sheets-bridge/store-assets/icon-128.png
+ D extension/chrome-sheets-bridge/store-assets/screenshot-1280x800.png
+ D extension/chrome-sheets-bridge/test/fixtures/.gitkeep
+ D extension/chrome-sheets-bridge/test/fixtures/inspection-metadata.json
+ D extension/chrome-sheets-bridge/test/spreadsheet_id.test.js
+ D native-host/README.md
+ D native-host/bin/sheets-bridge-native-host
+ D native-host/bin/sheets-bridge-native-host.cmd
+ D native-host/install_macos.sh
+ D native-host/install_windows.ps1
+ D native-host/manifest/.gitkeep
+ D native-host/manifest/com.day1company.sheets_bridge.template.json
+ D native-host/src/host.py
+ D native-host/src/protocol.py
+ D native-host/src/review_package.py
+ D native-host/test/test_protocol.py
+ D native-host/test/test_review_package.py
+ D native-host/test/test_windows_install_artifacts.py
+ M references/spreadsheet-principles.md
+ M references/spreadsheet-review-package.md
+ M review-packages/sheets-bridge/live-inspections/test-bounded-window/live-block-candidates.json
+ D review-packages/sheets-bridge/managed-deployment/20260602-preapproval/README.md
+ D review-packages/sheets-bridge/managed-deployment/20260602-preapproval/admin-policy.md
+ D review-packages/sheets-bridge/managed-deployment/20260602-preapproval/broker-audit-contract.md
+ D review-packages/sheets-bridge/managed-deployment/20260602-preapproval/broker-health.json
+ D review-packages/sheets-bridge/managed-deployment/20260602-preapproval/broker-runtime-summary.md
+ D review-packages/sheets-bridge/managed-deployment/20260602-preapproval/chrome-policy-check.md
+ D review-packages/sheets-bridge/managed-deployment/20260602-preapproval/dwd-readiness-check.md
+ D review-packages/sheets-bridge/managed-deployment/20260602-preapproval/oauth-client-binding-check.md
+ D review-packages/sheets-bridge/managed-deployment/20260602-preapproval/pilot-decision.md
+ D review-packages/sheets-bridge/managed-deployment/20260602-preapproval/pilot-policy.md
+ D review-packages/sheets-bridge/managed-deployment/20260602-preapproval/rollback-checklist.md
+ D review-packages/sheets-bridge/managed-deployment/20260602-preapproval/unauthenticated-deny.json
+ D review-packages/sheets-bridge/managed-deployment/20260603-tester-pilot/admin-policy.md
+ D review-packages/sheets-bridge/managed-deployment/20260603-tester-pilot/broker-health.json
+ D review-packages/sheets-bridge/managed-deployment/20260603-tester-pilot/broker-log-summary.md
+ D review-packages/sheets-bridge/managed-deployment/20260603-tester-pilot/chrome-policy-check.md
+ D review-packages/sheets-bridge/managed-deployment/20260603-tester-pilot/chrome-precheck.md
+ D review-packages/sheets-bridge/managed-deployment/20260603-tester-pilot/chrome-sheets-bridge-0.1.1-webstore.zip
+ D review-packages/sheets-bridge/managed-deployment/20260603-tester-pilot/deny-path-check.md
+ D review-packages/sheets-bridge/managed-deployment/20260603-tester-pilot/dwd-readiness-check.md
+ D review-packages/sheets-bridge/managed-deployment/20260603-tester-pilot/extension-version-check.md
+ D review-packages/sheets-bridge/managed-deployment/20260603-tester-pilot/native-host-install.md
+ D review-packages/sheets-bridge/managed-deployment/20260603-tester-pilot/oauth-client-binding-check.md
+ D review-packages/sheets-bridge/managed-deployment/20260603-tester-pilot/pilot-decision.md
+ D review-packages/sheets-bridge/managed-deployment/20260603-tester-pilot/pilot-evidence-summary.json
+ D review-packages/sheets-bridge/managed-deployment/20260603-tester-pilot/pilot-inspect-result.md
+ D review-packages/sheets-bridge/managed-deployment/20260603-tester-pilot/rollback-checklist.md
+ D review-packages/sheets-bridge/managed-deployment/20260603-tester-pilot/tester-publication.md
+ D review-packages/sheets-bridge/managed-deployment/20260603-tester-pilot/webstore-package-0.1.1.md
+ M review-packages/workbook-understanding/process-ledger.jsonl
+ M schemas/apply-result.schema.json
+ M schemas/edit-plan.schema.json
+ M schemas/google-sheets-live-manifest.schema.json
+ M schemas/inspection.schema.json
+ D schemas/native-message.schema.json
+ M scripts/google_sheets_bounded_window_sample.py
+ M scripts/google_sheets_live_block_candidates.py
+ M scripts/google_sheets_live_manifest.py
+ M scripts/google_sheets_live_view_formula_profile.py
+ M scripts/google_sheets_validation_batch_execution.py
+ M tests/test_google_sheets_bounded_window_sample.py
+ M tests/test_google_sheets_live_manifest.py
+ M tests/test_inspection_schema.py
+?? broker/cloud-run-sheets-broker/policies/
+?? broker/cloud-run-sheets-broker/src/workload_identity.py
+?? broker/cloud-run-sheets-broker/test/test_workload_identity.py
+?? development-record/
+?? docs/adr/0002-data-processing-spreadsheet-package.md
+?? docs/data-processing-spreadsheet-package-design.md
+?? docs/mcp-sheets-bridge-design.md
+?? docs/mcp-sheets-bridge-remote-auth-runbook.md
+?? docs/sheets-formula-dataflow-discovery-design.md
+?? docs/spreadsheet-processing-scope-cleanup-plan.md
+?? docs/workload-identity-runtime-contract.md
+?? mcp/
+?? packaging/
+?? projects/
+?? review-packages/sheets-bridge/alt-design-implementation/
+?? review-packages/sheets-bridge/formula-dataflow/
+?? review-packages/sheets-bridge/initial-understanding/
+?? review-packages/sheets-bridge/keyless-extract/
+?? review-packages/sheets-bridge/mcp-live-apply-smoke/
+?? review-packages/sheets-bridge/mcp-live-real-sheet/
+?? review-packages/sheets-bridge/mcp-live-smoke/
+?? review-packages/sheets-bridge/table-io-flow-real-sheet/
+?? review-packages/sheets-bridge/workload-identity/
+?? review-packages/spreadsheet-table-builder/
+?? schemas/table-build-intent.schema.json
+?? schemas/table-build-plan.schema.json
+?? schemas/table-builder-host-message.schema.json
+?? schemas/table-builder-session.schema.json
+?? scripts/excel_copy_sheet_into_workbook.applescript
+?? scripts/excel_copy_sheet_into_workbook.ps1
+?? scripts/google_sheets_broker_client.py
+?? scripts/google_sheets_formula_dataflow_discovery.py
+?? scripts/google_sheets_initial_understanding.py
+?? scripts/google_sheets_payment_decline_driver_analysis.py
+?? tests/test_table_builder_contracts.py
+?? tests/test_table_builder_host_adapter_js.py

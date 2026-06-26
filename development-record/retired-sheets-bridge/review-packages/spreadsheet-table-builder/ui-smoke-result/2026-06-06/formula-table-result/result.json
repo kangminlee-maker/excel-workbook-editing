@@ -1,0 +1,45 @@
+{
+  "artifact_kind": "spreadsheet_formula_table_result",
+  "artifact_type": "excel_workbook",
+  "calculation_boundary": [
+    "The output table cells are Excel formulas that reference source ranges.",
+    "The LLM does not calculate output values.",
+    "Formula-result validation requires Microsoft Excel recalculation."
+  ],
+  "column_label_count": 2,
+  "creation_mode": "copy",
+  "dry_run": false,
+  "formula_cell_count": 10,
+  "formula_template": "=IFERROR(SUMIFS({measure_range},{row_label_range},{row_label_cell},{column_label_range},{column_label_cell}),0)",
+  "generated_at": "2026-06-06T05:51:03.453816+00:00",
+  "new_sheet_title": "MCP_TABLE_20260606_0000",
+  "operation": "table_builder.create_formula_table",
+  "output_format": {
+    "auto_resize_columns": true,
+    "freeze_header_rows": 2,
+    "header_bold": true,
+    "protect_created_sheet": false
+  },
+  "rollback": {
+    "reason": "Rollback is removing the generated workbook copy.",
+    "type": "delete_output_workbook_copy",
+    "workbook_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/excel-real-smoke/outputs/mbp_2026_02_결제상세_A2_Z4879_subset-formula-table.xlsx"
+  },
+  "row_label_count": 5,
+  "schema_version": "1.0",
+  "source_range": "'결제상세'!A1:Z120",
+  "source_workbook_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/excel-real-smoke/outputs/mbp_2026_02_결제상세_A2_Z4879_subset.xlsx",
+  "validation": {
+    "actual_formula_count": 10,
+    "expected_formula_count": 10,
+    "formula_error_token_count": 0,
+    "formula_result_validation": "not_run",
+    "formula_result_validation_note": "Excel formula results require Microsoft Excel recalculation; openpyxl only verifies written formula text.",
+    "formula_text_verification": "passed",
+    "sample_formula_error_tokens": [],
+    "status": "passed"
+  },
+  "workbook_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/excel-real-smoke/outputs/mbp_2026_02_결제상세_A2_Z4879_subset-formula-table.xlsx",
+  "write_engine": "openpyxl",
+  "write_range": "'MCP_TABLE_20260606_0000'!A1:C7"
+}

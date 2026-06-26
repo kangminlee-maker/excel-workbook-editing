@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "stage": "connected_automation_inventory",
+  "coverage_status": "metadata_and_sampled_formula_artifacts_only",
+  "summary": {
+    "overall_status": "review_required",
+    "detected_tools": [
+      "supermetrics"
+    ],
+    "message": "Connected automation evidence exists and source freshness/scope must be classified before promoting full dataflow claims.",
+    "apps_script_authority": "not_requested",
+    "external_automation_authority": "not_available_from_sheets_metadata_alone"
+  },
+  "tool_findings": [
+    {
+      "tool": "supermetrics",
+      "status": "detected",
+      "confidence": "strong",
+      "message": "supermetrics signals are present in the current metadata or sampled formulas.",
+      "evidence": [
+        {
+          "signal_type": "tab_title",
+          "label": "SupermetricsQueries",
+          "detail": {
+            "sheet_id": 2040412627,
+            "hidden": true,
+            "row_count": 1000,
+            "column_count": 54
+          }
+        },
+        {
+          "signal_type": "named_range",
+          "label": "zsupermetrics_refreshAllSilent",
+          "detail": {
+            "range": {
+              "range": "H6:H6",
+              "sheet_id": 2040412627
+            }
+          }
+        },
+        {
+          "signal_type": "named_range",
+          "label": "zsupermetrics_refreshAll",
+          "detail": {
+            "range": {
+              "range": "H5:H5",
+              "sheet_id": 2040412627
+            }
+          }
+        },
+        {
+          "signal_type": "named_range",
+          "label": "zsupermetrics_forceRefresh",
+          "detail": {
+            "range": {
+              "range": "H4:H4",
+              "sheet_id": 2040412627
+            }
+          }
+        }
+      ]
+    },
+    {
+      "tool": "zapier",
+      "status": "not_detected_in_current_artifacts",
+      "confidence": "not_absence_proof",
+      "message": "No zapier signal was found in current metadata or sampled formula artifacts.",
+      "evidence": []
+    },
+    {
+      "tool": "apps_script",
+      "status": "not_inspected",
+      "confidence": "unknown",
+      "message": "Apps Script bindings and triggers require a separate Apps Script/Drive authority path.",
+      "evidence": []
+    }
+  ],
+  "authority_gaps": [
+    {
+      "gap": "apps_script_project_and_trigger_inventory",
+      "status": "not_requested",
+      "needed_for": "Bound script, custom function, trigger, macro, and add-on execution analysis.",
+      "required_path": "Add an inspect.apps_script broker operation with Apps Script/Drive authority and redaction limits."
+    },
+    {
+      "gap": "external_automation_activity_inventory",
+      "status": "not_available_from_current_broker",
+      "needed_for": "Zapier or other API clients that leave no in-spreadsheet structural trace.",
+      "required_path": "Use Drive Activity, Workspace Admin audit/OAuth inventory, or explicit tool-side evidence."
+    },
+    {
+      "gap": "supermetrics_hidden_query_detail",
+      "status": "not_captured",
+      "needed_for": "Classifying Supermetrics query targets, refresh scope, freshness, and affected output sheets.",
+      "required_path": "Read bounded grid/value windows from the hidden SupermetricsQueries tab when CLI/broker access is available."
+    }
+  ],
+  "next_inspections": [
+    {
+      "operation": "inspect.grid_window",
+      "range": "'SupermetricsQueries'!A1:BA80",
+      "purpose": "Classify visible Supermetrics query definitions and refresh controls without reading the full hidden tab."
+    },
+    {
+      "operation": "inspect.values_window",
+      "range": "'SupermetricsQueries'!A1:BA80",
+      "purpose": "Capture displayed query text and target-sheet labels for deterministic connector scoping."
+    }
+  ]
+}

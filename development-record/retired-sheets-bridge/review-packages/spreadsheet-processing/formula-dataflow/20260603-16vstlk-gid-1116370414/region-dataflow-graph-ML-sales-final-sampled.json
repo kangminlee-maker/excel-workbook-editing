@@ -1,0 +1,527 @@
+{
+  "summary": {
+    "schema_version": 1,
+    "generated_at": "2026-06-04T19:43:03.532414+09:00",
+    "stage": "formula_dataflow_discovery_sampled",
+    "spreadsheet_id": "16vSTLkSxs-j3NxRJ8g_PNYGPuskQkJOWYBss_BDYQJg",
+    "sheet_title": "[ML] 매출_최종",
+    "formula_cell_count": 38029,
+    "reference_edge_count": 174562,
+    "pattern_group_count": 26412,
+    "region_family_count": 152,
+    "pipeline_candidate_count": 8,
+    "window_summaries": [
+      {
+        "artifact": "formula-window-ML-sales-final-A1-AN453.json",
+        "operation": "inspect.formula_window",
+        "range": "'[ML] 매출_최종'!A1:AN453",
+        "rows_observed": 444,
+        "max_columns_observed": 40,
+        "nonempty_cells": 17057,
+        "formula_cells": 13026
+      },
+      {
+        "artifact": "formula-window-ML-sales-final-A1-BSB8.json",
+        "operation": "inspect.formula_window",
+        "range": "'[ML] 매출_최종'!A1:BSB8",
+        "rows_observed": 8,
+        "max_columns_observed": 1848,
+        "nonempty_cells": 3320,
+        "formula_cells": 0
+      },
+      {
+        "artifact": "formula-window-ML-sales-final-A120-BSB127.json",
+        "operation": "inspect.formula_window",
+        "range": "'[ML] 매출_최종'!A120:BSB127",
+        "rows_observed": 8,
+        "max_columns_observed": 1848,
+        "nonempty_cells": 13815,
+        "formula_cells": 1768
+      },
+      {
+        "artifact": "formula-window-ML-sales-final-A240-BSB247.json",
+        "operation": "inspect.formula_window",
+        "range": "'[ML] 매출_최종'!A240:BSB247",
+        "rows_observed": 8,
+        "max_columns_observed": 1848,
+        "nonempty_cells": 14652,
+        "formula_cells": 14645
+      },
+      {
+        "artifact": "formula-window-ML-sales-final-A440-BSB447.json",
+        "operation": "inspect.formula_window",
+        "range": "'[ML] 매출_최종'!A440:BSB447",
+        "rows_observed": 5,
+        "max_columns_observed": 1848,
+        "nonempty_cells": 9159,
+        "formula_cells": 9155
+      },
+      {
+        "artifact": "values-window-ML-sales-final-A1-AN453.json",
+        "operation": "inspect.values_window",
+        "range": "'[ML] 매출_최종'!A1:AN453",
+        "rows_observed": 444,
+        "max_columns_observed": 40,
+        "nonempty_cells": 17057,
+        "formula_cells": 0
+      },
+      {
+        "artifact": "values-window-ML-sales-final-A1-BSB8.json",
+        "operation": "inspect.values_window",
+        "range": "'[ML] 매출_최종'!A1:BSB8",
+        "rows_observed": 8,
+        "max_columns_observed": 1848,
+        "nonempty_cells": 3320,
+        "formula_cells": 0
+      }
+    ],
+    "coverage_status": "sampled_partial",
+    "coverage_note": "Includes captured windows only; the 1,848-column sheet still needs additional full-height chunks for complete inventory.",
+    "metric_basis": {
+      "canonical_metric": "payment_amount",
+      "korean_label": "결제액",
+      "source_label_warning": "Workbook labels use `매출`, but the user-confirmed business meaning in this sheet is payment amount, not accounting revenue.",
+      "accounting_revenue_basis": "not_applicable"
+    }
+  },
+  "nodes": [
+    {
+      "id": "sheet_current",
+      "label": "[ML] current sampled formula regions",
+      "kind": "sheet"
+    },
+    {
+      "id": "input_f78a1097a276",
+      "label": "[DB] raw_매출(26년)",
+      "kind": "referenced_sheet",
+      "reference_count": 108318
+    },
+    {
+      "id": "input_cf4f00b7c300",
+      "label": "[ML] 매출_최종",
+      "kind": "referenced_sheet",
+      "reference_count": 65500
+    },
+    {
+      "id": "input_45e1b294763a",
+      "label": "[DB] raw_매출(26년)누적",
+      "kind": "referenced_sheet",
+      "reference_count": 744
+    },
+    {
+      "id": "pg_5cfa0ae68854",
+      "label": "C28:BSB444",
+      "kind": "pattern_group",
+      "formula_count": 5018
+    },
+    {
+      "id": "pg_6b0a1834707d",
+      "label": "PA127:BHR443",
+      "kind": "pattern_group",
+      "formula_count": 1260
+    },
+    {
+      "id": "pg_53a2e9881d3c",
+      "label": "H21:AQX443",
+      "kind": "pattern_group",
+      "formula_count": 574
+    },
+    {
+      "id": "pg_abd013956d7d",
+      "label": "G127:G444",
+      "kind": "pattern_group",
+      "formula_count": 318
+    },
+    {
+      "id": "pg_dbc6b6f329c1",
+      "label": "F127:F444",
+      "kind": "pattern_group",
+      "formula_count": 318
+    },
+    {
+      "id": "pg_dc92d5d507a4",
+      "label": "E127:E444",
+      "kind": "pattern_group",
+      "formula_count": 318
+    },
+    {
+      "id": "pg_109cd46f5412",
+      "label": "J127:J443",
+      "kind": "pattern_group",
+      "formula_count": 278
+    },
+    {
+      "id": "pg_c242b1d4e022",
+      "label": "K127:K443",
+      "kind": "pattern_group",
+      "formula_count": 278
+    },
+    {
+      "id": "pg_c32a814282d1",
+      "label": "A127:A443",
+      "kind": "pattern_group",
+      "formula_count": 278
+    },
+    {
+      "id": "pg_fdc8b1f30ab4",
+      "label": "I127:I443",
+      "kind": "pattern_group",
+      "formula_count": 278
+    },
+    {
+      "id": "pg_783c7c727423",
+      "label": "C127:C443",
+      "kind": "pattern_group",
+      "formula_count": 270
+    },
+    {
+      "id": "pg_a853afe1cd03",
+      "label": "D127:D443",
+      "kind": "pattern_group",
+      "formula_count": 270
+    },
+    {
+      "id": "pg_7dd13c7fe011",
+      "label": "GO127:AQQ443",
+      "kind": "pattern_group",
+      "formula_count": 240
+    },
+    {
+      "id": "pg_b59da7e30673",
+      "label": "RG127:BEM443",
+      "kind": "pattern_group",
+      "formula_count": 216
+    },
+    {
+      "id": "pg_0ad18c029d21",
+      "label": "QE127:BRV443",
+      "kind": "pattern_group",
+      "formula_count": 192
+    },
+    {
+      "id": "pg_9c7934c8ce8e",
+      "label": "J21:J126",
+      "kind": "pattern_group",
+      "formula_count": 93
+    },
+    {
+      "id": "pg_ca9960c563fb",
+      "label": "I21:I126",
+      "kind": "pattern_group",
+      "formula_count": 93
+    },
+    {
+      "id": "pg_26dc32af7ee0",
+      "label": "HI127:AKK443",
+      "kind": "pattern_group",
+      "formula_count": 84
+    },
+    {
+      "id": "pg_3a1eece85286",
+      "label": "HA120:AJT443",
+      "kind": "pattern_group",
+      "formula_count": 84
+    },
+    {
+      "id": "pg_91362893ad28",
+      "label": "QO127:APN443",
+      "kind": "pattern_group",
+      "formula_count": 84
+    },
+    {
+      "id": "pg_93a4bbe8d440",
+      "label": "OT127:ALU443",
+      "kind": "pattern_group",
+      "formula_count": 84
+    },
+    {
+      "id": "pg_daf655e7f83a",
+      "label": "ZW127:APC443",
+      "kind": "pattern_group",
+      "formula_count": 84
+    },
+    {
+      "id": "pg_78280363a5a1",
+      "label": "IR127:ANT443",
+      "kind": "pattern_group",
+      "formula_count": 48
+    },
+    {
+      "id": "pg_e14ce5f41aee",
+      "label": "MN127:AJD443",
+      "kind": "pattern_group",
+      "formula_count": 48
+    },
+    {
+      "id": "pg_b01ba1ef6e4c",
+      "label": "A132:A444",
+      "kind": "pattern_group",
+      "formula_count": 40
+    },
+    {
+      "id": "pg_7958455004c1",
+      "label": "MC127:BRK443",
+      "kind": "pattern_group",
+      "formula_count": 36
+    },
+    {
+      "id": "pg_4f959ab6bd4d",
+      "label": "LU127:ASS444",
+      "kind": "pattern_group",
+      "formula_count": 26
+    },
+    {
+      "id": "pg_413c1d9d01d1",
+      "label": "OH127:PS443",
+      "kind": "pattern_group",
+      "formula_count": 24
+    },
+    {
+      "id": "pg_491e9a62acb9",
+      "label": "YT127:ANF443",
+      "kind": "pattern_group",
+      "formula_count": 24
+    },
+    {
+      "id": "pg_513528710e4f",
+      "label": "ACW127:BFD443",
+      "kind": "pattern_group",
+      "formula_count": 24
+    }
+  ],
+  "edges": [
+    {
+      "from": "input_f78a1097a276",
+      "to": "sheet_current",
+      "kind": "formula_reference",
+      "reference_count": 108318,
+      "status": "candidate"
+    },
+    {
+      "from": "input_cf4f00b7c300",
+      "to": "sheet_current",
+      "kind": "formula_reference",
+      "reference_count": 65500,
+      "status": "candidate"
+    },
+    {
+      "from": "input_45e1b294763a",
+      "to": "sheet_current",
+      "kind": "formula_reference",
+      "reference_count": 744,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_5cfa0ae68854",
+      "kind": "output_pattern",
+      "formula_count": 5018,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_6b0a1834707d",
+      "kind": "output_pattern",
+      "formula_count": 1260,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_53a2e9881d3c",
+      "kind": "output_pattern",
+      "formula_count": 574,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_abd013956d7d",
+      "kind": "output_pattern",
+      "formula_count": 318,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_dbc6b6f329c1",
+      "kind": "output_pattern",
+      "formula_count": 318,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_dc92d5d507a4",
+      "kind": "output_pattern",
+      "formula_count": 318,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_109cd46f5412",
+      "kind": "output_pattern",
+      "formula_count": 278,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_c242b1d4e022",
+      "kind": "output_pattern",
+      "formula_count": 278,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_c32a814282d1",
+      "kind": "output_pattern",
+      "formula_count": 278,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_fdc8b1f30ab4",
+      "kind": "output_pattern",
+      "formula_count": 278,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_783c7c727423",
+      "kind": "output_pattern",
+      "formula_count": 270,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_a853afe1cd03",
+      "kind": "output_pattern",
+      "formula_count": 270,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_7dd13c7fe011",
+      "kind": "output_pattern",
+      "formula_count": 240,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_b59da7e30673",
+      "kind": "output_pattern",
+      "formula_count": 216,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_0ad18c029d21",
+      "kind": "output_pattern",
+      "formula_count": 192,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_9c7934c8ce8e",
+      "kind": "output_pattern",
+      "formula_count": 93,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_ca9960c563fb",
+      "kind": "output_pattern",
+      "formula_count": 93,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_26dc32af7ee0",
+      "kind": "output_pattern",
+      "formula_count": 84,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_3a1eece85286",
+      "kind": "output_pattern",
+      "formula_count": 84,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_91362893ad28",
+      "kind": "output_pattern",
+      "formula_count": 84,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_93a4bbe8d440",
+      "kind": "output_pattern",
+      "formula_count": 84,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_daf655e7f83a",
+      "kind": "output_pattern",
+      "formula_count": 84,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_78280363a5a1",
+      "kind": "output_pattern",
+      "formula_count": 48,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_e14ce5f41aee",
+      "kind": "output_pattern",
+      "formula_count": 48,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_b01ba1ef6e4c",
+      "kind": "output_pattern",
+      "formula_count": 40,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_7958455004c1",
+      "kind": "output_pattern",
+      "formula_count": 36,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_4f959ab6bd4d",
+      "kind": "output_pattern",
+      "formula_count": 26,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_413c1d9d01d1",
+      "kind": "output_pattern",
+      "formula_count": 24,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_491e9a62acb9",
+      "kind": "output_pattern",
+      "formula_count": 24,
+      "status": "candidate"
+    },
+    {
+      "from": "sheet_current",
+      "to": "pg_513528710e4f",
+      "kind": "output_pattern",
+      "formula_count": 24,
+      "status": "candidate"
+    }
+  ],
+  "mermaid": "flowchart LR\n  sheet_current[\"[ML] current sampled formula regions\"]\n  input_f78a1097a276[\"[DB] raw_매출(26년)\"]\n  input_cf4f00b7c300[\"[ML] 매출_최종\"]\n  input_45e1b294763a[\"[DB] raw_매출(26년)누적\"]\n  pg_5cfa0ae68854[\"C28:BSB444\"]\n  pg_6b0a1834707d[\"PA127:BHR443\"]\n  pg_53a2e9881d3c[\"H21:AQX443\"]\n  pg_abd013956d7d[\"G127:G444\"]\n  pg_dbc6b6f329c1[\"F127:F444\"]\n  pg_dc92d5d507a4[\"E127:E444\"]\n  pg_109cd46f5412[\"J127:J443\"]\n  pg_c242b1d4e022[\"K127:K443\"]\n  pg_c32a814282d1[\"A127:A443\"]\n  pg_fdc8b1f30ab4[\"I127:I443\"]\n  pg_783c7c727423[\"C127:C443\"]\n  pg_a853afe1cd03[\"D127:D443\"]\n  pg_7dd13c7fe011[\"GO127:AQQ443\"]\n  pg_b59da7e30673[\"RG127:BEM443\"]\n  pg_0ad18c029d21[\"QE127:BRV443\"]\n  pg_9c7934c8ce8e[\"J21:J126\"]\n  pg_ca9960c563fb[\"I21:I126\"]\n  pg_26dc32af7ee0[\"HI127:AKK443\"]\n  pg_3a1eece85286[\"HA120:AJT443\"]\n  pg_91362893ad28[\"QO127:APN443\"]\n  pg_93a4bbe8d440[\"OT127:ALU443\"]\n  pg_daf655e7f83a[\"ZW127:APC443\"]\n  pg_78280363a5a1[\"IR127:ANT443\"]\n  pg_e14ce5f41aee[\"MN127:AJD443\"]\n  pg_b01ba1ef6e4c[\"A132:A444\"]\n  pg_7958455004c1[\"MC127:BRK443\"]\n  pg_4f959ab6bd4d[\"LU127:ASS444\"]\n  pg_413c1d9d01d1[\"OH127:PS443\"]\n  pg_491e9a62acb9[\"YT127:ANF443\"]\n  pg_513528710e4f[\"ACW127:BFD443\"]\n  input_f78a1097a276 -->|\"108318\"| sheet_current\n  input_cf4f00b7c300 -->|\"65500\"| sheet_current\n  input_45e1b294763a -->|\"744\"| sheet_current\n  sheet_current -->|\"5018\"| pg_5cfa0ae68854\n  sheet_current -->|\"1260\"| pg_6b0a1834707d\n  sheet_current -->|\"574\"| pg_53a2e9881d3c\n  sheet_current -->|\"318\"| pg_abd013956d7d\n  sheet_current -->|\"318\"| pg_dbc6b6f329c1\n  sheet_current -->|\"318\"| pg_dc92d5d507a4\n  sheet_current -->|\"278\"| pg_109cd46f5412\n  sheet_current -->|\"278\"| pg_c242b1d4e022\n  sheet_current -->|\"278\"| pg_c32a814282d1\n  sheet_current -->|\"278\"| pg_fdc8b1f30ab4\n  sheet_current -->|\"270\"| pg_783c7c727423\n  sheet_current -->|\"270\"| pg_a853afe1cd03\n  sheet_current -->|\"240\"| pg_7dd13c7fe011\n  sheet_current -->|\"216\"| pg_b59da7e30673\n  sheet_current -->|\"192\"| pg_0ad18c029d21\n  sheet_current -->|\"93\"| pg_9c7934c8ce8e\n  sheet_current -->|\"93\"| pg_ca9960c563fb\n  sheet_current -->|\"84\"| pg_26dc32af7ee0\n  sheet_current -->|\"84\"| pg_3a1eece85286\n  sheet_current -->|\"84\"| pg_91362893ad28\n  sheet_current -->|\"84\"| pg_93a4bbe8d440\n  sheet_current -->|\"84\"| pg_daf655e7f83a\n  sheet_current -->|\"48\"| pg_78280363a5a1\n  sheet_current -->|\"48\"| pg_e14ce5f41aee\n  sheet_current -->|\"40\"| pg_b01ba1ef6e4c\n  sheet_current -->|\"36\"| pg_7958455004c1\n  sheet_current -->|\"26\"| pg_4f959ab6bd4d\n  sheet_current -->|\"24\"| pg_413c1d9d01d1\n  sheet_current -->|\"24\"| pg_491e9a62acb9\n  sheet_current -->|\"24\"| pg_513528710e4f",
+  "coverage_note": "Graph is based on sampled windows only, not full-sheet coverage."
+}

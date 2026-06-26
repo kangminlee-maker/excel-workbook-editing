@@ -1,0 +1,392 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-02T07:05:26.212348Z",
+  "source": {
+    "spreadsheet_id": "1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60",
+    "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1gp3jl_DyB8kvxHO7m4YjsCPbFTPGi-XKyqPhGAlTZ60/edit?ouid=112662517307801676490",
+    "title": "[Day 1] 1.0 (from 20250707)",
+    "source_artifacts": {
+      "live_data_view_projection": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/live-data-view-projection.json",
+      "live_semantic_proposal_validation": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/live-semantic-proposal-validation.json",
+      "live_domain_source_model": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0/live-domain-source-model.json"
+    }
+  },
+  "authority": {
+    "source_document": "live_google_sheet",
+    "candidate_status": "boundary_scoped_candidates_only",
+    "accepted_local_semantic_candidates": 0,
+    "shared_ontology_updates": 0,
+    "formula_result_authority": "not_established",
+    "local_boundary_confirmed": true
+  },
+  "method": {
+    "name": "connected_sheets_local_semantic_candidate_generation",
+    "authority": "local_candidates_not_accepted_or_shared",
+    "decision_policy": "Generate boundary-scoped local semantic candidate records from accepted data-view projections and semantic validation blockers. Do not accept candidates, resolve local boundary, recalculate formulas, or promote shared ontology updates."
+  },
+  "local_semantic_candidates": [
+    {
+      "id": "local_candidate_pipeline_24_0102_same_sheet_range_24_0102",
+      "type": "local_semantic_candidate",
+      "status": "blocked",
+      "label": "24_0102 formula surface",
+      "candidate_kind": "period_tab_calculation_surface",
+      "boundary_scope": "전사레벨 현황 보고 문서",
+      "boundary_status": "confirmed",
+      "projection_id": "projection_node_pipeline_pipeline_24_0102_same_sheet_range_24_0102",
+      "pipeline_id": "pipeline_24_0102_same_sheet_range_24_0102",
+      "sheet": "24_0102",
+      "range": "B8:T67",
+      "properties": {
+        "role": "calculation",
+        "input_refs": [
+          {
+            "id": "block_24_0102_001",
+            "kind": "table_candidate",
+            "role": "input",
+            "sheet": "24_0102",
+            "range": "A1:M16",
+            "label": "(2023. 12.26~ 2024. 01.01)",
+            "authority": "block_candidate"
+          }
+        ],
+        "output_refs": [
+          {
+            "id": "block_24_0102_formula_surface",
+            "kind": "formula_region_candidate",
+            "role": "output",
+            "sheet": "24_0102",
+            "range": "B8:T67",
+            "label": "24_0102 formula surface",
+            "authority": "block_candidate"
+          }
+        ],
+        "transform_summary": {
+          "kind": "formula_dependency_edge",
+          "formula_count": 178,
+          "signature_group_count": 8,
+          "repeated_formula_family": true
+        },
+        "preview_status": "sampled_from_top_left_window",
+        "sampled_formula_cell_count": 23
+      },
+      "blockers": [
+        "local_boundary_not_confirmed",
+        "source_authority_unavailable",
+        "formula_result_authority_not_established",
+        "source_authority_gate",
+        "formula_result_authority_gate"
+      ],
+      "shared_promotion_status": "blocked",
+      "evidence_refs": [
+        "pipeline_24_0102_same_sheet_range_24_0102",
+        "edge_24_0102_same_sheet_range_24_0102",
+        "signature_79311c1c31de",
+        "signature_8890fec40256",
+        "signature_9a6c85b55d8b",
+        "signature_3f8102fe8e94",
+        "signature_6a2dda7466ed",
+        "signature_163c9e68d151",
+        "signature_fc5efa07f925",
+        "signature_2d484c593b8c"
+      ],
+      "required_evidence": [
+        "local_boundary_confirmation",
+        "source_spreadsheet_authority",
+        "formula_result_authority",
+        "repeated_workbook_family_evidence",
+        "human_review_approval"
+      ]
+    },
+    {
+      "id": "local_candidate_pipeline_24_0108_same_sheet_range_24_0108",
+      "type": "local_semantic_candidate",
+      "status": "blocked",
+      "label": "24_0108 formula surface",
+      "candidate_kind": "period_tab_calculation_surface",
+      "boundary_scope": "전사레벨 현황 보고 문서",
+      "boundary_status": "confirmed",
+      "projection_id": "projection_node_pipeline_pipeline_24_0108_same_sheet_range_24_0108",
+      "pipeline_id": "pipeline_24_0108_same_sheet_range_24_0108",
+      "sheet": "24_0108",
+      "range": "B8:M56",
+      "properties": {
+        "role": "calculation",
+        "input_refs": [
+          {
+            "id": "block_24_0108_006",
+            "kind": "table_candidate",
+            "role": "input",
+            "sheet": "24_0108",
+            "range": "A45:D49",
+            "label": "1월 목표",
+            "authority": "block_candidate"
+          }
+        ],
+        "output_refs": [
+          {
+            "id": "block_24_0108_formula_surface",
+            "kind": "formula_region_candidate",
+            "role": "output",
+            "sheet": "24_0108",
+            "range": "B8:M56",
+            "label": "24_0108 formula surface",
+            "authority": "block_candidate"
+          }
+        ],
+        "transform_summary": {
+          "kind": "formula_dependency_edge",
+          "formula_count": 122,
+          "signature_group_count": 8,
+          "repeated_formula_family": true
+        },
+        "preview_status": "sampled_from_top_left_window",
+        "sampled_formula_cell_count": 23
+      },
+      "blockers": [
+        "local_boundary_not_confirmed",
+        "source_authority_unavailable",
+        "formula_result_authority_not_established",
+        "source_authority_gate",
+        "formula_result_authority_gate"
+      ],
+      "shared_promotion_status": "blocked",
+      "evidence_refs": [
+        "pipeline_24_0108_same_sheet_range_24_0108",
+        "edge_24_0108_same_sheet_range_24_0108",
+        "signature_79311c1c31de",
+        "signature_8890fec40256",
+        "signature_9a6c85b55d8b",
+        "signature_3f8102fe8e94",
+        "signature_6a2dda7466ed",
+        "signature_163c9e68d151",
+        "signature_fc5efa07f925",
+        "signature_2d484c593b8c"
+      ],
+      "required_evidence": [
+        "local_boundary_confirmation",
+        "source_spreadsheet_authority",
+        "formula_result_authority",
+        "repeated_workbook_family_evidence",
+        "human_review_approval"
+      ]
+    },
+    {
+      "id": "local_candidate_pipeline_24_0115_same_sheet_range_24_0115",
+      "type": "local_semantic_candidate",
+      "status": "blocked",
+      "label": "24_0115 formula surface",
+      "candidate_kind": "period_tab_calculation_surface",
+      "boundary_scope": "전사레벨 현황 보고 문서",
+      "boundary_status": "confirmed",
+      "projection_id": "projection_node_pipeline_pipeline_24_0115_same_sheet_range_24_0115",
+      "pipeline_id": "pipeline_24_0115_same_sheet_range_24_0115",
+      "sheet": "24_0115",
+      "range": "B8:M57",
+      "properties": {
+        "role": "calculation",
+        "input_refs": [
+          {
+            "id": "block_24_0115_006",
+            "kind": "table_candidate",
+            "role": "input",
+            "sheet": "24_0115",
+            "range": "A45:I50",
+            "label": "상반기 목표 매출/손익",
+            "authority": "block_candidate"
+          }
+        ],
+        "output_refs": [
+          {
+            "id": "block_24_0115_formula_surface",
+            "kind": "formula_region_candidate",
+            "role": "output",
+            "sheet": "24_0115",
+            "range": "B8:M57",
+            "label": "24_0115 formula surface",
+            "authority": "block_candidate"
+          }
+        ],
+        "transform_summary": {
+          "kind": "formula_dependency_edge",
+          "formula_count": 116,
+          "signature_group_count": 8,
+          "repeated_formula_family": true
+        },
+        "preview_status": "sampled_from_top_left_window",
+        "sampled_formula_cell_count": 23
+      },
+      "blockers": [
+        "local_boundary_not_confirmed",
+        "source_authority_unavailable",
+        "formula_result_authority_not_established",
+        "source_authority_gate",
+        "formula_result_authority_gate"
+      ],
+      "shared_promotion_status": "blocked",
+      "evidence_refs": [
+        "pipeline_24_0115_same_sheet_range_24_0115",
+        "edge_24_0115_same_sheet_range_24_0115",
+        "signature_79311c1c31de",
+        "signature_8890fec40256",
+        "signature_9a6c85b55d8b",
+        "signature_3f8102fe8e94",
+        "signature_6a2dda7466ed",
+        "signature_163c9e68d151",
+        "signature_fc5efa07f925",
+        "signature_2d484c593b8c"
+      ],
+      "required_evidence": [
+        "local_boundary_confirmation",
+        "source_spreadsheet_authority",
+        "formula_result_authority",
+        "repeated_workbook_family_evidence",
+        "human_review_approval"
+      ]
+    }
+  ],
+  "candidate_relations": [
+    {
+      "id": "rel_local_candidate_pipeline_24_0102_same_sheet_range_24_0102_same_family_local_candidate_pipeline_24_0108_same_sheet_range_24_0108",
+      "type": "local_semantic_candidate_relation",
+      "status": "blocked",
+      "relation_type": "same_repeated_formula_family_candidate",
+      "from": "local_candidate_pipeline_24_0102_same_sheet_range_24_0102",
+      "to": "local_candidate_pipeline_24_0108_same_sheet_range_24_0108",
+      "blockers": [
+        "formula_result_authority_not_established",
+        "local_boundary_not_confirmed"
+      ],
+      "evidence_refs": [
+        "pipeline_24_0102_same_sheet_range_24_0102",
+        "edge_24_0102_same_sheet_range_24_0102",
+        "signature_79311c1c31de",
+        "signature_8890fec40256",
+        "signature_9a6c85b55d8b",
+        "signature_3f8102fe8e94",
+        "signature_6a2dda7466ed",
+        "signature_163c9e68d151",
+        "signature_fc5efa07f925",
+        "signature_2d484c593b8c",
+        "pipeline_24_0108_same_sheet_range_24_0108",
+        "edge_24_0108_same_sheet_range_24_0108"
+      ]
+    },
+    {
+      "id": "rel_local_candidate_pipeline_24_0108_same_sheet_range_24_0108_same_family_local_candidate_pipeline_24_0115_same_sheet_range_24_0115",
+      "type": "local_semantic_candidate_relation",
+      "status": "blocked",
+      "relation_type": "same_repeated_formula_family_candidate",
+      "from": "local_candidate_pipeline_24_0108_same_sheet_range_24_0108",
+      "to": "local_candidate_pipeline_24_0115_same_sheet_range_24_0115",
+      "blockers": [
+        "formula_result_authority_not_established",
+        "local_boundary_not_confirmed"
+      ],
+      "evidence_refs": [
+        "pipeline_24_0108_same_sheet_range_24_0108",
+        "edge_24_0108_same_sheet_range_24_0108",
+        "signature_79311c1c31de",
+        "signature_8890fec40256",
+        "signature_9a6c85b55d8b",
+        "signature_3f8102fe8e94",
+        "signature_6a2dda7466ed",
+        "signature_163c9e68d151",
+        "signature_fc5efa07f925",
+        "signature_2d484c593b8c",
+        "pipeline_24_0115_same_sheet_range_24_0115",
+        "edge_24_0115_same_sheet_range_24_0115"
+      ]
+    }
+  ],
+  "review_queue": [
+    {
+      "id": "review_local_candidate_pipeline_24_0102_same_sheet_range_24_0102",
+      "target_id": "local_candidate_pipeline_24_0102_same_sheet_range_24_0102",
+      "severity": "high",
+      "status": "blocked",
+      "blocking_gates": [
+        "local_boundary_not_confirmed",
+        "source_authority_unavailable",
+        "formula_result_authority_not_established",
+        "source_authority_gate",
+        "formula_result_authority_gate"
+      ],
+      "required_action": "Confirm local boundary, source authority, formula-result authority, repeated evidence, and human review before accepting or promoting."
+    },
+    {
+      "id": "review_local_candidate_pipeline_24_0108_same_sheet_range_24_0108",
+      "target_id": "local_candidate_pipeline_24_0108_same_sheet_range_24_0108",
+      "severity": "high",
+      "status": "blocked",
+      "blocking_gates": [
+        "local_boundary_not_confirmed",
+        "source_authority_unavailable",
+        "formula_result_authority_not_established",
+        "source_authority_gate",
+        "formula_result_authority_gate"
+      ],
+      "required_action": "Confirm local boundary, source authority, formula-result authority, repeated evidence, and human review before accepting or promoting."
+    },
+    {
+      "id": "review_local_candidate_pipeline_24_0115_same_sheet_range_24_0115",
+      "target_id": "local_candidate_pipeline_24_0115_same_sheet_range_24_0115",
+      "severity": "high",
+      "status": "blocked",
+      "blocking_gates": [
+        "local_boundary_not_confirmed",
+        "source_authority_unavailable",
+        "formula_result_authority_not_established",
+        "source_authority_gate",
+        "formula_result_authority_gate"
+      ],
+      "required_action": "Confirm local boundary, source authority, formula-result authority, repeated evidence, and human review before accepting or promoting."
+    },
+    {
+      "id": "review_shared_promotion_blocked",
+      "target_id": "shared_ontology_promotion",
+      "severity": "high",
+      "status": "blocked",
+      "blocking_gates": [
+        "local_boundary_gate",
+        "source_authority_gate",
+        "formula_result_authority_gate",
+        "human_review_gate"
+      ],
+      "required_action": "Resolve promotion gates before any shared ontology update."
+    },
+    {
+      "id": "review_semantic_validation_carry_forward",
+      "target_id": "semantic_validation_review_queue",
+      "severity": "high",
+      "status": "blocked",
+      "blocking_gates": [
+        "proposal_period_tab_calculation_surface",
+        "proposal_source_authority_blocker_context",
+        "shared_ontology_promotion"
+      ],
+      "required_action": "Resolve semantic validation review queue before accepting local semantic candidates."
+    }
+  ],
+  "summary": {
+    "local_semantic_candidate_count": 3,
+    "accepted_local_semantic_candidate_count": 0,
+    "blocked_local_semantic_candidate_count": 3,
+    "candidate_relation_count": 2,
+    "blocked_candidate_relation_count": 2,
+    "review_queue_count": 5,
+    "local_boundary_confirmed": true,
+    "shared_ontology_update_count": 0,
+    "candidate_status": "blocked_boundary_scoped_candidates_only"
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "Local semantic candidates are generated as blocked boundary-scoped records only."
+    },
+    {
+      "level": "warning",
+      "message": "Formula-result and source authority blockers still apply to local candidates."
+    }
+  ]
+}

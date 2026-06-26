@@ -70,7 +70,7 @@
         "pipeline_status": { "const": "candidate_not_accepted_graph_claim" },
         "formula_text_authority": { "const": "formula_text_only" },
         "formula_result_authority": { "const": "not_established" },
-        "external_source_read_authority": { "const": "blocked_until_source_acl_and_broker_allowlist" }
+        "external_source_read_authority": { "const": "blocked_until_source_access_evidence" }
       }
     },
     "pipeline": {

@@ -1,0 +1,19 @@
+{
+  "artifact_kind": "sheets_bridge_review_package",
+  "artifacts": [
+    {
+      "kind": "inspection_snapshot",
+      "path": "/Users/kangmin/Library/Application Support/Day1/ChromeSheetsBridge/review-packages/sheets-bridge/native-host/2026-06-05/85cc0cec-4ec2-4493-9462-95f940c8e850/snapshot.json",
+      "summary": {
+        "captured_at": "2026-06-05T01:49:49.389960+00:00",
+        "spreadsheet_id": "1G07-jmsFWiWYtB5E08puFHlBVuyBf488Ae12BkEmsbs",
+        "tab_count": 19,
+        "title": "[취미/부업 본부 - 교육콘텐츠그룹] 마이라이트 Dashboard_2026"
+      }
+    }
+  ],
+  "created_at": "2026-06-05T01:49:51.993369+00:00",
+  "request_id": "85cc0cec-4ec2-4493-9462-95f940c8e850",
+  "schema_version": "1.0",
+  "source": "chrome_native_messaging"
+}

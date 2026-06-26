@@ -28,7 +28,7 @@ def build_google_sheets_cross_validation_plan(
     targets = _pipeline_targets(table_io)
     targets.extend(_external_source_targets(table_io))
     targets.extend(_formula_error_targets(table_io))
-    read_plan = _broker_read_plan(
+    read_plan = _source_evidence_read_plan(
         tuning,
         max_ranges=max_remaining_read_ranges,
     )
@@ -54,15 +54,15 @@ def build_google_sheets_cross_validation_plan(
             },
         },
         "authority": {
-            "source_document": "live_google_sheet",
+            "source_document": "connected_google_sheet_evidence",
             "plan_status": "validation_plan_only_no_live_read",
             "formula_result_authority": "not_established",
-            "source_spreadsheet_read_authority": "blocked_until_source_acl_and_broker_allowlist",
-            "allowed_live_read_scope": "broker_bounded_parser_windows_only",
+            "source_spreadsheet_read_authority": "blocked_until_source_access_evidence",
+            "allowed_evidence_scope": "bounded_source_evidence_only",
         },
         "validation_targets": targets,
         "deterministic_gates": gates,
-        "broker_read_plan": read_plan,
+        "source_evidence_read_plan": read_plan,
         "summary": _summary(targets, gates, read_plan),
         "parser_observations": _parser_observations(targets, read_plan),
     }
@@ -146,7 +146,7 @@ def _pipeline_targets(table_io: dict[str, Any]) -> list[dict[str, Any]]:
                 status="planned",
                 deterministic_inputs=[pipeline["input_refs"][0]["id"]],
                 pass_conditions=[
-                    "Sampled input surface range exists in bounded broker sample evidence.",
+                    "Sampled input surface range exists in bounded source evidence.",
                     "Sampled input surface is marked as candidate evidence, not final graph truth.",
                 ],
                 failure_signals=[
@@ -191,7 +191,7 @@ def _external_source_targets(table_io: dict[str, Any]) -> list[dict[str, Any]]:
             authority_blockers=[
                 "source_argument_value_lookup_required",
                 "source_spreadsheet_google_acl_required",
-                "broker_source_spreadsheet_allowlist_required",
+                "source_spreadsheet_access_evidence_required",
             ],
         )
         _add_gate(
@@ -201,10 +201,10 @@ def _external_source_targets(table_io: dict[str, Any]) -> list[dict[str, Any]]:
             deterministic_inputs=[source["id"], source.get("candidate_source_spreadsheet_id")],
             pass_conditions=[
                 "Source argument resolves to the candidate spreadsheet ID or another reviewed source ID.",
-                "Google ACL and broker allowlist authorize the source spreadsheet before any source data read.",
+                "Source access evidence authorizes the source spreadsheet before any source data read.",
             ],
             failure_signals=[
-                "Source spreadsheet is read without source ACL and broker allowlist evidence.",
+                "Source spreadsheet is read without source access evidence.",
                 "Candidate URL is treated as authority without matching formula source argument resolution.",
             ],
         )
@@ -273,7 +273,7 @@ def _remaining_read_target(read_plan: dict[str, Any]) -> dict[str, Any]:
             for batch in read_plan["batches"]
         ],
         pass_conditions=[
-            "Every planned bounded read stays within broker parser-window policy.",
+            "Every planned bounded read stays within source-evidence parser-window policy.",
             "No source spreadsheet range is included in bounded reads until separately authorized.",
         ],
         failure_signals=[
@@ -284,7 +284,7 @@ def _remaining_read_target(read_plan: dict[str, Any]) -> dict[str, Any]:
     return target
 
 
-def _broker_read_plan(tuning: dict[str, Any], *, max_ranges: int) -> dict[str, Any]:
+def _source_evidence_read_plan(tuning: dict[str, Any], *, max_ranges: int) -> dict[str, Any]:
     grouped: dict[str, list[dict[str, Any]]] = {}
     for item in tuning.get("remaining_read_queue", []):
         if item.get("status") not in {"pending_bounded_sampling", "verified_for_current_policy_limits"}:
@@ -297,12 +297,12 @@ def _broker_read_plan(tuning: dict[str, Any], *, max_ranges: int) -> dict[str, A
             continue
         batches.append(
             {
-                "id": f"broker_batch_{_slug(operation)}",
+                "id": f"source_evidence_batch_{_slug(operation)}",
                 "operation": operation,
                 "ranges": [item["range"] for item in selected],
                 "read_candidate_ids": [item["id"] for item in selected],
                 "status": "planned_not_executed",
-                "authority": "broker_bounded_parser_window_only",
+                "authority": "bounded_source_evidence_only",
             }
         )
     return {
@@ -376,11 +376,11 @@ def _authority_blockers_for_pipeline(pipeline: dict[str, Any]) -> list[str]:
 
 def _next_action(target_type: str, authority_blockers: list[str]) -> str:
     if any("source_spreadsheet" in blocker for blocker in authority_blockers):
-        return "resolve_source_acl_and_broker_allowlist_before_source_read"
+        return "resolve_source_access_evidence_before_source_read"
     if "formula_error_reconciliation_required" in authority_blockers:
         return "reconcile_formula_errors_before_graph_promotion"
     if target_type == "remaining_bounded_sampling":
-        return "execute_planned_broker_batches_in_later_stage"
+        return "supply_planned_source_evidence_results_in_later_stage"
     return "run_planned_deterministic_gates_after_required_evidence_is_available"
 
 
@@ -404,7 +404,7 @@ def _summary(
         "remaining_bounded_sampling_target_count": target_types["remaining_bounded_sampling"],
         "planned_gate_count": gate_statuses["planned"],
         "blocked_gate_count": gate_statuses["blocked"],
-        "broker_read_batch_count": len(read_plan["batches"]),
+        "source_evidence_batch_count": len(read_plan["batches"]),
         "planned_bounded_read_range_count": sum(len(batch["ranges"]) for batch in read_plan["batches"]),
         "unauthorized_source_read_count": read_plan["unauthorized_source_read_count"],
         "plan_status": "validation_plan_only_no_live_read",
@@ -425,7 +425,7 @@ def _parser_observations(
         observations.append(
             {
                 "level": "warning",
-                "message": "Source spreadsheet reads remain blocked until source ACL and broker allowlist evidence is available.",
+                "message": "Source spreadsheet reads remain blocked until source access evidence is available.",
             }
         )
     if any("formula_error_reconciliation_required" in item["authority_blockers"] for item in targets):
@@ -439,7 +439,7 @@ def _parser_observations(
         observations.append(
             {
                 "level": "info",
-                "message": f"{sum(len(batch['ranges']) for batch in read_plan['batches'])} bounded read ranges are planned for later broker execution.",
+                "message": f"{sum(len(batch['ranges']) for batch in read_plan['batches'])} bounded read ranges are planned for later source evidence supply.",
             }
         )
     return observations
@@ -502,10 +502,10 @@ def render_google_sheets_cross_validation_plan_section(plan: dict[str, Any]) -> 
         f"<td>{_esc(item['status'])}</td>"
         f"<td>{_esc(', '.join(item['ranges'][:4]))}</td>"
         "</tr>"
-        for item in plan["broker_read_plan"]["batches"]
+        for item in plan["source_evidence_read_plan"]["batches"]
     )
     if not batch_rows:
-        batch_rows = '<tr><td colspan="4">No bounded broker batches planned.</td></tr>'
+        batch_rows = '<tr><td colspan="4">No bounded source evidence batches planned.</td></tr>'
     observation_rows = "".join(
         "<tr>"
         f"<td>{_esc(item['level'])}</td>"
@@ -520,7 +520,7 @@ def render_google_sheets_cross_validation_plan_section(plan: dict[str, Any]) -> 
   <section class="panel"><table><thead><tr><th>Priority</th><th>Type</th><th>Status</th><th>Surface</th><th>Authority Blockers</th><th>Next Action</th></tr></thead><tbody>{target_rows}</tbody></table></section>
   <h2>Deterministic Gates</h2>
   <section class="panel"><table><thead><tr><th>Gate</th><th>Status</th><th>Target</th><th>Pass Conditions</th></tr></thead><tbody>{gate_rows}</tbody></table></section>
-  <h2>Planned Broker Batches</h2>
+  <h2>Planned Source Evidence Batches</h2>
   <section class="panel"><table><thead><tr><th>Operation</th><th>Range Count</th><th>Status</th><th>Sample Ranges</th></tr></thead><tbody>{batch_rows}</tbody></table></section>
   <h2>Cross-Validation Observations</h2>
   <section class="panel"><table><thead><tr><th>Level</th><th>Message</th></tr></thead><tbody>{observation_rows}</tbody></table></section>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>ChatGPT Web Sheets Bridge Smoke</title>
+  <style>
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;margin:32px;background:#f7f8fb;color:#172033}
+    main{max-width:960px;margin:auto;background:#fff;border:1px solid #d8e1ea;border-radius:8px;padding:24px}
+    h1{margin-top:0;font-size:24px} table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{border-bottom:1px solid #e5ebf2;padding:9px;text-align:left} th{background:#eef3f8}
+    code{background:#eef3f8;padding:2px 5px;border-radius:5px}
+  </style>
+</head>
+<body><main>
+  <h1>ChatGPT Web Sheets Bridge Smoke</h1>
+  <p>Status: <strong>awaiting_user_confirmation</strong></p>
+  <table><thead><tr><th>Step</th><th>Status</th></tr></thead><tbody><tr><td>healthz</td><td>passed</td></tr><tr><td>initialize</td><td>passed</td></tr><tr><td>tools_list</td><td>passed</td></tr><tr><td>resources_list</td><td>passed</td></tr><tr><td>resource_read_table_builder</td><td>passed</td></tr><tr><td>remote_auth_status</td><td>passed</td></tr><tr><td>table_builder_ui</td><td>passed</td></tr><tr><td>save_intent</td><td>passed</td></tr><tr><td>local_runtime_boundary</td><td>passed</td></tr></tbody></table>
+  <h2>Plan Preview</h2>
+  <p>Target: <code>google_sheets</code> / <code>sheet</code></p>
+  <p>원본 데이터를 AI가 직접 계산하지 않고, 새 시트의 수식과 원본 참조로 결과표를 채운다.</p>
+  <h2>Write Gate</h2>
+  <p>ChatGPT web smoke stops after TableBuildPlan preview. No spreadsheet write tool is called before explicit user confirmation.</p>
+  <h2>Local Runtime Boundary</h2>
+  <p>Status: <code>local_runtime_required</code></p>
+</main></body></html>

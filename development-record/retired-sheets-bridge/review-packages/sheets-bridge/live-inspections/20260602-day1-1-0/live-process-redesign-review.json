@@ -1,0 +1,132 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-02T04:24:25.016016Z",
+  "source": {
+    "live_inspection_dir": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0",
+    "source_artifacts": {
+      "process_ledger": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/workbook-understanding/process-ledger.jsonl",
+      "tasklist": "/Users/kangmin/Documents/excel-workbook-editing/docs/document-shaped-excel-understanding-tasklist.md",
+      "design": "/Users/kangmin/Documents/excel-workbook-editing/docs/document-shaped-excel-understanding-design.md"
+    }
+  },
+  "authority": {
+    "review_status": "process_redesign_review_completed",
+    "parser_truth": "no_new_parser_claims",
+    "shared_ontology_updates": 0
+  },
+  "method": {
+    "name": "connected_sheets_process_redesign_review",
+    "authority": "process_recommendation_not_parser_truth",
+    "decision_policy": "Review generated connected-Sheets artifacts, stage ledger entries, active tasklist, design baseline, schemas, tests, and viewer behavior to recommend process changes. Recommendations do not alter parser truth until validated in a later iteration."
+  },
+  "stage_reviews": [
+    {
+      "stage_group": "access_and_manifest",
+      "recommendation": "keep",
+      "reason": "Broker/DWD identity, metadata, view-state, and permission boundaries must be known before parsing."
+    },
+    {
+      "stage_group": "bounded_sampling_and_tuning",
+      "recommendation": "keep_as_loop",
+      "reason": "Bounded read candidates, samples, and tuning should iterate until high-priority coverage is sufficient."
+    },
+    {
+      "stage_group": "pipeline_and_gate_execution",
+      "recommendation": "keep_split",
+      "reason": "Plan and execution separation made unauthorized source reads visible before live calls were made."
+    },
+    {
+      "stage_group": "evidence_to_graph",
+      "recommendation": "keep",
+      "reason": "Evidence package, document ontology mapping, action contracts, and validated graph assembly prevented semantic over-promotion."
+    },
+    {
+      "stage_group": "semantic_generation",
+      "recommendation": "keep_but_batch_when_no_human_review",
+      "reason": "Proposal generation and validation can remain separate artifacts, but may be run as one batch when no human review happens between them."
+    },
+    {
+      "stage_group": "shared_alignment",
+      "recommendation": "review_only_until_authority_resolved",
+      "reason": "Shared promotion is blocked until local boundary, source authority, formula-result authority, repeated evidence, and human approval exist."
+    }
+  ],
+  "redesign_decisions": [
+    {
+      "id": "decision_source_authority_earlier",
+      "decision": "Move external source authority resolution earlier when IMPORTRANGE blockers appear.",
+      "effect": "Avoid spending later semantic stages on candidates that are predictably blocked by the same source gap."
+    },
+    {
+      "id": "decision_formula_result_authority_gate",
+      "decision": "Add a dedicated formula-result authority checkpoint before semantic acceptance.",
+      "effect": "Formula text can still drive structural dataflow, but semantic acceptance waits for result authority."
+    },
+    {
+      "id": "decision_projection_before_human_review",
+      "decision": "Keep data view projection before shared alignment review.",
+      "effect": "Reviewers can see concrete projected surfaces before answering boundary and promotion questions."
+    },
+    {
+      "id": "decision_permission_contract_as_stage",
+      "decision": "Treat broker policy and Google ACL requirements as process inputs, not incidental failures.",
+      "effect": "Missing operations stop the process explicitly instead of encouraging workaround extraction paths."
+    },
+    {
+      "id": "decision_html_layout_gate",
+      "decision": "Run HTML layout/overflow checks for dense review sections before reviewer handoff.",
+      "effect": "Schema-valid sections remain human-readable."
+    }
+  ],
+  "open_evidence_gaps": [
+    {
+      "id": "gap_external_source_authority",
+      "priority": "high",
+      "description": "FC_DATA IMPORTRANGE source ACL and broker allowlist are still needed."
+    },
+    {
+      "id": "gap_formula_result_authority",
+      "priority": "high",
+      "description": "Formula-result authority is not established for projected calculation surfaces."
+    },
+    {
+      "id": "gap_local_boundary",
+      "priority": "high",
+      "description": "Organization/project/team/workbook-family boundary is not confirmed."
+    },
+    {
+      "id": "gap_repeated_workbook_family",
+      "priority": "medium",
+      "description": "Repeated workbook-family evidence is not yet available for shared promotion."
+    },
+    {
+      "id": "gap_reporting_basis",
+      "priority": "medium",
+      "description": "Revenue/profit reporting basis and aggregation rule require human decision."
+    },
+    {
+      "id": "gap_remaining_bounded_reads",
+      "priority": "medium",
+      "description": "Remaining bounded read candidates still limit full coverage."
+    }
+  ],
+  "summary": {
+    "json_artifact_count": 25,
+    "google_sheets_ledger_entry_count": 21,
+    "stage_review_count": 6,
+    "redesign_decision_count": 5,
+    "open_evidence_gap_count": 6,
+    "shared_ontology_update_count": 0,
+    "review_status": "process_redesign_review_completed"
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "Connected-Sheets parser stages now run end-to-end through process redesign review."
+    },
+    {
+      "level": "warning",
+      "message": "Source authority, formula-result authority, local boundary, and repeated workbook-family evidence remain the dominant blockers."
+    }
+  ]
+}

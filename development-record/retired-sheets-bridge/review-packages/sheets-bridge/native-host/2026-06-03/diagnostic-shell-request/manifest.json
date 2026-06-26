@@ -1,0 +1,19 @@
+{
+  "artifact_kind": "sheets_bridge_review_package",
+  "artifacts": [
+    {
+      "kind": "inspection_snapshot",
+      "path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/native-host/2026-06-03/diagnostic-shell-request/snapshot.json",
+      "summary": {
+        "captured_at": "2026-05-27T00:00:00.000Z",
+        "spreadsheet_id": "spreadsheet-1",
+        "tab_count": 1,
+        "title": "Ops Sheet"
+      }
+    }
+  ],
+  "created_at": "2026-06-03T05:37:15.745526+00:00",
+  "request_id": "diagnostic-shell-request",
+  "schema_version": "1.0",
+  "source": "chrome_native_messaging"
+}

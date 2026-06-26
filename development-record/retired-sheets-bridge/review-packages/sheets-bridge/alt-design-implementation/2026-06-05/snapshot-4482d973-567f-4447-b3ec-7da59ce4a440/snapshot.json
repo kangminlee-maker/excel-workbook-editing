@@ -1,0 +1,103 @@
+{
+  "artifacts": [
+    {
+      "kind": "google_auth",
+      "summary": {
+        "mode": "user_oauth"
+      }
+    }
+  ],
+  "captured_at": "2026-06-05T15:28:15.053519+00:00",
+  "operation": "inspect.formula_window",
+  "requested_ranges": [
+    "'MCP_ALT_MLL_2025.08_min_formula'!A1:AQ129"
+  ],
+  "schema_version": "1.0",
+  "snapshot_id": "snapshot-4482d973-567f-4447-b3ec-7da59ce4a440",
+  "spreadsheet_id": "1q9HYY2b3ha15VwXnsqO98YADw2ebCyY-TqB45VFUvPE",
+  "value_render_option": "FORMULA",
+  "windows": [
+    {
+      "column_count": 13,
+      "major_dimension": "ROWS",
+      "range": "MCP_ALT_MLL_2025.08_min_formula!A1:AQ129",
+      "row_count": 6,
+      "values": [
+        [
+          "MCP 대안 설계: 최소 수식 상품 성과표",
+          "",
+          "",
+          "",
+          "",
+          "시작일",
+          "='1. MLL_ 상품별 성과 현황-2025.08'!G1",
+          "신규 total CAC",
+          "=IFERROR(SUMIFS($I$6:$I$129,$A$6:$A$129,\"신규\")/SUMIFS($H$6:$H$129,$A$6:$A$129,\"신규\"),0)"
+        ],
+        [
+          "생성 방식: 현재 탭 차원 + SKU/광고비 원천 탭 array 집계",
+          "",
+          "",
+          "",
+          "",
+          "진행율",
+          "=(TODAY()-$G$1)/31",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "=SUM(M3:AQ3)"
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "세부 PAID안",
+          "",
+          "Total",
+          "",
+          "",
+          "",
+          "",
+          "=ARRAYFORMULA(M4:AQ4-BYCOL(FILTER(M6:AQ129,REGEXMATCH($B$6:$B$129,\"언어\")),LAMBDA(c,SUM(c))))"
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "=SUM(H6:H129)",
+          "=SUM(I6:I129)",
+          "",
+          "",
+          "=IFERROR(I4/H4,0)",
+          "=BYCOL(M6:AQ129,LAMBDA(c,SUM(c)))"
+        ],
+        [
+          "=ARRAYFORMULA('1. MLL_ 상품별 성과 현황-2025.08'!A5:AQ5)"
+        ],
+        [
+          "=ARRAYFORMULA('1. MLL_ 상품별 성과 현황-2025.08'!A6:G129)",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "=BYROW(M6:AQ129,LAMBDA(r,SUM(r)))",
+          "=ARRAYFORMULA(MMULT(N($C$6:$C$129=TRANSPOSE('3. MLL_광고비 현황-2025.08'!$D$2:$D$242)),N('3. MLL_광고비 현황-2025.08'!$E$2:$E$242)))",
+          "",
+          "",
+          "=ARRAYFORMULA(IFERROR(I6:I129/H6:H129,0))",
+          "=ARRAYFORMULA(MMULT(N($C$6:$C$129=TRANSPOSE('2. MLL_SKU별 성과 현황-2025.08'!$C$4:$C$1002)),N('2. MLL_SKU별 성과 현황-2025.08'!$H$4:$AL$1002)))"
+        ]
+      ]
+    }
+  ]
+}

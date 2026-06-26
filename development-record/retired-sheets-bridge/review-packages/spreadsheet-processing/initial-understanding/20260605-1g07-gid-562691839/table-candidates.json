@@ -1,0 +1,81 @@
+{
+  "schema_version": "table_candidates_v1",
+  "target_sheet": "MLL_Overview(신규/롱테일)",
+  "target_range": "'MLL_Overview(신규/롱테일)'!A1:AU872",
+  "formula_referenced_sources": [
+    "[DB]RAW_광고비-필터금지",
+    "[DB]RAW_결제수-필터금지",
+    "[DB]RAW_결제액-필터금지",
+    "[DB]RAW_순매출-필터금지",
+    "[DB]RAW_순구매수-필터금지"
+  ],
+  "tables": [
+    {
+      "id": "kpi_payment_basis",
+      "name": "결제액 기준 목표지표 카드",
+      "range": "'MLL_Overview(신규/롱테일)'!K1:U5",
+      "role": "result_projection",
+      "boundary_evidence": [
+        "상단 요약 표기",
+        "2026-06 월별 행과 목표지표 상수를 참조하는 수식"
+      ],
+      "status": "sampled_accepted"
+    },
+    {
+      "id": "kpi_net_sales_basis",
+      "name": "순매출 기준 목표지표 카드",
+      "range": "'MLL_Overview(신규/롱테일)'!AE1:AO5",
+      "role": "result_projection",
+      "boundary_evidence": [
+        "상단 요약 표기",
+        "2026-06 월별 행과 목표지표 상수를 참조하는 수식"
+      ],
+      "status": "sampled_accepted"
+    },
+    {
+      "id": "monthly_summary",
+      "name": "월별 MLL 성과 요약",
+      "range": "'MLL_Overview(신규/롱테일)'!A7:AT31",
+      "role": "processed_output_table",
+      "boundary_evidence": [
+        "7행 표기 구조",
+        "8:31행 월별 표기",
+        "일별 시계열 행을 집계하는 수식"
+      ],
+      "status": "sampled_accepted"
+    },
+    {
+      "id": "daily_time_series",
+      "name": "일별 MLL 성과 집계",
+      "range": "'MLL_Overview(신규/롱테일)'!A32:AT867",
+      "role": "processed_output_table",
+      "boundary_evidence": [
+        "날짜 행",
+        "공유되는 조건 합산 수식 패턴",
+        "외부 원천 시트 참조"
+      ],
+      "status": "sampled_accepted"
+    },
+    {
+      "id": "weekly_rollup_rows",
+      "name": "주간 MLL 성과 집계 행",
+      "range": "'MLL_Overview(신규/롱테일)'!A39:AT871",
+      "role": "processed_output_table",
+      "boundary_evidence": [
+        "12/30주 같은 주간 표기",
+        "앞선 7개 일별 행을 합산하는 수식"
+      ],
+      "status": "sampled_accepted_with_mixed_future_rows"
+    },
+    {
+      "id": "future_prebuilt_rows",
+      "name": "미래 일자 사전 생성 행",
+      "range": "'MLL_Overview(신규/롱테일)'!A868:AT871",
+      "role": "prebuilt_future_projection",
+      "boundary_evidence": [
+        "2027-01 행에 #N/A 값이 있음"
+      ],
+      "status": "review_required"
+    }
+  ]
+}

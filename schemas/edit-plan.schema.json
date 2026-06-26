@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://day1company.local/sheets-bridge/edit-plan.schema.json",
-  "title": "Chrome Sheets Bridge Edit Plan",
+  "$id": "https://day1company.local/spreadsheet-processing/edit-plan.schema.json",
+  "title": "Spreadsheet Processing Edit Plan",
   "type": "object",
   "required": [
     "schema_version",

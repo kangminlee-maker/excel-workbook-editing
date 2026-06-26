@@ -16,7 +16,7 @@ from google_sheets_cross_validation_plan import build_google_sheets_cross_valida
 
 class GoogleSheetsCrossValidationPlanTest(unittest.TestCase):
     def test_builds_schema_valid_validation_plan_without_live_reads(self) -> None:
-        fixture_dir = REPO_ROOT / "review-packages" / "sheets-bridge" / "live-inspections" / "test-cross-validation-plan"
+        fixture_dir = REPO_ROOT / "review-packages" / "spreadsheet-processing" / "live-inspections" / "test-cross-validation-plan"
         fixture_dir.mkdir(parents=True, exist_ok=True)
         table_io_path = fixture_dir / "live-table-io-pipelines.json"
         tuning_path = fixture_dir / "live-block-candidate-tuning.json"

@@ -1,0 +1,31 @@
+{
+  "artifact_kind": "sheets_bridge_mcp_package",
+  "artifacts": [
+    {
+      "kind": "inspection_snapshot",
+      "path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/table-io-flow-real-sheet/2026-06-05/snapshot-3a6ed4d7-8ee3-4e8b-a748-d8d3d01bd446/snapshot.json",
+      "summary": {
+        "operation": "inspect.grid_window",
+        "requested_ranges": [
+          "'1. MLL_ 상품별 성과 현황-2025.08'!A1:AQ245"
+        ],
+        "spreadsheet_id": "1q9HYY2b3ha15VwXnsqO98YADw2ebCyY-TqB45VFUvPE",
+        "tab_count": 0,
+        "title": "",
+        "window_count": 1
+      }
+    },
+    {
+      "kind": "mcp_handoff",
+      "path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/table-io-flow-real-sheet/2026-06-05/snapshot-3a6ed4d7-8ee3-4e8b-a748-d8d3d01bd446/mcp-handoff.json",
+      "summary": {
+        "manifest_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/table-io-flow-real-sheet/2026-06-05/snapshot-3a6ed4d7-8ee3-4e8b-a748-d8d3d01bd446/manifest.json",
+        "mcp_prompt": "이 Sheets Bridge 패키지를 분석해줘: /Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/table-io-flow-real-sheet/2026-06-05/snapshot-3a6ed4d7-8ee3-4e8b-a748-d8d3d01bd446/manifest.json"
+      }
+    }
+  ],
+  "created_at": "2026-06-05T15:19:24.147152+00:00",
+  "request_id": "snapshot-3a6ed4d7-8ee3-4e8b-a748-d8d3d01bd446",
+  "schema_version": "1.0",
+  "source": "mcp_user_oauth"
+}

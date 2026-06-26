@@ -124,15 +124,15 @@ def _contract_from_review_item(item: dict[str, Any]) -> dict[str, Any]:
 def _template(review_type: str) -> dict[str, Any]:
     if review_type == "external_source_authority_blocker":
         return {
-            "owner": "sheet_owner_and_broker_policy_owner",
-            "action": "Resolve IMPORTRANGE source argument, confirm Google ACL, and add source spreadsheet to broker allowlist before source reads.",
+            "owner": "sheet_owner_and_source_access_policy_evidence_owner",
+            "action": "Resolve IMPORTRANGE source argument, confirm Google ACL, and add source spreadsheet to source access evidence before source reads.",
             "required_evidence": [
                 "resolved source spreadsheet ID",
                 "Google ACL confirmation for principal",
-                "broker allowlist entry for source spreadsheet",
+                "source access evidence entry for source spreadsheet",
             ],
             "deterministic_gate": "external_source_authority",
-            "completion_condition": "Source spreadsheet can be inspected through broker policy without bypassing ACL or broker controls.",
+            "completion_condition": "Source spreadsheet can be inspected through source access policy without bypassing ACL or source evidence controls.",
             "completion_effect": "External source dependency gates may be re-run.",
         }
     if review_type == "formula_result_authority_gap":
@@ -151,7 +151,7 @@ def _template(review_type: str) -> dict[str, Any]:
     if review_type == "coverage_gap":
         return {
             "owner": "parser_operator",
-            "action": "Execute or explicitly defer remaining current-workbook bounded read candidates under broker policy.",
+            "action": "Execute or explicitly defer remaining current-workbook bounded read candidates under source access policy.",
             "required_evidence": [
                 "bounded read execution artifact or explicit deferral record",
                 "policy-compliant range list",
@@ -190,7 +190,7 @@ def _summary(contracts: list[dict[str, Any]]) -> dict[str, Any]:
         "open_contract_count": sum(1 for item in contracts if item["status"] == "open"),
         "high_priority_contract_count": priorities["high"],
         "medium_priority_contract_count": priorities["medium"],
-        "sheet_owner_contract_count": owners["sheet_owner_and_broker_policy_owner"] + owners["sheet_owner_or_formula_reconciliation_reviewer"],
+        "sheet_owner_contract_count": owners["sheet_owner_and_source_access_policy_evidence_owner"] + owners["sheet_owner_or_formula_reconciliation_reviewer"],
         "parser_operator_contract_count": owners["parser_operator"],
         "semantic_concept_count": 0,
         "contract_status": "action_contract_layer_only",

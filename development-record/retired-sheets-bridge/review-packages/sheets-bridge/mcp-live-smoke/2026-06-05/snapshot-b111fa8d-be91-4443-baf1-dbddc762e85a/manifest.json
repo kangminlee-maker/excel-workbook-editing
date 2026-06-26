@@ -1,0 +1,31 @@
+{
+  "artifact_kind": "sheets_bridge_mcp_package",
+  "artifacts": [
+    {
+      "kind": "inspection_snapshot",
+      "path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/mcp-live-smoke/2026-06-05/snapshot-b111fa8d-be91-4443-baf1-dbddc762e85a/snapshot.json",
+      "summary": {
+        "operation": "inspect.values_window",
+        "requested_ranges": [
+          "'1. MLL_ 상품별 성과 현황-2025.08'!A1:E4"
+        ],
+        "spreadsheet_id": "1q9HYY2b3ha15VwXnsqO98YADw2ebCyY-TqB45VFUvPE",
+        "tab_count": 0,
+        "title": "",
+        "window_count": 1
+      }
+    },
+    {
+      "kind": "mcp_handoff",
+      "path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/mcp-live-smoke/2026-06-05/snapshot-b111fa8d-be91-4443-baf1-dbddc762e85a/mcp-handoff.json",
+      "summary": {
+        "manifest_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/mcp-live-smoke/2026-06-05/snapshot-b111fa8d-be91-4443-baf1-dbddc762e85a/manifest.json",
+        "mcp_prompt": "이 Sheets Bridge 패키지를 분석해줘: /Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/mcp-live-smoke/2026-06-05/snapshot-b111fa8d-be91-4443-baf1-dbddc762e85a/manifest.json"
+      }
+    }
+  ],
+  "created_at": "2026-06-05T12:09:10.175474+00:00",
+  "request_id": "snapshot-b111fa8d-be91-4443-baf1-dbddc762e85a",
+  "schema_version": "1.0",
+  "source": "mcp_user_oauth"
+}

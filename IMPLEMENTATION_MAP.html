@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Spreadsheet Editing Implementation Map</title>
+  <title>Spreadsheet Processing Implementation Map</title>
   <style>
     :root {
       color-scheme: light;
@@ -13,7 +13,7 @@
       --line: #d7dde8;
       --panel: #ffffff;
       --accent: #1b6c9f;
-      --accent-2: #3b7f54;
+      --ok: #2f6f4e;
       --warn: #9a5b00;
     }
     * { box-sizing: border-box; }
@@ -24,60 +24,35 @@
       color: var(--ink);
     }
     header {
-      padding: 40px 32px 24px;
+      padding: 36px 32px 24px;
       background: #fff;
       border-bottom: 1px solid var(--line);
     }
-    main {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 28px 24px 44px;
-    }
+    main { max-width: 1120px; margin: 0 auto; padding: 28px 24px 44px; }
     h1, h2, h3 { margin: 0; line-height: 1.2; }
     h1 { font-size: 30px; }
     h2 { font-size: 20px; margin-bottom: 14px; }
     h3 { font-size: 16px; margin-bottom: 8px; }
     p { margin: 8px 0 0; color: var(--muted); }
     section { margin-top: 24px; }
+    code { padding: 1px 5px; border-radius: 5px; background: #edf1f6; }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 14px;
     }
-    .card {
+    .card, .step {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 8px;
       padding: 16px;
     }
-    .lane {
+    .flow {
       display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 12px;
-      align-items: stretch;
-      margin-top: 10px;
-    }
-    .label {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #fff;
-      padding: 14px;
-      font-weight: 700;
-    }
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 8px;
-    }
-    .step {
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #fff;
-      padding: 12px;
-      min-height: 82px;
+      grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+      gap: 10px;
     }
     .step strong { display: block; color: var(--accent); }
-    .step small { display: block; color: var(--muted); margin-top: 5px; }
     table {
       width: 100%;
       border-collapse: collapse;
@@ -94,246 +69,201 @@
     }
     th { background: #eef3f8; }
     tr:last-child td { border-bottom: 0; }
-    code {
-      padding: 1px 5px;
-      border-radius: 5px;
-      background: #edf1f6;
-    }
-    .ok { color: var(--accent-2); font-weight: 700; }
+    .ok { color: var(--ok); font-weight: 700; }
     .warn { color: var(--warn); font-weight: 700; }
-    @media (max-width: 720px) {
-      header { padding: 28px 20px 20px; }
-      main { padding: 20px 14px 32px; }
-      .lane { grid-template-columns: 1fr; }
+    .blueprint {
+      width: 100%;
+      min-height: 390px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Spreadsheet Editing Implementation Map</h1>
-    <p>Current skill architecture and planned broker-backed bridge for connected Google Sheets.</p>
+    <h1>Spreadsheet Processing Implementation Map</h1>
+    <p>Current processing architecture for Excel workbook editing, credential-free spreadsheet evidence/results, and spreadsheet understanding.</p>
   </header>
   <main>
     <section>
-      <h2>Current State</h2>
+      <h2>Current Authorities</h2>
       <div class="grid">
         <div class="card">
-          <h3>Excel Workbook Editing</h3>
-          <p>Existing scripts inspect `.xlsx` workbooks, run Excel-engine sampling, and scan formula errors.</p>
+          <h3>CRUD References</h3>
+          <p><code>references/</code> remains the authority for Excel and spreadsheet identity, preservation, validation, review packages, and connected Sheets behavior.</p>
         </div>
         <div class="card">
-          <h3>Connected Google Sheets Rules</h3>
-          <p>References now define in-place edit, timeout, import loading, Apps Script, and rollback requirements.</p>
+          <h3>Claim Ledger</h3>
+          <p><code>docs/evidence-backed-spreadsheet-claim-ledger-design.md</code> defines evidence records, candidate claims, gate decisions, adjudicated projections, and retrieval/action states.</p>
         </div>
         <div class="card">
-          <h3>Review Packages</h3>
-          <p>Static HTML, JSON, and Markdown packages provide CLI-visible evidence without replacing live validation.</p>
+          <h3>Dataflow Inspector</h3>
+          <p><code>docs/data-processing-spreadsheet-package-design.md</code> defines the extensible analysis package direction for Excel and connected Sheets evidence.</p>
         </div>
         <div class="card">
-          <h3>Document-Shaped Excel Parser</h3>
-          <p>Workbook understanding artifacts now separate image anchors, pivot table definitions, row-oriented seeds, 2D cell region candidates, split candidates, formula references, structural style evidence, large-sheet formula patterns, and table I/O pipeline candidates.</p>
+          <h3>External Access Boundary</h3>
+          <p>Approved external spreadsheet access surfaces own Google Drive and Google Sheets access, authentication, policy, write gates, and Google API calls. This repository consumes credential-free spreadsheet evidence/results.</p>
         </div>
         <div class="card">
-          <h3>Claim Ledger Architecture</h3>
-          <p><code>docs/evidence-backed-spreadsheet-claim-ledger-design.md</code> and ADR <code>0001</code> define the current top-level model: bitemporal evidence ledger, candidate claims, gate decisions, adjudicated claim graph, ontology governance, projections, governed retrieval, and action control plane.</p>
-        </div>
-        <div class="card">
-          <h3>Table I/O Pipelines</h3>
-          <p>The sample workbook currently produces 45 output-centered pipeline candidates and the HTML viewer renders Mermaid sheet-level and pipeline-level input/output graphs.</p>
-        </div>
-        <div class="card">
-          <h3>Cross-Validation Plan</h3>
-          <p>The sample workbook now has 63 render-capture targets, 79 pending visual/formula gate checks, and a 12-target sheet-diverse first capture batch.</p>
-        </div>
-        <div class="card">
-          <h3>Render Captures</h3>
-          <p>The first capture batch exported 12 Excel range PNGs. All 30 related gate checks now have capture evidence and remain pending review or bbox normalization.</p>
-        </div>
-        <div class="card">
-          <h3>Capture Quality</h3>
-          <p>The first capture batch now has deterministic PNG usability checks: 8 usable, 2 review-required, and 2 recapture-required results.</p>
-        </div>
-        <div class="card">
-          <h3>Recapture Candidates</h3>
-          <p>12 alternative captures were tested. Wide-range tiling improved 5 candidates and separated range-width issues from view-state issues.</p>
-        </div>
-        <div class="card">
-          <h3>View-State Profile</h3>
-          <p>View-state is now split into early preflight and capture reconciliation. Source visible state is preserved; reveal variants are diagnostic only.</p>
-        </div>
-        <div class="card">
-          <h3>Coordinate Normalization</h3>
-          <p>24 capture windows were mapped to workbook cell ranges. 12 passed, 3 need review, and 9 are blocked by hidden/filter view-state.</p>
-        </div>
-        <div class="card">
-          <h3>Visual Features</h3>
-          <p>13 normalized visible captures now have deterministic image features such as content bboxes, line candidates, and grid/table-like signals.</p>
-        </div>
-        <div class="card">
-          <h3>Gate Execution</h3>
-          <p>79 planned gates were executed against current evidence: 17 accepted, 62 review-required, and 0 rejected.</p>
-        </div>
-        <div class="card">
-          <h3>Boundary Decisions</h3>
-          <p>117 boundary candidates were resolved conservatively: 6 accepted split boundaries, 0 rejected, and 111 retained for review.</p>
-        </div>
-        <div class="card">
-          <h3>Pipeline Role Validation</h3>
-          <p>45 table I/O pipeline roles were evaluated: 44 accepted, 0 rejected, and 1 retained for unresolved input review.</p>
-        </div>
-        <div class="card">
-          <h3>Evidence Package</h3>
-          <p>19 deterministic artifacts were bundled into one parser input authority with 174 review queue items and 8 general-domain refs.</p>
-        </div>
-        <div class="card">
-          <h3>Document Ontology Mapping</h3>
-          <p>Stage 21 maps the evidence package to 3,459 document-structure ontology nodes, 3,653 relations, and 45 data views without generating semantic ontology concepts.</p>
-        </div>
-        <div class="card">
-          <h3>Action Contract Layer</h3>
-          <p>Stage 22 turns ontology statuses into 219 action contracts with owners, required evidence, deterministic gates, and completion effects.</p>
-        </div>
-        <div class="card">
-          <h3>Domain Source Model</h3>
-          <p>Stage 23 inventories 8 accounting-kr general-domain sources and keeps the current local workbook boundary review-required before semantic proposals.</p>
-        </div>
-        <div class="card">
-          <h3>LLM Proposal Generation</h3>
-          <p>Stage 24 creates proposal-only semantic artifacts: 10 concept candidates, 11 hierarchy candidates, 7 semantic relations, 175 aliases, and 2 ambiguity notes.</p>
-        </div>
-        <div class="card">
-          <h3>Proposal Validation</h3>
-          <p>Stage 25 validates 205 LLM proposals: 39 accepted, 83 require review, 83 quarantined, and 0 rejected, with source trace passing for every proposal.</p>
-        </div>
-        <div class="card">
-          <h3>Validated Graph</h3>
-          <p>Stage 26 assembles 1,078 accepted graph nodes, 1,197 relations, 44 data views, 5 semantic concepts, 28 aliases, and carry-forward review queues.</p>
-        </div>
-        <div class="card">
-          <h3>Data View Projection</h3>
-          <p>Stage 27 projects 44 accepted data views and 58 document objects into reviewable pivot, formula, image, and row-band surfaces without treating formula text as recalculated results.</p>
-        </div>
-        <div class="card">
-          <h3>Local Semantic Candidates</h3>
-          <p>Stage 28 generates 21 boundary-scoped local semantic candidates covering all 44 accepted data views, with shared ontology promotion blocked pending local boundary and source confirmation.</p>
-        </div>
-        <div class="card">
-          <h3>Shared Alignment Review</h3>
-          <p>Stage 29 reviews 21 local candidates against shared promotion prerequisites, emits 0 shared ontology updates, and surfaces 14 K-GAAP/K-IFRS basis review blockers.</p>
-        </div>
-        <div class="card">
-          <h3>Process Redesign Review</h3>
-          <p>Stage 30 reviews 33 ledger entries, 31 tasklist stages, and 57 generated files, then recommends 6 process changes including early view-state preflight, 2D region candidates, a visual evidence loop, Excel-engine formula-result gates, and viewer layout QA.</p>
-        </div>
-        <div class="card">
-          <h3>General Domain Source</h3>
-          <p>The current sample workbook may use <code>/Users/kangmin/.onto/domains/accounting-kr</code> as Korean accounting general-domain evidence during semantic ontology construction.</p>
-        </div>
-        <div class="card">
-          <h3>Process Ledger</h3>
-          <p>Workbook-understanding iterations are recorded as hypothesis, action, artifact, signal, decision, and next-adjustment entries for later process redesign.</p>
-        </div>
-        <div class="card">
-          <h3>Workbook Tasklist</h3>
-          <p><code>docs/document-shaped-excel-understanding-tasklist.md</code> is the active execution tasklist and must change with any stage update.</p>
-        </div>
-        <div class="card">
-          <h3>Codex Goal Spec</h3>
-          <p>Implementation choices, paths, actor ownership, phase locks, contracts, and completion criteria are fixed in <code>docs/codex-goal-chrome-extension-sheets-bridge.md</code>.</p>
-        </div>
-        <div class="card">
-          <h3>Managed Deployment Work Design</h3>
-          <p><code>docs/chrome-extension-managed-deployment.md</code> now defines the tester-published pilot, Admin Console policy inputs, broker readiness checks, extension-free CLI smoke tests, evidence package, version gate, and rollback gates. Policy authority now requires broker-verified identity, and live Chrome OAuth/DWD/audit evidence remains a pilot gate.</p>
-        </div>
-        <div class="card">
-          <h3>Claude Code Handoff</h3>
-          <p><code>docs/claude-code-sheets-bridge.md</code> defines the credential-free path for Claude Code: read only sanitized native-host <code>manifest.json</code> and <code>snapshot.json</code>, never Google credentials.</p>
+          <h3>Project Workspaces</h3>
+          <p><code>projects/</code> stores continuity state per Google Sheets <code>spreadsheetId + gid</code> or Excel workbook-family identity. Review packages remain generated evidence outputs.</p>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>Target Chrome Bridge</h2>
-      <div class="lane">
-        <div class="label">User Surface</div>
-        <div class="steps">
-          <div class="step"><strong>Chrome Extension</strong><small>Primary UX: detect active Google Sheet, authenticate user, and collect approval.</small></div>
-          <div class="step"><strong>Local CLI</strong><small>Secondary UX for smoke tests, using the current gcloud account and X-Broker-Authorization to call only the Cloud Run broker.</small></div>
-          <div class="step"><strong>Broker Calls</strong><small>Both clients use the same Cloud Run broker API and policy gates.</small></div>
-        </div>
-      </div>
-      <div class="lane">
-        <div class="label">Cloud Surface</div>
-        <div class="steps">
-          <div class="step"><strong>Cloud Run Broker</strong><small>Expose /v1/health for readiness and /v1/inspect for authenticated broker calls with default-deny policy.</small></div>
-          <div class="step"><strong>Keyless DWD</strong><small>Use runtime identity plus IAM Credentials signJwt to impersonate the verified user.</small></div>
-          <div class="step"><strong>Sheets API</strong><small>Read and write only through broker-controlled calls and sanitized responses.</small></div>
-        </div>
-      </div>
-      <div class="lane">
-        <div class="label">Local Surface</div>
-        <div class="steps">
-          <div class="step"><strong>Native Host</strong><small>Persist broker-produced snapshots through macOS or Windows Chrome Native Messaging registration.</small></div>
-          <div class="step"><strong>Agent</strong><small>Analyze snapshots, generate review packages, and draft edit plans.</small></div>
-          <div class="step"><strong>Artifacts</strong><small>Store review packages, plans, approval evidence, broker policy summaries, apply results, and rollback instructions locally.</small></div>
-        </div>
+      <h2>Understanding Flow</h2>
+      <div class="flow">
+        <div class="step"><strong>Source</strong><p>Excel workbook, connected Sheet, or stored review package.</p></div>
+        <div class="step"><strong>Evidence</strong><p>Manifest, ranges, formulas, values, view-state, visuals, and metadata.</p></div>
+        <div class="step"><strong>Claims</strong><p>Boundaries, tables, labels, dataflow edges, semantic candidates, and review items.</p></div>
+        <div class="step"><strong>Gates</strong><p>Coordinate, formula, lineage, authority, visual, semantic, and conflict checks.</p></div>
+        <div class="step"><strong>Projections</strong><p>Document graph, table I/O flow, ontology candidates, HTML review, and retrieval packs.</p></div>
       </div>
     </section>
 
     <section>
-      <h2>Roadmap</h2>
+      <h2>Service Blueprint</h2>
+      <svg class="blueprint" viewBox="0 0 1080 390" role="img" aria-labelledby="blueprint-title blueprint-desc">
+        <title id="blueprint-title">Spreadsheet processing authority blueprint</title>
+        <desc id="blueprint-desc">Shows how source files and credential-free spreadsheet evidence flow through deterministic processing, LLM claim proposal, gates, canonical artifacts, and review projections.</desc>
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#506070"></path>
+          </marker>
+          <marker id="gate-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#a83d3d"></path>
+          </marker>
+        </defs>
+        <style>
+          .bp-title { font: 700 19px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #18202f; }
+          .bp-sub { font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #5f6b7a; }
+          .bp-label { font: 700 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #18202f; }
+          .bp-small { font: 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #465366; }
+          .bp-node { stroke: #cbd4df; stroke-width: 1.2; rx: 8; }
+          .bp-arrow { stroke: #506070; stroke-width: 1.8; fill: none; marker-end: url(#arrow); }
+          .bp-gate-arrow { stroke: #a83d3d; stroke-width: 1.8; fill: none; marker-end: url(#gate-arrow); }
+          .bp-dash { stroke: #7b8490; stroke-width: 1.5; fill: none; stroke-dasharray: 6 5; marker-end: url(#arrow); }
+        </style>
+        <text class="bp-title" x="32" y="36">Current Spreadsheet Processing Blueprint</text>
+        <text class="bp-sub" x="32" y="58">Question: where does authority live from source evidence to reviewable processing artifacts?</text>
+
+        <rect class="bp-node" x="32" y="88" width="160" height="86" fill="#eaf3ff"></rect>
+        <text class="bp-label" x="50" y="115">Inputs</text>
+        <text class="bp-small" x="50" y="138">Excel files</text>
+        <text class="bp-small" x="50" y="158">external evidence</text>
+
+        <rect class="bp-node" x="250" y="88" width="182" height="86" fill="#eaf7ef"></rect>
+        <text class="bp-label" x="268" y="115">Deterministic Tools</text>
+        <text class="bp-small" x="268" y="138">manifests, formulas</text>
+        <text class="bp-small" x="268" y="158">table/dataflow parse</text>
+
+        <rect class="bp-node" x="490" y="88" width="176" height="86" fill="#fff2d8"></rect>
+        <text class="bp-label" x="508" y="115">LLM Work</text>
+        <text class="bp-small" x="508" y="138">candidate claims</text>
+        <text class="bp-small" x="508" y="158">intent/plan drafting</text>
+
+        <rect class="bp-node" x="724" y="88" width="166" height="86" fill="#f1f4f8"></rect>
+        <text class="bp-label" x="742" y="115">Canonical Artifacts</text>
+        <text class="bp-small" x="742" y="138">evidence, claims</text>
+        <text class="bp-small" x="742" y="158">TableBuildIntent/Plan</text>
+
+        <rect class="bp-node" x="934" y="88" width="114" height="86" fill="#f2edff"></rect>
+        <text class="bp-label" x="952" y="115">Views</text>
+        <text class="bp-small" x="952" y="138">HTML/SVG</text>
+        <text class="bp-small" x="952" y="158">review packs</text>
+
+        <path class="bp-arrow" d="M 192 131 L 250 131"></path>
+        <path class="bp-arrow" d="M 432 131 L 490 131"></path>
+        <path class="bp-arrow" d="M 666 131 L 724 131"></path>
+        <path class="bp-arrow" d="M 890 131 L 934 131"></path>
+
+        <rect class="bp-node" x="250" y="220" width="182" height="82" fill="#eaf7ef"></rect>
+        <text class="bp-label" x="268" y="246">Processing Modules</text>
+        <text class="bp-small" x="268" y="269">spreadsheet_processing/</text>
+        <text class="bp-small" x="268" y="289">scripts/workbook_*</text>
+
+        <rect class="bp-node" x="490" y="220" width="176" height="82" fill="#ffecec"></rect>
+        <text class="bp-label" x="508" y="246">Blocking Gates</text>
+        <text class="bp-small" x="508" y="269">schema, ranges</text>
+        <text class="bp-small" x="508" y="289">Excel recalculation</text>
+
+        <rect class="bp-node" x="724" y="220" width="166" height="82" fill="#e8fbff"></rect>
+        <text class="bp-label" x="742" y="246">Quality Reports</text>
+        <text class="bp-small" x="742" y="269">coverage, ambiguity</text>
+        <text class="bp-small" x="742" y="289">review questions</text>
+
+        <rect class="bp-node" x="934" y="220" width="114" height="82" fill="#fff4e6"></rect>
+        <text class="bp-label" x="952" y="246">Outside</text>
+        <text class="bp-small" x="952" y="269">Google access</text>
+        <text class="bp-small" x="952" y="289">approved access</text>
+
+        <path class="bp-arrow" d="M 341 174 L 341 220"></path>
+        <path class="bp-gate-arrow" d="M 432 261 L 490 261"></path>
+        <path class="bp-arrow" d="M 666 261 L 724 261"></path>
+        <path class="bp-dash" d="M 934 261 L 890 261"></path>
+
+        <rect x="32" y="326" width="1016" height="38" fill="#f7f8fb" stroke="#d7dde8" rx="8"></rect>
+        <rect x="52" y="339" width="12" height="12" fill="#eaf3ff" stroke="#cbd4df"></rect>
+        <text class="bp-small" x="72" y="349">input</text>
+        <rect x="126" y="339" width="12" height="12" fill="#eaf7ef" stroke="#cbd4df"></rect>
+        <text class="bp-small" x="146" y="349">tools</text>
+        <rect x="200" y="339" width="12" height="12" fill="#fff2d8" stroke="#cbd4df"></rect>
+        <text class="bp-small" x="220" y="349">LLM candidates</text>
+        <rect x="345" y="339" width="12" height="12" fill="#f1f4f8" stroke="#cbd4df"></rect>
+        <text class="bp-small" x="365" y="349">canonical artifact</text>
+        <rect x="520" y="339" width="12" height="12" fill="#ffecec" stroke="#cbd4df"></rect>
+        <text class="bp-small" x="540" y="349">blocking gate</text>
+        <rect x="660" y="339" width="12" height="12" fill="#f2edff" stroke="#cbd4df"></rect>
+        <text class="bp-small" x="680" y="349">projection</text>
+        <rect x="790" y="339" width="12" height="12" fill="#fff4e6" stroke="#cbd4df"></rect>
+        <text class="bp-small" x="810" y="349">outside authority</text>
+      </svg>
+    </section>
+
+    <section>
+      <h2>Current Work</h2>
       <table>
         <thead>
-          <tr><th>Phase</th><th>Outcome</th><th>Status</th></tr>
+          <tr><th>Area</th><th>Next Runtime Outcome</th></tr>
         </thead>
         <tbody>
-          <tr><td>0. Foundations</td><td>Protocol, schemas, and phase contracts defined.</td><td class="ok">Complete</td></tr>
-          <tr><td>Workbook Understanding</td><td>Generate manifest, view-state preflight, read-only sample, block candidates, pivot cache links, formula pattern profile, 2D cell region candidates, structural style evidence, split candidates, table I/O pipeline candidates with Mermaid I/O graphs, cross-validation target plans, render captures, gate execution, boundary decisions, pipeline role validation, evidence packages, process ledger, and HTML review viewers. Current architecture work is shifting these artifacts into a bitemporal evidence/claim ledger with adjudicated projections.</td><td class="warn">Active</td></tr>
-          <tr><td>1. Broker Auth</td><td>Detect active Sheet, dispatch /v1/inspect, verify user identity from Chrome or local gcloud, expose /v1/health readiness, enforce broker policy, keyless DWD token minting, read-only metadata inspect, and bounded grid/value/formula parser windows. Live CLI smoke passes through verified identity, wildcard spreadsheet policy, DWD signJwt/token exchange, Sheets metadata read, and A1:Z80 parser windows for spreadsheets the pilot user can access.</td><td class="ok">CLI smoke passed</td></tr>
-          <tr><td>2. Native Host Bridge</td><td>Persist sanitized broker snapshots as local review packages through Native Messaging. macOS and Windows install candidates, protocol tests, package tests, and Claude Code handoff docs exist; Chrome registration smoke remains manual.</td><td class="warn">Cross-platform local candidate ready</td></tr>
-          <tr><td>3. Deep Inspect</td><td>Broker now exposes bounded parser window primitives for grid, formatted values, and formulas. Higher-level classification of protections, validations, imports, and loading states remains planned.</td><td class="warn">Window primitives ready</td></tr>
-          <tr><td>4. Plan Generation</td><td>Create schema-validated dry-run edit plans.</td><td class="warn">Planned</td></tr>
-          <tr><td>5. Apply Plan</td><td>Apply approved range-scoped writes with preconditions and readback.</td><td class="warn">Planned</td></tr>
-          <tr><td>6. Hardening</td><td>Add chunking, retries, request budgets, telemetry, and audit log.</td><td class="warn">Planned</td></tr>
-          <tr><td>7. Managed Deployment</td><td>Deploy Cloud Run broker, managed extension, Local CLI, policy, and native host. Tester-pilot runbook, version gate, evidence package, and rollback gates are now documented.</td><td class="warn">Tester pilot ready</td></tr>
+          <tr><td>Claim ledger contracts</td><td>Define schemas and commands for evidence, claims, gates, projections, retrieval packs, and review/action transitions.</td></tr>
+          <tr><td>Data-processing package</td><td>Define package contracts for domain packs, question presets, answer packages, SVG flows, sortable tables, local config, and doctor checks.</td></tr>
+          <tr><td>Formula/dataflow discovery</td><td>Continue read-only table-level I/O discovery and expose results through local HTML/SVG review packages built from Excel files, credential-free spreadsheet evidence/results, or stored evidence packages.</td></tr>
+          <tr><td>Table-builder processing contracts</td><td><code>spreadsheet_processing/table_build_contracts.py</code> and <code>spreadsheet_processing/formula_table.py</code> hold neutral result-table intent/plan validation and formula-grid construction.</td></tr>
+          <tr><td>Connected Sheets evidence intake</td><td><code>scripts/google_sheets_source_evidence.py</code> normalizes supplied source-evidence result JSON. Bounded-window and validation-batch stages consume those artifacts without owning Google access.</td></tr>
+          <tr><td>Formula-table refactor processing</td><td>Support new-sheet projection refactors for declared table patterns, validate old/new outputs, and keep rollback instructions as explicit processing artifacts.</td></tr>
+          <tr><td>Project identity</td><td>Formalize commands and schemas for project registry, Google Sheets project lookup, and Excel workbook-family fingerprinting.</td></tr>
+          <tr><td>Repository boundary</td><td>Active runtime contains spreadsheet processing, validation artifacts, project workspaces, and review-package generation.</td></tr>
+          <tr><td>Processing verification</td><td>Keep processing tests, JSON schema parsing, script compilation, HTML checks, and Excel-engine validation aligned with the active repo boundary.</td></tr>
         </tbody>
       </table>
     </section>
 
     <section>
-      <h2>Key Decisions</h2>
+      <h2>Boundary Rules</h2>
       <div class="grid">
         <div class="card">
-          <h3 class="ok">Credential Boundary</h3>
-          <p>Tokens and service credentials stay in browser auth, local gcloud memory, or Cloud Run broker runtime. Broker policy uses only verified identity, while local agent and artifacts receive sanitized snapshots, plans, and results.</p>
+          <h3 class="ok">Existing Guidance Stays Authoritative</h3>
+          <p>New analysis paths extend the existing Excel/spreadsheet CRUD guidance; they do not replace it.</p>
         </div>
         <div class="card">
-          <h3 class="ok">Live Document Safety</h3>
-          <p>Existing Google Sheets are edited in place. No `.xlsx` round-trip is used for connected Sheets.</p>
+          <h3 class="ok">No Credential Leakage</h3>
+          <p>Local agents and review packages stay credential-free; Google access authority remains inside approved external access surfaces.</p>
         </div>
         <div class="card">
-          <h3 class="ok">Apply Plan Gate</h3>
-          <p>Writes require broker identity verification, DWD subject match, policy, schema, operation, risk, approval, precondition, protection, before-state, budget, cancellation, readback, and artifact persistence.</p>
+          <h3 class="ok">LLM Proposals Need Gates</h3>
+          <p>LLM outputs are candidate claims. Deterministic gates and provenance decide accepted, review-required, blocked, contradicted, or rejected status.</p>
         </div>
         <div class="card">
-          <h3 class="ok">Phase Lock</h3>
-          <p>If no phase is specified, Codex implements Phase 0 only. The file tree is an allowed inventory; phase sections control creation timing.</p>
+          <h3 class="ok">Rollback Is Explicit</h3>
+          <p>Creation and refactor plans return explicit rollback instructions, and write/readback evidence comes from approved external access surfaces.</p>
         </div>
         <div class="card">
-          <h3 class="ok">Protocol Ownership</h3>
-          <p><code>apply.record</code> requests durable native-host persistence; <code>apply.result</code> is the response with final status and artifact path.</p>
-        </div>
-        <div class="card">
-          <h3 class="ok">Reference Tools</h3>
-          <p><code>googleworkspace/cli</code> may guide API exploration and CLI UX, but it is not a runtime dependency, subprocess backend, or credential path.</p>
-        </div>
-        <div class="card">
-          <h3 class="ok">Domain Evidence Boundary</h3>
-          <p>Domain packs are document-specific evidence, not automatic context. <code>accounting-kr</code> applied only to the earlier accounting workbook sample; the current connected Sheets sample is cash-basis operational reporting and excludes that domain pack.</p>
-        </div>
-        <div class="card">
-          <h3 class="ok">Adjudicated Claims</h3>
-          <p>LLM and deterministic parser outputs enter as claims. Gates classify status; document graphs, dataflow graphs, ontology graphs, review queues, and LLM context packs are projections over adjudicated claims and evidence.</p>
+          <h3 class="warn">Excel Values Need Excel</h3>
+          <p>Formula text can be written and scanned deterministically, but formula-result authority requires the real Microsoft Excel engine. Large workbook copy writes also prefer the installed Excel engine to avoid risky full-file round trips.</p>
         </div>
       </div>
     </section>

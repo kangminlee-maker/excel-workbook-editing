@@ -1,0 +1,107 @@
+{
+  "artifact_kind": "chatgpt_web_connector_smoke",
+  "created_at": "2026-06-08T06:17:06.947720+00:00",
+  "endpoint": {
+    "base_url": "http://127.0.0.1:65036",
+    "healthz_url": "http://127.0.0.1:65036/healthz",
+    "https_ready": false,
+    "localhost_development": "true",
+    "mcp_url": "http://127.0.0.1:65036/mcp"
+  },
+  "schema_version": "1.0",
+  "steps": [
+    {
+      "name": "healthz",
+      "response_keys": [
+        "protocolVersion",
+        "serverInfo",
+        "service",
+        "status"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "initialize",
+      "response_keys": [
+        "id",
+        "jsonrpc",
+        "result"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "tools_list",
+      "response_keys": [
+        "id",
+        "jsonrpc",
+        "result"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "resources_list",
+      "response_keys": [
+        "id",
+        "jsonrpc",
+        "result"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "resource_read_table_builder",
+      "response_keys": [
+        "id",
+        "jsonrpc",
+        "result"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "remote_auth_status",
+      "response_keys": [
+        "id",
+        "jsonrpc",
+        "result"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "table_builder_ui",
+      "response_keys": [
+        "id",
+        "jsonrpc",
+        "result"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "save_intent",
+      "response_keys": [
+        "id",
+        "jsonrpc",
+        "result"
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "local_runtime_boundary",
+      "response_keys": [
+        "id",
+        "jsonrpc",
+        "result"
+      ],
+      "status": "passed"
+    }
+  ],
+  "summary": {
+    "credential_boundary": {
+      "access_token_returned": false,
+      "raw_credentials_returned": false,
+      "refresh_token_returned": false,
+      "service_account_key_visible": false
+    },
+    "resource_count": 1,
+    "tool_count": 15,
+    "write_gate_status": "awaiting_user_confirmation"
+  }
+}

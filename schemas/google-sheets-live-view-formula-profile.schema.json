@@ -96,8 +96,8 @@
         "expanded_range_authority": {
           "type": "string",
           "enum": [
-            "requires_broker_grid_window_contract",
-            "broker_bounded_window_contract_verified"
+            "requires_source_evidence_grid_window_contract",
+            "bounded_source_evidence_window_contract_verified"
           ]
         }
       }
@@ -262,12 +262,12 @@
     },
     "permission_requirement": {
       "type": "object",
-      "required": ["capability", "status", "required_broker_operations", "reason"],
+      "required": ["capability", "status", "required_source_evidence_operations", "reason"],
       "additionalProperties": false,
       "properties": {
         "capability": { "type": "string", "minLength": 1 },
         "status": { "type": "string", "minLength": 1 },
-        "required_broker_operations": { "type": "array", "items": { "type": "string" } },
+        "required_source_evidence_operations": { "type": "array", "items": { "type": "string" } },
         "reason": { "type": "string", "minLength": 1 }
       }
     },

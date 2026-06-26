@@ -21,7 +21,7 @@ class GoogleSheetsBlockerResolutionUpdateTest(unittest.TestCase):
     def test_records_resolved_source_boundary_and_cash_basis_without_parser_truth(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)
-            _write_json(root / "source-fc-data-broker-metadata.json", _metadata())
+            _write_json(root / "source-fc-data-source-evidence-metadata.json", _metadata())
             _write_json(root / "source-fc-data-values-window.json", _values_window())
             _write_json(root / "source-fc-data-formula-window.json", _formula_window())
 
@@ -125,7 +125,7 @@ def _formula_window() -> dict:
 
 def _policy(operation: str) -> dict:
     return {
-        "kind": "broker_policy",
+        "kind": "source_access_policy_evidence",
         "summary": {
             "allowed": True,
             "decision_id": f"policy:source:{operation}",

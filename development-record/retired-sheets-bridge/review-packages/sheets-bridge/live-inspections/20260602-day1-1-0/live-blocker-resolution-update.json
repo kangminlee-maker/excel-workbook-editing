@@ -1,0 +1,523 @@
+{
+  "schema_version": "0.1",
+  "generated_at": "2026-06-02T04:44:17.506559Z",
+  "source": {
+    "live_inspection_dir": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/live-inspections/20260602-day1-1-0",
+    "source_spreadsheet_id": "1CPfJoD6VlChrev00xmagW6qJ2x7eNoJnlQeKe9AMYrs",
+    "source_spreadsheet_url": "https://docs.google.com/spreadsheets/d/1CPfJoD6VlChrev00xmagW6qJ2x7eNoJnlQeKe9AMYrs/edit",
+    "source_title": "[Day 1] 1.0 (from 20241216)",
+    "source_artifacts": {
+      "metadata": "source-fc-data-broker-metadata.json",
+      "values_window": "source-fc-data-values-window.json",
+      "formula_window": "source-fc-data-formula-window.json"
+    }
+  },
+  "authority": {
+    "update_status": "blocker_resolution_recorded",
+    "parser_truth": "no_new_parser_claims_until_rerun",
+    "shared_ontology_updates": 0
+  },
+  "method": {
+    "name": "connected_sheets_blocker_resolution_update",
+    "authority": "user_feedback_plus_broker_smoke_evidence",
+    "decision_policy": "Record resolved and still-open blockers after human feedback and broker source smoke. Do not silently mutate prior semantic or shared-alignment truth; later stages must rerun against this update."
+  },
+  "user_inputs": {
+    "fc_data_source_url": "https://docs.google.com/spreadsheets/d/1CPfJoD6VlChrev00xmagW6qJ2x7eNoJnlQeKe9AMYrs/edit",
+    "formula_result_authority": "requires_targeted_validation",
+    "local_boundary": "전사레벨 현황 보고 문서",
+    "repeated_workbook_family": "모든 period 탭이 반복문서이나 포맷 업데이트와 조직/부서 재구성 지점은 version breakpoint로 분리 필요",
+    "reporting_basis": "cash basis; 결제액 기반 운영 현황 보고이며 K-IFRS/K-GAAP 매출 산출물이 아님"
+  },
+  "source_smoke": {
+    "metadata": {
+      "ok": true,
+      "title": "[Day 1] 1.0 (from 20241216)",
+      "tab_count": 90,
+      "hidden_tab_count": 3,
+      "fc_data": {
+        "present": true,
+        "sheet_id": 1221520043,
+        "row_count": 676,
+        "column_count": 32
+      },
+      "policy": {
+        "allowed": true,
+        "decision_id": "parser-readonly-windows-2026-06-02:kangmin.lee@day1company.co.kr:1CPfJoD6VlChrev00xmagW6qJ2x7eNoJnlQeKe9AMYrs:inspect.metadata",
+        "policy_version": "parser-readonly-windows-2026-06-02",
+        "principal": "kangmin.lee@day1company.co.kr",
+        "reason": "allowed",
+        "spreadsheet_id": "1CPfJoD6VlChrev00xmagW6qJ2x7eNoJnlQeKe9AMYrs"
+      }
+    },
+    "values_window": {
+      "ok": true,
+      "operation": "inspect.values_window",
+      "requested_ranges": [
+        "FC_DATA!A1:Z80"
+      ],
+      "window_count": 1,
+      "row_count": 79,
+      "column_count_max": 26,
+      "policy": {
+        "allowed": true,
+        "decision_id": "parser-readonly-windows-2026-06-02:kangmin.lee@day1company.co.kr:1CPfJoD6VlChrev00xmagW6qJ2x7eNoJnlQeKe9AMYrs:inspect.values_window",
+        "policy_version": "parser-readonly-windows-2026-06-02",
+        "principal": "kangmin.lee@day1company.co.kr",
+        "reason": "allowed",
+        "spreadsheet_id": "1CPfJoD6VlChrev00xmagW6qJ2x7eNoJnlQeKe9AMYrs"
+      }
+    },
+    "formula_window": {
+      "ok": true,
+      "operation": "inspect.formula_window",
+      "requested_ranges": [
+        "FC_DATA!A1:Z80"
+      ],
+      "window_count": 1,
+      "row_count": 79,
+      "column_count_max": 26,
+      "policy": {
+        "allowed": true,
+        "decision_id": "parser-readonly-windows-2026-06-02:kangmin.lee@day1company.co.kr:1CPfJoD6VlChrev00xmagW6qJ2x7eNoJnlQeKe9AMYrs:inspect.formula_window",
+        "policy_version": "parser-readonly-windows-2026-06-02",
+        "principal": "kangmin.lee@day1company.co.kr",
+        "reason": "allowed",
+        "spreadsheet_id": "1CPfJoD6VlChrev00xmagW6qJ2x7eNoJnlQeKe9AMYrs"
+      }
+    }
+  },
+  "lineage_observations": {
+    "nested_importrange_dependencies": [
+      {
+        "cell": "FC_DATA!A5",
+        "formula": "=IMPORTRANGE(B1,\"지표!T4:AH175\")",
+        "source_argument": "B1",
+        "import_range": "지표!T4:AH175",
+        "status": "requires_follow_up_if_full_raw_lineage_needed"
+      }
+    ],
+    "displayed_error_samples": [
+      {
+        "cell": "FC_DATA!B61",
+        "displayed_value": "#N/A"
+      },
+      {
+        "cell": "FC_DATA!C61",
+        "displayed_value": "#N/A"
+      },
+      {
+        "cell": "FC_DATA!O61",
+        "displayed_value": "#DIV/0!"
+      },
+      {
+        "cell": "FC_DATA!S61",
+        "displayed_value": "#N/A"
+      },
+      {
+        "cell": "FC_DATA!T61",
+        "displayed_value": "#N/A"
+      },
+      {
+        "cell": "FC_DATA!O62",
+        "displayed_value": "#DIV/0!"
+      },
+      {
+        "cell": "FC_DATA!O63",
+        "displayed_value": "#DIV/0!"
+      },
+      {
+        "cell": "FC_DATA!O64",
+        "displayed_value": "#DIV/0!"
+      },
+      {
+        "cell": "FC_DATA!O65",
+        "displayed_value": "#DIV/0!"
+      },
+      {
+        "cell": "FC_DATA!O66",
+        "displayed_value": "#DIV/0!"
+      },
+      {
+        "cell": "FC_DATA!O67",
+        "displayed_value": "#DIV/0!"
+      },
+      {
+        "cell": "FC_DATA!O68",
+        "displayed_value": "#DIV/0!"
+      },
+      {
+        "cell": "FC_DATA!O69",
+        "displayed_value": "#DIV/0!"
+      },
+      {
+        "cell": "FC_DATA!C74",
+        "displayed_value": "#DIV/0!"
+      },
+      {
+        "cell": "FC_DATA!T74",
+        "displayed_value": "#DIV/0!"
+      },
+      {
+        "cell": "FC_DATA!C79",
+        "displayed_value": "#DIV/0!"
+      },
+      {
+        "cell": "FC_DATA!T79",
+        "displayed_value": "#DIV/0!"
+      }
+    ],
+    "version_group_candidates": [
+      {
+        "id": "version_group_25_0915_through_25_0818",
+        "newest_tab": "25_0915",
+        "oldest_tab": "25_0818",
+        "column_count": 96
+      },
+      {
+        "id": "version_group_25_0811_through_25_0707",
+        "newest_tab": "25_0811",
+        "oldest_tab": "25_0707",
+        "column_count": 95
+      },
+      {
+        "id": "version_group_25_0630_through_25_0609",
+        "newest_tab": "25_0630",
+        "oldest_tab": "25_0609",
+        "column_count": 94
+      },
+      {
+        "id": "version_group_25_0602_through_25_0602",
+        "newest_tab": "25_0602",
+        "oldest_tab": "25_0602",
+        "column_count": 93
+      },
+      {
+        "id": "version_group_25_0526_through_25_0526",
+        "newest_tab": "25_0526",
+        "oldest_tab": "25_0526",
+        "column_count": 92
+      },
+      {
+        "id": "version_group_25_0519_through_25_0507",
+        "newest_tab": "25_0519",
+        "oldest_tab": "25_0507",
+        "column_count": 70
+      },
+      {
+        "id": "version_group_25_0428_through_25_0217",
+        "newest_tab": "25_0428",
+        "oldest_tab": "25_0217",
+        "column_count": 69
+      },
+      {
+        "id": "version_group_25_0210_through_24_1209",
+        "newest_tab": "25_0210",
+        "oldest_tab": "24_1209",
+        "column_count": 66
+      },
+      {
+        "id": "version_group_24_1202_through_24_1104",
+        "newest_tab": "24_1202",
+        "oldest_tab": "24_1104",
+        "column_count": 65
+      },
+      {
+        "id": "version_group_24_1028_through_24_1028",
+        "newest_tab": "24_1028",
+        "oldest_tab": "24_1028",
+        "column_count": 63
+      },
+      {
+        "id": "version_group_24_1021_through_24_0826",
+        "newest_tab": "24_1021",
+        "oldest_tab": "24_0826",
+        "column_count": 55
+      },
+      {
+        "id": "version_group_24_0819_through_24_0819",
+        "newest_tab": "24_0819",
+        "oldest_tab": "24_0819",
+        "column_count": 54
+      },
+      {
+        "id": "version_group_24_0812_through_24_0507",
+        "newest_tab": "24_0812",
+        "oldest_tab": "24_0507",
+        "column_count": 53
+      },
+      {
+        "id": "version_group_24_0429_through_24_0422",
+        "newest_tab": "24_0429",
+        "oldest_tab": "24_0422",
+        "column_count": 52
+      },
+      {
+        "id": "version_group_24_0415_through_24_0408",
+        "newest_tab": "24_0415",
+        "oldest_tab": "24_0408",
+        "column_count": 49
+      },
+      {
+        "id": "version_group_24_0610_through_24_0610",
+        "newest_tab": "24_0610",
+        "oldest_tab": "24_0610",
+        "column_count": 53
+      },
+      {
+        "id": "version_group_24_0401_through_24_0311",
+        "newest_tab": "24_0401",
+        "oldest_tab": "24_0311",
+        "column_count": 49
+      },
+      {
+        "id": "version_group_24_0304_through_24_0102",
+        "newest_tab": "24_0304",
+        "oldest_tab": "24_0102",
+        "column_count": 48
+      }
+    ],
+    "version_breakpoint_candidates": [
+      {
+        "id": "breakpoint_25_0818_to_25_0811",
+        "newer_tab": "25_0818",
+        "older_tab": "25_0811",
+        "newer_column_count": 96,
+        "older_column_count": 95,
+        "reason": "adjacent period tabs have different column counts; likely format or organization version boundary candidate"
+      },
+      {
+        "id": "breakpoint_25_0707_to_25_0630",
+        "newer_tab": "25_0707",
+        "older_tab": "25_0630",
+        "newer_column_count": 95,
+        "older_column_count": 94,
+        "reason": "adjacent period tabs have different column counts; likely format or organization version boundary candidate"
+      },
+      {
+        "id": "breakpoint_25_0609_to_25_0602",
+        "newer_tab": "25_0609",
+        "older_tab": "25_0602",
+        "newer_column_count": 94,
+        "older_column_count": 93,
+        "reason": "adjacent period tabs have different column counts; likely format or organization version boundary candidate"
+      },
+      {
+        "id": "breakpoint_25_0602_to_25_0526",
+        "newer_tab": "25_0602",
+        "older_tab": "25_0526",
+        "newer_column_count": 93,
+        "older_column_count": 92,
+        "reason": "adjacent period tabs have different column counts; likely format or organization version boundary candidate"
+      },
+      {
+        "id": "breakpoint_25_0526_to_25_0519",
+        "newer_tab": "25_0526",
+        "older_tab": "25_0519",
+        "newer_column_count": 92,
+        "older_column_count": 70,
+        "reason": "adjacent period tabs have different column counts; likely format or organization version boundary candidate"
+      },
+      {
+        "id": "breakpoint_25_0507_to_25_0428",
+        "newer_tab": "25_0507",
+        "older_tab": "25_0428",
+        "newer_column_count": 70,
+        "older_column_count": 69,
+        "reason": "adjacent period tabs have different column counts; likely format or organization version boundary candidate"
+      },
+      {
+        "id": "breakpoint_25_0217_to_25_0210",
+        "newer_tab": "25_0217",
+        "older_tab": "25_0210",
+        "newer_column_count": 69,
+        "older_column_count": 66,
+        "reason": "adjacent period tabs have different column counts; likely format or organization version boundary candidate"
+      },
+      {
+        "id": "breakpoint_24_1209_to_24_1202",
+        "newer_tab": "24_1209",
+        "older_tab": "24_1202",
+        "newer_column_count": 66,
+        "older_column_count": 65,
+        "reason": "adjacent period tabs have different column counts; likely format or organization version boundary candidate"
+      },
+      {
+        "id": "breakpoint_24_1104_to_24_1028",
+        "newer_tab": "24_1104",
+        "older_tab": "24_1028",
+        "newer_column_count": 65,
+        "older_column_count": 63,
+        "reason": "adjacent period tabs have different column counts; likely format or organization version boundary candidate"
+      },
+      {
+        "id": "breakpoint_24_1028_to_24_1021",
+        "newer_tab": "24_1028",
+        "older_tab": "24_1021",
+        "newer_column_count": 63,
+        "older_column_count": 55,
+        "reason": "adjacent period tabs have different column counts; likely format or organization version boundary candidate"
+      },
+      {
+        "id": "breakpoint_24_0826_to_24_0819",
+        "newer_tab": "24_0826",
+        "older_tab": "24_0819",
+        "newer_column_count": 55,
+        "older_column_count": 54,
+        "reason": "adjacent period tabs have different column counts; likely format or organization version boundary candidate"
+      },
+      {
+        "id": "breakpoint_24_0819_to_24_0812",
+        "newer_tab": "24_0819",
+        "older_tab": "24_0812",
+        "newer_column_count": 54,
+        "older_column_count": 53,
+        "reason": "adjacent period tabs have different column counts; likely format or organization version boundary candidate"
+      },
+      {
+        "id": "breakpoint_24_0507_to_24_0429",
+        "newer_tab": "24_0507",
+        "older_tab": "24_0429",
+        "newer_column_count": 53,
+        "older_column_count": 52,
+        "reason": "adjacent period tabs have different column counts; likely format or organization version boundary candidate"
+      },
+      {
+        "id": "breakpoint_24_0422_to_24_0415",
+        "newer_tab": "24_0422",
+        "older_tab": "24_0415",
+        "newer_column_count": 52,
+        "older_column_count": 49,
+        "reason": "adjacent period tabs have different column counts; likely format or organization version boundary candidate"
+      },
+      {
+        "id": "breakpoint_24_0408_to_24_0610",
+        "newer_tab": "24_0408",
+        "older_tab": "24_0610",
+        "newer_column_count": 49,
+        "older_column_count": 53,
+        "reason": "adjacent period tabs have different column counts; likely format or organization version boundary candidate"
+      },
+      {
+        "id": "breakpoint_24_0610_to_24_0401",
+        "newer_tab": "24_0610",
+        "older_tab": "24_0401",
+        "newer_column_count": 53,
+        "older_column_count": 49,
+        "reason": "adjacent period tabs have different column counts; likely format or organization version boundary candidate"
+      },
+      {
+        "id": "breakpoint_24_0311_to_24_0304",
+        "newer_tab": "24_0311",
+        "older_tab": "24_0304",
+        "newer_column_count": 49,
+        "older_column_count": 48,
+        "reason": "adjacent period tabs have different column counts; likely format or organization version boundary candidate"
+      }
+    ]
+  },
+  "blocker_status": [
+    {
+      "id": "direct_fc_data_source_authority",
+      "status": "resolved",
+      "meaning": "사용자가 제공한 FC_DATA 원본 spreadsheet을 broker read-only smoke로 직접 검증했다.",
+      "evidence_refs": [
+        "source-fc-data-broker-metadata.json",
+        "source-fc-data-values-window.json",
+        "source-fc-data-formula-window.json"
+      ]
+    },
+    {
+      "id": "nested_importrange_lineage_authority",
+      "status": "follow_up_required",
+      "meaning": "FC_DATA 내부 IMPORTRANGE가 다시 다른 원본/range를 가리키므로 full raw lineage 추적 시 별도 권한 확인이 필요하다.",
+      "evidence_refs": [
+        "source-fc-data-formula-window.json"
+      ]
+    },
+    {
+      "id": "formula_result_authority",
+      "status": "open",
+      "meaning": "표시값과 수식 텍스트는 확인했지만 결과값 authority는 대상 range별 검산이 필요하다.",
+      "evidence_refs": [
+        "source-fc-data-values-window.json",
+        "source-fc-data-formula-window.json"
+      ]
+    },
+    {
+      "id": "local_boundary",
+      "status": "resolved_by_user",
+      "meaning": "local semantic ontology boundary는 전사레벨 현황 보고 문서로 해석한다.",
+      "evidence_refs": [
+        "user_feedback:2026-06-02"
+      ]
+    },
+    {
+      "id": "repeated_workbook_family_evidence",
+      "status": "partially_resolved_version_detection_required",
+      "meaning": "모든 period 탭은 반복문서이나 포맷 업데이트와 부서 재구성에 따른 version breakpoint를 먼저 나눠야 한다.",
+      "evidence_refs": [
+        "source-fc-data-broker-metadata.json"
+      ]
+    },
+    {
+      "id": "reporting_basis",
+      "status": "resolved_by_user",
+      "meaning": "이 문서는 K-IFRS 매출 계산서가 아니라 cash-basis 결제액/운영 현황 보고 문서로 해석한다.",
+      "evidence_refs": [
+        "user_feedback:2026-06-02"
+      ]
+    }
+  ],
+  "next_actions": [
+    {
+      "id": "rerun_authority_aware_stages",
+      "action": "Stage 42-50 계열 산출물을 이 resolution update를 입력으로 다시 생성한다.",
+      "done_when": "source/local-boundary/reporting-basis blocker 표현이 최신 상태로 반영되고, 미해결 항목만 carry-forward 된다."
+    },
+    {
+      "id": "formula_result_authority_checkpoint",
+      "action": "accepted output range와 FC_DATA 핵심 range를 FORMATTED_VALUE, UNFORMATTED_VALUE, FORMULA 관점에서 대조하고 error 상태를 분류한다.",
+      "done_when": "formula-result authority가 range별 accepted/review_required/blocked 상태로 분리된다."
+    },
+    {
+      "id": "version_breakpoint_detection",
+      "action": "period 탭을 column count, header band, formula signature, 조직/부서 label 변화로 clustering한다.",
+      "done_when": "반복 workbook-family evidence가 version별 before/after 그룹으로 분리된다."
+    },
+    {
+      "id": "semantic_rebasis_to_cash_basis",
+      "action": "K-IFRS/K-GAAP 매출 의미를 공식 산출 basis로 쓰지 않고 cash-basis payment/status reporting 의미로 재라벨링한다.",
+      "done_when": "semantic proposal과 shared alignment review가 cash-basis reporting을 기준으로 blocker와 candidate를 설명한다."
+    },
+    {
+      "id": "nested_importrange_lineage_follow_up",
+      "action": "full raw lineage가 필요하면 FC_DATA 내부 IMPORTRANGE의 source argument와 import range를 별도 source authority 대상으로 승격한다.",
+      "done_when": "중첩 원본 spreadsheet/range 접근 여부가 별도 gate 결과로 기록된다."
+    }
+  ],
+  "summary": {
+    "resolved_blocker_count": 3,
+    "open_blocker_count": 1,
+    "follow_up_blocker_count": 2,
+    "version_group_candidate_count": 18,
+    "version_breakpoint_candidate_count": 17,
+    "nested_importrange_count": 1,
+    "displayed_error_sample_count": 17,
+    "shared_ontology_update_count": 0
+  },
+  "parser_observations": [
+    {
+      "level": "info",
+      "message": "Direct FC_DATA source authority is verified by broker metadata, values-window, and formula-window smoke."
+    },
+    {
+      "level": "warning",
+      "message": "Formula-result authority remains range-specific and requires targeted validation before numeric semantic acceptance."
+    },
+    {
+      "level": "warning",
+      "message": "Cash-basis payment/status reporting must replace K-IFRS or GAAP revenue as the interpretation basis for this document."
+    }
+  ]
+}

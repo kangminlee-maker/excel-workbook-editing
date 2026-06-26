@@ -18,7 +18,7 @@ from google_sheets_live_view_formula_profile import (  # noqa: E402
 
 class GoogleSheetsLiveViewFormulaProfileTest(unittest.TestCase):
     def test_builds_schema_valid_profile_and_dependency_edges(self) -> None:
-        fixture_dir = REPO_ROOT / "review-packages" / "sheets-bridge" / "live-inspections" / "test-view-formula"
+        fixture_dir = REPO_ROOT / "review-packages" / "spreadsheet-processing" / "live-inspections" / "test-view-formula"
         fixture_dir.mkdir(parents=True, exist_ok=True)
         live_manifest_path = fixture_dir / "live-manifest.json"
         top_left_sample_path = fixture_dir / "top-left-sample.json"
@@ -59,12 +59,12 @@ class GoogleSheetsLiveViewFormulaProfileTest(unittest.TestCase):
             [item["capability"] for item in profile["permission_requirements"]],
         )
         self.assertEqual(
-            profile["summary"]["broker_window_contract_status"],
+            profile["summary"]["source_evidence_window_contract_status"],
             "verified_for_current_policy_limits",
         )
         self.assertEqual(
             profile["authority"]["expanded_range_authority"],
-            "broker_bounded_window_contract_verified",
+            "bounded_source_evidence_window_contract_verified",
         )
         self.assertIn(
             "source_spreadsheet_allowlist",

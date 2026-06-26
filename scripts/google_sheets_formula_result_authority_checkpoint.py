@@ -524,7 +524,7 @@ def _payload(response: dict[str, Any]) -> dict[str, Any]:
 
 def _policy_summary(payload: dict[str, Any]) -> dict[str, Any]:
     for artifact in payload.get("artifacts", []):
-        if artifact.get("kind") == "broker_policy":
+        if artifact.get("kind") == "source_access_policy_evidence":
             return artifact.get("summary", {})
     return {}
 

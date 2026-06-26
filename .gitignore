@@ -4,3 +4,5 @@ __pycache__/
 evals/
 .onto/
 review-packages/sheets-bridge/native-host/
+.build/
+dist/

@@ -1,0 +1,19 @@
+{
+  "analysis_boundary": [
+    "Read manifest.json first.",
+    "Use only sanitized local artifacts referenced by the manifest.",
+    "Use only credential-free MCP outputs and review artifacts.",
+    "Treat the package as a point-in-time snapshot, not as live spreadsheet authority."
+  ],
+  "artifact_kind": "sheets_bridge_mcp_handoff",
+  "created_at": "2026-06-11T07:37:48.539779+00:00",
+  "manifest_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/keyless-extract/1vL4lwW7m6JMewR20WB0-QGoaSNDXIvjHCtyOw8ZeAFQ-gid-1705521654/2026-06-11/snapshot-5b3b9f44-252c-4b8e-b2d6-50d70a6ea7c5/manifest.json",
+  "mcp_prompt": "이 Sheets Bridge 패키지를 분석해줘: /Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/keyless-extract/1vL4lwW7m6JMewR20WB0-QGoaSNDXIvjHCtyOw8ZeAFQ-gid-1705521654/2026-06-11/snapshot-5b3b9f44-252c-4b8e-b2d6-50d70a6ea7c5/manifest.json",
+  "package_dir": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/keyless-extract/1vL4lwW7m6JMewR20WB0-QGoaSNDXIvjHCtyOw8ZeAFQ-gid-1705521654/2026-06-11/snapshot-5b3b9f44-252c-4b8e-b2d6-50d70a6ea7c5",
+  "primary_artifact": {
+    "kind": "inspection_snapshot",
+    "path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/sheets-bridge/keyless-extract/1vL4lwW7m6JMewR20WB0-QGoaSNDXIvjHCtyOw8ZeAFQ-gid-1705521654/2026-06-11/snapshot-5b3b9f44-252c-4b8e-b2d6-50d70a6ea7c5/snapshot.json"
+  },
+  "request_id": "snapshot-5b3b9f44-252c-4b8e-b2d6-50d70a6ea7c5",
+  "schema_version": "1.0"
+}

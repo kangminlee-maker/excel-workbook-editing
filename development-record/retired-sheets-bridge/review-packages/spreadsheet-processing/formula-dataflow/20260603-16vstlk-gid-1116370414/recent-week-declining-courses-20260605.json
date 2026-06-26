@@ -1,0 +1,65 @@
+{
+  "schema_version": "recent_week_declining_courses_v1",
+  "created_at": "2026-06-05T10:15:05+09:00",
+  "spreadsheet_id": "16vSTLkSxs-j3NxRJ8g_PNYGPuskQkJOWYBss_BDYQJg",
+  "target_sheet": "[ML] 매출_최종",
+  "semantic_metric_basis": {
+    "canonical_metric": "payment_amount",
+    "korean_label": "결제액",
+    "source_label": "매출",
+    "accounting_revenue_basis": "not_applicable"
+  },
+  "evidence_ranges": [
+    {
+      "range": "'[ML] 매출_최종'!A1:BSB8",
+      "purpose": "current header/code/label scan"
+    },
+    {
+      "range": "'[ML] 매출_최종'!A193:BSB200",
+      "purpose": "current recent completed 7-day payment values"
+    }
+  ],
+  "analysis_window": {
+    "excluded_current_date": {
+      "date": "2026-06-05",
+      "reason": "The current-day row was all zero at inspection time, so it appears not yet populated or not yet complete."
+    },
+    "included_dates": [
+      "2026-05-29",
+      "2026-05-30",
+      "2026-05-31",
+      "2026-06-01",
+      "2026-06-02",
+      "2026-06-03",
+      "2026-06-04"
+    ]
+  },
+  "detection_rule": {
+    "course_column_rule": "Use columns with a non-total row-7 product/course code such as ETC1150, JP248, EN334, CH120.",
+    "decreasing_rule": "Candidate when first 3-day sum is greater than last 3-day sum, linear slope over the 7 included dates is negative, weekly total is at least 100,000 KRW, and at least two dates are nonzero.",
+    "ranking": "Sorted by decline amount between first 3-day sum and last 3-day sum."
+  },
+  "course_candidates": [
+    {"column": "BFS", "code": "ETC1150", "label": "올인원패키지", "values_krw": [0, 1226000, 1824000, 0, 309000, 309000, 0], "weekly_total_krw": 3668000, "early3_krw": 3050000, "late3_krw": 618000, "decline_krw": 2432000, "decline_pct": 79.7},
+    {"column": "SF", "code": "JP248", "label": "캐릭캐릭체인지 / 일본어학습지", "values_krw": [1157000, 1536000, 1167000, 0, 0, 1526000, 0], "weekly_total_krw": 5386000, "early3_krw": 3860000, "late3_krw": 1526000, "decline_krw": 2334000, "decline_pct": 60.5},
+    {"column": "GE", "code": "EN334", "label": "외국어 올패스 / (평생소장+ipad)", "values_krw": [0, 979000, 969000, 0, 0, 0, 0], "weekly_total_krw": 1948000, "early3_krw": 1948000, "late3_krw": 0, "decline_krw": 1948000, "decline_pct": 100.0},
+    {"column": "CU", "code": "EN330", "label": "영어 근본팩 프리미엄 / +이코노미스트", "values_krw": [0, 690000, 740000, 0, 0, 0, 0], "weekly_total_krw": 1430000, "early3_krw": 1430000, "late3_krw": 0, "decline_krw": 1430000, "decline_pct": 100.0},
+    {"column": "SH", "code": "CH120", "label": "중국어_뿌까", "values_krw": [395000, 0, 395000, 395000, 0, 0, 0], "weekly_total_krw": 1185000, "early3_krw": 790000, "late3_krw": 0, "decline_krw": 790000, "decline_pct": 100.0},
+    {"column": "ARD", "code": "ETC944", "label": "모란스핏3종", "values_krw": [339000, 339000, 339000, 339000, 0, 0, 339000], "weekly_total_krw": 1695000, "early3_krw": 1017000, "late3_krw": 339000, "decline_krw": 678000, "decline_pct": 66.7},
+    {"column": "APK", "code": "ETC633", "label": "올인원패키지", "values_krw": [0, 319100, 299100, 0, 0, 0, 0], "weekly_total_krw": 618200, "early3_krw": 618200, "late3_krw": 0, "decline_krw": 618200, "decline_pct": 100.0},
+    {"column": "AGD", "code": "ETC129", "label": "코칭권 / 실물/평생", "values_krw": [280100, 0, 280100, 0, 0, 0, 0], "weekly_total_krw": 560200, "early3_krw": 560200, "late3_krw": 0, "decline_krw": 560200, "decline_pct": 100.0},
+    {"column": "PM", "code": "CH097", "label": "기본 패키지", "values_krw": [139000, 0, 0, 139000, 0, 0, 0], "weekly_total_krw": 278000, "early3_krw": 139000, "late3_krw": 0, "decline_krw": 139000, "decline_pct": 100.0},
+    {"column": "VM", "code": "EN337", "label": "", "values_krw": [449000, 0, 0, 459000, 429000, 0, 0], "weekly_total_krw": 1337000, "early3_krw": 449000, "late3_krw": 429000, "decline_krw": 20000, "decline_pct": 4.5}
+  ],
+  "group_total_candidates_for_context": [
+    {"column": "BFR", "label": "달리드로잉", "weekly_total_krw": 4717000, "decline_krw": 3481000, "decline_pct": 84.9},
+    {"column": "SE", "label": "일본어_캐릭캐릭체인지", "weekly_total_krw": 5386000, "decline_krw": 2334000, "decline_pct": 60.5},
+    {"column": "BZ", "label": "영어", "weekly_total_krw": 3290000, "decline_krw": 1390000, "decline_pct": 68.8},
+    {"column": "K", "label": "일본어", "weekly_total_krw": 3689000, "decline_krw": 339000, "decline_pct": 20.1}
+  ],
+  "limitations": [
+    "This is a final-report projection check over `[ML] 매출_최종`, not a raw-order reaggregation.",
+    "The detection is trend-like, not strict day-by-day monotonic decline.",
+    "Very sparse courses with one or two sales can appear as 100% declines; treat low-volume items as watchlist candidates rather than confirmed demand decay."
+  ]
+}

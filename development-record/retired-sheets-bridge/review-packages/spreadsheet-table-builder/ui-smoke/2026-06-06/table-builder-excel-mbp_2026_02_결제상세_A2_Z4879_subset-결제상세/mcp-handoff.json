@@ -1,0 +1,18 @@
+{
+  "analysis_boundary": [
+    "Read manifest.json first.",
+    "Use only sanitized local artifacts referenced by the manifest.",
+    "Do not request or inspect OAuth tokens, cookies, service account keys, or raw credentials."
+  ],
+  "artifact_kind": "spreadsheet_table_builder_mcp_handoff",
+  "created_at": "2026-06-06T00:00:00+00:00",
+  "manifest_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/ui-smoke/2026-06-06/table-builder-excel-mbp_2026_02_결제상세_A2_Z4879_subset-결제상세/manifest.json",
+  "mcp_prompt": "이 Spreadsheet table-builder 패키지를 검토해줘: /Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/ui-smoke/2026-06-06/table-builder-excel-mbp_2026_02_결제상세_A2_Z4879_subset-결제상세/manifest.json",
+  "package_dir": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/ui-smoke/2026-06-06/table-builder-excel-mbp_2026_02_결제상세_A2_Z4879_subset-결제상세",
+  "primary_artifact": {
+    "kind": "table_builder_ui",
+    "path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/ui-smoke/2026-06-06/table-builder-excel-mbp_2026_02_결제상세_A2_Z4879_subset-결제상세/index.html"
+  },
+  "request_id": "table-builder-excel-mbp_2026_02_결제상세_A2_Z4879_subset-결제상세",
+  "schema_version": "1.0"
+}

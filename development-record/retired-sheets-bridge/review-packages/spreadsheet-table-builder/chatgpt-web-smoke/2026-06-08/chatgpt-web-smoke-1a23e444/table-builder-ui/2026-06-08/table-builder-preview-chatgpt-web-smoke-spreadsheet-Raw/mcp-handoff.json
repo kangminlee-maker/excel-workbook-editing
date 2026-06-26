@@ -1,0 +1,18 @@
+{
+  "analysis_boundary": [
+    "Read manifest.json first.",
+    "Use only sanitized local artifacts referenced by the manifest.",
+    "Do not request or inspect OAuth tokens, cookies, service account keys, or raw credentials."
+  ],
+  "artifact_kind": "spreadsheet_table_builder_mcp_handoff",
+  "created_at": "2026-06-08T06:17:06.969823+00:00",
+  "manifest_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/chatgpt-web-smoke/2026-06-08/chatgpt-web-smoke-1a23e444/table-builder-ui/2026-06-08/table-builder-preview-chatgpt-web-smoke-spreadsheet-Raw/manifest.json",
+  "mcp_prompt": "이 Spreadsheet table-builder 패키지를 검토해줘: /Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/chatgpt-web-smoke/2026-06-08/chatgpt-web-smoke-1a23e444/table-builder-ui/2026-06-08/table-builder-preview-chatgpt-web-smoke-spreadsheet-Raw/manifest.json",
+  "package_dir": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/chatgpt-web-smoke/2026-06-08/chatgpt-web-smoke-1a23e444/table-builder-ui/2026-06-08/table-builder-preview-chatgpt-web-smoke-spreadsheet-Raw",
+  "primary_artifact": {
+    "kind": "table_builder_ui",
+    "path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/chatgpt-web-smoke/2026-06-08/chatgpt-web-smoke-1a23e444/table-builder-ui/2026-06-08/table-builder-preview-chatgpt-web-smoke-spreadsheet-Raw/index.html"
+  },
+  "request_id": "table-builder-preview-chatgpt-web-smoke-spreadsheet-Raw",
+  "schema_version": "1.0"
+}

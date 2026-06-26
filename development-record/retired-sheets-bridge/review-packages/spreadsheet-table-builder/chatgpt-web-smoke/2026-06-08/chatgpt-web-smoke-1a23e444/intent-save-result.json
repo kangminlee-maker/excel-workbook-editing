@@ -1,0 +1,77 @@
+{
+  "id": 7,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\n  \"intent\": {\n    \"artifact_type\": \"google_sheets\",\n    \"created_at\": \"2026-06-08T06:17:06.972975+00:00\",\n    \"fields\": {},\n    \"formula\": {},\n    \"intent_id\": \"table-build-intent-2026-06-08T06-17-06-972975-00-00-81b4ef5b\",\n    \"intent_kind\": \"table_build_intent_v1\",\n    \"llm_prompt\": \"원본 데이터 안에서 팀별 월별 매출 합계를 새 시트의 수식과 참조로 채워줘.\",\n    \"output\": {\n      \"creation_mode\": \"sheet\",\n      \"preferred_title\": \"CHATGPT_WEB_SMOKE_TABLE\"\n    },\n    \"output_canvas\": [\n      [\n        \"\",\n        \"2026-01\",\n        \"2026-02\"\n      ],\n      [\n        \"Team A\",\n        \"\",\n        \"\"\n      ],\n      [\n        \"Team B\",\n        \"\",\n        \"\"\n      ]\n    ],\n    \"review_state\": {\n      \"next_action\": \"Generate a TableBuildPlan from this intent and ask the user to confirm the interpreted table shape.\",\n      \"status\": \"submitted\"\n    },\n    \"schema_version\": \"1.0\",\n    \"source\": {\n      \"artifact_type\": \"google_sheets\",\n      \"header_row\": 1,\n      \"qualified_range\": \"'Raw'!A1:C4\",\n      \"range_start_column\": \"A\",\n      \"range_start_row\": 1,\n      \"sheet_title\": \"Raw\",\n      \"spreadsheet_id\": \"chatgpt-web-smoke-spreadsheet\",\n      \"workbook_path\": \"\"\n    },\n    \"source_hints\": {\n      \"selected_ranges\": [\n        \"'Raw'!A1:C4\"\n      ]\n    },\n    \"source_package\": {\n      \"manifest_path\": \"/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/chatgpt-web-smoke/2026-06-08/chatgpt-web-smoke-1a23e444/table-builder-ui/2026-06-08/table-builder-preview-chatgpt-web-smoke-spreadsheet-Raw/manifest.json\",\n      \"source_path\": \"/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/chatgpt-web-smoke/2026-06-08/chatgpt-web-smoke-1a23e444/table-builder-ui/2026-06-08/table-builder-preview-chatgpt-web-smoke-spreadsheet-Raw/builder-source.json\"\n    }\n  },\n  \"intent_id\": \"table-build-intent-2026-06-08T06-17-06-972975-00-00-81b4ef5b\",\n  \"next_prompt\": \"이 TableBuildIntent를 바탕으로 원본 evidence를 읽고, 사용자에게 확인할 TableBuildPlan을 생성해주세요. intent_path=/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/chatgpt-web-smoke/2026-06-08/chatgpt-web-smoke-1a23e444/intents/2026-06-08/table-build-intent-2026-06-08T06-17-06-972975-00-00-81b4ef5b/intent.json\",\n  \"operation\": \"table_builder.save_intent\",\n  \"package\": {\n    \"intent_path\": \"/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/chatgpt-web-smoke/2026-06-08/chatgpt-web-smoke-1a23e444/intents/2026-06-08/table-build-intent-2026-06-08T06-17-06-972975-00-00-81b4ef5b/intent.json\",\n    \"manifest_path\": \"/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/chatgpt-web-smoke/2026-06-08/chatgpt-web-smoke-1a23e444/intents/2026-06-08/table-build-intent-2026-06-08T06-17-06-972975-00-00-81b4ef5b/manifest.json\",\n    \"mcp_handoff_path\": \"/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/chatgpt-web-smoke/2026-06-08/chatgpt-web-smoke-1a23e444/intents/2026-06-08/table-build-intent-2026-06-08T06-17-06-972975-00-00-81b4ef5b/mcp-handoff.json\",\n    \"package_dir\": \"/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/chatgpt-web-smoke/2026-06-08/chatgpt-web-smoke-1a23e444/intents/2026-06-08/table-build-intent-2026-06-08T06-17-06-972975-00-00-81b4ef5b\"\n  }\n}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "intent": {
+        "artifact_type": "google_sheets",
+        "created_at": "2026-06-08T06:17:06.972975+00:00",
+        "fields": {},
+        "formula": {},
+        "intent_id": "table-build-intent-2026-06-08T06-17-06-972975-00-00-81b4ef5b",
+        "intent_kind": "table_build_intent_v1",
+        "llm_prompt": "원본 데이터 안에서 팀별 월별 매출 합계를 새 시트의 수식과 참조로 채워줘.",
+        "output": {
+          "creation_mode": "sheet",
+          "preferred_title": "CHATGPT_WEB_SMOKE_TABLE"
+        },
+        "output_canvas": [
+          [
+            "",
+            "2026-01",
+            "2026-02"
+          ],
+          [
+            "Team A",
+            "",
+            ""
+          ],
+          [
+            "Team B",
+            "",
+            ""
+          ]
+        ],
+        "review_state": {
+          "next_action": "Generate a TableBuildPlan from this intent and ask the user to confirm the interpreted table shape.",
+          "status": "submitted"
+        },
+        "schema_version": "1.0",
+        "source": {
+          "artifact_type": "google_sheets",
+          "header_row": 1,
+          "qualified_range": "'Raw'!A1:C4",
+          "range_start_column": "A",
+          "range_start_row": 1,
+          "sheet_title": "Raw",
+          "spreadsheet_id": "chatgpt-web-smoke-spreadsheet",
+          "workbook_path": ""
+        },
+        "source_hints": {
+          "selected_ranges": [
+            "'Raw'!A1:C4"
+          ]
+        },
+        "source_package": {
+          "manifest_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/chatgpt-web-smoke/2026-06-08/chatgpt-web-smoke-1a23e444/table-builder-ui/2026-06-08/table-builder-preview-chatgpt-web-smoke-spreadsheet-Raw/manifest.json",
+          "source_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/chatgpt-web-smoke/2026-06-08/chatgpt-web-smoke-1a23e444/table-builder-ui/2026-06-08/table-builder-preview-chatgpt-web-smoke-spreadsheet-Raw/builder-source.json"
+        }
+      },
+      "intent_id": "table-build-intent-2026-06-08T06-17-06-972975-00-00-81b4ef5b",
+      "next_prompt": "이 TableBuildIntent를 바탕으로 원본 evidence를 읽고, 사용자에게 확인할 TableBuildPlan을 생성해주세요. intent_path=/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/chatgpt-web-smoke/2026-06-08/chatgpt-web-smoke-1a23e444/intents/2026-06-08/table-build-intent-2026-06-08T06-17-06-972975-00-00-81b4ef5b/intent.json",
+      "operation": "table_builder.save_intent",
+      "package": {
+        "intent_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/chatgpt-web-smoke/2026-06-08/chatgpt-web-smoke-1a23e444/intents/2026-06-08/table-build-intent-2026-06-08T06-17-06-972975-00-00-81b4ef5b/intent.json",
+        "manifest_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/chatgpt-web-smoke/2026-06-08/chatgpt-web-smoke-1a23e444/intents/2026-06-08/table-build-intent-2026-06-08T06-17-06-972975-00-00-81b4ef5b/manifest.json",
+        "mcp_handoff_path": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/chatgpt-web-smoke/2026-06-08/chatgpt-web-smoke-1a23e444/intents/2026-06-08/table-build-intent-2026-06-08T06-17-06-972975-00-00-81b4ef5b/mcp-handoff.json",
+        "package_dir": "/Users/kangmin/Documents/excel-workbook-editing/review-packages/spreadsheet-table-builder/chatgpt-web-smoke/2026-06-08/chatgpt-web-smoke-1a23e444/intents/2026-06-08/table-build-intent-2026-06-08T06-17-06-972975-00-00-81b4ef5b"
+      }
+    }
+  }
+}

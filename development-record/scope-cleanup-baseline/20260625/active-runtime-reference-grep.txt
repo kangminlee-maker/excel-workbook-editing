@@ -1,0 +1,317 @@
+IMPLEMENTATION_MAP.html:99:          <p><code>docs/mcp-sheets-bridge-design.md</code> defines MCP-based connected Sheets inspection, local user OAuth boundaries, table I/O visualization, generic spreadsheet table-builder UI, formula-table creation inside Sheets, Google spreadsheet copies, Excel workbook files, or Excel workbook copies, large-workbook desktop Excel write paths, bundled MCP runtime packaging, explicit rollback execution, Excel formula-result validation, minimal-formula refactor, and sanitized review-package handoff.</p>
+IMPLEMENTATION_MAP.html:129:          <tr><td>MCP table builder</td><td>Current runtime includes canonical TableBuildIntent/TableBuildPlan/TableBuilderSession schemas, host submit/result message contracts, save-time TableBuildIntent validation, a shared MCP Apps HTML UI bundle served from <code>mcp/sheets_bridge/ui/table_builder/</code>, thin JavaScript host adapters for MCP Apps and standalone browser tests, a subprocess stdio smoke that lists tools/resources, reads the table-builder UI, and builds an Excel preview package, a remote HTTP MCP wrapper with <code>/healthz</code>, <code>/mcp</code>, remote session handles, scope gates, sanitized auth status, live Google Sheets read/write authority, and a ChatGPT web connector smoke helper that writes credential-free review packages. The HTTP path can save TableBuildIntent records, render the shared UI from sanitized <code>source_preview</code> payloads or authorized live Sheets reads, and return structured capability-boundary results for local OAuth cache access, Chrome current-tab resolution, local workbook paths, and desktop Excel recalculation. Next outcome is the Table Builder Workbench UI, followed by the apply/validate/rollback matrix. Users sketch desired spreadsheet tables through the shared UI, the UI persists a TableBuildIntent, the host LLM confirms a TableBuildPlan, and MCP tools create auditable formula-only sheets according to the selected creation mode: Google Sheet tab, Google spreadsheet copy, Excel workbook copy, or Excel source workbook sheet. Durable MCP artifacts remain the source of truth. Large Excel workbook copies use desktop Excel automation on macOS or Windows to preserve workbook internals.</td></tr>
+IMPLEMENTATION_MAP.html:130:          <tr><td>Cloud Run Sheets broker</td><td>Hosted broker authority now has an active Workload Identity runtime contract and a non-sensitive <code>/v1/health</code> readiness summary. Next outcome is an authorized SRE smoke that proves runtime identity, IAM Credentials, broker policy, Google ACL, and sanitized output gates against an approved spreadsheet.</td></tr>
+SKILL.md:43:- **PATCH**: Prefer narrow Google Sheets API or connector edits against existing ranges. Avoid deleting and recreating tabs, replacing whole sheets, or overwriting formulas with displayed values unless the user explicitly requests that behavior.
+SKILL.md:149:- If a Google Sheets API request times out, returns `429`, or returns `503`, reduce request size or spreadsheet complexity before repeating the same operation.
+SKILL.md:264:Load [docs/mcp-sheets-bridge-design.md](docs/mcp-sheets-bridge-design.md) first when implementing connected Google Sheets inspection for desktop AI apps or local agents. MCP Sheets Bridge is the current runtime contract.
+README.md:31:- Google Sheets connector/API access for in-place edits to existing Google Sheets
+README.md:84:packaging/sheets-bridge-mcp/release.py --platform macos
+README.md:98:[packaging/sheets-bridge-mcp/README.md](packaging/sheets-bridge-mcp/README.md)
+README.md:110:│   ├── mcp-sheets-bridge-design.md     # MCP-first connected Sheets bridge
+README.md:111:│   ├── workload-identity-runtime-contract.md # Hosted Sheets broker authority
+README.md:114:│   ├── sheets_bridge/                  # MCP server core for Google Sheets
+README.md:115:│   └── sheets_bridge_server.py         # MCP stdio server entrypoint
+README.md:137:- [MCP Sheets Bridge Design](docs/mcp-sheets-bridge-design.md): connected Sheets MCP access plus host-neutral spreadsheet table-builder contracts and Phase 0-9 implementation sequence for Sheets and Excel workbooks across local web, Claude MCP Apps, and ChatGPT web remote MCP hosts
+README.md:138:- [Workload Identity Runtime Contract](docs/workload-identity-runtime-contract.md): hosted Sheets broker authority flow, readiness contract, and verification gates
+README.md:147:- **Live readback for Google Sheets**: after connector/API writes, re-read the changed ranges and dependent outputs from the same spreadsheet
+CLAUDE.md:19:- `docs/mcp-sheets-bridge-design.md`
+CLAUDE.md:20:- `docs/workload-identity-runtime-contract.md`
+CLAUDE.md:36:- Desktop use runs through the Sheets Bridge MCP stdio server.
+CLAUDE.md:37:- Desktop Google Sheets access uses the MCP-managed local OAuth token cache.
+AGENTS.md:30:- Desktop Google Sheets access uses the MCP-managed local OAuth token cache.
+AGENTS.md:89:- `docs/mcp-sheets-bridge-design.md`
+AGENTS.md:94:- `docs/workload-identity-runtime-contract.md`
+AGENTS.md:195:python3 -m unittest discover -s mcp/sheets_bridge/test
+docs/workload-identity-runtime-contract.md:5:This contract defines the hosted Sheets broker authority path for environments
+docs/workload-identity-runtime-contract.md:14:-> broker identity and policy gates
+docs/workload-identity-runtime-contract.md:19:-> sanitized broker result or review artifact
+docs/workload-identity-runtime-contract.md:33:Delegation scopes must match the broker operation surface.
+docs/workload-identity-runtime-contract.md:62:- Output gate: broker responses, audit events, and review packages contain only
+docs/workload-identity-runtime-contract.md:67:The broker remains the only Google API data plane for this hosted path. MCP
+docs/google-sheets-parser-permission-requirements.md:12:- Desktop MCP requests use the MCP-managed local OAuth token cache. Remote MCP
+references/connected-google-sheets-principles.md:43:- Prefer in-place connector/API updates against existing ranges.
+tests/test_table_builder_contracts.py:14:from sheets_bridge.contracts import (  # noqa: E402
+docs/data-processing-spreadsheet-package-design.md:110:| Connected Sheets authority path | Enforce user/session identity, scopes, bounded ranges, redaction, and operation limits through MCP Sheets Bridge local OAuth or an approved remote MCP service. | Store model-visible credentials, broaden access silently, or require Chrome extension/native-host operation. |
+docs/data-processing-spreadsheet-package-design.md:210:1. The desktop MCP client launches the Sheets Bridge MCP stdio server.
+docs/data-processing-spreadsheet-package-design.md:211:2. The agent calls `sheets_bridge_auth_status`.
+docs/data-processing-spreadsheet-package-design.md:212:3. If needed, the agent calls `sheets_bridge_configure_oauth` and
+docs/data-processing-spreadsheet-package-design.md:213:   `sheets_bridge_start_oauth_login`.
+docs/data-processing-spreadsheet-package-design.md:214:4. The agent calls `sheets_bridge_inspect` for bounded metadata, value,
+docs/data-processing-spreadsheet-package-design.md:239:- Remote broker/service endpoints are optional deployment variants. The active
+docs/data-processing-spreadsheet-package-design.md:240:  local agent path is MCP-first and uses MCP-managed local OAuth plus sanitized
+docs/mcp-sheets-bridge-design.md:7:Desktop, ChatGPT web remote MCP apps, Codex, and other MCP-capable agents.
+docs/mcp-sheets-bridge-design.md:17:  -> Sheets Bridge MCP stdio server
+docs/mcp-sheets-bridge-design.md:19:  -> Google Sheets API
+docs/mcp-sheets-bridge-design.md:28:ChatGPT web or another remote MCP host
+docs/mcp-sheets-bridge-design.md:29:  -> HTTPS remote MCP endpoint
+docs/mcp-sheets-bridge-design.md:32:  -> Google Sheets API or approved spreadsheet runtime
+docs/mcp-sheets-bridge-design.md:46:  -> Chrome remote debugging endpoint
+docs/mcp-sheets-bridge-design.md:48:  -> Google Sheets API through local OAuth
+docs/mcp-sheets-bridge-design.md:51:Chrome remote debugging reads visible browser context only: URL, `gid`, and
+docs/mcp-sheets-bridge-design.md:66:| Table-builder host adapters | Thin host-specific bridges for Claude MCP Apps, ChatGPT web remote MCP/Apps SDK, and standalone local web tests. Host adapters translate messages and tool calls; spreadsheet semantics stay in MCP tools and canonical artifacts. |
+docs/mcp-sheets-bridge-design.md:71:| Chrome remote resolver | Optional helper to read the current Sheets URL, `gid`, and selected A1 range from `#t-name-box`. |
+docs/mcp-sheets-bridge-design.md:78:| `sheets_bridge_auth_status` | Reports local OAuth configured/authenticated state with credential-free output. |
+docs/mcp-sheets-bridge-design.md:79:| `sheets_bridge_configure_oauth` | Stores local Google OAuth desktop client metadata outside the repo. `access=readonly` grants read-only Sheets access, `access=readwrite` grants Sheets writes, `access=copy` grants Sheets writes plus Drive `drive.file` per-file copy/delete access, and `access=copy_full` grants Sheets writes plus full Drive copy/delete authority for arbitrary user-accessible source files. |
+docs/mcp-sheets-bridge-design.md:80:| `sheets_bridge_start_oauth_login` | Opens the Google OAuth consent flow and waits for the local callback. |
+docs/mcp-sheets-bridge-design.md:81:| `sheets_bridge_logout` | Deletes the local OAuth token cache. |
+docs/mcp-sheets-bridge-design.md:82:| `sheets_bridge_current_chrome_sheet` | Reads current Sheets tab context through Chrome remote debugging. |
+docs/mcp-sheets-bridge-design.md:83:| `sheets_bridge_inspect` | Reads metadata, values, formulas, or grid windows through user OAuth and writes a sanitized package. |
+docs/mcp-sheets-bridge-design.md:84:| `sheets_bridge_apply_values_update` | Applies bounded values/formulas through `values:batchUpdate`, captures before state, reads back after state, and returns a rollback object. |
+docs/mcp-sheets-bridge-design.md:85:| `sheets_bridge_rollback_values_restore` | Restores values/formulas from a rollback object generated by Sheets Bridge and creates a new inverse rollback object. |
+docs/mcp-sheets-bridge-design.md:86:| `sheets_bridge_visualize_table_io` | Reads a bounded range, detects table/formula/source-reference structure, and emits `analysis.json`, `table-io-flow.svg`, `index.html`, `manifest.json`, and `mcp-handoff.json`. |
+docs/mcp-sheets-bridge-design.md:87:| `sheets_bridge_refactor_minimal_formula_sheet` | Creates a new minimal-formula projection sheet for `monthly_product_performance_v1`, copies source-output formatting, writes formula anchors, validates `A5:AQ129` by default, and returns the created-sheet deletion rollback instruction. |
+docs/mcp-sheets-bridge-design.md:88:| `spreadsheet_table_builder_ui` | Reads a bounded source range from Google Sheets or an Excel workbook and emits an interactive builder for sketching the output table, writing `llm_prompt`, optionally pointing to source evidence, and choosing output target metadata. Desktop Google Sheets source reads use the MCP-managed local OAuth token cache; remote hosts use their approved remote session authority. |
+docs/mcp-sheets-bridge-design.md:89:| `spreadsheet_table_builder_save_intent` | App-only write tool used by the MCP Apps UI to persist a submitted `TableBuildIntent` and send the saved intent path back into the host conversation for plan generation. |
+docs/mcp-sheets-bridge-design.md:138:The generated HTML uses `spreadsheet_table_builder_save_intent` as the accepted
+docs/mcp-sheets-bridge-design.md:414:Those table-builder packages record `source: mcp_spreadsheet_table_builder`
+docs/mcp-sheets-bridge-design.md:432:- `sheets_bridge_apply_values_update` requires `rollback_required=true`.
+docs/mcp-sheets-bridge-design.md:445:- `sheets_bridge_visualize_table_io` is read-only.
+docs/mcp-sheets-bridge-design.md:458:- `sheets_bridge_refactor_minimal_formula_sheet` requires the read/write Sheets
+docs/mcp-sheets-bridge-design.md:500:  -> ChatGPT web remote MCP / Apps SDK adapter
+docs/mcp-sheets-bridge-design.md:513:- provide the initial `app_source` payload from `spreadsheet_table_builder_ui`;
+docs/mcp-sheets-bridge-design.md:514:- translate UI submit events into `spreadsheet_table_builder_save_intent`;
+docs/mcp-sheets-bridge-design.md:532:resource `ui://sheets-bridge/table-builder`. ChatGPT web uses remote MCP/App
+docs/mcp-sheets-bridge-design.md:542:| Host-neutral MCP Apps HTML resource | Default delivery surface. Works as a shared iframe-style UI for Claude MCP Apps, ChatGPT web remote MCP/App flows, and standalone local tests. |
+docs/mcp-sheets-bridge-design.md:739:  -> UI calls spreadsheet_table_builder_save_intent
+docs/mcp-sheets-bridge-design.md:781:- The UI submits through `spreadsheet_table_builder_save_intent`.
+docs/mcp-sheets-bridge-design.md:796:ChatGPT web remote MCP/App flows.
+docs/mcp-sheets-bridge-design.md:839:- Desktop Google Sheets access uses the MCP-managed local OAuth token cache.
+docs/mcp-sheets-bridge-design.md:856:- Record the current `spreadsheet_table_builder_ui`,
+docs/mcp-sheets-bridge-design.md:857:  `spreadsheet_table_builder_save_intent`,
+docs/mcp-sheets-bridge-design.md:875:- `python3 -m unittest mcp.sheets_bridge.test.test_mcp_server` passes.
+docs/mcp-sheets-bridge-design.md:877:  `resources/read`, and `spreadsheet_table_builder_save_intent` continue to
+docs/mcp-sheets-bridge-design.md:892:  `mcp/sheets_bridge/`. Host-specific UI code consumes validated contracts.
+docs/mcp-sheets-bridge-design.md:937:  `mcp/sheets_bridge/ui/table_builder/`.
+docs/mcp-sheets-bridge-design.md:957:- Shared UI files under `mcp/sheets_bridge/ui/table_builder/`.
+docs/mcp-sheets-bridge-design.md:996:  - UI calls `tools/call` with `spreadsheet_table_builder_save_intent`;
+docs/mcp-sheets-bridge-design.md:1013:- Preserve `mcp/sheets_bridge_server.py` as the local stdio entrypoint.
+docs/mcp-sheets-bridge-design.md:1016:- Ensure `spreadsheet_table_builder_ui` still supports:
+docs/mcp-sheets-bridge-design.md:1019:  - current Chrome tab resolution when explicitly requested.
+docs/mcp-sheets-bridge-design.md:1035:Goal: expose the same semantic tools through an HTTPS-compatible remote MCP
+docs/mcp-sheets-bridge-design.md:1041:  `mcp/sheets_bridge_http_server.py` or
+docs/mcp-sheets-bridge-design.md:1042:  `mcp/sheets_bridge/http_server.py`.
+docs/mcp-sheets-bridge-design.md:1050:  `spreadsheet_table_builder_ui` so remote hosts can render the shared UI before
+docs/mcp-sheets-bridge-design.md:1056:  - local OAuth token cache access;
+docs/mcp-sheets-bridge-design.md:1057:  - local Chrome current-tab resolution.
+docs/mcp-sheets-bridge-design.md:1066:  `spreadsheet_table_builder_save_intent`.
+docs/mcp-sheets-bridge-design.md:1073:- `spreadsheet_table_builder_ui` over HTTP returns a shared UI resource and
+docs/mcp-sheets-bridge-design.md:1091:- Treat Cloud Run broker/DWD as an enterprise deployment variant when it is
+docs/mcp-sheets-bridge-design.md:1094:  `docs/workload-identity-runtime-contract.md`.
+docs/mcp-sheets-bridge-design.md:1131:- Expose the remote MCP server over HTTPS. For development, use an approved
+docs/mcp-sheets-bridge-design.md:1136:  `PYTHONPATH=mcp python3 mcp/sheets_bridge_chatgpt_web_smoke.py --endpoint-url <https-url>`.
+docs/mcp-sheets-bridge-design.md:1168:- Rework `mcp/sheets_bridge/ui/table_builder/mcp_app.html` around the
+docs/mcp-sheets-bridge-design.md:1178:  `spreadsheet_table_builder_save_intent`.
+docs/mcp-sheets-bridge-design.md:1205:- Updated shared UI bundle under `mcp/sheets_bridge/ui/table_builder/`.
+docs/mcp-sheets-bridge-design.md:1272:- `spreadsheet_table_builder_ui` serves the shared table-builder UI and creates
+docs/mcp-sheets-bridge-design.md:1279:  shared UI through a remote MCP/App host adapter.
+docs/mcp-sheets-bridge-design.md:1294:  `spreadsheet_table_builder_save_intent`. The saved intent is a durable
+docs/mcp-sheets-bridge-design.md:1305:  are executed by the MCP server through the MCP-managed local OAuth token cache
+docs/mcp-sheets-bridge-design.md:1373:        "/Users/kangmin/Documents/excel-workbook-editing/mcp/sheets_bridge_server.py"
+docs/mcp-sheets-bridge-design.md:1381:from `packaging/sheets-bridge-mcp/`:
+docs/mcp-sheets-bridge-design.md:1387:      "command": "/Users/<user>/Applications/Sheets Bridge MCP/sheets-bridge-mcp"
+docs/mcp-sheets-bridge-design.md:1399:      "command": "C:\\Users\\<user>\\AppData\\Local\\Programs\\Sheets Bridge MCP\\sheets-bridge-mcp.exe"
+docs/mcp-sheets-bridge-design.md:1409:`packaging/sheets-bridge-mcp/release.py`, which can update the single version
+docs/mcp-sheets-bridge-design.md:1414:Chrome current-tab fallback requires Chrome to be started with a remote
+docs/mcp-sheets-bridge-design.md:1421:production should use a hosted remote MCP service such as Cloud Run.
+docs/mcp-sheets-bridge-design.md:1423:The remote MCP service must preserve the same tool names, JSON schemas, and
+docs/mcp-sheets-bridge-design.md:1431:- `sheets_bridge_auth_status` over HTTP reports remote session status and never
+docs/mcp-sheets-bridge-design.md:1433:- `spreadsheet_table_builder_ui` returns sanitized source preview metadata and
+docs/mcp-sheets-bridge-design.md:1435:- before remote Google authorization is active, `spreadsheet_table_builder_ui`
+docs/mcp-sheets-bridge-design.md:1437:- `spreadsheet_table_builder_save_intent` persists the submitted
+docs/mcp-sheets-bridge-design.md:1449:`docs/mcp-sheets-bridge-remote-auth-runbook.md`.
+docs/mcp-sheets-bridge-design.md:1490:  remote MCP/App, and standalone local web tests submit the same
+docs/mcp-sheets-bridge-design.md:1492:- ChatGPT web support is considered complete only when an HTTPS remote MCP
+scripts/google_sheets_formula_result_authority_checkpoint.py:527:        if artifact.get("kind") == "broker_policy":
+schemas/google-sheets-document-ontology-mapping.schema.json:59:        "source_spreadsheet_read_authority": { "const": "blocked_until_source_acl_and_broker_allowlist" }
+docs/mcp-sheets-bridge-remote-auth-runbook.md:5:The remote MCP HTTP server uses a user/session authorization boundary for live
+docs/mcp-sheets-bridge-remote-auth-runbook.md:14:PYTHONPATH=mcp python3 mcp/sheets_bridge_http_server.py --host 127.0.0.1 --port 8766
+docs/mcp-sheets-bridge-remote-auth-runbook.md:80:| Chrome current-tab resolution | Desktop runtime |
+docs/mcp-sheets-bridge-remote-auth-runbook.md:104:| `remote_auth_required` | No session handle was supplied | Authorize the remote MCP session and retry. |
+docs/mcp-sheets-bridge-remote-auth-runbook.md:109:| `local_runtime_required` | The request needs desktop-local files, Chrome, or Excel | Use the local stdio MCP runtime or an approved uploaded-artifact workflow. |
+docs/mcp-sheets-bridge-remote-auth-runbook.md:119:See `docs/workload-identity-runtime-contract.md` for the hosted broker
+tests/test_google_sheets_evidence_package.py:89:                "status": "blocked_until_source_acl_and_broker_allowlist",
+scripts/google_sheets_broker_client.py:13:DEFAULT_BROKER_URL = "https://run-mcp-day1-development-sheets-bridge-broker-ty6iw5bb6a-du.a.run.app"
+scripts/google_sheets_broker_client.py:34:        "request_id": request_id or f"broker-{uuid4()}",
+scripts/google_sheets_broker_client.py:64:def invoke_broker_inspect(
+scripts/google_sheets_broker_client.py:66:    broker_url: str,
+scripts/google_sheets_broker_client.py:73:    return post(_inspect_url(broker_url), request, identity_token)
+scripts/google_sheets_broker_client.py:94:def _inspect_url(broker_url: str) -> str:
+scripts/google_sheets_broker_client.py:95:    if not broker_url:
+scripts/google_sheets_broker_client.py:96:        raise ValueError("broker_url is required")
+scripts/google_sheets_broker_client.py:97:    return urljoin(f"{broker_url.rstrip('/')}/", "v1/inspect")
+scripts/google_sheets_broker_client.py:103:        raise ValueError("broker response must be a JSON object")
+docs/evidence-backed-spreadsheet-claim-ledger-design.md:60:| Bitemporal Evidence Ledger | Append-only record of observations, captures, parser outputs, broker reads, reviewer decisions, gate decisions, and source changes. | It must not overwrite prior observations or hide stale evidence. |
+docs/evidence-backed-spreadsheet-claim-ledger-design.md:230:- Immutable run artifacts: raw observations, captures, broker reads, parser outputs, gate decisions, review decisions.
+docs/evidence-backed-spreadsheet-claim-ledger-design.md:307:- broker/API effective-value probes
+tests/test_inspection_schema.py:46:                {"kind": "broker_policy", "summary": {"allowed": True}},
+tests/test_google_sheets_table_io_pipelines.py:160:                    "broker source spreadsheet allowlist",
+tests/test_google_sheets_blocker_resolution_update.py:24:            _write_json(root / "source-fc-data-broker-metadata.json", _metadata())
+tests/test_google_sheets_blocker_resolution_update.py:128:        "kind": "broker_policy",
+tests/test_google_sheets_live_view_formula_profile.py:62:            profile["summary"]["broker_window_contract_status"],
+tests/test_google_sheets_live_view_formula_profile.py:67:            "broker_bounded_window_contract_verified",
+docs/adr/0002-data-processing-spreadsheet-package.md:64:MCP client + Sheets Bridge MCP server + local analysis engine + review packages
+schemas/google-sheets-evidence-package.schema.json:78:        "source_spreadsheet_read_authority": { "const": "blocked_until_source_acl_and_broker_allowlist" },
+tests/test_google_sheets_block_candidate_tuning.py:78:        "broker_responses": [
+tests/test_google_sheets_validation_batch_execution.py:20:    def test_executes_planned_batches_with_fake_broker(self) -> None:
+tests/test_google_sheets_validation_batch_execution.py:31:            broker_invoker=_fake_broker,
+tests/test_google_sheets_validation_batch_execution.py:60:        "broker_read_plan": {
+tests/test_google_sheets_validation_batch_execution.py:64:                    "id": "broker_batch_inspect_formula_window",
+tests/test_google_sheets_validation_batch_execution.py:75:def _fake_broker(request: dict) -> dict:
+tests/test_table_builder_host_adapter_js.py:50:const call = adapter.callTool('spreadsheet_table_builder_save_intent', { intent: { output_canvas: [['x']], llm_prompt: '요청' } });
+tests/test_table_builder_host_adapter_js.py:53:assert.equal(toolCall.params.name, 'spreadsheet_table_builder_save_intent');
+tests/test_table_builder_host_adapter_js.py:90:  await adapter.callTool('spreadsheet_table_builder_save_intent', {});
+tests/test_table_builder_host_adapter_js.py:121:            const adapterSource = fs.readFileSync('mcp/sheets_bridge/ui/table_builder/host_adapter.js', 'utf8');
+tests/test_google_sheets_formula_result_authority_checkpoint.py:170:        "kind": "broker_policy",
+tests/test_google_sheets_bounded_window_sample.py:18:    def test_builds_schema_valid_executed_sample_with_fake_broker(self) -> None:
+tests/test_google_sheets_bounded_window_sample.py:32:            broker_invoker=_fake_broker,
+tests/test_google_sheets_bounded_window_sample.py:97:def _fake_broker(request: dict) -> dict:
+scripts/google_sheets_document_ontology_mapping.py:42:            "source_spreadsheet_read_authority": "blocked_until_source_acl_and_broker_allowlist",
+schemas/google-sheets-cross-validation-plan.schema.json:13:    "broker_read_plan",
+schemas/google-sheets-cross-validation-plan.schema.json:25:    "broker_read_plan": { "$ref": "#/$defs/broker_read_plan" },
+schemas/google-sheets-cross-validation-plan.schema.json:63:        "source_spreadsheet_read_authority": { "const": "blocked_until_source_acl_and_broker_allowlist" },
+schemas/google-sheets-cross-validation-plan.schema.json:64:        "allowed_live_read_scope": { "const": "broker_bounded_parser_windows_only" }
+schemas/google-sheets-cross-validation-plan.schema.json:140:    "broker_read_plan": {
+schemas/google-sheets-cross-validation-plan.schema.json:153:        "batches": { "type": "array", "items": { "$ref": "#/$defs/broker_batch" } },
+schemas/google-sheets-cross-validation-plan.schema.json:158:    "broker_batch": {
+schemas/google-sheets-cross-validation-plan.schema.json:168:        "authority": { "const": "broker_bounded_parser_window_only" }
+schemas/google-sheets-blocker-resolution-update.schema.json:79:        "authority": { "const": "user_feedback_plus_broker_smoke_evidence" },
+schemas/google-sheets-block-candidate-tuning.schema.json:54:        "input_authority": { "const": "candidate_artifact_plus_broker_bounded_sample" },
+scripts/google_sheets_evidence_package.py:93:            "source_spreadsheet_read_authority": "blocked_until_source_acl_and_broker_allowlist",
+scripts/google_sheets_evidence_package.py:197:                "message": "External IMPORTRANGE source remains blocked until source argument resolution, Google ACL, and broker allowlist are confirmed.",
+schemas/google-sheets-live-view-formula-profile.schema.json:99:            "requires_broker_grid_window_contract",
+schemas/google-sheets-live-view-formula-profile.schema.json:100:            "broker_bounded_window_contract_verified"
+schemas/google-sheets-live-view-formula-profile.schema.json:265:      "required": ["capability", "status", "required_broker_operations", "reason"],
+schemas/google-sheets-live-view-formula-profile.schema.json:270:        "required_broker_operations": { "type": "array", "items": { "type": "string" } },
+schemas/google-sheets-table-io-pipelines.schema.json:73:        "external_source_read_authority": { "const": "blocked_until_source_acl_and_broker_allowlist" }
+schemas/google-sheets-gate-execution.schema.json:68:        "source_spreadsheet_read_authority": { "const": "blocked_until_source_acl_and_broker_allowlist" },
+schemas/google-sheets-parser-window.schema.json:77:            "enum": ["broker_policy", "broker_auth"]
+schemas/google-sheets-bounded-window-sample.schema.json:12:    "broker_responses",
+schemas/google-sheets-bounded-window-sample.schema.json:24:    "broker_responses": {
+schemas/google-sheets-bounded-window-sample.schema.json:26:      "items": { "$ref": "#/$defs/broker_response" }
+schemas/google-sheets-bounded-window-sample.schema.json:60:        "broker_backed_read",
+schemas/google-sheets-bounded-window-sample.schema.json:68:        "broker_backed_read": { "type": "boolean" },
+schemas/google-sheets-bounded-window-sample.schema.json:88:    "broker_response": {
+scripts/google_sheets_block_candidate_tuning.py:44:            "input_authority": "candidate_artifact_plus_broker_bounded_sample",
+scripts/google_sheets_block_candidate_tuning.py:92:    for response in bounded_sample.get("broker_responses", []):
+scripts/google_sheets_block_candidate_tuning.py:121:                "evidence": [f"broker_window:{operation}:{range_text}"],
+scripts/google_sheets_live_view_formula_profile.py:375:                        "broker source spreadsheet allowlist",
+scripts/google_sheets_live_view_formula_profile.py:394:        else "Current profile is limited to existing A1:Z80 artifacts; deeper block and pipeline parsing needs range-scoped broker reads."
+scripts/google_sheets_live_view_formula_profile.py:400:            "required_broker_operations": [
+scripts/google_sheets_live_view_formula_profile.py:417:                "required_broker_operations": ["inspect.metadata", "inspect.grid_window"],
+scripts/google_sheets_live_view_formula_profile.py:418:                "reason": "IMPORTRANGE source spreadsheets must be authorized separately by Google ACL and broker policy.",
+scripts/google_sheets_live_view_formula_profile.py:453:        "broker_window_contract_status": (
+scripts/google_sheets_live_view_formula_profile.py:535:                    "argument resolution, Google ACL confirmation, and broker allowlist review."
+scripts/google_sheets_live_view_formula_profile.py:544:                "message": "Missing broker contract items remain explicit stop conditions for deeper live reads.",
+scripts/google_sheets_live_view_formula_profile.py:572:        return "broker_bounded_window_contract_verified"
+scripts/google_sheets_live_view_formula_profile.py:573:    return "requires_broker_grid_window_contract"
+scripts/google_sheets_live_view_formula_profile.py:735:        f"<td>{_esc(', '.join(item['required_broker_operations']))}</td>"
+schemas/google-sheets-validation-batch-execution.schema.json:12:    "broker_responses",
+schemas/google-sheets-validation-batch-execution.schema.json:25:    "broker_responses": { "type": "array", "items": { "$ref": "#/$defs/broker_response" } },
+schemas/google-sheets-validation-batch-execution.schema.json:53:        "broker_backed_read",
+schemas/google-sheets-validation-batch-execution.schema.json:62:        "broker_backed_read": { "type": "boolean" },
+schemas/google-sheets-validation-batch-execution.schema.json:63:        "read_scope": { "const": "current_workbook_planned_broker_batches_only" },
+schemas/google-sheets-validation-batch-execution.schema.json:80:    "broker_response": {
+scripts/google_sheets_validation_batch_execution.py:14:from google_sheets_broker_client import (
+scripts/google_sheets_validation_batch_execution.py:15:    DEFAULT_BROKER_URL,
+scripts/google_sheets_validation_batch_execution.py:17:    invoke_broker_inspect,
+scripts/google_sheets_validation_batch_execution.py:30:    broker_url: str = DEFAULT_BROKER_URL,
+scripts/google_sheets_validation_batch_execution.py:33:    broker_invoker=None,
+scripts/google_sheets_validation_batch_execution.py:49:                broker_url=broker_url,
+scripts/google_sheets_validation_batch_execution.py:50:                broker_invoker=broker_invoker,
+scripts/google_sheets_validation_batch_execution.py:67:            "broker_backed_read": execute,
+scripts/google_sheets_validation_batch_execution.py:68:            "read_scope": "current_workbook_planned_broker_batches_only",
+scripts/google_sheets_validation_batch_execution.py:70:            "credential_boundary": "identity evidence is sent only to the broker; generated artifacts stay credential-free",
+scripts/google_sheets_validation_batch_execution.py:74:            "source_plan_status": plan["broker_read_plan"]["status"],
+scripts/google_sheets_validation_batch_execution.py:77:            "blocked_source_reads": plan["broker_read_plan"].get("blocked_source_reads", []),
+scripts/google_sheets_validation_batch_execution.py:79:        "broker_responses": responses,
+scripts/google_sheets_validation_batch_execution.py:139:    for batch in plan.get("broker_read_plan", {}).get("batches", []):
+scripts/google_sheets_validation_batch_execution.py:159:    broker_url: str,
+scripts/google_sheets_validation_batch_execution.py:160:    broker_invoker,
+scripts/google_sheets_validation_batch_execution.py:162:    if broker_invoker:
+scripts/google_sheets_validation_batch_execution.py:163:        return broker_invoker(request)
+scripts/google_sheets_validation_batch_execution.py:164:    return invoke_broker_inspect(broker_url=broker_url, request=request)
+scripts/google_sheets_validation_batch_execution.py:270:            "message": "Validation batch execution uses only current-workbook broker-bounded parser windows.",
+scripts/google_sheets_validation_batch_execution.py:277:                "message": "Execution plan was generated but broker execution was not performed.",
+scripts/google_sheets_validation_batch_execution.py:284:                "message": "At least one planned broker batch failed.",
+scripts/google_sheets_validation_batch_execution.py:452:    parser.add_argument("--broker-url", default=DEFAULT_BROKER_URL)
+scripts/google_sheets_validation_batch_execution.py:463:        broker_url=args.broker_url,
+scripts/google_sheets_table_io_pipelines.py:75:            "external_source_read_authority": "blocked_until_source_acl_and_broker_allowlist",
+scripts/google_sheets_table_io_pipelines.py:289:            "authority": "blocked_until_source_acl_and_broker_allowlist",
+scripts/google_sheets_table_io_pipelines.py:419:        "authority": "broker_bounded_sample",
+scripts/google_sheets_table_io_pipelines.py:445:    if input_ref["authority"] == "broker_bounded_sample":
+scripts/google_sheets_table_io_pipelines.py:498:        notes.append("IMPORTRANGE source read is blocked until source ACL and broker allowlist are verified.")
+scripts/google_sheets_table_io_pipelines.py:525:                "status": "blocked_until_source_acl_and_broker_allowlist",
+scripts/google_sheets_table_io_pipelines.py:545:                "message": "Resolve source spreadsheet ID, Google ACL, and broker allowlist before reading IMPORTRANGE source data.",
+scripts/google_sheets_table_io_pipelines.py:547:                "status": "requires_human_or_broker_policy_action",
+scripts/google_sheets_table_io_pipelines.py:624:                "message": "IMPORTRANGE source data is not read in this stage; source ACL and broker allowlist are explicit blockers.",
+scripts/google_sheets_gate_execution.py:57:            "source_spreadsheet_read_authority": "blocked_until_source_acl_and_broker_allowlist",
+scripts/google_sheets_gate_execution.py:130:        "broker_batches_succeeded": planned_request_count == successful_response_count,
+scripts/google_sheets_gate_execution.py:182:        if context["broker_batches_succeeded"] and context["source_read_count"] == 0:
+scripts/google_sheets_gate_execution.py:186:                "Planned current-workbook broker batches executed successfully and no source-spreadsheet reads occurred.",
+scripts/google_sheets_gate_execution.py:223:        return ["source ACL required", "broker source allowlist required"]
+scripts/google_sheets_blocker_resolution_update.py:32:    metadata = _read_json(out_dir / "source-fc-data-broker-metadata.json")
+scripts/google_sheets_blocker_resolution_update.py:49:            "meaning": "사용자가 제공한 FC_DATA 원본 spreadsheet을 broker read-only smoke로 직접 검증했다.",
+scripts/google_sheets_blocker_resolution_update.py:51:                "source-fc-data-broker-metadata.json",
+scripts/google_sheets_blocker_resolution_update.py:81:            "evidence_refs": ["source-fc-data-broker-metadata.json"],
+scripts/google_sheets_blocker_resolution_update.py:131:                "metadata": "source-fc-data-broker-metadata.json",
+scripts/google_sheets_blocker_resolution_update.py:143:            "authority": "user_feedback_plus_broker_smoke_evidence",
+scripts/google_sheets_blocker_resolution_update.py:145:                "Record resolved and still-open blockers after human feedback and broker source smoke. "
+scripts/google_sheets_blocker_resolution_update.py:197:                "message": "Direct FC_DATA source authority is verified by broker metadata, values-window, and formula-window smoke.",
+scripts/google_sheets_blocker_resolution_update.py:338:        if artifact.get("kind") == "broker_policy":
+scripts/google_sheets_blocker_resolution_update.py:484:        description="Record connected Google Sheets blocker resolutions from user feedback and broker source smoke."
+scripts/google_sheets_live_block_candidates.py:435:        else "blocked_missing_broker_contract"
+scripts/google_sheets_live_block_candidates.py:646:                "message": "Additional bounded broker reads are proposed for later tuning.",
+scripts/google_sheets_live_block_candidates.py:683:                "message": "Bounded parser-window broker operations are verified for current policy limits.",
+scripts/google_sheets_live_block_candidates.py:690:                "message": "Bounded parser-window broker operations are not verified; read candidates are stop conditions.",
+scripts/google_sheets_shared_ontology_alignment_review.py:195:            "question": "FC_DATA의 IMPORTRANGE 원본 spreadsheet ACL과 broker allowlist를 확보해 원본 source authority를 검증할 수 있는가?",
+scripts/google_sheets_action_contracts.py:127:            "owner": "sheet_owner_and_broker_policy_owner",
+scripts/google_sheets_action_contracts.py:128:            "action": "Resolve IMPORTRANGE source argument, confirm Google ACL, and add source spreadsheet to broker allowlist before source reads.",
+scripts/google_sheets_action_contracts.py:132:                "broker allowlist entry for source spreadsheet",
+scripts/google_sheets_action_contracts.py:135:            "completion_condition": "Source spreadsheet can be inspected through broker policy without bypassing ACL or broker controls.",
+scripts/google_sheets_action_contracts.py:154:            "action": "Execute or explicitly defer remaining current-workbook bounded read candidates under broker policy.",
+scripts/google_sheets_action_contracts.py:193:        "sheet_owner_contract_count": owners["sheet_owner_and_broker_policy_owner"] + owners["sheet_owner_or_formula_reconciliation_reviewer"],
+scripts/google_sheets_process_redesign_review.py:196:            "decision": "Treat broker policy and Google ACL requirements as process inputs, not incidental failures.",
+scripts/google_sheets_process_redesign_review.py:209:        {"id": "gap_external_source_authority", "priority": "high", "description": "FC_DATA IMPORTRANGE source ACL and broker allowlist are still needed."},
+scripts/google_sheets_domain_source_model.py:208:                "reason": "source ACL and broker allowlist not confirmed",
+scripts/google_sheets_cross_validation_plan.py:31:    read_plan = _broker_read_plan(
+scripts/google_sheets_cross_validation_plan.py:60:            "source_spreadsheet_read_authority": "blocked_until_source_acl_and_broker_allowlist",
+scripts/google_sheets_cross_validation_plan.py:61:            "allowed_live_read_scope": "broker_bounded_parser_windows_only",
+scripts/google_sheets_cross_validation_plan.py:65:        "broker_read_plan": read_plan,
+scripts/google_sheets_cross_validation_plan.py:149:                    "Sampled input surface range exists in bounded broker sample evidence.",
+scripts/google_sheets_cross_validation_plan.py:194:                "broker_source_spreadsheet_allowlist_required",
+scripts/google_sheets_cross_validation_plan.py:204:                "Google ACL and broker allowlist authorize the source spreadsheet before any source data read.",
+scripts/google_sheets_cross_validation_plan.py:207:                "Source spreadsheet is read without source ACL and broker allowlist evidence.",
+scripts/google_sheets_cross_validation_plan.py:276:            "Every planned bounded read stays within broker parser-window policy.",
+scripts/google_sheets_cross_validation_plan.py:287:def _broker_read_plan(tuning: dict[str, Any], *, max_ranges: int) -> dict[str, Any]:
+scripts/google_sheets_cross_validation_plan.py:300:                "id": f"broker_batch_{_slug(operation)}",
+scripts/google_sheets_cross_validation_plan.py:305:                "authority": "broker_bounded_parser_window_only",
+scripts/google_sheets_cross_validation_plan.py:379:        return "resolve_source_acl_and_broker_allowlist_before_source_read"
+scripts/google_sheets_cross_validation_plan.py:383:        return "execute_planned_broker_batches_in_later_stage"
+scripts/google_sheets_cross_validation_plan.py:407:        "broker_read_batch_count": len(read_plan["batches"]),
+scripts/google_sheets_cross_validation_plan.py:428:                "message": "Source spreadsheet reads remain blocked until source ACL and broker allowlist evidence is available.",
+scripts/google_sheets_cross_validation_plan.py:442:                "message": f"{sum(len(batch['ranges']) for batch in read_plan['batches'])} bounded read ranges are planned for later broker execution.",
+scripts/google_sheets_cross_validation_plan.py:505:        for item in plan["broker_read_plan"]["batches"]
+scripts/google_sheets_cross_validation_plan.py:508:        batch_rows = '<tr><td colspan="4">No bounded broker batches planned.</td></tr>'
+scripts/google_sheets_bounded_window_sample.py:14:from google_sheets_broker_client import (
+scripts/google_sheets_bounded_window_sample.py:15:    DEFAULT_BROKER_URL,
+scripts/google_sheets_bounded_window_sample.py:17:    invoke_broker_inspect,
+scripts/google_sheets_bounded_window_sample.py:30:    broker_url: str = DEFAULT_BROKER_URL,
+scripts/google_sheets_bounded_window_sample.py:34:    broker_invoker=None,
+scripts/google_sheets_bounded_window_sample.py:51:                broker_url=broker_url,
+scripts/google_sheets_bounded_window_sample.py:52:                broker_invoker=broker_invoker,
+scripts/google_sheets_bounded_window_sample.py:69:            "broker_backed_read": execute,
+scripts/google_sheets_bounded_window_sample.py:70:            "credential_boundary": "identity evidence is sent only to the broker; generated artifacts stay credential-free",
+scripts/google_sheets_bounded_window_sample.py:75:        "broker_responses": responses,
+scripts/google_sheets_bounded_window_sample.py:202:    broker_url: str,
+scripts/google_sheets_bounded_window_sample.py:203:    broker_invoker,
+scripts/google_sheets_bounded_window_sample.py:205:    if broker_invoker:
+scripts/google_sheets_bounded_window_sample.py:206:        return broker_invoker(request)
+scripts/google_sheets_bounded_window_sample.py:207:    return invoke_broker_inspect(broker_url=broker_url, request=request)
+scripts/google_sheets_bounded_window_sample.py:288:                "message": "Sampling plan was generated but broker execution was not performed.",
+scripts/google_sheets_bounded_window_sample.py:403:        window_rows = '<tr><td colspan="6">No executed broker windows.</td></tr>'
+scripts/google_sheets_bounded_window_sample.py:432:        description="Plan and optionally execute bounded broker parser-window samples."
+scripts/google_sheets_bounded_window_sample.py:441:    parser.add_argument("--broker-url", default=DEFAULT_BROKER_URL)
+scripts/google_sheets_bounded_window_sample.py:453:        broker_url=args.broker_url,
+scripts/google_sheets_formula_dataflow_discovery.py:857:                "required_path": "Add an inspect.apps_script broker operation with Apps Script/Drive authority and redaction limits.",
+scripts/google_sheets_formula_dataflow_discovery.py:861:                "status": "not_available_from_current_broker",
+scripts/google_sheets_formula_dataflow_discovery.py:869:                "required_path": "Read bounded grid/value windows from the hidden SupermetricsQueries tab when MCP or broker access is available.",

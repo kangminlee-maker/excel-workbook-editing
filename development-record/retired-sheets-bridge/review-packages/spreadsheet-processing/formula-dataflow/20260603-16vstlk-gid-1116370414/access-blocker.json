@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-03T19:18:05+09:00",
+  "stage": "formula_dataflow_discovery_access_smoke",
+  "spreadsheet_id": "16vSTLkSxs-j3NxRJ8g_PNYGPuskQkJOWYBss_BDYQJg",
+  "target_gid": 1116370414,
+  "principal": "kangmin.lee@day1company.co.kr",
+  "intended_operation": "inspect.metadata",
+  "access_mode": "sheets_bridge_cli_to_cloud_run_broker",
+  "write_operation": "not_performed",
+  "direct_sheets_api_workaround_used": false,
+  "service_account_key_workaround_used": false,
+  "status": "blocked_before_broker_call",
+  "latest_rechecked_at": "2026-06-03T19:21:29+09:00",
+  "latest_preflight_status": "blocked_before_broker_call",
+  "alternative_access_status": {
+    "chrome_extension_broker_metadata_inspect": "verified",
+    "native_host_record_package": "verified",
+    "record_package_check_artifact": "review-packages/sheets-bridge/formula-dataflow/20260603-16vstlk-gid-1116370414/chrome-record-package-check.json",
+    "formula_window_status": "not_yet_captured"
+  },
+  "latest_user_cli_login_attempt": {
+    "observed_at": "2026-06-03T19:59:35+09:00",
+    "commands": [
+      "gcloud auth login --account=kangmin.lee@day1company.co.kr",
+      "gcloud config set account kangmin.lee@day1company.co.kr",
+      "gcloud auth print-identity-token >/dev/null"
+    ],
+    "auth_login_status": "blocked_by_context_aware_access",
+    "auth_login_error_summary": "access_denied / Account restricted",
+    "identity_token_status": "blocked_by_context_aware_access",
+    "raw_oauth_url_recorded": false
+  },
+  "latest_cli_broker_access_status": {
+    "observed_at": "2026-06-04T08:49:23+09:00",
+    "identity_token_preflight": "ok",
+    "metadata_smoke": "ok",
+    "first_formula_window": "ok",
+    "first_values_window": "ok",
+    "metadata_artifact": "review-packages/sheets-bridge/formula-dataflow/20260603-16vstlk-gid-1116370414/metadata.json",
+    "formula_window_artifact": "review-packages/sheets-bridge/formula-dataflow/20260603-16vstlk-gid-1116370414/formula-window-ML-sales-final-A1-AN453.json",
+    "values_window_artifact": "review-packages/sheets-bridge/formula-dataflow/20260603-16vstlk-gid-1116370414/values-window-ML-sales-final-A1-AN453.json",
+    "first_window_summary_artifact": "review-packages/sheets-bridge/formula-dataflow/20260603-16vstlk-gid-1116370414/first-window-summary-ML-sales-final-A1-AN453.json"
+  },
+  "latest_followup_cli_preflight_status": {
+    "observed_at": "2026-06-04T19:35:49+09:00",
+    "intended_operation": "inspect.grid_window",
+    "intended_range": "'SupermetricsQueries'!A1:J20",
+    "identity_token_preflight": "blocked_by_context_aware_access",
+    "broker_request_sent": false,
+    "token_emitted_or_stored": false,
+    "message_summary": "A follow-up bounded hidden-tab read was not sent because local gcloud token refresh was again blocked by Context Aware Access."
+  },
+  "blocker": {
+    "kind": "local_gcloud_identity_token_blocked_by_context_aware_access",
+    "failed_command": "gcloud auth print-identity-token",
+    "message_summary": "gcloud could not refresh the current account token because access was blocked by Context Aware Access. The broker request was not sent."
+  },
+  "dry_run_request_shape": {
+    "operation": "inspect.metadata",
+    "spreadsheet_id": "16vSTLkSxs-j3NxRJ8g_PNYGPuskQkJOWYBss_BDYQJg",
+    "ranges": [],
+    "sheet_ids": [],
+    "identity_hint": {
+      "principal": "kangmin.lee@day1company.co.kr"
+    },
+    "risk_level": "low"
+  },
+  "required_user_resolution": [
+    "Restore local gcloud identity-token issuance for kangmin.lee@day1company.co.kr under the organization's Context Aware Access policy.",
+    "Do not share the token. After resolution, confirm that `gcloud auth print-identity-token` succeeds locally.",
+    "Then rerun the Sheets Bridge metadata smoke and bounded formula/value windows through the broker."
+  ],
+  "next_reads_after_resolution": [
+    "inspect.metadata for the spreadsheet to resolve gid 1116370414 to sheet title and dimensions",
+    "inspect.formula_window over a bounded target window on the resolved sheet",
+    "inspect.values_window over the same bounded target window for displayed-value context",
+    "optional inspect.grid_window for hidden/view-state/style/pivot/object context if the broker policy allows it"
+  ]
+}

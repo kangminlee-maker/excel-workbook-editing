@@ -1,0 +1,143 @@
+{
+  "artifact_kind": "spreadsheet_table_builder_source",
+  "artifact_type": "google_sheets",
+  "created_at": "2026-06-08T06:17:06.969640+00:00",
+  "default_spec": {
+    "artifact_type": "google_sheets",
+    "fields": {},
+    "formula": {
+      "template": "=IFERROR(SUMIFS({measure_range},{row_label_range},{row_label_cell},{column_label_range},{column_label_cell}),0)"
+    },
+    "output": {
+      "copy_title": "ChatGPT Web Smoke Source - formula table",
+      "creation_mode": "sheet",
+      "format": {
+        "auto_resize_columns": true,
+        "freeze_header_rows": 2,
+        "header_bold": true,
+        "protect_created_sheet": false
+      },
+      "sheet_title": "MCP_TABLE_20260608_0617",
+      "title": "MCP Formula Table",
+      "workbook_path": ""
+    },
+    "schema_version": "1.0",
+    "source": {
+      "artifact_type": "google_sheets",
+      "header_row": 1,
+      "qualified_range": "'Raw'!A1:C4",
+      "sheet_title": "Raw",
+      "spreadsheet_id": "chatgpt-web-smoke-spreadsheet",
+      "workbook_path": ""
+    },
+    "spec_kind": "formula_table_apply_v1",
+    "spreadsheet_id": "chatgpt-web-smoke-spreadsheet"
+  },
+  "grid": [
+    [
+      {
+        "a1": "A1",
+        "column": "A",
+        "formatted_value": "Team",
+        "formula": "",
+        "row": 1
+      },
+      {
+        "a1": "B1",
+        "column": "B",
+        "formatted_value": "Month",
+        "formula": "",
+        "row": 1
+      },
+      {
+        "a1": "C1",
+        "column": "C",
+        "formatted_value": "Revenue",
+        "formula": "",
+        "row": 1
+      }
+    ],
+    [
+      {
+        "a1": "A2",
+        "column": "A",
+        "formatted_value": "Team A",
+        "formula": "",
+        "row": 2
+      },
+      {
+        "a1": "B2",
+        "column": "B",
+        "formatted_value": "2026-01",
+        "formula": "",
+        "row": 2
+      },
+      {
+        "a1": "C2",
+        "column": "C",
+        "formatted_value": "10",
+        "formula": "",
+        "row": 2
+      }
+    ],
+    [
+      {
+        "a1": "A3",
+        "column": "A",
+        "formatted_value": "Team A",
+        "formula": "",
+        "row": 3
+      },
+      {
+        "a1": "B3",
+        "column": "B",
+        "formatted_value": "2026-02",
+        "formula": "",
+        "row": 3
+      },
+      {
+        "a1": "C3",
+        "column": "C",
+        "formatted_value": "15",
+        "formula": "",
+        "row": 3
+      }
+    ],
+    [
+      {
+        "a1": "A4",
+        "column": "A",
+        "formatted_value": "Team B",
+        "formula": "",
+        "row": 4
+      },
+      {
+        "a1": "B4",
+        "column": "B",
+        "formatted_value": "2026-01",
+        "formula": "",
+        "row": 4
+      },
+      {
+        "a1": "C4",
+        "column": "C",
+        "formatted_value": "20",
+        "formula": "",
+        "row": 4
+      }
+    ]
+  ],
+  "schema_version": "1.0",
+  "source": {
+    "artifact_type": "google_sheets",
+    "header_row": 1,
+    "qualified_range": "'Raw'!A1:C4",
+    "range_start_column": "A",
+    "range_start_row": 1,
+    "sheet_title": "Raw",
+    "spreadsheet_id": "chatgpt-web-smoke-spreadsheet",
+    "workbook_path": ""
+  },
+  "spreadsheet_id": "chatgpt-web-smoke-spreadsheet",
+  "workbook_title": "ChatGPT Web Smoke Source"
+}

@@ -432,7 +432,7 @@ def _read_candidates(
     contract_status = (
         "verified_for_current_policy_limits"
         if _parser_window_ops_verified(parser_window_smoke)
-        else "blocked_missing_broker_contract"
+        else "blocked_missing_source_evidence_contract"
     )
     if row_count > profile_end and (display_rows or formula_observations):
         end_row = min(row_count, profile_end + 80)
@@ -470,7 +470,7 @@ def _read_candidates(
                 "id": f"read_{_slug(manifest_sheet['name'])}_profile_formulas",
                 "operation": "inspect.formula_window",
                 "range": f"'{manifest_sheet['name']}'!A1:Z80",
-                "reason": "confirm formula-bearing profile window through broker-backed formula read",
+                "reason": "confirm formula-bearing profile window through approved-authority formula read",
                 "status": contract_status,
             }
         )
@@ -643,7 +643,7 @@ def _sheet_observations(
         observations.append(
             {
                 "level": "info",
-                "message": "Additional bounded broker reads are proposed for later tuning.",
+                "message": "Additional bounded source evidence reads are proposed for later tuning.",
             }
         )
     return observations
@@ -680,14 +680,14 @@ def _parser_observations(
         observations.append(
             {
                 "level": "info",
-                "message": "Bounded parser-window broker operations are verified for current policy limits.",
+                "message": "Bounded parser-window source evidence operations are verified for current policy limits.",
             }
         )
     else:
         observations.append(
             {
                 "level": "warning",
-                "message": "Bounded parser-window broker operations are not verified; read candidates are stop conditions.",
+                "message": "Bounded parser-window source evidence operations are not verified; read candidates are stop conditions.",
             }
         )
     hidden_count = sum(1 for sheet in sheets if sheet["state"] == "hidden")

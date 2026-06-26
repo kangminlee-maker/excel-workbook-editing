@@ -40,8 +40,8 @@ def build_block_candidate_tuning(
             },
         },
         "authority": {
-            "source_document": "live_google_sheet",
-            "input_authority": "candidate_artifact_plus_broker_bounded_sample",
+            "source_document": "connected_google_sheet_evidence",
+            "input_authority": "candidate_artifact_plus_bounded_source_evidence",
             "tuning_status": "tuning_packet_not_accepted_graph_claim",
             "formula_result_authority": "not_established",
         },
@@ -89,7 +89,7 @@ def write_block_candidate_tuning_package(
 
 def _sampled_regions(bounded_sample: dict[str, Any]) -> list[dict[str, Any]]:
     regions = []
-    for response in bounded_sample.get("broker_responses", []):
+    for response in bounded_sample.get("source_evidence_results", []):
         payload = response.get("payload", {})
         operation = response["operation"]
         for window in payload.get("windows", []) or []:
@@ -118,7 +118,7 @@ def _regions_for_window(operation: str, window: dict[str, Any]) -> list[dict[str
                 "bounds": bounds,
                 "metrics": metrics,
                 "preview": _preview(rows),
-                "evidence": [f"broker_window:{operation}:{range_text}"],
+                "evidence": [f"source_evidence_window:{operation}:{range_text}"],
                 "tuning_effect": _tuning_effect(subtype, metrics),
             }
         )

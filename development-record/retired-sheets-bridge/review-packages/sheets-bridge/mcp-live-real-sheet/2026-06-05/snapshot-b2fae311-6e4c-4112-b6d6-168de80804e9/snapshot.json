@@ -1,0 +1,32 @@
+{
+  "artifacts": [
+    {
+      "kind": "google_auth",
+      "summary": {
+        "mode": "user_oauth"
+      }
+    }
+  ],
+  "captured_at": "2026-06-05T12:15:06.617328+00:00",
+  "operation": "inspect.formula_window",
+  "requested_ranges": [
+    "'1. MLL_ 상품별 성과 현황-2025.08'!A1:E4"
+  ],
+  "schema_version": "1.0",
+  "snapshot_id": "snapshot-b2fae311-6e4c-4112-b6d6-168de80804e9",
+  "spreadsheet_id": "1q9HYY2b3ha15VwXnsqO98YADw2ebCyY-TqB45VFUvPE",
+  "value_render_option": "FORMULA",
+  "windows": [
+    {
+      "column_count": 1,
+      "major_dimension": "ROWS",
+      "range": "'1. MLL_ 상품별 성과 현황-2025.08'!A1:E4",
+      "row_count": 1,
+      "values": [
+        [
+          "[마이라이트] 신규런칭 월간 Overview"
+        ]
+      ]
+    }
+  ]
+}

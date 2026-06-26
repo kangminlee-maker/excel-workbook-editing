@@ -4,7 +4,6 @@ import argparse
 import html
 import json
 import re
-import sys
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -12,15 +11,10 @@ from typing import Any
 from openpyxl.utils import range_boundaries
 
 from google_sheets_live_manifest import render_live_manifest_html
-
-
-REPO_ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(REPO_ROOT / "cli" / "sheets-bridge"))
-
-from sheets_bridge_cli import (  # noqa: E402
-    DEFAULT_BROKER_URL,
-    build_inspect_request,
-    invoke_broker_inspect,
+from google_sheets_source_evidence import (
+    build_source_evidence_request,
+    load_source_evidence_results,
+    source_evidence_response_record,
 )
 
 
@@ -31,13 +25,12 @@ def build_bounded_window_sample(
     *,
     live_block_candidates_path: Path,
     spreadsheet_id: str,
-    principal: str,
-    execute: bool = False,
-    broker_url: str = DEFAULT_BROKER_URL,
+    principal: str = "",
+    source_evidence_results_path: Path | None = None,
+    source_evidence_results: list[dict[str, Any]] | None = None,
     max_ranges_per_operation: int = 3,
     timeout_seconds: int = 60,
     retry_count: int = 0,
-    broker_invoker=None,
 ) -> dict[str, Any]:
     live_block_candidates_path = live_block_candidates_path.expanduser().resolve()
     block_candidates = _read_json(live_block_candidates_path)
@@ -49,15 +42,12 @@ def build_bounded_window_sample(
         timeout_seconds=timeout_seconds,
         retry_count=retry_count,
     )
-    responses = []
-    if execute:
-        for request in plan["planned_requests"]:
-            response = _invoke_request(
-                request,
-                broker_url=broker_url,
-                broker_invoker=broker_invoker,
-            )
-            responses.append(_response_record(request, response))
+    source_results = list(source_evidence_results or [])
+    source_results.extend(load_source_evidence_results(source_evidence_results_path))
+    responses = [
+        _response_record(request, source_results[index])
+        for index, request in enumerate(plan["planned_requests"][: len(source_results)])
+    ]
     window_summaries = _window_summaries(responses)
     tuning_observations = _tuning_observations(window_summaries, responses)
     return {
@@ -71,14 +61,14 @@ def build_bounded_window_sample(
             },
         },
         "authority": {
-            "source_document": "live_google_sheet",
-            "broker_backed_read": execute,
-            "credential_boundary": "identity token sent only to broker; no OAuth tokens, access tokens, bearer headers, or service account keys stored",
+            "source_document": "connected_google_sheet_evidence",
+            "evidence_backed_read": bool(responses),
+            "credential_boundary": "source evidence artifacts are read locally; live Google access is handled by an approved external access surface",
             "formula_result_authority": "not_established",
             "candidate_tuning_status": "bounded_sample_only",
         },
         "sampling_plan": plan,
-        "broker_responses": responses,
+        "source_evidence_results": responses,
         "window_summaries": window_summaries,
         "tuning_observations": tuning_observations,
         "summary": _summary(plan, responses, window_summaries, tuning_observations),
@@ -156,7 +146,7 @@ def _sampling_plan(
         if not ranges:
             continue
         total_cells = sum(_range_cell_count(item) for item in ranges)
-        request = build_inspect_request(
+        request = build_source_evidence_request(
             spreadsheet_id=spreadsheet_id,
             principal=principal,
             operation=operation,
@@ -202,26 +192,12 @@ def _candidate_priority(candidate: dict[str, Any], sheet: dict[str, Any]) -> int
     return 50
 
 
-def _invoke_request(
-    request: dict[str, Any],
-    *,
-    broker_url: str,
-    broker_invoker,
-) -> dict[str, Any]:
-    if broker_invoker:
-        return broker_invoker(request)
-    return invoke_broker_inspect(broker_url=broker_url, request=request)
-
-
 def _response_record(request: dict[str, Any], response: dict[str, Any]) -> dict[str, Any]:
-    payload = response.get("payload", {}) if response.get("ok") else response
-    return {
-        "operation": request["operation"],
-        "requested_ranges": request["ranges"],
-        "candidate_ids": request.get("candidate_ids", []),
-        "ok": bool(response.get("ok")),
-        "payload": payload,
-    }
+    return source_evidence_response_record(
+        request=request,
+        response=response,
+        candidate_ids=request.get("candidate_ids", []),
+    )
 
 
 def _window_summaries(responses: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -291,7 +267,7 @@ def _tuning_observations(
             {
                 "level": "warning",
                 "range": None,
-                "message": "Sampling plan was generated but broker execution was not performed.",
+                "message": "Sampling plan was generated but source evidence results were not supplied.",
             }
         )
     return observations
@@ -305,7 +281,7 @@ def _summary(
 ) -> dict[str, Any]:
     return {
         "planned_request_count": plan["planned_request_count"],
-        "executed_request_count": len(responses),
+        "evidence_result_count": len(responses),
         "successful_response_count": sum(1 for item in responses if item["ok"]),
         "window_count": len(window_summaries),
         "non_empty_cell_count": sum(item["non_empty_cell_count"] for item in window_summaries),
@@ -313,7 +289,7 @@ def _summary(
         "error_display_count": sum(item["error_display_count"] for item in window_summaries),
         "url_sample_count": sum(len(item["url_cell_samples"]) for item in window_summaries),
         "tuning_observation_count": len(tuning_observations),
-        "sampling_status": "executed" if responses else "planned_only",
+        "sampling_status": "evidence_supplied" if responses else "planned_only",
     }
 
 
@@ -406,7 +382,7 @@ def render_bounded_window_sample_section(sample: dict[str, Any]) -> str:
         for item in sample["window_summaries"]
     )
     if not window_rows:
-        window_rows = '<tr><td colspan="6">No executed broker windows.</td></tr>'
+        window_rows = '<tr><td colspan="6">No source evidence windows supplied.</td></tr>'
     observation_rows = "".join(
         "<tr>"
         f"<td>{_esc(item['level'])}</td>"
@@ -420,7 +396,7 @@ def render_bounded_window_sample_section(sample: dict[str, Any]) -> str:
   <section class="grid">{metrics}</section>
   <h2>Sampling Plan</h2>
   <section class="panel"><table><thead><tr><th>Operation</th><th>Ranges</th><th>Cells</th><th>Candidate IDs</th></tr></thead><tbody>{plan_rows}</tbody></table></section>
-  <h2>Broker Window Summaries</h2>
+  <h2>Source Evidence Window Summaries</h2>
   <section class="panel"><table><thead><tr><th>Operation</th><th>Range</th><th>Non-empty</th><th>Formula cells</th><th>Error cells</th><th>Preview</th></tr></thead><tbody>{window_rows}</tbody></table></section>
   <h2>Sampling Observations</h2>
   <section class="panel"><table><thead><tr><th>Level</th><th>Range</th><th>Message</th></tr></thead><tbody>{observation_rows}</tbody></table></section>
@@ -435,7 +411,7 @@ def _esc(value: Any) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Plan and optionally execute bounded broker parser-window samples."
+        description="Plan bounded parser-window samples and merge local source evidence results."
     )
     parser.add_argument("--out-dir", type=Path, required=True)
     parser.add_argument("--access-preflight", type=Path, required=True)
@@ -443,20 +419,18 @@ def main() -> None:
     parser.add_argument("--live-view-formula-profile", type=Path, required=True)
     parser.add_argument("--live-block-candidates", type=Path, required=True)
     parser.add_argument("--spreadsheet-id", required=True)
-    parser.add_argument("--principal", required=True)
-    parser.add_argument("--broker-url", default=DEFAULT_BROKER_URL)
+    parser.add_argument("--principal", default="")
+    parser.add_argument("--source-evidence-results", type=Path)
     parser.add_argument("--max-ranges-per-operation", type=int, default=3)
     parser.add_argument("--timeout-seconds", type=int, default=60)
     parser.add_argument("--retry-count", type=int, default=0)
-    parser.add_argument("--execute", action="store_true")
     args = parser.parse_args()
 
     sample = build_bounded_window_sample(
         live_block_candidates_path=args.live_block_candidates,
         spreadsheet_id=args.spreadsheet_id,
         principal=args.principal,
-        execute=args.execute,
-        broker_url=args.broker_url,
+        source_evidence_results_path=args.source_evidence_results,
         max_ranges_per_operation=args.max_ranges_per_operation,
         timeout_seconds=args.timeout_seconds,
         retry_count=args.retry_count,

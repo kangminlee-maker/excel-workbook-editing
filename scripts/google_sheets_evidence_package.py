@@ -90,7 +90,7 @@ def build_google_sheets_evidence_package(
             "source_document": "live_google_sheet",
             "package_status": "connected_sheets_evidence_package_candidate",
             "formula_result_authority": "not_established",
-            "source_spreadsheet_read_authority": "blocked_until_source_acl_and_broker_allowlist",
+            "source_spreadsheet_read_authority": "blocked_until_source_access_evidence",
             "graph_promotion_status": "not_promoted",
         },
         "workbook_facts": {
@@ -194,7 +194,7 @@ def _review_queue(
                 "id": f"review_{item['id']}",
                 "type": "external_source_authority_blocker",
                 "severity": "high",
-                "message": "External IMPORTRANGE source remains blocked until source argument resolution, Google ACL, and broker allowlist are confirmed.",
+                "message": "External IMPORTRANGE source remains blocked until source argument resolution, Google ACL, and source access evidence are confirmed.",
                 "evidence_refs": item.get("evidence_refs", []),
                 "status": item["status"],
             }

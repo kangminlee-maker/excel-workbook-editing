@@ -11,7 +11,6 @@ from typing import Any
 
 
 SCHEMA_VERSION = "0.1"
-READONLY_SHEETS_SCOPE = "https://www.googleapis.com/auth/spreadsheets.readonly"
 DYNAMIC_FORMULA_CLASSES = {
     "importrange",
     "import_function",
@@ -78,65 +77,6 @@ def build_live_manifest(
         ),
         "permission_gaps": permission_gaps,
         "summary": _summary(sheets, formula_profile["summary"]),
-    }
-
-
-def fetch_grid_profiles(
-    *,
-    spreadsheet_id: str,
-    key_file: Path,
-    subject: str,
-    ranges: list[str],
-    chunk_size: int = 8,
-) -> tuple[dict[str, dict[str, Any]], dict[str, Any]]:
-    from google.oauth2 import service_account
-    from googleapiclient.discovery import build
-
-    credentials = service_account.Credentials.from_service_account_file(
-        str(key_file),
-        scopes=[READONLY_SHEETS_SCOPE],
-    ).with_subject(subject)
-    service = build("sheets", "v4", credentials=credentials, cache_discovery=False)
-    grid_profiles: dict[str, dict[str, Any]] = {}
-    request_count = 0
-    started = datetime.now(UTC)
-    fields = ",".join(
-        [
-            "spreadsheetId",
-            "sheets(properties(sheetId,title,index,hidden,gridProperties(rowCount,columnCount,frozenRowCount,frozenColumnCount)),"
-            "data(startRow,startColumn,rowData(values(formattedValue,userEnteredValue,effectiveValue,"
-            "userEnteredFormat(backgroundColor,textFormat(bold,italic,fontSize,foregroundColor),horizontalAlignment,verticalAlignment,borders),"
-            "dataValidation,pivotTable,note)),rowMetadata(hiddenByUser,hiddenByFilter,pixelSize),columnMetadata(hiddenByUser,pixelSize)),"
-            "merges,protectedRanges(protectedRangeId,range,warningOnly),basicFilter,filterViews(filterViewId,title,range),"
-            "charts(chartId,spec/title,position),bandedRanges(bandedRangeId,range))",
-        ]
-    )
-
-    for chunk in _chunks(ranges, max(1, chunk_size)):
-        request_count += 1
-        response = (
-            service.spreadsheets()
-            .get(
-                spreadsheetId=spreadsheet_id,
-                ranges=chunk,
-                includeGridData=True,
-                fields=fields,
-            )
-            .execute()
-        )
-        for sheet in response.get("sheets", []) or []:
-            title = sheet.get("properties", {}).get("title", "")
-            if title:
-                grid_profiles[title] = _summarize_grid_sheet(sheet)
-
-    elapsed_ms = int((datetime.now(UTC) - started).total_seconds() * 1000)
-    return grid_profiles, {
-        "performed": True,
-        "scope": READONLY_SHEETS_SCOPE,
-        "request_count": request_count,
-        "range_count": len(ranges),
-        "elapsed_ms": elapsed_ms,
-        "credential_handling": "external_key_file_used_not_copied",
     }
 
 
@@ -809,7 +749,6 @@ def _authority(access_preflight: dict[str, Any]) -> dict[str, Any]:
         ),
         "service_account_email": source.get("service_account_email", ""),
         "impersonated_subject": source.get("impersonated_subject", ""),
-        "direct_service_account_access": source.get("direct_service_account_access", {}),
         "xlsx_round_trip": source.get("xlsx_round_trip", "not_used"),
         "write_operation": source.get("write_operation", "not_performed"),
     }
@@ -923,19 +862,6 @@ def _parser_observations(
             "evidence_refs": ["access-preflight.json"],
         }
     ]
-    direct = (
-        access_preflight.get("authority", {})
-        .get("direct_service_account_access", {})
-        .get("status")
-    )
-    if direct and direct != "ok":
-        observations.append(
-            {
-                "severity": "info",
-                "message": "Service account direct access is not the authority path; DWD impersonation is required for this sheet.",
-                "evidence_refs": ["access-preflight.json"],
-            }
-        )
     hidden_count = sum(1 for sheet in sheets if sheet["state"] == "hidden")
     if hidden_count:
         observations.append(
@@ -1027,10 +953,6 @@ def _esc(value: Any) -> str:
     return html.escape("" if value is None else str(value))
 
 
-def _chunks(items: list[str], size: int) -> list[list[str]]:
-    return [items[index : index + size] for index in range(0, len(items), size)]
-
-
 def _read_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -1045,32 +967,12 @@ def main() -> int:
     parser.add_argument("--top-left-sample", required=True, type=Path)
     parser.add_argument("--out-dir", required=True, type=Path)
     parser.add_argument("--profile-range", default="A1:Z80")
-    parser.add_argument("--key-file", type=Path)
-    parser.add_argument("--subject")
-    parser.add_argument("--fetch-grid-profile", action="store_true")
-    parser.add_argument("--chunk-size", type=int, default=8)
     args = parser.parse_args()
 
     access_preflight = _read_json(args.access_preflight)
     top_left_sample = _read_json(args.top_left_sample)
     grid_profiles: dict[str, dict[str, Any]] = {}
     live_fetch: dict[str, Any] | None = None
-
-    if args.fetch_grid_profile:
-        if not args.key_file or not args.subject:
-            raise SystemExit("--key-file and --subject are required with --fetch-grid-profile")
-        ranges = [
-            f"'{sheet['title'].replace(chr(39), chr(39) + chr(39))}'!{args.profile_range}"
-            for sheet in access_preflight.get("tabs", [])
-            if sheet.get("title")
-        ]
-        grid_profiles, live_fetch = fetch_grid_profiles(
-            spreadsheet_id=access_preflight["spreadsheet_id"],
-            key_file=args.key_file,
-            subject=args.subject,
-            ranges=ranges,
-            chunk_size=args.chunk_size,
-        )
 
     manifest = build_live_manifest(
         access_preflight=access_preflight,

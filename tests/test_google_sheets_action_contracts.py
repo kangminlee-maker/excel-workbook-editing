@@ -16,7 +16,7 @@ from google_sheets_action_contracts import build_google_sheets_action_contracts 
 
 class GoogleSheetsActionContractsTest(unittest.TestCase):
     def test_builds_action_contracts_from_review_items(self) -> None:
-        fixture_dir = REPO_ROOT / "review-packages" / "sheets-bridge" / "live-inspections" / "test-action-contracts"
+        fixture_dir = REPO_ROOT / "review-packages" / "spreadsheet-processing" / "live-inspections" / "test-action-contracts"
         fixture_dir.mkdir(parents=True, exist_ok=True)
         mapping_path = fixture_dir / "live-document-ontology-mapping.json"
         mapping_path.write_text(json.dumps(_mapping(), ensure_ascii=False), encoding="utf-8")

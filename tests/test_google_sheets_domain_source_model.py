@@ -17,7 +17,7 @@ from google_sheets_domain_source_model import build_google_sheets_domain_source_
 
 class GoogleSheetsDomainSourceModelTest(unittest.TestCase):
     def test_defaults_to_no_general_domain_sources(self) -> None:
-        fixture_dir = REPO_ROOT / "review-packages" / "sheets-bridge" / "live-inspections" / "test-domain-source-model"
+        fixture_dir = REPO_ROOT / "review-packages" / "spreadsheet-processing" / "live-inspections" / "test-domain-source-model"
         fixture_dir.mkdir(parents=True, exist_ok=True)
         contracts_path = fixture_dir / "live-action-contracts.json"
         evidence_path = fixture_dir / "live-evidence-package.json"
@@ -34,7 +34,7 @@ class GoogleSheetsDomainSourceModelTest(unittest.TestCase):
         self.assertEqual(model["general_domain_sources"], [])
 
     def test_separates_general_local_and_unavailable_sources(self) -> None:
-        fixture_dir = REPO_ROOT / "review-packages" / "sheets-bridge" / "live-inspections" / "test-domain-source-model"
+        fixture_dir = REPO_ROOT / "review-packages" / "spreadsheet-processing" / "live-inspections" / "test-domain-source-model"
         fixture_dir.mkdir(parents=True, exist_ok=True)
         contracts_path = fixture_dir / "live-action-contracts.json"
         evidence_path = fixture_dir / "live-evidence-package.json"

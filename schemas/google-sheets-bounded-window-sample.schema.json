@@ -9,7 +9,7 @@
     "source",
     "authority",
     "sampling_plan",
-    "broker_responses",
+    "source_evidence_results",
     "window_summaries",
     "tuning_observations",
     "summary"
@@ -21,9 +21,9 @@
     "source": { "$ref": "#/$defs/source" },
     "authority": { "$ref": "#/$defs/authority" },
     "sampling_plan": { "$ref": "#/$defs/sampling_plan" },
-    "broker_responses": {
+    "source_evidence_results": {
       "type": "array",
-      "items": { "$ref": "#/$defs/broker_response" }
+      "items": { "$ref": "#/$defs/source_evidence_result" }
     },
     "window_summaries": {
       "type": "array",
@@ -57,15 +57,15 @@
       "type": "object",
       "required": [
         "source_document",
-        "broker_backed_read",
+        "evidence_backed_read",
         "credential_boundary",
         "formula_result_authority",
         "candidate_tuning_status"
       ],
       "additionalProperties": false,
       "properties": {
-        "source_document": { "const": "live_google_sheet" },
-        "broker_backed_read": { "type": "boolean" },
+        "source_document": { "const": "connected_google_sheet_evidence" },
+        "evidence_backed_read": { "type": "boolean" },
         "credential_boundary": { "type": "string", "minLength": 1 },
         "formula_result_authority": { "const": "not_established" },
         "candidate_tuning_status": { "const": "bounded_sample_only" }
@@ -85,7 +85,7 @@
         }
       }
     },
-    "broker_response": {
+    "source_evidence_result": {
       "type": "object",
       "required": ["operation", "requested_ranges", "candidate_ids", "ok", "payload"],
       "additionalProperties": false,

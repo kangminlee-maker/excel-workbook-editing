@@ -1,0 +1,102 @@
+{
+  "artifacts": [
+    {
+      "kind": "google_auth",
+      "summary": {
+        "mode": "user_oauth"
+      }
+    }
+  ],
+  "captured_at": "2026-06-11T07:37:44.077200+00:00",
+  "locale": "ko_KR",
+  "named_ranges": [],
+  "operation": "inspect.metadata",
+  "protected_ranges": [],
+  "schema_version": "1.0",
+  "snapshot_id": "snapshot-6b958c67-4e01-43b5-bc56-dcc5ff0a0135",
+  "spreadsheet_id": "1vL4lwW7m6JMewR20WB0-QGoaSNDXIvjHCtyOw8ZeAFQ",
+  "tabs": [
+    {
+      "column_count": 8,
+      "frozen_column_count": 0,
+      "frozen_row_count": 0,
+      "hidden": true,
+      "index": 0,
+      "row_count": 21,
+      "sheet_id": 1794791694,
+      "title": "일정"
+    },
+    {
+      "column_count": 268,
+      "frozen_column_count": 0,
+      "frozen_row_count": 0,
+      "hidden": false,
+      "index": 1,
+      "row_count": 39,
+      "sheet_id": 994562365,
+      "title": "[일정] WBS"
+    },
+    {
+      "column_count": 5,
+      "frozen_column_count": 0,
+      "frozen_row_count": 0,
+      "hidden": false,
+      "index": 2,
+      "row_count": 98,
+      "sheet_id": 613567654,
+      "title": "[완료] 커리큘럼 초안"
+    },
+    {
+      "column_count": 18,
+      "frozen_column_count": 0,
+      "frozen_row_count": 0,
+      "hidden": false,
+      "index": 3,
+      "row_count": 47,
+      "sheet_id": 911502103,
+      "title": "[4/2] 강사 & 과정 정보"
+    },
+    {
+      "column_count": 27,
+      "frozen_column_count": 0,
+      "frozen_row_count": 0,
+      "hidden": false,
+      "index": 4,
+      "row_count": 114,
+      "sheet_id": 170349008,
+      "title": "[4/4] 상세 커리큘럼 v2"
+    },
+    {
+      "column_count": 26,
+      "frozen_column_count": 0,
+      "frozen_row_count": 0,
+      "hidden": true,
+      "index": 5,
+      "row_count": 106,
+      "sheet_id": 1987768162,
+      "title": "[4/2] 상세 커리큘럼"
+    },
+    {
+      "column_count": 18,
+      "frozen_column_count": 0,
+      "frozen_row_count": 0,
+      "hidden": false,
+      "index": 6,
+      "row_count": 31,
+      "sheet_id": 1705521654,
+      "title": "[4/7] 상세페이지 자료"
+    },
+    {
+      "column_count": 10,
+      "frozen_column_count": 0,
+      "frozen_row_count": 0,
+      "hidden": true,
+      "index": 7,
+      "row_count": 997,
+      "sheet_id": 303188485,
+      "title": "자유논의"
+    }
+  ],
+  "time_zone": "Asia/Tokyo",
+  "title": "마스터시트_Cursor 1_커리큘럼_배휘동님/임동준님_방하은"
+}

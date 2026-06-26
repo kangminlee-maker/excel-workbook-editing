@@ -16,7 +16,7 @@ from google_sheets_table_io_pipelines import build_google_sheets_table_io_pipeli
 
 class GoogleSheetsTableIoPipelinesTest(unittest.TestCase):
     def test_builds_schema_valid_pipeline_candidates(self) -> None:
-        fixture_dir = REPO_ROOT / "review-packages" / "sheets-bridge" / "live-inspections" / "test-table-io"
+        fixture_dir = REPO_ROOT / "review-packages" / "spreadsheet-processing" / "live-inspections" / "test-table-io"
         fixture_dir.mkdir(parents=True, exist_ok=True)
         block_candidates_path = fixture_dir / "live-block-candidates.json"
         formula_profile_path = fixture_dir / "live-view-formula-profile.json"
@@ -157,7 +157,7 @@ def _formula_profile() -> dict:
                 "required_evidence": [
                     "source argument value lookup",
                     "source spreadsheet Google ACL check",
-                    "broker source spreadsheet allowlist",
+                    "source spreadsheet access evidence",
                 ],
             }
         ],

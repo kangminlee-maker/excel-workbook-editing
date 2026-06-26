@@ -1,0 +1,65 @@
+{
+  "after": [
+    {
+      "column_count": 2,
+      "major_dimension": "ROWS",
+      "range": "'시트1'!A1:B1",
+      "row_count": 1,
+      "values": [
+        [
+          "sheets-bridge-live-smoke 2026-06-05T12:12:09+00:00",
+          "=1+1"
+        ]
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "google_auth",
+      "summary": {
+        "mode": "user_oauth"
+      }
+    }
+  ],
+  "before": [
+    {
+      "column_count": 0,
+      "major_dimension": "ROWS",
+      "range": "'시트1'!A1:B1",
+      "row_count": 0,
+      "values": []
+    }
+  ],
+  "captured_at": "2026-06-05T12:12:09.881962+00:00",
+  "operation": "apply.values_update",
+  "requested_ranges": [
+    "'시트1'!A1:B1"
+  ],
+  "rollback": {
+    "operation": "rollback.values_restore",
+    "ranges": [
+      "'시트1'!A1:B1"
+    ],
+    "rollback_of_request_id": "snapshot-a3ffaaaf-4edb-4514-86c3-2196d63adb68",
+    "spreadsheet_id": "1EBUtguio1vTOUMP16BsUvwXsk5dYk9HxRUuRvHpCmFo",
+    "write_requests": [
+      {
+        "range": "'시트1'!A1:B1",
+        "values": [
+          [
+            "",
+            ""
+          ]
+        ]
+      }
+    ]
+  },
+  "schema_version": "1.0",
+  "snapshot_id": "snapshot-a3ffaaaf-4edb-4514-86c3-2196d63adb68",
+  "spreadsheet_id": "1EBUtguio1vTOUMP16BsUvwXsk5dYk9HxRUuRvHpCmFo",
+  "updated_cells": 2,
+  "updated_columns": 2,
+  "updated_rows": 1,
+  "value_input_option": "USER_ENTERED",
+  "write_count": 1
+}

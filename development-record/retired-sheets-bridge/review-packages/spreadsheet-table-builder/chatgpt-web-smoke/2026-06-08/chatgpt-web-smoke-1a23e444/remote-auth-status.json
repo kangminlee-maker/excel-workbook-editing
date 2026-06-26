@@ -1,0 +1,26 @@
+{
+  "id": 5,
+  "jsonrpc": "2.0",
+  "result": {
+    "content": [
+      {
+        "text": "{\n  \"authenticated\": false,\n  \"configured\": false,\n  \"credential_boundary\": {\n    \"access_token_returned\": false,\n    \"local_oauth_cache_visible\": false,\n    \"raw_credentials_returned\": false,\n    \"refresh_token_returned\": false,\n    \"service_account_key_visible\": false\n  },\n  \"operation\": \"remote.auth_status\",\n  \"session_id_present\": false,\n  \"status\": \"remote_auth_required\"\n}",
+        "type": "text"
+      }
+    ],
+    "structuredContent": {
+      "authenticated": false,
+      "configured": false,
+      "credential_boundary": {
+        "access_token_returned": false,
+        "local_oauth_cache_visible": false,
+        "raw_credentials_returned": false,
+        "refresh_token_returned": false,
+        "service_account_key_visible": false
+      },
+      "operation": "remote.auth_status",
+      "session_id_present": false,
+      "status": "remote_auth_required"
+    }
+  }
+}

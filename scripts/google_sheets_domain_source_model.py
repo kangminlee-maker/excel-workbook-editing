@@ -205,7 +205,7 @@ def _unavailable_sources(
                 "id": "unavailable_external_importrange_source",
                 "type": "source_spreadsheet",
                 "status": "blocked",
-                "reason": "source ACL and broker allowlist not confirmed",
+                "reason": "source ACL and source access evidence not confirmed",
                 "related_contract_ids": [
                     item["id"]
                     for item in contracts["action_contracts"]
