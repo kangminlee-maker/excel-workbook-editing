@@ -1,3 +1,0 @@
-Day1 MCP tool surface was not directly visible in the current Codex tool list during Phase 0.
-Proceeding with docs/runtime cleanup that does not require live connected-Sheets verification.
-Live connected-Sheets checks remain delegated to Day1 MCP in an environment where its tools are exposed.

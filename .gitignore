@@ -6,3 +6,4 @@ evals/
 review-packages/sheets-bridge/native-host/
 .build/
 dist/
+archive/

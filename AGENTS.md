@@ -3,8 +3,8 @@
 ## Purpose
 
 This repo contains the `excel-workbook-editing` skill, spreadsheet helpers,
-schemas, active runtime designs, review artifacts, ADRs, and development
-records. Keep runtime artifacts aligned with current behavior.
+schemas, active runtime designs, review artifacts, and ADRs. Keep runtime
+artifacts aligned with current behavior.
 
 ## Repo Authority
 
@@ -15,10 +15,11 @@ records. Keep runtime artifacts aligned with current behavior.
 - `schemas/`: machine-checkable artifact contracts.
 - `projects/`: per-spreadsheet or workbook-family continuity workspaces.
 - `review-packages/`: generated evidence for human review.
-- `development-record/`: product development records, pilot evidence, decision
-  trail, and record diagrams outside runtime authority.
+- `development-record/`: tracked placeholder for record handoff.
 - `IMPLEMENTATION_MAP.html`: current architecture, roadmap, decisions, and
   risks.
+- `archive/`: local ignored product development records, pilot evidence,
+  decision trail, and record diagrams.
 
 ## Product Direction
 
@@ -206,4 +207,4 @@ ADR rules:
   implementation intent.
 - Runtime code, active docs, and `IMPLEMENTATION_MAP.html` stay aligned.
 - Current review artifacts live under `review-packages/`.
-- Development records live under `development-record/`.
+- Development records live under local ignored `archive/`.
