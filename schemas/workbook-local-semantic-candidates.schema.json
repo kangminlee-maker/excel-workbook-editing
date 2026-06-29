@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.local/schemas/workbook-local-semantic-candidates.schema.json",
+  "$id": "https://day1company.local/spreadsheet-processing/workbook-local-semantic-candidates.schema.json",
   "title": "Workbook Local Semantic Candidates",
   "type": "object",
   "required": [

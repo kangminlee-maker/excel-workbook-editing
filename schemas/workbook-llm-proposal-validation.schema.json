@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.local/schemas/workbook-llm-proposal-validation.schema.json",
+  "$id": "https://day1company.local/spreadsheet-processing/workbook-llm-proposal-validation.schema.json",
   "title": "Workbook LLM Proposal Validation",
   "type": "object",
   "required": [

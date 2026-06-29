@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://day1company.local/excel-workbook-editing/workbook-recapture-candidate-plan.schema.json",
+  "$id": "https://day1company.local/spreadsheet-processing/workbook-recapture-candidate-plan.schema.json",
   "title": "Workbook Recapture Candidate Plan",
   "type": "object",
   "required": [

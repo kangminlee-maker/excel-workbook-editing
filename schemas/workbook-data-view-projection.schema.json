@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.local/schemas/workbook-data-view-projection.schema.json",
+  "$id": "https://day1company.local/spreadsheet-processing/workbook-data-view-projection.schema.json",
   "title": "Workbook Data View Projection",
   "type": "object",
   "required": [

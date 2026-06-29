@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://day1company.local/excel-workbook-editing/workbook-capture-quality.schema.json",
+  "$id": "https://day1company.local/spreadsheet-processing/workbook-capture-quality.schema.json",
   "title": "Workbook Capture Quality",
   "type": "object",
   "required": [

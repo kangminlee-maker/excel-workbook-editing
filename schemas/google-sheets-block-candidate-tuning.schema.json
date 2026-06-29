@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-block-candidate-tuning.schema.json",
+  "$id": "https://day1company.local/spreadsheet-processing/google-sheets-block-candidate-tuning.schema.json",
   "title": "Google Sheets Block / Region Candidate Tuning",
   "type": "object",
   "required": [

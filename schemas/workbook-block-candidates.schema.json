@@ -1,30 +1,66 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://day1company.local/excel-workbook-editing/workbook-block-candidates.schema.json",
+  "$id": "https://day1company.local/spreadsheet-processing/workbook-block-candidates.schema.json",
   "title": "Workbook Document Block Candidates",
   "type": "object",
-  "required": ["schema_version", "generated_at", "source_artifacts", "sheets", "summary"],
+  "required": [
+    "schema_version",
+    "generated_at",
+    "source_artifacts",
+    "sheets",
+    "summary"
+  ],
   "additionalProperties": false,
   "properties": {
-    "schema_version": { "const": "0.1" },
-    "generated_at": { "type": "string", "format": "date-time" },
-    "source_artifacts": { "$ref": "#/$defs/source_artifacts" },
+    "schema_version": {
+      "const": "0.1"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_artifacts": {
+      "$ref": "#/$defs/source_artifacts"
+    },
     "sheets": {
       "type": "array",
-      "items": { "$ref": "#/$defs/sheet" }
+      "items": {
+        "$ref": "#/$defs/sheet"
+      }
     },
-    "summary": { "$ref": "#/$defs/summary" }
+    "summary": {
+      "$ref": "#/$defs/summary"
+    }
   },
   "$defs": {
     "source_artifacts": {
       "type": "object",
-      "required": ["manifest", "readonly_sample"],
+      "required": [
+        "manifest",
+        "readonly_sample"
+      ],
       "additionalProperties": false,
       "properties": {
-        "manifest": { "type": "string", "minLength": 1 },
-        "readonly_sample": { "type": "string", "minLength": 1 },
-        "formula_patterns": { "type": ["string", "null"] },
-        "structural_style_profile": { "type": ["string", "null"] }
+        "manifest": {
+          "type": "string",
+          "minLength": 1
+        },
+        "readonly_sample": {
+          "type": "string",
+          "minLength": 1
+        },
+        "formula_patterns": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "structural_style_profile": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
     },
     "sheet": {
@@ -43,53 +79,116 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "name": { "type": "string" },
-        "dimension": { "type": ["string", "null"] },
-        "dimension_bounds": {
-          "anyOf": [
-            { "$ref": "#/$defs/dimension_bounds" },
-            { "type": "null" }
+        "name": {
+          "type": "string"
+        },
+        "dimension": {
+          "type": [
+            "string",
+            "null"
           ]
+        },
+        "dimension_bounds": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "required": [
+            "min_row",
+            "min_column",
+            "max_row",
+            "max_column"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "min_row": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "min_column": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_row": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_column": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
         },
         "blocks": {
           "type": "array",
-          "items": { "$ref": "#/$defs/block" }
+          "items": {
+            "$ref": "#/$defs/block"
+          }
         },
         "cell_regions": {
           "type": "array",
-          "items": { "$ref": "#/$defs/cell_region" }
+          "items": {
+            "$ref": "#/$defs/cell_region"
+          }
         },
         "cell_region_split_candidates": {
           "type": "array",
-          "items": { "$ref": "#/$defs/cell_region_split_candidate" }
+          "items": {
+            "$ref": "#/$defs/cell_region_split_candidate"
+          }
         },
         "boundary_gate_results": {
           "type": "array",
-          "items": { "$ref": "#/$defs/boundary_gate_result" }
+          "items": {
+            "$ref": "#/$defs/boundary_gate_result"
+          }
         },
         "relations": {
           "type": "array",
-          "items": { "$ref": "#/$defs/relation" }
+          "items": {
+            "$ref": "#/$defs/relation"
+          }
         },
         "relation_groups": {
           "type": "array",
-          "items": { "$ref": "#/$defs/relation_group" }
+          "items": {
+            "$ref": "#/$defs/relation_group"
+          }
         },
         "parser_observations": {
           "type": "array",
-          "items": { "$ref": "#/$defs/observation" }
+          "items": {
+            "$ref": "#/$defs/observation"
+          }
         }
       }
     },
     "dimension_bounds": {
       "type": "object",
-      "required": ["min_row", "min_column", "max_row", "max_column"],
+      "required": [
+        "min_row",
+        "min_column",
+        "max_row",
+        "max_column"
+      ],
       "additionalProperties": false,
       "properties": {
-        "min_row": { "type": "integer", "minimum": 1 },
-        "min_column": { "type": "integer", "minimum": 1 },
-        "max_row": { "type": "integer", "minimum": 1 },
-        "max_column": { "type": "integer", "minimum": 1 }
+        "min_row": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "min_column": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_row": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_column": {
+          "type": "integer",
+          "minimum": 1
+        }
       }
     },
     "block": {
@@ -108,29 +207,68 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
-        "type": { "type": "string", "enum": ["image", "row_band", "pivot_table"] },
-        "subtype": { "type": "string" },
-        "label": { "type": ["string", "null"] },
-        "source": { "$ref": "#/$defs/source" },
-        "bounds": { "$ref": "#/$defs/bounds" },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "image",
+            "row_band",
+            "pivot_table"
+          ]
+        },
+        "subtype": {
+          "type": "string"
+        },
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "bounds": {
+          "$ref": "#/$defs/bounds"
+        },
         "metrics": {
           "type": "object",
-          "additionalProperties": { "type": ["integer", "number", "string", "boolean", "null"] }
+          "additionalProperties": {
+            "type": [
+              "integer",
+              "number",
+              "string",
+              "boolean",
+              "null"
+            ]
+          }
         },
         "preview": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
         "formula_references": {
           "type": "array",
-          "items": { "$ref": "#/$defs/formula_reference" }
+          "items": {
+            "$ref": "#/$defs/formula_reference"
+          }
         },
         "evidence": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
-        "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
       }
     },
     "cell_region": {
@@ -151,30 +289,67 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
-        "type": { "const": "cell_region" },
-        "subtype": { "type": "string" },
-        "parent_seed_block_id": { "type": "string", "minLength": 1 },
-        "label": { "type": ["string", "null"] },
-        "source": { "$ref": "#/$defs/source" },
-        "bounds": { "$ref": "#/$defs/bounds" },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "cell_region"
+        },
+        "subtype": {
+          "type": "string"
+        },
+        "parent_seed_block_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "bounds": {
+          "$ref": "#/$defs/bounds"
+        },
         "metrics": {
           "type": "object",
-          "additionalProperties": { "type": ["integer", "number", "string", "boolean", "null"] }
+          "additionalProperties": {
+            "type": [
+              "integer",
+              "number",
+              "string",
+              "boolean",
+              "null"
+            ]
+          }
         },
         "split_signals": {
           "type": "array",
-          "items": { "$ref": "#/$defs/cell_region_split_signal" }
+          "items": {
+            "$ref": "#/$defs/cell_region_split_signal"
+          }
         },
         "preview": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
         "evidence": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
-        "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
       }
     },
     "cell_region_split_signal": {
@@ -197,16 +372,37 @@
             "style_discontinuity_boundary"
           ]
         },
-        "left_end_column": { "type": "integer", "minimum": 1 },
-        "right_start_column": { "type": "integer", "minimum": 1 },
-        "gap_column_count": { "type": "integer", "minimum": 0 },
-        "row_count": { "type": "integer", "minimum": 0 },
+        "left_end_column": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "right_start_column": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "gap_column_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "row_count": {
+          "type": "integer",
+          "minimum": 0
+        },
         "sample_rows": {
           "type": "array",
-          "items": { "type": "integer", "minimum": 1 }
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
         },
-        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
-        "reason": { "type": "string" }
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "reason": {
+          "type": "string"
+        }
       }
     },
     "cell_region_split_candidate": {
@@ -228,7 +424,10 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
         "type": {
           "type": "string",
           "enum": [
@@ -237,23 +436,68 @@
             "style_discontinuity_boundary"
           ]
         },
-        "sheet": { "type": "string" },
-        "parent_seed_block_id": { "type": "string", "minLength": 1 },
-        "from_region_id": { "type": ["string", "null"], "minLength": 1 },
-        "to_region_id": { "type": ["string", "null"], "minLength": 1 },
-        "boundary_within_region_id": { "type": ["string", "null"], "minLength": 1 },
-        "boundary_after_column": { "type": "integer", "minimum": 1 },
-        "boundary_before_column": { "type": "integer", "minimum": 1 },
+        "sheet": {
+          "type": "string"
+        },
+        "parent_seed_block_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "from_region_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "to_region_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "boundary_within_region_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "boundary_after_column": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "boundary_before_column": {
+          "type": "integer",
+          "minimum": 1
+        },
         "metrics": {
           "type": "object",
-          "additionalProperties": { "type": ["integer", "number", "string", "boolean", "null"] }
+          "additionalProperties": {
+            "type": [
+              "integer",
+              "number",
+              "string",
+              "boolean",
+              "null"
+            ]
+          }
         },
-        "reason": { "type": "string" },
+        "reason": {
+          "type": "string"
+        },
         "evidence": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
-        "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
       }
     },
     "formula_reference": {
@@ -272,15 +516,39 @@
       "properties": {
         "kind": {
           "type": "string",
-          "enum": ["workbook_range", "external_workbook_range", "pivot_function"]
+          "enum": [
+            "workbook_range",
+            "external_workbook_range",
+            "pivot_function"
+          ]
         },
-        "formula_cell": { "type": "string" },
-        "target_workbook": { "type": ["string", "null"] },
-        "target_sheet": { "type": "string" },
-        "target_range": { "type": "string" },
-        "target_bounds": { "$ref": "#/$defs/dimension_bounds" },
-        "formula_function": { "type": ["string", "null"] },
-        "formula_preview": { "type": "string" }
+        "formula_cell": {
+          "type": "string"
+        },
+        "target_workbook": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "target_sheet": {
+          "type": "string"
+        },
+        "target_range": {
+          "type": "string"
+        },
+        "target_bounds": {
+          "$ref": "#/$defs/dimension_bounds"
+        },
+        "formula_function": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "formula_preview": {
+          "type": "string"
+        }
       }
     },
     "boundary_gate_result": {
@@ -300,13 +568,27 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
         "type": {
           "type": "string",
-          "enum": ["split_candidate_gate", "merged_range_title_gate"]
+          "enum": [
+            "split_candidate_gate",
+            "merged_range_title_gate"
+          ]
         },
-        "sheet": { "type": "string" },
-        "candidate_id": { "type": ["string", "null"], "minLength": 1 },
+        "sheet": {
+          "type": "string"
+        },
+        "candidate_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
         "candidate_type": {
           "type": "string",
           "enum": [
@@ -318,28 +600,51 @@
         },
         "related_region_ids": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
-        "score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
         "status": {
           "type": "string",
-          "enum": ["strong_candidate", "review_candidate", "weak_signal"]
+          "enum": [
+            "strong_candidate",
+            "review_candidate",
+            "weak_signal"
+          ]
         },
-        "decision": { "type": "string" },
+        "decision": {
+          "type": "string"
+        },
         "evidence": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
-        "rationale": { "type": "string" }
+        "rationale": {
+          "type": "string"
+        }
       }
     },
     "source": {
       "type": "object",
-      "required": ["sheet", "kind"],
+      "required": [
+        "sheet",
+        "kind"
+      ],
       "additionalProperties": true,
       "properties": {
-        "sheet": { "type": "string" },
-        "kind": { "type": "string" }
+        "sheet": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string"
+        }
       }
     },
     "bounds": {
@@ -354,20 +659,59 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "start_row": { "type": "integer", "minimum": 1 },
-        "end_row": { "type": "integer", "minimum": 1 },
-        "start_column": { "type": ["integer", "null"], "minimum": 1 },
-        "end_column": { "type": ["integer", "null"], "minimum": 1 },
-        "start_cell": { "type": ["string", "null"] },
-        "end_cell": { "type": ["string", "null"] }
+        "start_row": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "end_row": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "start_column": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "end_column": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "start_cell": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "end_cell": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
     },
     "relation": {
       "type": "object",
-      "required": ["id", "type", "from", "to", "metrics", "reason", "confidence"],
+      "required": [
+        "id",
+        "type",
+        "from",
+        "to",
+        "metrics",
+        "reason",
+        "confidence"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
         "type": {
           "type": "string",
           "enum": [
@@ -384,14 +728,34 @@
             "formula_references_pivot_table"
           ]
         },
-        "from": { "type": "string", "minLength": 1 },
-        "to": { "type": "string", "minLength": 1 },
+        "from": {
+          "type": "string",
+          "minLength": 1
+        },
+        "to": {
+          "type": "string",
+          "minLength": 1
+        },
         "metrics": {
           "type": "object",
-          "additionalProperties": { "type": ["integer", "number", "string", "boolean", "null"] }
+          "additionalProperties": {
+            "type": [
+              "integer",
+              "number",
+              "string",
+              "boolean",
+              "null"
+            ]
+          }
         },
-        "reason": { "type": "string" },
-        "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+        "reason": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
       }
     },
     "relation_group": {
@@ -417,39 +781,109 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
-        "type": { "const": "formula_signature_group" },
-        "source_block_id": { "type": "string", "minLength": 1 },
-        "relation_type": { "type": "string" },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "formula_signature_group"
+        },
+        "source_block_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relation_type": {
+          "type": "string"
+        },
         "reference_kind": {
           "type": "string",
-          "enum": ["workbook_range", "external_workbook_range", "pivot_function"]
+          "enum": [
+            "workbook_range",
+            "external_workbook_range",
+            "pivot_function"
+          ]
         },
-        "target_workbook": { "type": ["string", "null"] },
-        "target_sheet": { "type": "string" },
-        "formula_function": { "type": ["string", "null"] },
-        "formula_signature": { "type": "string" },
-        "formula_cell_count": { "type": "integer", "minimum": 0 },
-        "reference_count": { "type": "integer", "minimum": 0 },
-        "target_range_count": { "type": "integer", "minimum": 0 },
+        "target_workbook": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "target_sheet": {
+          "type": "string"
+        },
+        "formula_function": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "formula_signature": {
+          "type": "string"
+        },
+        "formula_cell_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reference_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "target_range_count": {
+          "type": "integer",
+          "minimum": 0
+        },
         "source_cell_samples": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
         "target_range_samples": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
         "target_bounds_union": {
-          "anyOf": [
-            { "$ref": "#/$defs/dimension_bounds" },
-            { "type": "null" }
-          ]
+          "type": [
+            "object",
+            "null"
+          ],
+          "required": [
+            "min_row",
+            "min_column",
+            "max_row",
+            "max_column"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "min_row": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "min_column": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_row": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_column": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
         },
-        "pattern_profile": { "$ref": "#/$defs/pattern_profile" },
+        "pattern_profile": {
+          "$ref": "#/$defs/pattern_profile"
+        },
         "relation_ids": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -466,22 +900,71 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "matched": { "type": "boolean" },
-        "structure_hint": { "type": ["string", "null"] },
-        "formula_count": { "type": ["integer", "null"], "minimum": 0 },
-        "row_min": { "type": ["integer", "null"], "minimum": 1 },
-        "row_max": { "type": ["integer", "null"], "minimum": 1 },
-        "column_min": { "type": ["integer", "null"], "minimum": 1 },
-        "column_max": { "type": ["integer", "null"], "minimum": 1 }
+        "matched": {
+          "type": "boolean"
+        },
+        "structure_hint": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "formula_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "row_min": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "row_max": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "column_min": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "column_max": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
       }
     },
     "observation": {
       "type": "object",
-      "required": ["level", "message"],
+      "required": [
+        "level",
+        "message"
+      ],
       "additionalProperties": false,
       "properties": {
-        "level": { "type": "string", "enum": ["info", "warning", "error"] },
-        "message": { "type": "string" }
+        "level": {
+          "type": "string",
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ]
+        },
+        "message": {
+          "type": "string"
+        }
       }
     },
     "summary": {
@@ -506,22 +989,70 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "sheet_count": { "type": "integer", "minimum": 0 },
-        "block_count": { "type": "integer", "minimum": 0 },
-        "image_block_count": { "type": "integer", "minimum": 0 },
-        "row_band_count": { "type": "integer", "minimum": 0 },
-        "pivot_table_block_count": { "type": "integer", "minimum": 0 },
-        "cell_region_count": { "type": "integer", "minimum": 0 },
-        "cell_region_split_candidate_count": { "type": "integer", "minimum": 0 },
-        "touching_header_split_candidate_count": { "type": "integer", "minimum": 0 },
-        "style_boundary_split_candidate_count": { "type": "integer", "minimum": 0 },
-        "boundary_gate_result_count": { "type": "integer", "minimum": 0 },
-        "strong_boundary_candidate_count": { "type": "integer", "minimum": 0 },
-        "weak_boundary_signal_count": { "type": "integer", "minimum": 0 },
-        "merged_title_boundary_count": { "type": "integer", "minimum": 0 },
-        "relation_group_count": { "type": "integer", "minimum": 0 },
-        "formula_relation_count": { "type": "integer", "minimum": 0 },
-        "relation_count": { "type": "integer", "minimum": 0 }
+        "sheet_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "block_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "image_block_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "row_band_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pivot_table_block_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cell_region_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "cell_region_split_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "touching_header_split_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "style_boundary_split_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "boundary_gate_result_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "strong_boundary_candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "weak_boundary_signal_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "merged_title_boundary_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "relation_group_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "formula_relation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "relation_count": {
+          "type": "integer",
+          "minimum": 0
+        }
       }
     }
   }

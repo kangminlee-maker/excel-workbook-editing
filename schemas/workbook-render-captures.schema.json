@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://day1company.local/excel-workbook-editing/workbook-render-captures.schema.json",
+  "$id": "https://day1company.local/spreadsheet-processing/workbook-render-captures.schema.json",
   "title": "Workbook Render Captures",
   "type": "object",
   "required": [
@@ -17,47 +17,90 @@
   ],
   "additionalProperties": false,
   "properties": {
-    "schema_version": { "const": "0.1" },
-    "generated_at": { "type": "string", "format": "date-time" },
-    "source_artifacts": { "$ref": "#/$defs/source_artifacts" },
-    "source_workbook": { "$ref": "#/$defs/source_workbook" },
-    "method": { "$ref": "#/$defs/method" },
+    "schema_version": {
+      "const": "0.1"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_artifacts": {
+      "$ref": "#/$defs/source_artifacts"
+    },
+    "source_workbook": {
+      "$ref": "#/$defs/source_workbook"
+    },
+    "method": {
+      "$ref": "#/$defs/method"
+    },
     "selected_target_ids": {
       "type": "array",
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     },
     "captures": {
       "type": "array",
-      "items": { "$ref": "#/$defs/capture" }
+      "items": {
+        "$ref": "#/$defs/capture"
+      }
     },
     "gate_results": {
       "type": "array",
-      "items": { "$ref": "#/$defs/gate_result" }
+      "items": {
+        "$ref": "#/$defs/gate_result"
+      }
     },
-    "summary": { "$ref": "#/$defs/summary" },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    },
     "parser_observations": {
       "type": "array",
-      "items": { "$ref": "#/$defs/observation" }
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
     }
   },
   "$defs": {
     "source_artifacts": {
       "type": "object",
-      "required": ["cross_validation_plan"],
+      "required": [
+        "cross_validation_plan"
+      ],
       "additionalProperties": false,
       "properties": {
-        "cross_validation_plan": { "type": "string", "minLength": 1 }
+        "cross_validation_plan": {
+          "type": "string",
+          "minLength": 1
+        }
       }
     },
     "source_workbook": {
       "type": "object",
-      "required": ["path", "file_name", "size_bytes", "sha256"],
+      "required": [
+        "path",
+        "file_name",
+        "size_bytes",
+        "sha256"
+      ],
       "additionalProperties": false,
       "properties": {
-        "path": { "type": "string", "minLength": 1 },
-        "file_name": { "type": "string", "minLength": 1 },
-        "size_bytes": { "type": "integer", "minimum": 0 },
-        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "file_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "size_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
       }
     },
     "method": {
@@ -71,17 +114,33 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "engine": { "const": "Microsoft Excel" },
-        "capture_method": { "const": "range_copy_picture_png" },
-        "helper": { "type": "string", "minLength": 1 },
-        "sandbox_copy": { "type": "boolean" },
+        "engine": {
+          "const": "Microsoft Excel"
+        },
+        "capture_method": {
+          "const": "range_copy_picture_png"
+        },
+        "helper": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sandbox_copy": {
+          "type": "boolean"
+        },
         "png_export_settings": {
           "type": "object",
-          "required": ["appearance", "format"],
+          "required": [
+            "appearance",
+            "format"
+          ],
           "additionalProperties": false,
           "properties": {
-            "appearance": { "const": "screen" },
-            "format": { "const": "picture" }
+            "appearance": {
+              "const": "screen"
+            },
+            "format": {
+              "const": "picture"
+            }
           }
         }
       }
@@ -104,12 +163,36 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
-        "type": { "const": "render_capture" },
-        "status": { "type": "string", "enum": ["captured", "capture_failed"] },
-        "target_id": { "type": "string", "minLength": 1 },
-        "sheet": { "type": ["string", "null"] },
-        "requested_range": { "type": ["string", "null"] },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "render_capture"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "captured",
+            "capture_failed"
+          ]
+        },
+        "target_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sheet": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "requested_range": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "capture_window": {
           "type": "object",
           "additionalProperties": true
@@ -118,15 +201,23 @@
           "type": "object",
           "additionalProperties": true
         },
-        "output": { "$ref": "#/$defs/capture_output" },
-        "coordinate_map": { "$ref": "#/$defs/coordinate_map" },
+        "output": {
+          "$ref": "#/$defs/capture_output"
+        },
+        "coordinate_map": {
+          "$ref": "#/$defs/coordinate_map"
+        },
         "gate_results": {
           "type": "array",
-          "items": { "$ref": "#/$defs/gate_result" }
+          "items": {
+            "$ref": "#/$defs/gate_result"
+          }
         },
         "parser_observations": {
           "type": "array",
-          "items": { "$ref": "#/$defs/observation" }
+          "items": {
+            "$ref": "#/$defs/observation"
+          }
         }
       }
     },
@@ -142,38 +233,126 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "pdf_path": { "type": ["string", "null"] },
-        "png_path": { "type": "string" },
-        "pdf_size_bytes": { "type": ["integer", "null"], "minimum": 0 },
-        "png_size_bytes": { "type": ["integer", "null"], "minimum": 0 },
-        "png_width": { "type": ["integer", "null"], "minimum": 1 },
-        "png_height": { "type": ["integer", "null"], "minimum": 1 }
+        "pdf_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "png_path": {
+          "type": "string"
+        },
+        "pdf_size_bytes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "png_size_bytes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "png_width": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "png_height": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
       }
     },
     "coordinate_map": {
       "type": "object",
-      "required": ["status", "cell_range", "capture_bbox"],
+      "required": [
+        "status",
+        "cell_range",
+        "capture_bbox"
+      ],
       "additionalProperties": false,
       "properties": {
-        "status": { "type": "string", "enum": ["range_image_only", "not_available"] },
-        "cell_range": { "type": ["string", "null"] },
-        "capture_bbox": {
-          "anyOf": [
-            { "$ref": "#/$defs/capture_bbox" },
-            { "type": "null" }
+        "status": {
+          "type": "string",
+          "enum": [
+            "range_image_only",
+            "not_available"
           ]
+        },
+        "cell_range": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "capture_bbox": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "required": [
+            "x",
+            "y",
+            "width",
+            "height"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "x": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "y": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "width": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "height": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
         }
       }
     },
     "capture_bbox": {
       "type": "object",
-      "required": ["x", "y", "width", "height"],
+      "required": [
+        "x",
+        "y",
+        "width",
+        "height"
+      ],
       "additionalProperties": false,
       "properties": {
-        "x": { "type": "integer", "minimum": 0 },
-        "y": { "type": "integer", "minimum": 0 },
-        "width": { "type": "integer", "minimum": 1 },
-        "height": { "type": "integer", "minimum": 1 }
+        "x": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "y": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        }
       }
     },
     "gate_result": {
@@ -191,21 +370,49 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
-        "type": { "const": "visual_formula_gate_result" },
-        "capture_id": { "type": "string", "minLength": 1 },
-        "target_id": { "type": "string", "minLength": 1 },
-        "gate_check_id": { "type": ["string", "null"] },
-        "gate_type": { "type": ["string", "null"] },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "visual_formula_gate_result"
+        },
+        "capture_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "gate_check_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "gate_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "status": {
           "type": "string",
-          "enum": ["captured_pending_review", "capture_failed"]
+          "enum": [
+            "captured_pending_review",
+            "capture_failed"
+          ]
         },
         "evidence_refs": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
-        "notes": { "type": "string" }
+        "notes": {
+          "type": "string"
+        }
       }
     },
     "summary": {
@@ -221,22 +428,55 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "selected_target_count": { "type": "integer", "minimum": 0 },
-        "captured_count": { "type": "integer", "minimum": 0 },
-        "failed_count": { "type": "integer", "minimum": 0 },
-        "png_count": { "type": "integer", "minimum": 0 },
-        "gate_result_count": { "type": "integer", "minimum": 0 },
-        "captured_pending_review_gate_count": { "type": "integer", "minimum": 0 },
-        "capture_failed_gate_count": { "type": "integer", "minimum": 0 }
+        "selected_target_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "captured_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "failed_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "png_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "gate_result_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "captured_pending_review_gate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "capture_failed_gate_count": {
+          "type": "integer",
+          "minimum": 0
+        }
       }
     },
     "observation": {
       "type": "object",
-      "required": ["level", "message"],
+      "required": [
+        "level",
+        "message"
+      ],
       "additionalProperties": false,
       "properties": {
-        "level": { "type": "string", "enum": ["info", "warning", "error"] },
-        "message": { "type": "string" }
+        "level": {
+          "type": "string",
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ]
+        },
+        "message": {
+          "type": "string"
+        }
       }
     }
   }

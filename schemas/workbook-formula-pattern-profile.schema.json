@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://day1company.local/excel-workbook-editing/workbook-formula-pattern-profile.schema.json",
+  "$id": "https://day1company.local/spreadsheet-processing/workbook-formula-pattern-profile.schema.json",
   "title": "Workbook Formula Pattern Profile",
   "type": "object",
   "required": [

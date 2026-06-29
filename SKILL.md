@@ -1,10 +1,9 @@
 ---
-name: excel-workbook-editing
-description: Design, edit, debug, reconcile, and validate Excel workbooks, workbook-generation scripts, and connected Google Sheets. Use when the task involves .xlsx files, Excel formulas, sheet layouts, named ranges, lookup logic, cross-sheet references, workbook templates, carryover flows, Google Sheets ranges, live spreadsheet formulas, validations, protected ranges, IMPORTRANGE, Apps Script-connected sheets, large or timeout-prone Sheets, external loading states, rollback snapshots, or spreadsheet review packages. Avoid for CSV/TSV-only tasks without spreadsheet-specific formulas, layout, validation, or connected-document concerns.
-license: MIT
+name: spreadsheet-processing
+description: Analyze, edit, debug, reconcile, validate, and review spreadsheet artifacts across Excel workbooks, workbook-generation scripts, connected Google Sheets, and spreadsheet evidence packages. Use when the task involves .xlsx files, workbook formulas, sheet layouts, named ranges, lookup logic, cross-sheet references, workbook templates, carryover flows, Google Sheets ranges, live spreadsheet formulas, validations, protected ranges, IMPORTRANGE, Apps Script-connected sheets, large or timeout-prone Sheets, external loading states, rollback snapshots, formula/dataflow discovery, document-shaped spreadsheet understanding, evidence/claim ledgers, or spreadsheet review packages. Avoid for CSV/TSV-only tasks without spreadsheet-specific formulas, layout, validation, evidence, or connected-document concerns.
 ---
 
-# Spreadsheet Workbook Editing
+# Spreadsheet Processing
 
 Treat spreadsheets as calculation and review systems, not just tabular files.
 For existing artifacts, preserve both the intended logic and the artifact identity:
@@ -179,7 +178,7 @@ Primary tools:
 Example command:
 
 ```bash
-python3 /path/to/excel-workbook-editing/scripts/excel_engine_sample.py \
+python3 /path/to/spreadsheet-processing/scripts/excel_engine_sample.py \
   /path/to/workbook.xlsx \
   1 \
   A1 \

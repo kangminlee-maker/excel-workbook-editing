@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-evidence-package.schema.json",
+  "$id": "https://day1company.local/spreadsheet-processing/google-sheets-evidence-package.schema.json",
   "title": "Google Sheets Evidence Package",
   "type": "object",
   "required": [

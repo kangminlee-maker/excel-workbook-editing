@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.local/schemas/workbook-shared-ontology-alignment-review.schema.json",
+  "$id": "https://day1company.local/spreadsheet-processing/workbook-shared-ontology-alignment-review.schema.json",
   "title": "Workbook Shared Ontology Alignment Review",
   "type": "object",
   "required": [

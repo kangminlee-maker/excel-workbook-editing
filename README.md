@@ -1,6 +1,6 @@
-# Excel Workbook and Connected Google Sheets Editing Skill
+# Spreadsheet Processing Skill
 
-A model-agnostic agent skill for designing, editing, debugging, reconciling, previewing, and validating Excel workbooks and connected Google Sheets.
+A model-agnostic agent skill for understanding, processing, editing, debugging, reconciling, previewing, and validating Excel workbooks, connected Google Sheets, and spreadsheet evidence/review packages.
 
 ## What this skill does
 
@@ -41,20 +41,23 @@ and review-package side of the workflow.
 
 ## Installation
 
-Install this folder wherever your agent runtime discovers skills. Examples:
+Install this repository into a skill folder named `spreadsheet-processing`
+wherever your agent runtime discovers skills. The GitHub repository can keep
+its current URL while the installed skill folder uses the new skill name.
+Examples:
 
 Claude Code:
 
 ```bash
 git clone https://github.com/kangminlee-maker/excel-workbook-editing.git \
-  ~/.claude/skills/excel-workbook-editing
+  ~/.claude/skills/spreadsheet-processing
 ```
 
 Codex:
 
 ```bash
 git clone https://github.com/kangminlee-maker/excel-workbook-editing.git \
-  ~/.codex/skills/excel-workbook-editing
+  ~/.codex/skills/spreadsheet-processing
 ```
 
 Other LLM agents, including Grok-style or custom runners:
@@ -72,7 +75,7 @@ Codex can also install from GitHub with its skill installer:
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo kangminlee-maker/excel-workbook-editing \
   --path . \
-  --name excel-workbook-editing
+  --name spreadsheet-processing
 ```
 
 Restart or reload the agent runtime after installing so the new skill is picked up.
@@ -80,7 +83,7 @@ Restart or reload the agent runtime after installing so the new skill is picked 
 ## Contents
 
 ```
-excel-workbook-editing/
+spreadsheet-processing/
 ├── SKILL.md                          # Main skill (auto-trigger rules included)
 ├── IMPLEMENTATION_MAP.html           # Current architecture and roadmap view
 ├── agents/
@@ -135,13 +138,13 @@ excel-workbook-editing/
 Claude Code example:
 
 ```bash
-cd ~/.claude/skills/excel-workbook-editing && git pull
+cd ~/.claude/skills/spreadsheet-processing && git pull
 ```
 
 Codex example:
 
 ```bash
-cd ~/.codex/skills/excel-workbook-editing && git pull
+cd ~/.codex/skills/spreadsheet-processing && git pull
 ```
 
 ## License

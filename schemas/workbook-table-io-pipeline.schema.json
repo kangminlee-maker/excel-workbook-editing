@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://day1company.local/excel-workbook-editing/workbook-table-io-pipeline.schema.json",
+  "$id": "https://day1company.local/spreadsheet-processing/workbook-table-io-pipeline.schema.json",
   "title": "Workbook Table I/O Pipelines",
   "type": "object",
   "required": [
@@ -13,26 +13,44 @@
   ],
   "additionalProperties": false,
   "properties": {
-    "schema_version": { "const": "0.1" },
-    "generated_at": { "type": "string", "format": "date-time" },
-    "source_artifacts": { "$ref": "#/$defs/source_artifacts" },
+    "schema_version": {
+      "const": "0.1"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_artifacts": {
+      "$ref": "#/$defs/source_artifacts"
+    },
     "pipelines": {
       "type": "array",
-      "items": { "$ref": "#/$defs/pipeline" }
+      "items": {
+        "$ref": "#/$defs/pipeline"
+      }
     },
-    "summary": { "$ref": "#/$defs/summary" },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    },
     "parser_observations": {
       "type": "array",
-      "items": { "$ref": "#/$defs/observation" }
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
     }
   },
   "$defs": {
     "source_artifacts": {
       "type": "object",
-      "required": ["block_candidates"],
+      "required": [
+        "block_candidates"
+      ],
       "additionalProperties": false,
       "properties": {
-        "block_candidates": { "type": "string", "minLength": 1 }
+        "block_candidates": {
+          "type": "string",
+          "minLength": 1
+        }
       }
     },
     "pipeline": {
@@ -51,9 +69,16 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
-        "type": { "const": "table_io_pipeline" },
-        "status": { "const": "candidate" },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "table_io_pipeline"
+        },
+        "status": {
+          "const": "candidate"
+        },
         "role": {
           "type": "string",
           "enum": [
@@ -67,20 +92,32 @@
             "audit_check"
           ]
         },
-        "output_ref": { "$ref": "#/$defs/pipeline_ref" },
+        "output_ref": {
+          "$ref": "#/$defs/pipeline_ref"
+        },
         "input_refs": {
           "type": "array",
-          "items": { "$ref": "#/$defs/pipeline_ref" }
+          "items": {
+            "$ref": "#/$defs/pipeline_ref"
+          }
         },
         "transform_refs": {
           "type": "array",
-          "items": { "$ref": "#/$defs/transform_ref" }
+          "items": {
+            "$ref": "#/$defs/transform_ref"
+          }
         },
         "evidence_refs": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
-        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
         "review_flags": {
           "type": "array",
           "items": {
@@ -111,7 +148,10 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
         "kind": {
           "type": "string",
           "enum": [
@@ -124,18 +164,73 @@
             "unresolved_block"
           ]
         },
-        "workbook": { "type": ["string", "null"] },
-        "sheet": { "type": ["string", "null"] },
-        "range": { "type": ["string", "null"] },
-        "block_id": { "type": ["string", "null"] },
-        "region_id": { "type": ["string", "null"] },
-        "bounds": {
-          "anyOf": [
-            { "$ref": "#/$defs/dimension_bounds" },
-            { "type": "null" }
+        "workbook": {
+          "type": [
+            "string",
+            "null"
           ]
         },
-        "label": { "type": ["string", "null"] }
+        "sheet": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "range": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "block_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "region_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "bounds": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "required": [
+            "min_row",
+            "min_column",
+            "max_row",
+            "max_column"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "min_row": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "min_column": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_row": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_column": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
     },
     "transform_ref": {
@@ -153,17 +248,46 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
         "kind": {
           "type": "string",
-          "enum": ["formula_signature_group", "pivot_cache"]
+          "enum": [
+            "formula_signature_group",
+            "pivot_cache"
+          ]
         },
-        "relation_group_id": { "type": ["string", "null"] },
-        "relation_id": { "type": ["string", "null"] },
-        "relation_type": { "type": "string" },
-        "formula_signature": { "type": ["string", "null"] },
-        "formula_cell_count": { "type": "integer", "minimum": 0 },
-        "reference_count": { "type": "integer", "minimum": 0 },
+        "relation_group_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "relation_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "relation_type": {
+          "type": "string"
+        },
+        "formula_signature": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "formula_cell_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reference_count": {
+          "type": "integer",
+          "minimum": 0
+        },
         "evidence": {
           "type": "array",
           "items": {
@@ -180,13 +304,30 @@
     },
     "dimension_bounds": {
       "type": "object",
-      "required": ["min_row", "min_column", "max_row", "max_column"],
+      "required": [
+        "min_row",
+        "min_column",
+        "max_row",
+        "max_column"
+      ],
       "additionalProperties": false,
       "properties": {
-        "min_row": { "type": "integer", "minimum": 1 },
-        "min_column": { "type": "integer", "minimum": 1 },
-        "max_row": { "type": "integer", "minimum": 1 },
-        "max_column": { "type": "integer", "minimum": 1 }
+        "min_row": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "min_column": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_row": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_column": {
+          "type": "integer",
+          "minimum": 1
+        }
       }
     },
     "summary": {
@@ -203,23 +344,59 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "pipeline_count": { "type": "integer", "minimum": 0 },
-        "formula_pipeline_count": { "type": "integer", "minimum": 0 },
-        "pivot_pipeline_count": { "type": "integer", "minimum": 0 },
-        "external_dependency_pipeline_count": { "type": "integer", "minimum": 0 },
-        "unresolved_input_pipeline_count": { "type": "integer", "minimum": 0 },
-        "summary_role_count": { "type": "integer", "minimum": 0 },
-        "bridge_role_count": { "type": "integer", "minimum": 0 },
-        "report_role_count": { "type": "integer", "minimum": 0 }
+        "pipeline_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "formula_pipeline_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pivot_pipeline_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "external_dependency_pipeline_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unresolved_input_pipeline_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "summary_role_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bridge_role_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "report_role_count": {
+          "type": "integer",
+          "minimum": 0
+        }
       }
     },
     "observation": {
       "type": "object",
-      "required": ["level", "message"],
+      "required": [
+        "level",
+        "message"
+      ],
       "additionalProperties": false,
       "properties": {
-        "level": { "type": "string", "enum": ["info", "warning", "error"] },
-        "message": { "type": "string" }
+        "level": {
+          "type": "string",
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ]
+        },
+        "message": {
+          "type": "string"
+        }
       }
     }
   }

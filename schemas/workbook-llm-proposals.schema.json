@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.local/schemas/workbook-llm-proposals.schema.json",
+  "$id": "https://day1company.local/spreadsheet-processing/workbook-llm-proposals.schema.json",
   "title": "Workbook LLM Proposal Package",
   "type": "object",
   "required": [
@@ -28,12 +28,20 @@
     "source_artifacts": {
       "type": "object",
       "additionalProperties": {
-        "type": ["string", "null"]
+        "type": [
+          "string",
+          "null"
+        ]
       }
     },
     "method": {
       "type": "object",
-      "required": ["name", "authority", "decision_policy", "llm_boundary"],
+      "required": [
+        "name",
+        "authority",
+        "decision_policy",
+        "llm_boundary"
+      ],
       "properties": {
         "name": {
           "type": "string"
@@ -52,7 +60,11 @@
     },
     "proposal_context": {
       "type": "object",
-      "required": ["semantic_readiness", "action_contract_summary", "proposal_constraints"],
+      "required": [
+        "semantic_readiness",
+        "action_contract_summary",
+        "proposal_constraints"
+      ],
       "properties": {
         "semantic_readiness": {
           "type": "object"
@@ -101,7 +113,11 @@
     },
     "validation_plan": {
       "type": "object",
-      "required": ["next_stage", "gate_counts", "minimum_acceptance_requirements"],
+      "required": [
+        "next_stage",
+        "gate_counts",
+        "minimum_acceptance_requirements"
+      ],
       "properties": {
         "next_stage": {
           "const": "deterministic_validation_of_llm_proposals"
@@ -221,199 +237,333 @@
       "additionalProperties": true
     },
     "semanticConceptProposal": {
-      "allOf": [
-        {
-          "$ref": "#/$defs/proposalBase"
+      "type": "object",
+      "required": [
+        "id",
+        "proposal_type",
+        "proposal_status",
+        "evidence_refs",
+        "required_gates",
+        "confidence",
+        "review_flags",
+        "label",
+        "concept_kind",
+        "scope",
+        "description",
+        "matched_sheets",
+        "matched_terms",
+        "data_view_ids",
+        "local_boundary_ids",
+        "domain_source_refs"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
         },
-        {
-          "type": "object",
-          "required": [
-            "label",
-            "concept_kind",
-            "scope",
-            "description",
-            "matched_sheets",
-            "matched_terms",
-            "data_view_ids",
-            "local_boundary_ids",
-            "domain_source_refs"
-          ],
-          "properties": {
-            "proposal_type": {
-              "const": "semantic_concept_candidate"
-            },
-            "label": {
-              "type": "string"
-            },
-            "concept_kind": {
-              "type": "string"
-            },
-            "scope": {
-              "type": "string"
-            },
-            "description": {
-              "type": "string"
-            },
-            "matched_sheets": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "matched_terms": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "data_view_ids": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "local_boundary_ids": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "domain_source_refs": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
+        "proposal_type": {
+          "const": "semantic_concept_candidate"
+        },
+        "proposal_status": {
+          "const": "proposed"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_gates": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "review_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "label": {
+          "type": "string"
+        },
+        "concept_kind": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "matched_sheets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "matched_terms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "data_view_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "local_boundary_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "domain_source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
           }
         }
-      ]
+      },
+      "additionalProperties": true
     },
     "hierarchyProposal": {
-      "allOf": [
-        {
-          "$ref": "#/$defs/proposalBase"
+      "type": "object",
+      "required": [
+        "id",
+        "proposal_type",
+        "proposal_status",
+        "evidence_refs",
+        "required_gates",
+        "confidence",
+        "review_flags",
+        "relation_type",
+        "parent",
+        "child",
+        "data_view_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
         },
-        {
-          "type": "object",
-          "required": ["relation_type", "parent", "child", "data_view_ids"],
-          "properties": {
-            "proposal_type": {
-              "const": "hierarchy_candidate"
-            },
-            "relation_type": {
-              "type": "string"
-            },
-            "parent": {
-              "type": "object"
-            },
-            "child": {
-              "type": "object"
-            },
-            "data_view_ids": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
+        "proposal_type": {
+          "const": "hierarchy_candidate"
+        },
+        "proposal_status": {
+          "const": "proposed"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_gates": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "review_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "relation_type": {
+          "type": "string"
+        },
+        "parent": {
+          "type": "object"
+        },
+        "child": {
+          "type": "object"
+        },
+        "data_view_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
           }
         }
-      ]
+      },
+      "additionalProperties": true
     },
     "semanticRelationProposal": {
-      "allOf": [
-        {
-          "$ref": "#/$defs/proposalBase"
+      "type": "object",
+      "required": [
+        "id",
+        "proposal_type",
+        "proposal_status",
+        "evidence_refs",
+        "required_gates",
+        "confidence",
+        "review_flags",
+        "relation_type",
+        "from_concept_id",
+        "to_concept_id",
+        "from_sheet",
+        "to_sheet",
+        "pipeline_ids",
+        "input_ranges",
+        "output_ranges",
+        "domain_source_refs"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
         },
-        {
-          "type": "object",
-          "required": [
-            "relation_type",
-            "from_concept_id",
-            "to_concept_id",
-            "from_sheet",
-            "to_sheet",
-            "pipeline_ids",
-            "input_ranges",
-            "output_ranges",
-            "domain_source_refs"
-          ],
-          "properties": {
-            "proposal_type": {
-              "const": "semantic_relation_candidate"
-            },
-            "relation_type": {
-              "type": "string"
-            },
-            "from_concept_id": {
-              "type": "string"
-            },
-            "to_concept_id": {
-              "type": "string"
-            },
-            "from_sheet": {
-              "type": "string"
-            },
-            "to_sheet": {
-              "type": "string"
-            },
-            "pipeline_ids": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "input_ranges": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "output_ranges": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "domain_source_refs": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
+        "proposal_type": {
+          "const": "semantic_relation_candidate"
+        },
+        "proposal_status": {
+          "const": "proposed"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_gates": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "review_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "relation_type": {
+          "type": "string"
+        },
+        "from_concept_id": {
+          "type": "string"
+        },
+        "to_concept_id": {
+          "type": "string"
+        },
+        "from_sheet": {
+          "type": "string"
+        },
+        "to_sheet": {
+          "type": "string"
+        },
+        "pipeline_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "input_ranges": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "output_ranges": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "domain_source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
           }
         }
-      ]
+      },
+      "additionalProperties": true
     },
     "aliasProposal": {
-      "allOf": [
-        {
-          "$ref": "#/$defs/proposalBase"
+      "type": "object",
+      "required": [
+        "id",
+        "proposal_type",
+        "proposal_status",
+        "evidence_refs",
+        "required_gates",
+        "confidence",
+        "review_flags",
+        "alias",
+        "canonical_concept_id",
+        "alias_scope",
+        "matched_sheets"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
         },
-        {
-          "type": "object",
-          "required": ["alias", "canonical_concept_id", "alias_scope", "matched_sheets"],
-          "properties": {
-            "proposal_type": {
-              "const": "alias_candidate"
-            },
-            "alias": {
-              "type": "string"
-            },
-            "canonical_concept_id": {
-              "type": "string"
-            },
-            "alias_scope": {
-              "type": "string"
-            },
-            "matched_sheets": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
+        "proposal_type": {
+          "const": "alias_candidate"
+        },
+        "proposal_status": {
+          "const": "proposed"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_gates": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "review_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "alias": {
+          "type": "string"
+        },
+        "canonical_concept_id": {
+          "type": "string"
+        },
+        "alias_scope": {
+          "type": "string"
+        },
+        "matched_sheets": {
+          "type": "array",
+          "items": {
+            "type": "string"
           }
         }
-      ]
+      },
+      "additionalProperties": true
     },
     "ambiguityNote": {
       "type": "object",
@@ -463,7 +613,10 @@
     },
     "observation": {
       "type": "object",
-      "required": ["level", "message"],
+      "required": [
+        "level",
+        "message"
+      ],
       "properties": {
         "level": {
           "type": "string"

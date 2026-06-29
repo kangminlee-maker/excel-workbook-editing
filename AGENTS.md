@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This repo contains the `excel-workbook-editing` skill, spreadsheet helpers,
+This repo contains the `spreadsheet-processing` skill, spreadsheet helpers,
 schemas, active runtime designs, review artifacts, and ADRs. Keep runtime
 artifacts aligned with current behavior.
 
@@ -101,6 +101,23 @@ Current next work:
   across Excel workbooks and connected Sheets evidence.
 - Continue formula/dataflow discovery as read-only evidence work until a
   refactoring or writeback design is approved.
+
+## MCP And MCPB Authoring
+
+Before designing or changing MCP servers, MCP tool definitions, MCPB manifests,
+Claude-compatible tool surfaces, or repository JSON schemas intended to be
+projected into those surfaces, consult `docs/mcp-mcpb-authoring-guide.md`.
+
+- Use canonical tool names in `namespace_verb` form matching
+  `^[a-zA-Z0-9_-]{1,64}$`.
+- Use underscore-separated names for tool names, user config keys, and tool
+  input property names.
+- Keep MCP tool `input_schema` values as direct top-level object schemas.
+- Express multi-operation tools with an `operation` enum and server-side
+  validation instead of top-level `oneOf`, `anyOf`, or `allOf`.
+- Keep MCP-projectable repository schemas free of `oneOf`, `anyOf`, and
+  `allOf`; use explicit fields plus deterministic validation code for variant
+  behavior.
 
 ## Evidence And Claim Boundaries
 

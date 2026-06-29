@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-document-item-grouping-checkpoint.schema.json",
+  "$id": "https://day1company.local/spreadsheet-processing/google-sheets-document-item-grouping-checkpoint.schema.json",
   "title": "Google Sheets Document Item Grouping Checkpoint",
   "type": "object",
   "required": [
@@ -20,51 +20,149 @@
   ],
   "additionalProperties": false,
   "properties": {
-    "schema_version": { "const": "0.1" },
-    "generated_at": { "type": "string", "format": "date-time" },
-    "source": { "$ref": "#/$defs/source" },
-    "authority": { "$ref": "#/$defs/authority" },
-    "method": { "$ref": "#/$defs/method" },
-    "evidence_inputs": { "type": "object", "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] } },
-    "document_items": { "type": "array", "items": { "$ref": "#/$defs/document_item" } },
-    "document_item_relations": { "type": "array", "items": { "$ref": "#/$defs/relation" } },
-    "grouping_gate_results": { "type": "array", "items": { "$ref": "#/$defs/gate_result" } },
-    "orphan_surfaces": { "type": "array", "items": { "$ref": "#/$defs/orphan_surface" } },
-    "follow_up_actions": { "type": "array", "items": { "$ref": "#/$defs/follow_up" } },
-    "summary": { "$ref": "#/$defs/counts" },
-    "parser_observations": { "type": "array", "items": { "$ref": "#/$defs/observation" } }
+    "schema_version": {
+      "const": "0.1"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "$ref": "#/$defs/source"
+    },
+    "authority": {
+      "$ref": "#/$defs/authority"
+    },
+    "method": {
+      "$ref": "#/$defs/method"
+    },
+    "evidence_inputs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "integer",
+          "number",
+          "boolean",
+          "string",
+          "null"
+        ]
+      }
+    },
+    "document_items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/document_item"
+      }
+    },
+    "document_item_relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/relation"
+      }
+    },
+    "grouping_gate_results": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/gate_result"
+      }
+    },
+    "orphan_surfaces": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/orphan_surface"
+      }
+    },
+    "follow_up_actions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/follow_up"
+      }
+    },
+    "summary": {
+      "$ref": "#/$defs/counts"
+    },
+    "parser_observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
+    }
   },
   "$defs": {
     "source": {
       "type": "object",
-      "required": ["spreadsheet_id", "spreadsheet_url", "title", "source_artifacts"],
+      "required": [
+        "spreadsheet_id",
+        "spreadsheet_url",
+        "title",
+        "source_artifacts"
+      ],
       "additionalProperties": false,
       "properties": {
-        "spreadsheet_id": { "type": "string", "minLength": 1 },
-        "spreadsheet_url": { "type": ["string", "null"] },
-        "title": { "type": "string" },
-        "source_artifacts": { "type": "object", "additionalProperties": { "type": "string" } }
+        "spreadsheet_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "spreadsheet_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "title": {
+          "type": "string"
+        },
+        "source_artifacts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
       }
     },
     "authority": {
       "type": "object",
-      "required": ["source_document", "checkpoint_status", "grouping_truth", "shared_ontology_updates"],
+      "required": [
+        "source_document",
+        "checkpoint_status",
+        "grouping_truth",
+        "shared_ontology_updates"
+      ],
       "additionalProperties": false,
       "properties": {
-        "source_document": { "const": "live_google_sheet" },
-        "checkpoint_status": { "const": "completed" },
-        "grouping_truth": { "const": "structural_grouping_checkpoint_no_business_semantics" },
-        "shared_ontology_updates": { "const": 0 }
+        "source_document": {
+          "const": "live_google_sheet"
+        },
+        "checkpoint_status": {
+          "const": "completed"
+        },
+        "grouping_truth": {
+          "const": "structural_grouping_checkpoint_no_business_semantics"
+        },
+        "shared_ontology_updates": {
+          "const": 0
+        }
       }
     },
     "method": {
       "type": "object",
-      "required": ["name", "authority", "decision_policy"],
+      "required": [
+        "name",
+        "authority",
+        "decision_policy"
+      ],
       "additionalProperties": false,
       "properties": {
-        "name": { "const": "connected_sheets_document_item_grouping_checkpoint" },
-        "authority": { "const": "deterministic_structural_grouping_gates" },
-        "decision_policy": { "type": "string", "minLength": 1 }
+        "name": {
+          "const": "connected_sheets_document_item_grouping_checkpoint"
+        },
+        "authority": {
+          "const": "deterministic_structural_grouping_gates"
+        },
+        "decision_policy": {
+          "type": "string",
+          "minLength": 1
+        }
       }
     },
     "document_item": {
@@ -85,126 +183,450 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
-        "type": { "const": "document_item_group" },
-        "status": { "type": "string", "enum": ["accepted", "review_required", "blocked"] },
-        "item_kind": { "type": "string", "minLength": 1 },
-        "sheet": { "type": ["string", "null"] },
-        "bounds": { "anyOf": [{ "$ref": "#/$defs/bounds" }, { "type": "null" }] },
-        "label": { "type": "string" },
-        "member_blocks": { "type": "array", "items": { "$ref": "#/$defs/member_block" } },
-        "member_surfaces": { "type": "array", "items": { "$ref": "#/$defs/member_surface" } },
-        "evidence_scores": { "type": "object", "additionalProperties": { "type": ["integer", "number"] } },
-        "review_reasons": { "type": "array", "items": { "type": "string" } },
-        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "document_item_group"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "accepted",
+            "review_required",
+            "blocked"
+          ]
+        },
+        "item_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sheet": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "bounds": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "required": [
+            "start_row",
+            "end_row",
+            "start_column",
+            "end_column",
+            "a1_range"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "start_row": {
+              "type": "integer"
+            },
+            "end_row": {
+              "type": "integer"
+            },
+            "start_column": {
+              "type": "integer"
+            },
+            "end_column": {
+              "type": "integer"
+            },
+            "a1_range": {
+              "type": "string"
+            }
+          }
+        },
+        "label": {
+          "type": "string"
+        },
+        "member_blocks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/member_block"
+          }
+        },
+        "member_surfaces": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/member_surface"
+          }
+        },
+        "evidence_scores": {
+          "type": "object",
+          "additionalProperties": {
+            "type": [
+              "integer",
+              "number"
+            ]
+          }
+        },
+        "review_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
     },
     "member_block": {
       "type": "object",
-      "required": ["id", "block_type", "sheet", "bounds", "label"],
+      "required": [
+        "id",
+        "block_type",
+        "sheet",
+        "bounds",
+        "label"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string" },
-        "block_type": { "type": ["string", "null"] },
-        "sheet": { "type": ["string", "null"] },
-        "bounds": { "anyOf": [{ "$ref": "#/$defs/bounds" }, { "type": "null" }] },
-        "label": { "type": "string" }
+        "id": {
+          "type": "string"
+        },
+        "block_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sheet": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "bounds": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "required": [
+            "start_row",
+            "end_row",
+            "start_column",
+            "end_column",
+            "a1_range"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "start_row": {
+              "type": "integer"
+            },
+            "end_row": {
+              "type": "integer"
+            },
+            "start_column": {
+              "type": "integer"
+            },
+            "end_column": {
+              "type": "integer"
+            },
+            "a1_range": {
+              "type": "string"
+            }
+          }
+        },
+        "label": {
+          "type": "string"
+        }
       }
     },
     "member_surface": {
       "type": "object",
-      "required": ["id", "surface_kind", "role", "sheet", "range", "label", "authority"],
+      "required": [
+        "id",
+        "surface_kind",
+        "role",
+        "sheet",
+        "range",
+        "label",
+        "authority"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string" },
-        "surface_kind": { "type": "string" },
-        "role": { "type": "string" },
-        "sheet": { "type": ["string", "null"] },
-        "range": { "type": ["string", "null"] },
-        "label": { "type": "string" },
-        "authority": { "type": "string" }
+        "id": {
+          "type": "string"
+        },
+        "surface_kind": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "sheet": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "range": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "label": {
+          "type": "string"
+        },
+        "authority": {
+          "type": "string"
+        }
       }
     },
     "relation": {
       "type": "object",
-      "required": ["id", "type", "status", "relation_type", "from", "to", "evidence_refs", "review_reasons"],
+      "required": [
+        "id",
+        "type",
+        "status",
+        "relation_type",
+        "from",
+        "to",
+        "evidence_refs",
+        "review_reasons"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
-        "type": { "const": "document_item_relation" },
-        "status": { "type": "string", "enum": ["accepted", "review_required", "blocked"] },
-        "relation_type": { "type": "string", "minLength": 1 },
-        "from": { "type": "string", "minLength": 1 },
-        "to": { "type": "string", "minLength": 1 },
-        "evidence_refs": { "type": "array", "items": { "type": "string" } },
-        "review_reasons": { "type": "array", "items": { "type": "string" } }
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "document_item_relation"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "accepted",
+            "review_required",
+            "blocked"
+          ]
+        },
+        "relation_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "from": {
+          "type": "string",
+          "minLength": 1
+        },
+        "to": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "review_reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
     },
     "gate_result": {
       "type": "object",
-      "required": ["id", "type", "gate_type", "target_id", "status", "message", "evidence_refs"],
+      "required": [
+        "id",
+        "type",
+        "gate_type",
+        "target_id",
+        "status",
+        "message",
+        "evidence_refs"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
-        "type": { "const": "document_item_grouping_gate" },
-        "gate_type": { "type": "string", "minLength": 1 },
-        "target_id": { "type": "string", "minLength": 1 },
-        "status": { "type": "string", "enum": ["accepted", "review_required", "blocked"] },
-        "message": { "type": "string", "minLength": 1 },
-        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "document_item_grouping_gate"
+        },
+        "gate_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "accepted",
+            "review_required",
+            "blocked"
+          ]
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
     },
     "orphan_surface": {
       "type": "object",
-      "required": ["id", "type", "status", "surface_kind", "sheet", "bounds", "label", "reason", "evidence_refs"],
+      "required": [
+        "id",
+        "type",
+        "status",
+        "surface_kind",
+        "sheet",
+        "bounds",
+        "label",
+        "reason",
+        "evidence_refs"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
-        "type": { "const": "orphan_surface" },
-        "status": { "const": "review_required" },
-        "surface_kind": { "type": "string", "minLength": 1 },
-        "sheet": { "type": "string" },
-        "bounds": { "$ref": "#/$defs/bounds" },
-        "label": { "type": "string" },
-        "reason": { "type": "string", "minLength": 1 },
-        "evidence_refs": { "type": "array", "items": { "type": "string" } }
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "orphan_surface"
+        },
+        "status": {
+          "const": "review_required"
+        },
+        "surface_kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sheet": {
+          "type": "string"
+        },
+        "bounds": {
+          "$ref": "#/$defs/bounds"
+        },
+        "label": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
     },
     "bounds": {
       "type": "object",
-      "required": ["start_row", "end_row", "start_column", "end_column", "a1_range"],
+      "required": [
+        "start_row",
+        "end_row",
+        "start_column",
+        "end_column",
+        "a1_range"
+      ],
       "additionalProperties": false,
       "properties": {
-        "start_row": { "type": "integer" },
-        "end_row": { "type": "integer" },
-        "start_column": { "type": "integer" },
-        "end_column": { "type": "integer" },
-        "a1_range": { "type": "string" }
+        "start_row": {
+          "type": "integer"
+        },
+        "end_row": {
+          "type": "integer"
+        },
+        "start_column": {
+          "type": "integer"
+        },
+        "end_column": {
+          "type": "integer"
+        },
+        "a1_range": {
+          "type": "string"
+        }
       }
     },
     "follow_up": {
       "type": "object",
-      "required": ["id", "priority", "action", "done_when"],
+      "required": [
+        "id",
+        "priority",
+        "action",
+        "done_when"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
-        "priority": { "type": "string", "enum": ["low", "medium", "high"] },
-        "action": { "type": "string", "minLength": 1 },
-        "done_when": { "type": "string", "minLength": 1 }
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "priority": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "done_when": {
+          "type": "string",
+          "minLength": 1
+        }
       }
     },
     "observation": {
       "type": "object",
-      "required": ["level", "message"],
+      "required": [
+        "level",
+        "message"
+      ],
       "additionalProperties": false,
       "properties": {
-        "level": { "type": "string", "enum": ["info", "warning", "error"] },
-        "message": { "type": "string", "minLength": 1 }
+        "level": {
+          "type": "string",
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ]
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        }
       }
     },
     "counts": {
       "type": "object",
-      "additionalProperties": { "type": ["integer", "number", "boolean", "string", "null"] }
+      "additionalProperties": {
+        "type": [
+          "integer",
+          "number",
+          "boolean",
+          "string",
+          "null"
+        ]
+      }
     }
   }
 }

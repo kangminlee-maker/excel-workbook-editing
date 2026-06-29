@@ -21,94 +21,187 @@
   ],
   "additionalProperties": false,
   "properties": {
-    "schema_version": { "const": "1.0" },
-    "snapshot_id": { "type": "string", "minLength": 1 },
-    "captured_at": { "type": "string", "format": "date-time" },
-    "spreadsheet_id": { "type": "string", "minLength": 1 },
-    "title": { "type": "string" },
-    "locale": { "type": "string" },
-    "time_zone": { "type": "string" },
+    "schema_version": {
+      "const": "1.0"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "captured_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "spreadsheet_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string"
+    },
+    "locale": {
+      "type": "string"
+    },
+    "time_zone": {
+      "type": "string"
+    },
     "tabs": {
       "type": "array",
-      "items": { "$ref": "#/$defs/tab" }
+      "items": {
+        "$ref": "#/$defs/tab"
+      }
     },
     "named_ranges": {
       "type": "array",
-      "items": { "$ref": "#/$defs/named_range" }
+      "items": {
+        "$ref": "#/$defs/named_range"
+      }
     },
     "protected_ranges": {
       "type": "array",
-      "items": { "$ref": "#/$defs/protected_range" }
+      "items": {
+        "$ref": "#/$defs/protected_range"
+      }
     },
     "data_validations": {
       "type": "array",
-      "items": { "$ref": "#/$defs/range_ref" }
+      "items": {
+        "$ref": "#/$defs/range_ref"
+      }
     },
     "formula_samples": {
       "type": "array",
-      "items": { "$ref": "#/$defs/formula_sample" }
+      "items": {
+        "$ref": "#/$defs/formula_sample"
+      }
     },
     "cell_states": {
       "type": "array",
-      "items": { "$ref": "#/$defs/cell_state" }
+      "items": {
+        "$ref": "#/$defs/cell_state"
+      }
     },
-    "telemetry": { "$ref": "#/$defs/telemetry" },
+    "telemetry": {
+      "$ref": "#/$defs/telemetry"
+    },
     "artifacts": {
       "type": "array",
-      "items": { "$ref": "#/$defs/artifact_ref" },
+      "items": {
+        "$ref": "#/$defs/artifact_ref"
+      },
       "default": []
     }
   },
   "$defs": {
     "tab": {
       "type": "object",
-      "required": ["sheet_id", "title", "index", "row_count", "column_count", "hidden"],
+      "required": [
+        "sheet_id",
+        "title",
+        "index",
+        "row_count",
+        "column_count",
+        "hidden"
+      ],
       "additionalProperties": false,
       "properties": {
-        "sheet_id": { "type": "integer" },
-        "title": { "type": "string" },
-        "index": { "type": "integer", "minimum": 0 },
-        "row_count": { "type": "integer", "minimum": 0 },
-        "column_count": { "type": "integer", "minimum": 0 },
-        "hidden": { "type": "boolean" }
+        "sheet_id": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "row_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "column_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "hidden": {
+          "type": "boolean"
+        }
       }
     },
     "range_ref": {
       "type": "object",
-      "required": ["sheet_id", "range"],
+      "required": [
+        "sheet_id",
+        "range"
+      ],
       "additionalProperties": false,
       "properties": {
-        "sheet_id": { "type": "integer" },
-        "range": { "type": "string", "minLength": 1 }
+        "sheet_id": {
+          "type": "integer"
+        },
+        "range": {
+          "type": "string",
+          "minLength": 1
+        }
       }
     },
     "named_range": {
       "type": "object",
-      "required": ["name", "range"],
+      "required": [
+        "name",
+        "range"
+      ],
       "additionalProperties": false,
       "properties": {
-        "name": { "type": "string", "minLength": 1 },
-        "range": { "$ref": "#/$defs/range_ref" }
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "range": {
+          "$ref": "#/$defs/range_ref"
+        }
       }
     },
     "protected_range": {
       "type": "object",
-      "required": ["protected_range_id", "range", "warning_only"],
+      "required": [
+        "protected_range_id",
+        "range",
+        "warning_only"
+      ],
       "additionalProperties": false,
       "properties": {
-        "protected_range_id": { "type": "integer" },
-        "range": { "$ref": "#/$defs/range_ref" },
-        "warning_only": { "type": "boolean" }
+        "protected_range_id": {
+          "type": "integer"
+        },
+        "range": {
+          "$ref": "#/$defs/range_ref"
+        },
+        "warning_only": {
+          "type": "boolean"
+        }
       }
     },
     "formula_sample": {
       "type": "object",
-      "required": ["sheet_id", "range", "formula", "classifications"],
+      "required": [
+        "sheet_id",
+        "range",
+        "formula",
+        "classifications"
+      ],
       "additionalProperties": false,
       "properties": {
-        "sheet_id": { "type": "integer" },
-        "range": { "type": "string", "minLength": 1 },
-        "formula": { "type": "string" },
+        "sheet_id": {
+          "type": "integer"
+        },
+        "range": {
+          "type": "string",
+          "minLength": 1
+        },
+        "formula": {
+          "type": "string"
+        },
         "classifications": {
           "type": "array",
           "items": {
@@ -127,11 +220,20 @@
     },
     "cell_state": {
       "type": "object",
-      "required": ["sheet_id", "range", "state"],
+      "required": [
+        "sheet_id",
+        "range",
+        "state"
+      ],
       "additionalProperties": false,
       "properties": {
-        "sheet_id": { "type": "integer" },
-        "range": { "type": "string", "minLength": 1 },
+        "sheet_id": {
+          "type": "integer"
+        },
+        "range": {
+          "type": "string",
+          "minLength": 1
+        },
         "state": {
           "type": "string",
           "enum": [
@@ -144,43 +246,88 @@
             "stale_unverified"
           ]
         },
-        "observed_value": { "type": ["string", "number", "boolean", "null"] }
+        "observed_value": {
+          "type": [
+            "string",
+            "number",
+            "boolean",
+            "null"
+          ]
+        }
       }
     },
     "telemetry": {
       "type": "object",
-      "required": ["request_count", "retry_count", "elapsed_ms", "timeout_budget"],
+      "required": [
+        "request_count",
+        "retry_count",
+        "elapsed_ms",
+        "timeout_budget"
+      ],
       "additionalProperties": false,
       "properties": {
-        "request_count": { "type": "integer", "minimum": 0 },
-        "retry_count": { "type": "integer", "minimum": 0 },
-        "elapsed_ms": { "type": "integer", "minimum": 0 },
-        "client_elapsed_ms": { "type": "integer", "minimum": 0 },
-        "timeout_budget": { "$ref": "#/$defs/timeout_budget" }
+        "request_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "retry_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "elapsed_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "client_elapsed_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "timeout_budget": {
+          "$ref": "#/$defs/timeout_budget"
+        }
       }
     },
     "timeout_budget": {
       "type": "object",
-      "required": ["read_seconds", "write_seconds", "poll_seconds"],
+      "required": [
+        "read_seconds",
+        "write_seconds",
+        "poll_seconds"
+      ],
       "additionalProperties": false,
       "properties": {
-        "read_seconds": { "type": "integer", "minimum": 1 },
-        "write_seconds": { "type": "integer", "minimum": 1 },
-        "poll_seconds": { "type": "integer", "minimum": 1 }
+        "read_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "write_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "poll_seconds": {
+          "type": "integer",
+          "minimum": 1
+        }
       }
     },
     "artifact_ref": {
       "type": "object",
-      "required": ["kind"],
-      "additionalProperties": false,
-      "anyOf": [
-        { "required": ["path"] },
-        { "required": ["summary"] }
+      "required": [
+        "kind"
       ],
+      "additionalProperties": false,
       "properties": {
-        "kind": { "type": "string", "minLength": 1 },
-        "path": { "type": "string", "minLength": 1 },
-        "summary": { "type": "object" }
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "object"
+        }
       }
     }
   }

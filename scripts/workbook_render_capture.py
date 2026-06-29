@@ -18,7 +18,7 @@ APPLESCRIPT_PATH = Path(__file__).with_name("excel_copy_ranges_png.applescript")
 MAC_EXCEL_CONTAINER_DOCUMENTS = (
     Path.home() / "Library/Containers/com.microsoft.Excel/Data/Documents"
 )
-DEFAULT_SANDBOX_SUBDIR = "excel_workbook_editing_capture"
+DEFAULT_SANDBOX_SUBDIR = "spreadsheet_processing_capture"
 
 
 class RenderCaptureError(RuntimeError):

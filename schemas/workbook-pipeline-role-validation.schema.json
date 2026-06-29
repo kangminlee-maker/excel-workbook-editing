@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://day1company.local/excel-workbook-editing/workbook-pipeline-role-validation.schema.json",
+  "$id": "https://day1company.local/spreadsheet-processing/workbook-pipeline-role-validation.schema.json",
   "title": "Workbook Pipeline Role Validation",
   "type": "object",
   "required": [
@@ -14,39 +14,78 @@
   ],
   "additionalProperties": false,
   "properties": {
-    "schema_version": { "const": "0.1" },
-    "generated_at": { "type": "string", "format": "date-time" },
-    "source_artifacts": { "$ref": "#/$defs/source_artifacts" },
-    "method": { "$ref": "#/$defs/method" },
+    "schema_version": {
+      "const": "0.1"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_artifacts": {
+      "$ref": "#/$defs/source_artifacts"
+    },
+    "method": {
+      "$ref": "#/$defs/method"
+    },
     "role_validations": {
       "type": "array",
-      "items": { "$ref": "#/$defs/role_validation" }
+      "items": {
+        "$ref": "#/$defs/role_validation"
+      }
     },
-    "summary": { "$ref": "#/$defs/summary" },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    },
     "parser_observations": {
       "type": "array",
-      "items": { "$ref": "#/$defs/observation" }
+      "items": {
+        "$ref": "#/$defs/observation"
+      }
     }
   },
   "$defs": {
     "source_artifacts": {
       "type": "object",
-      "required": ["table_io_pipelines", "gate_execution", "boundary_decisions"],
+      "required": [
+        "table_io_pipelines",
+        "gate_execution",
+        "boundary_decisions"
+      ],
       "additionalProperties": false,
       "properties": {
-        "table_io_pipelines": { "type": "string", "minLength": 1 },
-        "gate_execution": { "type": "string", "minLength": 1 },
-        "boundary_decisions": { "type": "string", "minLength": 1 }
+        "table_io_pipelines": {
+          "type": "string",
+          "minLength": 1
+        },
+        "gate_execution": {
+          "type": "string",
+          "minLength": 1
+        },
+        "boundary_decisions": {
+          "type": "string",
+          "minLength": 1
+        }
       }
     },
     "method": {
       "type": "object",
-      "required": ["name", "authority", "decision_policy"],
+      "required": [
+        "name",
+        "authority",
+        "decision_policy"
+      ],
       "additionalProperties": false,
       "properties": {
-        "name": { "const": "deterministic_pipeline_role_validation" },
-        "authority": { "const": "pipeline_role_decision_not_final_document_graph" },
-        "decision_policy": { "type": "string", "minLength": 1 }
+        "name": {
+          "const": "deterministic_pipeline_role_validation"
+        },
+        "authority": {
+          "const": "pipeline_role_decision_not_final_document_graph"
+        },
+        "decision_policy": {
+          "type": "string",
+          "minLength": 1
+        }
       }
     },
     "role_validation": {
@@ -73,47 +112,103 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
-        "type": { "const": "pipeline_role_validation" },
-        "pipeline_id": { "type": "string", "minLength": 1 },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "pipeline_role_validation"
+        },
+        "pipeline_id": {
+          "type": "string",
+          "minLength": 1
+        },
         "status": {
           "type": "string",
-          "enum": ["accepted", "rejected", "review_required"]
-        },
-        "reason": { "type": "string", "minLength": 1 },
-        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
-        "asserted_role": { "$ref": "#/$defs/role" },
-        "validated_role": {
-          "anyOf": [
-            { "$ref": "#/$defs/role" },
-            { "type": "null" }
+          "enum": [
+            "accepted",
+            "rejected",
+            "review_required"
           ]
         },
-        "output_ref": { "$ref": "#/$defs/compact_ref" },
-        "input_ref_count": { "type": "integer", "minimum": 0 },
-        "transform_ref_count": { "type": "integer", "minimum": 0 },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "asserted_role": {
+          "$ref": "#/$defs/role"
+        },
+        "validated_role": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "unknown",
+            "input",
+            "parameter",
+            "bridge",
+            "transform",
+            "summary",
+            "report",
+            "audit_check",
+            null
+          ]
+        },
+        "output_ref": {
+          "$ref": "#/$defs/compact_ref"
+        },
+        "input_ref_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "transform_ref_count": {
+          "type": "integer",
+          "minimum": 0
+        },
         "role_evidence": {
           "type": "array",
-          "items": { "type": "string", "minLength": 1 }
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "review_flags": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
         "blockers": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
         "linked_gate_results": {
           "type": "array",
-          "items": { "$ref": "#/$defs/linked_gate_result" }
+          "items": {
+            "$ref": "#/$defs/linked_gate_result"
+          }
         },
-        "boundary_constraints": { "$ref": "#/$defs/boundary_constraints" },
+        "boundary_constraints": {
+          "$ref": "#/$defs/boundary_constraints"
+        },
         "evidence_refs": {
           "type": "array",
-          "items": { "type": "string", "minLength": 1 }
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
-        "notes": { "type": "string" }
+        "notes": {
+          "type": "string"
+        }
       }
     },
     "role": {
@@ -131,15 +226,52 @@
     },
     "compact_ref": {
       "type": "object",
-      "required": ["id", "kind", "sheet", "range", "block_id", "region_id"],
+      "required": [
+        "id",
+        "kind",
+        "sheet",
+        "range",
+        "block_id",
+        "region_id"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": ["string", "null"] },
-        "kind": { "type": ["string", "null"] },
-        "sheet": { "type": ["string", "null"] },
-        "range": { "type": ["string", "null"] },
-        "block_id": { "type": ["string", "null"] },
-        "region_id": { "type": ["string", "null"] }
+        "id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "kind": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sheet": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "range": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "block_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "region_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
     },
     "linked_gate_result": {
@@ -155,16 +287,56 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": ["string", "null"] },
-        "gate_check_id": { "type": ["string", "null"] },
-        "target_id": { "type": ["string", "null"] },
-        "gate_type": { "type": ["string", "null"] },
-        "status": {
-          "type": ["string", "null"],
-          "enum": ["accepted", "rejected", "review_required", null]
+        "id": {
+          "type": [
+            "string",
+            "null"
+          ]
         },
-        "reason": { "type": ["string", "null"] },
-        "confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+        "gate_check_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "target_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "gate_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "accepted",
+            "rejected",
+            "review_required",
+            null
+          ]
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "confidence": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        }
       }
     },
     "boundary_constraints": {
@@ -178,15 +350,21 @@
       "properties": {
         "accepted_boundary_ids": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
         "review_required_boundary_ids": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
         "rejected_boundary_ids": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -207,26 +385,71 @@
       ],
       "additionalProperties": false,
       "properties": {
-        "role_validation_count": { "type": "integer", "minimum": 0 },
-        "accepted_count": { "type": "integer", "minimum": 0 },
-        "rejected_count": { "type": "integer", "minimum": 0 },
-        "review_required_count": { "type": "integer", "minimum": 0 },
-        "report_role_accepted_count": { "type": "integer", "minimum": 0 },
-        "summary_role_accepted_count": { "type": "integer", "minimum": 0 },
-        "transform_role_accepted_count": { "type": "integer", "minimum": 0 },
-        "bridge_role_accepted_count": { "type": "integer", "minimum": 0 },
-        "unresolved_input_review_count": { "type": "integer", "minimum": 0 },
-        "external_dependency_review_count": { "type": "integer", "minimum": 0 },
-        "linked_gate_review_count": { "type": "integer", "minimum": 0 }
+        "role_validation_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "accepted_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rejected_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "review_required_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "report_role_accepted_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "summary_role_accepted_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "transform_role_accepted_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "bridge_role_accepted_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unresolved_input_review_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "external_dependency_review_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "linked_gate_review_count": {
+          "type": "integer",
+          "minimum": 0
+        }
       }
     },
     "observation": {
       "type": "object",
-      "required": ["level", "message"],
+      "required": [
+        "level",
+        "message"
+      ],
       "additionalProperties": false,
       "properties": {
-        "level": { "type": "string", "enum": ["info", "warning", "error"] },
-        "message": { "type": "string" }
+        "level": {
+          "type": "string",
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ]
+        },
+        "message": {
+          "type": "string"
+        }
       }
     }
   }

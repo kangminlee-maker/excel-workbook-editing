@@ -13,7 +13,7 @@ POWERSHELL_PATH = Path(__file__).with_name("excel_recalculate_and_sample.ps1")
 MAC_EXCEL_CONTAINER_DOCUMENTS = (
     Path.home() / "Library/Containers/com.microsoft.Excel/Data/Documents"
 )
-DEFAULT_SANDBOX_SUBDIR = "excel_workbook_editing_validation"
+DEFAULT_SANDBOX_SUBDIR = "spreadsheet_processing_validation"
 
 
 class ExcelEngineError(RuntimeError):

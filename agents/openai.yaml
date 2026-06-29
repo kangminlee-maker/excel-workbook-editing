@@ -1,4 +1,4 @@
 interface:
-  display_name: "Excel & Connected Sheets"
-  short_description: "Excel workbook and connected Google Sheets editing, review, and validation"
-  default_prompt: "Use $excel-workbook-editing to edit or reconcile spreadsheet artifacts with the model-agnostic workflow: inspect structure before flattening it, preserve source-of-truth alignment, validate Excel results with the real Excel engine, edit existing Google Sheets in place without xlsx round-trips, budget timeout/quota/loading risks for large or externally linked Sheets, verify Google Sheets changes with live readback, and create review packages when agent-visible evidence is needed."
+  display_name: "Spreadsheet Processing"
+  short_description: "Spreadsheet processing, editing, review, and validation"
+  default_prompt: "Use $spreadsheet-processing to understand, edit, reconcile, and validate Excel workbooks or connected Google Sheets while preserving formulas, identity, evidence, and reviewability."

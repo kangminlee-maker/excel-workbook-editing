@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://day1company.local/excel-workbook-editing/google-sheets-domain-source-model.schema.json",
+  "$id": "https://day1company.local/spreadsheet-processing/google-sheets-domain-source-model.schema.json",
   "title": "Google Sheets Domain Source Model",
   "type": "object",
   "required": [
